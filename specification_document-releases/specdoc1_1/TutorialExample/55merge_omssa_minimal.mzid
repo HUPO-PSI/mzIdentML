@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is a minimal example of a one spectrum MGF file, searched with OMSSA. Basic protein inference was done in-house, accepting all unique peptide to protein matches (not a recommended procedure)
+-->
+
+
+<MzIdentML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.1 ../../../schema/mzIdentML1.1.0.xsd"
+    xmlns="http://psidev.info/psi/pi/mzIdentML/1.1" id="12345" version="1.1.0"
+    creationDate="2011-03-25T13:16:49">
+
+    <!-- Insert used controlled vocabularies in here - these three usually are the only ones required so can be feasibly hard-coded -->
+    <cvList>
+        <cv id="PSI-MS"
+            uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+            version="2.25.0" fullName="PSI-MS"/>
+        <cv id="UNIMOD" uri="http://www.unimod.org/obo/unimod.obo" fullName="UNIMOD"/>
+        <cv id="UO"
+            uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"
+            fullName="UNIT-ONTOLOGY"/>
+    </cvList>
+
+    <!-- Insert software in here, sourced from PSI-MS CV -->
+    <AnalysisSoftwareList>
+        <AnalysisSoftware version="2.1.4" name="OMSSA" id="ID_software">
+            <SoftwareName>
+                <cvParam accession="MS:1001475" cvRef="PSI-MS" name="OMSSA"/>
+            </SoftwareName>
+        </AnalysisSoftware>
+    </AnalysisSoftwareList>
+
+    <!-- Provider of the document in here, this can be hard-coded, with a reference to a Person in AuditCollection (see below) -->
+    <Provider id="PROVIDER">
+        <ContactRole contact_ref="PERSON_DOC_OWNER">
+            <Role>
+                <cvParam accession="MS:1001271" cvRef="PSI-MS" name="researcher"/>
+            </Role>
+        </ContactRole>
+    </Provider>
+
+    <!-- Minimally insert contact details in here for the Provider of the document if known, otherwise provide dummy values -->
+    <AuditCollection>
+        <Person firstName="Andy" lastName="Jones" id="PERSON_DOC_OWNER">
+            <Affiliation organization_ref="ORG_DOC_OWNER"/>
+        </Person>
+        <Organization name="University of Liverpool" id="ORG_DOC_OWNER"/>
+    </AuditCollection>
+    <SequenceCollection>
+
+        <!-- List all protein sequences to be referenced from elsewhere -->
+        <DBSequence accession="psu|NC_LIV_020800" searchDatabase_ref="SearchDB_1" length="376"
+            id="dbseq_psu|NC_LIV_020800">
+            <cvParam accession="MS:1001088" cvRef="PSI-MS"
+                value="psu|NC_LIV_020800 | organism=Neospora_caninum | product=actin | location=Neo_chrIb:918316-919853(+) | length=376"
+                name="protein description"/>
+        </DBSequence>
+
+        <!-- List all peptide sequences and modifications to be referenced from elsewhere -->
+        <Peptide id="KDLYGNVVLSGGTTMYEGIGER_1@14">
+            <PeptideSequence>KDLYGNVVLSGGTTMYEGIGER</PeptideSequence>
+            <Modification monoisotopicMassDelta="15.994915" location="15">
+                <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
+            </Modification>
+        </Peptide>
+
+        <!-- List the location of all peptide sequences within protein sequences here, assuming digestion has taken place according to the specifed enzyme e.g. for full tryptic digestion, 
+        insert, give the locations of all peptides listed above (termininating with R or K) with a pre= "R" or "K" or "-" for N-terminus  -->
+        <PeptideEvidence isDecoy="false" post="L" pre="R" end="312" start="291"
+            peptide_ref="KDLYGNVVLSGGTTMYEGIGER_1@14" dBSequence_ref="dbseq_psu|NC_LIV_020800"
+            id="PE5_2_6"/>
+
+    </SequenceCollection>
+
+    <!-- AnalysisCollection maps input and output data  -->
+    <AnalysisCollection>
+        <SpectrumIdentification spectrumIdentificationList_ref="SII_LIST_1"
+            spectrumIdentificationProtocol_ref="SearchProtocol_1" id="SpecIdent_1">
+            <InputSpectra spectraData_ref="SID_1"/>
+            <SearchDatabaseRef searchDatabase_ref="SearchDB_1"/>
+        </SpectrumIdentification>
+
+        <ProteinDetection proteinDetectionList_ref="PDL_1" proteinDetectionProtocol_ref="PDL1"
+            id="PD1">
+            <InputSpectrumIdentifications spectrumIdentificationList_ref="SII_LIST_1"/>
+        </ProteinDetection>
+
+    </AnalysisCollection>
+
+    <AnalysisProtocolCollection>
+
+        <!-- Protocol used for spectrum identification, most typical parameters shown -->
+        <SpectrumIdentificationProtocol analysisSoftware_ref="ID_software" id="SearchProtocol_1">
+            <SearchType>
+                <cvParam accession="MS:1001083" cvRef="PSI-MS" name="ms-ms search"/>
+            </SearchType>
+            <AdditionalSearchParams>
+                <cvParam accession="MS:1001211" cvRef="PSI-MS" name="parent mass type mono"/>
+                <cvParam accession="MS:1001256" cvRef="PSI-MS" name="fragment mass type mono"/>
+            </AdditionalSearchParams>
+            <ModificationParams>
+                <SearchModification residues="C" massDelta="57.021465" fixedMod="true">
+                    <cvParam accession="UNIMOD:4" cvRef="UNIMOD" name="Carbamidomethyl"/>
+                </SearchModification>
+                <SearchModification residues="M" massDelta="15.994915" fixedMod="false">
+                    <cvParam accession="UNIMOD:35" cvRef="UNIMOD" name="Oxidation"/>
+                </SearchModification>
+            </ModificationParams>
+            <Enzymes independent="false">
+                <Enzyme missedCleavages="1" semiSpecific="false" cTermGain="OH" nTermGain="H"
+                    id="Enz1">
+                    <EnzymeName>
+                        <cvParam accession="MS:1001251" cvRef="PSI-MS" name="Trypsin"/>
+                    </EnzymeName>
+                </Enzyme>
+            </Enzymes>
+            <FragmentTolerance>
+                <cvParam accession="MS:1001412" cvRef="PSI-MS" unitCvRef="UO" unitName="dalton"
+                    unitAccession="UO:0000221" value="0.8" name="search tolerance plus value"/>
+                <cvParam accession="MS:1001413" cvRef="PSI-MS" unitCvRef="UO" unitName="dalton"
+                    unitAccession="UO:0000221" value="0.8" name="search tolerance minus value"/>
+            </FragmentTolerance>
+            <ParentTolerance>
+                <cvParam accession="MS:1001412" cvRef="PSI-MS" unitCvRef="UO" unitName="dalton"
+                    unitAccession="UO:0000221" value="1.5" name="search tolerance plus value"/>
+                <cvParam accession="MS:1001413" cvRef="PSI-MS" unitCvRef="UO" unitName="dalton"
+                    unitAccession="UO:0000221" value="1.5" name="search tolerance minus value"/>
+            </ParentTolerance>
+
+            <!-- Must include a threshold value, even if no threshold. Also can include FDR, p-value etc. -->
+            <Threshold>
+                <cvParam accession="MS:1001494" cvRef="PSI-MS" name="no threshold"/>
+            </Threshold>
+        </SpectrumIdentificationProtocol>
+
+        <!-- A separate protocol for protein inference must be given, although there are no essential parameters. Parameters can be supplied under AnalysisParams as cvParams (preferred) or userParams. -->
+        <ProteinDetectionProtocol analysisSoftware_ref="ID_software" id="PDL1">
+            <AnalysisParams>
+                <userParam name="Protein inference method" value="in house method"/>
+            </AnalysisParams>
+            <Threshold>
+                <cvParam accession="MS:1001494" cvRef="PSI-MS" name="no threshold"/>
+            </Threshold>
+        </ProteinDetectionProtocol>
+
+    </AnalysisProtocolCollection>
+
+
+    <DataCollection>
+        <Inputs>
+
+            <!-- File converted to mzIdentML -->
+            <SourceFile location="build/classes/resources/55merge_omssa.omx" id="SourceFile_1">
+                <FileFormat>
+                    <cvParam accession="MS:1001400" cvRef="PSI-MS" name="OMSSA xml file"/>
+                </FileFormat>
+            </SourceFile>
+
+            <!-- Database searched, provide a cvParam for DatabaseName if this is a canonical database e.g. Uniprot -->
+            <SearchDatabase numDatabaseSequences="22348"
+                location="D:/Software/Databases/Neospora_3rndTryp/Neo_rndTryp_3times.fasta"
+                id="SearchDB_1">
+                <FileFormat>
+                    <cvParam accession="MS:1001348" cvRef="PSI-MS" name="FASTA format"/>
+                </FileFormat>
+                <DatabaseName>
+                    <userParam
+                        name="D:/Software/Databases/Neospora_3rndTryp/Neo_rndTryp_3times.fasta"/>
+                </DatabaseName>
+            </SearchDatabase>
+
+            <!-- Location of the searched spectra data. A valid mzIdentML file, should be accompanied by the searched spectra. -->
+            <SpectraData location="55merge_tiny.mgf" id="SID_1">
+                <FileFormat>
+                    <cvParam accession="MS:1001062" cvRef="PSI-MS" name="Mascot MGF file"/>
+                </FileFormat>
+                <SpectrumIDFormat>
+                    <cvParam accession="MS:1000774" cvRef="PSI-MS"
+                        name="multiple peak list nativeID format"/>
+                </SpectrumIDFormat>
+            </SpectraData>
+        </Inputs>
+
+        <AnalysisData>
+
+            <!-- All results from the querying of the MGF file against the search database - only one result shown -->
+            <SpectrumIdentificationList id="SII_LIST_1">
+
+                <!-- All results from querying the only (and first i.e. index=0) spectrum within 55merge_tiny.mgf -->
+                <SpectrumIdentificationResult spectraData_ref="SID_1" spectrumID="index=0"
+                    id="SIR_5">
+
+                    <!-- One peptide spectrum match made by OMSSA -->
+                    <SpectrumIdentificationItem passThreshold="false" rank="1"
+                        peptide_ref="KDLYGNVVLSGGTTMYEGIGER_1@14" calculatedMassToCharge="791.381"
+                        experimentalMassToCharge="791.522" chargeState="3" id="SII_5_1">
+                        <PeptideEvidenceRef peptideEvidence_ref="PE5_2_6"/>
+                        <cvParam accession="MS:1001328" cvRef="PSI-MS" value="1.86134555413983E-17"
+                            name="OMSSA:evalue"/>
+                        <cvParam accession="MS:1001329" cvRef="PSI-MS" value="6.9975396772174E-21"
+                            name="OMSSA:pvalue"/>
+                    </SpectrumIdentificationItem>
+                    <cvParam accession="MS:1000796" cvRef="PSI-MS" value="55.3471.3474.3.dta"
+                        name="spectrum title"/>
+                </SpectrumIdentificationResult>
+            </SpectrumIdentificationList>
+
+            <!-- ProteinDetectionList is optional, if only spectrum identification has been done (i.e. no protein inference) -->
+            <ProteinDetectionList id="PDL_1">
+                <!-- A single protein group (only one member), so no ambiguity shown in this example -->
+                <ProteinAmbiguityGroup id="PAG1">
+
+                    <!-- A single detected protein -->
+                    <ProteinDetectionHypothesis passThreshold="true" id="PDH1">
+                        <PeptideHypothesis peptideEvidence_ref="PE5_2_6">
+                            <SpectrumIdentificationItemRef spectrumIdentificationItem_ref="SII_5_1"
+                            />
+                        </PeptideHypothesis>
+                    </ProteinDetectionHypothesis>
+                </ProteinAmbiguityGroup>
+
+            </ProteinDetectionList>
+        </AnalysisData>
+    </DataCollection>
+</MzIdentML>

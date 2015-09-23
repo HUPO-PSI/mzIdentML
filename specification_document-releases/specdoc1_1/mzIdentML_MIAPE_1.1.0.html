@@ -1,0 +1,339 @@
+<p>This table lists each point in the MIAPE guidelines and states the xpath/CV available to provide conformance</p>
+<p>Do not edit this page directly because the editor on psidev.info is useless for tables. Source for this page is under svn <a href="http://code.google.com/p/psi-pi/source/browse/trunk/specification_document/specdoc1_1/mzIdentML_MIAPE_1.1.0.html">here</a>. You should edit the source html and copy/paste to here.</p>
+<p>The MIAPE document is available <a href="http://www.psidev.info/sites/default/files/MIAPE_MSI_1.1.pdf">here</a>, and general information about MIAPE is <a href="http://www.psidev.info/miape">here</a>.</p>
+
+<ul>
+<li>a <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/55merge_mascot_full.mzid">55merge_mascot_full </a> - example MS-MS search results including decoy matches from Mascot. </li>
+<li>b <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/55merge_omssa.mzid">55merge_omssa </a> - example MS-MS search results including decoy matches from OMSSA. </li>
+<li>c <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/55merge_tandem.mzid" title="55merge_tandem">Mascot Nucleic Acid Example </a> - example MS-MS search results including decoy matches from X!Tandem. </li>
+<li>d <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/MPC_example_Multiple_search_engines.mzid">MPC_example_Multiple_search_engines </a> - an example of PSMs from different search engines, assembled into proteins using a third-party algorithm; false-discovery estimation using decoy database. </li>
+<li>e <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/Mascot_NA_example.mzid">Mascot_NA_example </a> - an example of a search against an EST database with Mascot. </li>
+<li>f <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/Mascot_top_down_example.mzid">Mascot_top_down_example </a> - a single MS/MS spectra from an intact protein, searched with Mascot. </li>
+<li>g <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/Sequest_example_ver1.1.mzid">Sequest_example_ver1.1 </a> - a simple example derived from a “.out” file produced by SEQUEST. </li>
+<li>h <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/mascot_pmf_example.mzid">mascot_pmf_example </a> - example Peptide Mass Fingerprint search with Mascot. </li>
+</ul>
+
+ <table border="2"> 
+   <tbody>
+     <tr><td><strong>MIAPE Section</strong></td>
+     <td width="30%"><strong>Item</strong></td>
+     <td><strong>xPath (under mzIdentML)</strong></td>
+     <td width="30%"><strong>Notes</strong></td>
+     <td><strong>a</strong></td>
+     <td><strong>b</strong></td>
+     <td><strong>c</strong></td>
+     <td><strong>d</strong></td>
+     <td><strong>e</strong></td>
+     <td><strong>f</strong></td>
+     <td><strong>g</strong></td>
+     <td><strong>h</strong></td>
+   </tr> 
+   <tr>
+     <td rowspan="10" valign="top">1</td>
+     <td rowspan="3" valign="top">Date stamp (as YYYY-MM-DD)</td>
+     <td nowrap>creationDate (attribute)</td>
+     <td>The creation date of the document itself. xsd:dateTime</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td nowrap>AnalysisCollection/SpectrumIdentification/activityDate (attribute)</td>
+     <td>Date spectrum identification performed. xsd:dateTime</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td nowrap>AnalysisCollection/ProteinDetection/activityDate (attribute)</td>
+     <td>Date protein inferencing  performed. xsd:dateTime</td>
+     <td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>Responsible person (or institutional role if more appropriate); provide name, affiliation and stable contact information</td>
+     <td nowrap>Provider/ContactRole</td>
+     <td>An institutional email address can generally satisfy this requirement.</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td rowspan="3" valign="top">Software name, version and manufacturer</td>
+     <td nowrap>AnalysisSoftwareList/AnalysisSoftware/name</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td nowrap>AnalysisSoftwareList/AnalysisSoftware/version</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td nowrap>AnalysisSoftwareList/AnalysisSoftware/ContactRole</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>Customisations made to that software</td>
+     <td nowrap>AnalysisSoftwareList/AnalysisSoftware/Customizations</td>
+     <td><i>No customisations</i> in some examples for illustration.<br />In the other cases this is just not applicable (na).</td>
+     <td>na</td><td>na</td><td>na</td><td>na</td><td>&#10003;</td><td>&#10003;</td><td>na</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td valign="top">Availability of that software</td>
+     <td valign="top" nowrap>AnalysisSoftwareList/AnalysisSoftware/uri</td>
+     <td>The references of the vendor or public url if a publicly available version has been used.</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td valign="top">Location of the files generated; parameter files, spectral data (input/output)</td>
+     <td valign="top" nowrap>DataCollection/Inputs/SourceFile</td>
+     <td>The location of the data generated. If made available in a public repository, describe the URI (for instance an url, or the url of the repository and the information on how to retrieve the data). If not made available for public access, describe the contact person reference or source and the internal coordinates of the data. e.g. Sequest .out, Mascot .dat. [Note to MIAPE Authors: This is confusing because of overlap with next section, so we just consider Inputs/SourceFile here and not the .dta files etc.].</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td rowspan="18" valign="top">2</td>
+     <td rowspan="2" valign="top">Input data – Description and type of MS data</td>
+     <td valign="top" nowrap>DataCollection/Inputs/SpectraData</td>
+     <td>Provide a short description that can refer to the data in the experiment (e.g. LC-MS run1). [Refer to mzML source file for information - outside scope of mzIdentML]</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td valign="top">DataCollection/Inputs/SpectraData/FileFormat</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>   </tr>  
+   <tr>
+     <td valign="top">Input data – Availability of MS data (source of data)</td>
+     <td valign="top" nowrap>DataCollection/Inputs/SpectraData</td>
+     <td valign="top">Location (URI) of input data file</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>   </tr>  
+   <tr>
+     <td rowspan="3">Input parameters - Databases queried; description and versions (including number of entries searched)</td>
+     <td>DataCollection/Inputs/SearchDatabase/DatabaseName<br /> and/or<br />DataCollection/Inputs/SearchDatabase/location</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td nowrap>DataCollection/Inputs/SearchDatabase/version</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td nowrap>DataCollection/Inputs/SearchDatabase/numDatabaseSequences</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td rowspan="2">Input parameters - Taxonomical restrictions applied</td>
+     <td nowrap>AnalysisProtocolCollection/SpectrumIdentificationProtocol/DatabaseFilters</td>
+     <td>Specify the ... subset of the databank(s) (for instance, “mammals”, a NCBI TaxId, a list of accession numbers).</td>
+     <td>na</td><td>na</td><td>na</td><td>na</td><td>&#10003;</td><td>&#10003;</td><td>na</td><td>&#10003;</td>
+   </tr>
+   <tr>   
+     <td nowrap>DataCollection/AnalysisData/SpectrumIdentificationList/numSequencesSearched</td>
+     <td>Specify the number of entries searched.</td>
+     <td>na</td><td>na</td><td>na</td><td>na</td><td>&#10003;</td><td>&#10003;</td><td>na</td><td>&#10003;</td>
+   </tr>
+   <tr>
+     <td>Input parameters - Description of tool and scoring scheme</td>
+     <td>AnalysisProtocolCollection/SpectrumIdentificationProtocol/AdditionalSearchParams/cvParam</td>
+     <td>Descriptor of the scoring algorithm in the search engine (such as ESI-TRAP in Mascot, ESI... [Note to MIAPE authors: These examples parameters are a little search engine specific]</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>Input parameters - Specified cleavage agent(s)</td>
+     <td nowrap>AnalysisProtocolCollection/SpectrumIdentificationProtocol/Enzymes</td>
+     <td>Describe the cleavage agent as available on the search engine. If the cleavage agent rules have been defined by the user, describe the cleavage rules)</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>Input parameters - Allowed number of missed cleavages</td>
+     <td>AnalysisProtocolCollection/SpectrumIdentificationProtocol/Enzymes/Enzyme/missedCleavages</td>
+     <td>Allowed maximum number of cleavage sited missed by the specified agent during the in-silico cleavage process. For a no enzyme search, use the "No Enzyme" CV term, and omit the number of missed cleavages.</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>Input parameters - Additional parameters related to cleavage</td>
+     <td nowrap>AnalysisProtocolCollection/SpectrumIdentificationProtocol/Enzymes</td>
+     <td>The Enzymes section is flexible. Example 'a' shows a case of a mixed enzyme.</td>
+     <td>&#10003;</td><td>na</td><td>na</td><td>na</td><td>na</td><td>na</td><td>na</td><td>na</td>
+   </tr>  
+   <tr>
+     <td>Input parameters - Permissible amino acids modifications</td>
+     <td>AnalysisProtocolCollection/SpectrumIdentificationProtocol/ModificationParams/SearchModification</td>
+     <td>Using the PSI-MS names available from Unimod</td>
+     <td>&#10003;</td><td>&#10003;</td><td>na</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>na</td>
+   </tr>  
+   <tr>
+     <td>Input parameters - Precursor-ion and fragment ion mass tolerance for tandem MS (when applicable)</td>
+     <td>AnalysisProtocolCollection/SpectrumIdentificationProtocol/FragmentTolerance<br />AnalysisProtocolCollection/SpectrumIdentificationProtocol/ParentTolerance</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>na</td>
+   </tr>  
+   <tr>
+     <td>Input parameters - Mass tolerance for PMF (when applicable)</td>
+     <td>AnalysisProtocolCollection/SpectrumIdentificationProtocol/ParentTolerance</td>
+     <td>&nbsp;</td>
+     <td>na</td><td>na</td><td>na</td><td>na</td><td>na</td><td>na</td><td>na</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td rowspan="2">Input parameters - Thresholds; minimum scores for peptides, proteins (probabilities, number of hits, other metrics)</td>
+     <td>AnalysisProtocolCollection/SpectrumIdentificationProtocol/AdditionalSearchParams/cvParam</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td>AnalysisProtocolCollection/ProteinDetectionProtocol/AnalysisParams/cvParam</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>Input parameters - Any other relevant parameters</td>
+     <td>AnalysisProtocolCollection/SpectrumIdentificationProtocol/AdditionalSearchParams/cvParam</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td rowspan="21" valign="top">3</td>
+     <td>Identified proteins - Accession code in the queried database</td>
+     <td>SequenceCollection/DBSequence/accession</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>Identified proteins - Protein description</td>
+     <td>SequenceCollection/DBSequence/cvParam accession="MS:1001088"</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>Identified proteins - Protein scores</td>
+     <td>DataCollection/AnalysisData/ProteinDetectionList/ProteinAmbiguityGroup/ProteinDetectionHypothesis/cvParam</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>Identified proteins - Validation status</td>
+     <td>DataCollection/AnalysisData/ProteinDetectionList/ProteinAmbiguityGroup/ProteinDetectionHypothesis/cvParam
+accession="MS:1001060" (and e.g. MS:1001058)</td>
+     <td>For all protein hits in the search, specify if accepted without post-processing of search engine/de-novo interpretation (accept raw output of identification software) or if manually accepted as valid or as rejected (false positive).</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td>Identified proteins - Number of different peptide sequences (without considering modifications) assigned to the protein</td>
+     <td>DataCollection/AnalysisData/ProteinDetectionList/ProteinAmbiguityGroup/ProteinDetectionHypothesis/cvParam<br /> accession="MS:1001097"</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>Identified proteins - Percent peptide coverage of protein</td>
+     <td>DataCollection/AnalysisData/ProteinDetectionList/ProteinAmbiguityGroup/ProteinDetectionHypothesis/cvParam<br /> accession="MS:1001093"</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>Identified proteins - Identity of supporting peptides</td>
+     <td>DataCollection/AnalysisData/ProteinDetectionList/ProteinAmbiguityGroup/ProteinDetectionHypothesis/PeptideHypothesis</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>Identified proteins - In the case of PMF, number of matched/unmatched peaks</td>
+     <td>DataCollection/AnalysisData/ProteinDetectionList/ProteinAmbiguityGroup/ProteinDetectionHypothesis/cvParam<br /> accession="MS:1001097" name="distinct peptide sequences"<br /> accession="MS:1001362" name="number of unmatched peaks"</td>
+     <td>&nbsp;</td>
+     <td>na</td><td>na</td><td>na</td><td>&#10003;</td><td>na</td><td>na</td><td>na</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>For identified peptides - Sequence (indicate any deviation from the expected protein cleavage specificity)</td>
+     <td>SequenceCollection/Peptide/peptideSequence</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>For identified peptides - Peptide scores</td>
+     <td>DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/cvParam</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>na</td>
+   </tr>  
+   <tr>
+     <td>For identified peptides - Chemical modifications (artefactual) and post-translational modifications (naturallyoccurring); sequence polymorphisms with experimental evidence (particularly for isobaric modifications)</td>
+     <td>SequenceCollection/Peptide/Modification</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>For identified peptides - Corresponding spectrum locus</td>
+     <td>SequenceCollection/PeptideEvidence/start and end</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td rowspan="2">For identified peptides - Charge assumed for identification and a measurement of peptide mass error</td>
+     <td>DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/chargeState</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/calculatedMassToCharge - DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/experimentalMassToCharge</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>
+   <tr>
+     <td>For identified peptides - Other additional information, when used for evaluation of confidence</td>
+     <td>DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/cvParam</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>Quantitation for selected ions - Quantitation approach (e.g. 4plex-iTRAQ, ICAT, cICAT, COFRADIC)</td>
+     <td>Not available</td>
+     <td>Out of scope - part of mzQuantML</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td>Quantitation for selected ions - Quantity measurement (e.g. integration of signals, use of signal intensity)</td>
+     <td>Not available</td>
+     <td>Out of scope - part of mzQuantML</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td>Quantitation for selected ions - Data transformation and normalisation technique (description of method and software)</td>
+     <td>Not available</td>
+     <td>Out of scope - part of mzQuantML</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td>Quantitation for selected ions - Number of replicates (biological and technical)</td>
+     <td>Not available</td>
+     <td>Out of scope - part of mzQuantML</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td>Quantitation for selected ions - Acceptance criteria (including measure of errors)</td>
+     <td>Not available</td>
+     <td>Out of scope - part of mzQuantML</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td>Quantitation for selected ions - Estimates of uncertainty and the methods for the error analysis, including the treatment of relevant systematic error effects and the treatment of random error issues. Results from controls (when described)</td>
+     <td>Not available</td>
+     <td>Out of scope - part of mzQuantML</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td>4</td>
+     <td>Assessment and confidence given to the identification and quantitation (description of methods, thresholds, values, etc,)</td>
+     <td>AnalysisProtocolCollection/SpectrumIdentificationProtocol/Threshold <br>and<br>ProteinDetectionProtocol/Threshold </td>
+     <td>For example, MS:1001316, mascot:SigThreshold</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>4</td>
+     <td>Results of statistical analysis or determination of false positive rate in case of large scale experiments</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td>4</td>
+     <td>Inclusion/exclusion of the output of the software are provided (description of what part of the output has been kept, what part has been rejected)</td>
+     <td>DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/ @passThreshold</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>  
+  </tbody>
+</table>

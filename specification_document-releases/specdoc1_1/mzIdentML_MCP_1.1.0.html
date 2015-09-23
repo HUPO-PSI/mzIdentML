@@ -1,0 +1,256 @@
+<p>This table lists each point in the Molecular and Cellular Proteomics Publication guidelines for the analysis and documentation of peptide and protein identifications. It states the xpath/CV available to provide the required information.</p>
+<p>Do not edit this page directly because the editor on psidev.info is useless for tables. Source for this page is under svn <a href="http://code.google.com/p/psi-pi/source/browse/trunk/specification_document/mzIdentML_MCP_1.1.0.html">here</a>. You should edit the source html and copy/paste to here.</p>
+<p>The MCP document is available <a href="http://www.mcponline.org/misc/ParisReport_Final.dtl">here</a></p>
+
+<ul>
+<li>a <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/55merge_mascot_full.mzid">55merge_mascot_full </a> - example MS-MS search results including decoy matches from Mascot. </li>
+<li>b <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/55merge_omssa.mzid">55merge_omssa </a> - example MS-MS search results including decoy matches from OMSSA. </li>
+<li>c <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/55merge_tandem.mzid" title="55merge_tandem">Mascot Nucleic Acid Example </a> - example MS-MS search results including decoy matches from X!Tandem. </li>
+<li>d <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/MPC_example_Multiple_search_engines.mzid">MPC_example_Multiple_search_engines </a> - an example of PSMs from different search engines, assembled into proteins using a third-party algorithm; false-discovery estimation using decoy database. </li>
+<li>e <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/Mascot_NA_example.mzid">Mascot_NA_example </a> - an example of a search against an EST database with Mascot. </li>
+<li>f <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/Mascot_top_down_example.mzid">Mascot_top_down_example </a> - a single MS/MS spectra from an intact protein, searched with Mascot. </li>
+<li>g <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/Sequest_example_ver1.1.mzid">Sequest_example_ver1.1 </a> - a simple example derived from a “.out” file produced by SEQUEST. </li>
+<li>h <a href="http://code.google.com/p/psi-pi/source/browse/trunk/examples/1_1examples/mascot_pmf_example.mzid">mascot_pmf_example </a> - example Peptide Mass Fingerprint search with Mascot. </li>
+</ul>
+
+
+ <table border="2"> 
+   <tbody>
+     <tr><td><strong>MCP Section</strong></td>
+     <td width="30%"><strong>Item</strong></td>
+     <td><strong>xPath (under mzIdentML)</strong></td>
+     <td width="30%"><strong>Notes</strong></td>
+     <td><strong>a</strong></td>
+     <td><strong>b</strong></td>
+     <td><strong>c</strong></td>
+     <td><strong>d</strong></td>
+     <td><strong>e</strong></td>
+     <td><strong>f</strong></td>
+     <td><strong>g</strong></td>
+     <td><strong>h</strong></td>
+   </tr> 
+   <tr>
+     <td rowspan="14" valign="top"><a name="1">1</a></td>
+     <td valign="top">The method and/or program (including version number) used to create the "peak list" from the raw data and the parameters used in the creation of this peak list.</td>
+     <td>&nbsp;</td>
+     <td>This is outside the scope of mzIdentML. If the source data is in mzML or mxDatra format, then this information should be available from there.</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td rowspan="6" valign="top">The name and version of the program(s) used for database searching and the values of search parameters. Examples include precursor-ion mass tolerance, fragment-ion mass tolerance, modifications allowed for, any missed cleavages, protein cleavage chemistry , (if any), etc.</td>
+     <td nowrap>AnalysisSoftwareList/AnalysisSoftware/name</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td nowrap>AnalysisSoftwareList/AnalysisSoftware/version</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td nowrap>AnalysisSoftwareList/AnalysisSoftware/ContactRole</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr> 
+   <tr>
+     <td nowrap>AnalysisProtocolCollection/SpectrumIdentificationProtocol/FragmentTolerance<br />AnalysisProtocolCollection/SpectrumIdentificationProtocol/ParentTolerance</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>na</td>
+   </tr>
+   <tr>
+     <td nowrap>AnalysisProtocolCollection/SpectrumIdentificationProtocol/Enzymes</td>
+     <td>missed cleavages, protein cleavage chemistry</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td>AnalysisProtocolCollection/SpectrumIdentificationProtocol/ModificationParams/SearchModification</td>
+     <td>Using the PSI-MS names available from Unimod</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>na</td><td>&#10003;</td><td>&#10003;</td><td>na</td>
+   </tr>
+
+   <tr>
+     <td rowspan="3">The name and version of the sequence database(s) used. If a database was compiled in-house, a complete description of the source of the sequences is required. The number of entries actually searched from each database should be included. Authors should justify the use of a very small database or database that excludes common contaminants, since this may generate misleading assignments.</td>
+     <td>DataCollection/Inputs/SearchDatabase/DatabaseName<br /> and/or<br />DataCollection/Inputs/SearchDatabase/location</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td nowrap>DataCollection/Inputs/SearchDatabase/version</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td valign="top" nowrap>DataCollection/Inputs/SearchDatabase/numDatabaseSequences</td>
+     <td>&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td rowspan="3">Methods used to interpret MS/MS data, thresholds and values specific to judging certainty of identification, whether any statistical analysis was applied to validate the results, and a description of how applied.</td>
+     <td valign="top">AnalysisProtocolCollection/SpectrumIdentificationProtocol/AdditionalSearchParams/cvParam</td>
+     <td valign="top">e.g. Minimum scores or expect values</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td valign="top">AnalysisProtocolCollection/SpectrumIdentificationProtocol/Threshold <br>and<br>ProteinDetectionProtocol/Threshold</td>
+     <td valign="top">For example, MS:1001316, mascot:SigThreshold</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td>
+   </tr>  
+
+   <tr>
+     <td>AnalysisProtocolCollection/ProteinDetectionProtocol/AnalysisParams/cvParam</td>
+     <td>e.g. Minimum number of peptides per protein.</td>
+     <td>&#10003;</td><td>na</td><td>na</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>na</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td valign="top">For large scale experiments, provide the results of any additional statistical analyses that indicate or establish a measure of identification certainty, or allow a determination of the false-positive rate, e.g., the results of randomized database searches or other computational approaches.</td>
+     <td valign="top">SequenceCollection/PeptideEvidence</td>
+     <td valign="top">&lt;PeptideEvidence&gt; elements have an isDecoy attribute. A number of controlled vocabulary terms are available for describing the FDR</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td rowspan="13" valign="top"><a name="2">2</a></td>
+     <td rowspan="1" colspan="13" valign="top"><strong>Information for each protein sequence identified should specify the following:</strong></td>
+   </tr>  
+   <tr>
+     <td valign="top">Accession number and database source</td>
+     <td valign="top">SequenceCollection/DBSequence/accession</td>
+     <td valign="top">Each protein result has an id which identifies the database and accession</td>
+     <td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td valign="top">score(s) and any associated statistical information obtained for searches conducted;</td>
+     <td valign="top">DataCollection/AnalysisData/ProteinDetectionList/ProteinAmbiguityGroup/ProteinDetectionHypothesis/cvParam</td>
+     <td valign="top">Scores etc. are different for each search engine.</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>na</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>  
+   <tr>
+     <td valign="top">sequence coverage, expressed as the number of amino acids spanned by the assigned peptides divided by the sequence length;</td>
+     <td valign="top">DataCollection/AnalysisData/ProteinDetectionList/ProteinAmbiguityGroup/ProteinDetectionHypothesis/cvParam<br /> accession="MS:1001093"</td>
+     <td valign="top">&nbsp;</td>
+     <td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td valign="top">the total number of peptides assigned to the protein. To compute this number, multiple matches to peptides with the same primary sequence count as one, even if they represent different charge states or modification states;</td>
+     <td valign="top">DataCollection/AnalysisData/ProteinDetectionList/ProteinAmbiguityGroup/ProteinDetectionHypothesis/cvParam<br /> accession="MS:1001097" or "MS:1001098"</td>
+     <td valign="top">See definitions for MS:1001097 and MS:1001098</td>
+     <td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td>
+   </tr>  
+   </tr>  
+   <tr>
+     <td valign="top" colspan="13"><a name="SinglePeptide"><strong>In addition to the above information, for single peptide-based identifications the following data should be provided:</strong></a></td>
+   </tr>  
+   <tr>
+     <td valign="top">peptide sequence, noting any deviation from the expected protein cleavage specificity;</td>
+     <td valign="top">SequenceCollection/Peptide/peptideSequence</td>
+     <td valign="top">Does not show deviation from expected cleavage specificity. This would need to be derived.</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td valign="top">modifications</td>
+     <td valign="top">SequenceCollection/Peptide/Modification</td>
+     <td valign="top">Complete information about which sites are modified is available</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td valign="top" rowspan="3">precursor mass, charge and mass error observed;</td>
+     <td valign="top">DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/chargeState</td>
+     <td valign="top">Charge state</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td valign="top">DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/experimentalMassToCharge</td>
+     <td valign="top">Precursor mass</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>
+   <tr>
+     <td valign="top">DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/calculatedMassToCharge<br /> - <br />DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/experimentalMassToCharge</td>
+     <td valign="top">Mass error observed</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>
+   <tr>
+     <td valign="top">score(s) and any associated statistical information;</td>
+     <td valign="top">DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/cvParam</td>
+     <td valign="top">&nbsp;</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>na</td>
+   </tr>  
+   <tr>
+     <td valign="top">MS/MS spectrum annotated with masses observed as well as fragment assignments</td>
+     <td valign="top">DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/Fragmentation/IonType/FragmentArray</td>
+     <td valign="top">This contains the information required to be able to generate an annotated spectrum</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>na</td>
+   </tr>  
+   <tr>
+     <td valign="top" rowspan="4"><a name="3">3</a></td>
+     <td  valign="top"rowspan="4">Additional potentially valuable information could include the retention time of each peptide, the observation of multiple charge states, multiple observations of the same peptide, flanking residues, start and end positions of peptides in proteins, and any platform-specific information.</td>
+     <td>&nbsp;</td>
+     <td valign="top">The retention time may be available from the mzML, mzData or MGF file that is referenced.</td>
+     <td>na</td><td>na</td><td>na</td><td>na</td><td>na</td><td>na</td><td>na</td><td>na</td>
+   </tr>
+   <tr>
+     <td valign="top">&nbsp;</td>
+     <td valign="top">Multiple observations are permiited, so it is trivial to extract information about the observation of multiple charge states, multiple observations of the same peptide</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>na</td><td>&#10003;</td>
+   </tr>
+   <tr>
+     <td valign="top">SequenceCollection/PeptideEvidence/pre &amp; post</td>
+     <td valign="top">Flanking residues</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>
+   <tr>
+     <td valign="top">SequenceCollection/start &amp; end</td>
+     <td valign="top">Start and end positions</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td>
+   </tr>  
+   <tr>
+     <td valign="top" rowspan="1"><a name="4">4</a></td>
+     <td>Manuscripts presenting any conclusions citing quantitative proteomic results should contain the following information:</td>
+     <td>&nbsp;</td>
+     <td nowrap>Out of scope - will be included in mzQuantML</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>
+   <tr>
+     <td valign="top" rowspan="4"><a name="5">5</a></td>
+     <td colspan="13"><strong>Studies focusing on posttranslational modifications</strong></td>
+   </tr>
+   <tr>
+     <td>... require specialized methodology and documentation to assign the presence and the site(s) of modification. Certain modifications are also nominally isobaric (e.g., acetylation vs trimethylation, phosphorylation vs sulfation). If one of these modifications is being reported, then evidence for assigning a specific modification over another must be presented. Examples of methods able to distinguish between these include mass spectrometric approaches such as accurate mass determination, observation of signature fragment ions (e.g. m/z 79 vs m/z 80 in negative ion mode for assignment of phosphorylation over sulfation), or biological or chemical strategies.</td>
+     <td>&nbsp;</td>
+     <td valign="top">Not currently supported</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>
+   <tr>
+     <td valign="top">In the tabular presentation of the data, authors are required to show 1) the sequence of the peptide used to make each such assignment, 2) the precursor mass and charge (not just m/z) observed, and 3) the search engine score for this peptide. Frequently more than one possible site of modification exists within a given peptide sequence. Assignment of specific site(s) of modification requires observation of fragment ions that distinguish among the possible sites. When ambiguity with regard to the modification site cannot be resolved, then the ambiguity must be explicitly shown in the tables (e.g., ALEG(sss)YLLK where one of the three Ser residues in parentheses is phosphorylated, but the spectra do not permit assignment of which one). The number of detected modifications in each peptide (e.g, 1, 2 or 3 phosphates) must also be included in the table.</td>
+     <td valign="top">&nbsp;</td>
+     <td valign="top">As described in Section 2.<br /> To produce a table, a simple xslt could for example be written.</td>
+     <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+   </tr>   
+   <tr>
+     <td>In all cases involving the assignment of a posttranslational modification(s) , we require that copies of the annotated, mass labeled spectra for those modified peptides be submitted electronically together with the manuscript for review purposes. Authors are required to present representative spectra of posttranslationally modified peptides in the body of the text and the remaining annotated spectra as supplemental material. In addition, authors are encouraged to provide the corresponding peak (m/z and intensity) lists for review.</td>
+     <td valign="top">AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/Fragmentation/IonType/FragmentArray</td>
+     <td valign="top">This contains the information required to be able to generate an annotated spectrum</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>na</td>
+   </tr>   
+   <tr>
+     <td valign="top" rowspan="1"><a name="6">6</a></td>
+     <td>While more reliable results for peptide identification are generally produced by MS/MS data, in selected circumstances, such as analysis of 2D gel spots, peptide mass fingerprinting can be an effective choice of technique for protein identification. For each identification, an annotated mass spectrum must be supplied. We also encourage the submission of the peak lists for review. In the tabular presentation of the results the authors must supply: 1) the number of matched peaks, 2) the number of unmatched peaks, and 3) the sequence coverage. Some probability value attached to this identification should be presented; for example, in addition to the score for the top match the score for the highest ranked hit to a non-homologous protein. They must describe the parameters and thresholds used to analyze the data (see guideline 1, above), including mass accuracy, resolution, means of calibrating each spectrum, and exclusion of known contaminant ions (keratin, etc.). Authors are required to use and provide the results of scoring schemes that provide a measure of identification certainty, or perform some measure of the false-positive rate.</td>
+     <td>&nbsp;</td>
+     <td valign="top">As described in Section 2.<br />The number of unmatched peaks is recorded using the CV term: accession="MS:1001362" name="number of unmatched peaks"</td>
+     <td>na</td><td>na</td><td>na</td><td>na</td><td>na</td><td>na</td><td>na</td><td>&#10003;</td>
+   </tr>
+   <tr>
+     <td valign="top" rowspan="1"><a name="7">7</a></td>
+     <td>Identical peptide sequences can be included in multiple unique protein sequences due to biological variation such as single amino acid variants, alternative splice forms, homologs, orthologs and paralogs. Other reasons for apparent redundancy in protein sequence database entries are the inclusion of sequence fragments and sequences with errors. Apparent redundancy can also occur due to clerical errors arising from the merger of multiple sequence databases or identical protein sequences appearing under different names or accession numbers.<br /><br />Experimental strategies based on proteolytic digestion of protein mixtures introduce the complication of loss of connectivity between peptides and their protein precursors. Assignment of peptide sequences results in two outcomes; distinct peptides that map to only one protein sequence or shared peptides that map to more than one protein sequence. Detection of shared peptides introduces an uncertainty between the possibility that a shared peptide can be mapped to more than one protein sequence (bioinformatics redundancy) versus the possibility that more than one precursor is in the original protein mixture (physical redundancy). The apparent ambiguity in peptide assignment requires reporting of a protein group. When assembling peptides into proteins and protein groups, authors should adhere to principles of parsimony, i.e., describe the minimum set of protein sequences that adequately accounts for all observed peptides. While the identification of shared peptides implies that multiple related protein sequences are present, the initial assumption should be that only a single form is being detected. Authors should explain and be able to justify cases where a single protein from a protein group has been singled out or that more than one member of a protein group is present. When reporting a summary list of peptides belonging to each protein group, peptides shared among multiple proteins and those unique to a specific protein should be clearly indicated. In addition, sometimes proteins are identified from a different species than the one being studied. For example, identification of a mouse or human protein in a hamster study. If such an orthologous protein is included, the circumstances should be mentioned and justified. </td>
+     <td nowrap>&nbsp;</td>
+     <td valign="top">mzIdentML does not require that the "parsimony" technique is used. It does allow representation and complete description of protein groups using the ProteinAmbiguityGroup and ProteinDetectionHypothesis elements </td>
+     <td>&#10003;</td><td>&nbsp;</td><td>&nbsp;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&nbsp;</td><td>&#10003;</td>
+   </tr>
+   <tr>
+     <td valign="top" rowspan="1"><a name="8">8</a></td>
+     <td>It is strongly encouraged (but not yet required) that all MS/MS spectra mentioned in the paper be submitted as supplemental material. Journals will vary in their ability to handle this information and authors are encouraged to provide access to raw MS data using other means, including group websites and public repositories, as they emerge, in addition to the journal itself.</td>
+     <td valign="top">&nbsp;</td>
+     <td valign="top">Not applicable</td>
+     <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+   </tr>
+
+  </tbody>
+</table>
