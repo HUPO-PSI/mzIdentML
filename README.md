@@ -38,81 +38,58 @@ Several example of the format can be download from the next link [Examples](http
 
 ## Tools, Libraries, readers and exporters
 
+1- [jmzIdentML](http://github.com/PRIDE-UTILITIES/jmzidentml/): Java API for reading and writing mzIdentML (**IMPORT AND EXPORT**) 
 
+2- [ms-data-core-api](http://github.com/PRIDE-UTILITIES/ms-data-core-api/): Java API for reading PSI standard file formats.
 
-| **Tool** | **Status** | **IMPORT/EXPORT** |
-| [Mascot](http://www.matrixscience.com/help/export_help.html#MZIDENTML) | mzIdentML Version 1.0 available in Mascot version 2.3, mzid stable version 1.1 available in Mascot version 2.4 | **EXPORT** |
-| OMSSA | [http://code.google.com/p/mzidentml-lib/](http://code.google.com/p/mzidentml-lib/) from the U.Liverpool group | **EXPORT** |
-| [MSGF+](http://proteomics.ucsd.edu/Software/MSGFPlus.html) | Full support for results into mzid 1.1 | **EXPORT** |
-| [Peaks](http://www.bioinfor.com/) | Native export of mzIdentML version 1.1 | **EXPORT** |
-| [Phenyx](http://www.genebio.com/products/phenyx/) | Exporter to mzIdentML v1.1 now available - contact GeneBio for details. | **EXPORT** |
-| PLGS |
-| [ProCon](http://www.ruhr-uni-bochum.de/mpc/software/ProCon/index.html.en) | 
+3- [Mascot](http://www.matrixscience.com/help/export_help.html#MZIDENTML): mzIdentML Version 1.0 available in Mascot version 2.3, mzid stable version 1.1 available in Mascot version 2.4 (**EXPORT** )
 
-- conversion of SEQUEST resp. Comet *.out files/folder information into mzIdentML 1.0 / 1.1 (SpectrumIdentificationResults only)
+4- OMSSA: [http://code.google.com/p/mzidentml-lib/](http://code.google.com/p/mzidentml-lib/) from the U.Liverpool group ( **EXPORT**)
 
-<span style="line-height: 1.5;">- conversion of ProteinScape 1.3 results into mzIdentML</span>
+5- [MSGF+](http://proteomics.ucsd.edu/Software/MSGFPlus.html): Full support for results into mzid 1.1 (**EXPORT**)
 
-- conversion of ProteinScape2.1 results into mzIdentML 1.1
+6- [Peaks](http://www.bioinfor.com/): Native export of mzIdentML version 1.1 (**EXPORT**)
 
-- conversion of ProteomeDiscoverer 1.1 + 1.2 *.msf and *.prot.xml files (Thermo) resp. ProteomeDiscoverer 1.3 + 1.4 *.msf files (Thermo) into mzIdentML 1.1
+7- [Phenyx](http://www.genebio.com/products/phenyx/): Exporter to mzIdentML v1.1 now available - contact GeneBio for details. ( **EXPORT**)
 
- | **EXPORT** |
-| ProteinPilot | Contact is Sean Seymour |
-| ProteinScape | Work in progress |
-| SEQUEST - Native | ProCon (see above) |
-| [ProteoWizard](http://proteowizard.sourceforge.net) | pepXML converter available now - impl. of C++ library for reading/writing MzIdentML / interface for importing other formats | **IMPORT AND EXPORT** |
-| SEQUEST - BioWorks | Work in progress |
-| SEQUEST - Proteome Discoverer | Work in progress (exporters available from ProCon project) |
-| SpectraST | Proteowizard conversion from pepXML | **EXPORT** |
-| Spectrum Mill |
-| X!Tandem | [http://code.google.com/p/mzidentml-lib/](http://code.google.com/p/mzidentml-lib/) from the U.Liverpool group. | **EXPORT** |
-| [OpenMS](http://open-ms.sourceforge.net/) | Fully supported in release 1.9 | **IMPORT AND EXPORT** |
-| [Scaffold](http://www.proteomesoftware.com/) | 
+8- [ProCon](http://www.ruhr-uni-bochum.de/mpc/software/ProCon/index.html.en) (EXPORT):
 
-Available now in Scaffold version 3.0 (export only); Scaffold 4.0 supports IMPORT AND EXPORT
+     - conversion of SEQUEST resp. Comet *.out files/folder information into mzIdentML 1.0 / 1.1 
+       (SpectrumIdentificationResults only)
 
- | **IMPORT AND EXPORT (In 4.0)
-** |
-| [Scaffold PTM](http://www.proteomesoftware.com/products/ptm/) | Scaffold PTM tool imports identifications in mzIdentML | **IMPORT** |
-| [Scaffold perSPECtives](http://www.proteomesoftware.com/products/perspectives/) | Supports import of mzIdentML (as long as a ProteinDetectionList is present) | **IMPORT** |
-| TPP | pepXML to mzIdentML converter available from [ProteoWizard](http://proteowizard.sourceforge.net) | **IMPORT AND EXPORT** |
-| Mascot Integra | Scheduled |
-| MIAPE MSI Extractor | Tool available from the [ProteoRed](http://www.proteored.org "ProteoRed") team: [latest version available here](http://proteo.cnb.csic.es/miape-api/MIAPE_Extractor/ "MIAPE_Extractor"). | **IMPORT** |
-| 
+     - conversion of ProteinScape 1.3 results into mzIdentML
 
-CSV exporter
+     - conversion of ProteinScape2.1 results into mzIdentML 1.1
 
- | 
+     - conversion of ProteomeDiscoverer 1.1 + 1.2 *.msf and *.prot.xml files (Thermo) resp. ProteomeDiscoverer 1.3     
+       + 1.4 *.msf files (Thermo) into mzIdentML 1.1
 
-mzIdentML2CSV in [http://code.google.com/p/mzidentml-lib/](http://code.google.com/p/mzidentml-lib/) converter written by U.Liverpool group
+9- [ProteoWizard](http://proteowizard.sourceforge.net): pepXML converter available now - impl. of C++ library for reading/writing MzIdentML / interface for importing other formats (**IMPORT AND EXPORT**)
 
- | **IMPORT** |
-| [PAnalyzer](https://code.google.com/p/ehu-bio/wiki/PAnalyzer) | The PAnalyzer tool developed by the University of the Basque Country also imports and exports mzIdentML (v1.0.0 and v1.1.0) | **IMPORT AND EXPORT** |
-| [Myrimatch](http://fenchurch.mc.vanderbilt.edu/software.php) | Identifications exported in mzIdentML | **EXPORT** |
-| [TagRecon](http://fenchurch.mc.vanderbilt.edu/software.php) | Identifications exported in mzIdentML | **EXPORT** |
-| [Pepitome](http://fenchurch.mc.vanderbilt.edu/bumbershoot/pepitome/index.html) | Identifications exported in mzIdentML | **EXPORT** |
-| [IDPicker](http://fenchurch.mc.vanderbilt.edu/software.php) | Version 3.x implements mzIdentML import | **IMPORT** |
-| [jmzIdentML](http://code.google.com/p/jmzidentml/) | Java API for reading and writing mzIdentML | **IMPORT AND EXPORT** |
-| [mzidLibrary](http://code.google.com/p/mzidentml-lib/) | Library of routines for post-processing mzIdentML (setting thresholds, FDR, protein inference, CSV export) | ****IMPORT AND EXPORT**** |
-| [ProteoIDViewer](http://code.google.com/p/mzidentml-viewer/) | Open source viewer | ******IMPORT****** |
-| 
+10- X!Tandem: [http://code.google.com/p/mzidentml-lib/](http://code.google.com/p/mzidentml-lib/) from the U.Liverpool group. (**EXPORT**)
 
-[mzID package](http://www.bioconductor.org/packages/release/bioc/html/mzID.html)
+11- [OpenMS](http://open-ms.sourceforge.net/): Fully supported in release 1.9 (**IMPORT AND EXPORT**)
 
- | R package available throgh Bioconductor | **IMPORT** |
-| 
+12- [Scaffold](http://www.proteomesoftware.com/): Available now in Scaffold version 3.0 (export only); Scaffold 4.0 (IMPORT AND EXPORT)
 
-[PeptideShaker](https://code.google.com/p/peptide-shaker/)
+13- TPP: pepXML to mzIdentML converter available from [ProteoWizard](http://proteowizard.sourceforge.net) (**IMPORT AND EXPORT** )
 
- | Java standalone tool for the analysis and post-processing of MS proteomics experiments | ******IMPORT AND EXPORT****** |
-| 
+14- mzIdentML2CSV: [http://code.google.com/p/mzidentml-lib/](http://code.google.com/p/mzidentml-lib/) converter written by U.Liverpool group (IMPORTER)
 
-[Crux](http://cruxtoolkit.sourceforge.net/)
+15- [PAnalyzer](https://code.google.com/p/ehu-bio/wiki/PAnalyzer): The PAnalyzer tool developed by the University of the Basque Country also imports and exports mzIdentML (v1.0.0 and v1.1.0) (**IMPORT AND EXPORT**)
 
- | Software toolkit for tandem mass spectrometry analysis. [PMID: 18505281](http://www.ncbi.nlm.nih.gov/pubmed?term=18505281). | **IMPORT AND EXPORT** |
-| 
+16- [Myrimatch](http://fenchurch.mc.vanderbilt.edu/software.php): Identifications exported in mzIdentML (**EXPORT**)
 
-[PIA](https://github.com/mpc-bioinformatics/pia)
+17- [IDPicker](http://fenchurch.mc.vanderbilt.edu/software.php): Version 3.x implements mzIdentML import (**IMPORT**)
 
- | PIA is a toolbox for MS based protein inference and identification analysis. [PMID: <span>25938255</span>](http://www.ncbi.nlm.nih.gov/pubmed?term=25938255). | **IMPORT AND EXPORT** |
+18- [mzidLibrary](http://code.google.com/p/mzidentml-lib/): Library of routines for post-processing mzIdentML (setting thresholds, FDR, protein inference, CSV export) (****IMPORT AND EXPORT****)
+
+19- [ProteoIDViewer](http://code.google.com/p/mzidentml-viewer/): Open source viewer (**IMPORT**)
+
+20- [PRIDE Inspector Toolsuite](http://github.com/PRIDE-Toolsuite/pride-inspector): Open-Source Visualizer of PSI standard file formarts.
+
+21- [mzID package](http://www.bioconductor.org/packages/release/bioc/html/mzID.html): R package available through Bioconductor (**IMPORT**)
+
+22- [PeptideShaker](https://code.google.com/p/peptide-shaker/): Java standalone tool for the analysis and post-processing of MS proteomics experiments (**IMPORT AND EXPORT**)
+
+23- [PIA](https://github.com/mpc-bioinformatics/pia): PIA is a toolbox for MS based protein inference and identification analysis. [PMID: <span>25938255</span>](http://www.ncbi.nlm.nih.gov/pubmed?term=25938255). ( **IMPORT AND EXPORT**)
