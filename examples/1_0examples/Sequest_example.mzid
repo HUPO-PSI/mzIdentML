@@ -1,0 +1,1495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- created by ProCon (http://www.medizinisches-proteom-center.de/software) -->
+<mzIdentML id="SEQUEST_use_case" creationDate="2009-06-25T14:08:22" xmlns="http://psidev.info/psi/pi/mzIdentML/1.0" xmlns:pf="http://psidev.info/fuge-light/1.0" xmlns:psi-pi="http://psidev.info/psi/pi/mzIdentML/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.0 ../../schema/mzIdentML1.0.0.xsd" version="1.0.0">
+	<cvList>
+		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI=" http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
+		<cv id="NEWT" fullName="NEWT taxonomy database" URI="http://www.ebi.ac.uk/newt/display"/>
+		<cv id="UO" fullName="Unit Ontology" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+		<cv id="UNIMOD" fullName="unimod modifications ontology" URI="http://www.unimod.org/obo/unimod.obo"/>
+	</cvList>
+	<AnalysisSoftwareList>
+		<AnalysisSoftware id="AnaSoft_Sequest" name="ThermoFisher TurboSequest" version="PVM Master v.27 (rev. 12), (c) 1998-2007" URI="http://www.thermo.com/com/cda/product/detail/1,,16483,00.html">
+			<ContactRole Contact_ref="THERMOCORP">
+				<role>
+					<cvParam accession="MS:1001267" name="software vendor" cvRef="PSI-MS"/>
+				</role>
+			</ContactRole>
+			<SoftwareName>
+				<cvParam accession="MS:1001208" name="Sequest" cvRef="PSI-MS"/>
+			</SoftwareName>
+		</AnalysisSoftware>
+	</AnalysisSoftwareList>
+	<Provider id="MPCProvider">
+		<ContactRole Contact_ref="MPCMEYER">
+			<role>
+				<cvParam accession="MS:1001271" name="researcher" cvRef="PSI-MS"/>
+			</role>
+		</ContactRole>
+	</Provider>
+	<AuditCollection>
+		<Organization id="THERMOCORP" name="Thermo Corporation"/>
+		<Person id="MPCMEYER" name="Prof. Dr. Helmut E. Meyer" address="Universitaetsstr. 150, D-44795 Bochum, Germany" email="helmut.e.meyer@rub.de">
+			<affiliations Organization_ref="MPCINSTITUTE"/>
+		</Person>
+		<Organization id="MPCINSTITUTE" name="Medizinisches Proteom-Center" address="Bremen, Germany">
+			<parent Organization_ref="RUB"/>
+		</Organization>
+		<Organization id="RUB" name="Ruhr-Universitaet Bochum" address="Universitaetsstr. 150, D-44795 Bochum, Germany"/>
+	</AuditCollection>
+	<SequenceCollection>
+		<Peptide id="Pep1">
+			<peptideSequence>DANGY</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep2">
+			<peptideSequence>LCSAS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep3">
+			<peptideSequence>THPGK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep4">
+			<peptideSequence>MDNAS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep5">
+			<peptideSequence>HTPGK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep6">
+			<peptideSequence>HTGPK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep7">
+			<peptideSequence>ASCLS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep8">
+			<peptideSequence>DGEGC</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep9">
+			<peptideSequence>FFHS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep10">
+			<peptideSequence>HRGPA</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep11">
+			<peptideSequence>TTRC</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep12">
+			<peptideSequence>LMIY</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep13">
+			<peptideSequence>ALIFG</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep14">
+			<peptideSequence>YGHSG</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep15">
+			<peptideSequence>GRSGSG</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep16">
+			<peptideSequence>TPVSD</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep17">
+			<peptideSequence>NRSGS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep18">
+			<peptideSequence>KTKGS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep19">
+			<peptideSequence>TQQGS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep20">
+			<peptideSequence>TAKNS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep21">
+			<peptideSequence>EHMS</peptideSequence>
+			<Modification location="2" avgMassDelta="15.9949" residues="M">
+				<cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD"/>
+			</Modification>
+		</Peptide>
+		<Peptide id="Pep22">
+			<peptideSequence>PLAGY</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep23">
+			<peptideSequence>GYSHG</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep24">
+			<peptideSequence>AYLPG</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep25">
+			<peptideSequence>CPGTS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep26">
+			<peptideSequence>DHYS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep27">
+			<peptideSequence>RQMS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep28">
+			<peptideSequence>TRGTS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep29">
+			<peptideSequence>AQSES</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep30">
+			<peptideSequence>QASES</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep31">
+			<peptideSequence>KVSTS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep32">
+			<peptideSequence>TKADS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep33">
+			<peptideSequence>TPCS</peptideSequence>
+			<Modification location="2" avgMassDelta="57.0" residues="C">
+				<cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD"/>
+			</Modification>
+		</Peptide>
+		<Peptide id="Pep34">
+			<peptideSequence>CAIR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep35">
+			<peptideSequence>CALR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep36">
+			<peptideSequence>TQEAA</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep37">
+			<peptideSequence>IIAYG</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep38">
+			<peptideSequence>PQMY</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep39">
+			<peptideSequence>WLMS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep40">
+			<peptideSequence>TGNSTG</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep41">
+			<peptideSequence>PAFTT</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep42">
+			<peptideSequence>DSLTT</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep43">
+			<peptideSequence>SHHR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep44">
+			<peptideSequence>GHYC</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep45">
+			<peptideSequence>CLTS</peptideSequence>
+			<Modification location="0" avgMassDelta="57.0" residues="C">
+				<cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD"/>
+			</Modification>
+		</Peptide>
+		<Peptide id="Pep46">
+			<peptideSequence>CLSTG</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep47">
+			<peptideSequence>MTPMG</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep48">
+			<peptideSequence>ASSDTG</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep49">
+			<peptideSequence>HVGPK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep50">
+			<peptideSequence>EEKPSSAPSS</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep51">
+			<peptideSequence>LPPASLKHR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep52">
+			<peptideSequence>IDGSTPSADR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep53">
+			<peptideSequence>PLPASPVPLK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep54">
+			<peptideSequence>DRATLTADR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep55">
+			<peptideSequence>CSKPKGADR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep56">
+			<peptideSequence>RLEEEADR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep57">
+			<peptideSequence>RFGIVRLR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep58">
+			<peptideSequence>LLLTCADR</peptideSequence>
+			<Modification location="4" avgMassDelta="57.0" residues="C">
+				<cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD"/>
+			</Modification>
+		</Peptide>
+		<Peptide id="Pep59">
+			<peptideSequence>RQRLSSDR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep60">
+			<peptideSequence>CEAINKAGR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep61">
+			<peptideSequence>DIVEISADR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep62">
+			<peptideSequence>REAEATALR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep63">
+			<peptideSequence>TKHLRMESRPDR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep64">
+			<peptideSequence>RPILTIITLEDSR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep65">
+			<peptideSequence>IVVAAVAIAAARCNK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep66">
+			<peptideSequence>KIVHTDALIIDMR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep67">
+			<peptideSequence>TLFEQAKQASSCR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep68">
+			<peptideSequence>VCGCLAPMTCSR</peptideSequence>
+			<Modification location="3" avgMassDelta="57.0" residues="C">
+				<cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD"/>
+			</Modification>
+			<Modification location="9" avgMassDelta="57.0" residues="C">
+				<cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD"/>
+			</Modification>
+		</Peptide>
+		<Peptide id="Pep69">
+			<peptideSequence>VCGCLAPMTCSR</peptideSequence>
+			<Modification location="1" avgMassDelta="57.0" residues="C">
+				<cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD"/>
+			</Modification>
+			<Modification location="9" avgMassDelta="57.0" residues="C">
+				<cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD"/>
+			</Modification>
+		</Peptide>
+		<Peptide id="Pep70">
+			<peptideSequence>PSSPIPLLPPPKKR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep71">
+			<peptideSequence>TLDFTARYHSWK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep72">
+			<peptideSequence>DSLMPSDEASETSR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep73">
+			<peptideSequence>LTPRIARLTGSWR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep74">
+			<peptideSequence>SPEGHKYSFRYR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep75">
+			<peptideSequence>LQDCLSSPSSSSTR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep76">
+			<peptideSequence>LQGLQAVLAK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep77">
+			<peptideSequence>PKAAGQASGPR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep78">
+			<peptideSequence>LDTSAHDGPK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep79">
+			<peptideSequence>IKGNIALAIK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep80">
+			<peptideSequence>ADLSTVGHIK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep81">
+			<peptideSequence>CPAHRSALK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep82">
+			<peptideSequence>QGLVSSRHR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep83">
+			<peptideSequence>AAPGTGGPTPGR</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep84">
+			<peptideSequence>LEGKVPMHK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep85">
+			<peptideSequence>LWSKMFTK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep86">
+			<peptideSequence>SLVPEALALK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep87">
+			<peptideSequence>AVKAIKALVK</peptideSequence>
+		</Peptide>
+		<Peptide id="Pep88">
+			<peptideSequence>WIPLINER</peptideSequence>
+		</Peptide>
+	</SequenceCollection>
+	<AnalysisCollection>
+		<SpectrumIdentification id="SpecIdent1" SpectrumIdentificationProtocol_ref="SpecIdentProt1" SpectrumIdentificationList_ref="SpIdLi1" activityDate="2008-08-01T15:12:39">
+			<InputSpectra SpectraData_ref="DTA1"/>
+			<InputSpectra SpectraData_ref="DTA2"/>
+			<InputSpectra SpectraData_ref="DTA3"/>
+			<InputSpectra SpectraData_ref="DTA4"/>
+			<InputSpectra SpectraData_ref="DTA5"/>
+			<InputSpectra SpectraData_ref="DTA6"/>
+			<InputSpectra SpectraData_ref="DTA7"/>
+			<SearchDatabase SearchDatabase_ref="StdCry_nr.fasta1"/>
+		</SpectrumIdentification>
+	</AnalysisCollection>
+	<AnalysisProtocolCollection>
+		<SpectrumIdentificationProtocol id="SpecIdentProt1" AnalysisSoftware_ref="AnaSoft_Sequest">
+			<SearchType>
+				<cvParam accession="MS:1001083" name="ms-ms search" cvRef="PSI-MS"/>
+			</SearchType>
+			<ModificationParams>
+				<SearchModification fixedMod="false">
+					<ModParam massDelta="57.0" residues="C">
+						<cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD"/>
+					</ModParam>
+				</SearchModification>
+				<SearchModification fixedMod="false">
+					<ModParam massDelta="15.9949" residues="M">
+						<cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD"/>
+					</ModParam>
+				</SearchModification>
+				<SearchModification fixedMod="true">
+					<ModParam massDelta="57.0" residues="C">
+						<cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD"/>
+					</ModParam>
+				</SearchModification>
+			</ModificationParams>
+			<Enzymes>
+				<Enzyme id="ENZ1" CTermGain="OH" NTermGain="H" minDistance="1" missedCleavages="5" semiSpecific="0">
+					<EnzymeName>
+						<cvParam accession="MS:1001251" name="Trypsin" cvRef="PSI-MS"/>
+					</EnzymeName>
+				</Enzyme>
+			</Enzymes>
+			<MassTable id="MT1" msLevel="1 2">
+				<Residue Code="A" Mass="71.078225"/>
+				<Residue Code="C" Mass="103.143725"/>
+				<Residue Code="D" Mass="115.087865"/>
+				<Residue Code="E" Mass="129.114539"/>
+				<Residue Code="F" Mass="147.174693"/>
+				<Residue Code="G" Mass="57.051551"/>
+				<Residue Code="H" Mass="137.139899"/>
+				<Residue Code="I" Mass="113.158247"/>
+				<Residue Code="J" Mass="118.89"/>
+				<Residue Code="K" Mass="128.172914"/>
+				<Residue Code="L" Mass="113.158247"/>
+				<Residue Code="M" Mass="131.197073"/>
+				<Residue Code="N" Mass="114.103102"/>
+				<Residue Code="O" Mass="114.1472"/>
+				<Residue Code="P" Mass="97.115679"/>
+				<Residue Code="Q" Mass="128.129776"/>
+				<Residue Code="R" Mass="156.186354"/>
+				<Residue Code="S" Mass="87.077655"/>
+				<Residue Code="T" Mass="101.104329"/>
+				<Residue Code="U" Mass="118.89"/>
+				<Residue Code="V" Mass="99.131573"/>
+				<Residue Code="W" Mass="186.21092"/>
+				<Residue Code="X" Mass="113.1594"/>
+				<Residue Code="Y" Mass="163.174123"/>
+			</MassTable>
+			<FragmentTolerance>
+				<cvParam accession="MS:1001412" name="search tolerance plus value" cvRef="PSI-MS" value="1.5" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+				<cvParam accession="MS:1001413" name="search tolerance minus value" cvRef="PSI-MS" value="1.5" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+			</FragmentTolerance>
+			<ParentTolerance>
+				<cvParam accession="MS:1001412" name="search tolerance plus value" cvRef="PSI-MS" value="1.5" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+				<cvParam accession="MS:1001413" name="search tolerance minus value" cvRef="PSI-MS" value="1.5" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+			</ParentTolerance>
+			<Threshold>
+				<cvParam accession="MS:1001494" name="no threshold" cvRef="PSI-MS"/>
+			</Threshold>
+		</SpectrumIdentificationProtocol>
+	</AnalysisProtocolCollection>
+	<DataCollection>
+		<Inputs>
+			<SourceFile id="SFOUT1" location="file://www.medizinisches-proteom-center.de/martine/SEQUEST/example_folder/PMXPWE080620_38.2.69.1.out">
+				<fileFormat>
+					<cvParam accession="MS:1001200" name="Sequest out file" cvRef="PSI-MS"/>
+				</fileFormat>
+			</SourceFile>
+			<SourceFile id="SFOUT2" location="file://www.medizinisches-proteom-center.de/martine/SEQUEST/example_folder/PMXPWE080620_38.187.257.1.out">
+				<fileFormat>
+					<cvParam accession="MS:1001200" name="Sequest out file" cvRef="PSI-MS"/>
+				</fileFormat>
+			</SourceFile>
+			<SourceFile id="SFOUT3" location="file://www.medizinisches-proteom-center.de/martine/SEQUEST/example_folder/PMXPWE080620_38.282.282.1.out">
+				<fileFormat>
+					<cvParam accession="MS:1001200" name="Sequest out file" cvRef="PSI-MS"/>
+				</fileFormat>
+			</SourceFile>
+			<SourceFile id="SFOUT4" location="file://www.medizinisches-proteom-center.de/martine/SEQUEST/example_folder/PMXPWE080620_38.505.808.1.out">
+				<fileFormat>
+					<cvParam accession="MS:1001200" name="Sequest out file" cvRef="PSI-MS"/>
+				</fileFormat>
+			</SourceFile>
+			<SourceFile id="SFOUT5" location="file://www.medizinisches-proteom-center.de/martine/SEQUEST/example_folder/PMXPWE080620_38.687.687.2.out">
+				<fileFormat>
+					<cvParam accession="MS:1001200" name="Sequest out file" cvRef="PSI-MS"/>
+				</fileFormat>
+			</SourceFile>
+			<SourceFile id="SFOUT6" location="file://www.medizinisches-proteom-center.de/martine/SEQUEST/example_folder/PMXPWE080620_38.687.687.3.out">
+				<fileFormat>
+					<cvParam accession="MS:1001200" name="Sequest out file" cvRef="PSI-MS"/>
+				</fileFormat>
+			</SourceFile>
+			<SourceFile id="SFOUT7" location="file://www.medizinisches-proteom-center.de/martine/SEQUEST/example_folder/PMXPWE080620_38.693.693.2.out">
+				<fileFormat>
+					<cvParam accession="MS:1001200" name="Sequest out file" cvRef="PSI-MS"/>
+				</fileFormat>
+			</SourceFile>
+			<SearchDatabase id="StdCry_nr.fasta1" location="file://www.medizinisches-proteom-center.de/sequestmaster/work/Datenbank/StdCry_nr.fasta" name="StdCry_nr.fasta" numDatabaseSequences="119815">
+				<DatabaseName>
+					<userParam name="StdCry_nr.fasta"/>
+				</DatabaseName>
+			</SearchDatabase>
+			<SpectraData id="DTA1" location="file://www.medizinisches-proteom-center.de/martine/SEQUEST/example_folder/PMXPWE080620_38.2.69.1.dta">
+				<fileFormat>
+					<cvParam accession="MS:1000613" name="DTA file" cvRef="PSI-MS"/>
+				</fileFormat>
+				<spectrumIDFormat>
+					<cvParam accession="MS:1000775" name="single peak list nativeID format" cvRef="PSI-MS"/>
+				</spectrumIDFormat>
+			</SpectraData>
+			<SpectraData id="DTA2" location="file://www.medizinisches-proteom-center.de/martine/SEQUEST/example_folder/PMXPWE080620_38.187.257.1.dta">
+				<fileFormat>
+					<cvParam accession="MS:1000613" name="DTA file" cvRef="PSI-MS"/>
+				</fileFormat>
+				<spectrumIDFormat>
+					<cvParam accession="MS:1000775" name="single peak list nativeID format" cvRef="PSI-MS"/>
+				</spectrumIDFormat>
+			</SpectraData>
+			<SpectraData id="DTA3" location="file://www.medizinisches-proteom-center.de/martine/SEQUEST/example_folder/PMXPWE080620_38.282.282.1.dta">
+				<fileFormat>
+					<cvParam accession="MS:1000613" name="DTA file" cvRef="PSI-MS"/>
+				</fileFormat>
+				<spectrumIDFormat>
+					<cvParam accession="MS:1000775" name="single peak list nativeID format" cvRef="PSI-MS"/>
+				</spectrumIDFormat>
+			</SpectraData>
+			<SpectraData id="DTA4" location="file://www.medizinisches-proteom-center.de/martine/SEQUEST/example_folder/PMXPWE080620_38.505.808.1.dta">
+				<fileFormat>
+					<cvParam accession="MS:1000613" name="DTA file" cvRef="PSI-MS"/>
+				</fileFormat>
+				<spectrumIDFormat>
+					<cvParam accession="MS:1000775" name="single peak list nativeID format" cvRef="PSI-MS"/>
+				</spectrumIDFormat>
+			</SpectraData>
+			<SpectraData id="DTA5" location="file://www.medizinisches-proteom-center.de/martine/SEQUEST/example_folder/PMXPWE080620_38.687.687.2.dta">
+				<fileFormat>
+					<cvParam accession="MS:1000613" name="DTA file" cvRef="PSI-MS"/>
+				</fileFormat>
+				<spectrumIDFormat>
+					<cvParam accession="MS:1000775" name="single peak list nativeID format" cvRef="PSI-MS"/>
+				</spectrumIDFormat>
+			</SpectraData>
+			<SpectraData id="DTA6" location="file://www.medizinisches-proteom-center.de/martine/SEQUEST/example_folder/PMXPWE080620_38.687.687.3.dta">
+				<fileFormat>
+					<cvParam accession="MS:1000613" name="DTA file" cvRef="PSI-MS"/>
+				</fileFormat>
+				<spectrumIDFormat>
+					<cvParam accession="MS:1000775" name="single peak list nativeID format" cvRef="PSI-MS"/>
+				</spectrumIDFormat>
+			</SpectraData>
+			<SpectraData id="DTA7" location="file://www.medizinisches-proteom-center.de/martine/SEQUEST/example_folder/PMXPWE080620_38.693.693.2.dta">
+				<fileFormat>
+					<cvParam accession="MS:1000613" name="DTA file" cvRef="PSI-MS"/>
+				</fileFormat>
+				<spectrumIDFormat>
+					<cvParam accession="MS:1000775" name="single peak list nativeID format" cvRef="PSI-MS"/>
+				</spectrumIDFormat>
+			</SpectraData>
+		</Inputs>
+		<AnalysisData>
+			<SpectrumIdentificationList id="SpIdLi1">
+				<SpectrumIdentificationResult id="SpIdLi1_Res1" spectrumID="file=DTA2" SpectraData_ref="DTA2">
+					<SpectrumIdentificationItem id="SpIdLi1_Res1_It1" Peptide_ref="Pep1" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="538.723900" calculatedMassToCharge="539.517470" passThreshold="true" rank="1">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="1"/>
+						<userParam name="sequest:PeptideRank" value="1"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="6"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="1.0383"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="122.8"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="5"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res1_It2" Peptide_ref="Pep2" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="538.723900" calculatedMassToCharge="537.579570" passThreshold="true" rank="2">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="2"/>
+						<userParam name="sequest:PeptideRank" value="2"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="64"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.4834"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.5364"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="21.5"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res1_It3" Peptide_ref="Pep3" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="538.723900" calculatedMassToCharge="539.606970" passThreshold="true" rank="3">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="3"/>
+						<userParam name="sequest:PeptideRank" value="3"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="45"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.5905"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.4252"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="32.2"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="2"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res1_It4" Peptide_ref="Pep4" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="538.723900" calculatedMassToCharge="537.566520" passThreshold="true" rank="4">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="4"/>
+						<userParam name="sequest:PeptideRank" value="4"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="86"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.5911"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.4246"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="12.3"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="2"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res1_It5" Peptide_ref="Pep5" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="538.723900" calculatedMassToCharge="539.606970" passThreshold="true" rank="5">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="5"/>
+						<userParam name="sequest:PeptideRank" value="5"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="27"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.5978"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.4176"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="54.4"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res1_It6" Peptide_ref="Pep6" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="538.723900" calculatedMassToCharge="539.606970" passThreshold="true" rank="6">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="6"/>
+						<userParam name="sequest:PeptideRank" value="6"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="2"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.6021"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.4131"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="135.1"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="4"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res1_It7" Peptide_ref="Pep7" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="538.723900" calculatedMassToCharge="537.579570" passThreshold="true" rank="7">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="7"/>
+						<userParam name="sequest:PeptideRank" value="7"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="98"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.715"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.296"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="8.8"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="2"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res1_It8" Peptide_ref="Pep8" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="538.723900" calculatedMassToCharge="537.493290" passThreshold="true" rank="8">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="8"/>
+						<userParam name="sequest:PeptideRank" value="8"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="7"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.7169"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.294"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="94.1"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="4"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res1_It9" Peptide_ref="Pep9" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="538.723900" calculatedMassToCharge="537.589540" passThreshold="true" rank="9">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="9"/>
+						<userParam name="sequest:PeptideRank" value="9"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="11"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.7266"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.2839"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="78.7"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="6"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res1_It10" Peptide_ref="Pep10" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="538.723900" calculatedMassToCharge="537.594310" passThreshold="true" rank="10">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="10"/>
+						<userParam name="sequest:PeptideRank" value="10"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="23"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.7283"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.2821"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="58.2"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="4"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res1_It11" Peptide_ref="Pep11" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="538.723900" calculatedMassToCharge="537.582800" passThreshold="true" rank="11">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="11"/>
+						<userParam name="sequest:PeptideRank" value="11"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="77"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.7294"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.281"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="15.3"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="2"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="6"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res1_It12" Peptide_ref="Pep12" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="538.723900" calculatedMassToCharge="539.710290" passThreshold="true" rank="12">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="12"/>
+						<userParam name="sequest:PeptideRank" value="12"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="12"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.7323"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.2779"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="78.4"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="6"/>
+					</SpectrumIdentificationItem>
+				</SpectrumIdentificationResult>
+				<SpectrumIdentificationResult id="SpIdLi1_Res2" spectrumID="file=DTA1" SpectraData_ref="DTA1">
+					<SpectrumIdentificationItem id="SpIdLi1_Res2_It1" Peptide_ref="Pep13" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="519.978900" calculatedMassToCharge="520.643560" passThreshold="true" rank="1">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="1"/>
+						<userParam name="sequest:PeptideRank" value="1"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="20"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.6498"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="68.6"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="4"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res2_It2" Peptide_ref="Pep14" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="519.978900" calculatedMassToCharge="520.517380" passThreshold="true" rank="2">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="2"/>
+						<userParam name="sequest:PeptideRank" value="2"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.1284"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.5664"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="124.3"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="5"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res2_It3" Peptide_ref="Pep15" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="519.978900" calculatedMassToCharge="520.518920" passThreshold="true" rank="3">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="3"/>
+						<userParam name="sequest:PeptideRank" value="3"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="26"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.337"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.4308"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="65.0"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="4"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="10"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res2_It4" Peptide_ref="Pep16" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="519.978900" calculatedMassToCharge="518.539700" passThreshold="true" rank="4">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="4"/>
+						<userParam name="sequest:PeptideRank" value="4"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="1"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.3711"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.4086"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="137.1"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="5"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res2_It5" Peptide_ref="Pep17" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="519.978900" calculatedMassToCharge="520.518920" passThreshold="true" rank="5">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="5"/>
+						<userParam name="sequest:PeptideRank" value="5"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="92"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.4093"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3839"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="34.1"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res2_It6" Peptide_ref="Pep18" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="519.978900" calculatedMassToCharge="520.601960" passThreshold="true" rank="6">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="6"/>
+						<userParam name="sequest:PeptideRank" value="6"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="150"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.415"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3802"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="15.6"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="2"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res2_It7" Peptide_ref="Pep19" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="519.978900" calculatedMassToCharge="520.515690" passThreshold="true" rank="7">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="7"/>
+						<userParam name="sequest:PeptideRank" value="7"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="77"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.4152"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.38"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="38.2"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res2_It8" Peptide_ref="Pep20" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="519.978900" calculatedMassToCharge="520.558830" passThreshold="true" rank="8">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="8"/>
+						<userParam name="sequest:PeptideRank" value="8"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="5"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.4349"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3672"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="101.2"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="4"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res2_It9" Peptide_ref="Pep21" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="519.978900" calculatedMassToCharge="519.546680" passThreshold="true" rank="9">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="9"/>
+						<userParam name="sequest:PeptideRank" value="9"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="134"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.5054"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3214"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="20.8"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="2"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="6"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res2_It10" Peptide_ref="Pep22" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="519.978900" calculatedMassToCharge="520.600430" passThreshold="true" rank="10">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="10"/>
+						<userParam name="sequest:PeptideRank" value="10"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="143"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.5668"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.2815"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="18.0"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="2"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res2_It11" Peptide_ref="Pep23" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="519.978900" calculatedMassToCharge="520.517380" passThreshold="true" rank="11">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="11"/>
+						<userParam name="sequest:PeptideRank" value="11"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="58"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.5712"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.2786"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="45.1"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res2_It12" Peptide_ref="Pep24" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="519.978900" calculatedMassToCharge="520.600430" passThreshold="true" rank="12">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="12"/>
+						<userParam name="sequest:PeptideRank" value="12"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="131"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.6042"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.2572"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="21.8"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+				</SpectrumIdentificationResult>
+				<SpectrumIdentificationResult id="SpIdLi1_Res3" spectrumID="file=DTA3" SpectraData_ref="DTA3">
+					<SpectrumIdentificationItem id="SpIdLi1_Res3_It1" Peptide_ref="Pep25" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="520.914900" calculatedMassToCharge="521.537000" passThreshold="true" rank="1">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="1"/>
+						<userParam name="sequest:PeptideRank" value="1"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="115"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.5477"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="29.4"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res3_It2" Peptide_ref="Pep26" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="520.914900" calculatedMassToCharge="521.502140" passThreshold="true" rank="2">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="2"/>
+						<userParam name="sequest:PeptideRank" value="2"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="90"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0163"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.5387"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="38.7"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="6"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res3_It3" Peptide_ref="Pep27" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="520.914900" calculatedMassToCharge="521.613460" passThreshold="true" rank="3">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="3"/>
+						<userParam name="sequest:PeptideRank" value="3"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="52"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.2425"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.4149"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="54.9"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="6"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res3_It4" Peptide_ref="Pep28" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="520.914900" calculatedMassToCharge="521.546820" passThreshold="true" rank="4">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="4"/>
+						<userParam name="sequest:PeptideRank" value="4"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="101"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.2836"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3924"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="34.0"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res3_It5" Peptide_ref="Pep29" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="520.914900" calculatedMassToCharge="521.500450" passThreshold="true" rank="5">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="5"/>
+						<userParam name="sequest:PeptideRank" value="5"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="84"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.3237"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3704"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="41.2"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res3_It6" Peptide_ref="Pep30" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="520.914900" calculatedMassToCharge="521.500450" passThreshold="true" rank="6">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="6"/>
+						<userParam name="sequest:PeptideRank" value="6"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="84"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.3336"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.365"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="41.2"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res3_It7" Peptide_ref="Pep31" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="520.914900" calculatedMassToCharge="521.586730" passThreshold="true" rank="7">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="7"/>
+						<userParam name="sequest:PeptideRank" value="7"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="12"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.3516"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3551"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="92.3"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="4"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res3_It8" Peptide_ref="Pep32" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="520.914900" calculatedMassToCharge="521.543590" passThreshold="true" rank="8">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="8"/>
+						<userParam name="sequest:PeptideRank" value="8"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="34"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.3761"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3417"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="68.8"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res3_It9" Peptide_ref="Pep33" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="520.914900" calculatedMassToCharge="521.485450" passThreshold="true" rank="9">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="9"/>
+						<userParam name="sequest:PeptideRank" value="9"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="137"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.3873"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3356"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="23.6"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="2"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="6"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res3_It10" Peptide_ref="Pep34" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="520.914900" calculatedMassToCharge="519.610610" passThreshold="true" rank="10">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="10"/>
+						<userParam name="sequest:PeptideRank" value="10"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="86"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.4088"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3238"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="40.8"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="6"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res3_It11" Peptide_ref="Pep35" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="520.914900" calculatedMassToCharge="519.610610" passThreshold="true" rank="10">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="11"/>
+						<userParam name="sequest:PeptideRank" value="10"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="86"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.4088"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3238"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="40.8"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="6"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res3_It12" Peptide_ref="Pep36" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="520.914900" calculatedMassToCharge="519.527690" passThreshold="true" rank="11">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="12"/>
+						<userParam name="sequest:PeptideRank" value="11"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="110"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.4309"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3117"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="30.7"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+				</SpectrumIdentificationResult>
+				<SpectrumIdentificationResult id="SpIdLi1_Res4" spectrumID="file=DTA4" SpectraData_ref="DTA4">
+					<SpectrumIdentificationItem id="SpIdLi1_Res4_It1" Peptide_ref="Pep37" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="537.730000" calculatedMassToCharge="536.642990" passThreshold="true" rank="1">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="1"/>
+						<userParam name="sequest:PeptideRank" value="1"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.902"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="83.8"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="4"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res4_It2" Peptide_ref="Pep38" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="537.730000" calculatedMassToCharge="538.639250" passThreshold="true" rank="2">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="2"/>
+						<userParam name="sequest:PeptideRank" value="2"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="72"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.5997"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.361"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="23.6"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="6"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res4_It3" Peptide_ref="Pep39" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="537.730000" calculatedMassToCharge="536.666500" passThreshold="true" rank="3">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="3"/>
+						<userParam name="sequest:PeptideRank" value="3"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="10"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.6289"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3347"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="71.0"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="6"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res4_It4" Peptide_ref="Pep40" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="537.730000" calculatedMassToCharge="536.515120" passThreshold="true" rank="4">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="4"/>
+						<userParam name="sequest:PeptideRank" value="4"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="63"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.6388"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3258"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="27.0"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="4"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="10"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res4_It5" Peptide_ref="Pep41" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="537.730000" calculatedMassToCharge="536.599860" passThreshold="true" rank="5">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="5"/>
+						<userParam name="sequest:PeptideRank" value="5"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="102"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.6479"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3175"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="16.9"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res4_It6" Peptide_ref="Pep42" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="537.730000" calculatedMassToCharge="536.555030" passThreshold="true" rank="6">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="6"/>
+						<userParam name="sequest:PeptideRank" value="6"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="141"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.6835"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.2854"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="9.9"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="2"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res4_It7" Peptide_ref="Pep43" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="537.730000" calculatedMassToCharge="536.566410" passThreshold="true" rank="7">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="7"/>
+						<userParam name="sequest:PeptideRank" value="7"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="70"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.6862"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.283"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="24.0"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="6"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res4_It8" Peptide_ref="Pep44" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="537.730000" calculatedMassToCharge="536.553360" passThreshold="true" rank="8">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="8"/>
+						<userParam name="sequest:PeptideRank" value="8"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="118"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.6912"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.2785"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="13.4"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="2"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="6"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res4_It9" Peptide_ref="Pep45" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="537.730000" calculatedMassToCharge="537.528020" passThreshold="true" rank="9">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="9"/>
+						<userParam name="sequest:PeptideRank" value="9"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="110"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.7008"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.2699"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="14.6"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="6"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res4_It10" Peptide_ref="Pep46" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="537.730000" calculatedMassToCharge="537.579570" passThreshold="true" rank="10">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="10"/>
+						<userParam name="sequest:PeptideRank" value="10"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="81"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.7349"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.2391"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="21.2"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res4_It11" Peptide_ref="Pep47" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="537.730000" calculatedMassToCharge="536.688310" passThreshold="true" rank="11">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="11"/>
+						<userParam name="sequest:PeptideRank" value="11"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="26"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.7361"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.2381"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="46.5"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="3"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res4_It12" Peptide_ref="Pep48" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="537.730000" calculatedMassToCharge="537.499880" passThreshold="true" rank="12">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="12"/>
+						<userParam name="sequest:PeptideRank" value="12"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="156"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.7384"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.2359"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="8.2"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="2"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="10"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res4_It13" Peptide_ref="Pep49" chargeState="1" MassTable_ref="MT1" experimentalMassToCharge="537.730000" calculatedMassToCharge="537.634220" passThreshold="true" rank="67">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="80"/>
+						<userParam name="sequest:PeptideRank" value="67"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="1"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.98"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.018"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="130.7"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="4"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="8"/>
+					</SpectrumIdentificationItem>
+				</SpectrumIdentificationResult>
+				<SpectrumIdentificationResult id="SpIdLi1_Res5" spectrumID="file=DTA5" SpectraData_ref="DTA5">
+					<SpectrumIdentificationItem id="SpIdLi1_Res5_It1" Peptide_ref="Pep50" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="509.608974" calculatedMassToCharge="510.026374" passThreshold="true" rank="1">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="1"/>
+						<userParam name="sequest:PeptideRank" value="1"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="67"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="1.5148"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="248.7"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="9"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="18"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res5_It2" Peptide_ref="Pep51" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="509.608974" calculatedMassToCharge="510.116724" passThreshold="true" rank="2">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="2"/>
+						<userParam name="sequest:PeptideRank" value="2"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="6"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.2593"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="1.1221"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="354.2"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="10"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="16"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res5_It3" Peptide_ref="Pep52" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="509.608974" calculatedMassToCharge="510.027988" passThreshold="true" rank="3">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="3"/>
+						<userParam name="sequest:PeptideRank" value="3"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="114"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.3231"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="1.0254"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="227.2"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="9"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="18"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res5_It4" Peptide_ref="Pep53" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="509.608974" calculatedMassToCharge="510.135063" passThreshold="true" rank="4">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="4"/>
+						<userParam name="sequest:PeptideRank" value="4"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="125"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.3604"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.9689"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="224.8"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="9"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="18"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res5_It5" Peptide_ref="Pep54" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="509.608974" calculatedMassToCharge="510.051168" passThreshold="true" rank="5">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="5"/>
+						<userParam name="sequest:PeptideRank" value="5"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="68"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.4341"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.8573"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="247.6"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="9"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="16"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res5_It6" Peptide_ref="Pep55" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="509.608974" calculatedMassToCharge="510.069444" passThreshold="true" rank="6">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="6"/>
+						<userParam name="sequest:PeptideRank" value="6"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="357"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.4367"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.8533"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="177.5"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="8"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="16"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res5_It7" Peptide_ref="Pep56" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="509.608974" calculatedMassToCharge="509.535604" passThreshold="true" rank="7">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="7"/>
+						<userParam name="sequest:PeptideRank" value="7"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="108"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.4478"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.8365"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="229.4"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="8"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="14"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res5_It8" Peptide_ref="Pep57" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="509.608974" calculatedMassToCharge="509.131958" passThreshold="true" rank="8">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="8"/>
+						<userParam name="sequest:PeptideRank" value="8"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="76"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.4557"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.8245"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="246.3"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="8"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="14"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res5_It9" Peptide_ref="Pep58" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="509.608974" calculatedMassToCharge="510.063623" passThreshold="true" rank="9">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="9"/>
+						<userParam name="sequest:PeptideRank" value="9"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="329"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.4569"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.8227"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="181.6"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="8"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="14"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res5_It10" Peptide_ref="Pep59" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="509.608974" calculatedMassToCharge="509.560403" passThreshold="true" rank="10">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="10"/>
+						<userParam name="sequest:PeptideRank" value="10"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="37"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.4883"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.7752"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="278.1"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="9"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="14"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res5_It11" Peptide_ref="Pep60" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="509.608974" calculatedMassToCharge="510.069444" passThreshold="true" rank="11">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="11"/>
+						<userParam name="sequest:PeptideRank" value="11"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="405"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.4974"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.7614"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="171.0"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="8"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="16"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res5_It12" Peptide_ref="Pep61" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="509.608974" calculatedMassToCharge="509.555558" passThreshold="true" rank="12">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="12"/>
+						<userParam name="sequest:PeptideRank" value="12"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="324"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.5049"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.7499"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="182.5"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="8"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="16"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res5_It13" Peptide_ref="Pep62" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="509.608974" calculatedMassToCharge="509.064793" passThreshold="true" rank="117">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="117"/>
+						<userParam name="sequest:PeptideRank" value="117"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="1"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.7451"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.3862"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="481.2"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="11"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="16"/>
+					</SpectrumIdentificationItem>
+				</SpectrumIdentificationResult>
+				<SpectrumIdentificationResult id="SpIdLi1_Res6" spectrumID="file=DTA6" SpectraData_ref="DTA6">
+					<SpectrumIdentificationItem id="SpIdLi1_Res6_It1" Peptide_ref="Pep63" chargeState="3" MassTable_ref="MT1" experimentalMassToCharge="509.669498" calculatedMassToCharge="509.588585" passThreshold="true" rank="1">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="1"/>
+						<userParam name="sequest:PeptideRank" value="1"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="97"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="1.055"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="598.6"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="20"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="44"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res6_It2" Peptide_ref="Pep64" chargeState="3" MassTable_ref="MT1" experimentalMassToCharge="509.669498" calculatedMassToCharge="509.935611" passThreshold="true" rank="2">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="2"/>
+						<userParam name="sequest:PeptideRank" value="2"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="28"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0051"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="1.0497"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="684.5"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="24"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="48"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res6_It3" Peptide_ref="Pep65" chargeState="3" MassTable_ref="MT1" experimentalMassToCharge="509.669498" calculatedMassToCharge="509.948871" passThreshold="true" rank="3">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="3"/>
+						<userParam name="sequest:PeptideRank" value="3"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="16"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0104"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="1.044"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="760.0"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="26"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="56"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res6_It4" Peptide_ref="Pep66" chargeState="3" MassTable_ref="MT1" experimentalMassToCharge="509.669498" calculatedMassToCharge="509.285861" passThreshold="true" rank="4">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="4"/>
+						<userParam name="sequest:PeptideRank" value="4"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="405"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0364"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="1.0166"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="456.1"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="21"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="48"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res6_It5" Peptide_ref="Pep67" chargeState="3" MassTable_ref="MT1" experimentalMassToCharge="509.669498" calculatedMassToCharge="509.562021" passThreshold="true" rank="5">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="5"/>
+						<userParam name="sequest:PeptideRank" value="5"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="280"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0408"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="1.0119"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="496.8"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="19"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="48"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res6_It6" Peptide_ref="Pep68" chargeState="3" MassTable_ref="MT1" experimentalMassToCharge="509.669498" calculatedMassToCharge="509.544915" passThreshold="true" rank="6">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="6"/>
+						<userParam name="sequest:PeptideRank" value="6"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="176"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0417"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="1.011"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="544.8"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="20"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="44"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res6_It7" Peptide_ref="Pep69" chargeState="3" MassTable_ref="MT1" experimentalMassToCharge="509.669498" calculatedMassToCharge="509.544915" passThreshold="true" rank="7">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="7"/>
+						<userParam name="sequest:PeptideRank" value="7"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="126"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0783"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.9724"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="575.1"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="21"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="44"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res6_It8" Peptide_ref="Pep70" chargeState="3" MassTable_ref="MT1" experimentalMassToCharge="509.669498" calculatedMassToCharge="509.964935" passThreshold="true" rank="8">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="8"/>
+						<userParam name="sequest:PeptideRank" value="8"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="239"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0858"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.9645"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="515.3"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="22"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="52"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res6_It9" Peptide_ref="Pep71" chargeState="3" MassTable_ref="MT1" experimentalMassToCharge="509.669498" calculatedMassToCharge="509.236015" passThreshold="true" rank="9">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="9"/>
+						<userParam name="sequest:PeptideRank" value="9"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="117"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0897"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.9604"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="584.4"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="21"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="44"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res6_It10" Peptide_ref="Pep72" chargeState="3" MassTable_ref="MT1" experimentalMassToCharge="509.669498" calculatedMassToCharge="509.197945" passThreshold="true" rank="10">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="10"/>
+						<userParam name="sequest:PeptideRank" value="10"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="418"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.1247"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.9234"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="452.9"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="21"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="52"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res6_It11" Peptide_ref="Pep73" chargeState="3" MassTable_ref="MT1" experimentalMassToCharge="509.669498" calculatedMassToCharge="509.938328" passThreshold="true" rank="11">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="11"/>
+						<userParam name="sequest:PeptideRank" value="11"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="377"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.1351"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.9125"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="461.5"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="21"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="48"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res6_It12" Peptide_ref="Pep74" chargeState="3" MassTable_ref="MT1" experimentalMassToCharge="509.669498" calculatedMassToCharge="509.894678" passThreshold="true" rank="12">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="12"/>
+						<userParam name="sequest:PeptideRank" value="12"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="235"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.1445"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.9025"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="517.3"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="20"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="44"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res6_It13" Peptide_ref="Pep75" chargeState="3" MassTable_ref="MT1" experimentalMassToCharge="509.669498" calculatedMassToCharge="509.203368" passThreshold="true" rank="209">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="210"/>
+						<userParam name="sequest:PeptideRank" value="209"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="1"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.781"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.2311"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="1153.7"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="28"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="52"/>
+					</SpectrumIdentificationItem>
+				</SpectrumIdentificationResult>
+				<SpectrumIdentificationResult id="SpIdLi1_Res7" spectrumID="file=DTA7" SpectraData_ref="DTA7">
+					<SpectrumIdentificationItem id="SpIdLi1_Res7_It1" Peptide_ref="Pep76" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="520.533974" calculatedMassToCharge="521.138664" passThreshold="true" rank="1">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="1"/>
+						<userParam name="sequest:PeptideRank" value="1"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="391"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.7919"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="94.1"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="6"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="18"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res7_It2" Peptide_ref="Pep77" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="520.533974" calculatedMassToCharge="520.583188" passThreshold="true" rank="2">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="2"/>
+						<userParam name="sequest:PeptideRank" value="2"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="225"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0544"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.7488"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="109.1"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="8"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="20"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res7_It3" Peptide_ref="Pep78" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="520.533974" calculatedMassToCharge="521.052388" passThreshold="true" rank="3">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="3"/>
+						<userParam name="sequest:PeptideRank" value="3"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="99"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.0599"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.7444"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="134.5"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="8"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="18"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res7_It4" Peptide_ref="Pep79" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="520.533974" calculatedMassToCharge="521.160234" passThreshold="true" rank="4">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="4"/>
+						<userParam name="sequest:PeptideRank" value="4"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="144"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.111"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.704"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="122.0"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="7"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="18"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res7_It5" Peptide_ref="Pep80" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="520.533974" calculatedMassToCharge="521.095528" passThreshold="true" rank="5">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="5"/>
+						<userParam name="sequest:PeptideRank" value="5"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="290"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.1682"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.6587"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="102.8"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="7"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="18"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res7_It6" Peptide_ref="Pep81" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="520.533974" calculatedMassToCharge="520.601464" passThreshold="true" rank="6">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="6"/>
+						<userParam name="sequest:PeptideRank" value="6"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="257"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.1815"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.6482"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="105.9"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="8"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="16"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res7_It7" Peptide_ref="Pep82" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="520.533974" calculatedMassToCharge="520.584804" passThreshold="true" rank="7">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="7"/>
+						<userParam name="sequest:PeptideRank" value="7"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="139"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.2032"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.6309"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="123.5"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="7"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="16"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res7_It8" Peptide_ref="Pep83" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="520.533974" calculatedMassToCharge="520.067624" passThreshold="true" rank="8">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="8"/>
+						<userParam name="sequest:PeptideRank" value="8"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="330"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.2195"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.618"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="98.7"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="7"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="22"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res7_It9" Peptide_ref="Pep84" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="520.533974" calculatedMassToCharge="520.142469" passThreshold="true" rank="9">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="9"/>
+						<userParam name="sequest:PeptideRank" value="9"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="81"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.2288"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.6107"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="142.8"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="7"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="16"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res7_It10" Peptide_ref="Pep85" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="520.533974" calculatedMassToCharge="521.149648" passThreshold="true" rank="10">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="10"/>
+						<userParam name="sequest:PeptideRank" value="10"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="302"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.2592"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.5866"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="101.3"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="5"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="14"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res7_It11" Peptide_ref="Pep86" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="520.533974" calculatedMassToCharge="521.137048" passThreshold="true" rank="11">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="11"/>
+						<userParam name="sequest:PeptideRank" value="11"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="407"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.2821"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.5685"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="92.9"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="6"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="18"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res7_It12" Peptide_ref="Pep87" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="520.533974" calculatedMassToCharge="521.181804" passThreshold="true" rank="12">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="12"/>
+						<userParam name="sequest:PeptideRank" value="12"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="421"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.2875"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.5642"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="92.2"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="7"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="18"/>
+					</SpectrumIdentificationItem>
+					<SpectrumIdentificationItem id="SpIdLi1_Res7_It13" Peptide_ref="Pep88" chargeState="2" MassTable_ref="MT1" experimentalMassToCharge="520.533974" calculatedMassToCharge="521.117944" passThreshold="true" rank="141">
+						<cvParam accession="MS:1001218" name="sequest:PeptideNumber" cvRef="PSI-MS" value="144"/>
+						<userParam name="sequest:PeptideRank" value="141"/>
+						<cvParam accession="MS:1001217" name="sequest:PeptideRankSp" cvRef="PSI-MS" value="1"/>
+						<cvParam accession="MS:1001219" name="sequest:PeptideIdnumber" cvRef="PSI-MS" value="0"/>
+						<cvParam accession="MS:1001156" name="sequest:deltacn" cvRef="PSI-MS" value="0.6931"/>
+						<cvParam accession="MS:1001155" name="sequest:xcorr" cvRef="PSI-MS" value="0.243"/>
+						<cvParam accession="MS:1001215" name="sequest:PeptideSp" cvRef="PSI-MS" value="273.0"/>
+						<cvParam accession="MS:1001161" name="sequest:matched ions" cvRef="PSI-MS" value="8"/>
+						<cvParam accession="MS:1001162" name="sequest:total ions" cvRef="PSI-MS" value="14"/>
+					</SpectrumIdentificationItem>
+				</SpectrumIdentificationResult>
+			</SpectrumIdentificationList>
+		</AnalysisData>
+	</DataCollection>
+</mzIdentML>

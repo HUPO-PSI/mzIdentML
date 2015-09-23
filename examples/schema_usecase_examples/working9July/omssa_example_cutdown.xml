@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalysisXML id="" xsi:schemaLocation="./AnalysisXML_working.xsd"
+				xmlns:pf="http://psidev.info/fuge-light/1.0"
+				xmlns="http://psidev.info/psi/pi/analysis/1.0"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SequenceCollection>
+		<DBSequence id="P21513" length="1061">
+			<seq>MKRMLINATQQEELRVALVDGQRLYDLDIESPGHEQKKANIYKGKITRIEPSLEAAFVDYGAERHGFLPLKEIAREYFPANYSAHGRPNIKDVLREGQEVIVQIDKEERGNKGAALTTFISLAGSYLVLMPNNPRAGGISRRIEGDDRTELKEALASLELPEGMGLIVRTAGVGKSAEALQWDLSFRLKHWEAIKKAAESRPAPFLIHQESNVIVRAFRDYLRQDIGEILIDNPKVLELARQHIAALGRPDFSSKIKLYTGEIPLFSHYQIESQIESAFQREVRLPSGGSIVIDSTEALTAIDINSARATRGGDIEETAFNTNLEAADEIARQLRLRDLGGLIVIDFIDMTPVRHQRAVENRLREAVRQDRARIQISHISRFGLLEMSRQRLSPSLGESSHHVCPRCSGTGTVRDNESLSLSILRLIEEEALKENTQEVHAIVPVPIASYLLNEKRSAVNAIETRQDGVRCVIVPNDQMETPHYHVLRVRKGEETPTLSYMLPKLHEEAMALPSEEEFAERKRPEQPALATFAMPDVPPAPTPAEPAAPVVAPAPKAAPATPAAPAQPGLLSRFFGALKALFSGGEETKPTEQPAPKAEAKPERQQDRRKPRQNNRRDRNERRDTRSERTEGSDNREENRRNRRQAQQQTAETRESRQQAEVTEKARTADEQQAPRRERSRRRNDDKRQAQQEAKALNVEEQSVQETEQEERVRPVQPRRKQRQLNQKVRYEQSVAEEAVVAPVVEETVAAEPIVQEAPAPRTELVKVPLPVVAQTAPEQQEENNADNRDNGGMPRRSRRSPRHLRVSGQRRRRYRDERYPTQSPMPLTVACASPELASGKVWIRYPIVRPQDVQVEEQREQEEVHVQPMVTEVPVAAAIEPVVSAPVVEEVAGVVEAPVQVAEPQPEVVETTHPEVIAAAVTEQPQVITESDVAVAQEVAEQAEPVVEPQEETADIEEVVETAEVVVAEPEVVAQPAAPVVAEVAAEVETVAAVEPEVTVEHNHATAPMTRAPAPEYVPEAPRHSDWQRPTFAFEGKGAAGGHTATHHASAAPARPQPVE</seq>
+			<pf:DatabaseReference Database_ref="K12_nosignal" accession="P21513" />
+		</DBSequence>
+		<DBSequence id="REV_SS3_P0AEZ1" length="296">
+			<seq>MPPIGNNWYDRLGDISNWLTQEMESTRTEADDDLGDFMQAMWARYAAVSIDFDAVEKLLTVLDSAYMEPIPKLSSLPDKIGKIISHTRAITRRAAELGTPIIEVDIGASVCPDRKGSGPNLTYFHFDKVGERQSAHFFSRHVEPTADICTLHPLDGPLAVIHRFRNAGADVKRVGLTHCIAYSMEARFFEFSVNIQGQVEALSQNLADPPSLIKVMDMAINAGVLKRLYSEVDFFFQTIARLIGPLEDRVNTMDAFKKAQKFNSVREGSNAGYTVSVFKRDRKLNLLDAQASKAER</seq>
+			<pf:DatabaseReference Database_ref="K12_nosignal" accession="REV_SS3_P0AEZ1" />
+		</DBSequence>
+		<DBSequence id="P0A7D7" length="237">
+			<seq>MQKQAELYRGKAKTVYSTENPDLLVLEFRNDTSAGDGARIEQFDRKGMVNNKFNYFIMSKLAEAGIPTQMERLLSDTECLVKKLDMVPVECVVRNRAAGSLVKRLGIEEGIELNPPLFDLFLKNDAMHDPMVNESYCETFGWVSKENLARMKELTYKANDVLKKLFDDAGLILVDFKLEFGLYKGEVVLGDEFSPDGSRLWDKETLEKMDKDRFRQSLGGLIEAYEAVARRLGVQLD</seq>
+			<pf:DatabaseReference Database_ref="K12_nosignal" accession="P0A7D7" />
+		</DBSequence>
+		<DBSequence id="P33018" length="278">
+			<seq>MEMLEEHRCFEGWQQRWRHDSSTLNCPMTFSIFLPPPRDHTPPPVLYWLSGLTCNDENFTTKAGAQRVAAELGIVLVMPDTSPRGEKVANDDGYDLGQGAGFYLNATQPPWATHYRMYDYLRDELPALVQSQFNVSDRCAISGHSMGGHGALIMALKNPGKYTSVSAFAPIVNPCSVPWGIKAFSSYLGEDKNAWLEWDSCALMYASNAQDAIPTLIDQGDNDQFLADQLQPAVLAEAARQKAWPMTLRIQPGYDHSYYFIASFIEDHLRFHAQYLLK</seq>
+			<pf:DatabaseReference Database_ref="K12_nosignal" accession="P33018" />
+		</DBSequence>
+		<DBSequence id="P0A6P9" length="432">
+			<seq>MSKIVKIIGREIIDSRGNPTVEAEVHLEGGFVGMAAAPSGASTGSREALELRDGDKSRFLGKGVTKAVAAVNGPIAQALIGKDAKDQAGIDKIMIDLDGTENKSKFGANAILAVSLANAKAAAAAKGMPLYEHIAELNGTPGKYSMPVPMMNIINGGEHADNNVDIQEFMIQPVGAKTVKEAIRMGSEVFHHLAKVLKAKGMNTAVGDEGGYAPNLGSNAEALAVIAEAVKAAGYELGKDITLAMDCAASEFYKDGKYVLAGEGNKAFTSEEFTHFLEELTKQYPIVSIEDGLDESDWDGFAYQTKVLGDKIQLVGDDLFVTNTKILKEGIEKGIANSILIKFNQIGSLTETLAAIKMAKDAGYTAVISHRSGETEDATIADLAVGTAAGQIKTGSMSRSDRVAKYNQLIRIEEALGEKAPYNGRKEIKGQA</seq>
+			<pf:DatabaseReference Database_ref="K12_nosignal" accession="P0A6P9" />
+		</DBSequence>
+		<DBSequence id="P77789_SIG" length="154">
+			<seq>ADSVIKISGRVLDYGCTVSSDSLNFTVDLQKNSARQFPTTGSTSPAVPFQITLSECSKGTTGVRVAFNGIEDAENNTLLKLDEGSNTASGLGIEILDANMRPVKLNDLHAGMQWIPLVPEQNNILPYSARLKSTQKSVNPGLVRASATFTLEFQ</seq>
+			<pf:DatabaseReference Database_ref="K12_nosignal" accession="P77789_SIG" />
+		</DBSequence>
+		<DBSequence id="P21499" length="813">
+			<seq>MSQDPFQEREAEKYANPIPSREFILEHLTKREKPASRDELAVELHIEGEEQLEGLRRRLRAMERDGQLVFTRRQCYALPERLDLVKGTVIGHRDGYGFLRVEGRKDDLYLSSEQMKTCIHGDQVLAQPLGADRKGRREARIVRVLVPKTSQIVGRYFTEAGVGFVVPDDSRLSFDILIPPDQIMGARMGFVVVVELTQRPTRRTKAVGKIVEVLGDNMGTGMAVDIALRTHEIPYIWPQAVEQQVAGLKEEVPEEAKAGRVDLRDLPLVTIDGEDARDFDDAVYCEKKRGGGWRLWVAIADVSYYVRPSTPLDREARNRGTSVYFPSQVIPMLPEVLSNGLCSLNPQVDRLCMVCEMTVSSKGRLTGYKFYEAVMSSHARLTYTKVWHILQGDQDLREQYAPLVKHLEELHNLYKVLDKAREERGGISFESEEAKFIFNAERRIERIEQTQRNDAHKLIEECMILANISAARFVEKAKEPALFRIHDKPSTEAITSFRSVLAELGLELPGGNKPEPRDYAELLESVADRPDAEMLQTMLLRSMKQAIYDPENRGHFGLALQSYAHFTSPIRRYPDLTLHRAIKYLLAKEQGHQGNTTETGGYHYSMEEMLQLGQHCSMAERRADEATRDVADWLKCDFMLDQVGNVFKGVISSVTGFGFFVRLDDLFIDGLVHVSSLDNDYYRFDQVGQRLMGESSGQTYRLGDRVEVRVEAVNMDERKIDFSLISSERAPRNVGKTAREKAKKGDAGKKGGKRRQVGKKVNFEPDSAFRGEKKTKPKAAKKDARKAKKPSAKTQKIAAATKAKRAAKKKVAE</seq>
+			<pf:DatabaseReference Database_ref="K12_nosignal" accession="P21499" />
+		</DBSequence>
+		<Peptide id="peptide_1" sequenceMass="2281.07231" sequenceLength="19">
+			<peptideSequence>QQAEVTEKARTADEQQAPR</peptideSequence>
+		</Peptide>
+		<Peptide id="peptide_2" sequenceMass="1097.463395" sequenceLength="8">
+			<peptideSequence>MEMLEEHR</peptideSequence>
+		</Peptide>
+		<Peptide id="peptide_3" sequenceMass="1194.62443" sequenceLength="10">
+			<peptideSequence>ADSVIKISGR</peptideSequence>
+		</Peptide>
+		<Peptide id="peptide_4" sequenceMass="1231.60194" sequenceLength="9">
+			<peptideSequence>MQKQAELYR</peptideSequence>
+		</Peptide>
+		<Peptide id="peptide_5" sequenceMass="1086.488285" sequenceLength="8">
+			<Modification location="2">
+				<pf:cvParam accession="MOD:00425" name="Oxidation(M)" cvRef="PSI-MOD" value="" />
+			</Modification>
+			<Modification location="7">
+				<pf:cvParam accession="MOD:00425" name="Oxidation(M)" cvRef="PSI-MOD" value="" />
+			</Modification>
+			<peptideSequence>QSAHFFSR</peptideSequence>
+		</Peptide>
+		<Peptide id="peptide_6" sequenceMass="2027.02244" sequenceLength="16">
+			<Modification location="13">
+				<pf:cvParam accession="MOD:00425" name="Oxidation(M)" cvRef="PSI-MOD" value="" />
+			</Modification>
+			<peptideSequence>RQVGKKVNFEPDSAFR</peptideSequence>
+		</Peptide>
+		<Peptide id="peptide_7" sequenceMass="1162.70737" sequenceLength="9">
+			<peptideSequence>SKIVKIIGR</peptideSequence>
+		</Peptide>
+		</SequenceCollection>
+	<AnalysisCollection>
+		<SpectrumIdentification id="SI_1" SpectrumIdentificationProtocol_ref="" SpectrumIdentificationList_ref="">
+			<SpectraData_ref id="SD_1"/>
+			<SearchDatabase_ref id="K12_nosignal"/>
+		</SpectrumIdentification>
+		<ProteinDetection id="ProteinList_1" ProteinDetectionProtocol_ref="" ProteinDetectionResultList_ref="ProteinList_1">
+			<SpectrumIdentificationList_ref id=""/>
+		</ProteinDetection>
+	</AnalysisCollection>
+		<AnalysisProtocolCollection>
+			<SpectrumIdentificationProtocol id="OmssaSearchProtocol" AnalysisSoftware_ref="omssa">
+				<SearchType>
+					<pf:cvParam accession="PI:xxxxx" name="SearchType" cvRef="PSI-PI" value="MIS"/>
+				</SearchType>
+				<ModificationParams>
+					<SearchModification fixedMod="false">
+						<ModName unitName="MOD:00425" unitAccession="TODO" value="Oxidation (M)" />
+						<MassValue unitName="TODO" unitAccession="TODO" value="TODO" />
+						<SpecificityRule accession="TODO" cvRef="TODO" name="TODO" unitAccession="TODO" unitName="TODO" value="TODO" />
+					</SearchModification>
+					<SearchModification fixedMod="true">
+						<ModName unitName="TODO" unitAccession="TODO" value="Acetyl (K)" />
+						<MassValue unitName="TODO" unitAccession="TODO" value="TODO" />
+						<SpecificityRule accession="TODO" cvRef="TODO" name="TODO" unitAccession="TODO" unitName="TODO" value="TODO" />
+					</SearchModification>
+					<SearchModification fixedMod="true">
+						<ModName unitName="TODO" unitAccession="TODO" value="Acetyl (S)" />
+						<MassValue unitName="TODO" unitAccession="TODO" value="TODO" />
+						<SpecificityRule accession="TODO" cvRef="TODO" name="TODO" unitAccession="TODO" unitName="TODO" value="TODO" />
+					</SearchModification>
+					<SearchModification fixedMod="true">
+						<ModName unitName="TODO" unitAccession="TODO" value="Acetyl Peptide Nterm????" />
+						<MassValue unitName="TODO" unitAccession="TODO" value="TODO" />
+						<SpecificityRule accession="TODO" cvRef="TODO" name="TODO" unitAccession="TODO" unitName="TODO" value="TODO" />
+					</SearchModification>
+				</ModificationParams>
+				<MassTable>
+					<Residue Code="S" Mass="129.042595"/>
+					<Residue Code="F" Mass="147.06841"/>
+					<Residue Code="T" Mass="131.04768"/>
+					<Residue Code="N" Mass="114.04293"/>
+					<Residue Code="K" Mass="170.105525"/>
+					<Residue Code="Y" Mass="163.06333"/>
+					<Residue Code="E" Mass="129.04259"/>
+					<Residue Code="nterm" Mass="0.00"/>
+					<Residue Code="V" Mass="99.06841"/>
+					<Residue Code="Q" Mass="128.05858"/>
+					<Residue Code="M" Mass="131.04049"/>
+					<Residue Code="C" Mass="103.00919"/>
+					<Residue Code="L" Mass="113.08406"/>
+					<Residue Code="A" Mass="71.03711"/>
+					<Residue Code="J" Mass="113.08406"/>
+					<Residue Code="W" Mass="186.07931"/>
+					<Residue Code="P" Mass="97.05276"/>
+					<Residue Code="cterm" Mass="0.00"/>
+					<Residue Code="H" Mass="137.05891"/>
+					<Residue Code="D" Mass="115.02694"/>
+					<Residue Code="I" Mass="113.08406"/>
+					<Residue Code="R" Mass="156.10111"/>
+					<Residue Code="G" Mass="57.02146"/>
+				</MassTable>
+				<FragmentTolerance>
+					<PlusValue  unitAccession="PI:xxxxxx" unitName="Da" value="0.4" />
+					<MinusValue unitAccession="PI:xxxxxx" unitName="Da" value="0.4" />
+				</FragmentTolerance>
+				<ParentTolerance>
+					<PlusValue  unitAccession="PI:xxxxxx" unitName="Da" value="1.5" />
+					<MinusValue unitAccession="PI:xxxxxx" unitName="Da" value="1.5" />
+				</ParentTolerance>
+			</SpectrumIdentificationProtocol>
+			<ProteinDetectionProtocol id="protein_determination_protocol_1" AnalysisSoftware_ref="omssa"/>
+		</AnalysisProtocolCollection>
+	<DataCollection>
+		<Inputs>
+			<SearchDatabase location="/localdirectory/18.E_coli_K12_allSignalRemoved_concat.fasta" id="K12_nosignal" name="K12" numDatabaseSequences="8678" numSequencesSearched="8678" releaseDate="TODO" version="TODO" >
+				<pf:_fileFormat>
+				<pf:cvParam accession="TODO" name="TODO" cvRef="TODO" value="TODO"/>
+				</pf:_fileFormat>
+				<DatabaseName>
+				<pf:cvParam accession="TODO" name="TODO" cvRef="TODO" value="TODO"/>
+				</DatabaseName>
+			</SearchDatabase>
+		</Inputs>
+		<AnalysisData>
+			<SpectrumIdentificationList id="Spectrum_1_result">
+				<SpectrumIdentificationResult id="result_ref_0_2">
+					<SpectrumIdentificationItem id="item_ref_0_2" calculatedMassToCharge="2045.05"  chargeState="3" experimentalMassToCharge="2045.04" Peptide_ref="peptide_6">
+						<PeptideEvidence id="PE_0_2_P21499" start="755" end="770" DBSequence_Ref="P21499"  />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_e_value" cvRef="PSI-PI"  value="9.15937" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_p_value" cvRef="PSI-PI"  value="0.00514861" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_rank" cvRef="PSI-PI"  value="2" />
+					</SpectrumIdentificationItem>
+					<SpectrumElement spectrumID="EcoliNT3hr.10003.10008.2.dta" SpectraData_ref="SD_1"/>
+				</SpectrumIdentificationResult>
+				<SpectrumIdentificationResult id="result_ref_10_1">
+					<SpectrumIdentificationItem id="item_ref_10_1" calculatedMassToCharge="2234.85"  chargeState="3" experimentalMassToCharge="2239.09" Peptide_ref="peptide_1">
+						<PeptideEvidence id="PE_10_1_P21513" start="658" end="676" DBSequence_Ref="P21513"  />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_e_value" cvRef="PSI-PI"  value="7.16336" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_p_value" cvRef="PSI-PI"  value="0.00369626" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_rank" cvRef="PSI-PI"  value="1" />
+					</SpectrumIdentificationItem>
+					<SpectrumElement spectrumID="EcoliNT3hr.10057.10064.2.dta" SpectraData_ref="SD_1"/>
+				</SpectrumIdentificationResult>
+				<SpectrumIdentificationResult id="result_ref_11_1">
+					<SpectrumIdentificationItem id="item_ref_11_1" calculatedMassToCharge="1138.46"  chargeState="2" experimentalMassToCharge="1138.71" Peptide_ref="peptide_7">
+						<PeptideEvidence id="PE_11_1_P0A6P9" start="2" end="10" DBSequence_Ref="P0A6P9"  />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_e_value" cvRef="PSI-PI"  value="3.0509e-05" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_p_value" cvRef="PSI-PI"  value="4.64368e-08" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_rank" cvRef="PSI-PI"  value="1" />
+					</SpectrumIdentificationItem>
+					<SpectrumElement spectrumID="EcoliNT3hr.10059.10069.2.dta" SpectraData_ref="SD_1"/>
+				</SpectrumIdentificationResult>
+				<SpectrumIdentificationResult id="result_ref_12_1">
+					<SpectrumIdentificationItem id="item_ref_12_1" calculatedMassToCharge="1250.75"  chargeState="2" experimentalMassToCharge="1249.62" Peptide_ref="peptide_4">
+						<PeptideEvidence id="PE_12_1_P0A7D7" start="1" end="9" DBSequence_Ref="P0A7D7"  />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_e_value" cvRef="PSI-PI"  value="5.8708e-06" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_p_value" cvRef="PSI-PI"  value="8.29209e-09" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_rank" cvRef="PSI-PI"  value="1" />
+					</SpectrumIdentificationItem>
+					<SpectrumElement spectrumID="EcoliNT3hr.10062.10080.2.dta" SpectraData_ref="SD_1"/>
+				</SpectrumIdentificationResult>
+				<SpectrumIdentificationResult id="result_ref_14_1">
+					<SpectrumIdentificationItem id="item_ref_14_1" calculatedMassToCharge="1104.26"  chargeState="2" experimentalMassToCharge="1104.5" Peptide_ref="peptide_5">
+						<PeptideEvidence id="PE_14_1_REV_SS3_P0AEZ1" start="133" end="140" DBSequence_Ref="REV_SS3_P0AEZ1"  isDecoy="true" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_e_value" cvRef="PSI-PI"  value="9.52339" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_p_value" cvRef="PSI-PI"  value="0.0115997" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_rank" cvRef="PSI-PI"  value="1" />
+					</SpectrumIdentificationItem>
+					<SpectrumElement spectrumID="EcoliNT3hr.10085.10101.2.dta" SpectraData_ref="SD_1"/>
+				</SpectrumIdentificationResult>
+				<SpectrumIdentificationResult id="result_ref_19_1">
+					<SpectrumIdentificationItem id="item_ref_19_1" calculatedMassToCharge="1115.24"  chargeState="2" experimentalMassToCharge="1115.48" Peptide_ref="peptide_2">
+						<PeptideEvidence id="PE_19_1_P33018" start="1" end="8" DBSequence_Ref="P33018"  />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_e_value" cvRef="PSI-PI"  value="0.000650477" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_p_value" cvRef="PSI-PI"  value="7.2517e-07" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_rank" cvRef="PSI-PI"  value="1" />
+					</SpectrumIdentificationItem>
+					<SpectrumElement spectrumID="EcoliNT3hr.10106.10115.2.dta" SpectraData_ref="SD_1"/>
+				</SpectrumIdentificationResult>
+				<SpectrumIdentificationResult id="result_ref_22_1">
+					<SpectrumIdentificationItem id="item_ref_22_1" calculatedMassToCharge="1128.25"  chargeState="2" experimentalMassToCharge="1128.62" Peptide_ref="peptide_3">
+						<PeptideEvidence id="PE_22_1_P77789_SIG" start="1" end="10" DBSequence_Ref="P77789_SIG"  />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_e_value" cvRef="PSI-PI"  value="2.00078" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_p_value" cvRef="PSI-PI"  value="0.00252305" />
+						<pf:cvParam accession="PI:xxxxx" name="omssa_rank" cvRef="PSI-PI"  value="1" />
+					</SpectrumIdentificationItem>
+					<SpectrumElement spectrumID="EcoliNT3hr.10118.10127.2.dta" SpectraData_ref="SD_1"/>
+				</SpectrumIdentificationResult>
+			</SpectrumIdentificationList>
+			<ProteinDetectionList id="ProteinList_1">
+				<ProteinAmbiguityGroup id="Ambiguity_grp_1">
+					<ProteinDetectionHypothesis id="detection_id_REV_SS3_P0AEZ1" DBSequence_ref="REV_SS3_P0AEZ1">
+						<PeptideHypothesis PeptideEvidence_Ref="PE_14_1_REV_SS3_P0AEZ1" />
+					</ProteinDetectionHypothesis>
+				</ProteinAmbiguityGroup>
+				<ProteinAmbiguityGroup id="Ambiguity_grp_2">
+					<ProteinDetectionHypothesis id="detection_id_P21513" DBSequence_ref="P21513">
+						<PeptideHypothesis PeptideEvidence_Ref="PE_10_1_P21513" />
+					</ProteinDetectionHypothesis>
+				</ProteinAmbiguityGroup>
+				<ProteinAmbiguityGroup id="Ambiguity_grp_3">
+					<ProteinDetectionHypothesis id="detection_id_P0A7D7" DBSequence_ref="P0A7D7">
+						<PeptideHypothesis PeptideEvidence_Ref="PE_12_1_P0A7D7" />
+					</ProteinDetectionHypothesis>
+				</ProteinAmbiguityGroup>
+				<ProteinAmbiguityGroup id="Ambiguity_grp_4">
+					<ProteinDetectionHypothesis id="detection_id_P33018" DBSequence_ref="P33018">
+						<PeptideHypothesis PeptideEvidence_Ref="PE_19_1_P33018" />
+					</ProteinDetectionHypothesis>
+				</ProteinAmbiguityGroup>
+				<ProteinAmbiguityGroup id="Ambiguity_grp_5">
+					<ProteinDetectionHypothesis id="detection_id_P0A6P9" DBSequence_ref="P0A6P9">
+						<PeptideHypothesis PeptideEvidence_Ref="PE_11_1_P0A6P9" />
+					</ProteinDetectionHypothesis>
+				</ProteinAmbiguityGroup>
+				<ProteinAmbiguityGroup id="Ambiguity_grp_6">
+					<ProteinDetectionHypothesis id="detection_id_P77789_SIG" DBSequence_ref="P77789_SIG">
+						<PeptideHypothesis PeptideEvidence_Ref="PE_22_1_P77789_SIG" />
+					</ProteinDetectionHypothesis>
+				</ProteinAmbiguityGroup>
+				<ProteinAmbiguityGroup id="Ambiguity_grp_7">
+					<ProteinDetectionHypothesis id="detection_id_P21499" DBSequence_ref="P21499">
+						<PeptideHypothesis PeptideEvidence_Ref="PE_0_2_P21499" />
+					</ProteinDetectionHypothesis>
+				</ProteinAmbiguityGroup>
+			</ProteinDetectionList>
+		</AnalysisData>
+	</DataCollection>
+		<AnalysisSoftwareList>
+			<AnalysisSoftware id="omssa" name="Omssa" version="2.0">
+				<pf:ContactRole Contact_ref="http://pubchem.ncbi.nlm.nih.gov/omssa/">
+					<pf:_role>
+						<pf:cvParam accession="TODO" name="software vendor" cvRef="TODO" value="TODO" />
+					</pf:_role>
+				</pf:ContactRole>
+			</AnalysisSoftware>
+		</AnalysisSoftwareList>
+</AnalysisXML>

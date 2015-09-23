@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalysisXML  xmlns="http://psidev.info/psi/pi/analysis/1.0"
+              xmlns:fuge="http://fuge.sourceforge.net/fuge/1.0"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://psidev.info/psi/pi/analysis/1.0  ./AnalysisXML_with_docu.xsd"
+              identifier="">
+  <fuge:ConceptualMoleculeCollection>
+    <fuge:Sequence identifier="HSP7D_MANSE" length="652" sequence="MAKAPAVGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDTDRLIGDAAKNQVAMNPNNTIFDAKRLIGRKFEDATVQADMKHWPFEVVSDGGKPKIKVAYKGEDKTFFPEEVSSMVLTKMKETAEAYLGKTVQNAVITVPAYFNDSQRQATKDAGTISGLNVLRIINEPTAAAIAYGLDKKGSGERNVLIFDLGGGTFDVSILTIEDGIFEVKSTAGDTHLGGEDFDNRMVNHFVQEFKRKYKKDLTTNKRALRRLRTACERAKRTLSSSTQASIEIDSLFEGIDFYTSITRARFEELNADLFRSTMEPVEKSLRDAKMDKSQIHDIVLVGGSTRIPKVQKLLQDFFNGKELNKSINPDEAVAYGAAVQAAILHGDKSEEVQDLLLLDVTPLSLGIETAGGVMTTLIKRNTTIPTKQTQTFTTYSDNQPGVLIQVFEGERAMTKDNNLLGKFELTGIPPAPRGVPQIEVTFDIDANGILNVSAVEKSTNKENKITITNDKGRLSKEEIERMVNEAEKYRNEDEKQKETIQAKNALESYCFNMKSTMEDEKLKDKISDSDKQTILDKCNDTIKWLDSNQLADKEEYEHKQKELEGICNPIITKLYQGAGGMPGGMPGGMPGFPGGAPGAGGAAPGGGAGPTIEEVD"/>
+    <fuge:Sequence identifier="HSP70_ECHGR" length="665" sequence="MMSKGPAVGIDLGTTFSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDTERLIGDAAKNQVAMNPTNTVFDAKRLIGRRFDDRAVQDDIKHWAFKVINAGGKPKIEVEYRGETKCFSAEEISSMVLLKMKETAEAYLGKKVSDTVISVPAYFNDSQRQATKDAGTISGLNVLRIINEPTAAAIAYGLDKKVERERNVLIFDLGGGTFDVSILSIEDGIFEVKSTAGDTHLGGEDFDSRLVNHFVEEFKRKHKGKDLTTNKRAVRRLRTACERAKRTLSSSAQANIEIDSLLEGIDFYTSITRARFEELCSDLFRSTLDPVEKALRDAKLDKGAVHEIVLVGGSTRIPKVQKLLQDFFNGRELNKSINPDEAVAYGAAVQAAILTGDKSEAVQDLLLLDVAPLSLGLETAGGVMTALIKRNTTIPTKQTQTFTTYSDNQPGVLIQVYEGERAMKRDNNLLGKFELSGIPPGPRGVPQIEVTFDIDANGILNVSAVDKSTGKQNKITITRDKGRLSKEEIERMVNDAEKFKQEDEKQRDRVAAKNGLESYAFSMKSTVEDEKVKEKIGESDRRRIMEKCEETVKWLDGNQQAEKEEYEHRQKELESVCNPIIAKMYQEAGGVGGIPGGIPGGGMPGGTPGGGIPAGMAGGMSGDPSSGGRGPTIEEVD"/>
+    <fuge:Sequence identifier="HSP7A_DROSI" length="214" sequence="MPKLPAVGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTESERLIGDAAKNQVAMNPNNTIFDAKRLIGRRFDDATVQSDMKHWPFEAFAENGKPRIRGTFDVSVLTIEDGFEVKATAGDTHLGREDFDNRLVNHLVQEFQRKHGKDLGQNKRALRRLRTACERAKRTLSSSTQASIEIDSLFEGVDFYTSVTRARFEELNGDLFRGT"/>
+    <fuge:Sequence identifier="HS70L_HUMAN" length="641" sequence="MATAKGIAIGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDTERLIGDAAKNQVAMNPQNTVFDAKRLIGRKFNDPVVQADMKLWPFQVINEGGKPKVLVSYKGENKAFYPEEISSMVLTKLKETAEAFLGHPVTNAVITVPAYFNDSQRQATKDAGVIAGLNVLRIINEPTAAAIAYGLDKGGQGERHVLIFDLGGGTFDVSILTIDDGIFEVKATAGDTHLGGEDFDNRLVSHFVEEFKRKHKKDISQNKRAVRRLRTACERAKRTLSSSTQANLEIDSLYEGIDFYTSITRARFEELCADLFRGTLEPVEKALRDAKMDKAKIHDIVLVGGSTRIPKVQRLLQDYFNGRDLNKSINPDEAVAYGAAVQAAILMGDKSEKVQDLLLLDVAPLSLGLETAGGVMTALIKRNSTIPTKQTQIFTTYSDNQPGVLIQVYEGERAMTKDNNLLGRFDLTGIPPAPRGVPQIEVTFDIDANGILNVTATDKSTGKVNKITITNDKGRLSKEEIERMVLDAEKYKAEDEVQREKIAAKNALESYAFNMKSVVSDEGLKGKISESDKNKILDKCNELLSWLEVNQLAEKDEFDHKRKELEQMCNPIITKLYQGGCTGPACGTGYVPGRPATGPTIEEVD"/>
+    <fuge:Sequence identifier="HSP7D_DROME" length="651" sequence="MSKAPAVGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDTERLIGDAAKNQVAMNPTQTIFDAKRLIGRKFDDAAVQSDMKHWPFEVVSADGKPKIEVTYKDEKKTFFPEEISSMVLTKMKETAEAYLGKTVTNAVITVPAYFNDSQRQATKDAGTIAGLNVLRIINEPTAAAIAYGLDKKAVGERNVLIFDLGGGTFDVSILSIDDGIFEVKSTAGDTHLGGEDFDNRLVTHFVQEFKRKHKKDLTTNKRALRRLRTACERAKRTLSSSTQASIEIDSLFEGTDFYTSITRARFEELNADLFRSTMDPVEKALRDAKLDKSVIHDIVLVGGSTRIPKVQRLLQDLFNGKELNKSINPDEAVAYGAAVQAAILHGDKSQEVQDLLLLDVTPLSLGIETAGGVMSVLIKRNTTIPTKQTQTFTTYSDNQPGVLIQVYEGERAMTKDNNLLGKFELSGIPPAPRGVPQIEVTFDIDANGILNVTALERSTNKENKITITNDKGRLSKEDIERMVNEAEKYRNEDEKQKETIAAKNGLESYCFNMKATLDEDNLKTKISDSDRTTILDKCNETIKWLDANQLADKEEYEHRQKELEGVCNPIITKLYQGAGFPPGGMPGGPGGMPGAAGAAGAAGAGGAGPTIEEVD"/>
+    <Polypeptide identifier="1_1">
+      <peptideSequence>DAGTISGLNVLR</peptideSequence>
+    </Polypeptide>
+    <Polypeptide identifier="3_1">
+        <Modification location="5" modOntologyTerm_ref="Oxidation (M)"/>
+        <Modification location="15" modOntologyTerm_ref="SMA (K)"/>
+      <peptideSequence>NQVAMNPNNTIFDAK</peptideSequence>
+    </Polypeptide>
+    <Polypeptide identifier="1_1">
+      <peptideSequence>DAGTISGLNVLR</peptideSequence>
+    </Polypeptide>
+    <Polypeptide identifier="2_1">
+      <peptideSequence>TTPSYVAFTDTER</peptideSequence>
+    </Polypeptide>
+    <Polypeptide identifier="2_2">
+      <peptideSequence>TTPSYVAFTESER</peptideSequence>
+    </Polypeptide>
+    <Polypeptide identifier="3_1">
+        <Modification location="5" modOntologyTerm_ref="Oxidation (M)"/>
+        <Modification location="15" modOntologyTerm_ref="SMA (K)"/>
+      <peptideSequence>NQVAMNPNNTIFDAK</peptideSequence>
+    </Polypeptide>
+    <Polypeptide identifier="2_1">
+      <peptideSequence>TTPSYVAFTDTER</peptideSequence>
+    </Polypeptide>
+    <Polypeptide identifier="3_2">
+        <Modification location="5" modOntologyTerm_ref="Oxidation (M)"/>
+        <Modification location="15" modOntologyTerm_ref="SMA (K)"/>
+      <peptideSequence>NQVAMNPQNTVFDAK</peptideSequence>
+    </Polypeptide>
+    <Polypeptide identifier="2_1">
+      <peptideSequence>TTPSYVAFTDTER</peptideSequence>
+    </Polypeptide>
+    <Polypeptide identifier="3_4">
+        <Modification location="5" modOntologyTerm_ref="Oxidation (M)"/>
+        <Modification location="15" modOntologyTerm_ref="SMA (K)"/>
+      <peptideSequence>NQVAMNPTQTIFDAK</peptideSequence>
+    </Polypeptide>
+  </fuge:ConceptualMoleculeCollection>
+  <_analysisCollection>
+    <PolypeptideSearch identifier="SS1" searchProtocol_ref="SP1" searchResultSet_ref="MascotSearchRef_1">
+      <SpectraData_ref identifier="TODO"/>
+      <SearchDatabase_ref identifier="SwissProt"/>    </PolypeptideSearch>
+    <ProteinDetermination identifier="MascotProteinDetermination" determinationProtocol_ref="MascotParser_1" determinationResultSet_ref="results_from_Mascot" >
+      <PolypeptideResultSet_ref identifier="results_from_Mascot_1"/>
+    </ProteinDetermination>
+  </_analysisCollection>
+  <_analysisProtocolCollection>
+    <PolypeptideSearchProtocol identifier="SP1"  searchAlgorithm_ref="Mascot">
+      <fuge:_annotations OntologyTerm_ref="DP:4"/>
+      <fuge:_annotations OntologyTerm_ref="DP:5"/>
+      <fuge:_annotations OntologyTerm_ref="DP:6"/>
+      <fuge:_annotations OntologyTerm_ref="DP:7"/>
+      <fuge:_annotations OntologyTerm_ref="DP:8"/>
+      <fuge:_annotations OntologyTerm_ref="DP:9"/>
+      <fuge:_annotations OntologyTerm_ref="DP:10"/>
+      <fuge:_annotations OntologyTerm_ref="DP:11"/>
+      <fuge:_annotations OntologyTerm_ref="DP:12"/>
+      <_modificationParams>
+      <SearchModification identifier="Oxidation (M)" terminus="PEPTIDE_CTERMINUS" staticMod="false">
+        <Modification modOntologyTerm_ref="Oxidation (M)"/>
+      </SearchModification>
+      <SearchModification identifier="SMA (K)" terminus="PEPTIDE_CTERMINUS" staticMod="false">
+        <Modification modOntologyTerm_ref="SMA (K)"/>
+      </SearchModification>
+      <SearchModification identifier="SMA (N-term)" terminus="PEPTIDE_CTERMINUS" staticMod="false">
+        <Modification modOntologyTerm_ref="SMA (N-term)"/>
+      </SearchModification>
+      </_modificationParams>
+    </PolypeptideSearchProtocol>
+  </_analysisProtocolCollection>
+  <!--_databaseCollection>
+    <fuge:Database identifier="DB1" version="51.2" />
+  </_databaseCollection -->
+  <fuge:DataCollection>
+    <PolypeptideResultSet identifier="Peptides">
+      <_results>
+        <PolypeptideSearchResult identifier="ident_pep_1_1">
+          <_resultItems>
+            <PolypeptideResultItem identifier="1_1"  calculatedMassToCharge="670.86261" chargeState="2" experimentalMassToCharge="671.9">
+              <_resultItemProperties>
+                <PolypeptideValueProperty value="62.72" valuePropertyTerm_ref="DP:1:mascot_ions_score" />
+                <PolypeptideValueProperty value="0.00273766445377971" valuePropertyTerm_ref="DP:2:mascot_expect_value" />
+                <PolypeptideValueProperty value="1" valuePropertyTerm_ref="DP:3:mascot_rank" />
+              </_resultItemProperties>
+            </PolypeptideResultItem>
+          </_resultItems>
+          <SpectrumElement spectrumID="9-15" spectraDataInputRef_ref="spectra_file_1"/>
+        </PolypeptideSearchResult>
+        <PolypeptideSearchResult identifier="ident_pep_1_2">
+          <_resultItems>
+            <PolypeptideResultItem identifier="3_1"  calculatedMassToCharge="972.9601745" chargeState="2" experimentalMassToCharge="973.9">
+              <_resultItemProperties>
+                <PolypeptideValueProperty value="50.17" valuePropertyTerm_ref="DP:1:mascot_ions_score" />
+                <PolypeptideValueProperty value="0.0466420419507212" valuePropertyTerm_ref="DP:2:mascot_expect_value" />
+                <PolypeptideValueProperty value="1" valuePropertyTerm_ref="DP:3:mascot_rank" />
+              </_resultItemProperties>
+            </PolypeptideResultItem>
+          </_resultItems>
+          <SpectrumElement spectrumID="9-15" spectraDataInputRef_ref="spectra_file_1"/>
+        </PolypeptideSearchResult>
+        <PolypeptideSearchResult identifier="ident_pep_2_1">
+          <_resultItems>
+            <PolypeptideResultItem identifier="1_1"  calculatedMassToCharge="670.86261" chargeState="2" experimentalMassToCharge="671.9">
+              <_resultItemProperties>
+                <PolypeptideValueProperty value="62.72" valuePropertyTerm_ref="DP:1:mascot_ions_score" />
+                <PolypeptideValueProperty value="0.00273766445377971" valuePropertyTerm_ref="DP:2:mascot_expect_value" />
+                <PolypeptideValueProperty value="1" valuePropertyTerm_ref="DP:3:mascot_rank" />
+              </_resultItemProperties>
+            </PolypeptideResultItem>
+          </_resultItems>
+          <SpectrumElement spectrumID="9-15" spectraDataInputRef_ref="spectra_file_1"/>
+        </PolypeptideSearchResult>
+        <PolypeptideSearchResult identifier="ident_pep_2_2">
+          <_resultItems>
+            <PolypeptideResultItem identifier="2_1"  calculatedMassToCharge="806.878662" chargeState="2" experimentalMassToCharge="808.3">
+              <_resultItemProperties>
+                <PolypeptideValueProperty value="40.95" valuePropertyTerm_ref="DP:1:mascot_ions_score" />
+                <PolypeptideValueProperty value="0.351132880133893" valuePropertyTerm_ref="DP:2:mascot_expect_value" />
+                <PolypeptideValueProperty value="1" valuePropertyTerm_ref="DP:3:mascot_rank" />
+              </_resultItemProperties>
+            </PolypeptideResultItem>
+          </_resultItems>
+          <SpectrumElement spectrumID="9-15" spectraDataInputRef_ref="spectra_file_1"/>
+        </PolypeptideSearchResult>
+        <PolypeptideSearchResult identifier="ident_pep_3_1">
+          <_resultItems>
+            <PolypeptideResultItem identifier="2_2"  calculatedMassToCharge="806.8786545" chargeState="2" experimentalMassToCharge="808.3">
+              <_resultItemProperties>
+                <PolypeptideValueProperty value="28.76" valuePropertyTerm_ref="DP:1:mascot_ions_score" />
+                <PolypeptideValueProperty value="5.81395276112246" valuePropertyTerm_ref="DP:2:mascot_expect_value" />
+                <PolypeptideValueProperty value="2" valuePropertyTerm_ref="DP:3:mascot_rank" />
+              </_resultItemProperties>
+            </PolypeptideResultItem>
+          </_resultItems>
+          <SpectrumElement spectrumID="9-15" spectraDataInputRef_ref="spectra_file_1"/>
+        </PolypeptideSearchResult>
+        <PolypeptideSearchResult identifier="ident_pep_3_2">
+          <_resultItems>
+            <PolypeptideResultItem identifier="3_1"  calculatedMassToCharge="972.9601745" chargeState="2" experimentalMassToCharge="973.9">
+              <_resultItemProperties>
+                <PolypeptideValueProperty value="50.17" valuePropertyTerm_ref="DP:1:mascot_ions_score" />
+                <PolypeptideValueProperty value="0.0466420419507212" valuePropertyTerm_ref="DP:2:mascot_expect_value" />
+                <PolypeptideValueProperty value="1" valuePropertyTerm_ref="DP:3:mascot_rank" />
+              </_resultItemProperties>
+            </PolypeptideResultItem>
+          </_resultItems>
+          <SpectrumElement spectrumID="9-15" spectraDataInputRef_ref="spectra_file_1"/>
+        </PolypeptideSearchResult>
+        <PolypeptideSearchResult identifier="ident_pep_4_1">
+          <_resultItems>
+            <PolypeptideResultItem identifier="2_1"  calculatedMassToCharge="806.878662" chargeState="2" experimentalMassToCharge="808.3">
+              <_resultItemProperties>
+                <PolypeptideValueProperty value="40.95" valuePropertyTerm_ref="DP:1:mascot_ions_score" />
+                <PolypeptideValueProperty value="0.351132880133893" valuePropertyTerm_ref="DP:2:mascot_expect_value" />
+                <PolypeptideValueProperty value="1" valuePropertyTerm_ref="DP:3:mascot_rank" />
+              </_resultItemProperties>
+            </PolypeptideResultItem>
+          </_resultItems>
+          <SpectrumElement spectrumID="9-15" spectraDataInputRef_ref="spectra_file_1"/>
+        </PolypeptideSearchResult>
+        <PolypeptideSearchResult identifier="ident_pep_4_2">
+          <_resultItems>
+            <PolypeptideResultItem identifier="3_2"  calculatedMassToCharge="972.960182" chargeState="2" experimentalMassToCharge="973.9">
+              <_resultItemProperties>
+                <PolypeptideValueProperty value="34.22" valuePropertyTerm_ref="DP:1:mascot_ions_score" />
+                <PolypeptideValueProperty value="1.83559791291179" valuePropertyTerm_ref="DP:2:mascot_expect_value" />
+                <PolypeptideValueProperty value="2" valuePropertyTerm_ref="DP:3:mascot_rank" />
+              </_resultItemProperties>
+            </PolypeptideResultItem>
+          </_resultItems>
+          <SpectrumElement spectrumID="9-15" spectraDataInputRef_ref="spectra_file_1"/>
+        </PolypeptideSearchResult>
+        <PolypeptideSearchResult identifier="ident_pep_5_1">
+          <_resultItems>
+            <PolypeptideResultItem identifier="2_1"  calculatedMassToCharge="806.878662" chargeState="2" experimentalMassToCharge="808.3">
+              <_resultItemProperties>
+                <PolypeptideValueProperty value="40.95" valuePropertyTerm_ref="DP:1:mascot_ions_score" />
+                <PolypeptideValueProperty value="0.351132880133893" valuePropertyTerm_ref="DP:2:mascot_expect_value" />
+                <PolypeptideValueProperty value="1" valuePropertyTerm_ref="DP:3:mascot_rank" />
+              </_resultItemProperties>
+            </PolypeptideResultItem>
+          </_resultItems>
+          <SpectrumElement spectrumID="9-15" spectraDataInputRef_ref="spectra_file_1"/>
+        </PolypeptideSearchResult>
+        <PolypeptideSearchResult identifier="ident_pep_5_2">
+          <_resultItems>
+            <PolypeptideResultItem identifier="3_4"  calculatedMassToCharge="973.4703825" chargeState="2" experimentalMassToCharge="973.9">
+              <_resultItemProperties>
+                <PolypeptideValueProperty value="23.08" valuePropertyTerm_ref="DP:1:mascot_ions_score" />
+                <PolypeptideValueProperty value="23.8658856386931" valuePropertyTerm_ref="DP:2:mascot_expect_value" />
+                <PolypeptideValueProperty value="4" valuePropertyTerm_ref="DP:3:mascot_rank" />
+              </_resultItemProperties>
+            </PolypeptideResultItem>
+          </_resultItems>
+          <SpectrumElement spectrumID="9-15" spectraDataInputRef_ref="spectra_file_1"/>
+        </PolypeptideSearchResult>
+      </_results>
+    </PolypeptideResultSet>
+    <DeterminationResultSet identifier="Proteins">
+      <_results>
+        <RelationResult identifier="HSP7D_MANSE">
+          <_resultItems>
+            <RelationResultItem identifier="" start="160" end="171" polypeptideReference_ref="1_1" post="K" pre="I">
+            </RelationResultItem>
+            <RelationResultItem identifier="" start="57" end="71" polypeptideReference_ref="3_1" post="K" pre="R">
+            </RelationResultItem>
+          </_resultItems>
+          <_resultProperties>
+            <ValueProperty valuePropertyTerm_ref="mascot_score" value="109.524382332144"/>
+          </_resultProperties>
+        </RelationResult>
+        <RelationResult identifier="HSP70_ECHGR">
+          <_resultItems>
+            <RelationResultItem identifier="" start="161" end="172" polypeptideReference_ref="1_1" post="K" pre="I">
+            </RelationResultItem>
+            <RelationResultItem identifier="" start="38" end="50" polypeptideReference_ref="2_1" post="R" pre="L">
+            </RelationResultItem>
+          </_resultItems>
+          <_resultProperties>
+            <ValueProperty valuePropertyTerm_ref="mascot_score" value="101.987191166072"/>
+          </_resultProperties>
+        </RelationResult>
+        <RelationResult identifier="HSP7A_DROSI">
+          <_resultItems>
+            <RelationResultItem identifier="" start="37" end="49" polypeptideReference_ref="2_2" post="R" pre="L">
+            </RelationResultItem>
+            <RelationResultItem identifier="" start="57" end="71" polypeptideReference_ref="3_1" post="K" pre="R">
+            </RelationResultItem>
+          </_resultItems>
+          <_resultProperties>
+            <ValueProperty valuePropertyTerm_ref="mascot_score" value="78.93"/>
+          </_resultProperties>
+        </RelationResult>
+        <RelationResult identifier="HS70L_HUMAN">
+          <_resultItems>
+            <RelationResultItem identifier="" start="39" end="51" polypeptideReference_ref="2_1" post="R" pre="L">
+            </RelationResultItem>
+            <RelationResultItem identifier="" start="59" end="73" polypeptideReference_ref="3_2" post="K" pre="R">
+            </RelationResultItem>
+          </_resultItems>
+          <_resultProperties>
+            <ValueProperty valuePropertyTerm_ref="mascot_score" value="73.4871911660722"/>
+          </_resultProperties>
+        </RelationResult>
+      </_results>
+    </DeterminationResultSet>
+  </fuge:DataCollection>
+  <_ontologyCollection>
+    <fuge:OntologyCollection>
+      <!-- DataProperty ontology term references -->
+        <fuge:DataProperty term="mascot ions score" termAccession="PI:99999" identifier="DP:1:mascot_ions_score" name="mascot ions score" dataType="xsd:double" OntologySource_ref="MASCOT:PSI:PI"/>
+        <fuge:DataProperty term="mascot expect value" termAccession="PI:99999" identifier="DP:2:mascot_expect_value" name="mascot expect value" dataType="xsd:double" OntologySource_ref="MASCOT:PSI:PI"/>
+        <fuge:DataProperty term="mascot rank" termAccession="PI:99999" identifier="DP:3:mascot_rank" name="mascot rank" dataType="xsd:int" OntologySource_ref="MASCOT:PSI:PI"/>
+        <fuge:DataProperty term="user name" termAccession="PI:00003" identifier="DP:4" name="user name" value="David Creasy" dataType="xsd:string" OntologySource_ref="PSI:PI"/>
+        <fuge:DataProperty term="user email address" termAccession="PI:00004" identifier="DP:5" name="user email address" value="dcreasy@matrixscience.com" dataType="xsd:string" OntologySource_ref="PSI:PI"/>
+        <fuge:DataProperty term="input file name" termAccession="PI:00009" identifier="DP:6" name="input file name" value="dyckall.asc" dataType="xsd:string" OntologySource_ref="PSI:PI"/>
+        <fuge:DataProperty term="database local file path" termAccession="PI:00011" identifier="DP:7" name="database local file path" value="C:/INETPUB/MASCOT/sequence/SwissProt/current/SwissProt_51.6.fasta" dataType="xsd:string" OntologySource_ref="PSI:PI"/>
+        <fuge:DataProperty term="database version" termAccession="PI:00013" identifier="DP:8" name="database version" value="SwissProt_51.6.fasta" dataType="xsd:string" OntologySource_ref="PSI:PI"/>
+        <fuge:DataProperty term="database taxonomy filter" termAccession="PI:00015" identifier="DP:9" name="database taxonomy filter" value="All entries" dataType="xsd:string" OntologySource_ref="PSI:PI"/>
+        <fuge:DataProperty term="number of protein sequences" termAccession="PI:00018" identifier="DP:10" name="number of protein sequences" value="257964" dataType="xsd:string" OntologySource_ref="PSI:PI"/>
+        <fuge:DataProperty term="number of residues" termAccession="PI:00018" identifier="DP:11" name="number of residues" value="93947433" dataType="xsd:string" OntologySource_ref="PSI:PI"/>
+        <fuge:DataProperty term="database type" termAccession="PI:00025" identifier="DP:12" name="database type" value="AA" dataType="xsd:string" OntologySource_ref="PSI:PI"/>
+        <fuge:OntologyIndividual termAccession="PSI:99999" identifier="retention_time" term="Retention Time" OntologySource_ref="PSI:PI">
+          <fuge:ObjectProperty termAccession="MO:999999" identifier="retention_time_has_unit" term="has_unit">
+            <fuge:OntologyIndividual termAccession="UO:0000032" identifier="retention_time_time" term="hour" OntologySource_ref="UO"/>
+          </fuge:ObjectProperty>
+        </fuge:OntologyIndividual>
+      <!-- Ontology sources for terms -->
+      <fuge:OntologySource ontologyURI="http://www.psidev.info/xyz" identifier="PSI:PI"/>
+      <fuge:OntologySource ontologyURI="http://www.obo.net/uo" identifier="OBO:UO"/>
+      <fuge:OntologySource ontologyURI="http://www.obo.net/uo" identifier="MASCOT:PSI:PI"/>
+    </fuge:OntologyCollection>
+  </_ontologyCollection>
+</AnalysisXML>

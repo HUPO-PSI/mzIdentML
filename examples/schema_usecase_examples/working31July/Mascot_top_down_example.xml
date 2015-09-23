@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalysisXML id=""             xsi:schemaLocation="http://psidev.info/psi/pi/analysis/1.0  ./AnalysisXML_working.xsd"
+             xmlns:pf="http://psidev.info/fuge-light/1.0"
+             xmlns="http://psidev.info/psi/pi/analysis/1.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SequenceCollection>
+    <DBSequence id="DBSeq_MYG_EQUBU" length="154" SearchDatabase_ref="SDB_SwissProt" accession="MYG_EQUBU" name="TODO">
+      <seq>MGLSDGEWQQVLNVWGKVEADIAGHGQEVLIRLFTGHPETLEKFDKFKHLKTEAEMKASEDLKKHGTVVLTALGGILKKKGHHEAELKPLAQSHATKHKIPIKYLEFISDAIIHVLHSKHPGDFGADAQGAMTKALELFRNDIAAKYKELGFQG</seq>
+    </DBSequence>
+    <Peptide id="peptide_1_1" sequenceMass="16940.964874" sequenceLength="153">
+      <peptideSequence>GLSDGEWQQVLNVWGKVEADIAGHGQEVLIRLFTGHPETLEKFDKFKHLKTEAEMKASEDLKKHGTVVLTALGGILKKKGHHEAELKPLAQSHATKHKIPIKYLEFISDAIIHVLHSKHPGDFGADAQGAMTKALELFRNDIAAKYKELGFQG</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_2" sequenceMass="16932.885651" sequenceLength="153">
+      <peptideSequence>GLSDGEWQLVLNAWGKVETDIGGHGQEVLIRLFKGHPETLEKFDKFKHLKSEDEMKASEDLKKHGTTVLTALGNILKKKGQHEAELAPLAQSHATKHKIPVKYLEFISEAIIQVLESKHPGDFGADAQGAMSKALELFRNDIAAKYKELGFQG</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_3" sequenceMass="16956.96965" sequenceLength="153">
+      <peptideSequence>GLSDGEWQLVLNVWGKVEADVAGHGQEVLIRLFKGHPETLEKFDKFKHLKTEDEMKASEDLKKHGNTVLSALGGILKKKGQHEAEIKPLAQSHATKHKIPVKYLEFISEAIIQVLQSKHPGDFGADAQAAMSKALELFRNDIAAKYKELGFQG</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_4" sequenceMass="16932.000916" sequenceLength="153">
+      <peptideSequence>GLSDGEWQLVLNVWGKVEADVGGHGQEVLIRLFTGHPETLEKFDKFKHLKTADEMKASEDLKKHGTTVLTALGGILKKKGQHEAELKPLAQSHATKHKIPIKYLEFISDAIVHVLHSKHPAEFGADAQAAMKKALELFRNDIAAKYKELGFQG</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_5" sequenceMass="16937.016235" sequenceLength="153">
+      <peptideSequence>GLSDGEWQLVLNVWGKVEADIPGHGQEVLIRLFKGHPETLEKFDKFKHLKSEDEMKASEDLKKHGATVLTALGGILKKKGQHEAQLKPLAQSHATKHKIPVKYLEFISEVIIQVLQSKHPGDFGADAQGAMGKALELFRNDIAAKYKELGFQG</peptideSequence>
+    </Peptide>
+  </SequenceCollection>
+  <AnalysisCollection>
+    <SpectrumIdentification id="SI_1" SpectrumIdentificationProtocol_ref="SIP_1" SpectrumIdentificationList_ref="SIL_1">
+      <SpectraData_ref ref="SD_1"/>
+      <SearchDatabase SearchDatabase_ref="SDB_SwissProt"/>
+    </SpectrumIdentification>
+    <ProteinDetection id="PD_1" ProteinDetectionProtocol_ref="PDP_MascotParser_1" ProteinDetectionList_ref="PDL_1" >
+      <SpectrumIdentificationList_ref ref="SIL_1"/>
+    </ProteinDetection>
+  </AnalysisCollection>
+  <AnalysisProtocolCollection>
+    <SpectrumIdentificationProtocol id="SIP_1" AnalysisSoftware_ref="AS_mascot_server">
+      <SearchType>
+        <pf:cvParam accession="PI:xxxxx" name="searchType" cvRef="PSI-PI" value="MIS"/>
+      </SearchType>
+      <AdditionalSearchParams>
+        <pf:cvParam accession="PI:00002" name="user name"               cvRef="PSI-PI" value=""/>
+        <pf:cvParam accession="PI:00003" name="user email address"      cvRef="PSI-PI" value=""/>
+        <pf:cvParam accession="PI:00004" name="user comments"           cvRef="PSI-PI" value="Example for Mascot Top Down search from Bruker ECD instrument"/>
+        <pf:cvParam accession="PI:xxxxx" name="InstrumentType"          cvRef="PSI-PI" value="FTMS-ECD"/>
+        <pf:cvParam accession="PI:00211" name="mass type setting monoisotopic"     cvRef="PSI-PI"/>
+        <pf:cvParam accession="PI:00066" name="ions series considered in search" value="singly charged" cvRef="PSI-PI"/>
+        <pf:cvParam accession="PI:00066" name="ions series considered in search" value="doubly charged if precursor 2+ or higher (not internal or immonium)" cvRef="PSI-PI"/>
+        <pf:cvParam accession="PI:00066" name="ions series considered in search" value="c series" cvRef="PSI-PI"/>
+        <pf:cvParam accession="PI:00066" name="ions series considered in search" value="y series" cvRef="PSI-PI"/>
+        <pf:cvParam accession="PI:00066" name="ions series considered in search" value="z+1 series" cvRef="PSI-PI"/>
+        <pf:cvParam accession="PI:00066" name="ions series considered in search" value="z+2 series" cvRef="PSI-PI"/>
+      </AdditionalSearchParams>
+      <MassTable>
+        <Residue Code="A" Mass="71.037114"/>
+        <Residue Code="B" Mass="114.53494"/>
+        <Residue Code="C" Mass="103.009185"/>
+        <Residue Code="D" Mass="115.026943"/>
+        <Residue Code="E" Mass="129.042593"/>
+        <Residue Code="F" Mass="147.068414"/>
+        <Residue Code="G" Mass="57.021464"/>
+        <Residue Code="H" Mass="137.058912"/>
+        <Residue Code="I" Mass="113.084064"/>
+        <Residue Code="J" Mass="0"/>
+        <Residue Code="K" Mass="128.094963"/>
+        <Residue Code="L" Mass="113.084064"/>
+        <Residue Code="M" Mass="131.040485"/>
+        <Residue Code="N" Mass="114.042927"/>
+        <Residue Code="O" Mass="0"/>
+        <Residue Code="P" Mass="97.052764"/>
+        <Residue Code="Q" Mass="128.058578"/>
+        <Residue Code="R" Mass="156.101111"/>
+        <Residue Code="S" Mass="87.032028"/>
+        <Residue Code="T" Mass="101.047679"/>
+        <Residue Code="U" Mass="150.95363"/>
+        <Residue Code="V" Mass="99.068414"/>
+        <Residue Code="W" Mass="186.079313"/>
+        <Residue Code="X" Mass="111"/>
+        <Residue Code="Y" Mass="163.063329"/>
+      </MassTable>
+      <FragmentTolerance>
+        <PlusValue  unitAccession="PI:xxxxx" unitName="Da" value="0.1" />
+        <MinusValue unitAccession="PI:xxxxx" unitName="Da" value="0.1" />
+      </FragmentTolerance>
+      <ParentTolerance>
+        <PlusValue  unitAccession="PI:xxxxx" unitName="%" value="0.1" />
+        <MinusValue unitAccession="PI:xxxxx" unitName="%" value="0.1" />
+      </ParentTolerance>
+      <DatabaseFilters>
+        <Filter>
+          <FilterType>
+            <pf:cvParam accession="PI:00015" name="database taxonomy filter" cvRef="PSI-PI" />
+          </FilterType>
+          <Include>
+            <pf:cvParam accession="1" name="root" cvRef="NCBI" />
+          </Include>
+        </Filter>
+      </DatabaseFilters>
+    </SpectrumIdentificationProtocol>
+    <ProteinDetectionProtocol id="PDP_MascotParser_1"  AnalysisSoftware_ref="AS_mascot_parser">
+      <_runtimeParams>
+        <pf:cvParam accession="PI:xxxx" name="MascotSigThreshold"                        cvRef="PSI-PI" value="0.05"/>
+        <pf:cvParam accession="PI:xxxx" name="MaxProteinHits"                            cvRef="PSI-PI" value="Auto"/>
+        <pf:cvParam accession="PI:xxxx" name="MascotProteinScoringMethod"                cvRef="PSI-PI" value="Standard"/>
+        <pf:cvParam accession="PI:xxxx" name="MascotMinMSMSThreshold"                    cvRef="PSI-PI" value="0"/>
+        <pf:cvParam accession="PI:xxxx" name="ShowHomolgousProteinsWithSamePeptides"     cvRef="PSI-PI" value="0"/>
+        <pf:cvParam accession="PI:xxxx" name="ShowHomolgousProteinsWithSubsetOfPeptides" cvRef="PSI-PI" value="0"/>
+        <pf:cvParam accession="PI:xxxx" name="MascotRequireBoldRed"                      cvRef="PSI-PI" value="0"/>
+        <pf:cvParam accession="PI:xxxx" name="UseUnigeneClustering"                      cvRef="PSI-PI" value=""/>
+        <pf:cvParam accession="PI:xxxx" name="MascotIncludeErrorTolerantMatches"         cvRef="PSI-PI" value="1"/>
+        <pf:cvParam accession="PI:xxxx" name="MascotShowDecoyMatches"                    cvRef="PSI-PI" value="0"/>
+      </_runtimeParams>
+    </ProteinDetectionProtocol>
+  </AnalysisProtocolCollection>
+  <DataCollection>
+    <Inputs>
+      <SourceFile location="file:///../data/Mascot_top_down_example.dat" id="SF_1" >
+        <pf:_fileFormat>
+          <pf:cvParam accession="PSI:xxxx" name="MascotDatFile" cvRef="PSI-PI" />
+        </pf:_fileFormat>
+      </SourceFile>
+      <SearchDatabase location="file:///C:/inetpub/mascot/sequence/SwissProt/current/SwissProt_51.6.fasta" id="SDB_SwissProt" name="SwissProt" numDatabaseSequences="257964" numSequencesSearched="257964" releaseDate="SwissProt_51.6.fasta" version="SwissProt_51.6.fasta">
+        <pf:_fileFormat>
+          <pf:cvParam accession="" name="" cvRef="" value="" />
+        </pf:_fileFormat>
+        <DatabaseName>
+          <pf:cvParam accession="" name="" cvRef="" value="" />
+        </DatabaseName>
+        <!-- pf:cvParam accession="PI:00019" name="number of residues" cvRef="PSI-PI" value="93947433"/-->
+        <!-- pf:cvParam accession="PI:00025" name="database type" cvRef="PSI-PI" value="AA"/-->
+      </SearchDatabase>
+      <SpectraData location="" id="SD_1">
+        <pf:_fileFormat>
+          <pf:cvParam accession="" name="" cvRef="" value="" />
+        </pf:_fileFormat>
+      </SpectraData>
+    </Inputs>
+    <AnalysisData>
+      <SpectrumIdentificationList id="SIL_1">
+        <SpectrumIdentificationResult id="SIR_1_1">
+          <SpectrumIdentificationItem id="SII_1_1"  calculatedMassToCharge="16940.964874" chargeState="1" experimentalMassToCharge="16947.854" Peptide_ref="peptide_1_1">
+            <PeptideEvidence id="PE_1_1_MYG_EQUBU" start="2" end="154" pre="M" post="-" frame="0" isDecoy="false" DBSequence_Ref="DBSeq_MYG_EQUBU" />
+            <pf:cvParam accession="PI:00171" name="mascot:score"             cvRef="PSI-PI" value="405.72" />
+            <pf:cvParam accession="PI:00172" name="mascot:expectation value" cvRef="PSI-PI" value="5.31814912476576e-040" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"              cvRef="PSI-PI" value="1" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="1: Scan 1 (rt=0) [Y:\bruker_top_down\MYOGLOBIN_ECD.d]" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_1_2">
+          <SpectrumIdentificationItem id="SII_1_2"  calculatedMassToCharge="16932.885651" chargeState="1" experimentalMassToCharge="16947.854" Peptide_ref="peptide_1_2">
+            <pf:cvParam accession="PI:00171" name="mascot:score"             cvRef="PSI-PI" value="19.87" />
+            <pf:cvParam accession="PI:00172" name="mascot:expectation value" cvRef="PSI-PI" value="0.204531644907661" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"              cvRef="PSI-PI" value="2" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="1: Scan 1 (rt=0) [Y:\bruker_top_down\MYOGLOBIN_ECD.d]" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_1_3">
+          <SpectrumIdentificationItem id="SII_1_3"  calculatedMassToCharge="16956.96965" chargeState="1" experimentalMassToCharge="16947.854" Peptide_ref="peptide_1_3">
+            <pf:cvParam accession="PI:00171" name="mascot:score"             cvRef="PSI-PI" value="15.31" />
+            <pf:cvParam accession="PI:00172" name="mascot:expectation value" cvRef="PSI-PI" value="0.584467694309054" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"              cvRef="PSI-PI" value="3" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="1: Scan 1 (rt=0) [Y:\bruker_top_down\MYOGLOBIN_ECD.d]" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_1_4">
+          <SpectrumIdentificationItem id="SII_1_4"  calculatedMassToCharge="16932.000916" chargeState="1" experimentalMassToCharge="16947.854" Peptide_ref="peptide_1_4">
+            <pf:cvParam accession="PI:00171" name="mascot:score"             cvRef="PSI-PI" value="3.9" />
+            <pf:cvParam accession="PI:00172" name="mascot:expectation value" cvRef="PSI-PI" value="8.08649851441164" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"              cvRef="PSI-PI" value="4" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="1: Scan 1 (rt=0) [Y:\bruker_top_down\MYOGLOBIN_ECD.d]" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_1_5">
+          <SpectrumIdentificationItem id="SII_1_5"  calculatedMassToCharge="16937.016235" chargeState="1" experimentalMassToCharge="16947.854" Peptide_ref="peptide_1_5">
+            <pf:cvParam accession="PI:00171" name="mascot:score"             cvRef="PSI-PI" value="1.12" />
+            <pf:cvParam accession="PI:00172" name="mascot:expectation value" cvRef="PSI-PI" value="15.3377096141497" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"              cvRef="PSI-PI" value="5" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="1: Scan 1 (rt=0) [Y:\bruker_top_down\MYOGLOBIN_ECD.d]" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+      </SpectrumIdentificationList>
+      <ProteinDetectionList id="PDL_1">
+        <pf:cvParam accession="TODO: Find something to put here" cvRef="TODO" name="TODO: Find something to put here"  value="" />
+      </ProteinDetectionList>
+    </AnalysisData>
+  </DataCollection>
+  <cvList>
+    <pf:cv fullName="PSI-PI"  URI="http://www.psidev.info/not_sure_of_url_to_cv.obo"></pf:cv>
+    <!-- pf:cv fullName="PSI-MOD" URI="http://www.psidev.info/not_sure_of_url_to_cv.obo"></pf:cv-->
+  </cvList>
+  <AnalysisSoftwareList>
+    <AnalysisSoftware id="AS_mascot_server" name="Mascot Server" version="2.2.03">
+      <pf:ContactRole Contact_ref="Matrix Science Limited">
+        <pf:_role>
+          <pf:cvParam accession="TODO" name="software vendor" cvRef="TODO" value="Matrix Science" />
+        </pf:_role>
+      </pf:ContactRole>
+      <Customizations>
+        No customisations (and no cvParams wanted for this element)
+      </Customizations>
+    </AnalysisSoftware>
+    <AnalysisSoftware id="AS_mascot_parser" name="Mascot Parser" version="2.2.100.0">
+      <pf:ContactRole Contact_ref="Matrix Science Limited">
+        <pf:_role>
+          <pf:cvParam accession="TODO" name="software vendor" cvRef="TODO" value="" />
+        </pf:_role>
+      </pf:ContactRole>
+      <Customizations>
+        No customisations (and no cvParams wanted for this element)
+      </Customizations>
+    </AnalysisSoftware>
+  </AnalysisSoftwareList>
+  <pf:Provider id="">
+    <pf:ContactRole Contact_ref="[Ref to a contact elsewhere in the file]">
+      <pf:_role>
+        <pf:cvParam accession="" name="" cvRef="" value="" />
+      </pf:_role>
+    </pf:ContactRole>
+  </pf:Provider>
+  <pf:AuditCollection>
+    <pf:Person id="">
+      <pf:_affiliations Organization_ref="ORG_1"/>
+    </pf:Person>
+    <pf:Organization id="ORG_1">
+    </pf:Organization>
+  </pf:AuditCollection>
+  <AnalysisSampleCollection>
+    <pf:GenericMaterial id="">
+      <pf:ContactRole Contact_ref="">
+        <pf:_role>
+          <pf:cvParam accession="" name="" cvRef="" value="" />
+        </pf:_role>
+      </pf:ContactRole>
+      <pf:cvParam accession="" name="" cvRef="" value="" />
+      <pf:_components GenericMaterial_ref=""/>
+    </pf:GenericMaterial>
+  </AnalysisSampleCollection>
+</AnalysisXML>

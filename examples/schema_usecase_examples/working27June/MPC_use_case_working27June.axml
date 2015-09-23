@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp1 (http://www.altova.com) by eisenach (MPC) -->
+<AnalysisXML identifier="MPC_use_case" xmlns="http://psidev.info/psi/pi/analysis/1.0" xmlns:pf="http://psidev.info/fuge-light/1.0" xmlns:psi-pi="http://psidev.info/psi/pi/analysis/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/analysis/1.0 C:\Work\PSI\analysisXML\schema\AnalysisXML_working.xsd">
+	<!-- CAUTION: ALL peptide scores, protein scores and sequence coverage values are only placeholders for the real values, because file is handcrafted and shows only principle structure of AnalysisXML! -->
+	
+	<SequenceCollection>
+		<DBSequence identifier="prot1_IPI" length="">
+			<seq>VDYHAANQSYQYGPSSAGNGAGGGGSMGDYMAQEDDWDRDLLLDPAWEKQQRKTFTAWCNSHLRKAGTQIENIDEDFRDGLKLMLLLEVISGERLPKPERGKMRVHKINNVNKALDFIASKGVKLVSIGAEEIVDGNAKMTLGMIWTIILRFAIQDISVEETSAKEGLLLWCQRKTAPYKNVNVQNFHISWKDGLAFNALIHRHRPELIEYDKLRKDDPVTNLNNAFEVAEKYLDIPKMLDAEDIVNTARPDEKAIMTYVSSFYHAFSGAQKAETAANRICKVLAVNQENEHLMEDYEKLASDLLEWIRRTIPWLEDRVPQKTIQEMQQKLEDFRDYRRVHKPPKVQEKCQLEINFNTLQTKLRLSNRPAFMPSEGKMVSDINNGWQHLEQAEKGYEEWLLNEIRRLERLDHLAEKFRQKASIHEAWTDGKEAMLKHRDYETATLSDIKALIRKHEAFESDLAAHQDRVEQIAAIAQELNELDYYDSHNVNTRCQKICDQWDALGSLTHSRREALEKTEKQLEAIDQLHLEYAKRAAPFNNWMESAMEDLQDMFIVHTIEEIEGLISAHDQFKSTLPDADREREAILAIHKEAQRIAESNHIKLSGSNPYTTVTPQIINSKWEKVQQLVPKRDHALLEEQSKQQSNEHLRRQFASQANVVGPWIQTKMEEIGRISIEMNGTLEDQLSHLKQYERSIVDYKPNLDLLEQQHQLIQEALIFDNKHTNYTMEHIRVGWEQLLTTIARTINEVENQILTRDAKGISQEQMQEFRASFNHFDKDHGGALGPEEFKACLISLGYDVENDRQGEAEFNRIMSLVDPNHSGLVTFQAFIDFMSRETTDTDTADQVIASFKVLAGDKNFITAEELRRELPPDQAEYCIARMAPYQGPDAVPGALDYKSFSTALYGESDL</seq>
+			<pf:DatabaseReference Database_ref="" accession="IPI00013808.1"></pf:DatabaseReference>			
+		</DBSequence>
+		<DBSequence identifier="prot2_IPI"  length="">
+			<seq>SIRVTQKSYKVSTSGPRAFSSRSYTSGPGSRISSSSFSRVGSSNFRGGLGGGYGGASGMGGITAVTVNQSLLSPLVLEVDPNIQAVRTQEKEQIKTLNNKFASFIDKVRFLEQQNKMLETKWSLLQQQKTARSNMDNMFESYINNLRRQLETLGQEKLKLEAELGNMQGLVEDFKNKYEDEINKRTEMENEFVLIKKDVDEAYMNKVELESRLEGLTDEINFLRQLYEEEIRELQSQISDTSVVLSMDNSRSLDMDSIIAEVKAQYEDIANRSRAEAESMYQIKYEELQSLAGKHGDDLRRTKTEISEMNRNISRLQAEIEGLKGQRASLEAAIADAEQRGELAIKDANAKLSELEAALQRAKQDMARQLREYQELMNVKLALDIEIATYRKLLEGEESRLESGMQNMSIHTKTTGGYAGGLSSAYGGLTSPGLSYSLGSSFGSGAGSSSFSRTSSSRAVVVKKIETRDGKLVSESSDVLPK</seq>
+			<pf:DatabaseReference Database_ref="" accession="IPI00554648.1"></pf:DatabaseReference>			
+		</DBSequence>
+		
+		<Peptide identifier="prot1_pep1">
+			<peptideSequence>AGTQIENIDEDFR</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot1_pep2">
+			<peptideSequence>AGTQIENIDEDFRDGLK</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot1_pep3">
+			<peptideSequence>ALDFIASK</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot1_pep4">
+			<Modification location="1">
+				<pf:cvParam accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"/>
+			</Modification>
+			<peptideSequence>MLDAEDIVNTARPDEK</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot2_pep1">
+			<!-- identified in two spectra with different scores! -->
+			<peptideSequence>SYTSGPGSR</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot2_pep2">
+			<Modification location="13">
+				<pf:cvParam accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"/>
+			</Modification>
+			<peptideSequence>GGLGGGYGGASGMGGITAVTVNQSLLSPLVLEVDPNIQAVR</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot3_pep1">
+			<Modification location="11">
+				<pf:cvParam accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"/>
+			</Modification>
+			<peptideSequence>TLTLVDTGIGMTK</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot3_pep2">
+			<peptideSequence>HNDDEQYAWESSAGGSFTVR</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot3_pep3">
+			<Modification location="10">
+				<pf:cvParam accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"/>
+			</Modification>
+			<peptideSequence>YHTSQSGDEMTSLSEYVSR</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot4_pep1">
+			<peptideSequence>ENDILKMPIAAVR</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot4_pep2">
+			<peptideSequence>LLEDDFSMKK</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot5_pep1">
+			<peptideSequence>DGHNLISLLEVLSGDSLPR</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot5_pep2">
+			<peptideSequence>QTNLENLDQAFSVAER</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot5_pep3">
+			<peptideSequence>HHTAAFEER</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot6_pep1">
+			<peptideSequence>STFSTNYR</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot6_pep2">
+			<peptideSequence>GGMGSGGLATGIAGGLAGMGGIQNEK</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot7_pep1">
+			<peptideSequence>MYGPMGTR</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot7_pep2">
+			<peptideSequence>LRSEPVMGVK</peptideSequence>
+		</Peptide>
+		<Peptide identifier="prot7_pep3">
+			<peptideSequence>QSDGTTYVTQNNAQAIPVK</peptideSequence>
+		</Peptide>
+	</SequenceCollection>	
+
+	<AnalysisCollection>
+		<SpectrumIdentification identifier="SEQUEST_analysis" SpectrumIdentificationProtocol_ref="SEQUEST_proto">
+			<SpectraData_ref identifier="LCMALDI_spectra"/>
+			<SearchDatabase_ref identifier="ipi.HUMAN_decoy"/>
+		</SpectrumIdentification>
+		<SpectrumIdentification identifier="Mascot_analysis" SpectrumIdentificationProtocol_ref="Mascot_proto">
+			<SpectraData_ref identifier="LCMALDI_spectra"/>
+			<SearchDatabase_ref identifier="ipi.HUMAN_decoy"/>
+		</SpectrumIdentification>
+		<ProteinDetermination identifier="ProteinExtractor_analysis" ProteinDeterminationProtocol_ref="ProteinExtractor_proto" ProteinDetectionResultList_ref="ProteinExtractor_results">
+			<SpectrumIdentificationList_ref identifier="SEQUEST_results"/>
+			<SpectrumIdentificationList_ref identifier="Mascot_results"/>
+		</ProteinDetermination>
+	</AnalysisCollection>
+	<AnalysisProtocolCollection>
+		<SpectrumIdentificationProtocol identifier="SEQUEST_proto" AnalysisSoftware_ref="SEQUEST_SW">
+			<SearchType>
+				<pf:cvParam accession="PRIDE:0000159" name="MS/MS search" cvRef="PRIDE"/>
+			</SearchType>
+			<SearchParams>
+				<pf:cvParam accession="PRIDE:0000162" name="Mass value type setting monoisotopic" cvRef="PRIDE"/>
+				<pf:cvParam accession="PRIDE:0000074" name="Maximum Missed Cleavages Setting" cvRef="PRIDE" value="1"/>
+				<pf:cvParam accession="PRIDE:0000160" name="Enzyme" value="Trypsin (*KR)" cvRef="PRIDE"/>
+				<pf:cvParam accession="PRIDE:0000163" name="Instrument type" value="MALDI-TOF-TOF" cvRef="PRIDE"/>
+				<pf:cvParam accession="" name="decoy_string" cvRef="" value="Rev"/>
+			</SearchParams>
+			<ModificationParams>
+				<SearchModification fixedMod="false">
+					<ModName value="oxidation"/>
+					<!-- accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"-->
+					<MassValue value="15.994914622" unitAccession="" unitName="Da"/>
+					<!--accession="" name="" cvRef="" /> -->
+				</SearchModification>
+			</ModificationParams>
+			<FragmentTolerance>
+				<PlusValue value="0.9" unitAccession="" unitName="Da"/>
+				<!-- accession="" name="" cvRef="" /> -->
+				<MinusValue value="0.9" unitAccession="" unitName="Da"/>
+				<!-- accession="" name="" cvRef=""  -->
+			</FragmentTolerance>
+			<ParentTolerance>
+				<PlusValue value="75.0" unitAccession="" unitName="ppm"/>
+				<!-- accession="" name="" cvRef=""  -->
+				<MinusValue value="75.0" unitAccession="" unitName="ppm"/>
+				<!-- accession="" name="" cvRef=""  -->
+			</ParentTolerance>
+		</SpectrumIdentificationProtocol>
+		<SpectrumIdentificationProtocol identifier="Mascot_proto" AnalysisSoftware_ref="Mascot_SW">
+			<SearchType>
+				<pf:cvParam accession="PRIDE:0000159" name="MS/MS search" cvRef="PRIDE"/>
+			</SearchType>
+			<SearchParams>
+				<pf:cvParam accession="PRIDE:0000162" name="Mass value type setting monoisotopic" cvRef="PRIDE"/>
+				<pf:cvParam accession="PRIDE:0000074" name="Maximum Missed Cleavages Setting" cvRef="PRIDE" value="1"/>
+				<pf:cvParam accession="PRIDE:0000160" name="Enzyme" value="Trypsin (*KR)" cvRef="PRIDE"/>
+				<pf:cvParam accession="PRIDE:0000163" name="Instrument type" value="MALDI-TOF-TOF" cvRef="PRIDE"/>
+			</SearchParams>
+			<ModificationParams>
+				<SearchModification fixedMod="false">
+					<ModName value="oxidation"/>
+					<!-- accession="MOD:00412" name="oxidation" cvRef="PSI-MOD"-->
+					<MassValue value="15.994914622" unitAccession="" unitName="Da"/>
+					<!--accession="" name="" cvRef="" /> -->
+				</SearchModification>
+			</ModificationParams>
+			<FragmentTolerance>
+				<PlusValue value="0.9" unitAccession="" unitName="Da"/>
+				<!-- accession="" name="" cvRef="" /> -->
+				<MinusValue value="0.9" unitAccession="" unitName="Da"/>
+				<!-- accession="" name="" cvRef=""  -->
+			</FragmentTolerance>
+			<ParentTolerance>
+				<PlusValue value="75.0" unitAccession="" unitName="ppm"/>
+				<!-- accession="" name="" cvRef=""  -->
+				<MinusValue value="75.0" unitAccession="" unitName="ppm"/>
+				<!-- accession="" name="" cvRef=""  -->
+			</ParentTolerance>
+		</SpectrumIdentificationProtocol>
+		<ProteinDeterminationProtocol identifier="ProteinExtractor_proto" AnalysisSoftware_ref="ProteinExtrator_SW">
+			<_runtimeParams>
+				<pf:userParam name="ProteinExtractor Methodname" value="SEQUEST_2.5"/>
+				<pf:userParam name="ProteinExtractor GenerateNonRedundant" value="true"/>
+				<pf:userParam name="ProteinExtractor IncludeIdentified" value="false"/>
+				<pf:userParam name="ProteinExtractor MaxNumberOfProteins" value="3000"/>
+				<pf:userParam name="ProteinExtractor MaxProteinMass" value="unlimited"/>
+				<pf:userParam name="ProteinExtractor MinNumberOfPeptides" value="2"/>
+				<pf:userParam name="ProteinExtractor UseMascot" value="false"/>
+				<pf:userParam name="ProteinExtractor MascotPeptideScoreThreshold" value="0.0"/>
+				<pf:userParam name="ProteinExtractor MascotUniqueScore" value="0.0"/>
+				<pf:userParam name="ProteinExtractor MascotUseIdentityScore" value="false"/>
+				<pf:userParam name="ProteinExtractor MascotWeighting" value="0.0"/>
+				<pf:userParam name="ProteinExtractor UseSequest" value="true"/>
+				<pf:userParam name="ProteinExtractor SequestPeptideScoreThreshold" value="2.5"/>
+				<pf:userParam name="ProteinExtractor SequestUniqueScore" value="2.5"/>
+				<pf:userParam name="ProteinExtractor SequestWeighting" value="1.0"/>
+				<pf:userParam name="ProteinExtractor UseProteinSolver" value="false"/>
+				<pf:userParam name="ProteinExtractor ProteinSolverPeptideScoreThreshold" value="0.0"/>
+				<pf:userParam name="ProteinExtractor ProteinSolverUniqueScore" value="0.0"/>
+				<pf:userParam name="ProteinExtractor ProteinSolverWeighting" value="0.0"/>
+				<pf:userParam name="ProteinExtractor UsePhenyx" value="false"/>
+				<pf:userParam name="ProteinExtractor PhenyxPeptideScoreThreshold" value="0.0"/>
+				<pf:userParam name="ProteinExtractor PhenyxUniqueScore" value="0.0"/>
+				<pf:userParam name="ProteinExtractor PhenyxWeighting" value="0.0"/>
+				<pf:cvParam accession="PSI-PI:000995" name="false discovery estimation using decoy approach" cvRef="PSI-PI"/>
+				<pf:cvParam accession="PSI-PI:000653" name="decoy accession regexp" cvRef="PSI-PI" value="^SHD"/>
+			</_runtimeParams>
+		</ProteinDeterminationProtocol>
+	</AnalysisProtocolCollection>
+	<pf:ReferenceableCollection/>
+	<DataCollection>
+		<Inputs>
+			<InputFile location="proteinscape://www.medizinisches-proteom-center.de/server4/" identifier=""/>
+			<SearchDatabase location="uri://www.medizinisches-proteom-center.de/ipi.HUMAN_decoy/3.15" identifier="ipi.HUMAN_decoy" name="ipi.HUMAN_decoy" version="3.15" releaseDate="22 February, 2006" numDatabaseSequences="58099" numSequencesSearched="58099">
+				<DatabaseName>
+					<pf:cvParam accession="" name="ipi.HUMAN_decoy" cvRef="PSI-PI"/>
+				</DatabaseName>
+			</SearchDatabase>
+			<SpectraData location="proteinscape://www.medizinisches-proteom-center.de/server4/Bruker_Ultraflex_neu/contest_sample/dummy_1D_LC/dummy_1D_LC_fraction/1D_LCMALDI_1+++_.mgf" identifier="LCMALDI_spectra"/>
+		</Inputs>
+		<AnalysisData>
+			<SpectrumIdentificationList identifier="SEQUEST_results">
+				<SpectrumIdentificationResult identifier="SEQ_spec1">
+					<SpectrumIdentificationItem identifier="SEQ_spec1_pep1" Peptide_ref="prot1_pep1" chargeState="1">
+						<PeptideEvidence identifier="PepEvid_1" start="67" end="83" DBSequence_Ref="prot1_IPI"/>
+						<PeptideEvidence identifier="PepEvid_2"  start="67" end="79" DBSequence_Ref="prot2_IPI"/>
+						<pf:userParam name="ProteinScape: Mass" value="1506.69505079"/>
+						<pf:userParam name="ProteinScape: MissedCleavages" value="0"/>
+						<pf:userParam name="ProteinScape: IntensityCoverage" value="0.3919545603809718"/>
+						<pf:userParam name="ProteinScape: SequestMetaScore" value="7.59488518903425"/>
+						<pf:cvParam accession="" name="" cvRef=""/>
+					</SpectrumIdentificationItem>
+					<SpectrumElement spectrumID="1" SpectraData_ref="LCMALDI_spectra"/>
+				</SpectrumIdentificationResult>				
+				<pf:cvParam accession="" name="UNNECESSARY?" cvRef=""/>
+			</SpectrumIdentificationList>
+			<ProteinDetectionList identifier="ProteinExtractor_results">
+				<pf:cvParam accession="" name="" cvRef=""/>
+				<ProteinAmbiguityGroup identifier="group1">
+					<ProteinDetectionHypothesis identifier="id_prot1" DBSequence_ref="prot1_IPI">
+						<PeptideHypothesis PeptideEvidence_Ref="PepEvid_1"/> 
+						<pf:cvParam accession="PSI-PI:00527" name="sequence coverage" cvRef="PSI-PI" value="0.13"/>
+						<pf:userParam name="ProteinExtractor Score" value="200.4"/>
+						<pf:userParam name="ProteinExtractor Rank" value="1"/>
+						<pf:userParam name="local FDR in prefix of sorted list" value="0.0"/>
+					</ProteinDetectionHypothesis>
+					<ProteinDetectionHypothesis identifier="prot2_IPI">
+						<PeptideHypothesis PeptideEvidence_Ref="PepEvid_2"></PeptideHypothesis>
+					</ProteinDetectionHypothesis>
+					<pf:cvParam accession="" name="" cvRef=""/>
+				</ProteinAmbiguityGroup>				
+			</ProteinDetectionList>
+		</AnalysisData>
+	</DataCollection>
+	<OntologyCollection>
+		<pf:OntologyCollection>
+			<pf:_cvList>
+				<pf:cv fullName="Proteomics Standards Initiative - Proteome Informatics" URI="http://www.psidev.info/psi-pi" version="0.8"/>
+				<pf:cv fullName="NEWT taxonomy database" URI="http://www.ebi.ac.uk/newt/display"/>
+				<pf:cv fullName="BRENDA tissue 7 enzyme source" URI="http://www.brenda-enzymes.info/" version="12/2007"/>
+				<pf:cv fullName="MPC decoy databases" URI="http://www.medizinishces-proteom-center.de/MPC_ontology" version="to come"/>
+			</pf:_cvList>
+		</pf:OntologyCollection>
+	</OntologyCollection>
+	<AnalysisSoftwareList>
+		<AnalysisSoftware identifier="SEQUEST_SW" name="ThermoFisher TurboSequest">
+			<pf:ContactRole Contact_ref="Thermo Corp.">
+				<pf:_role>
+					<pf:cvParam accession="TODO" name="software vendor" cvRef="TODO"/>
+				</pf:_role>
+			</pf:ContactRole>
+			<Customizations>
+        No customisations (and no cvParams wanted for this element)
+      </Customizations>
+		</AnalysisSoftware>
+		<AnalysisSoftware identifier="Mascot_SW" name="Mascot">
+			<pf:ContactRole Contact_ref="MatrixScience">
+				<pf:_role>
+					<pf:cvParam accession="TODO" name="software vendor" cvRef="TODO"/>
+				</pf:_role>
+			</pf:ContactRole>
+			<Customizations>
+        No customisations (and no cvParams wanted for this element)
+      </Customizations>
+		</AnalysisSoftware>
+		<AnalysisSoftware identifier="ProteinExtractor_SW" name="ProteinExtractor">
+			<pf:ContactRole Contact_ref="Bruker Daltonics GmbH, Bremen, Germany">
+				<pf:_role>
+					<pf:cvParam accession="TODO" name="software vendor" cvRef="TODO"/>
+				</pf:_role>
+			</pf:ContactRole>
+			<Customizations>
+        No customisations (and no cvParams wanted for this element)
+      </Customizations>
+		</AnalysisSoftware>
+	</AnalysisSoftwareList>
+	<AnalysisSampleCollection>
+		<pf:GenericMaterial identifier="sample1">
+			<pf:cvParam accession="NEWT:9606" name="Homo sapiens" cvRef="NEWT"/>
+			<pf:cvParam accession="BTO:0000255" name="brain cell line" cvRef="BTO"/>
+		</pf:GenericMaterial>
+	</AnalysisSampleCollection>
+</AnalysisXML>

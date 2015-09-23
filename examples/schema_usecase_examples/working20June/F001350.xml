@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalysisXML identifier=""             xsi:schemaLocation="http://psidev.info/psi/pi/analysis/1.0  ./AnalysisXML_working.xsd"
+             xmlns:pf="http://psidev.info/fuge-light/1.0"
+             xmlns="http://psidev.info/psi/pi/analysis/1.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <pf:ConceptualMoleculeCollection>
+    <pf:Sequence identifier="HSP7D_MANSE" length="652" sequence="MAKAPAVGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDTDRLIGDAAKNQVAMNPNNTIFDAKRLIGRKFEDATVQADMKHWPFEVVSDGGKPKIKVAYKGEDKTFFPEEVSSMVLTKMKETAEAYLGKTVQNAVITVPAYFNDSQRQATKDAGTISGLNVLRIINEPTAAAIAYGLDKKGSGERNVLIFDLGGGTFDVSILTIEDGIFEVKSTAGDTHLGGEDFDNRMVNHFVQEFKRKYKKDLTTNKRALRRLRTACERAKRTLSSSTQASIEIDSLFEGIDFYTSITRARFEELNADLFRSTMEPVEKSLRDAKMDKSQIHDIVLVGGSTRIPKVQKLLQDFFNGKELNKSINPDEAVAYGAAVQAAILHGDKSEEVQDLLLLDVTPLSLGIETAGGVMTTLIKRNTTIPTKQTQTFTTYSDNQPGVLIQVFEGERAMTKDNNLLGKFELTGIPPAPRGVPQIEVTFDIDANGILNVSAVEKSTNKENKITITNDKGRLSKEEIERMVNEAEKYRNEDEKQKETIQAKNALESYCFNMKSTMEDEKLKDKISDSDKQTILDKCNDTIKWLDSNQLADKEEYEHKQKELEGICNPIITKLYQGAGGMPGGMPGGMPGFPGGAPGAGGAAPGGGAGPTIEEVD"/>
+    <pf:Sequence identifier="HSP7C_ICTPU" length="649" sequence="MSKGPAVGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDSERLIGDAAKNQVAMNPTNTIFDAKRLIGRRFEDSVVQADMKHWPFKVISDGGRPRLEVEYKGEAKNFYPEEISSMVLVKMKEIAEAYLGKSINNAVITVPAYFNDSQRQRTKDAGTISGLNVLRIINEPTAAAIAYGLDKKVGSERNVLIFDLGGGTFDVSILTIEDGIFDLKSTAGDTHLGGEDFDNRMVNHFIAEFKRKHKKDISDNKRAVRRLATACERAKRTLSSSTQASIEIDSLYEGVDFYTSITRARFEELNADLFRGTLDPVEKALRDAKMDKAQVHDIVLVGGSTRIPKMEKLLQDFFNGKELNKSINPDEAVAYGAAVQAESSLGDKSENVQDLVLLDVTPLSLGIETAGGVMTVLIKRNTTIPTKQTQTFTTYSDNQPGVLIQVYEGERAMTKDNNLLGKFELTGIPPAPRGVPQIEVTFDIDANGIMNVSAVDKSTGKENKITITNDKGRLSKEDIERMVQEAEKYKAEDDVQRDKVSAKNGLESYAFNMKSTVEDEKLKGKISDEDKHKILDKCNEVISWLDKNQTAEKDEYEHQQKDLEKVCNPIITKLYQSDGGMPGGMPDGMPGGFQELGAAPGGGSSGPTIEEVD"/>
+    <pf:Sequence identifier="HSP70_ONCMY" length="651" sequence="MSKGPAVGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDSERLIGDAAKNQVAMNPCNTVFDAKRLIGRRFDDGVVQSDMKHWPFEVINDSTRPKLQVEYKGETKSFYPEEISSMVLVKMKEIAEAYLGKTVNNAVVTVPAYFNDSQRQATKDAGTISGLNVLRIINEPTAAAIAYGLDKKVGAERNVLIFDLGGGTFDVSILTIEDGIFEVKSTAGDTHLGGEDFDNRMVNHFIAEFKRKYKKDISDNKRAVRRLRTACERAKRTLSSSTQASIEIDSLYEGIDFYTSITRARFEELNADLFRGTLDPVEKSLRDAKMDKAQVHDIVLVGGSTRIPKIQKLLQDFFNGKELNKSINPDEAVAYGAAVQAAILSGDKSENVQDLLLLDVTPLSLGIETAGGVMTVLIKRNTTIPTKQTQTFTTYSDNQPGVLIQVYEGERAMTKDNNLLGKFELTGIPPAPRGVPQIEVTFDIDANGIMNVSAADKSTGKENKITITNDKGRLSKEDIERMVQEAEKYKCEDDVQRDKVSSKNSLESYAFNMKSTVEDEKLQGKISDEDKTKILEKCNEVIGWLDKNQTAEKEEYEHHQKELEKVCNPIITKLYQGAGGMPGGMPEGMAGGFPGAGGAAPGGGGSSGPTIEEVD"/>
+    <pf:Sequence identifier="HSP70_ECHGR" length="665" sequence="MMSKGPAVGIDLGTTFSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDTERLIGDAAKNQVAMNPTNTVFDAKRLIGRRFDDRAVQDDIKHWAFKVINAGGKPKIEVEYRGETKCFSAEEISSMVLLKMKETAEAYLGKKVSDTVISVPAYFNDSQRQATKDAGTISGLNVLRIINEPTAAAIAYGLDKKVERERNVLIFDLGGGTFDVSILSIEDGIFEVKSTAGDTHLGGEDFDSRLVNHFVEEFKRKHKGKDLTTNKRAVRRLRTACERAKRTLSSSAQANIEIDSLLEGIDFYTSITRARFEELCSDLFRSTLDPVEKALRDAKLDKGAVHEIVLVGGSTRIPKVQKLLQDFFNGRELNKSINPDEAVAYGAAVQAAILTGDKSEAVQDLLLLDVAPLSLGLETAGGVMTALIKRNTTIPTKQTQTFTTYSDNQPGVLIQVYEGERAMKRDNNLLGKFELSGIPPGPRGVPQIEVTFDIDANGILNVSAVDKSTGKQNKITITRDKGRLSKEEIERMVNDAEKFKQEDEKQRDRVAAKNGLESYAFSMKSTVEDEKVKEKIGESDRRRIMEKCEETVKWLDGNQQAEKEEYEHRQKELESVCNPIIAKMYQEAGGVGGIPGGIPGGGMPGGTPGGGIPAGMAGGMSGDPSSGGRGPTIEEVD"/>
+    <pf:Sequence identifier="HSP71_PUCGR" length="648" sequence="MTKAIGIDLGTTYSCVGVWQNDRVEIIANDQGNRTTPSYVAFTDTERLIGDSAKNQVAMNPHNTVFDAKRLIGRKFADAEVQSDIKHFPFTVFDKGGKPYIRVQYRGEDKEFSPEEISSMILTKMKEVAESYLGGTVTSAVVTVPAYFNDSQRQATKDAGTISGLNVLRIINEPTAAAIAYGLDKKTVGERNVLIFDLGGGTFDVSLLTIEEGIFEVKATAGDTHLGGEDFDNRLVNHFVQEFKRKHKKDLSSNPRALRRLRTACERAKRTLSSAAQTTIEIDSLFEGVDFYTSLTRARFEELCQDLFRSTLEPVEKVLRDAKIDKAAVHEIVLVGGSTRIPRIVKLVSDFFNGKEPNKSINPDEAVAYGAAVQAAILTGDTSEKTQDLLLLDVSPLSLGIETAGGVMTPLIKRNTTVPTKKSEIFSTYSDNQPGVLIQVYEGERARTKDNNLLGKFELAGIPPAPRGVPQIEVTFDIDANGILNVSASDKTTGKSNRITITNDKGRLSKEEIERMVNEAEKYKAEDEEATARITSRNALESYAYNLRNSLTDEKLADKFDAADKKKLEDAVNSTISWLDNSQEASKEEYEEHQKELEAVANPIMQKLYAGAGGAPGGAPGGFPGGAPGGFPGGAPAGEDGPSVEEVD"/>
+    <pf:Sequence identifier="HSP7C_ORYLA" length="686" sequence="MSKGPAVGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDTERLIGDAAKNQVAMNPTNTVFDAKRLIGRRFDDHVVQSDMNDWPFNVINDNTRPKVQVEYKGETKSFYPEEVSSMVLTKMKEIAEAYLGKTVNNAVITVPAYFNDSQRQATKDAGTISGLNVLRIINEPTAAAIAYGLDKKVGSERNVLIFDLGGGTFDVSILTIEDGIFEVKSTAGDTHLGGEDFDNRMVNHFIAEFKRKYKKDISDNKRAVRRLRSACERAKRTLSSSTQASIEIDSLYEGVDFYTSITRARFEELNADLFRGTLDPVEKSLRDAKMDKGQIHDIVLVGGSTRIPKIQKLLQDFFNGKELNKSINPDEAVAYGAAVQAAILSGDKSENVQDLLLLDVTPLSLGIETAGGVMTVLIKRNTTIPTKQTQTFTTYSDNQPGVLNQVYEVGAMTKDNNLLGKFELTGIPPALWCPQIEVTFDIDANGIMNVSAVDKSTGKENKITITNDKGRLSKEDIERMVQEAEKYKAEDDVQRDKVSAKNGLESYAFNMKSTVEDEKLAGKISDEDKQKILDKCNEVISWLDKNQTAERDEYVHQQKELEKVCNPIITKLYQSAGGMPGGCQRECQEVSLELVVLLAVALLDQPLKKLIKHSMTSPSKIFTKKTLFKCNMQSIKSVMRLNQFPFITIT"/>
+    <pf:Sequence identifier="HSP7A_DROSI" length="214" sequence="MPKLPAVGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTESERLIGDAAKNQVAMNPNNTIFDAKRLIGRRFDDATVQSDMKHWPFEAFAENGKPRIRGTFDVSVLTIEDGFEVKATAGDTHLGREDFDNRLVNHLVQEFQRKHGKDLGQNKRALRRLRTACERAKRTLSSSTQASIEIDSLFEGVDFYTSVTRARFEELNGDLFRGT"/>
+    <pf:Sequence identifier="HSP7A_DROME" length="641" sequence="MPKLPAVGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTESERLIGDAAKNQVAMNPNNTIFDAKRLIGRRFDDATVQSDMKHWPFEVFAENGKPRIRVEYKGERKSFYPEEVSSMVLTKMRETAEAYLGGTVTDAVVTVPAYFNDSQRQATKDAGAIAGLNVLRIINEPTAAAIAYGLDKQGTSERNVLIFDLGGGTFDVSVLTIEDGIFEVKATAGDTHLGGEDFDNRLVNHFVQEFQRKHKKDLGQNKRALRRLRTACERAKRTLSSSTQASIEIDSLFEGVDFYTSVTRARFEELNGDLFRGTMEPVAKALRDAKMDKGQIHDIVLVGGSTRIPKVQRLLQDFFNGKELNKSINPDEAVAYGAAVQAAILHGDKSEAVQDLLLLDVTPLSLGIETAGGVMTTLIKRNTTIPTKQTQIFTTYADNQPGVLIQVFEGERAMTRDNNSLGKFELSAIPPAPRGVPQVEVTFDIDANGILNVTALEKSTGKENRITITNDKGRLSKEDIERMVNDAEAYRQADEQQRDRINAKNQLESYCFQLRSTLDDEHLSSRFSPADRETIQQRSSETIAWLDANQLAERQEFEHKQQELERICSPIITRLYQGAGMAPPPTAGGSNPGATGGSGPTIEEVD"/>
+    <pf:Sequence identifier="HS70L_HUMAN" length="641" sequence="MATAKGIAIGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDTERLIGDAAKNQVAMNPQNTVFDAKRLIGRKFNDPVVQADMKLWPFQVINEGGKPKVLVSYKGENKAFYPEEISSMVLTKLKETAEAFLGHPVTNAVITVPAYFNDSQRQATKDAGVIAGLNVLRIINEPTAAAIAYGLDKGGQGERHVLIFDLGGGTFDVSILTIDDGIFEVKATAGDTHLGGEDFDNRLVSHFVEEFKRKHKKDISQNKRAVRRLRTACERAKRTLSSSTQANLEIDSLYEGIDFYTSITRARFEELCADLFRGTLEPVEKALRDAKMDKAKIHDIVLVGGSTRIPKVQRLLQDYFNGRDLNKSINPDEAVAYGAAVQAAILMGDKSEKVQDLLLLDVAPLSLGLETAGGVMTALIKRNSTIPTKQTQIFTTYSDNQPGVLIQVYEGERAMTKDNNLLGRFDLTGIPPAPRGVPQIEVTFDIDANGILNVTATDKSTGKVNKITITNDKGRLSKEEIERMVLDAEKYKAEDEVQREKIAAKNALESYAFNMKSVVSDEGLKGKISESDKNKILDKCNELLSWLEVNQLAEKDEFDHKRKELEQMCNPIITKLYQGGCTGPACGTGYVPGRPATGPTIEEVD"/>
+    <pf:Sequence identifier="HS70L_MOUSE" length="641" sequence="MAANKGMAIGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDTERLIGDAAKNQVAMNPQNTVFDAKRLIGRKFNDPVVQSDMKLWPFQVINEAGKPKVMVSYKGEKKAFYPEEISSMVLTKMKETAEAFLGHNVTNAVITVPAYFNDSQRQATKDAGVIAGLNVLRIINEPTAAAIAYGLDKGSHGERHVLIFDLGGGTFDVSILTIDDGIFEVKATAGDTHLGGEDFDNRLVSHFVEEFKRKHKKDISQNKRAVRRLRTACERAKRTLSSSTQANLEIDSLYEGIDFYTSITRARFEELCADLFRGTLEPVEKSLRDAKMDKAKIHDIVLVGGSTRIPKVQKLLQDYFNGRDLNKSINPDEAVAYGAAVQAAILMGDKSEKVQDLLLLDVAPLSLGLETAGGVMTVLIKRNSTIPTKQTQIFTTYSDNQPGVLIQVYEGERAMTRDNNLLGRFDLTGIPPAPRGVPQIEVTFDIDANGILNVTAMDKSTGKANKITITNDKGRLSKEEIERMVQEAERYKAEDEGQREKIAAKNALESYAFNMKSAVGDEGLKDKISESDKKKILDKCNEVLSWLEANQLAEKDEFDHKRKELENMCNPIITKLYQSGCTGPTCTPGYTPGRAATGPTIEEVD"/>
+    <pf:Sequence identifier="HSP70_XENLA" length="647" sequence="MATKGVAVGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDTERLIGDAAKNQVAMNPQNTVFDAKRLIGRKFNDPVVQCDLKHWPFQVVSDEGKPKVKVEYKGEEKSFFPEEISSMVLTKMKETAEAYLGHPVTNAVITVPAYFNDSQRQATKDAGVLAGLNILRIINEPTAAAIAYGLDKGARGEQNVLIFDLGGGTFDVSILTIDDGIFEVKATAGDTHLGGEDFDNRMVNHFVEEFKRKHKKDIGQNKRALRRLRTACDRAKRTLSSSSQASIEIDSLFEGIDFYTAITRARFEELCSDLFRGTLEPVEKALRDAKLDKSQIHEIVLVGGSTRIPKVQKLLQDFFNGRELNKSINPDEAVAYGAAVQAAILMGDKSENVQDLLLLDVAPLSLGLETAGGVMTVLIKRNTTIPTKQTQSFTTYSDNQPGVLIQVFEGERAMTKDNNLLGKFELSGIPPAPRGVPQIEVTFDIDANGILNVSAVEKSSGKQNKITITNDKGRLSKEDIEKMVQEAEKYKADDDAQRERVDAKNALESYAFNLKSMVEDENVKGKISDEDKRTISEKCTQVISWLENNQLAEKEEYAFQQKDLEKVCQPIITKLYQGGVPGGVPGGMPGSSCGAQARQGGNSGPTIEEVD"/>
+    <pf:Sequence identifier="HSP70_SOYBN" length="645" sequence="MATKEGKAIGIDLGTTYSCVGVWQNDRVEIIPNDQGNRTTPSYVAFTDTERLIGDAAKNQVAMNPQNTVFDAKRLIGRRFSDSSVQNDMKLWPFKVGGSPCDKPMIVVNYKGEEKKFSAEEISSMVLVKMREVAEAFLGHAVKNAVVTVPAYFNDSQRQATKDAGAISGLNVLRIINEPTAAAIAYGLDKKASRKGEQNVLIFDLGGGTFDVSILTIEEGIFEVKATAGDTHLGGEDFDNRMVNHFVSEFKRKNKKDISGNARALRRLRTACERAKRTLSSTAQTTIEIDSLYEGIDFYATITRARFEEMNMDLFRKCMEPVEKCLRDAKIDKSQVHEVVLVGGSTRIPKVHQLLQDFFNGKELCKSINPDEAVAYGAAVQAAILSGQGDEKVQDLLLLDVTPLSLGLETAGGVMTVLIPRNTTIPTKKEQIFSTYSDNQPGVLIQVFEGERARTKDNNLLGKFELTGIPPAPRGVPQVNVCFDIDANGILNVSAEDKTAGVKNKITITNDKGRLSKEEIEKMVKDAERYKAEDEEVKKKVEAKNSLENYAYNMRNTIKDEKIGGKLSPDEKQKIEKAVEDAIQWLEGNQMAEVDEFEDKQKELEGICNPIIAKMYQGAAGPGGDVPMGADMPAAGAGPKIEEVD"/>
+    <pf:Sequence identifier="HS70L_RAT" length="641" sequence="MAANKGMAIGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDTERLIGDAAKNQVAMNPQNTVFDAKRLIGRKFNDPVVQSDMKLWPFQVINEAGKPKVLVSYKGEKKAFYPEEISSMVLTKMKETAEAFLGHSVTNAVITVPAYFNDSQRQATKDAGVIAGLNVLRIINEPTAAAIAYGLDKGSHGERHVLIFDLGGGTFDVSILTIDDGIFEVKATAGDTHLGGEDFDNRLVSHFVEEFKRKHKKDISQNKRAVRRLRTACERAKRTLSSSTQANLEIDSLYEGIDFYTSITRARFEELCADLFRGTLEPVEKSLRDAKMDKAKIHDIVLVGGSTRIPKVQKLLQDYFNGRDLNKSINPDEAVAYGAAVQAAILMGDKSEKVQDLLLLDVAPLSLGLETAGGVMTVLIKRNSTIPTKQTQIFTTYSDNQPGVLIQVYEGERAMTRDNNLLGRFDLTGIPPAPRGVPQIEVTFDIDANGILNVTAMDKSTGKANKITITNDKGRLSKEEIERMVQEAERYKAEDEGQREKIAAKNALESYAFNMKSAVGDEGLKDKISESDKKKILDKCSEVLSWLEANQLAEKEEFDHKRKELENMCNPIITKLYQSGCTGPTCAPGYTPGRAATGPTIEEVD"/>
+    <pf:Sequence identifier="HSP7D_DROME" length="651" sequence="MSKAPAVGIDLGTTYSCVGVFQHGKVEIIANDQGNRTTPSYVAFTDTERLIGDAAKNQVAMNPTQTIFDAKRLIGRKFDDAAVQSDMKHWPFEVVSADGKPKIEVTYKDEKKTFFPEEISSMVLTKMKETAEAYLGKTVTNAVITVPAYFNDSQRQATKDAGTIAGLNVLRIINEPTAAAIAYGLDKKAVGERNVLIFDLGGGTFDVSILSIDDGIFEVKSTAGDTHLGGEDFDNRLVTHFVQEFKRKHKKDLTTNKRALRRLRTACERAKRTLSSSTQASIEIDSLFEGTDFYTSITRARFEELNADLFRSTMDPVEKALRDAKLDKSVIHDIVLVGGSTRIPKVQRLLQDLFNGKELNKSINPDEAVAYGAAVQAAILHGDKSQEVQDLLLLDVTPLSLGIETAGGVMSVLIKRNTTIPTKQTQTFTTYSDNQPGVLIQVYEGERAMTKDNNLLGKFELSGIPPAPRGVPQIEVTFDIDANGILNVTALERSTNKENKITITNDKGRLSKEDIERMVNEAEKYRNEDEKQKETIAAKNGLESYCFNMKATLDEDNLKTKISDSDRTTILDKCNETIKWLDANQLADKEEYEHRQKELEGVCNPIITKLYQGAGFPPGGMPGGPGGMPGAAGAAGAAGAGGAGPTIEEVD"/>
+    <Peptide identifier="peptide_1_1" sequenceMass="1341.72522" sequenceLength="12">
+      <peptideSequence>DAGTISGLNVLR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_1_2" sequenceMass="1340.784958" sequenceLength="12">
+      <peptideSequence>LIMLLTNAPSIR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_1_3" sequenceMass="1341.721359" sequenceLength="10">
+      <Modification location="10">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>DALMISLTPK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_1_4" sequenceMass="1341.72522" sequenceLength="12">
+      <peptideSequence>DAGTIAGLDVKR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_1_5" sequenceMass="1341.797989" sequenceLength="13">
+      <peptideSequence>EKLTILLVGSGGR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_1_6" sequenceMass="1341.74765" sequenceLength="12">
+      <peptideSequence>ANQSALSRNLLR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_1_7" sequenceMass="1340.792847" sequenceLength="11">
+      <peptideSequence>RVDTIWVLALR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_1_8" sequenceMass="1341.797974" sequenceLength="12">
+      <Modification location="12">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>SIIGTARSIGLK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_1_9" sequenceMass="1341.772827" sequenceLength="13">
+      <peptideSequence>SLGITGAADRILR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_1_10" sequenceMass="1340.729965" sequenceLength="12">
+      <peptideSequence>DAGTIAGLEVLR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_2_1" sequenceMass="1613.757324" sequenceLength="13">
+      <peptideSequence>TTPSYVAFTDTER</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_2_2" sequenceMass="1613.757309" sequenceLength="13">
+      <peptideSequence>TTPSYVAFTESER</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_2_3" sequenceMass="1614.720383" sequenceLength="12">
+      <Modification location="5">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="8">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="11">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>MAGSMAFKEAMR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_2_4" sequenceMass="1614.730759" sequenceLength="13">
+      <Modification location="10">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>GSYTSESVEMARR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_2_5" sequenceMass="1614.730774" sequenceLength="13">
+      <Modification location="10">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>GSYTTDSVEMARR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_2_6" sequenceMass="1615.810669" sequenceLength="12">
+      <peptideSequence>DPNIHYVRYQGK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_2_7" sequenceMass="1614.720383" sequenceLength="12">
+      <Modification location="1">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="8">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="11">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>MAGSMAFKEAMR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_2_8" sequenceMass="1614.724243" sequenceLength="15">
+      <peptideSequence>EISSCSCTGAFQARR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_2_9" sequenceMass="1614.712524" sequenceLength="13">
+      <Modification location="2">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>MMASLSCVEDKMK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_2_10" sequenceMass="1614.712524" sequenceLength="13">
+      <Modification location="1">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>MMASLSCVEDKMK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_3_1" sequenceMass="1945.920349" sequenceLength="15">
+      <Modification location="5">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="15">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>NQVAMNPNNTIFDAK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_3_2" sequenceMass="1945.920364" sequenceLength="15">
+      <Modification location="5">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="15">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>NQVAMNPQNTVFDAK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_3_3" sequenceMass="1945.956741" sequenceLength="15">
+      <Modification location="5">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="15">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>NQVAMNPKNTVFDAK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_3_4" sequenceMass="1946.940765" sequenceLength="15">
+      <Modification location="5">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="15">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>NQVAMNPTQTIFDAK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_3_5" sequenceMass="1944.895935" sequenceLength="17">
+      <Modification location="17">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>QVQLCNNSTNNVGDNAK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_3_6" sequenceMass="1945.956741" sequenceLength="15">
+      <Modification location="5">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="8">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>NQVAMNPKNTVFDAK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_3_7" sequenceMass="1945.967987" sequenceLength="16">
+      <Modification location="5">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>NQVAMNPVNTVFDAKR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_3_8" sequenceMass="1944.892746" sequenceLength="17">
+      <Modification location="13">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>SWADFLAIVAYDMENGK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_3_9" sequenceMass="1944.961487" sequenceLength="18">
+      <Modification location="18">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>GKALDMAEAAPVQGFDAK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_3_10" sequenceMass="1945.02301" sequenceLength="15">
+      <Modification location="3">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="15">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>IAKVCNDELLIDFAK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_4_1" sequenceMass="2168.125473" sequenceLength="19">
+      <Modification location="11">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="17">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="19">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>AGTATKLVCNMITTTLMIK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_4_2" sequenceMass="2166.033691" sequenceLength="20">
+      <Modification location="11">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>EIGVVGQGSMMFISDASAPK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_4_3" sequenceMass="2167.199631" sequenceLength="18">
+      <Modification location="13">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>QPLMVITDPDMIKTVLVK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_4_4" sequenceMass="2168.116043" sequenceLength="18">
+      <Modification location="1">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>MAHAERTFIAVKPDGVQR</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_4_5" sequenceMass="2168.082382" sequenceLength="18">
+      <Modification location="8">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="18">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>TTTPLGKMIQDGDFVFQK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_4_6" sequenceMass="2168.136444" sequenceLength="16">
+      <Modification location="16">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>FIDLPVEELINENKNK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_4_7" sequenceMass="2169.913773" sequenceLength="17">
+      <Modification location="2">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="5">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>NMAIKTCGHVFCENCCK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_4_8" sequenceMass="2168.136871" sequenceLength="16">
+      <Modification location="1">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="4">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="5">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="16">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>MLMMMALLVPLVYTIK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_4_9" sequenceMass="2168.136871" sequenceLength="16">
+      <Modification location="1">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="3">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="5">
+        <pf:cvParam accession="TODO" name="Oxidation (M)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="16">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>MLMMMALLVPLVYTIK</peptideSequence>
+    </Peptide>
+    <Peptide identifier="peptide_4_10" sequenceMass="2168.096924" sequenceLength="16">
+      <Modification location="1">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <Modification location="16">
+        <pf:cvParam accession="TODO" name="SMA (K)" cvRef="PSI-MOD" value="" />
+      </Modification>
+      <peptideSequence>KPTCAVNNQMETVKPK</peptideSequence>
+    </Peptide>
+  </pf:ConceptualMoleculeCollection>
+  <AnalysisCollection>
+    <SpectrumIdentification identifier="SI_1" SpectrumIdentificationProtocol_ref="SIP_1" SpectrumIdentificationList_ref="SIL_1">
+      <SpectraData_ref identifier="SD_1"/>
+      <SearchDatabase_ref identifier="SDB_SwissProt"/>
+    </SpectrumIdentification>
+    <ProteinDetermination identifier="PD_1" ProteinDeterminationProtocol_ref="PDP_MascotParser_1" ProteinDetectionResultList_ref="PDL_1" >
+      <SpectrumIdentificationList_ref identifier="SIL_1"/>
+    </ProteinDetermination>
+  </AnalysisCollection>
+  <AnalysisProtocolCollection>
+    <SpectrumIdentificationProtocol identifier="SIP_1"  AnalysisSoftware_ref="AS_mascot_server">
+      <SearchType>
+        <pf:cvParam accession="PI:xxxxxx" name="searchType" cvRef="PSI-PI" value="MIS"/>
+      </SearchType>
+      <SearchParams>
+        <pf:cvParam accession="PI:xxxxxx" name="InstrumentType" cvRef="PSI-PI" value="Default"/>
+      </SearchParams>
+      <ModificationParams>
+        <SearchModification fixedMod="false" >
+          <ModName  unitName="" unitAccession="" value="Oxidation (M)" />
+          <MassValue unitName="" unitAccession="" value="" />
+          <SpecificityRule accession="" cvRef="" name="" unitAccession="" unitName="" value="" />
+        </SearchModification>
+        <SearchModification fixedMod="false" >
+          <ModName  unitName="" unitAccession="" value="SMA (K)" />
+          <MassValue unitName="" unitAccession="" value="" />
+          <SpecificityRule accession="" cvRef="" name="" unitAccession="" unitName="" value="" />
+        </SearchModification>
+        <SearchModification fixedMod="false" >
+          <ModName  unitName="" unitAccession="" value="SMA (N-term)" />
+          <MassValue unitName="" unitAccession="" value="" />
+          <SpecificityRule accession="" cvRef="" name="" unitAccession="" unitName="" value="" />
+        </SearchModification>
+      </ModificationParams>
+      <MassTable>
+          <Residue Code="A" Mass="71.037114"/>
+          <Residue Code="B" Mass="114.53494"/>
+          <Residue Code="C" Mass="103.009185"/>
+          <Residue Code="D" Mass="115.026943"/>
+          <Residue Code="E" Mass="129.042593"/>
+          <Residue Code="F" Mass="147.068414"/>
+          <Residue Code="G" Mass="57.021464"/>
+          <Residue Code="H" Mass="137.058912"/>
+          <Residue Code="I" Mass="113.084064"/>
+          <Residue Code="K" Mass="128.094963"/>
+          <Residue Code="L" Mass="113.084064"/>
+          <Residue Code="M" Mass="131.040485"/>
+          <Residue Code="N" Mass="114.042927"/>
+          <Residue Code="P" Mass="97.052764"/>
+          <Residue Code="Q" Mass="128.058578"/>
+          <Residue Code="R" Mass="156.101111"/>
+          <Residue Code="S" Mass="87.032028"/>
+          <Residue Code="T" Mass="101.047679"/>
+          <Residue Code="U" Mass="150.95363"/>
+          <Residue Code="V" Mass="99.068414"/>
+          <Residue Code="W" Mass="186.079313"/>
+          <Residue Code="X" Mass="111"/>
+          <Residue Code="Y" Mass="163.063329"/>
+      </MassTable>
+      <FragmentTolerance>
+        <PlusValue  unitAccession="PI:xxxxxx" unitName="Da" value="0.5" />
+        <MinusValue unitAccession="PI:xxxxxx" unitName="Da" value="0.5" />
+      </FragmentTolerance>
+      <ParentTolerance>
+        <PlusValue  unitAccession="PI:xxxxxx" unitName="%" value="0.1" />
+        <MinusValue unitAccession="PI:xxxxxx" unitName="%" value="0.1" />
+      </ParentTolerance>
+      <DatabaseFilters>
+        <Filter>
+          <FilterType>
+            <pf:cvParam accession="PI:00015" name="database taxonomy filter" cvRef="PSI-PI" value=""/>
+          </FilterType>
+          <Include>
+            <pf:cvParam accession="PI:00015" name="database taxonomy filter" cvRef="PSI-PI" value="All entries"/>
+          </Include>
+          <Exclude>
+            <pf:cvParam accession="PI:00015" name="database taxonomy filter" cvRef="PSI-PI" value="All entries"/>
+          </Exclude>
+        </Filter>
+      </DatabaseFilters>
+      <!--_analysisParams>
+        <pf:cvParam accession="PI:00003" name="user name" cvRef="PSI-PI" value="David Creasy"/>
+        <pf:cvParam accession="PI:00004" name="user email address" cvRef="PSI-PI" value="dcreasy@matrixscience.com"/>
+      </_analysisParams -->
+    </SpectrumIdentificationProtocol>
+    <ProteinDeterminationProtocol identifier="PDP_MascotParser_1"  AnalysisSoftware_ref="AS_mascot_parser">
+      <_runtimeParams>
+        <pf:cvParam accession="PI:xxxx" name="MascotSigThreshold"                        cvRef="PSI-PI" value="0.05"/>
+        <pf:cvParam accession="PI:xxxx" name="MaxProteinHits"                            cvRef="PSI-PI" value="Auto"/>
+        <pf:cvParam accession="PI:xxxx" name="MascotProteinScoringMethod"                cvRef="PSI-PI" value="Standard"/>
+        <pf:cvParam accession="PI:xxxx" name="MascotMinMSMSThreshold"                    cvRef="PSI-PI" value="0"/>
+        <pf:cvParam accession="PI:xxxx" name="ShowHomolgousProteinsWithSamePeptides"     cvRef="PSI-PI" value="1"/>
+        <pf:cvParam accession="PI:xxxx" name="ShowHomolgousProteinsWithSubsetOfPeptides" cvRef="PSI-PI" value="0.5"/>
+        <pf:cvParam accession="PI:xxxx" name="MascotRequireBoldRed"                      cvRef="PSI-PI" value="0"/>
+        <pf:cvParam accession="PI:xxxx" name="UseUnigeneClustering"                      cvRef="PSI-PI" value=""/>
+        <pf:cvParam accession="PI:xxxx" name="MascotIncludeErrorTolerantMatches"         cvRef="PSI-PI" value="1"/>
+        <pf:cvParam accession="PI:xxxx" name="MascotShowDecoyMatches"                    cvRef="PSI-PI" value="0"/>
+      </_runtimeParams>
+    </ProteinDeterminationProtocol>
+  </AnalysisProtocolCollection>
+  <!--_databaseCollection>
+    <pf:Database identifier="DB1" version="51.2" />
+  </_databaseCollection -->
+  <DataCollection>
+    <Inputs>
+      <InputFile location="file:///dyckall.asc" identifier="IF_1">
+        <pf:_fileFormat>
+          <pf:cvParam accession="" name="" cvRef="" value="" />
+        </pf:_fileFormat>
+          <pf:cvParam accession="" name="" cvRef="" value="" />
+      </InputFile>
+      <SearchDatabase location="file:///C:/INETPUB/MASCOT/sequence/SwissProt/current/SwissProt_51.6.fasta" identifier="SDB_SwissProt" name="SwissProt" numDatabaseSequences="257964" numSequencesSearched="257964" releaseDate="SwissProt_51.6.fasta" version="SwissProt_51.6.fasta">
+        <pf:_fileFormat>
+          <pf:cvParam accession="" name="" cvRef="" value="" />
+        </pf:_fileFormat>
+        <DatabaseName>
+          <pf:cvParam accession="" name="" cvRef="" value="" />
+        </DatabaseName>
+        <!-- pf:cvParam accession="PI:00019" name="number of residues" cvRef="PSI-PI" value="93947433"/-->
+        <!-- pf:cvParam accession="PI:00025" name="database type" cvRef="PSI-PI" value="AA"/-->
+      </SearchDatabase>
+      <SpectraData location="" identifier="SD_1">
+        <pf:_fileFormat>
+          <pf:cvParam accession="" name="" cvRef="" value="" />
+        </pf:_fileFormat>
+      </SpectraData>
+    </Inputs>
+    <AnalysisData>
+      <SpectrumIdentificationList identifier="SIL_1">
+        <SpectrumIdentificationResult identifier="SIR_1_1">
+          <SpectrumIdentificationItem identifier="SII_1_1"  calculatedMassToCharge="670.86261" chargeState="2" experimentalMassToCharge="671.9" Peptide_ref="peptide_1_1">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="62.72" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="0.00273766445377971" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="1" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198c                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_1_2">
+          <SpectrumIdentificationItem identifier="SII_1_2"  calculatedMassToCharge="670.392479" chargeState="2" experimentalMassToCharge="671.9" Peptide_ref="peptide_1_2">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="25.26" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="15.2538761900357" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="2" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198c                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_1_3">
+          <SpectrumIdentificationItem identifier="SII_1_3"  calculatedMassToCharge="670.8606795" chargeState="2" experimentalMassToCharge="671.9" Peptide_ref="peptide_1_3">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="23.54" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="22.6662783138072" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="3" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198c                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_1_4">
+          <SpectrumIdentificationItem identifier="SII_1_4"  calculatedMassToCharge="670.86261" chargeState="2" experimentalMassToCharge="671.9" Peptide_ref="peptide_1_4">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="22.88" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="26.3864045749655" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="4" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198c                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_1_5">
+          <SpectrumIdentificationItem identifier="SII_1_5"  calculatedMassToCharge="670.8989945" chargeState="2" experimentalMassToCharge="671.9" Peptide_ref="peptide_1_5">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="22.06" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="31.8698645043682" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="5" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198c                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_1_6">
+          <SpectrumIdentificationItem identifier="SII_1_6"  calculatedMassToCharge="670.873825" chargeState="2" experimentalMassToCharge="671.9" Peptide_ref="peptide_1_6">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="21.74" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="34.3068005020486" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="6" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198c                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_1_7">
+          <SpectrumIdentificationItem identifier="SII_1_7"  calculatedMassToCharge="670.3964235" chargeState="2" experimentalMassToCharge="671.9" Peptide_ref="peptide_1_7">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="20.34" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="47.3565675818982" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="7" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198c                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_1_8">
+          <SpectrumIdentificationItem identifier="SII_1_8"  calculatedMassToCharge="670.898987" chargeState="2" experimentalMassToCharge="671.9" Peptide_ref="peptide_1_8">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="20.33" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="47.4657357447266" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="8" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198c                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_1_9">
+          <SpectrumIdentificationItem identifier="SII_1_9"  calculatedMassToCharge="670.8864135" chargeState="2" experimentalMassToCharge="671.9" Peptide_ref="peptide_1_9">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="19.83" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="53.2574314526036" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="9" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198c                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_1_10">
+          <SpectrumIdentificationItem identifier="SII_1_10"  calculatedMassToCharge="670.3649825" chargeState="2" experimentalMassToCharge="671.9" Peptide_ref="peptide_1_10">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="19.48" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="57.7271633231164" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="10" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198c                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_2_1">
+          <SpectrumIdentificationItem identifier="SII_2_1"  calculatedMassToCharge="806.878662" chargeState="2" experimentalMassToCharge="808.3" Peptide_ref="peptide_2_1">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="40.95" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="0.351132880133893" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="1" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198b                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_2_2">
+          <SpectrumIdentificationItem identifier="SII_2_2"  calculatedMassToCharge="806.8786545" chargeState="2" experimentalMassToCharge="808.3" Peptide_ref="peptide_2_2">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="28.76" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="5.81395276112246" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="2" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198b                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_2_3">
+          <SpectrumIdentificationItem identifier="SII_2_3"  calculatedMassToCharge="807.3601915" chargeState="2" experimentalMassToCharge="808.3" Peptide_ref="peptide_2_3">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="20.35" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="40.315448795236" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="3" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198b                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_2_4">
+          <SpectrumIdentificationItem identifier="SII_2_4"  calculatedMassToCharge="807.3653795" chargeState="2" experimentalMassToCharge="808.3" Peptide_ref="peptide_2_4">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="15.94" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="111.293935207714" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="4" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198b                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_2_5">
+          <SpectrumIdentificationItem identifier="SII_2_5"  calculatedMassToCharge="807.365387" chargeState="2" experimentalMassToCharge="808.3" Peptide_ref="peptide_2_5">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="14.25" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="164.237187300007" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="5" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198b                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_2_6">
+          <SpectrumIdentificationItem identifier="SII_2_6"  calculatedMassToCharge="807.9053345" chargeState="2" experimentalMassToCharge="808.3" Peptide_ref="peptide_2_6">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="12.13" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="267.590997679809" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="6" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198b                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_2_7">
+          <SpectrumIdentificationItem identifier="SII_2_7"  calculatedMassToCharge="807.3601915" chargeState="2" experimentalMassToCharge="808.3" Peptide_ref="peptide_2_7">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="11.13" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="336.877106946465" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="7" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198b                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_2_8">
+          <SpectrumIdentificationItem identifier="SII_2_8"  calculatedMassToCharge="807.3621215" chargeState="2" experimentalMassToCharge="808.3" Peptide_ref="peptide_2_8">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="10.12" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="425.080809318296" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="8" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198b                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_2_9">
+          <SpectrumIdentificationItem identifier="SII_2_9"  calculatedMassToCharge="807.356262" chargeState="2" experimentalMassToCharge="808.3" Peptide_ref="peptide_2_9">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="8.6" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="603.214119788815" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="9" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198b                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_2_10">
+          <SpectrumIdentificationItem identifier="SII_2_10"  calculatedMassToCharge="807.356262" chargeState="2" experimentalMassToCharge="808.3" Peptide_ref="peptide_2_10">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="8.6" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="603.214119788815" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="10" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198b                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_3_1">
+          <SpectrumIdentificationItem identifier="SII_3_1"  calculatedMassToCharge="972.9601745" chargeState="2" experimentalMassToCharge="973.9" Peptide_ref="peptide_3_1">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="50.17" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="0.0466420419507212" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="1" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198a                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_3_2">
+          <SpectrumIdentificationItem identifier="SII_3_2"  calculatedMassToCharge="972.960182" chargeState="2" experimentalMassToCharge="973.9" Peptide_ref="peptide_3_2">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="34.22" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="1.83559791291179" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="2" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198a                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_3_3">
+          <SpectrumIdentificationItem identifier="SII_3_3"  calculatedMassToCharge="972.9783705" chargeState="2" experimentalMassToCharge="973.9" Peptide_ref="peptide_3_3">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="28.55" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="6.77294509846571" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="3" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198a                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_3_4">
+          <SpectrumIdentificationItem identifier="SII_3_4"  calculatedMassToCharge="973.4703825" chargeState="2" experimentalMassToCharge="973.9" Peptide_ref="peptide_3_4">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="23.08" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="23.8658856386931" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="4" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198a                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_3_5">
+          <SpectrumIdentificationItem identifier="SII_3_5"  calculatedMassToCharge="972.4479675" chargeState="2" experimentalMassToCharge="973.9" Peptide_ref="peptide_3_5">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="18.63" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="66.4932491860601" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="5" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198a                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_3_6">
+          <SpectrumIdentificationItem identifier="SII_3_6"  calculatedMassToCharge="972.9783705" chargeState="2" experimentalMassToCharge="973.9" Peptide_ref="peptide_3_6">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="14.61" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="167.794435820782" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="6" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198a                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_3_7">
+          <SpectrumIdentificationItem identifier="SII_3_7"  calculatedMassToCharge="972.9839935" chargeState="2" experimentalMassToCharge="973.9" Peptide_ref="peptide_3_7">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="14.58" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="168.957531285067" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="7" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198a                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_3_8">
+          <SpectrumIdentificationItem identifier="SII_3_8"  calculatedMassToCharge="972.446373" chargeState="2" experimentalMassToCharge="973.9" Peptide_ref="peptide_3_8">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="13.68" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="207.863174333574" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="8" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198a                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_3_9">
+          <SpectrumIdentificationItem identifier="SII_3_9"  calculatedMassToCharge="972.4807435" chargeState="2" experimentalMassToCharge="973.9" Peptide_ref="peptide_3_9">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="13.16" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="234.302841341371" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="9" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198a                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_3_10">
+          <SpectrumIdentificationItem identifier="SII_3_10"  calculatedMassToCharge="972.511505" chargeState="2" experimentalMassToCharge="973.9" Peptide_ref="peptide_3_10">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="10.34" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="448.515602286995" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="10" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198a                      21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_4_1">
+          <SpectrumIdentificationItem identifier="SII_4_1"  calculatedMassToCharge="1084.0627365" chargeState="2" experimentalMassToCharge="1084.9" Peptide_ref="peptide_4_1">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="8.87" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="564.811312275479" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="1" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198                       21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_4_2">
+          <SpectrumIdentificationItem identifier="SII_4_2"  calculatedMassToCharge="1083.0168455" chargeState="2" experimentalMassToCharge="1084.9" Peptide_ref="peptide_4_2">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="8.69" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="588.712675103236" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="2" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198                       21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_4_3">
+          <SpectrumIdentificationItem identifier="SII_4_3"  calculatedMassToCharge="1083.5998155" chargeState="2" experimentalMassToCharge="1084.9" Peptide_ref="peptide_4_3">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="8.65" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="594.159966417866" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="3" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198                       21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_4_4">
+          <SpectrumIdentificationItem identifier="SII_4_4"  calculatedMassToCharge="1084.0580215" chargeState="2" experimentalMassToCharge="1084.9" Peptide_ref="peptide_4_4">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="8.25" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="651.483448198358" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="4" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198                       21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_4_5">
+          <SpectrumIdentificationItem identifier="SII_4_5"  calculatedMassToCharge="1084.041191" chargeState="2" experimentalMassToCharge="1084.9" Peptide_ref="peptide_4_5">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="6.71" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="928.759750857717" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="5" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198                       21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_4_6">
+          <SpectrumIdentificationItem identifier="SII_4_6"  calculatedMassToCharge="1084.068222" chargeState="2" experimentalMassToCharge="1084.9" Peptide_ref="peptide_4_6">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="5.45" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="1241.37611894522" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="6" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198                       21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_4_7">
+          <SpectrumIdentificationItem identifier="SII_4_7"  calculatedMassToCharge="1084.9568865" chargeState="2" experimentalMassToCharge="1084.9" Peptide_ref="peptide_4_7">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="5.35" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="1270.29148330132" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="7" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198                       21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_4_8">
+          <SpectrumIdentificationItem identifier="SII_4_8"  calculatedMassToCharge="1084.0684355" chargeState="2" experimentalMassToCharge="1084.9" Peptide_ref="peptide_4_8">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="5.33" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="1276.15488238067" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="8" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198                       21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_4_9">
+          <SpectrumIdentificationItem identifier="SII_4_9"  calculatedMassToCharge="1084.0684355" chargeState="2" experimentalMassToCharge="1084.9" Peptide_ref="peptide_4_9">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="5.33" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="1276.15488238067" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="9" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198                       21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult identifier="SIR_4_10">
+          <SpectrumIdentificationItem identifier="SII_4_10"  calculatedMassToCharge="1084.048462" chargeState="2" experimentalMassToCharge="1084.9" Peptide_ref="peptide_4_10">
+            <pf:cvParam accession="PI:99999" name="mascot_ions_score"   cvRef="PSI-PI" value="5.31" />
+            <pf:cvParam accession="PI:99999" name="mascot_expect_value" cvRef="PSI-PI" value="1282.04534568049" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"         cvRef="PSI-PI" value="10" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="dp210198                       21-Jan-98 DERIVED SPECTRUM    #9" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <pf:cvParam accession="TODO: Find something to put here" cvRef="TODO" name="TODO: Find something to put here"  value="" />
+      </SpectrumIdentificationList>
+      <ProteinDetectionList identifier="PDL_1">
+        <pf:cvParam accession="TODO: Find something to put here" cvRef="TODO" name="TODO: Find something to put here"  value="" />
+        <ProteinAmbiguityGroup identifier="PAG_hit_1" >
+          <ProteinDetectionHypothesis identifier="PDH_HSP7D_MANSE" Sequence_ref="HSP7D_MANSE">
+            <PeptideEvidence start="160" end="171" SpectrumIdentificationItem_ref="SII_1_1" post="K" pre="I" />
+            <PeptideEvidence start="57" end="71" SpectrumIdentificationItem_ref="SII_3_1" post="K" pre="R" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="109.524382332144" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis identifier="PDH_HSP7C_ICTPU" Sequence_ref="HSP7C_ICTPU">
+            <PeptideEvidence start="160" end="171" SpectrumIdentificationItem_ref="SII_1_1" post="K" pre="I" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="62.72" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis identifier="PDH_HSP70_ONCMY" Sequence_ref="HSP70_ONCMY">
+            <PeptideEvidence start="160" end="171" SpectrumIdentificationItem_ref="SII_1_1" post="K" pre="I" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="60.0528111023421" />
+          </ProteinDetectionHypothesis>
+          <pf:cvParam accession="TODO: Find something to put here" cvRef="TODO" name="TODO: Find something to put here"  value="" />
+        </ProteinAmbiguityGroup>
+        <ProteinAmbiguityGroup identifier="PAG_hit_2" >
+          <ProteinDetectionHypothesis identifier="PDH_HSP70_ECHGR" Sequence_ref="HSP70_ECHGR">
+            <PeptideEvidence start="161" end="172" SpectrumIdentificationItem_ref="SII_1_1" post="K" pre="I" />
+            <PeptideEvidence start="38" end="50" SpectrumIdentificationItem_ref="SII_2_1" post="R" pre="L" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="101.987191166072" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis identifier="PDH_HSP71_PUCGR" Sequence_ref="HSP71_PUCGR">
+            <PeptideEvidence start="158" end="169" SpectrumIdentificationItem_ref="SII_1_1" post="K" pre="I" />
+            <PeptideEvidence start="35" end="47" SpectrumIdentificationItem_ref="SII_2_1" post="R" pre="L" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="100.304382332144" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis identifier="PDH_HSP7C_ORYLA" Sequence_ref="HSP7C_ORYLA">
+            <PeptideEvidence start="160" end="171" SpectrumIdentificationItem_ref="SII_1_1" post="K" pre="I" />
+            <PeptideEvidence start="37" end="49" SpectrumIdentificationItem_ref="SII_2_1" post="R" pre="L" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="98.6215734982165" />
+          </ProteinDetectionHypothesis>
+          <pf:cvParam accession="TODO: Find something to put here" cvRef="TODO" name="TODO: Find something to put here"  value="" />
+        </ProteinAmbiguityGroup>
+        <ProteinAmbiguityGroup identifier="PAG_hit_3" >
+          <ProteinDetectionHypothesis identifier="PDH_HSP7A_DROSI" Sequence_ref="HSP7A_DROSI">
+            <PeptideEvidence start="37" end="49" SpectrumIdentificationItem_ref="SII_2_2" post="R" pre="L" />
+            <PeptideEvidence start="57" end="71" SpectrumIdentificationItem_ref="SII_3_1" post="K" pre="R" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="78.93" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis identifier="PDH_HSP7A_DROME" Sequence_ref="HSP7A_DROME">
+            <PeptideEvidence start="37" end="49" SpectrumIdentificationItem_ref="SII_2_2" post="R" pre="L" />
+            <PeptideEvidence start="57" end="71" SpectrumIdentificationItem_ref="SII_3_1" post="K" pre="R" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="75.5643823321444" />
+          </ProteinDetectionHypothesis>
+          <pf:cvParam accession="TODO: Find something to put here" cvRef="TODO" name="TODO: Find something to put here"  value="" />
+        </ProteinAmbiguityGroup>
+        <ProteinAmbiguityGroup identifier="PAG_hit_4" >
+          <ProteinDetectionHypothesis identifier="PDH_HS70L_HUMAN" Sequence_ref="HS70L_HUMAN">
+            <PeptideEvidence start="39" end="51" SpectrumIdentificationItem_ref="SII_2_1" post="R" pre="L" />
+            <PeptideEvidence start="59" end="73" SpectrumIdentificationItem_ref="SII_3_2" post="K" pre="R" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="73.4871911660722" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis identifier="PDH_HS70L_MOUSE" Sequence_ref="HS70L_MOUSE">
+            <PeptideEvidence start="39" end="51" SpectrumIdentificationItem_ref="SII_2_1" post="R" pre="L" />
+            <PeptideEvidence start="59" end="73" SpectrumIdentificationItem_ref="SII_3_2" post="K" pre="R" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="73.4871911660722" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis identifier="PDH_HSP70_XENLA" Sequence_ref="HSP70_XENLA">
+            <PeptideEvidence start="38" end="50" SpectrumIdentificationItem_ref="SII_2_1" post="R" pre="L" />
+            <PeptideEvidence start="58" end="72" SpectrumIdentificationItem_ref="SII_3_2" post="K" pre="R" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="72.5028111023421" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis identifier="PDH_HSP70_SOYBN" Sequence_ref="HSP70_SOYBN">
+            <PeptideEvidence start="39" end="51" SpectrumIdentificationItem_ref="SII_2_1" post="R" pre="L" />
+            <PeptideEvidence start="59" end="73" SpectrumIdentificationItem_ref="SII_3_2" post="K" pre="R" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="71.8043823321444" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis identifier="PDH_HS70L_RAT" Sequence_ref="HS70L_RAT">
+            <PeptideEvidence start="39" end="51" SpectrumIdentificationItem_ref="SII_2_1" post="R" pre="L" />
+            <PeptideEvidence start="59" end="73" SpectrumIdentificationItem_ref="SII_3_2" post="K" pre="R" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="70.8200022684143" />
+          </ProteinDetectionHypothesis>
+          <pf:cvParam accession="TODO: Find something to put here" cvRef="TODO" name="TODO: Find something to put here"  value="" />
+        </ProteinAmbiguityGroup>
+      </ProteinDetectionList>
+    </AnalysisData>
+  </DataCollection>
+  <OntologyCollection>
+    <pf:OntologyCollection>
+      <pf:_cvList>
+        <pf:cv fullName="PSI-PI"  URI="http://www.psidev.info/not_sure_of_url_to_cv.obo"></pf:cv>
+        <pf:cv fullName="PSI-MOD" URI="http://www.psidev.info/not_sure_of_url_to_cv.obo"></pf:cv>
+      </pf:_cvList>
+    </pf:OntologyCollection>
+  </OntologyCollection>
+  <AnalysisSoftwareList>
+    <AnalysisSoftware identifier="AS_mascot_server" name="Mascot Server" version="2.1.123">
+      <pf:ContactRole Contact_ref="Matrix Science Limited">
+        <pf:_role>
+          <pf:cvParam accession="TODO" name="software vendor" cvRef="TODO" value="Matrix Science" />
+        </pf:_role>
+      </pf:ContactRole>
+      <Customizations>
+        No customisations (and no cvParams wanted for this element)
+      </Customizations>
+    </AnalysisSoftware>
+    <AnalysisSoftware identifier="AS_mascot_parser" name="Mascot Parser" version="2.2.4.0">
+      <pf:ContactRole Contact_ref="Matrix Science Limited">
+        <pf:_role>
+          <pf:cvParam accession="TODO" name="software vendor" cvRef="TODO" value="" />
+        </pf:_role>
+      </pf:ContactRole>
+      <Customizations>
+        No customisations (and no cvParams wanted for this element)
+      </Customizations>
+    </AnalysisSoftware>
+  </AnalysisSoftwareList>
+  <pf:Provider identifier="">
+    <pf:ContactRole Contact_ref="[Ref to a contact elsewhere in the file]">
+      <pf:_role>
+        <pf:cvParam accession="" name="" cvRef="" value="" />
+      </pf:_role>
+    </pf:ContactRole>
+  </pf:Provider>
+  <pf:AuditCollection>
+    <pf:Person identifier="">
+      <pf:_affiliations Organization_ref=""/>
+    </pf:Person>
+    <pf:Organization identifier="">
+    </pf:Organization>
+  </pf:AuditCollection>
+  <AnalysisSampleCollection>
+    <pf:GenericMaterial identifier="">
+      <pf:ContactRole Contact_ref="">
+        <pf:_role>
+          <pf:cvParam accession="" name="" cvRef="" value="" />
+        </pf:_role>
+      </pf:ContactRole>
+      <pf:cvParam accession="" name="" cvRef="" value="" />
+      <pf:_components GenericMaterial_ref=""/>
+    </pf:GenericMaterial>
+  </AnalysisSampleCollection>
+</AnalysisXML>

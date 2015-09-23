@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MzIdentML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.1 ../../schema/mzIdentML1.1.0.xsd"
+ xmlns="http://psidev.info/psi/pi/mzIdentML/1.1"
+ id=""
+ version="1.1.0"
+ creationDate="2009-08-18T18:03:05">
+  <cvList>
+    <cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"  uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"></cv>
+    <cv id="UNIMOD" fullName="UNIMOD"        uri="http://www.unimod.org/obo/unimod.obo"></cv>
+    <cv id="UO"     fullName="UNIT-ONTOLOGY" uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"></cv>
+  </cvList>
+  <AnalysisSoftwareList>
+    <AnalysisSoftware id="AS_mascot_server" name="Mascot Server" version="2.2.03" uri="http://www.matrixscience.com/search_form_select.html" >
+      <ContactRole contact_ref="ORG_MSL">
+        <Role>
+          <cvParam accession="MS:1001267" name="software vendor" cvRef="PSI-MS"/>
+        </Role>
+      </ContactRole>
+      <SoftwareName>
+        <cvParam accession="MS:1001207" name="Mascot" cvRef="PSI-MS"/>
+      </SoftwareName>
+      <Customizations>
+        No customisations
+      </Customizations>
+    </AnalysisSoftware>
+    <AnalysisSoftware id="AS_mascot_parser" name="Mascot Parser" version="2.3.0.0" uri="http://www.matrixscience.com/msparser.html" >
+      <ContactRole contact_ref="ORG_MSL">
+        <Role>
+          <cvParam accession="MS:1001267" name="software vendor" cvRef="PSI-MS"/>
+        </Role>
+      </ContactRole>
+      <SoftwareName>
+        <cvParam accession="MS:1001478" name="Mascot Parser" cvRef="PSI-MS"/>
+      </SoftwareName>
+      <Customizations>
+        No customisations
+      </Customizations>
+    </AnalysisSoftware>
+  </AnalysisSoftwareList>
+  <Provider id="PROVIDER">
+    <ContactRole contact_ref="PERSON_DOC_OWNER">
+      <Role>
+        <cvParam accession="MS:1001271" name="researcher" cvRef="PSI-MS" />
+      </Role>
+    </ContactRole>
+  </Provider>
+  <AuditCollection>
+    <Person id="">
+      <Affiliation organization_ref="ORG_MSL"/>
+    </Person>
+    <Person id="PERSON_DOC_OWNER" firstName="" lastName="David Creasy" >
+      <Affiliation organization_ref="ORG_DOC_OWNER"/>
+    </Person>
+    <Organization id="ORG_MSL" name="Matrix Science Limited"  />
+    <Organization id="ORG_DOC_OWNER" />
+  </AuditCollection>
+  <SequenceCollection>
+    <DBSequence id="DBSeq_gi|152812279" length="495" searchDatabase_ref="SDB_EST_mini" accession="gi|152812279" >
+      <Seq>GTGCACTGACTTGCTCGCTGGTTTTTTTGACCAGTGTAGAATGTAAAGCATAATATTTATTCACAATAATACAATACAGTAGCAACCAACAAGAACACTGACCATTCATGAACACTGAATAACAAGAAAAATGACTGACGCTCTTTAGAAAGCACCGTCACACAGAACCCTCGTGACAGCCATGATTGGCATTAATGAGACTGAAGCTGGCGACGGTGTGATTCTGAGTGCTTTTGAGTGAGCTCATGCGTGTGTTGCTGCGCACCACACTGTGAAGGTGCAGTGGCAGTGGAGGGCAGCAGCAGCAGATATGTTTGTTGAACTGTTTCTGGAAACTCTTGCTCAGCAGGTAGAGGGCGAATGGGTTGACGCACGAGTTGGTGAACGCCAGGATGCGGGCAGCCACACTGGTGACAAAGTGCAACATGGAGGTGTCCACTTCAGAGTAGTGGTAGGAGCGGTACAGGTAAATGACGTGGCTGGGGAGCCAGCAGA</Seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="AU_Ich_004B_F02 Whole organism normalized cDNA library Ichthyophthirius multifiliis cDNA 5&apos;, mRNA sequence" />
+      <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Ichthyophthirius multifiliis"/>
+      <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="5932"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_gi|5986" length="380" searchDatabase_ref="SDB_EST_mini" accession="gi|5986" >
+      <Seq>CTTGAAGTTNTCGATAACAAATTTNTNATCCCAGAGAGAAAAGTGAACGAGGAGCCAATGTTTGCAGCGGANACGTTTACTCGATCGTNGGGCGTGGAACAGTTATCACTGGAAAGCTTGAGAGAGGAATTTTNAAGAGAGGAGATAAGATTGAAATTNTTGGAGGAACAAAAGATGGAACCACTGTGAAATCAGTAATCTCTGGATTAGAATCCTTCCGTAAAACTGTCGATCAAGCCGAGCCTGGAGATCAATTGGNTGTGCTTCTTCGTGGTTTAGGNCCAAAAGATGTTCGTAGAGGATGTGTTTTACTTCCACAAGGNCACAAACATAAGGTCACTGATAAGGTTAAAGCTCAACTTTATGTGCTCAAAGAGAGC</Seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="CEL11A10 Chris Martin sorted cDNA library Caenorhabditis elegans cDNA clone cm11a10 5&apos;, mRNA sequence" />
+    </DBSequence>
+    <DBSequence id="DBSeq_gi|90987750" length="163" searchDatabase_ref="SDB_EST_mini" accession="gi|90987750" >
+      <Seq>CATGTGTCTACCAGCTCTCTTGATCATCTTGCCAATAGTTTGAATGCGGTGTATAAGTGTTTACGAATTATATAAATTTNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNACTATCAAAAAAAAAAAAAAAAACTATCAAAAAAAAAAAAAAAA</Seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="CA021 Candida albicans cDNA library Candida albicans                                         cDNA 3&apos;, mRNA sequence" />
+    </DBSequence>
+    <Peptide id="peptide_1_1">
+      <PeptideSequence>CLRII</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_1">
+      <PeptideSequence>LARWFF</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_3_1">
+      <PeptideSequence>ALFEHIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_1">
+      <PeptideSequence>QDAGSHTGDK</PeptideSequence>
+    </Peptide>
+      <PeptideEvidence id="PE_1_1_gi|90987750_1" start="20" end="24" pre="K" post="-" translationTable_ref="TT_1" frame="1" isDecoy="false" dBSequence_ref="DBSeq_gi|90987750" peptide_ref="peptide_1_1" />
+      <PeptideEvidence id="PE_2_1_gi|152812279_1" start="4" end="9" pre="-" post="-"  translationTable_ref="TT_6" frame="1" isDecoy="false" dBSequence_ref="DBSeq_gi|152812279" peptide_ref="peptide_2_1"/>
+      <PeptideEvidence id="PE_3_1_gi|5986_4" start="1" end="7" pre="-" post="L" translationTable_ref="TT_1" frame="-3" isDecoy="false" dBSequence_ref="DBSeq_gi|5986" peptide_ref="peptide_3_1"/>
+      <PeptideEvidence id="PE_4_1_gi|152812279_2" start="130" end="139" pre="R" post="V" translationTable_ref="TT_6" frame="2" isDecoy="false" dBSequence_ref="DBSeq_gi|152812279" peptide_ref="peptide_4_1"/>
+  </SequenceCollection>
+  <AnalysisCollection>
+    <SpectrumIdentification id="SI" spectrumIdentificationProtocol_ref="SIP"  spectrumIdentificationList_ref="SIL_1" activityDate="2008-06-23T19:39:34">
+      <InputSpectra spectraData_ref="SD_1"/>
+      <SearchDatabaseRef searchDatabase_ref="SDB_EST_mini"/>
+    </SpectrumIdentification>
+    <ProteinDetection id="PD_1" proteinDetectionProtocol_ref="PDP_MascotParser_1" proteinDetectionList_ref="PDL_1" activityDate="2009-08-18T18:03:11">
+      <InputSpectrumIdentifications spectrumIdentificationList_ref="SIL_1"/>
+    </ProteinDetection>
+  </AnalysisCollection>
+  <AnalysisProtocolCollection>
+    <SpectrumIdentificationProtocol id="SIP" analysisSoftware_ref="AS_mascot_server">
+      <SearchType>
+        <cvParam accession="MS:1001083" name="ms-ms search" cvRef="PSI-MS" value=""/>
+      </SearchType>
+      <AdditionalSearchParams>
+        <userParam name="Mascot Instrument Name" value="Default"/>
+        <cvParam accession="MS:1001211" name="parent mass type mono"    cvRef="PSI-MS"/>
+        <cvParam accession="MS:1001108" name="param: a ion" cvRef="PSI-MS"/>
+        <cvParam accession="MS:1001146" name="param: a ion-NH3" cvRef="PSI-MS"/>
+        <cvParam accession="MS:1001118" name="param: b ion" cvRef="PSI-MS"/>
+        <cvParam accession="MS:1001149" name="param: b ion-NH3" cvRef="PSI-MS"/>
+        <cvParam accession="MS:1001262" name="param: y ion" cvRef="PSI-MS"/>
+        <cvParam accession="MS:1001151" name="param: y ion-NH3" cvRef="PSI-MS"/>
+      </AdditionalSearchParams>
+      <Enzymes>
+        <Enzyme id="ENZ_0" cTermGain="OH" nTermGain="H" missedCleavages="1" semiSpecific="0">
+          <SiteRegexp><![CDATA[(?<=[KR])(?!P)]]></SiteRegexp>
+          <EnzymeName>
+            <cvParam accession="MS:1001251" name="Trypsin" cvRef="PSI-MS" />
+          </EnzymeName>
+        </Enzyme>
+      </Enzymes>
+      <MassTable id="MT" msLevel="1 2">
+        <Residue code="A" mass="71.037114"/>
+        <Residue code="C" mass="103.009185"/>
+        <Residue code="D" mass="115.026943"/>
+        <Residue code="E" mass="129.042593"/>
+        <Residue code="F" mass="147.068414"/>
+        <Residue code="G" mass="57.021464"/>
+        <Residue code="H" mass="137.058912"/>
+        <Residue code="I" mass="113.084064"/>
+        <Residue code="K" mass="128.094963"/>
+        <Residue code="L" mass="113.084064"/>
+        <Residue code="M" mass="131.040485"/>
+        <Residue code="N" mass="114.042927"/>
+        <Residue code="P" mass="97.052764"/>
+        <Residue code="Q" mass="128.058578"/>
+        <Residue code="R" mass="156.101111"/>
+        <Residue code="S" mass="87.032028"/>
+        <Residue code="T" mass="101.047679"/>
+        <Residue code="U" mass="150.95363"/>
+        <Residue code="V" mass="99.068414"/>
+        <Residue code="W" mass="186.079313"/>
+        <Residue code="Y" mass="163.063329"/>
+        <AmbiguousResidue code="B">
+          <cvParam accession="MS:1001360" name="alternate single letter codes" cvRef="PSI-MS" value="D N"/>
+        </AmbiguousResidue>
+        <AmbiguousResidue code="Z">
+          <cvParam accession="MS:1001360" name="alternate single letter codes" cvRef="PSI-MS" value="E Q"/>
+        </AmbiguousResidue>
+        <AmbiguousResidue code="X">
+          <cvParam accession="MS:1001360" name="alternate single letter codes" cvRef="PSI-MS" value="A C D E F G H I K L M N O P Q R S T U V W Y"/>
+        </AmbiguousResidue>
+      </MassTable>
+      <FragmentTolerance>
+        <cvParam accession="MS:1001412" name="search tolerance plus value" value="0.6" cvRef="PSI-MS" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO" />
+        <cvParam accession="MS:1001413" name="search tolerance minus value" value="0.6" cvRef="PSI-MS" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO" />
+      </FragmentTolerance>
+      <ParentTolerance>
+        <cvParam accession="MS:1001412" name="search tolerance plus value" value="1.2" cvRef="PSI-MS" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO" />
+        <cvParam accession="MS:1001413" name="search tolerance minus value" value="1.2" cvRef="PSI-MS" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO" />
+      </ParentTolerance>
+      <Threshold>
+        <cvParam accession="MS:1001316" name="mascot:SigThreshold" cvRef="PSI-MS" value="0.05"/>
+      </Threshold>
+      <DatabaseFilters>
+        <Filter>
+          <FilterType>
+            <cvParam accession="MS:1001020" name="DB filter taxonomy" cvRef="PSI-MS" />
+          </FilterType>
+        </Filter>
+      </DatabaseFilters>
+      <DatabaseTranslation frames="1 2 3 -1 -2 -3">
+        <TranslationTable id="TT_1" name="Standard">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="---M---------------M---------------M----------------------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG1" />
+        </TranslationTable>
+        <TranslationTable id="TT_2" name="Vertebrate Mitochondrial">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSS**VVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="--------------------------------MMMM---------------M------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG2" />
+        </TranslationTable>
+        <TranslationTable id="TT_3" name="Yeast Mitochondrial">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYY**CCWWTTTTPPPPHHQQRRRRIIMMTTTTNNKKSSRRVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="----------------------------------MM----------------------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG3" />
+        </TranslationTable>
+        <TranslationTable id="TT_4" name="Mold Mitochondrial; Protozoan Mitochondrial; Coelenterate Mitochondrial; Mycoplasma; Spiroplasma">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="--MM---------------M------------MMMM---------------M------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG4" />
+        </TranslationTable>
+        <TranslationTable id="TT_5" name="Invertebrate Mitochondrial">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSSSSVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="---M----------------------------MMMM---------------M------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG5" />
+        </TranslationTable>
+        <TranslationTable id="TT_6" name="Ciliate Nuclear; Dasycladacean Nuclear; Hexamita Nuclear">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYYQQCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="-----------------------------------M----------------------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG6" />
+        </TranslationTable>
+        <TranslationTable id="TT_9" name="Echinoderm Mitochondrial; Flatworm Mitochondrial">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNNKSSSSVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="-----------------------------------M---------------M------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG9" />
+        </TranslationTable>
+        <TranslationTable id="TT_10" name="Euplotid Nuclear">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYY**CCCWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="-----------------------------------M----------------------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG10" />
+        </TranslationTable>
+        <TranslationTable id="TT_11" name="Bacterial and Plant Plastid">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="---M---------------M------------MMMM---------------M------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG11" />
+        </TranslationTable>
+        <TranslationTable id="TT_12" name="Alternative Yeast Nuclear">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYY**CC*WLLLSPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="-------------------M---------------M----------------------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG12" />
+        </TranslationTable>
+        <TranslationTable id="TT_13" name="Ascidian Mitochondrial">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSSGGVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="-----------------------------------M----------------------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG13" />
+        </TranslationTable>
+        <TranslationTable id="TT_14" name="Alternative Flatworm Mitochondrial">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYYY*CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNNKSSSSVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="-----------------------------------M----------------------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG14" />
+        </TranslationTable>
+        <TranslationTable id="TT_15" name="Blepharisma Macronuclear">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYY*QCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="-----------------------------------M----------------------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG15" />
+        </TranslationTable>
+        <TranslationTable id="TT_16" name="Chlorophycean Mitochondrial">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYY*LCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="-----------------------------------M----------------------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG16" />
+        </TranslationTable>
+        <TranslationTable id="TT_21" name="Trematode Mitochondrial">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNNKSSSSVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="-----------------------------------M---------------M------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG21" />
+        </TranslationTable>
+        <TranslationTable id="TT_22" name="Scenedesmus obliquus mitochondrial">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FFLLSS*SYY*LCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="-----------------------------------M----------------------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG22" />
+        </TranslationTable>
+        <TranslationTable id="TT_23" name="Thraustochytrium mitochondrial code">
+          <cvParam accession="MS:1001025" name="translation table" cvRef="PSI-MS" value="FF*LSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG" />
+          <cvParam accession="MS:1001410" name="translation start codons" cvRef="PSI-MS" value="--------------------------------M--M---------------M------------" />
+          <cvParam accession="MS:1001423" name="translation table description" cvRef="PSI-MS" value="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG23" />
+        </TranslationTable>
+      </DatabaseTranslation>
+    </SpectrumIdentificationProtocol>
+    <ProteinDetectionProtocol id="PDP_MascotParser_1"  analysisSoftware_ref="AS_mascot_parser">
+      <AnalysisParams>
+        <cvParam accession="MS:1001316" name="mascot:SigThreshold"                               cvRef="PSI-MS" value="0.05"/>
+        <cvParam accession="MS:1001317" name="mascot:MaxProteinHits"                             cvRef="PSI-MS" value="Auto"/>
+        <cvParam accession="MS:1001318" name="mascot:ProteinScoringMethod"                       cvRef="PSI-MS" value="MudPIT"/>
+        <cvParam accession="MS:1001319" name="mascot:MinMSMSThreshold"                           cvRef="PSI-MS" value="0"/>
+        <cvParam accession="MS:1001320" name="mascot:ShowHomologousProteinsWithSamePeptides"     cvRef="PSI-MS" value="1"/>
+        <cvParam accession="MS:1001321" name="mascot:ShowHomologousProteinsWithSubsetOfPeptides" cvRef="PSI-MS" value="1"/>
+        <cvParam accession="MS:1001322" name="mascot:RequireBoldRed"                             cvRef="PSI-MS" value="0"/>
+        <cvParam accession="MS:1001323" name="mascot:UseUnigeneClustering"                       cvRef="PSI-MS" value="false"/>
+        <cvParam accession="MS:1001324" name="mascot:IncludeErrorTolerantMatches"                cvRef="PSI-MS" value="1"/>
+        <cvParam accession="MS:1001325" name="mascot:ShowDecoyMatches"                           cvRef="PSI-MS" value="0"/>
+      </AnalysisParams>
+      <Threshold>
+        <cvParam accession="MS:1001494" name="no threshold" cvRef="PSI-MS" />
+      </Threshold>
+    </ProteinDetectionProtocol>
+  </AnalysisProtocolCollection>
+  <DataCollection>
+    <Inputs>
+      <SourceFile location="file:///../data/Mascot_NA_example.dat" id="SF_1" >
+        <FileFormat>
+          <cvParam accession="MS:1001199" name="Mascot DAT file" cvRef="PSI-MS" />
+        </FileFormat>
+      </SourceFile>
+      <SearchDatabase location="file:///C:/inetpub/mascot/sequence/EST_mini/current/EST_mini_20080623.fasta" id="SDB_EST_mini" name="EST_mini" numDatabaseSequences="18" numResidues="2064" version="EST_mini_20080623.fasta">
+        <FileFormat>
+          <cvParam accession="MS:1001348" name="FASTA format" cvRef="PSI-MS" />
+        </FileFormat>
+        <DatabaseName>
+          <userParam name="EST_mini_20080623.fasta" />
+        </DatabaseName>
+        <cvParam accession="MS:1001079" name="database type nucleotide" cvRef="PSI-MS" />
+      </SearchDatabase>
+      <SpectraData location="file:///est_coding_test.mgf" id="SD_1">
+        <FileFormat>
+          <cvParam accession="MS:1001062" name="Mascot MGF file" cvRef="PSI-MS" />
+        </FileFormat>
+        <SpectrumIDFormat>
+          <cvParam accession="MS:1001528" name="Mascot query number" cvRef="PSI-MS" />
+        </SpectrumIDFormat>
+      </SpectraData>
+    </Inputs>
+    <AnalysisData>
+      <SpectrumIdentificationList id="SIL_1" numSequencesSearched="18">
+	    <FragmentationTable>
+          <Measure id="m_mz">
+            <cvParam cvRef="PSI-MS" accession="MS:1001225" name="product ion m/z"/>
+          </Measure>
+          <Measure id="m_intensity">
+            <cvParam cvRef="PSI-MS" accession="MS:1001226" name="product ion intensity"/>
+          </Measure>
+          <Measure id="m_error">
+            <cvParam cvRef="PSI-MS" accession="MS:1001227" name="product ion m/z error" unitAccession="MS:1000040" unitName="m/z" unitCvRef="PSI-MS"/>
+          </Measure>
+        </FragmentationTable>
+        <SpectrumIdentificationResult id="SIR_1" spectrumID="query=1" spectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_1_1"  calculatedMassToCharge="617.380308" chargeState="1" experimentalMassToCharge="617.380865" peptide_ref="peptide_1_1" rank="1" passThreshold="true">
+            <PeptideEvidenceRef peptideEvidence_ref="PE_1_1_gi|90987750_1"/>
+            <Fragmentation>
+              <IonType index="1 2 3 4" charge="1">
+                <FragmentArray values="104.016 217.101 373.202 486.286 " measure_ref="m_mz"/>
+                <FragmentArray values="3 3 3 3" measure_ref="m_intensity"/>
+                <FragmentArray values="-0.0005 0.0005 0.0004 0.0003" measure_ref="m_error"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001224" name="frag: b ion"/>
+              </IonType>
+            </Fragmentation>            
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="45.99" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="2.51767692775885e-005" />
+          </SpectrumIdentificationItem>
+          <cvParam accession="MS:1001371" name="mascot:identity threshold"  cvRef="PSI-MS" value="13" />
+          <cvParam accession="MS:1001030" name="number of peptide seqs compared to each spectrum"  cvRef="PSI-MS" value="1" />
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_2" spectrumID="query=2" spectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_2_1"  calculatedMassToCharge="839.456266" chargeState="1" experimentalMassToCharge="839.456" peptide_ref="peptide_2_1" rank="1" passThreshold="true">
+            <PeptideEvidenceRef peptideEvidence_ref="PE_2_1_gi|152812279_1"/>
+            <Fragmentation>
+              <IonType index="1 2 3 4 5" charge="1">
+                <FragmentArray values="114.091 185.128 341.23 527.309 674.377 " measure_ref="m_mz"/>
+                <FragmentArray values="1 2 3 4 5" measure_ref="m_intensity"/>
+                <FragmentArray values="-0.0003 -0.0005 0.0004 0.0001 -0.0003" measure_ref="m_error"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001224" name="frag: b ion"/>
+              </IonType>
+            </Fragmentation>
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="56.16" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="2.42102904673618e-006" />
+          </SpectrumIdentificationItem>
+          <cvParam accession="MS:1001371" name="mascot:identity threshold"  cvRef="PSI-MS" value="13" />
+          <cvParam accession="MS:1001030" name="number of peptide seqs compared to each spectrum"  cvRef="PSI-MS" value="2" />
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_3" spectrumID="query=3" spectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_3_1"  calculatedMassToCharge="857.487943" chargeState="1" experimentalMassToCharge="857.488485" peptide_ref="peptide_3_1" rank="1" passThreshold="true">
+            <PeptideEvidenceRef peptideEvidence_ref="PE_3_1_gi|5986_4"/>    
+            <Fragmentation>
+              <IonType index="1 2 3 4 5 6" charge="1">
+                <FragmentArray values="72.044 185.128 332.197 461.239 598.298 711.383 " measure_ref="m_mz"/>
+                <FragmentArray values="6 6 6 6 6 6" measure_ref="m_intensity"/>
+                <FragmentArray values="-0.0004 -0.0005 0.0001 -0.0005 -0.0004 0.0006" measure_ref="m_error"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001224" name="frag: b ion"/>
+              </IonType>
+            </Fragmentation>
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="70.46" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="8.99497581530036e-008" />
+          </SpectrumIdentificationItem>
+          <cvParam accession="MS:1001371" name="mascot:identity threshold"  cvRef="PSI-MS" value="13" />
+          <cvParam accession="MS:1001030" name="number of peptide seqs compared to each spectrum"  cvRef="PSI-MS" value="1" />
+          <cvParam accession="MS:1000796" name="spectrum title"  cvRef="PSI-MS" value="ALFEHIK" />
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_4" spectrumID="query=4" spectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_4_1"  calculatedMassToCharge="1015.443937" chargeState="1" experimentalMassToCharge="1015.444455" peptide_ref="peptide_4_1" rank="1" passThreshold="true">
+            <PeptideEvidenceRef peptideEvidence_ref="PE_4_1_gi|152812279_2"/>
+            <Fragmentation>
+              <IonType index="1 2 3 4 5 6 8 9" charge="1">
+                <FragmentArray values="129.066 244.093 315.13 372.151 459.183 596.242 754.311 869.338 " measure_ref="m_mz"/>
+                <FragmentArray values="2 2 2 2 2 2 2 2" measure_ref="m_intensity"/>
+                <FragmentArray values="0.0001 0.0002 0.0001 -0.0004 -0.0004 -0.0003 -0.0005 -0.0004" measure_ref="m_error"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001224" name="frag: b ion"/>
+              </IonType>
+            </Fragmentation>
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="88.07" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="1.55955250282695e-009" />
+          </SpectrumIdentificationItem>
+          <cvParam accession="MS:1001371" name="mascot:identity threshold"  cvRef="PSI-MS" value="13" />
+          <cvParam accession="MS:1001030" name="number of peptide seqs compared to each spectrum"  cvRef="PSI-MS" value="1" />
+        </SpectrumIdentificationResult>
+      </SpectrumIdentificationList>
+      <ProteinDetectionList id="PDL_1">
+        <ProteinAmbiguityGroup id="PAG_hit_1" >
+          <ProteinDetectionHypothesis id="PDH_gi|152812279_-1" dBSequence_ref="DBSeq_gi|152812279"  passThreshold="true">
+            <PeptideHypothesis peptideEvidence_ref="PE_2_1_gi|152812279_1">
+              <SpectrumIdentificationItemRef spectrumIdentificationItem_ref="SII_2_1"/>
+            </PeptideHypothesis>
+            <PeptideHypothesis peptideEvidence_ref="PE_4_1_gi|152812279_2">
+              <SpectrumIdentificationItemRef spectrumIdentificationItem_ref="SII_4_1"/>
+            </PeptideHypothesis>
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="131.23" />
+            <cvParam accession="MS:1001093" name="sequence coverage" cvRef="PSI-MS" value="9" />
+            <cvParam accession="MS:1001097" name="distinct peptide sequences" cvRef="PSI-MS" value="2" />
+          </ProteinDetectionHypothesis>
+        </ProteinAmbiguityGroup>
+        <ProteinAmbiguityGroup id="PAG_hit_2" >
+          <ProteinDetectionHypothesis id="PDH_gi|5986_4" dBSequence_ref="DBSeq_gi|5986"  passThreshold="true">
+            <PeptideHypothesis peptideEvidence_ref="PE_3_1_gi|5986_4">
+              <SpectrumIdentificationItemRef spectrumIdentificationItem_ref="SII_3_1"/>
+            </PeptideHypothesis>
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="70.46" />
+            <cvParam accession="MS:1001093" name="sequence coverage" cvRef="PSI-MS" value="5" />
+            <cvParam accession="MS:1001097" name="distinct peptide sequences" cvRef="PSI-MS" value="1" />
+          </ProteinDetectionHypothesis>
+        </ProteinAmbiguityGroup>
+        <ProteinAmbiguityGroup id="PAG_hit_3" >
+          <ProteinDetectionHypothesis id="PDH_gi|90987750_1" dBSequence_ref="DBSeq_gi|90987750"  passThreshold="true">
+            <PeptideHypothesis peptideEvidence_ref="PE_1_1_gi|90987750_1">
+              <SpectrumIdentificationItemRef spectrumIdentificationItem_ref="SII_1_1"/>
+            </PeptideHypothesis>            
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="45.99" />
+            <cvParam accession="MS:1001093" name="sequence coverage" cvRef="PSI-MS" value="9" />
+            <cvParam accession="MS:1001097" name="distinct peptide sequences" cvRef="PSI-MS" value="1" />
+          </ProteinDetectionHypothesis>
+        </ProteinAmbiguityGroup>
+      </ProteinDetectionList>
+    </AnalysisData>
+  </DataCollection>
+  <BibliographicReference authors="David N. Perkins, Darryl J. C. Pappin, David M. Creasy, John S. Cottrell" editor="" id="10.1002/(SICI)1522-2683(19991201)20:18&lt;3551::AID-ELPS3551&gt;3.0.CO;2-2" name="Probability-based protein identification by searching sequence databases using mass spectrometry data" issue="18" pages="3551-3567" publication="Electrophoresis" volume="20" year="1999" publisher="Wiley VCH" title="Probability-based protein identification by searching sequence databases using mass spectrometry data"/>
+</MzIdentML>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalysisXML id=""             xsi:schemaLocation="http://psidev.info/psi/pi/analysis/1.0  ./AnalysisXML_working.xsd"
+             xmlns:pf="http://psidev.info/fuge-light/1.0"
+             xmlns="http://psidev.info/psi/pi/analysis/1.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SequenceCollection>
+    <DBSequence id="DBSeq_gi|152812279" length="165" SearchDatabase_ref="SDB_EST_mini" accession="gi|152812279" name="TODO">
+      <seq>GTGCACTGACTTGCTCGCTGGTTTTTTTGACCAGTGTAGAATGTAAAGCATAATATTTATTCACAATAATACAATACAGTAGCAACCAACAAGAACACTGACCATTCATGAACACTGAATAACAAGAAAAATGACTGACGCTCTTTAGAAAGCACCGTCACACAGAACCCTCGTGACAGCCATGATTGGCATTAATGAGACTGAAGCTGGCGACGGTGTGATTCTGAGTGCTTTTGAGTGAGCTCATGCGTGTGTTGCTGCGCACCACACTGTGAAGGTGCAGTGGCAGTGGAGGGCAGCAGCAGCAGATATGTTTGTTGAACTGTTTCTGGAAACTCTTGCTCAGCAGGTAGAGGGCGAATGGGTTGACGCACGAGTTGGTGAACGCCAGGATGCGGGCAGCCACACTGGTGACAAAGTGCAACATGGAGGTGTCCACTTCAGAGTAGTGGTAGGAGCGGTACAGGTAAATGACGTGGCTGGGGAGCCAGCAGA</seq>
+    </DBSequence>
+    <DBSequence id="DBSeq_gi|5986" length="126" SearchDatabase_ref="SDB_EST_mini" accession="gi|5986" name="TODO">
+      <seq>CTTGAAGTTNTCGATAACAAATTTNTNATCCCAGAGAGAAAAGTGAACGAGGAGCCAATGTTTGCAGCGGANACGTTTACTCGATCGTNGGGCGTGGAACAGTTATCACTGGAAAGCTTGAGAGAGGAATTTTNAAGAGAGGAGATAAGATTGAAATTNTTGGAGGAACAAAAGATGGAACCACTGTGAAATCAGTAATCTCTGGATTAGAATCCTTCCGTAAAACTGTCGATCAAGCCGAGCCTGGAGATCAATTGGNTGTGCTTCTTCGTGGTTTAGGNCCAAAAGATGTTCGTAGAGGATGTGTTTTACTTCCACAAGGNCACAAACATAAGGTCACTGATAAGGTTAAAGCTCAACTTTATGTGCTCAAAGAGAGC</seq>
+    </DBSequence>
+    <DBSequence id="DBSeq_gi|90987750" length="54" SearchDatabase_ref="SDB_EST_mini" accession="gi|90987750" name="TODO">
+      <seq>CATGTGTCTACCAGCTCTCTTGATCATCTTGCCAATAGTTTGAATGCGGTGTATAAGTGTTTACGAATTATATAAATTTNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNACTATCAAAAAAAAAAAAAAAAACTATCAAAAAAAAAAAAAAAA</seq>
+    </DBSequence>
+    <Peptide id="peptide_1_1" sequenceMass="616.373032" sequenceLength="5">
+      <peptideSequence>CLRII</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_1" sequenceMass="838.44899" sequenceLength="6">
+      <peptideSequence>LARWFF</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_3_1" sequenceMass="856.480667" sequenceLength="7">
+      <peptideSequence>ALFEHIK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_1" sequenceMass="1014.436661" sequenceLength="10">
+      <peptideSequence>QDAGSHTGDK</peptideSequence>
+    </Peptide>
+  </SequenceCollection>
+  <AnalysisCollection>
+    <SpectrumIdentification id="SI_1" SpectrumIdentificationProtocol_ref="SIP_1" SpectrumIdentificationList_ref="SIL_1">
+      <SpectraData_ref ref="SD_1"/>
+      <SearchDatabase SearchDatabase_ref="SDB_EST_mini"/>
+    </SpectrumIdentification>
+    <ProteinDetection id="PD_1" ProteinDetectionProtocol_ref="PDP_MascotParser_1" ProteinDetectionList_ref="PDL_1" >
+      <SpectrumIdentificationList_ref ref="SIL_1"/>
+    </ProteinDetection>
+  </AnalysisCollection>
+  <AnalysisProtocolCollection>
+    <SpectrumIdentificationProtocol id="SIP_1" AnalysisSoftware_ref="AS_mascot_server">
+      <SearchType>
+        <pf:cvParam accession="PI:xxxxx" name="searchType" cvRef="PSI-PI" value="MIS"/>
+      </SearchType>
+      <AdditionalSearchParams>
+        <pf:cvParam accession="PI:00002" name="user name"               cvRef="PSI-PI" value="David Creasy"/>
+        <pf:cvParam accession="PI:00003" name="user email address"      cvRef="PSI-PI" value="dcreasy@matrixscience.com"/>
+        <pf:cvParam accession="PI:00004" name="user comments"           cvRef="PSI-PI" value=""/>
+        <pf:cvParam accession="PI:xxxxx" name="InstrumentType"          cvRef="PSI-PI" value="Default"/>
+        <pf:cvParam accession="PI:00211" name="mass type setting monoisotopic"     cvRef="PSI-PI"/>
+        <pf:cvParam accession="PI:00066" name="ions series considered in search" value="singly charged" cvRef="PSI-PI"/>
+        <pf:cvParam accession="PI:00066" name="ions series considered in search" value="doubly charged if precursor 2+ or higher (not internal or immonium)" cvRef="PSI-PI"/>
+        <pf:cvParam accession="PI:00066" name="ions series considered in search" value="a series" cvRef="PSI-PI"/>
+        <pf:cvParam accession="PI:00066" name="ions series considered in search" value="a - NH3 if a significant and fragment includes RKNQ" cvRef="PSI-PI"/>
+        <pf:cvParam accession="PI:00066" name="ions series considered in search" value="b series" cvRef="PSI-PI"/>
+        <pf:cvParam accession="PI:00066" name="ions series considered in search" value="b - NH3 if b significant and fragment includes RKNQ" cvRef="PSI-PI"/>
+        <pf:cvParam accession="PI:00066" name="ions series considered in search" value="y series" cvRef="PSI-PI"/>
+        <pf:cvParam accession="PI:00066" name="ions series considered in search" value="y - NH3 if y significant and fragment includes RKNQ" cvRef="PSI-PI"/>
+      </AdditionalSearchParams>
+      <MassTable>
+        <Residue Code="A" Mass="71.037114"/>
+        <Residue Code="B" Mass="114.53494"/>
+        <Residue Code="C" Mass="103.009185"/>
+        <Residue Code="D" Mass="115.026943"/>
+        <Residue Code="E" Mass="129.042593"/>
+        <Residue Code="F" Mass="147.068414"/>
+        <Residue Code="G" Mass="57.021464"/>
+        <Residue Code="H" Mass="137.058912"/>
+        <Residue Code="I" Mass="113.084064"/>
+        <Residue Code="J" Mass="0"/>
+        <Residue Code="K" Mass="128.094963"/>
+        <Residue Code="L" Mass="113.084064"/>
+        <Residue Code="M" Mass="131.040485"/>
+        <Residue Code="N" Mass="114.042927"/>
+        <Residue Code="O" Mass="0"/>
+        <Residue Code="P" Mass="97.052764"/>
+        <Residue Code="Q" Mass="128.058578"/>
+        <Residue Code="R" Mass="156.101111"/>
+        <Residue Code="S" Mass="87.032028"/>
+        <Residue Code="T" Mass="101.047679"/>
+        <Residue Code="U" Mass="150.95363"/>
+        <Residue Code="V" Mass="99.068414"/>
+        <Residue Code="W" Mass="186.079313"/>
+        <Residue Code="X" Mass="111"/>
+        <Residue Code="Y" Mass="163.063329"/>
+      </MassTable>
+      <FragmentTolerance>
+        <PlusValue  unitAccession="PI:xxxxx" unitName="Da" value="0.6" />
+        <MinusValue unitAccession="PI:xxxxx" unitName="Da" value="0.6" />
+      </FragmentTolerance>
+      <ParentTolerance>
+        <PlusValue  unitAccession="PI:xxxxx" unitName="Da" value="1.2" />
+        <MinusValue unitAccession="PI:xxxxx" unitName="Da" value="1.2" />
+      </ParentTolerance>
+      <DatabaseFilters>
+        <Filter>
+          <FilterType>
+            <pf:cvParam accession="PI:00015" name="database taxonomy filter" cvRef="PSI-PI" />
+          </FilterType>
+          <Include>
+            <pf:cvParam accession="1" name="root" cvRef="NCBI" />
+          </Include>
+        </Filter>
+      </DatabaseFilters>
+      <DatabaseTranslationFrames frames="1,2,3,4,5,6">
+        <TranslationTable id="0" name="Unspecified">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="                                                                 " />
+        </TranslationTable>
+        <TranslationTable id="1" name="Standard">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="2" name="Vertebrate Mitochondrial">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSS**VVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="3" name="Yeast Mitochondrial">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYY**CCWWTTTTPPPPHHQQRRRRIIMMTTTTNNKKSSRRVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="4" name="Mold Mitochondrial; Protozoan Mitochondrial; Coelenterate Mitochondrial; Mycoplasma; Spiroplasma">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="5" name="Invertebrate Mitochondrial">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSSSSVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="6" name="Ciliate Nuclear; Dasycladacean Nuclear; Hexamita Nuclear">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYYQQCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="9" name="Echinoderm Mitochondrial; Flatworm Mitochondrial">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNNKSSSSVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="10" name="Euplotid Nuclear">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYY**CCCWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="11" name="Bacterial and Plant Plastid">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="12" name="Alternative Yeast Nuclear">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYY**CC*WLLLSPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="13" name="Ascidian Mitochondrial">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSSGGVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="14" name="Alternative Flatworm Mitochondrial">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYYY*CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNNKSSSSVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="15" name="Blepharisma Macronuclear">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYY*QCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="16" name="Chlorophycean Mitochondrial">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYY*LCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="21" name="Trematode Mitochondrial">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNNKSSSSVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="22" name="Scenedesmus obliquus mitochondrial">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FFLLSS*SYY*LCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+        <TranslationTable id="23" name="Thraustochytrium mitochondrial code">
+          <pf:cvParam accession="PI:00025" name="translation table" cvRef="PSI-PI" value="FF*LSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG " />
+        </TranslationTable>
+      </DatabaseTranslationFrames>
+    </SpectrumIdentificationProtocol>
+    <ProteinDetectionProtocol id="PDP_MascotParser_1"  AnalysisSoftware_ref="AS_mascot_parser">
+      <_runtimeParams>
+        <pf:cvParam accession="PI:xxxx" name="MascotSigThreshold"                        cvRef="PSI-PI" value="0.05"/>
+        <pf:cvParam accession="PI:xxxx" name="MaxProteinHits"                            cvRef="PSI-PI" value="Auto"/>
+        <pf:cvParam accession="PI:xxxx" name="MascotProteinScoringMethod"                cvRef="PSI-PI" value="MudPIT"/>
+        <pf:cvParam accession="PI:xxxx" name="MascotMinMSMSThreshold"                    cvRef="PSI-PI" value="0"/>
+        <pf:cvParam accession="PI:xxxx" name="ShowHomolgousProteinsWithSamePeptides"     cvRef="PSI-PI" value="1"/>
+        <pf:cvParam accession="PI:xxxx" name="ShowHomolgousProteinsWithSubsetOfPeptides" cvRef="PSI-PI" value="1"/>
+        <pf:cvParam accession="PI:xxxx" name="MascotRequireBoldRed"                      cvRef="PSI-PI" value="0"/>
+        <pf:cvParam accession="PI:xxxx" name="UseUnigeneClustering"                      cvRef="PSI-PI" value=""/>
+        <pf:cvParam accession="PI:xxxx" name="MascotIncludeErrorTolerantMatches"         cvRef="PSI-PI" value="1"/>
+        <pf:cvParam accession="PI:xxxx" name="MascotShowDecoyMatches"                    cvRef="PSI-PI" value="0"/>
+      </_runtimeParams>
+    </ProteinDetectionProtocol>
+  </AnalysisProtocolCollection>
+  <DataCollection>
+    <Inputs>
+      <SourceFile location="file:///../data/Mascot_NA_example.dat" id="SF_1" >
+        <pf:_fileFormat>
+          <pf:cvParam accession="PSI:xxxx" name="MascotDatFile" cvRef="PSI-PI" />
+        </pf:_fileFormat>
+      </SourceFile>
+      <SearchDatabase location="file:///C:/inetpub/mascot/sequence/EST_mini/current/EST_mini_20080623.fasta" id="SDB_EST_mini" name="EST_mini" numDatabaseSequences="18" numSequencesSearched="18" releaseDate="EST_mini_20080623.fasta" version="EST_mini_20080623.fasta">
+        <pf:_fileFormat>
+          <pf:cvParam accession="" name="" cvRef="" value="" />
+        </pf:_fileFormat>
+        <DatabaseName>
+          <pf:cvParam accession="" name="" cvRef="" value="" />
+        </DatabaseName>
+        <!-- pf:cvParam accession="PI:00019" name="number of residues" cvRef="PSI-PI" value="2064"/-->
+        <!-- pf:cvParam accession="PI:00025" name="database type" cvRef="PSI-PI" value="NA"/-->
+      </SearchDatabase>
+      <SpectraData location="" id="SD_1">
+        <pf:_fileFormat>
+          <pf:cvParam accession="" name="" cvRef="" value="" />
+        </pf:_fileFormat>
+      </SpectraData>
+    </Inputs>
+    <AnalysisData>
+      <SpectrumIdentificationList id="SIL_1">
+        <SpectrumIdentificationResult id="SIR_1_1">
+          <SpectrumIdentificationItem id="SII_1_1"  calculatedMassToCharge="616.373032" chargeState="1" experimentalMassToCharge="617.380865" Peptide_ref="peptide_1_1">
+            <PeptideEvidence id="PE_1_1_gi|90987750" start="20" end="24" pre="K" post="-" TranslationTable_ref="1" frame="1" isDecoy="false" DBSequence_Ref="DBSeq_gi|90987750" />
+            <pf:cvParam accession="PI:00171" name="mascot:score"             cvRef="PSI-PI" value="45.99" />
+            <pf:cvParam accession="PI:00172" name="mascot:expectation value" cvRef="PSI-PI" value="2.51767692775885e-005" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"              cvRef="PSI-PI" value="1" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_2_1">
+          <SpectrumIdentificationItem id="SII_2_1"  calculatedMassToCharge="838.44899" chargeState="1" experimentalMassToCharge="839.456" Peptide_ref="peptide_2_1">
+            <PeptideEvidence id="PE_2_1_gi|152812279" start="4" end="9" pre="-" post="-" TranslationTable_ref="1" frame="1" isDecoy="false" DBSequence_Ref="DBSeq_gi|152812279" />
+            <pf:cvParam accession="PI:00171" name="mascot:score"             cvRef="PSI-PI" value="56.16" />
+            <pf:cvParam accession="PI:00172" name="mascot:expectation value" cvRef="PSI-PI" value="2.42102904673618e-006" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"              cvRef="PSI-PI" value="1" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_3_1">
+          <SpectrumIdentificationItem id="SII_3_1"  calculatedMassToCharge="856.480667" chargeState="1" experimentalMassToCharge="857.488485" Peptide_ref="peptide_3_1">
+            <PeptideEvidence id="PE_3_1_gi|5986" start="1" end="7" pre="-" post="L" TranslationTable_ref="1" frame="4" isDecoy="false" DBSequence_Ref="DBSeq_gi|5986" />
+            <pf:cvParam accession="PI:00171" name="mascot:score"             cvRef="PSI-PI" value="70.46" />
+            <pf:cvParam accession="PI:00172" name="mascot:expectation value" cvRef="PSI-PI" value="8.99497581530036e-008" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"              cvRef="PSI-PI" value="1" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="ALFEHIK" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_4_1">
+          <SpectrumIdentificationItem id="SII_4_1"  calculatedMassToCharge="1014.436661" chargeState="1" experimentalMassToCharge="1015.444455" Peptide_ref="peptide_4_1">
+            <PeptideEvidence id="PE_4_1_gi|152812279" start="130" end="139" pre="R" post="V" TranslationTable_ref="1" frame="2" isDecoy="false" DBSequence_Ref="DBSeq_gi|152812279" />
+            <pf:cvParam accession="PI:00171" name="mascot:score"             cvRef="PSI-PI" value="88.07" />
+            <pf:cvParam accession="PI:00172" name="mascot:expectation value" cvRef="PSI-PI" value="1.55955250282695e-009" />
+            <pf:cvParam accession="PI:99999" name="mascot_rank"              cvRef="PSI-PI" value="1" />
+          </SpectrumIdentificationItem>
+          <SpectrumElement spectrumID="" SpectraData_ref="SD_1"/>
+        </SpectrumIdentificationResult>
+      </SpectrumIdentificationList>
+      <ProteinDetectionList id="PDL_1">
+        <pf:cvParam accession="TODO: Find something to put here" cvRef="TODO" name="TODO: Find something to put here"  value="" />
+        <ProteinAmbiguityGroup id="PAG_hit_1" >
+          <ProteinDetectionHypothesis id="PDH_gi|152812279" DBSequence_ref="DBSeq_gi|152812279">
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_2_1_gi|152812279" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_4_1_gi|152812279" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="131.23" />
+          </ProteinDetectionHypothesis>
+          <pf:cvParam accession="TODO: Find something to put here" cvRef="TODO" name="TODO: Find something to put here"  value="" />
+        </ProteinAmbiguityGroup>
+        <ProteinAmbiguityGroup id="PAG_hit_2" >
+          <ProteinDetectionHypothesis id="PDH_gi|5986" DBSequence_ref="DBSeq_gi|5986">
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_3_1_gi|5986" />
+            <pf:cvParam accession="PI:99999" name="mascot_score" cvRef="PSI-PI" value="70.46" />
+          </ProteinDetectionHypothesis>
+          <pf:cvParam accession="TODO: Find something to put here" cvRef="TODO" name="TODO: Find something to put here"  value="" />
+        </ProteinAmbiguityGroup>
+      </ProteinDetectionList>
+    </AnalysisData>
+  </DataCollection>
+  <cvList>
+    <pf:cv fullName="PSI-PI"  URI="http://www.psidev.info/not_sure_of_url_to_cv.obo"></pf:cv>
+    <!-- pf:cv fullName="PSI-MOD" URI="http://www.psidev.info/not_sure_of_url_to_cv.obo"></pf:cv-->
+  </cvList>
+  <AnalysisSoftwareList>
+    <AnalysisSoftware id="AS_mascot_server" name="Mascot Server" version="2.2.03">
+      <pf:ContactRole Contact_ref="Matrix Science Limited">
+        <pf:_role>
+          <pf:cvParam accession="TODO" name="software vendor" cvRef="TODO" value="Matrix Science" />
+        </pf:_role>
+      </pf:ContactRole>
+      <Customizations>
+        No customisations (and no cvParams wanted for this element)
+      </Customizations>
+    </AnalysisSoftware>
+    <AnalysisSoftware id="AS_mascot_parser" name="Mascot Parser" version="2.2.100.0">
+      <pf:ContactRole Contact_ref="Matrix Science Limited">
+        <pf:_role>
+          <pf:cvParam accession="TODO" name="software vendor" cvRef="TODO" value="" />
+        </pf:_role>
+      </pf:ContactRole>
+      <Customizations>
+        No customisations (and no cvParams wanted for this element)
+      </Customizations>
+    </AnalysisSoftware>
+  </AnalysisSoftwareList>
+  <pf:Provider id="">
+    <pf:ContactRole Contact_ref="[Ref to a contact elsewhere in the file]">
+      <pf:_role>
+        <pf:cvParam accession="" name="" cvRef="" value="" />
+      </pf:_role>
+    </pf:ContactRole>
+  </pf:Provider>
+  <pf:AuditCollection>
+    <pf:Person id="">
+      <pf:_affiliations Organization_ref="ORG_1"/>
+    </pf:Person>
+    <pf:Organization id="ORG_1">
+    </pf:Organization>
+  </pf:AuditCollection>
+  <AnalysisSampleCollection>
+    <pf:GenericMaterial id="">
+      <pf:ContactRole Contact_ref="">
+        <pf:_role>
+          <pf:cvParam accession="" name="" cvRef="" value="" />
+        </pf:_role>
+      </pf:ContactRole>
+      <pf:cvParam accession="" name="" cvRef="" value="" />
+      <pf:_components GenericMaterial_ref=""/>
+    </pf:GenericMaterial>
+  </AnalysisSampleCollection>
+</AnalysisXML>

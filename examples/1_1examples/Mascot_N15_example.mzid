@@ -1,0 +1,3419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Note - this is a manual edit of the version 1.0 file to convert to 1.1, and thus has been greatly simplified. -->
+<MzIdentML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.1 ../../schema/mzIdentML1.1.0.xsd"
+ xmlns="http://psidev.info/psi/pi/mzIdentML/1.1"
+ id=""
+ version="1.1.0"
+ creationDate="2009-08-18T18:01:41">  
+  <cvList>
+    <cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"  uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"></cv>
+    <cv id="UNIMOD" fullName="UNIMOD"        uri="http://www.unimod.org/obo/unimod.obo"></cv>
+    <cv id="UO"     fullName="UNIT-ONTOLOGY" uri="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"></cv>
+  </cvList>
+  <AnalysisSoftwareList>
+    <AnalysisSoftware id="AS_mascot_server" name="Mascot Server" version="2.2.04" uri="http://www.matrixscience.com/search_form_select.html" >
+      <ContactRole contact_ref="ORG_MSL" >
+        <Role>
+          <cvParam accession="MS:1001267" name="software vendor" cvRef="PSI-MS"/>
+        </Role>
+      </ContactRole>
+      <SoftwareName>
+        <cvParam accession="MS:1001207" name="Mascot" cvRef="PSI-MS"/>
+      </SoftwareName>
+      <Customizations>
+        No customisations
+      </Customizations>
+    </AnalysisSoftware>
+    <AnalysisSoftware id="AS_mascot_parser" name="Mascot Parser" version="2.3.0.0" uri="http://www.matrixscience.com/msparser.html" >
+      <ContactRole contact_ref="ORG_MSL">
+        <Role>
+          <cvParam accession="MS:1001267" name="software vendor" cvRef="PSI-MS"/>
+        </Role>
+      </ContactRole>
+      <SoftwareName>
+        <cvParam accession="MS:1001478" name="Mascot Parser" cvRef="PSI-MS"/>
+      </SoftwareName>
+      <Customizations>
+        No customisations
+      </Customizations>
+    </AnalysisSoftware>
+  </AnalysisSoftwareList>
+  <Provider id="PROVIDER">
+    <ContactRole contact_ref="PERSON_DOC_OWNER">
+      <Role>
+        <cvParam accession="MS:1001271" name="researcher" cvRef="PSI-MS" />
+      </Role>
+    </ContactRole>
+  </Provider>
+  <AuditCollection>
+    <Person id="">  
+      <Affiliation organization_ref="ORG_MSL"/>
+    </Person>
+    <Person id="PERSON_DOC_OWNER" firstName="David " lastName="Creasy">
+      <cvParam accession="MS:1000589" name="contact email" cvRef="PSI-MS" value="dcreasy@matrixscience.com"/>
+      <Affiliation organization_ref="ORG_DOC_OWNER"/>
+    </Person>
+    <Organization id="ORG_MSL" name="Matrix Science Limited" />
+    <Organization id="ORG_DOC_OWNER" />
+  </AuditCollection>
+  <AnalysisSampleCollection>
+    <Sample id="Sample_light">
+      <userParam name="light"/>
+      <userParam name="Isotope: None"/>
+    </Sample>
+    <Sample id="Sample_heavy">
+      <userParam name="heavy"/>
+      <userParam name="Isotope: N -> 15N"/>
+    </Sample>
+    <Sample id="Sample_Combined">
+      <SubSample sample_ref="Sample_light"/>
+      <SubSample sample_ref="Sample_heavy"/>
+    </Sample>
+  </AnalysisSampleCollection>
+  <SequenceCollection>
+    <DBSequence id="DBSeq_EF1A_ARATH" length="449" searchDatabase_ref="SDB_SwissProt" accession="EF1A_ARATH" >
+      <Seq>MGKEKFHINIVVIGHVDSGKSTTTGHLIYKLGGIDKRVIERFEKEAAEMNKRSFKYAWVLDKLKAERERGITIDIALWKFETTKYYCTVIDAPGHRDFIKNMITGTSQADCAVLIIDSTTGGFEAGISKDGQTREHALLAFTLGVKQMICCCNKMDATTPKYSKARYDEIIKEVSSYLKKVGYNPDKIPFVPISGFEGDNMIERSTNLDWYKGPTLLEALDQINEPKRPSDKPLRLPLQDVYKIGGIGTVPVGRVETGMIKPGMVVTFAPTGLTTEVKSVEMHHESLLEALPGDNVGFNVKNVAVKDLKRGYVASNSKDDPAKGAANFTSQVIIMNHPGQIGNGYAPVLDCHTSHIAVKFSEILTKIDRRSGKEIEKEPKFLKNGDAGMVKMTPTKPMVVETFSEYPPLGRFAVRDMRQTVAVGVIKSVDKKDPTGAKVTKAAVKKGAK</Seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Elongation factor 1-alpha (EF-1-alpha) (eEF-1A) - Arabidopsis thaliana (Mouse-ear cress)" />
+      <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Arabidopsis thaliana"/>
+      <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="3702"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_MPPA1_ARATH" length="503" searchDatabase_ref="SDB_SwissProt" accession="MPPA1_ARATH" >
+      <Seq>MYRTAASRARALKGVLTRSLRPARYASSSAVAETSSSTPAYLSWLSGGSRAALTSLDMPLQGVSLPPPLADKVEPSKLQITTLPNGLKIASETTPNPAASIGLYVDCGSIYEAPYFHGATHLLERMAFKSTLNRTHFRLVREIEAIGGNTSASASREQMSYTIDALKTYVPEMVEVLIDSVRNPAFLDWEVNEELRKMKVEIAELAKNPMGFLLEAIHSAGYSGPLASPLYAPESALDRLNGELLEEFMTENFTAARMVLAASGVEHEELLKVAEPLTSDLPNVPPQLAPKSQYVGGDFRQHTGGEATHFAVAFEVPGWNNEKEAVTATVLQMLMGGGGSFSAGGPGKGMHSWLYRRVLNEYQEVQSCTAFTSIFNDTGLFGIYGCSSPQFAAKAIELAAKELKDVAGGKVNQAHLDRAKAATKSAVLMNLESRMIAAEDIGRQILTYGERKPVDQFLKSVDQLTLKDIADFTSKVISKPLTMGSFGDVLAVPSYDTISSKFR</Seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Probable mitochondrial-processing peptidase alpha subunit 1, mitochondrial precursor (EC 3.4.24.64) (Alpha-MPP 1) - Arabidopsis thaliana (Mouse-ear cress)" />
+      <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Arabidopsis thaliana"/>
+      <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="3702"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_MPPA2_ARATH" length="499" searchDatabase_ref="SDB_SwissProt" accession="MPPA2_ARATH" >
+      <Seq>MYRTAASRAKALKGILNHNFRASRYASSSAVATSSSSSSWLSGGYSSSLPSMNIPLAGVSLPPPLSDHVEPSKLKTTTLPNGLTIATEMSPNPAASIGLYVDCGSIYETPQFRGATHLLERMAFKSTLNRSHFRLVREIEAIGGNTSASASREQMGYTIDALKTYVPEMVEVLIDSVRNPAFLDWEVNEELRKVKVEIGEFATNPMGFLLEAVHSAGYSGALANPLYAPESAITGLTGEVLENFVFENYTASRMVLAASGVDHEELLKVVEPLLSDLPNVPRPAEPKSQYVGGDFRQHTGGEATHFALAFEVPGWNNEKEAIIATVLQMLMGGGGSFSAGGPGKGMHSWLYLRLLNQHQQFQSCTAFTSVFNNTGLFGIYGCTSPEFASQGIELVASEMNAVADGKVNQKHLDRAKAATKSAILMNLESRMIAAEDIGRQILTYGERKPVDQFLKTVDQLTLKDIADFTSKVITKPLTMATFGDVLNVPSYDSVSKRFR</Seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Probable mitochondrial-processing peptidase alpha subunit 2, mitochondrial precursor (EC 3.4.24.64) (Alpha-MPP 2) - Arabidopsis thaliana (Mouse-ear cress)" />
+      <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Arabidopsis thaliana"/>
+      <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="3702"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_SAHH1_ARATH" length="485" searchDatabase_ref="SDB_SwissProt" accession="SAHH1_ARATH" >
+      <Seq>MALLVEKTSSGREYKVKDMSQADFGRLELELAEVEMPGLMACRTEFGPSQPFKGARITGSLHMTIQTAVLIETLTALGAEVRWCSCNIFSTQDHAAAAIARDSAAVFAWKGETLQEYWWCTERALDWGPGGGPDLIVDDGGDATLLIHEGVKAEEIFEKTGQVPDPTSTDNPEFQIVLSIIKEGLQVDPKKYHKMKERLVGVSEETTTGVKRLYQMQQNGTLLFPAINVNDSVTKSKFDNLYGCRHSLPDGLMRATDVMIAGKVAVICGYGDVGKGCAAAMKTAGARVIVTEIDPICALQALMEGLQVLTLEDVVSEADIFVTTTGNKDIIMVDHMRKMKNNAIVCNIGHFDNEIDMLGLETYPGVKRITIKPQTDRWVFPETKAGIIVLAEGRLMNLGCATGHPSFVMSCSFTNQVIAQLELWNEKASGKYEKKVYVLPKHLDEKVALLHLGKLGARLTKLSKDQSDYVSIPIEGPYKPPHYRY</Seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Adenosylhomocysteinase 1 (EC 3.3.1.1) (S-adenosyl-L-homocysteine hydrolase 1) (SAH hydrolase 1) (AdoHcyase 1) (HOMOLOGY-DEPENDENT GENE SILENCING 1 protein) - Arabidopsis thaliana (Mouse-ear cress)" />
+      <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Arabidopsis thaliana"/>
+      <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="3702"/>
+    </DBSequence>
+    <Peptide id="peptide_1_1">
+      <PeptideSequence>KGCMRGK</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_2_1">
+      <PeptideSequence>QHAGNIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_3_1">
+      <PeptideSequence>AVSPGASPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_3_2">
+      <PeptideSequence>AVAKPKAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_1">
+      <PeptideSequence>PKTDDNH</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_1">
+      <PeptideSequence>GLLSLPTK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_2">
+      <PeptideSequence>AVSIHGNK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_3">
+      <PeptideSequence>IDAFESR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_6_1">
+      <PeptideSequence>EAALGLLR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_6_2">
+      <PeptideSequence>KNKLSPR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_6_3">
+      <PeptideSequence>LSIAWPR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_6_4">
+      <PeptideSequence>VAKSGPKR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_6_5">
+      <PeptideSequence>VTAKPKAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_6_6">
+      <PeptideSequence>AVLLGITR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_7_1">
+      <PeptideSequence>KVRAESR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_7_2">
+      <PeptideSequence>ASRIENR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_7_3">
+      <PeptideSequence>ASRNQNR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_7_4">
+      <PeptideSequence>KVSDIKR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_7_5">
+      <PeptideSequence>NISLDGAR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_9_1">
+      <PeptideSequence>KGKGTSLF</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_9_2">
+      <PeptideSequence>CNSLNTK</PeptideSequence>
+      <Modification location="1" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_9_3">
+      <PeptideSequence>MSEKKGR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_9_4">
+      <PeptideSequence>FKKASEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_9_5">
+      <PeptideSequence>YAIVTDR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_10_1">
+      <PeptideSequence>SSCPNASK</PeptideSequence>
+      <Modification location="3" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_13_1">
+      <PeptideSequence>PCPGGTLR</PeptideSequence>
+      <Modification location="2" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_13_2">
+      <PeptideSequence>KPVMAAVK</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_13_3">
+      <PeptideSequence>LEDVKVR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_14_1">
+      <PeptideSequence>VDLLQRK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_14_2">
+      <PeptideSequence>KVAVIGFK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_14_3">
+      <PeptideSequence>PRMRGPK</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_15_1">
+      <PeptideSequence>KSQYAMK</PeptideSequence>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_15_2">
+      <PeptideSequence>NTLEKHK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_15_3">
+      <PeptideSequence>MANSGEEK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_15_4">
+      <PeptideSequence>GRLMCYK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_15_5">
+      <PeptideSequence>RGILVPSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_15_6">
+      <PeptideSequence>AKEKVAPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_15_7">
+      <PeptideSequence>LSKGELPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_15_8">
+      <PeptideSequence>ASGSCDFK</PeptideSequence>
+      <Modification location="5" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_15_9">
+      <PeptideSequence>ESPPDKAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_15_10">
+      <PeptideSequence>VASRYFK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_1">
+      <PeptideSequence>ELGELAHK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_2">
+      <PeptideSequence>QILGKLPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_3">
+      <PeptideSequence>KDDDFEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_4">
+      <PeptideSequence>TEILRHK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_5">
+      <PeptideSequence>VISHTSPR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_6">
+      <PeptideSequence>TVVTIAHR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_1">
+      <PeptideSequence>ILLSTTIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_19_1">
+      <PeptideSequence>RRDLSPR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_19_2">
+      <PeptideSequence>SPSSLPRR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_19_3">
+      <PeptideSequence>VLQRNNR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_20_1">
+      <PeptideSequence>NIEDSQGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_20_2">
+      <PeptideSequence>EGTQLKSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_20_3">
+      <PeptideSequence>GAKGLIMGK</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_20_4">
+      <PeptideSequence>NKKIGGGSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_20_5">
+      <PeptideSequence>NLKESATK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_20_6">
+      <PeptideSequence>AGRIEGRK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_20_7">
+      <PeptideSequence>AICTHCGK</PeptideSequence>
+      <Modification location="6" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_20_8">
+      <PeptideSequence>EDEKWGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_20_9">
+      <PeptideSequence>GGVRVDTGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_20_10">
+      <PeptideSequence>EGISWATK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_21_1">
+      <PeptideSequence>ALNVMESK</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_21_2">
+      <PeptideSequence>GLSQVEMK</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_21_3">
+      <PeptideSequence>TGGLMREK</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_21_4">
+      <PeptideSequence>QVEEQMK</PeptideSequence>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_22_1">
+      <PeptideSequence>EAWLDKR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_22_2">
+      <PeptideSequence>VTVSLDQR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_23_1">
+      <PeptideSequence>SVQGMLQR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_23_2">
+      <PeptideSequence>QGQDLTEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_23_3">
+      <PeptideSequence>KENSVGER</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_23_4">
+      <PeptideSequence>IAHKPKPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_23_5">
+      <PeptideSequence>QFHAIMR</PeptideSequence>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_23_6">
+      <PeptideSequence>ILADEVCR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_24_1">
+      <PeptideSequence>QTVAVGVIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_24_2">
+      <PeptideSequence>QVVVIARE</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_24_3">
+      <PeptideSequence>ARHGVLMK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_24_4">
+      <PeptideSequence>KTVAAAPKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_24_5">
+      <PeptideSequence>MESMKMK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_24_6">
+      <PeptideSequence>ARPLNLTK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_24_7">
+      <PeptideSequence>KSIFFFK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_24_8">
+      <PeptideSequence>NPVNLNNK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_24_9">
+      <PeptideSequence>MESMKMK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_24_10">
+      <PeptideSequence>MEAMKMK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_26_1">
+      <PeptideSequence>THERNKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_2">
+      <PeptideSequence>EALDVGGEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_3">
+      <PeptideSequence>FEDVHLR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_4">
+      <PeptideSequence>LPMGKDQK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_5">
+      <PeptideSequence>ATLELNKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_6">
+      <PeptideSequence>EVWLDGAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_7">
+      <PeptideSequence>INDALNKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_8">
+      <PeptideSequence>KERQLLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_9">
+      <PeptideSequence>KKDGIVEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_10">
+      <PeptideSequence>ISGVDVVTK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_27_1">
+      <PeptideSequence>KGKAALVLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_27_2">
+      <PeptideSequence>EGHGSKPSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_27_3">
+      <PeptideSequence>KWVPELR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_27_4">
+      <PeptideSequence>KGLVMHGGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_27_5">
+      <PeptideSequence>TIAAAVLLR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_28_1">
+      <PeptideSequence>MSAACHHR</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_28_2">
+      <PeptideSequence>MAIPMPTR</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_28_3">
+      <PeptideSequence>EMNLTVVK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_28_4">
+      <PeptideSequence>EGKETLKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_28_5">
+      <PeptideSequence>ENAGDVKAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_28_6">
+      <PeptideSequence>KGKCVVLK</PeptideSequence>
+      <Modification location="4" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_28_7">
+      <PeptideSequence>KKGLNDQK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_28_8">
+      <PeptideSequence>TITKRALK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_28_9">
+      <PeptideSequence>VRSLIVSR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_28_10">
+      <PeptideSequence>TATTIAVKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_29_1">
+      <PeptideSequence>SGVSPRVTK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_29_2">
+      <PeptideSequence>LEQRMPR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_29_3">
+      <PeptideSequence>LKQRMPR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_31_1">
+      <PeptideSequence>AGKAGSMMR</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="8" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_31_2">
+      <PeptideSequence>TAVLGNIPR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_31_3">
+      <PeptideSequence>ALDSAVPLR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_31_4">
+      <PeptideSequence>QMEGRMR</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_31_5">
+      <PeptideSequence>KWFCNSR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_31_6">
+      <PeptideSequence>EHLQEER</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_31_7">
+      <PeptideSequence>EILSDPIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_31_8">
+      <PeptideSequence>KHLKEQR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_31_9">
+      <PeptideSequence>QLSLAHNR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_32_1">
+      <PeptideSequence>NLPPYNPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_32_2">
+      <PeptideSequence>ASGKKIPIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_32_3">
+      <PeptideSequence>AKKVVGVIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_32_4">
+      <PeptideSequence>KVLRSLPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_32_5">
+      <PeptideSequence>TTNMNAFK</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_32_6">
+      <PeptideSequence>NEIVENPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_32_7">
+      <PeptideSequence>MEKSSSMK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_32_8">
+      <PeptideSequence>KVIDVQIQ</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_32_9">
+      <PeptideSequence>NCFGFNLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_32_10">
+      <PeptideSequence>GGSMHFYK</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_33_1">
+      <PeptideSequence>ALEAVSLGGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_33_2">
+      <PeptideSequence>KIAEQNLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_33_3">
+      <PeptideSequence>LTVLWEGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_33_4">
+      <PeptideSequence>DVVEMLLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_33_5">
+      <PeptideSequence>ELAKQVEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_33_6">
+      <PeptideSequence>QLAEEVEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_33_7">
+      <PeptideSequence>TLCHRALK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_33_8">
+      <PeptideSequence>RVVNVPMK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_33_9">
+      <PeptideSequence>EKELDAIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_33_10">
+      <PeptideSequence>EAIEEAGVK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_34_1">
+      <PeptideSequence>KKCEGPMR</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_34_2">
+      <PeptideSequence>EDDGGLGFR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_34_3">
+      <PeptideSequence>KGGLSTMEK</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_34_4">
+      <PeptideSequence>HSGGGCSGSSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_34_5">
+      <PeptideSequence>ASGGCVLCKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_35_1">
+      <PeptideSequence>GMEEAERK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_35_2">
+      <PeptideSequence>KRGLDMAR</PeptideSequence>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_35_3">
+      <PeptideSequence>KPVTFMTK</PeptideSequence>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_35_4">
+      <PeptideSequence>CTAPGCTVR</PeptideSequence>
+      <Modification location="1" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_35_5">
+      <PeptideSequence>ETDKVMAR</PeptideSequence>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_35_6">
+      <PeptideSequence>TLRQAMAR</PeptideSequence>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_36_1">
+      <PeptideSequence>SGFISLVSR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_36_2">
+      <PeptideSequence>MTMIALNR</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_36_3">
+      <PeptideSequence>YQLLRNR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_36_4">
+      <PeptideSequence>MTMIALNR</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_36_5">
+      <PeptideSequence>SRRNGVDR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_36_6">
+      <PeptideSequence>EEMSSVLR</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_36_7">
+      <PeptideSequence>MVRSNDVK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_36_8">
+      <PeptideSequence>GIMSGTINR</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_36_9">
+      <PeptideSequence>KESLFADR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_36_10">
+      <PeptideSequence>ACMKLLDR</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_39_1">
+      <PeptideSequence>SYMDAEIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_40_1">
+      <PeptideSequence>LPLQDVYK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_40_2">
+      <PeptideSequence>QMIMPVIK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_40_3">
+      <PeptideSequence>QMIMPVIK</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_40_4">
+      <PeptideSequence>IDKAATDLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_40_5">
+      <PeptideSequence>TSAPAPKSSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_40_6">
+      <PeptideSequence>LPLDSRSGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_40_7">
+      <PeptideSequence>MVSHPMEK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_40_8">
+      <PeptideSequence>MVKHIGGSK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_40_9">
+      <PeptideSequence>KVQDENLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_40_10">
+      <PeptideSequence>LPHHKDPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_41_1">
+      <PeptideSequence>QMVLDNLK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_42_1">
+      <PeptideSequence>EGVGAAVLIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_42_2">
+      <PeptideSequence>ANSAAAPILR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_42_3">
+      <PeptideSequence>IDDPEEAAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_42_4">
+      <PeptideSequence>EPSTQPISK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_42_5">
+      <PeptideSequence>AGSPTQHER</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_42_6">
+      <PeptideSequence>GKHFILIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_42_7">
+      <PeptideSequence>KGNSYFLR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_42_8">
+      <PeptideSequence>CSVAGTAYGR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_42_9">
+      <PeptideSequence>NVVEALEVD</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_42_10">
+      <PeptideSequence>EDIKVLLR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_44_1">
+      <PeptideSequence>AMKSADNVR</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_46_1">
+      <PeptideSequence>LPTFKDFF</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_47_1">
+      <PeptideSequence>QKHMAYPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_47_2">
+      <PeptideSequence>AVMCGLLPK</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="4" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_47_3">
+      <PeptideSequence>DEDMVVSIV</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_48_1">
+      <PeptideSequence>STNLDWYK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_50_1">
+      <PeptideSequence>LNTYCSSTK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_50_2">
+      <PeptideSequence>NIVEQAAIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_51_1">
+      <PeptideSequence>VLGMIPGMGK</PeptideSequence>
+      <Modification location="8" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_52_1">
+      <PeptideSequence>GLPKWFSGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_52_2">
+      <PeptideSequence>TDVDGEVRK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_52_3">
+      <PeptideSequence>VQICMGLLK</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_52_4">
+      <PeptideSequence>IMAKSTILK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_52_5">
+      <PeptideSequence>ESINSLKAR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_52_6">
+      <PeptideSequence>AVSFKDLIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_53_1">
+      <PeptideSequence>STNLDWYK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_53_2">
+      <PeptideSequence>KVNAPLLLR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_53_3">
+      <PeptideSequence>KVKGFSGSSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_53_4">
+      <PeptideSequence>PCYSLPGYK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_53_5">
+      <PeptideSequence>MVSGSGICSK</PeptideSequence>
+      <Modification location="8" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_53_6">
+      <PeptideSequence>STIERYKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_53_7">
+      <PeptideSequence>TGSGSPCGACK</PeptideSequence>
+      <Modification location="7" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_53_8">
+      <PeptideSequence>NNNSVSYVK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_53_9">
+      <PeptideSequence>GCWVERCK</PeptideSequence>
+      <Modification location="7" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_53_10">
+      <PeptideSequence>KGGVAHSLPR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_55_1">
+      <PeptideSequence>PIIRAVSLR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_55_2">
+      <PeptideSequence>VNYVKGYGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_55_3">
+      <PeptideSequence>GGSRDFGGGGR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_55_4">
+      <PeptideSequence>CSIAGKAYGR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_55_5">
+      <PeptideSequence>GCGRGSSVSSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_55_6">
+      <PeptideSequence>IGGIGTVPVGR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_55_7">
+      <PeptideSequence>NVSLYKFR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_55_8">
+      <PeptideSequence>NVSLYQFR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_55_9">
+      <PeptideSequence>IRWCSGMR</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_55_10">
+      <PeptideSequence>PKTLTVPRK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_56_1">
+      <PeptideSequence>ERAADMYR</PeptideSequence>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_56_2">
+      <PeptideSequence>ICLPGGDVVR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_56_3">
+      <PeptideSequence>QLMRLPPR</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_56_4">
+      <PeptideSequence>KSDYLTMR</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_58_1">
+      <PeptideSequence>RISSPSVAGR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_58_2">
+      <PeptideSequence>MEAVKEAVR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_58_3">
+      <PeptideSequence>MSNMQFSR</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_58_4">
+      <PeptideSequence>IAMNCPNLR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_58_5">
+      <PeptideSequence>LNGMLLNDK</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_58_6">
+      <PeptideSequence>GSSLPSRAVR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_58_7">
+      <PeptideSequence>ASVVALFLGR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_58_8">
+      <PeptideSequence>VAANDGDGVSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_58_9">
+      <PeptideSequence>DLMVKGTIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_58_10">
+      <PeptideSequence>SIIDTNTIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_61_1">
+      <PeptideSequence>KVVGIWGCK</PeptideSequence>
+      <Modification location="8" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_61_2">
+      <PeptideSequence>LACSQIPTR</PeptideSequence>
+      <Modification location="3" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_61_3">
+      <PeptideSequence>MVDCLVCHK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_61_4">
+      <PeptideSequence>CVSLTPIMK</PeptideSequence>
+      <Modification location="1" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_61_5">
+      <PeptideSequence>MMIPDCHK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="6" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_61_6">
+      <PeptideSequence>MMIPDCHK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="6" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_61_7">
+      <PeptideSequence>KFLVVVSKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_61_8">
+      <PeptideSequence>EVNGPDAAMK</PeptideSequence>
+      <Modification location="9" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_61_9">
+      <PeptideSequence>QKGFVVLEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_61_10">
+      <PeptideSequence>TGLSDSVLQK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_63_1">
+      <PeptideSequence>GIRWAYTGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_63_2">
+      <PeptideSequence>NYDRLNVR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_63_3">
+      <PeptideSequence>HMACAFKSR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_63_4">
+      <PeptideSequence>VSTDLSFASK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_63_5">
+      <PeptideSequence>VADTDCSER</PeptideSequence>
+      <Modification location="6" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_63_6">
+      <PeptideSequence>GPSMNSSGRR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_63_7">
+      <PeptideSequence>MAGRAATSSAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_63_8">
+      <PeptideSequence>MRYVIQVK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_63_9">
+      <PeptideSequence>CKFLQARK</PeptideSequence>
+      <Modification location="1" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_63_10">
+      <PeptideSequence>QSIVRYRK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_64_1">
+      <PeptideSequence>LDLADVNHR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_64_2">
+      <PeptideSequence>IDLEAISHR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_64_3">
+      <PeptideSequence>LDLSYMTSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_64_4">
+      <PeptideSequence>ILDPNPKTR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_64_5">
+      <PeptideSequence>LDTTTMSCK</PeptideSequence>
+      <Modification location="8" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_64_6">
+      <PeptideSequence>IDRGGYRSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_64_7">
+      <PeptideSequence>LVGANPDEIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_64_8">
+      <PeptideSequence>LLNDLLVEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_64_9">
+      <PeptideSequence>KAAEILAVLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_64_10">
+      <PeptideSequence>LQDVVHSEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_65_1">
+      <PeptideSequence>EAGGWIVNGR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_65_2">
+      <PeptideSequence>QEVALRMAR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_65_3">
+      <PeptideSequence>KAIDVPFGXR</PeptideSequence>
+      <SubstitutionModification location="9" originalResidue="X" replacementResidue="G"/>
+    </Peptide>
+    <Peptide id="peptide_65_4">
+      <PeptideSequence>ECGITDPLR</PeptideSequence>
+      <Modification location="2" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_66_1">
+      <PeptideSequence>KTYMVYTR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_66_2">
+      <PeptideSequence>YNYFWIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_66_3">
+      <PeptideSequence>AVLQEQMDK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_66_4">
+      <PeptideSequence>VVPFSVKLGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_67_1">
+      <PeptideSequence>AMKQVCGSLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_67_2">
+      <PeptideSequence>VPSGMVWMK</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="8" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_67_3">
+      <PeptideSequence>VEDGPSGYDK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_67_4">
+      <PeptideSequence>VYVGQDINR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_67_5">
+      <PeptideSequence>VYVGQDLNR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_67_6">
+      <PeptideSequence>RSDDNALGSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_67_7">
+      <PeptideSequence>QQDNATMLK</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_67_8">
+      <PeptideSequence>KAMRGLTER</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_67_9">
+      <PeptideSequence>LFAKIQAMK</PeptideSequence>
+      <Modification location="8" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_67_10">
+      <PeptideSequence>DSFSYSSMK</PeptideSequence>
+      <Modification location="8" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_68_1">
+      <PeptideSequence>RWVPFCKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_68_2">
+      <PeptideSequence>KSQTQEESK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_68_3">
+      <PeptideSequence>LCQVEGCQK</PeptideSequence>
+      <Modification location="7" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_68_4">
+      <PeptideSequence>FVKRTSLLT</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_68_5">
+      <PeptideSequence>KRGSASVDNK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_68_6">
+      <PeptideSequence>GRKMMELAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_68_7">
+      <PeptideSequence>LTQVVYKSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_68_8">
+      <PeptideSequence>CKPSDDSKK</PeptideSequence>
+      <Modification location="1" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_68_9">
+      <PeptideSequence>GSSFLDPKGR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_68_10">
+      <PeptideSequence>FSLLKLCNK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_70_1">
+      <PeptideSequence>HFLHLATDK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_70_2">
+      <PeptideSequence>GQCVTFNNR</PeptideSequence>
+      <Modification location="3" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_70_3">
+      <PeptideSequence>GLSSFESVMK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_70_4">
+      <PeptideSequence>KADTVAVLHK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_70_5">
+      <PeptideSequence>AKDTSSSKMK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_71_1">
+      <PeptideSequence>LLDLDSVRR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_71_2">
+      <PeptideSequence>QPTDSELGDK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_72_1">
+      <PeptideSequence>DLSLRARAGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_72_2">
+      <PeptideSequence>IKVNVEKCR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_72_3">
+      <PeptideSequence>EAIAASVSRGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_72_4">
+      <PeptideSequence>PTCPVKRCK</PeptideSequence>
+      <Modification location="3" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_72_5">
+      <PeptideSequence>KDDDLGATAGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_72_6">
+      <PeptideSequence>LDDLCRQVK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_72_7">
+      <PeptideSequence>ALFIKYLPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_72_8">
+      <PeptideSequence>GGLVKTDWSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_72_9">
+      <PeptideSequence>EVAGQAPYEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_72_10">
+      <PeptideSequence>DLCLTIRAGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_73_1">
+      <PeptideSequence>EEEEGSEKR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_73_2">
+      <PeptideSequence>NQNDINECR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_73_3">
+      <PeptideSequence>KAIDVPFGXR</PeptideSequence>
+      <SubstitutionModification location="9" originalResidue="X" replacementResidue="C"/>
+    </Peptide>
+    <Peptide id="peptide_73_4">
+      <PeptideSequence>SVRLGCAKVR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_73_5">
+      <PeptideSequence>EAEESMLLR</PeptideSequence>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_73_6">
+      <PeptideSequence>ETLEAEMKK</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_73_7">
+      <PeptideSequence>ERGLDKDTR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_73_8">
+      <PeptideSequence>KSIQDSGKAR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_73_9">
+      <PeptideSequence>VDKSEVTGDR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_73_10">
+      <PeptideSequence>ATRAVATTTAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_74_1">
+      <PeptideSequence>LAFGLAKSYK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_74_2">
+      <PeptideSequence>SDEYTIDEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_74_3">
+      <PeptideSequence>EAVQSHHQR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_74_4">
+      <PeptideSequence>STAGARSSTAGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_74_5">
+      <PeptideSequence>FEMMKTALK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_74_6">
+      <PeptideSequence>GLVSIMNHPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_74_7">
+      <PeptideSequence>PAEVKPAEEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_74_8">
+      <PeptideSequence>IGPEAIQAIGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_74_9">
+      <PeptideSequence>FRRCLTIK</PeptideSequence>
+      <Modification location="4" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_74_10">
+      <PeptideSequence>FKQAAGMCIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_76_1">
+      <PeptideSequence>STTTGHLIYK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_77_1">
+      <PeptideSequence>RQLNGSDGMK</PeptideSequence>
+      <Modification location="9" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_77_2">
+      <PeptideSequence>QEYVASLRR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_77_3">
+      <PeptideSequence>NEIMNMLIK</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_78_1">
+      <PeptideSequence>GAENHNPATAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_78_2">
+      <PeptideSequence>TRGPKPLIAR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_80_1">
+      <PeptideSequence>DAFSFQKNR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_80_2">
+      <PeptideSequence>DPNARLPNGR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_80_3">
+      <PeptideSequence>NPKGHGRCIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_80_4">
+      <PeptideSequence>PAINVGISVSR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_80_5">
+      <PeptideSequence>PAINVGLSVSR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_80_6">
+      <PeptideSequence>LLGLDSKLEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_80_7">
+      <PeptideSequence>LGTLLINNNR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_80_8">
+      <PeptideSequence>APLSLSRLVR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_80_9">
+      <PeptideSequence>GLLPSLGANNR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_80_10">
+      <PeptideSequence>NPEVLWAQR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_81_1">
+      <PeptideSequence>KAHKEGCTLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_81_2">
+      <PeptideSequence>KPLSFGSHNK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_81_3">
+      <PeptideSequence>EAAEKLEAEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_81_4">
+      <PeptideSequence>EAEEGVEEVK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_81_5">
+      <PeptideSequence>KASLINNNLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_81_6">
+      <PeptideSequence>KAVEMVKPAK</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_81_7">
+      <PeptideSequence>QAVPLSRSEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_81_8">
+      <PeptideSequence>MGSGFSLFQK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_81_9">
+      <PeptideSequence>PGHFSRTIAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_81_10">
+      <PeptideSequence>KQSFEGFMK</PeptideSequence>
+      <Modification location="8" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_82_1">
+      <PeptideSequence>YMNDPNVHK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_82_2">
+      <PeptideSequence>ALDPEAALYR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_82_3">
+      <PeptideSequence>IIIGDAVFGSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_82_4">
+      <PeptideSequence>IIIGNAVFGSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_82_5">
+      <PeptideSequence>VAYMRGYDK</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_83_1">
+      <PeptideSequence>STTTGHLIYK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_83_2">
+      <PeptideSequence>TSQPGNLYIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_83_3">
+      <PeptideSequence>MSIMGHRIR</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_83_4">
+      <PeptideSequence>PEVNQKMMK</PeptideSequence>
+      <Modification location="8" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_83_5">
+      <PeptideSequence>KMGLSLECLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_83_6">
+      <PeptideSequence>VVGCSCLVVK</PeptideSequence>
+      <Modification location="4" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+      <Modification location="6" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_83_7">
+      <PeptideSequence>PEVNQKMMK</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_83_8">
+      <PeptideSequence>STCHGISAASGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_83_9">
+      <PeptideSequence>SLVRELIYK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_83_10">
+      <PeptideSequence>QTSLSSGSLIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_84_1">
+      <PeptideSequence>EATWDKGYR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_84_2">
+      <PeptideSequence>VMDSFRVEK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_84_3">
+      <PeptideSequence>LGSVVIKGLLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_84_4">
+      <PeptideSequence>RPGFDHHKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_84_5">
+      <PeptideSequence>SLPVYRYTK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_84_6">
+      <PeptideSequence>LILGADSPAIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_84_7">
+      <PeptideSequence>KFAEKAMGTK</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_85_1">
+      <PeptideSequence>LAAAGIAGILKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_87_1">
+      <PeptideSequence>TEFGPSQPFK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_87_2">
+      <PeptideSequence>PEVNQKMMK</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="8" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_87_3">
+      <PeptideSequence>MSRGGAAVAKGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_87_4">
+      <PeptideSequence>MVSLNRGVRT</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_87_5">
+      <PeptideSequence>ETIMEETLR</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_87_6">
+      <PeptideSequence>NNEGATDEER</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_87_7">
+      <PeptideSequence>KTIEECEAR</PeptideSequence>
+      <Modification location="6" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_87_8">
+      <PeptideSequence>RAIDVKTGMK</PeptideSequence>
+      <Modification location="9" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_87_9">
+      <PeptideSequence>MVKFLKQNK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_88_1">
+      <PeptideSequence>NGHNGRYTPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_88_2">
+      <PeptideSequence>QTTSLSHVFK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_88_3">
+      <PeptideSequence>CGSQRSVAPIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_89_1">
+      <PeptideSequence>KQVVACAGVCK</PeptideSequence>
+      <Modification location="10" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_89_2">
+      <PeptideSequence>CKVNCMAKHK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_89_3">
+      <PeptideSequence>TLMSVRELAK</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_89_4">
+      <PeptideSequence>KLLRNPPIVK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_90_1">
+      <PeptideSequence>IMAIMGPSGSGK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_91_1">
+      <PeptideSequence>NVGELQILYK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_91_2">
+      <PeptideSequence>GLVAAKTMAANK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_91_3">
+      <PeptideSequence>ALQDLNVCWK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_91_4">
+      <PeptideSequence>VNGQNAAPIYK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_91_5">
+      <PeptideSequence>MFPGMFMRK</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_91_6">
+      <PeptideSequence>LVDELVSLYK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_91_7">
+      <PeptideSequence>AAAMASHVSTAR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_91_8">
+      <PeptideSequence>FAPACHIRMK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_91_9">
+      <PeptideSequence>LGGNMPARAER</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_91_10">
+      <PeptideSequence>GLHTHEPPRK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_93_1">
+      <PeptideSequence>ESPSRSPPAEE</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_93_2">
+      <PeptideSequence>AQEIVQSIVAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_93_3">
+      <PeptideSequence>MQVIASFCSK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="8" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_93_4">
+      <PeptideSequence>KIVPKSASDIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_93_5">
+      <PeptideSequence>AFYQGKRGEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_95_1">
+      <PeptideSequence>LQITTLPNGLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_95_2">
+      <PeptideSequence>KLLQRIIPSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_95_3">
+      <PeptideSequence>AVAIRKHLER</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_95_4">
+      <PeptideSequence>LKSLSVMSCR</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="9" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_95_5">
+      <PeptideSequence>EESVAQYESR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_95_6">
+      <PeptideSequence>ASKPVLGSDHGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_95_7">
+      <PeptideSequence>LSVAVSLIGDPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_95_8">
+      <PeptideSequence>IAINMDPVTPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_95_9">
+      <PeptideSequence>VVPELCIEVAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_95_10">
+      <PeptideSequence>LDETVSCEFR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_97_1">
+      <PeptideSequence>GQKHLLKNIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_97_2">
+      <PeptideSequence>NKKLLPLDLR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_97_3">
+      <PeptideSequence>QPLSRKLPIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_97_4">
+      <PeptideSequence>MVSSQCSVANK</PeptideSequence>
+      <Modification location="6" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_97_5">
+      <PeptideSequence>RRSNAGENSGR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_97_6">
+      <PeptideSequence>EYDDLSLKSR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_97_7">
+      <PeptideSequence>TKSSCCCKPPR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_97_8">
+      <PeptideSequence>GDACLNVMASR</PeptideSequence>
+      <Modification location="4" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+      <Modification location="8" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_97_9">
+      <PeptideSequence>KKEMYFPIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_99_1">
+      <PeptideSequence>ANEDDDGEKSR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_99_2">
+      <PeptideSequence>TTSLAGDCVVAK</PeptideSequence>
+      <Modification location="8" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_99_3">
+      <PeptideSequence>EQLKEYVWK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_102_1">
+      <PeptideSequence>SPIMTATDVAAR</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_102_2">
+      <PeptideSequence>AIVCSDAAAEAAR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_102_3">
+      <PeptideSequence>SATKISVNEATK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_102_4">
+      <PeptideSequence>ISPGTRTSQTAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_102_5">
+      <PeptideSequence>DERISAKAGDGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_102_6">
+      <PeptideSequence>MSVIVQEEDGK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_102_7">
+      <PeptideSequence>ICEDWKTGLK</PeptideSequence>
+      <Modification location="2" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_102_8">
+      <PeptideSequence>LPRKTECTAAR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_103_1">
+      <PeptideSequence>VARTAQASNVFS</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_103_2">
+      <PeptideSequence>PEQFKILIHK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_103_3">
+      <PeptideSequence>AVSLVLPQLKGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_103_4">
+      <PeptideSequence>RVEHVDHARK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_103_5">
+      <PeptideSequence>SLDWKGMCLK</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="8" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_104_1">
+      <PeptideSequence>VAEAASIAQKLR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_104_2">
+      <PeptideSequence>AMTTATFTCIK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="9" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_104_3">
+      <PeptideSequence>AVRLTIGLRQK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_105_1">
+      <PeptideSequence>WGNRWSKIAR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_105_2">
+      <PeptideSequence>CLSKGAVDFLVK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_105_3">
+      <PeptideSequence>EFGVTECVNPK</PeptideSequence>
+      <Modification location="7" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_105_4">
+      <PeptideSequence>KFGVNEFVNPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_105_5">
+      <PeptideSequence>EGVGLNMRSIGK</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_105_6">
+      <PeptideSequence>GADGVADMDTAIGA</PeptideSequence>
+      <Modification location="8" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_105_7">
+      <PeptideSequence>DKDGLKGIMER</PeptideSequence>
+      <Modification location="9" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_105_8">
+      <PeptideSequence>KWCVMKPNVR</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_106_1">
+      <PeptideSequence>KMKSMAEIMAK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_106_2">
+      <PeptideSequence>EQMGYTIDALK</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_106_3">
+      <PeptideSequence>TILDPGSEIVLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_106_4">
+      <PeptideSequence>LTSESRIYADK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_106_5">
+      <PeptideSequence>SDSPSPILNPEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_106_6">
+      <PeptideSequence>METRKDDMEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_106_7">
+      <PeptideSequence>CACAPSCSVKKK</PeptideSequence>
+      <Modification location="3" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_106_8">
+      <PeptideSequence>CACAPSCSVKKK</PeptideSequence>
+      <Modification location="1" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_106_9">
+      <PeptideSequence>GLCGGFNNFIIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_106_10">
+      <PeptideSequence>EGLLMAGSGRFK</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_107_1">
+      <PeptideSequence>AAFMVMNQLGGK</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_107_2">
+      <PeptideSequence>AGAKMVMAVSCAK</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_107_3">
+      <PeptideSequence>AGAKMVMAVSCAK</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_109_1">
+      <PeptideSequence>IRSSPEDLDVR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_109_2">
+      <PeptideSequence>VRAGSYSGGMKR</PeptideSequence>
+      <Modification location="10" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_109_3">
+      <PeptideSequence>HIVCLLFSSER</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_109_4">
+      <PeptideSequence>LATSCPKKPAGR</PeptideSequence>
+      <Modification location="5" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_109_5">
+      <PeptideSequence>EPLITNIMWR</PeptideSequence>
+      <Modification location="8" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_110_1">
+      <PeptideSequence>GDNINGDAFDEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_114_1">
+      <PeptideSequence>PLRLPLQDVYK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_116_1">
+      <PeptideSequence>IAANMIGQDRMR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_118_1">
+      <PeptideSequence>QVADISLQGDAKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_118_2">
+      <PeptideSequence>MVDSKRMDSGSK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_118_3">
+      <PeptideSequence>RSGGMRFTINGR</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_118_4">
+      <PeptideSequence>KDQSYSETFLR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_118_5">
+      <PeptideSequence>ARHGPAAKGACDSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_119_1">
+      <PeptideSequence>MVCTGGGFPPLHR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_119_2">
+      <PeptideSequence>RSGGMRFTINGR</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_120_1">
+      <PeptideSequence>DKLQPLTMKYR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_120_2">
+      <PeptideSequence>VLAEKTAWEFAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_121_1">
+      <PeptideSequence>EMALWTLSDLGK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_121_2">
+      <PeptideSequence>EVCGDLKSDNLK</PeptideSequence>
+      <Modification location="3" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_121_3">
+      <PeptideSequence>FLKLLGFLALSR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_122_1">
+      <PeptideSequence>VYSMVKYAAIAR</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_122_2">
+      <PeptideSequence>LLGKGDWSGLVDK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_122_3">
+      <PeptideSequence>YSAYIVFKGVDK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_122_4">
+      <PeptideSequence>RLLAMNLPEWK</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_122_5">
+      <PeptideSequence>AATMWSLHETIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_122_6">
+      <PeptideSequence>TVMTRCIQCTR</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="9" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_122_7">
+      <PeptideSequence>TVMTRCIQCTR</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="6" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_122_8">
+      <PeptideSequence>TGIDHFCIHTGGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_122_9">
+      <PeptideSequence>AKKGETVVPGGTGGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_122_10">
+      <PeptideSequence>QAPSIMPSAADGVK</PeptideSequence>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_123_1">
+      <PeptideSequence>EAGFLNAVDEVVR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_124_1">
+      <PeptideSequence>LSRGPSMNSSGRR</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_124_2">
+      <PeptideSequence>TYLHLMEEKLK</PeptideSequence>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_127_1">
+      <PeptideSequence>YYCTVIDAPGHR</PeptideSequence>
+      <Modification location="3" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_127_2">
+      <PeptideSequence>MINSKTVDGRHR</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_128_1">
+      <PeptideSequence>ILDLAKKGVCVLK</PeptideSequence>
+      <Modification location="10" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_128_2">
+      <PeptideSequence>SRTNLISAVARIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_129_1">
+      <PeptideSequence>SKIEPVDGDTPMR</PeptideSequence>
+      <Modification location="12" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_129_2">
+      <PeptideSequence>MSLKASDFESSSR</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_129_3">
+      <PeptideSequence>KVLEQAEKLDCK</PeptideSequence>
+      <Modification location="11" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_129_4">
+      <PeptideSequence>NIFGILMERVPR</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_130_1">
+      <PeptideSequence>RVGLLAASQAGAMGK</PeptideSequence>
+      <Modification location="13" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_130_2">
+      <PeptideSequence>KSGGIRFTINGHR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_130_3">
+      <PeptideSequence>FDILGACKNIVKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_130_4">
+      <PeptideSequence>ICGTVVESLPMAR</PeptideSequence>
+      <Modification location="2" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+      <Modification location="11" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_130_5">
+      <PeptideSequence>CGSVTVRMVPAPR</PeptideSequence>
+      <Modification location="1" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+      <Modification location="8" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_130_6">
+      <PeptideSequence>HFEPYGKVTNVR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_133_1">
+      <PeptideSequence>PETLIFDDLCLK</PeptideSequence>
+      <Modification location="10" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_133_2">
+      <PeptideSequence>KQMIMPVIKAQR</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_133_3">
+      <PeptideSequence>KAMTVKTSMFER</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="9" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_133_4">
+      <PeptideSequence>NKGILFVAIDQNK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_133_5">
+      <PeptideSequence>LVVKICDVVTRR</PeptideSequence>
+      <Modification location="6" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_133_6">
+      <PeptideSequence>NKNSSTMATTFNK</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_133_7">
+      <PeptideSequence>PILQGLLAIDLLAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_133_8">
+      <PeptideSequence>IFDEILVNAADNK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_134_1">
+      <PeptideSequence>GLTVKCEVVEVAR</PeptideSequence>
+      <Modification location="6" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_134_2">
+      <PeptideSequence>EQLKYLVLEAVR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_134_3">
+      <PeptideSequence>QKLEESELVEMK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_134_4">
+      <PeptideSequence>EKLETQRHMLR</PeptideSequence>
+      <Modification location="9" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_134_5">
+      <PeptideSequence>KEIKNDMSLHSR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_134_6">
+      <PeptideSequence>EGAIQQLENARAR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_134_7">
+      <PeptideSequence>ELELGHKSFSGKK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_134_8">
+      <PeptideSequence>FYMSSPIDDKMK</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_134_9">
+      <PeptideSequence>QVMARESERAER</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_134_10">
+      <PeptideSequence>FYMSSPIDDKMK</PeptideSequence>
+      <Modification location="11" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_135_1">
+      <PeptideSequence>FSGMDDKILPLLK</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_136_1">
+      <PeptideSequence>KEETHRMAEANR</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_136_2">
+      <PeptideSequence>SYLLKVQGTVVER</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_137_1">
+      <PeptideSequence>KVVAGADKDSNYCK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_137_2">
+      <PeptideSequence>NLIEVFVDYMDK</PeptideSequence>
+      <Modification location="10" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_137_3">
+      <PeptideSequence>EVDENEYIEFSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_137_4">
+      <PeptideSequence>DIDVEEAPGLTVNK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_137_5">
+      <PeptideSequence>IGGSLHRRHAMEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_137_6">
+      <PeptideSequence>KVQVARELGLQPR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_137_7">
+      <PeptideSequence>NLATKGYDKCAEK</PeptideSequence>
+      <Modification location="10" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_139_1">
+      <PeptideSequence>PVMEIGSADFPNSR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_139_2">
+      <PeptideSequence>GPNVNAAVRPLPALK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_139_3">
+      <PeptideSequence>CTHKPTQGCKATK</PeptideSequence>
+      <Modification location="1" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+      <Modification location="9" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_140_1">
+      <PeptideSequence>VADFGASRLIPMDK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_140_2">
+      <PeptideSequence>MHDLMREVCLQK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_140_3">
+      <PeptideSequence>STNESQSQRHDVK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_140_4">
+      <PeptideSequence>AYGGVVRGLHECAK</PeptideSequence>
+      <Modification location="12" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_141_1">
+      <PeptideSequence>GSGMSVMEMSHRGK</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_141_2">
+      <PeptideSequence>NMKETCTGGFKWK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_141_3">
+      <PeptideSequence>TNSAMTSSGWPSKR</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_141_4">
+      <PeptideSequence>NYIYGGHVSNYMK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_141_5">
+      <PeptideSequence>LYYLRLMGSRPR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_141_6">
+      <PeptideSequence>ESADTETRITMMK</PeptideSequence>
+      <Modification location="11" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_141_7">
+      <PeptideSequence>GSGMSVMEMSHRGK</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="9" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_141_8">
+      <PeptideSequence>SEAAMISDGCQWR</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="10" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_141_9">
+      <PeptideSequence>FIIRSGGDTKACTR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_141_10">
+      <PeptideSequence>GVVNDTEAEEQHAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_142_1">
+      <PeptideSequence>RLSLTDIVIDINR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_142_2">
+      <PeptideSequence>LETQRGAVLATELK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_142_3">
+      <PeptideSequence>SVDEVRGTDTPPEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_142_4">
+      <PeptideSequence>SMVATSDYDDFHK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_142_5">
+      <PeptideSequence>APAWCDRILWLGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_142_6">
+      <PeptideSequence>TVTKEEALAIKAAGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_142_7">
+      <PeptideSequence>KNHCVCIGPCPDDK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_142_8">
+      <PeptideSequence>TGISDSHPLSFLVR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_142_9">
+      <PeptideSequence>DMVALSGAHTIGQAR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_142_10">
+      <PeptideSequence>AKASHLPSSMQNLK</PeptideSequence>
+      <Modification location="10" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_143_1">
+      <PeptideSequence>DLIPRMLVVDPMK</PeptideSequence>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="12" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_146_1">
+      <PeptideSequence>ANNLVSSVVSEVKSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_146_2">
+      <PeptideSequence>PTVNGMLGIMKACVK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_146_3">
+      <PeptideSequence>RRLAVMNALIQDR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_146_4">
+      <PeptideSequence>RRDSEQWMHHR</PeptideSequence>
+      <Modification location="8" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_146_5">
+      <PeptideSequence>RILEFSEEAGIGLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_146_6">
+      <PeptideSequence>KVQDEIRTCIGIK</PeptideSequence>
+      <Modification location="9" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_147_1">
+      <PeptideSequence>ISSEDEMAGMDMTR</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="10" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_147_2">
+      <PeptideSequence>KASASGGDMSSSCSSIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_147_3">
+      <PeptideSequence>SLIANKNCAPIMLR</PeptideSequence>
+      <Modification location="8" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_147_4">
+      <PeptideSequence>TCCNTMKDTSLMK</PeptideSequence>
+      <Modification location="2" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+      <Modification location="3" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="12" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_147_5">
+      <PeptideSequence>AIKSMPVATACALAAK</PeptideSequence>
+      <Modification location="11" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_147_6">
+      <PeptideSequence>SIHDMNDQAQAKDK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_148_1">
+      <PeptideSequence>IQTPTDEIVVPYEK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_148_2">
+      <PeptideSequence>MSAPKSGGDPLPHPPK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_148_3">
+      <PeptideSequence>QITKMVSYCSYHR</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_149_1">
+      <PeptideSequence>MELAVADGHLCNMGR</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="13" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_151_1">
+      <PeptideSequence>AVSLLAPVMGSEITCSK</PeptideSequence>
+      <Modification location="15" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_151_2">
+      <PeptideSequence>MGQRNLVVVSSPDLTK</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_151_3">
+      <PeptideSequence>AELASLRVAKVTGGAPNK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_151_4">
+      <PeptideSequence>LSDHRVASFILNKPGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_151_5">
+      <PeptideSequence>IPMFNNLITLSLGSDK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_151_6">
+      <PeptideSequence>LEWDDGERRITTYK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_151_7">
+      <PeptideSequence>GAPVVEPGDDLFWFGR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_151_8">
+      <PeptideSequence>NLVPLLGYCKIGEER</PeptideSequence>
+      <Modification location="9" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_151_9">
+      <PeptideSequence>FFDRVVTTRTCNDK</PeptideSequence>
+      <Modification location="11" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_151_10">
+      <PeptideSequence>SPIMTATDVAARGLDVK</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_152_1">
+      <PeptideSequence>TYVPEMVEVLIDSVR</PeptideSequence>
+      <Modification location="6" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_152_2">
+      <PeptideSequence>NVVIMNKDDVKEADR</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_152_3">
+      <PeptideSequence>GLRQLGPQFSSLDANR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_152_4">
+      <PeptideSequence>ELALFQDYHGLPSFK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_152_5">
+      <PeptideSequence>PFLMPIEDVFSIQGR</PeptideSequence>
+      <Modification location="4" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_152_6">
+      <PeptideSequence>CTTPNCTVRKHVER</PeptideSequence>
+      <Modification location="1" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+      <Modification location="6" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_152_7">
+      <PeptideSequence>QMIFRVPFLHDNTK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_152_8">
+      <PeptideSequence>DIAEKVGLGGMEWSEK</PeptideSequence>
+      <Modification location="11" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_152_9">
+      <PeptideSequence>LTGPCTASNPIDKCWR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_152_10">
+      <PeptideSequence>GEYTNVHPRNTQCLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_154_1">
+      <PeptideSequence>SPLPPIDPEAVKRVQK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_154_2">
+      <PeptideSequence>ICGTVVESLPMARCAPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_154_3">
+      <PeptideSequence>DQAAVLKEEFKIDLR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_154_4">
+      <PeptideSequence>DVTKNSDDIIQQIER</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_156_1">
+      <PeptideSequence>SPESAFGAAVKAAFLAMK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_156_2">
+      <PeptideSequence>AGLAQSLFERLVTLGIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_156_3">
+      <PeptideSequence>TPPFHKWYFETRGK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_156_4">
+      <PeptideSequence>RDREEAAMIDQAGLIK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_156_5">
+      <PeptideSequence>CGGETPIVLSHVVYER</PeptideSequence>
+      <Modification location="1" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_156_6">
+      <PeptideSequence>GFLLGNPDISNPDDWR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_156_7">
+      <PeptideSequence>TITVCAVDNAAMSALTSK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_158_1">
+      <PeptideSequence>TLMARACAAQTNATFLK</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_158_2">
+      <PeptideSequence>AGYLQTHGYIWIPPTL</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_158_3">
+      <PeptideSequence>RYMGTITGICDLDPTR</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_158_4">
+      <PeptideSequence>GIETNLYAQFKCDSLK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_158_5">
+      <PeptideSequence>LGRKMAEFPLEPPLSK</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_158_6">
+      <PeptideSequence>IDPDHPTLKMPKMFK</PeptideSequence>
+      <Modification location="10" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="13" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_158_7">
+      <PeptideSequence>QPSLHKMSIMGHRIR</PeptideSequence>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="10" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_158_8">
+      <PeptideSequence>KYAQVCVTMPTAKICR</PeptideSequence>
+      <Modification location="9" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_158_9">
+      <PeptideSequence>AFCKGASEIVLKMCEK</PeptideSequence>
+      <Modification location="3" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+      <Modification location="13" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_161_1">
+      <PeptideSequence>GMTGFSTAQKLDKLGMR</PeptideSequence>
+      <Modification location="16" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_161_2">
+      <PeptideSequence>EMEDLRAIQHEVQNK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_161_3">
+      <PeptideSequence>GLGVIPGIVGRFDASAGIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_161_4">
+      <PeptideSequence>APAWCDRILWLGKGIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_161_5">
+      <PeptideSequence>GECLMSMKLRPMVTR</PeptideSequence>
+      <Modification location="3" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="7" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="12" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_163_1">
+      <PeptideSequence>EGMFVKINMDGVPIGRK</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="9" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_163_2">
+      <PeptideSequence>ARISLEPAPHMVKWIR</PeptideSequence>
+      <Modification location="11" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_163_3">
+      <PeptideSequence>QVMSEFELNDYVIPVK</PeptideSequence>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_164_1">
+      <PeptideSequence>GVVDTAVRTSDAGYLTRR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_165_1">
+      <PeptideSequence>TRELFVEEVMELVELK</PeptideSequence>
+      <Modification location="10" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_165_2">
+      <PeptideSequence>CFWKEILFTAILAIVR</PeptideSequence>
+      <Modification location="1" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_165_3">
+      <PeptideSequence>SIFGITSLNSLSITNCPR</PeptideSequence>
+      <Modification location="16" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_165_4">
+      <PeptideSequence>GDGKLRVHGIYPIGLTQR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_165_5">
+      <PeptideSequence>AWSSSDTILPVYCLDPR</PeptideSequence>
+      <Modification location="13" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_165_6">
+      <PeptideSequence>GKGDQTDKYCTIIIDPR</PeptideSequence>
+      <Modification location="10" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_166_1">
+      <PeptideSequence>KLRDAGLCTVEGVAYTPR</PeptideSequence>
+      <Modification location="8" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_167_1">
+      <PeptideSequence>VAEPLTSDLPNVPPQLAPK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_167_2">
+      <PeptideSequence>KPDAAFGLSHQPGTLSIIR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_167_3">
+      <PeptideSequence>QRELTYGVMFEEIITR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_169_1">
+      <PeptideSequence>VSKVLRSSSISPLAISAER</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_170_1">
+      <PeptideSequence>IVLPVPAFNVINGGSHAGNK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_173_1">
+      <PeptideSequence>GTGELYAMKAMEKTMMLNR</PeptideSequence>
+      <Modification location="16" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_173_2">
+      <PeptideSequence>GTGELYAMKAMEKTMMLNR</PeptideSequence>
+      <Modification location="15" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_173_3">
+      <PeptideSequence>MKRSTTDSDLAGDAHNETNK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_176_1">
+      <PeptideSequence>LLSGLGEIRMAKGQPLGTMER</PeptideSequence>
+      <Modification location="10" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_176_2">
+      <PeptideSequence>SLCDLSRRYGPLMLLHLGR</PeptideSequence>
+      <Modification location="3" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+      <Modification location="13" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_176_3">
+      <PeptideSequence>GCDVSIKEVDNLLTLLAERK</PeptideSequence>
+      <Modification location="2" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_176_4">
+      <PeptideSequence>EMMYKIAAMQSVDIDPATVK</PeptideSequence>
+      <Modification location="2" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="3" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="63.998285" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_177_1">
+      <PeptideSequence>VETGMIKPGMVVTFAPTGLTTEVK</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_177_2">
+      <PeptideSequence>VSNMSLAKDMPEVSDSIEILKAK</PeptideSequence>
+      <Modification location="10" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_177_3">
+      <PeptideSequence>VETGMIKPGMVVTFAPTGLTTEVK</PeptideSequence>
+      <Modification location="10" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_177_4">
+      <PeptideSequence>MGKVAVGATVVCTAAVCAVAVLVVR</PeptideSequence>
+      <Modification location="1" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="12" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+      <Modification location="17" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_177_5">
+      <PeptideSequence>ALHANTTKIPYKWTACSEVLNR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_177_6">
+      <PeptideSequence>GAMLSLSIQYTPMERMRLYQK</PeptideSequence>
+      <Modification location="13" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="16" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_177_7">
+      <PeptideSequence>YLKSKIGFVTQDDVLFPHLTVK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_177_8">
+      <PeptideSequence>VQGPQFLFLDLCAAFLAQLRVL</PeptideSequence>
+      <Modification location="12" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_177_9">
+      <PeptideSequence>APLLIIAEDVTGEALATLVVNKLR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_178_1">
+      <PeptideSequence>VETGMIKPGMVVTFAPTGLTTEVK</PeptideSequence>
+      <Modification location="5" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+      <Modification location="10" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_178_2">
+      <PeptideSequence>EVLRLHPPLPLLVPRLLSEDVK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_178_3">
+      <PeptideSequence>QTGMEVCHKFPLIAFPSLASFTI</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_178_4">
+      <PeptideSequence>AFSALVGEFPIGEYIPSLSWIDK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_178_5">
+      <PeptideSequence>PVYLVDFSCYLPPDHLKAPYAR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_178_6">
+      <PeptideSequence>DAQRWFNAAVEAGHLYSLVGVAR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_178_7">
+      <PeptideSequence>VLKRIAQSGSMVIMTLHQPSYR</PeptideSequence>
+      <Modification location="14" residues="M" monoisotopicMassDelta="15.994919">
+        <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
+        <cvParam accession="MS:1001524" name="fragment neutral loss" cvRef="PSI-MS" value="0" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+      </Modification>
+    </Peptide>
+    <Peptide id="peptide_178_8">
+      <PeptideSequence>AEESRVPSSVSVTVAHDLLLAGHR</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_178_9">
+      <PeptideSequence>FRGDLIAGLTIASLCIPQDIGYAK</PeptideSequence>
+    </Peptide>
+    <Peptide id="peptide_178_10">
+      <PeptideSequence>TELKLQLEAFFSCVILRLAQGK</PeptideSequence>
+      <Modification location="13" residues="C" monoisotopicMassDelta="57.021469">
+        <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD" />
+      </Modification>
+    </Peptide>
+    <PeptideEvidence id="PE_24_1_EF1A_ARATH_0" start="419" end="427" pre="R" post="S" isDecoy="false" peptide_ref="peptide_24_1"  dBSequence_ref="DBSeq_EF1A_ARATH" />
+    <PeptideEvidence id="PE_127_1_EF1A_ARATH_0" start="85" end="96" pre="K" post="D"  isDecoy="false" peptide_ref="peptide_127_1" dBSequence_ref="DBSeq_EF1A_ARATH" />
+    <PeptideEvidence id="PE_40_1_EF1A_ARATH_0" start="236" end="243" pre="R" post="I" isDecoy="false"  peptide_ref="peptide_40_1" dBSequence_ref="DBSeq_EF1A_ARATH" />
+    <PeptideEvidence id="PE_48_1_EF1A_ARATH_0" start="205" end="212" pre="R" post="G"  isDecoy="false" peptide_ref="peptide_48_1" dBSequence_ref="DBSeq_EF1A_ARATH" />
+  </SequenceCollection>
+  <AnalysisCollection>
+    <SpectrumIdentification id="SI" spectrumIdentificationProtocol_ref="SIP"  spectrumIdentificationList_ref="SIL_1" activityDate="2008-10-06T11:34:29">
+      <InputSpectra spectraData_ref="SD_1"/>
+      <SearchDatabaseRef searchDatabase_ref="SDB_SwissProt"/>
+    </SpectrumIdentification>
+    <ProteinDetection id="PD_1" proteinDetectionProtocol_ref="PDP_MascotParser_1" proteinDetectionList_ref="PDL_1" activityDate="2009-08-18T18:01:51">
+      <InputSpectrumIdentifications spectrumIdentificationList_ref="SIL_1"/>
+    </ProteinDetection>
+  </AnalysisCollection>
+  <AnalysisProtocolCollection>
+    <SpectrumIdentificationProtocol id="SIP" analysisSoftware_ref="AS_mascot_server">
+      <SearchType>
+        <cvParam accession="MS:1001083" name="ms-ms search" cvRef="PSI-MS" value=""/>
+      </SearchType>
+      <AdditionalSearchParams>
+        <userParam name="Mascot User Comment" value="Base Concentration MSMS"/>
+        <userParam name="Mascot Instrument Name" value="ESI-QUAD-TOF"/>
+        <cvParam accession="MS:1001211" name="parent mass type mono"    cvRef="PSI-MS"/>
+        <cvParam accession="MS:1001118" name="param: b ion" cvRef="PSI-MS"/>
+        <cvParam accession="MS:1001149" name="param: b ion-NH3" cvRef="PSI-MS"/>
+        <cvParam accession="MS:1001150" name="param: b ion-H2O" cvRef="PSI-MS"/>
+        <cvParam accession="MS:1001262" name="param: y ion" cvRef="PSI-MS"/>
+        <cvParam accession="MS:1001151" name="param: y ion-NH3" cvRef="PSI-MS"/>
+        <cvParam accession="MS:1001152" name="param: y ion-H2O" cvRef="PSI-MS"/>
+      </AdditionalSearchParams>
+      <ModificationParams>
+        <SearchModification fixedMod="false" massDelta="57.021464" residues="C">
+            <cvParam accession="UNIMOD:4" name="Carbamidomethyl" cvRef="UNIMOD"/>
+        </SearchModification>
+        <SearchModification fixedMod="false" massDelta="15.994915" residues="M">
+            <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD"/>
+        </SearchModification>
+      </ModificationParams>
+      <Enzymes>
+        <Enzyme id="ENZ_0" cTermGain="OH" nTermGain="H" missedCleavages="2" semiSpecific="0">
+          <SiteRegexp><![CDATA[(?<=[KR])]]></SiteRegexp>
+          <EnzymeName>
+            <cvParam accession="MS:1001313" name="Trypsin/P" cvRef="PSI-MS" />
+          </EnzymeName>
+        </Enzyme>
+      </Enzymes>
+      <MassTable id="MT_light" msLevel="1 2">
+        <Residue code="A" mass="71.037113805"/>
+        <Residue code="C" mass="103.009184505"/>
+        <Residue code="D" mass="115.026943065"/>
+        <Residue code="E" mass="129.042593135"/>
+        <Residue code="F" mass="147.068413945"/>
+        <Residue code="G" mass="57.021463735"/>
+        <Residue code="H" mass="137.058911875"/>
+        <Residue code="I" mass="113.084064015"/>
+        <Residue code="K" mass="128.09496305"/>
+        <Residue code="L" mass="113.084064015"/>
+        <Residue code="M" mass="131.040484645"/>
+        <Residue code="N" mass="114.04292747"/>
+        <Residue code="P" mass="97.052763875"/>
+        <Residue code="Q" mass="128.05857754"/>
+        <Residue code="R" mass="156.10111105"/>
+        <Residue code="S" mass="87.032028435"/>
+        <Residue code="T" mass="101.047678505"/>
+        <Residue code="U" mass="150.95363"/>
+        <Residue code="V" mass="99.068413945"/>
+        <Residue code="W" mass="186.07931298"/>
+        <Residue code="Y" mass="163.063328575"/>
+        <AmbiguousResidue code="B">
+          <cvParam accession="MS:1001360" name="alternate single letter codes" cvRef="PSI-MS" value="D N"/>
+        </AmbiguousResidue>
+        <AmbiguousResidue code="Z">
+          <cvParam accession="MS:1001360" name="alternate single letter codes" cvRef="PSI-MS" value="E Q"/>
+        </AmbiguousResidue>
+        <AmbiguousResidue code="X">
+          <cvParam accession="MS:1001360" name="alternate single letter codes" cvRef="PSI-MS" value="A C D E F G H I K L M N O P Q R S T U V W Y"/>
+        </AmbiguousResidue>
+      </MassTable>
+      <MassTable id="MT_heavy" msLevel="1 2">
+        <Residue code="A" mass="72.034148775"/>
+        <Residue code="C" mass="104.006219475"/>
+        <Residue code="D" mass="116.023978035"/>
+        <Residue code="E" mass="130.039628105"/>
+        <Residue code="F" mass="148.065448915"/>
+        <Residue code="G" mass="58.018498705"/>
+        <Residue code="H" mass="140.050016785"/>
+        <Residue code="I" mass="114.081098985"/>
+        <Residue code="K" mass="130.08903299"/>
+        <Residue code="L" mass="114.081098985"/>
+        <Residue code="M" mass="132.037519615"/>
+        <Residue code="N" mass="116.03699741"/>
+        <Residue code="P" mass="98.049798845"/>
+        <Residue code="Q" mass="130.05264748"/>
+        <Residue code="R" mass="160.08925093"/>
+        <Residue code="S" mass="88.029063405"/>
+        <Residue code="T" mass="102.044713475"/>
+        <Residue code="U" mass="150.95363"/>
+        <Residue code="V" mass="100.065448915"/>
+        <Residue code="W" mass="188.07338292"/>
+        <Residue code="Y" mass="164.060363545"/>
+        <AmbiguousResidue code="B">
+          <cvParam accession="MS:1001360" name="alternate single letter codes" cvRef="PSI-MS" value="D N"/>
+        </AmbiguousResidue>
+        <AmbiguousResidue code="Z">
+          <cvParam accession="MS:1001360" name="alternate single letter codes" cvRef="PSI-MS" value="E Q"/>
+        </AmbiguousResidue>
+        <AmbiguousResidue code="X">
+          <cvParam accession="MS:1001360" name="alternate single letter codes" cvRef="PSI-MS" value="A C D E F G H I K L M N O P Q R S T U V W Y"/>
+        </AmbiguousResidue>
+      </MassTable>
+      <FragmentTolerance>
+        <cvParam accession="MS:1001412" name="search tolerance plus value" value="0.3" cvRef="PSI-MS" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO" />
+        <cvParam accession="MS:1001413" name="search tolerance minus value" value="0.3" cvRef="PSI-MS" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO" />
+      </FragmentTolerance>
+      <ParentTolerance>
+        <cvParam accession="MS:1001412" name="search tolerance plus value" value="0.3" cvRef="PSI-MS" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO" />
+        <cvParam accession="MS:1001413" name="search tolerance minus value" value="0.3" cvRef="PSI-MS" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO" />
+      </ParentTolerance>
+      <Threshold>
+        <cvParam accession="MS:1001316" name="mascot:SigThreshold" cvRef="PSI-MS" value="0.05"/>
+      </Threshold>
+      <DatabaseFilters>
+        <Filter>
+          <FilterType>
+            <cvParam accession="MS:1001020" name="DB filter taxonomy" cvRef="PSI-MS" />
+          </FilterType>
+          <Include>
+            <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="3701"/>
+            <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Arabidopsis"/>
+          </Include>
+          <Exclude>
+            <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="45251"/>
+            <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Arabidopsis neglecta"/>
+          </Exclude>
+        </Filter>
+      </DatabaseFilters>
+    </SpectrumIdentificationProtocol>
+    <ProteinDetectionProtocol id="PDP_MascotParser_1"  analysisSoftware_ref="AS_mascot_parser">
+      <AnalysisParams>
+        <cvParam accession="MS:1001316" name="mascot:SigThreshold"                               cvRef="PSI-MS" value="0.05"/>
+        <cvParam accession="MS:1001317" name="mascot:MaxProteinHits"                             cvRef="PSI-MS" value="Auto"/>
+        <cvParam accession="MS:1001318" name="mascot:ProteinScoringMethod"                       cvRef="PSI-MS" value="MudPIT"/>
+        <cvParam accession="MS:1001319" name="mascot:MinMSMSThreshold"                           cvRef="PSI-MS" value="0"/>
+        <cvParam accession="MS:1001320" name="mascot:ShowHomologousProteinsWithSamePeptides"     cvRef="PSI-MS" value="1"/>
+        <cvParam accession="MS:1001321" name="mascot:ShowHomologousProteinsWithSubsetOfPeptides" cvRef="PSI-MS" value="1"/>
+        <cvParam accession="MS:1001322" name="mascot:RequireBoldRed"                             cvRef="PSI-MS" value="0"/>
+        <cvParam accession="MS:1001323" name="mascot:UseUnigeneClustering"                       cvRef="PSI-MS" value="false"/>
+        <cvParam accession="MS:1001324" name="mascot:IncludeErrorTolerantMatches"                cvRef="PSI-MS" value="1"/>
+        <cvParam accession="MS:1001325" name="mascot:ShowDecoyMatches"                           cvRef="PSI-MS" value="0"/>
+      </AnalysisParams>
+      <Threshold>
+        <cvParam accession="MS:1001494" name="no threshold" cvRef="PSI-MS" />
+      </Threshold>
+    </ProteinDetectionProtocol>
+  </AnalysisProtocolCollection>
+  <DataCollection>
+    <Inputs>
+      <SourceFile location="file:///../data/Mascot_N15_example.dat" id="SF_1" >
+        <FileFormat>
+          <cvParam accession="MS:1001199" name="Mascot DAT file" cvRef="PSI-MS" />
+        </FileFormat>
+      </SourceFile>
+      <SearchDatabase location="file:///c:/inetpub/mascot/sequence/SwissProt/current/SwissProt_51.6.fasta" id="SDB_SwissProt" name="SwissProt" numDatabaseSequences="257964" numResidues="93947433" version="SwissProt_51.6.fasta">
+        <FileFormat>
+          <cvParam accession="MS:1001348" name="FASTA format" cvRef="PSI-MS" />
+        </FileFormat>
+        <DatabaseName>
+          <userParam name="SwissProt_51.6.fasta" />
+        </DatabaseName>
+        <cvParam accession="MS:1001073" name="database type amino acid" cvRef="PSI-MS" />
+      </SearchDatabase>
+      <SpectraData location="file:///C:/DOCUME~1/DAVIDC~1.MAT/LOCALS~1/Temp/Dis83.tmp" id="SD_1">
+        <FileFormat>
+          <cvParam accession="MS:1001062" name="Mascot MGF file" cvRef="PSI-MS" />
+        </FileFormat>
+        <SpectrumIDFormat>
+          <cvParam accession="MS:1001528" name="Mascot query number" cvRef="PSI-MS" />
+        </SpectrumIDFormat>
+      </SpectraData>
+    </Inputs>
+    <AnalysisData>
+      <SpectrumIdentificationList id="SIL_1" numSequencesSearched="4944">
+	    <FragmentationTable>
+          <Measure id="m_mz">
+            <cvParam cvRef="PSI-MS" accession="MS:1001225" name="product ion m/z"/>
+          </Measure>
+          <Measure id="m_intensity">
+            <cvParam cvRef="PSI-MS" accession="MS:1001226" name="product ion intensity"/>
+          </Measure>
+          <Measure id="m_error">
+            <cvParam cvRef="PSI-MS" accession="MS:1001227" name="product ion m/z error" unitAccession="MS:1000040" unitName="m/z" unitCvRef="PSI-MS"/>
+          </Measure>
+	    </FragmentationTable>
+        <SpectrumIdentificationResult id="SIR_24" spectrumID="query=24" spectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_24_1"  calculatedMassToCharge="463.2707875" chargeState="2" experimentalMassToCharge="463.30936" peptide_ref="peptide_24_1" rank="1" passThreshold="true" massTable_ref="MT_heavy" sample_ref="Sample_heavy">
+            <PeptideEvidenceRef peptideEvidence_ref="PE_24_1_EF1A_ARATH_0"/>                
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="30.15" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="0.0362752105060675" />          
+          </SpectrumIdentificationItem>                
+          <cvParam accession="MS:1001371" name="mascot:identity threshold"  cvRef="PSI-MS" value="28" />
+          <cvParam accession="MS:1001030" name="number of peptide seqs compared to each spectrum"  cvRef="PSI-MS" value="751" />
+          <cvParam accession="MS:1000796" name="spectrum title"  cvRef="PSI-MS" value="38: Sum of 5 scans in range 498 (rt=1112.13, f=3, i=57) to 515 (rt=1120.85, f=3, i=61)" />
+        </SpectrumIdentificationResult>       
+         <SpectrumIdentificationResult id="SIR_127" spectrumID="query=127" spectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_127_1"  calculatedMassToCharge="484.562721333333" chargeState="3" experimentalMassToCharge="484.60568" peptide_ref="peptide_127_1" rank="1" passThreshold="false" massTable_ref="MT_light" sample_ref="Sample_light">
+            <PeptideEvidenceRef peptideEvidence_ref="PE_127_1_EF1A_ARATH_0"/>
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="28.54" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="0.0673201502157429" />            
+          </SpectrumIdentificationItem>         
+          <cvParam accession="MS:1001371" name="mascot:identity threshold"  cvRef="PSI-MS" value="29" />
+          <cvParam accession="MS:1001370" name="mascot:homology threshold"  cvRef="PSI-MS" value="17" />
+          <cvParam accession="MS:1001030" name="number of peptide seqs compared to each spectrum"  cvRef="PSI-MS" value="962" />
+          <cvParam accession="MS:1000796" name="spectrum title"  cvRef="PSI-MS" value="40: Sum of 8 scans in range 500 (rt=1113.16, f=5, i=33) to 526 (rt=1126.53, f=5, i=40)" />
+        </SpectrumIdentificationResult>            
+        <SpectrumIdentificationResult id="SIR_40" spectrumID="query=40" spectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_40_1"  calculatedMassToCharge="493.2642875" chargeState="2" experimentalMassToCharge="493.29759"  rank="1" passThreshold="true" massTable_ref="MT_heavy" sample_ref="Sample_heavy">
+            <PeptideEvidenceRef peptideEvidence_ref="PE_40_1_EF1A_ARATH_0"/>            
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="36.96" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="0.0101088957343092" />
+          </SpectrumIdentificationItem>            
+          <cvParam accession="MS:1001371" name="mascot:identity threshold"  cvRef="PSI-MS" value="30" />
+          <cvParam accession="MS:1001030" name="number of peptide seqs compared to each spectrum"  cvRef="PSI-MS" value="1004" />
+          <cvParam accession="MS:1000796" name="spectrum title"  cvRef="PSI-MS" value="61: Sum of 9 scans in range 641 (rt=1189.57, f=6, i=65) to 718 (rt=1231.34, f=3, i=92)" />
+        </SpectrumIdentificationResult>          
+        <SpectrumIdentificationResult id="SIR_48" spectrumID="query=48" spectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_48_1"  calculatedMassToCharge="513.748174" chargeState="2" experimentalMassToCharge="513.79851" peptide_ref="peptide_48_1" rank="1" passThreshold="false" massTable_ref="MT_light" sample_ref="Sample_light">
+            <PeptideEvidenceRef peptideEvidence_ref="PE_48_1_EF1A_ARATH_0"/>
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="15.59" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="0.365776565949196" />           
+          </SpectrumIdentificationItem>
+          <cvParam accession="MS:1001371" name="mascot:identity threshold"  cvRef="PSI-MS" value="29" />
+          <cvParam accession="MS:1001370" name="mascot:homology threshold"  cvRef="PSI-MS" value="15" />
+          <cvParam accession="MS:1001030" name="number of peptide seqs compared to each spectrum"  cvRef="PSI-MS" value="814" />
+          <cvParam accession="MS:1000796" name="spectrum title"  cvRef="PSI-MS" value="86: Sum of 8 scans in range 866 (rt=1311.53, f=2, i=189) to 901 (rt=1329.59, f=2, i=196)" />
+        </SpectrumIdentificationResult>         
+      </SpectrumIdentificationList>
+      <ProteinDetectionList id="PDL_1">
+        <ProteinAmbiguityGroup id="PAG_hit_1" >
+          <ProteinDetectionHypothesis id="PDH_EF1A_ARATH_0" dBSequence_ref="DBSeq_EF1A_ARATH"  passThreshold="true">
+            <PeptideHypothesis peptideEvidence_ref="PE_24_1_EF1A_ARATH_0">
+              <SpectrumIdentificationItemRef spectrumIdentificationItem_ref="SII_24_1"/>
+            </PeptideHypothesis>
+            <PeptideHypothesis peptideEvidence_ref="PE_127_1_EF1A_ARATH_0">
+              <SpectrumIdentificationItemRef spectrumIdentificationItem_ref="SII_127_1"/>
+            </PeptideHypothesis>
+            <PeptideHypothesis peptideEvidence_ref="PE_40_1_EF1A_ARATH_0">
+              <SpectrumIdentificationItemRef spectrumIdentificationItem_ref="SII_40_1"/>
+            </PeptideHypothesis>
+            <PeptideHypothesis peptideEvidence_ref="PE_48_1_EF1A_ARATH_0">
+              <SpectrumIdentificationItemRef spectrumIdentificationItem_ref="SII_48_1"/>
+            </PeptideHypothesis>            
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="96.93" />
+            <cvParam accession="MS:1001093" name="sequence coverage" cvRef="PSI-MS" value="6" />
+            <cvParam accession="MS:1001097" name="distinct peptide sequences" cvRef="PSI-MS" value="4" />
+          </ProteinDetectionHypothesis>
+        </ProteinAmbiguityGroup>       
+      </ProteinDetectionList>
+    </AnalysisData>
+  </DataCollection>
+  <BibliographicReference authors="David N. Perkins, Darryl J. C. Pappin, David M. Creasy, John S. Cottrell" editor="" id="10.1002/(SICI)1522-2683(19991201)20:18&lt;3551::AID-ELPS3551&gt;3.0.CO;2-2" name="Probability-based protein identification by searching sequence databases using mass spectrometry data" issue="18" pages="3551-3567" publication="Electrophoresis" volume="20" year="1999" publisher="Wiley VCH" title="Probability-based protein identification by searching sequence databases using mass spectrometry data"/>
+</MzIdentML>

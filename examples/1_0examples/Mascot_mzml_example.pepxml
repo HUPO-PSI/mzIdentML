@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msms_pipeline_analysis xmlns="http://regis-web.systemsbiology.net/pepXML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://regis-web.systemsbiology.net/pepXML http://t61-dmc/mascot/xmlns/schema/pepXML_v18/pepXML_v18.xsd" date="2009-09-29T17:57:37Z" summary_xml="Mascot_mzml_example.xml">
+<msms_run_summary base_name="" raw_data_type="" raw_data="">
+<sample_enzyme name="Trypsin" description="" fidelity="specific" independent="0">
+<specificity sense="C" min_spacing="1" cut="KR" no_cut="P"/>
+</sample_enzyme>
+<search_summary base_name="http://t61-dmc/mascot/cgi/master_results.pl?file=../data/Mascot_mzml_example.dat" search_engine="MASCOT" precursor_mass_type="monoisotopic" fragment_mass_type="monoisotopic" out_data_type="" out_data="" search_id="1">
+<search_database local_path="c:/inetpub/mascot/sequence/5peptideMix/current/5peptideMix_20090515.fasta" database_name="5peptideMix" database_release_identifier="5peptideMix_20090515.fasta" size_in_db_entries="5" size_of_residues="52" type="AA"/>
+<enzymatic_search_constraint enzyme="Trypsin" max_num_internal_cleavages="1" min_number_termini="2"/>
+<aminoacid_modification aminoacid="Q" massdiff="-17.0265" mass="111.032029" variable="Y" peptide_terminus="n" binary="N" description="Gln-&gt;pyro-Glu (N-term Q)"/>
+<aminoacid_modification aminoacid="E" massdiff="-18.0106" mass="111.032028" variable="Y" peptide_terminus="n" binary="N" description="Glu-&gt;pyro-Glu (N-term E)"/>
+<parameter name="LICENSE" value="Licensed to: Matrix Science internal use only - G6-400, (1 processor)."/>
+<parameter name="TOL" value="3"/>
+<parameter name="TOLU" value="Da"/>
+<parameter name="ITOL" value="0.6"/>
+<parameter name="ITOLU" value="Da"/>
+<parameter name="PFA" value="1"/>
+<parameter name="DB" value="5peptideMix"/>
+<parameter name="MASS" value="Monoisotopic"/>
+<parameter name="CLE" value="Trypsin"/>
+<parameter name="FILE" value="small.pwiz.1.1.mzML"/>
+<parameter name="PEAK" value="AUTO"/>
+<parameter name="SEARCH" value="MIS"/>
+<parameter name="USERNAME" value="David Creasy"/>
+<parameter name="USEREMAIL" value="dcreasy@matrixscience.com"/>
+<parameter name="CHARGE" value="1+, 2+ and 3+"/>
+<parameter name="REPORT" value="AUTO"/>
+<parameter name="FORMAT" value="mzML (.mzML)"/>
+<parameter name="FORMVER" value="1.01"/>
+<parameter name="IT_MODS" value="Gln-&gt;pyro-Glu (N-term Q),Glu-&gt;pyro-Glu (N-term E)"/>
+<parameter name="TAXONOMY" value="All entries"/>
+<parameter name="REPTYPE" value="peptide"/>
+<parameter name="INSTRUMENT" value="Default"/>
+<parameter name="USERID" value="1002"/>
+<parameter name="QUANTITATION" value="None"/>
+<parameter name="RULES" value="1,2,5,6,8,9,13,14"/>
+<parameter name="INTERNALS" value="0.0,700.0"/>
+<parameter name="_mzML.cvList.01.count" value="2"/>
+<parameter name="_mzML.cvList.cv.01.id" value="MS"/>
+<parameter name="_mzML.cvList.cv.01.fullName" value="Proteomics Standards Initiative Mass Spectrometry Ontology"/>
+<parameter name="_mzML.cvList.cv.01.version" value="1.18.2"/>
+<parameter name="_mzML.cvList.cv.01.URI" value="http://psidev.cvs.sourceforge.net/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"/>
+<parameter name="_mzML.cvList.cv.02.id" value="UO"/>
+<parameter name="_mzML.cvList.cv.02.fullName" value="Unit Ontology"/>
+<parameter name="_mzML.cvList.cv.02.version" value="04:03:2009"/>
+<parameter name="_mzML.cvList.cv.02.URI" value="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+<parameter name="_mzML.fileDescription.fileContent.cvParam.01.cvRef" value="MS"/>
+<parameter name="_mzML.fileDescription.fileContent.cvParam.01.accession" value="MS:1000580"/>
+<parameter name="_mzML.fileDescription.fileContent.cvParam.01.name" value="MSn spectrum"/>
+<parameter name="_mzML.fileDescription.sourceFileList.01.count" value="1"/>
+<parameter name="_mzML.fileDescription.sourceFileList.sourceFile.01.id" value="RAW1"/>
+<parameter name="_mzML.fileDescription.sourceFileList.sourceFile.01.name" value="small.RAW"/>
+<parameter name="_mzML.fileDescription.sourceFileList.sourceFile.01.location" value="file:///."/>
+<parameter name="_mzML.fileDescription.sourceFileList.sourceFile.cvParam.01.cvRef" value="MS"/>
+<parameter name="_mzML.fileDescription.sourceFileList.sourceFile.cvParam.01.accession" value="MS:1000768"/>
+<parameter name="_mzML.fileDescription.sourceFileList.sourceFile.cvParam.01.name" value="Thermo nativeID format"/>
+<parameter name="_mzML.fileDescription.sourceFileList.sourceFile.cvParam.02.cvRef" value="MS"/>
+<parameter name="_mzML.fileDescription.sourceFileList.sourceFile.cvParam.02.accession" value="MS:1000563"/>
+<parameter name="_mzML.fileDescription.sourceFileList.sourceFile.cvParam.02.name" value="Thermo RAW file"/>
+<parameter name="_mzML.fileDescription.sourceFileList.sourceFile.cvParam.03.cvRef" value="MS"/>
+<parameter name="_mzML.fileDescription.sourceFileList.sourceFile.cvParam.03.accession" value="MS:1000569"/>
+<parameter name="_mzML.fileDescription.sourceFileList.sourceFile.cvParam.03.name" value="SHA-1"/>
+<parameter name="_mzML.fileDescription.sourceFileList.sourceFile.cvParam.03.value" value="b43e9286b40e8b5dbc0dfa2e428495769ca96a96"/>
+<parameter name="_mzML.referenceableParamGroupList.01.count" value="1"/>
+<parameter name="_mzML.referenceableParamGroupList.referenceableParamGroup.01.id" value="CommonInstrumentParams"/>
+<parameter name="_mzML.referenceableParamGroupList.referenceableParamGroup.cvParam.01.cvRef" value="MS"/>
+<parameter name="_mzML.referenceableParamGroupList.referenceableParamGroup.cvParam.01.accession" value="MS:1000448"/>
+<parameter name="_mzML.referenceableParamGroupList.referenceableParamGroup.cvParam.01.name" value="LTQ FT"/>
+<parameter name="_mzML.referenceableParamGroupList.referenceableParamGroup.cvParam.02.cvRef" value="MS"/>
+<parameter name="_mzML.referenceableParamGroupList.referenceableParamGroup.cvParam.02.accession" value="MS:1000529"/>
+<parameter name="_mzML.referenceableParamGroupList.referenceableParamGroup.cvParam.02.name" value="instrument serial number"/>
+<parameter name="_mzML.referenceableParamGroupList.referenceableParamGroup.cvParam.02.value" value="SN06061F"/>
+<parameter name="_mzML.softwareList.01.count" value="2"/>
+<parameter name="_mzML.softwareList.software.01.id" value="Xcalibur"/>
+<parameter name="_mzML.softwareList.software.01.version" value="1.1 Beta 7"/>
+<parameter name="_mzML.softwareList.software.02.id" value="pwiz"/>
+<parameter name="_mzML.softwareList.software.02.version" value="1.4.0"/>
+<parameter name="_mzML.instrumentConfigurationList.01.count" value="2"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.01.id" value="IC1"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.referenceableParamGroupRef.01.ref" value="CommonInstrumentParams"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.01.count" value="3"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.source.01.order" value="1"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.source.cvParam.01.cvRef" value="MS"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.source.cvParam.01.accession" value="MS:1000073"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.source.cvParam.01.name" value="electrospray ionization"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.source.cvParam.02.cvRef" value="MS"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.source.cvParam.02.accession" value="MS:1000057"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.source.cvParam.02.name" value="electrospray inlet"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.analyzer.01.order" value="2"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.analyzer.cvParam.01.cvRef" value="MS"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.analyzer.cvParam.01.accession" value="MS:1000079"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.analyzer.cvParam.01.name" value="fourier transform ion cyclotron resonance mass spectrometer"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.detector.01.order" value="3"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.detector.cvParam.01.cvRef" value="MS"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.detector.cvParam.01.accession" value="MS:1000624"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.detector.cvParam.01.name" value="inductive detector"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.softwareRef.01.ref" value="Xcalibur"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.02.id" value="IC2"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.referenceableParamGroupRef.02.ref" value="CommonInstrumentParams"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.02.count" value="3"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.source.02.order" value="1"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.source.cvParam.03.cvRef" value="MS"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.source.cvParam.03.accession" value="MS:1000073"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.source.cvParam.03.name" value="electrospray ionization"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.source.cvParam.04.cvRef" value="MS"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.source.cvParam.04.accession" value="MS:1000057"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.source.cvParam.04.name" value="electrospray inlet"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.analyzer.02.order" value="2"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.analyzer.cvParam.02.cvRef" value="MS"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.analyzer.cvParam.02.accession" value="MS:1000083"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.analyzer.cvParam.02.name" value="radial ejection linear ion trap"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.detector.02.order" value="3"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.detector.cvParam.02.cvRef" value="MS"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.detector.cvParam.02.accession" value="MS:1000253"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.componentList.detector.cvParam.02.name" value="electron multiplier"/>
+<parameter name="_mzML.instrumentConfigurationList.instrumentConfiguration.softwareRef.02.ref" value="Xcalibur"/>
+<parameter name="_mzML.dataProcessingList.01.count" value="1"/>
+<parameter name="_mzML.dataProcessingList.dataProcessing.01.id" value="pwiz_Reader_Thermo_conversion"/>
+<parameter name="_mzML.dataProcessingList.dataProcessing.processingMethod.01.softwareRef" value="pwiz"/>
+<parameter name="_mzML.dataProcessingList.dataProcessing.processingMethod.cvParam.01.cvRef" value="MS"/>
+<parameter name="_mzML.dataProcessingList.dataProcessing.processingMethod.cvParam.01.accession" value="MS:1000544"/>
+<parameter name="_mzML.dataProcessingList.dataProcessing.processingMethod.cvParam.01.name" value="Conversion to mzML"/>
+</search_summary>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=33" start_scan="0" end_scan="0" precursor_neutral_mass="1673.228172" assumed_charge="3" index="1">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QLYENKPRRPYIL" peptide_prev_aa="-" peptide_next_aa="-" protein="Neurotensin" num_tot_proteins="1" num_matched_ions="6" calc_neutral_pep_mass="1671.909637" massdiff="+1.3185" num_missed_cleavages="1" is_rejected="0" protein_descr="Neurotensin: N-6383 pGlu-Leu-Tyr-Glu-Asn-Lys-Pro-Arg-Arg-Pro-Tyr-Ile-Leu  (C78 H121 N21 O20) H+ Adducts: 1672.9170, 836.9621, 558.3105, 418.9847, 335.3892" protein_mw="1689">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="15.71"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.027"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=6" start_scan="0" end_scan="0" precursor_neutral_mass="1673.588172" assumed_charge="3" index="2">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QLYENKPRRPYIL" peptide_prev_aa="-" peptide_next_aa="-" protein="Neurotensin" num_tot_proteins="1" num_matched_ions="5" calc_neutral_pep_mass="1671.909637" massdiff="+1.6785" num_missed_cleavages="1" is_rejected="0" protein_descr="Neurotensin: N-6383 pGlu-Leu-Tyr-Glu-Asn-Lys-Pro-Arg-Arg-Pro-Tyr-Ile-Leu  (C78 H121 N21 O20) H+ Adducts: 1672.9170, 836.9621, 558.3105, 418.9847, 335.3892" protein_mw="1689">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="14.96"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.032"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=47" start_scan="0" end_scan="0" precursor_neutral_mass="1673.678172" assumed_charge="3" index="3">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QLYENKPRRPYIL" peptide_prev_aa="-" peptide_next_aa="-" protein="Neurotensin" num_tot_proteins="1" num_matched_ions="5" calc_neutral_pep_mass="1671.909637" massdiff="+1.7685" num_missed_cleavages="1" is_rejected="0" protein_descr="Neurotensin: N-6383 pGlu-Leu-Tyr-Glu-Asn-Lys-Pro-Arg-Arg-Pro-Tyr-Ile-Leu  (C78 H121 N21 O20) H+ Adducts: 1672.9170, 836.9621, 558.3105, 418.9847, 335.3892" protein_mw="1689">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="21.17"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.0076"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=20" start_scan="0" end_scan="0" precursor_neutral_mass="1673.798172" assumed_charge="3" index="4">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QLYENKPRRPYIL" peptide_prev_aa="-" peptide_next_aa="-" protein="Neurotensin" num_tot_proteins="1" num_matched_ions="5" calc_neutral_pep_mass="1671.909637" massdiff="+1.8885" num_missed_cleavages="1" is_rejected="0" protein_descr="Neurotensin: N-6383 pGlu-Leu-Tyr-Glu-Asn-Lys-Pro-Arg-Arg-Pro-Tyr-Ile-Leu  (C78 H121 N21 O20) H+ Adducts: 1672.9170, 836.9621, 558.3105, 418.9847, 335.3892" protein_mw="1689">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="15.09"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.031"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=14" start_scan="0" end_scan="0" precursor_neutral_mass="1674.548172" assumed_charge="3" index="5">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QLYENKPRRPYIL" peptide_prev_aa="-" peptide_next_aa="-" protein="Neurotensin" num_tot_proteins="1" num_matched_ions="5" calc_neutral_pep_mass="1671.909637" massdiff="+2.6385" num_missed_cleavages="1" is_rejected="0" protein_descr="Neurotensin: N-6383 pGlu-Leu-Tyr-Glu-Asn-Lys-Pro-Arg-Arg-Pro-Tyr-Ile-Leu  (C78 H121 N21 O20) H+ Adducts: 1672.9170, 836.9621, 558.3105, 418.9847, 335.3892" protein_mw="1689">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="14.51"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.035"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=39" start_scan="0" end_scan="0" precursor_neutral_mass="642.722724" assumed_charge="1" index="6"/>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=27" start_scan="0" end_scan="0" precursor_neutral_mass="642.732724" assumed_charge="1" index="7"/>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=32" start_scan="0" end_scan="0" precursor_neutral_mass="642.792724" assumed_charge="1" index="8"/>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=19" start_scan="0" end_scan="0" precursor_neutral_mass="642.792724" assumed_charge="1" index="9"/>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=12" start_scan="0" end_scan="0" precursor_neutral_mass="643.052724" assumed_charge="1" index="10"/>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=26" start_scan="0" end_scan="0" precursor_neutral_mass="1347.265448" assumed_charge="2" index="11">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="RPKPQQFFGLM" peptide_prev_aa="-" peptide_next_aa="-" protein="SubstanceP" num_tot_proteins="1" num_matched_ions="8" calc_neutral_pep_mass="1347.712158" massdiff="-0.4467" num_missed_cleavages="0" is_rejected="0" protein_descr="Substance P: S-6883 Arg-Pro-Lys-Pro-Gln-Gln-Phe-Phe-Gly-Leu-Met-NH2  (C63 H98 N18 O13 S1) ? (C63 H97 N17 O14 S1) H+ Adducts: 1347.7354, 674.3713, 449.9167" protein_mw="1348">
+<search_score name="ionscore" value="25.32"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.0029"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=41" start_scan="0" end_scan="0" precursor_neutral_mass="1347.385448" assumed_charge="2" index="12">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="RPKPQQFFGLM" peptide_prev_aa="-" peptide_next_aa="-" protein="SubstanceP" num_tot_proteins="1" num_matched_ions="5" calc_neutral_pep_mass="1347.712158" massdiff="-0.3267" num_missed_cleavages="0" is_rejected="0" protein_descr="Substance P: S-6883 Arg-Pro-Lys-Pro-Gln-Gln-Phe-Phe-Gly-Leu-Met-NH2  (C63 H98 N18 O13 S1) ? (C63 H97 N17 O14 S1) H+ Adducts: 1347.7354, 674.3713, 449.9167" protein_mw="1348">
+<search_score name="ionscore" value="27.25"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.0019"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=46" start_scan="0" end_scan="0" precursor_neutral_mass="1347.665448" assumed_charge="2" index="13">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="RPKPQQFFGLM" peptide_prev_aa="-" peptide_next_aa="-" protein="SubstanceP" num_tot_proteins="1" num_matched_ions="5" calc_neutral_pep_mass="1347.712158" massdiff="-0.0467" num_missed_cleavages="0" is_rejected="0" protein_descr="Substance P: S-6883 Arg-Pro-Lys-Pro-Gln-Gln-Phe-Phe-Gly-Leu-Met-NH2  (C63 H98 N18 O13 S1) ? (C63 H97 N17 O14 S1) H+ Adducts: 1347.7354, 674.3713, 449.9167" protein_mw="1348">
+<search_score name="ionscore" value="27.5"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.0018"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=21" start_scan="0" end_scan="0" precursor_neutral_mass="724.132724" assumed_charge="1" index="14"/>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=13" start_scan="0" end_scan="0" precursor_neutral_mass="724.222724" assumed_charge="1" index="15"/>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=5" start_scan="0" end_scan="0" precursor_neutral_mass="724.352724" assumed_charge="1" index="16"/>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=28" start_scan="0" end_scan="0" precursor_neutral_mass="724.352724" assumed_charge="1" index="17"/>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=40" start_scan="0" end_scan="0" precursor_neutral_mass="724.672724" assumed_charge="1" index="18"/>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=37" start_scan="0" end_scan="0" precursor_neutral_mass="1619.445448" assumed_charge="2" index="19">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QQRLGNQWAVGHLM" peptide_prev_aa="-" peptide_next_aa="-" protein="Bombessin" num_tot_proteins="1" num_matched_ions="10" calc_neutral_pep_mass="1619.799088" massdiff="-0.3536" num_missed_cleavages="1" is_rejected="0" protein_descr="Bombessin B-4272 pGlu-Gln-Arg-Leu-Gly-Asn-Gln-Trp-Ala-Val-Gly-His-Leu-Met-NH2 (C71 H110 N24 O18 S1) ?(C71 H111 N23 O20 S1) H+ Adducts: 1619.8223, 810.4148, 540.6123, 405.7110" protein_mw="1637">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="38.23"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.00015"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=10" start_scan="0" end_scan="0" precursor_neutral_mass="1619.485448" assumed_charge="2" index="20">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QQRLGNQWAVGHLM" peptide_prev_aa="-" peptide_next_aa="-" protein="Bombessin" num_tot_proteins="1" num_matched_ions="9" calc_neutral_pep_mass="1619.799088" massdiff="-0.3136" num_missed_cleavages="1" is_rejected="0" protein_descr="Bombessin B-4272 pGlu-Gln-Arg-Leu-Gly-Asn-Gln-Trp-Ala-Val-Gly-His-Leu-Met-NH2 (C71 H110 N24 O18 S1) ?(C71 H111 N23 O20 S1) H+ Adducts: 1619.8223, 810.4148, 540.6123, 405.7110" protein_mw="1637">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="37.66"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.00017"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=3" start_scan="0" end_scan="0" precursor_neutral_mass="1619.565448" assumed_charge="2" index="21">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QQRLGNQWAVGHLM" peptide_prev_aa="-" peptide_next_aa="-" protein="Bombessin" num_tot_proteins="1" num_matched_ions="9" calc_neutral_pep_mass="1619.799088" massdiff="-0.2336" num_missed_cleavages="1" is_rejected="0" protein_descr="Bombessin B-4272 pGlu-Gln-Arg-Leu-Gly-Asn-Gln-Trp-Ala-Val-Gly-His-Leu-Met-NH2 (C71 H110 N24 O18 S1) ?(C71 H111 N23 O20 S1) H+ Adducts: 1619.8223, 810.4148, 540.6123, 405.7110" protein_mw="1637">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="37.55"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.00018"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=44" start_scan="0" end_scan="0" precursor_neutral_mass="1619.625448" assumed_charge="2" index="22">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QQRLGNQWAVGHLM" peptide_prev_aa="-" peptide_next_aa="-" protein="Bombessin" num_tot_proteins="1" num_matched_ions="10" calc_neutral_pep_mass="1619.799088" massdiff="-0.1736" num_missed_cleavages="1" is_rejected="0" protein_descr="Bombessin B-4272 pGlu-Gln-Arg-Leu-Gly-Asn-Gln-Trp-Ala-Val-Gly-His-Leu-Met-NH2 (C71 H110 N24 O18 S1) ?(C71 H111 N23 O20 S1) H+ Adducts: 1619.8223, 810.4148, 540.6123, 405.7110" protein_mw="1637">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="38.37"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.00015"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=24" start_scan="0" end_scan="0" precursor_neutral_mass="1619.665448" assumed_charge="2" index="23">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QQRLGNQWAVGHLM" peptide_prev_aa="-" peptide_next_aa="-" protein="Bombessin" num_tot_proteins="1" num_matched_ions="6" calc_neutral_pep_mass="1619.799088" massdiff="-0.1336" num_missed_cleavages="1" is_rejected="0" protein_descr="Bombessin B-4272 pGlu-Gln-Arg-Leu-Gly-Asn-Gln-Trp-Ala-Val-Gly-His-Leu-Met-NH2 (C71 H110 N24 O18 S1) ?(C71 H111 N23 O20 S1) H+ Adducts: 1619.8223, 810.4148, 540.6123, 405.7110" protein_mw="1637">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="32.76"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.00053"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=17" start_scan="0" end_scan="0" precursor_neutral_mass="1620.805448" assumed_charge="2" index="24">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QQRLGNQWAVGHLM" peptide_prev_aa="-" peptide_next_aa="-" protein="Bombessin" num_tot_proteins="1" num_matched_ions="9" calc_neutral_pep_mass="1619.799088" massdiff="+1.0064" num_missed_cleavages="1" is_rejected="0" protein_descr="Bombessin B-4272 pGlu-Gln-Arg-Leu-Gly-Asn-Gln-Trp-Ala-Val-Gly-His-Leu-Met-NH2 (C71 H110 N24 O18 S1) ?(C71 H111 N23 O20 S1) H+ Adducts: 1619.8223, 810.4148, 540.6123, 405.7110" protein_mw="1637">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="37.94"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.00016"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=7" start_scan="0" end_scan="0" precursor_neutral_mass="1622.645448" assumed_charge="2" index="25">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QQRLGNQWAVGHLM" peptide_prev_aa="-" peptide_next_aa="-" protein="Bombessin" num_tot_proteins="1" num_matched_ions="9" calc_neutral_pep_mass="1619.799088" massdiff="+2.8464" num_missed_cleavages="1" is_rejected="0" protein_descr="Bombessin B-4272 pGlu-Gln-Arg-Leu-Gly-Asn-Gln-Trp-Ala-Val-Gly-His-Leu-Met-NH2 (C71 H110 N24 O18 S1) ?(C71 H111 N23 O20 S1) H+ Adducts: 1619.8223, 810.4148, 540.6123, 405.7110" protein_mw="1637">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="19.89"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.01"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=4" start_scan="0" end_scan="0" precursor_neutral_mass="1672.665448" assumed_charge="2" index="26">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QLYENKPRRPYIL" peptide_prev_aa="-" peptide_next_aa="-" protein="Neurotensin" num_tot_proteins="1" num_matched_ions="8" calc_neutral_pep_mass="1671.909637" massdiff="+0.7558" num_missed_cleavages="1" is_rejected="0" protein_descr="Neurotensin: N-6383 pGlu-Leu-Tyr-Glu-Asn-Lys-Pro-Arg-Arg-Pro-Tyr-Ile-Leu  (C78 H121 N21 O20) H+ Adducts: 1672.9170, 836.9621, 558.3105, 418.9847, 335.3892" protein_mw="1689">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="10.41"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.091"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=38" start_scan="0" end_scan="0" precursor_neutral_mass="1672.685448" assumed_charge="2" index="27">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QLYENKPRRPYIL" peptide_prev_aa="-" peptide_next_aa="-" protein="Neurotensin" num_tot_proteins="1" num_matched_ions="8" calc_neutral_pep_mass="1671.909637" massdiff="+0.7758" num_missed_cleavages="1" is_rejected="0" protein_descr="Neurotensin: N-6383 pGlu-Leu-Tyr-Glu-Asn-Lys-Pro-Arg-Arg-Pro-Tyr-Ile-Leu  (C78 H121 N21 O20) H+ Adducts: 1672.9170, 836.9621, 558.3105, 418.9847, 335.3892" protein_mw="1689">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="10.31"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.093"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=18" start_scan="0" end_scan="0" precursor_neutral_mass="1672.705448" assumed_charge="2" index="28">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QLYENKPRRPYIL" peptide_prev_aa="-" peptide_next_aa="-" protein="Neurotensin" num_tot_proteins="1" num_matched_ions="6" calc_neutral_pep_mass="1671.909637" massdiff="+0.7958" num_missed_cleavages="1" is_rejected="0" protein_descr="Neurotensin: N-6383 pGlu-Leu-Tyr-Glu-Asn-Lys-Pro-Arg-Arg-Pro-Tyr-Ile-Leu  (C78 H121 N21 O20) H+ Adducts: 1672.9170, 836.9621, 558.3105, 418.9847, 335.3892" protein_mw="1689">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="6.41"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.23"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=31" start_scan="0" end_scan="0" precursor_neutral_mass="1672.765448" assumed_charge="2" index="29">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QLYENKPRRPYIL" peptide_prev_aa="-" peptide_next_aa="-" protein="Neurotensin" num_tot_proteins="1" num_matched_ions="6" calc_neutral_pep_mass="1671.909637" massdiff="+0.8558" num_missed_cleavages="1" is_rejected="0" protein_descr="Neurotensin: N-6383 pGlu-Leu-Tyr-Glu-Asn-Lys-Pro-Arg-Arg-Pro-Tyr-Ile-Leu  (C78 H121 N21 O20) H+ Adducts: 1672.9170, 836.9621, 558.3105, 418.9847, 335.3892" protein_mw="1689">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="3.5"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.45"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=25" start_scan="0" end_scan="0" precursor_neutral_mass="836.412724" assumed_charge="1" index="30"/>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=45" start_scan="0" end_scan="0" precursor_neutral_mass="1673.545448" assumed_charge="2" index="31">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QLYENKPRRPYIL" peptide_prev_aa="-" peptide_next_aa="-" protein="Neurotensin" num_tot_proteins="1" num_matched_ions="4" calc_neutral_pep_mass="1671.909637" massdiff="+1.6358" num_missed_cleavages="1" is_rejected="0" protein_descr="Neurotensin: N-6383 pGlu-Leu-Tyr-Glu-Asn-Lys-Pro-Arg-Arg-Pro-Tyr-Ile-Leu  (C78 H121 N21 O20) H+ Adducts: 1672.9170, 836.9621, 558.3105, 418.9847, 335.3892" protein_mw="1689">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="3.9"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.41"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=11" start_scan="0" end_scan="0" precursor_neutral_mass="1673.905448" assumed_charge="2" index="32">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="QLYENKPRRPYIL" peptide_prev_aa="-" peptide_next_aa="-" protein="Neurotensin" num_tot_proteins="1" num_matched_ions="8" calc_neutral_pep_mass="1671.909637" massdiff="+1.9958" num_missed_cleavages="1" is_rejected="0" protein_descr="Neurotensin: N-6383 pGlu-Leu-Tyr-Glu-Asn-Lys-Pro-Arg-Arg-Pro-Tyr-Ile-Leu  (C78 H121 N21 O20) H+ Adducts: 1672.9170, 836.9621, 558.3105, 418.9847, 335.3892" protein_mw="1689">
+<modification_info mod_nterm_mass="-16.018724"></modification_info>
+<search_score name="ionscore" value="9.27"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.12"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=34" start_scan="0" end_scan="0" precursor_neutral_mass="881.442724" assumed_charge="1" index="33">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="WHWLQL" peptide_prev_aa="-" peptide_next_aa="-" protein="Alpha1-6:" num_tot_proteins="1" num_matched_ions="4" calc_neutral_pep_mass="881.454803" massdiff="-0.0121" num_missed_cleavages="0" is_rejected="0" protein_descr="T-2903 Trp-His-Trp-Leu-Gln-Leu (C45 H59 N11 O8) H+ Adducts: 882.4621, 441.7347, 294.8255" protein_mw="881">
+<search_score name="ionscore" value="30.23"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.00095"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+<spectrum_query spectrum="controllerType=0 controllerNumber=1 scan=48" start_scan="0" end_scan="0" precursor_neutral_mass="881.532724" assumed_charge="1" index="34">
+<search_result search_id="1">
+<search_hit hit_rank="1" peptide="WHWLQL" peptide_prev_aa="-" peptide_next_aa="-" protein="Alpha1-6:" num_tot_proteins="1" num_matched_ions="4" calc_neutral_pep_mass="881.454803" massdiff="+0.0779" num_missed_cleavages="0" is_rejected="0" protein_descr="T-2903 Trp-His-Trp-Leu-Gln-Leu (C45 H59 N11 O8) H+ Adducts: 882.4621, 441.7347, 294.8255" protein_mw="881">
+<search_score name="ionscore" value="30.25"/>
+<search_score name="identityscore" value="13"/>
+<search_score name="expect" value="0.00094"/>
+</search_hit>
+</search_result>
+</spectrum_query>
+</msms_run_summary>
+</msms_pipeline_analysis>

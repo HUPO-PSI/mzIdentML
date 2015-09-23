@@ -1,0 +1,1563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mzIdentML id="" version="1.0.0"
+             xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.0 ../../schema/mzIdentML1.0.0.xsd"
+             xmlns="http://psidev.info/psi/pi/mzIdentML/1.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             creationDate="2009-08-18T18:50:43">
+  <cvList>
+    <cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies"  URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"></cv>
+    <cv id="UNIMOD" fullName="UNIMOD"        URI="http://www.unimod.org/obo/unimod.obo"></cv>
+    <cv id="UO"     fullName="UNIT-ONTOLOGY" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"></cv>
+  </cvList>
+  <AnalysisSoftwareList>
+    <AnalysisSoftware id="AS_mascot_server" name="Mascot Server" version="2.2.05" URI="http://www.matrixscience.com/search_form_select.html" >
+      <ContactRole Contact_ref="ORG_MSL">
+        <role>
+          <cvParam accession="MS:1001267" name="software vendor" cvRef="PSI-MS"/>
+        </role>
+      </ContactRole>
+      <SoftwareName>
+        <cvParam accession="MS:1001207" name="Mascot" cvRef="PSI-MS"/>
+      </SoftwareName>
+      <Customizations>
+        No customisations
+      </Customizations>
+    </AnalysisSoftware>
+    <AnalysisSoftware id="AS_mascot_parser" name="Mascot Parser" version="2.3.0.0" URI="http://www.matrixscience.com/msparser.html" >
+      <ContactRole Contact_ref="ORG_MSL">
+        <role>
+          <cvParam accession="MS:1001267" name="software vendor" cvRef="PSI-MS"/>
+        </role>
+      </ContactRole>
+      <SoftwareName>
+        <cvParam accession="MS:1001478" name="Mascot Parser" cvRef="PSI-MS"/>
+      </SoftwareName>
+      <Customizations>
+        No customisations
+      </Customizations>
+    </AnalysisSoftware>
+  </AnalysisSoftwareList>
+  <Provider id="PROVIDER">
+    <ContactRole Contact_ref="PERSON_DOC_OWNER">
+      <role>
+        <cvParam accession="MS:1001271" name="researcher" cvRef="PSI-MS" />
+      </role>
+    </ContactRole>
+  </Provider>
+  <AuditCollection>
+    <Person id="">
+      <affiliations Organization_ref="ORG_MSL"/>
+    </Person>
+    <Person id="PERSON_DOC_OWNER" firstName="" lastName="David Creasy" email="dcreasy@matrixscience.com">
+      <affiliations Organization_ref="ORG_DOC_OWNER"/>
+    </Person>
+    <Organization id="ORG_MSL" name="Matrix Science Limited" address="64 Baker Street, London W1U 7GB, UK" email="support@matrixscience.com"  fax="+44 (0)20 7224 1344" phone="+44 (0)20 7486 1050" />
+    <Organization id="ORG_DOC_OWNER" />
+  </AuditCollection>
+  <SequenceCollection>
+    <DBSequence id="DBSeq_UVRB_THET8" length="665" SearchDatabase_ref="SDB_SwissProt" accession="UVRB_THET8" >
+      <seq>MTFRYRGPSPKGDQPKAIAGLVEALRDGERFVTLLGATGTGKTVTMAKVIEALGRPALVLAPNKILAAQLAAEFRELFPENAVEYFISYYDYYQPEAYVPGKDLYIEKDASINPEIERLRHSTTRSLLTRRDVIVVASVSAIYGLGDPREYRARNLVVERGKPYPREVLLERLLELGYQRNDIDLSPGRFRAKGEVLEIFPAYETEPIRVELFGDEVERISQVHPVTGERLRELPGFVLFPATHYLSPEGLEEILKEIEKELWERVRYFEERGEVLYAQRLKERTLYDLEMLRVMGTCPGVENYARYFTGKAPGEPPYTLLDYFPEDFLVFLDESHVTVPQLQGMYRGDYARKKTLVDYGFRLPSALDNRPLRFEEFLERVSQVVFVSATPGPFELAHSGRVVEQIIRPTGLLDPLVRVKPTENQILDLMEGIRERAARGERTLVTVLTVRMAEELTSFLVEHGIRARYLHHELDAFERQALIRDLRLGHYDCLVGINLLREGLDIPEVSLVAILDADKEGFLRSERSLIQTIGRAARNARGEVWLYADRVSEAMQRAIEETNRRRALQEAYNLEHGITPETVRKEVRAVIRPEGYEEAPLEADLSGEDLRERIAELELAMWQAAEALDFERAARLRDEIRALEARLQGVRAPEPVPGGRKRKRR</seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="UvrABC system protein B (Protein uvrB) (Excinuclease ABC subunit B) - Thermus thermophilus (strain HB8 / ATCC 27634 / DSM 579)" />
+      <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Thermus thermophilus"/>
+      <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="274"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_VP3_BTV10" length="901" SearchDatabase_ref="SDB_SwissProt" accession="VP3_BTV10" >
+      <seq>MAAQNEQRPERIKTTPYLEGDVLSSDSGPLLSVFALQEIMQKVRQVQADYMTATREVDFTVPDVQKILDDIKTLAAEQVYKIVKVPSISFRHIVMQSRDRVLRVDTYYEEMSQVGDVITEDEPEKFYSTIIKKVRFIRGKGSFILHDIPTRDHRGMEVAEPEVLGVEFKNVLPVLTAEHRAMIQNALDGSIIENGNVATRDVDVFIGACSEPIYRIYNRLQGYIEAVQLQELRNSIGWLERLGQRKRITYSQEVLTDFRRQDTIWVLALQLPVNPQVVWDVPRSSIANLIMNIATCLPTGEYIAPNPRISSITLTQRITTTGPFAILTGSTPTAQQLNDVRKIYLALMFPGQIVLDLKIDPGERMDPAVRMVAGVVGHLLFTAGGRFTNLTQNMARQLDIALNDYLLYMYNTRVQVNYGPTGEPLDFQIGRNQYDCNVFRADFATGTGYNGWATIDVEYRDPAPYVHAQRYIRYCGIDSRELINPTTYGIGMTYHCYNEMLRMLVAAGRDSEAAYFRSMLPFHMVRFARINQIINEDLHSVFSLPDDMFNALLPDLIAGAHQNADPVVLDVSWISLWFAFNRSFEPTHRNEMLEIAPLIESVYASELSVMKVDMRHLSLMQRRFPDVLIQARPSHFWKAVLNDSPEAVKAVMNLSHSHNFINIRDMMRWVLLPSLQPSLKLVLEEEAWAAANDFEDLMLTDQVYMHRDMLPEPRLDDIERFRQEGFYYTNMLEAPPEIDRVVQYTYEIARLQANMGQFRAALRRIMDDDDWVRFGGVLRTVRVKFFDARPPDDILQGLPFSYDTNEKGGLSYATIKYATETTIFYLIYNVEFSNTPDSLVLINPTYTMTKVFINKRIVERVRVGQILAVLNRRFVAYKGKMRIMDITQSLKMGTKLAAPTV</seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="VP3 core protein (Major inner capsid protein) - Bluetongue virus 10 (isolate USA) (BTV 10)" />
+      <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Bluetongue virus 10"/>
+      <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="10906"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_VP3_BTV11" length="901" SearchDatabase_ref="SDB_SwissProt" accession="VP3_BTV11" >
+      <seq>MAAQNEQRSERIKTTPYLEGDVLSSDSGPLLSVFALQEIMQKVRQVQADYMTATREVDFTVPDVQKILDDIKTLAAEQVYKIVKVPNILFRHIVMQSRDRVLRVDTYYEEMSQVGDVITEDEPEKFYSTIIKKVRFIRGKGSFILHDIPTRDHRGMEVAEPEVLGVEFKNVLPVLTAEHRAMIQNALDGSIIENGNVATRDVDVFIGACSEPIYRIYNRLQGYIEAVQLQELRNSIGWLERLGLRKRITYSQEVLTDFRRQDTIWVLALQLPVNPQVVWDVPRSSIANLIMNIATCLPTGEYIAPNPRISSITLTQRITTTGPFAILTGSTPTAQQLNDVRKIYLALMFPGQIILDLKIDPGERMDPAVRMVAGVVGHLLFTAGGRFTNLTQNMARQLDIALNDYLLYMYNTRVQVNYGPTGEPLDFQIGRNQYDCNVFRADFATGTGYNGWATIDVEYRDPAPYVHAQRYIRYCGIDSRELINPTTYGIGMTYHCYNEMLRMLVAAGKDSEAAYFRSMLPFHMVRFARINQIINEDLHSVFSLPDDMFNALLPDLIAGAHQNADPVVLDVSWISLWFAFNRSFEPTHRNEMLEIAPLIESVYASELSVMKVDMRHLSLMQRRFPDVLIQARPSHFWKAVLNDSPEAVKAVMNLSHSHNFINIRDMMRWVMLPSLQPSLKLVLEEEAWAAANDFEDLMLTDQVYMHRDMLPEPRLDDVERFRQEGFYYTNMLEAPPEIDRVVQYTYEIERLQANMGQFRAALRRIMDDDDWVRFGGVLRTVRVKFFDARPPDDILQGLPFSYDTNEKGGLSYATIKYATETTIFYQIYNAEFSNTPDSLVLINPTYTMTKVFINKRIVERVRVGQILAVLNRRFVAYKGKMRIMDITQSLKMGTKLAAPTV</seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="VP3 core protein (Major inner capsid protein) - Bluetongue virus 11 (isolate USA) (BTV 11)" />
+      <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Bluetongue virus 11"/>
+      <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="35329"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_VP3_BTV17" length="901" SearchDatabase_ref="SDB_SwissProt" accession="VP3_BTV17" >
+      <seq>MAAQNEQRPERIKTTPYLEGDVLSSDSGPLLSVFALQEIMQKVRQVQADYMTATREVDFTVPDVQKILDDIKTLAAEQVYKIVKVPNISFRHIVMQSRDRVLRVDTYYEEMSQVGDVITEDEPEKFYSTIIKKVRFIRGKGSFILHDIPTRDHRGMEVAEPEVLGVEFKNVLPVLTAEHRAMIQNALDGSIIENGNVATRDVDVFIGACSEPIYRIYNRLQGYIEAVQLQELRNSIGWLERLGQRKRITYSQEVLTDFRRQDTIWVLALQLPVNPQVVWDVPRSSIANLIMNIATCLPTGEYIAPNPRISSITLTQRITTTGPFAILTGSTPTAQQLNDVRKIYLALMFPGQIILDLKIDPGERMDPAVRMVAGVVGHLLFTAGGRFTNLTQNMARQLDIALNDYLLYMYNTRVQVNYGPTGEPLDFQIGRNQYDCNVFRADFATGTGYNGWATIDVEYRDLAPYVHAQRYIRYCGIDSRELINPTTYGIGMTYHCYNEMLRMLVAAGKDSEAAYFRSMLPFHMVRFARINQIINEDLHSVFSLPDDMFNALLPDLIAGAHQNADPVVLDVSWISLWFAFNRSFEPTHRNEMLEIAPLIESVYASELSVMKVDMRHLSLMQRRFPDVLIQARPSHFWKAVLNDSPEAVKAVMNLSHSHNFINIRDMMRWVMLPSLQPSLKLVLEEEAWAAANDFEDLMLTDQVYMHRDMLPEPRLDDVERFRQEGFYYTNMLEAPPEIDRVVQYTYEIARLQANMGQFRAALRRIMDDDDWVRFGGVLRTVRVKFFDARPPDDILQGLPFSYDTNEKGGLSYATIKYATETTIFYLIYNVEFSNTPDSLVLINPAYTMTKVFINKRIVERVRVRQILAVLNRRFVAYKGKMRIMDITQSLKMGAKLAAPTV</seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="VP3 core protein (Major inner capsid protein) - Bluetongue virus 17 (isolate USA) (BTV 17)" />
+      <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Bluetongue virus 17"/>
+      <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="10903"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_VP3_BTV2A" length="901" SearchDatabase_ref="SDB_SwissProt" accession="VP3_BTV2A" >
+      <seq>MAAQNEQRPERIKTTPYLEGDVLSSDSGPLLSVFALQEIMQKVRQVQADYMTATREVDFTVPDVQKILDDIKALTVEQVYKIVKVPSISFRHIVMQSRDRVLRVDTYYEEMSQVGDVITEDEPEKFYSTIIKKVRFIRGKGSFILHDIPTRDHRGMEAAEPEVLGVEFKNVPPVLTAEHRAMIQSALDGSIIENGNVATRDVDVFIGACSEPIYRIYNRLQGYIEAVQLQELRNSIGWLERLGQRKRITYSQEVLTDFRRQDTIWVLALQLPVNPQVVWDVPRSSIANLIMNIATCLPTGEYIAPNPRISSITLTQRITTTGPFAILTGSTPTAQQLNDVRKIYLALMFPGQIILDLKIDPGERMDPAVRMVAGVVGHLLFTAGGRFTNLTQNMARQLDIALNDYLLYMYNTRVQVNYGPTGEPLDFQIGRNQYDCNVFRADFATGTGYNGWATIDVEYRDPAPYVHAQRYIRYCGIDSRELINPTTYGIGMTYHCYNEMLRMLVAAGKDSEAAYFRSMLPFHMVRFARINQIINEDLHSVFSLPDDMFNALLPDLVAGAHQNADPVVLDVSWISLWFAFNRSFEPTHRNEMLEIAPLIESVYASELSVMKVDIRHLSLMQRRFPDVLIQARPSHFWKAVLNDSPEAVKAVMNLSHSHNFINIRDMMRWVLLPSLQPSLKLALEEEAWAAANDFEDLMLTDQVYMHRDMLPEPRLDDIERFRQEGFYYTNMLEAPPEIDRVVQYTYEIARLQADMGQFRAALRRIMDDDDWVRSDGVLRTVRVKFFDARPPDDILQGLPFSYDTNEKGGLSYATIKYATETTIFYLIYNVEFSNTPDSLVLINPTYTMTKVFINKRIVERVRVGQILAVLNRRFVAYKGKMRIMDITQSLKMGTKLAAPTV</seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="VP3 core protein (Major inner capsid protein) - Bluetongue virus 2 (isolate USA) (BTV 2)" />
+      <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Bluetongue virus 2"/>
+      <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="35328"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_VP3_BTV1S" length="901" SearchDatabase_ref="SDB_SwissProt" accession="VP3_BTV1S" >
+      <seq>MAAQNEQRPERIKTTPYLEGDVLSSDSGPLLSVFALQEIMQKVRQVQADYMTATREVDFTVPDVQQILDDIKALAAAQVYKIVKVPSTSFRHIVTQSRDRVLRVDTYYEEMSQVGDVITEDEPEKFYSTIIKKVRFIRGKGSFILHDIPARDHRGMEVAEPEVLGVEFKNVLPVLTAEHRAMIQNALDGSIIENGNVATRDVDVFIGACSEPFYRIYNRFQGYIEAVQLQELRNSIGWLERLGQRKRITYSQEVLTDFRRQDMIWVLALQLPVNPQVVWDVPRSSIANLIMNIATCLPTGEYIAPNPRISSITLTQRITTTGPFAILTGSTPTAQQLNDVRKIYLALMFPGQIILDLKIDPGERMDPAVRMVAGVVGHLLFTAGGRFTNLTQNMARQLDIALNDYLLYMYNTRVQVNYGPTGEPLDFQIGRNQYDCNVFRADFATGTGYNGWATIDVEYRDPAPYVHAQRYIRYCGIDSRELINPTTYGIGMTYHCYNEMLRMLVAAGKDSEAAYFRSMLPFHMVRFARINQIINEDLHSVFSLPDDMFNALLPDLIAGAHQNADPVVLDVSWISLWFAFNRSFEPTHRNEMLEIAPLIESVYASELSVMKVDMRHLSLMQRRFPDVLIQARPSHFWKAVLNDSPEAVKAVMNLSHSHNFINIRDMMRWVLLPSLQPSLKLVLEEEAWAAANDFEDLMLTDQVYMHRDMLPEPRLDDIERFRQEGFYYTNMLEAPPEIDRVVQYTYEIARLQANMGQFRAALRRIMDDDDWIGFGGVLRTVRVKFFDARPPDDILQGLPFSYDTNEKGGLSYATIKYATETTIFYLIYNVEFSNTPDSLVLINPTYTMTKVFINKRIVERVRVGQILAVLNRRFVAYKGKMRIMDITQSLKMGTKLAAPTV</seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="VP3 core protein (Major inner capsid protein) - Bluetongue virus 1 (isolate South Africa) (BTV 1)" />
+      <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Bluetongue virus 1"/>
+      <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="35327"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_VP3_BTV1A" length="901" SearchDatabase_ref="SDB_SwissProt" accession="VP3_BTV1A" >
+      <seq>MAAQNEQRPERIKTTPYLEGDVLSSDSGPLLSVFALQEIMQKVRQVQADYMTATREVDFTVPDVQKILDDIKALAAEQVSKIVKMPSISFRHIVMQARDRVLRVDTYYEEMSQVGDVITEDEPEKFYSTIIKKVRFIRGKGSFILHDIPTRDHRGMEVAEPEVLGVEFKNVLPVLTAEHRAMIQNALDGSIIENGNVATRDVDVFIGACSEPVYRIYNRLQGYIEAVQLQELRNSIGWLERLGQRKRITYSQEVLTEFRRQDTIWVLALQLPVNPQVVWDVPRSSIANLIMNIATCLPTGEYIAPNPRISSITLTQRITTTGPFAILTGSTPTAQQLNDVRKIYLALMFPGQIILDLKIDPGERMDPAVRMVAGVVGHLLFTAGGRFTNLTQNMARQLDIALNDYLLYMYNTRVQVNYGPTGEPLDFQIGRNQYDCNVFRADFGSGAGYNGWATIDVEYREPAPYVHAQRYIRYCGIDSRELINPTTYGIGMTYHCYNEMLRMLVAAGKDSEAAYFRSMLPFHMVRFARINQIINEDLHSVFSLPDDMFNALLPDLIAGAHQNADPVVLDVSWISLWFAFNRSFEPTHRNEMLEVAPLIESVYASELSVMKVDMRHLSLMQRRFPDVLIQARPSHFWKAVLNDSPEAVKAVMNLSHSHNFINIRDMMRWVMLPSLQPSLKLVLEEEAWAAANDFEDLMLTDQVYMHRDMLPEPRLDDVERFRQEGFYYTNMLEAPPEIDRVVQYTYEIARLQANMGQFRAALRRIMDDDDWVRFGGVLRTVRVKFVDARPPDDVLQGLPFSYDTNEKGGLAYATIKYATETTIFYLIYNVEFSNTPDSLVLINPTYTMTKVFINKRIVERVRVRQILAVLNRRFVAYKGKMRIMDITQSLKMGTKLAAPTV</seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="VP3 core protein (Major inner capsid protein) - Bluetongue virus 1 (isolate Australia) (BTV 1)" />
+      <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Bluetongue virus 1"/>
+      <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="35327"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_VP3_BTV13" length="901" SearchDatabase_ref="SDB_SwissProt" accession="VP3_BTV13" >
+      <seq>MAAQNEQRPERIKTTPYLEGDVLSNDSGPLLSVFALQEIMQKVRQVQADYMTATREVDFTVPDVQKILDDIKTLAAEQVYKIVKIPSISFRHIVMQSRDRVLRVDTYYEEMSQVGDVITEDEPEKFYSTIIKKVRFIREKGSFILHDIPTRDHRGMEVAEPEVLGVEFKNVLPVLTAEHRAMIQNALDGSIIENGNVATRDVDVFIGACSEPIYRIYNRLQGYIEAVQLQELRNSIGWLGRLGQRKRITYSQEVLTDFRRQDTIWVLALQLPVNPQVVWDVPRSSIANLIMNIATCLPTGEYIAPNPRISSITLTQRITTTGPFAILTGSTPTAQQLNDVRKIYLALMFPGQIILDLKIDPGERMDPAVRMVAGVVGHLLFTAGGRFTNLTQDMARQLDIALNDYLLYMYNTRVQVKYGPTGEPLDFQMGRNQYDCNVFRADFATGTGYNGWATIDVEYRDPAPYVHAQRYIRYCGIDSRELINPTTYGIGMTYHCYNEMLRMLVAAGKDSEAAYFRSMLPFHMVRFARINQIINEDLHSVFSLPDDMFNALLPDLIAGAHQNADPVVLDVSWISLWFAFNRSFEPTHRNEMLEIAPLIESVYASELSVMKVDMRHLSLMQRRFPDVLIQARPSHFWKAVLNDSPEAVKAVMNLSHSHNFINIRDMMRWVLLPSLQPSLKLVLEEEAWAAANDFEDLMLTDQVYMHRDMLPEPRLDDIERFRQEGFYYTNMLEAPPEIDRVDQNTYEIARLQANMGQFRAALRRIMDDDDWVRFGGVLRTVRVKFFDARPPDDILQGLPFSYDTNEKGGLSYATIKYATETTIFYLIYNVEFSNTPDSLVLINPTYTMTKVFINKRIVERVRVGQILAVLNRRFVAYKGKMRIMDITQSLKMGTKLAAPTV</seq>
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="VP3 core protein (Major inner capsid protein) - Bluetongue virus 13 (isolate USA) (BTV 13)" />
+      <cvParam accession="MS:1001469" name="taxonomy: scientific name" cvRef="PSI-MS" value="Bluetongue virus 13"/>
+      <cvParam accession="MS:1001467" name="taxonomy: NCBI TaxID" cvRef="PSI-MS" value="35330"/>
+    </DBSequence>
+    <Peptide id="peptide_1_1">
+      <peptideSequence>GEVWLYADR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_8">
+      <peptideSequence>DTVTLTALFK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_9">
+      <peptideSequence>DTVTLTALFK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_13">
+      <peptideSequence>MSNVQTSADR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_25">
+      <peptideSequence>NDITYTLLR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_26">
+      <peptideSequence>TILTYLNDR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_35">
+      <peptideSequence>VSAGGFTNLSR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_50">
+      <peptideSequence>NACFVVVDNK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_1">
+      <peptideSequence>ILAAQLAAEFR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_6">
+      <peptideSequence>LETAEIERGGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_7">
+      <peptideSequence>FGSWTYDKAK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_19">
+      <peptideSequence>LFLLGNEAAVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_36">
+      <peptideSequence>IEEVVSEQNR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_37">
+      <peptideSequence>DPEKPKTFLK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_45">
+      <peptideSequence>ILESIGIICNK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_47">
+      <peptideSequence>SKFDNLYGCR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_49">
+      <peptideSequence>SAGLRAEIETR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_1">
+      <peptideSequence>YLHHELDAFER</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_27">
+      <peptideSequence>EFEANFSKMQAK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_28">
+      <peptideSequence>LDKDQYLDYEK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_1">
+      <peptideSequence>MAEELTSFLVEHGIR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_8">
+      <peptideSequence>ETINSLFDNYTWTK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_9">
+      <peptideSequence>ETINSLFDNYTWTK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_43">
+      <peptideSequence>MAEAAALEGSEPVDLTK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_6_33">
+      <peptideSequence>QKEMLAIEMGEYYK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_6_44">
+      <peptideSequence>QGGEVPADCCAGVKGLND</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_7_1">
+      <peptideSequence>VVEQIIRPTGLLDPLVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_7_26">
+      <peptideSequence>GQIFVLGLSSSEVAGGVIGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_7_31">
+      <peptideSequence>EYHIITIPTSFLLNEK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_8_22">
+      <peptideSequence>LCEAVCPALAITIESETR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_8_23">
+      <peptideSequence>LCEAVCPALAITIESETR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_8_24">
+      <peptideSequence>LCEAVCPALAITIESETR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_8_27">
+      <peptideSequence>FLTTASSIFHNPVENNK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_8_48">
+      <peptideSequence>TLVLVVHPNIESSRINK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_9_8">
+      <peptideSequence>VLSVWVKDTVTLTALFK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_9_9">
+      <peptideSequence>VLSVWVKDTVTLTALFK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_9_30">
+      <peptideSequence>SYTYDTLLKLIEIYGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_9_33">
+      <peptideSequence>FAELLDGVASGQLKASSVK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_9_47">
+      <peptideSequence>ILDEEVARLHLDQLGAK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_10_2">
+      <peptideSequence>DHRGMEVAEPEVLGVEFK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_10_3">
+      <peptideSequence>DHRGMEVAEPEVLGVEFK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_10_4">
+      <peptideSequence>DHRGMEVAEPEVLGVEFK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_10_7">
+      <peptideSequence>DFWESGEWEIIDAPGYK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_10_16">
+      <peptideSequence>TSSKPGCTKQINFYLINK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_10_18">
+      <peptideSequence>DHRGMEVAEPEVLGVEFK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_10_21">
+      <peptideSequence>DHRGMEVAEPEVLGVEFK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_10_34">
+      <peptideSequence>QQALACLKGLADEIDPQTK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_10_41">
+      <peptideSequence>DHRGMEVAEPEVLGVEFK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_10_44">
+      <peptideSequence>ALTCSDVSNKISPCLSYLK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_11_1">
+      <peptideSequence>VSQVVFVSATPGPFELAHSGR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_11_13">
+      <peptideSequence>VPRFYVPEHGVIMTLAVTR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_11_25">
+      <peptideSequence>EGNHLVNYFSPFYPFLLK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_11_29">
+      <peptideSequence>SIRTFMLQIAVISNHQNGR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_11_34">
+      <peptideSequence>ALSRGAHVIAFDEPTSSLSAR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_11_36">
+      <peptideSequence>DSAPNVVLEIGSRAAEAAQMR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_11_49">
+      <peptideSequence>YRQFHQIGAELIGAESPLR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_1">
+      <peptideSequence>IAELELAMWQAAEALDFER</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_2">
+      <peptideSequence>IYNRLQGYIEAVQLQELR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_3">
+      <peptideSequence>IYNRLQGYIEAVQLQELR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_4">
+      <peptideSequence>IYNRLQGYIEAVQLQELR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_11">
+      <peptideSequence>AASGIGFGMGMERVLLLLQDK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_14">
+      <peptideSequence>FMPFVAVFAILWQQFYAK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_17">
+      <peptideSequence>IYNRLQGYIEAVQLQELR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_21">
+      <peptideSequence>IYNRLQGYIEAVQLQELR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_22">
+      <peptideSequence>MTAIQQFFKTFFLTELLK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_23">
+      <peptideSequence>MTAIQQFFKTFFLTELLK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_24">
+      <peptideSequence>MTAIQQFFKTFFLTELLK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_35">
+      <peptideSequence>NGDGAGEGIRLTEVGVDGFSQK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_41">
+      <peptideSequence>IYNRLQGYIEAVQLQELR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_42">
+      <peptideSequence>AIGAAAAVSASGKIPLYASNFAR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_12_48">
+      <peptideSequence>MDHMKTLVLVVHPNIESSR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_13_2">
+      <peptideSequence>ADFATGTGYNGWATIDVEYR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_13_3">
+      <peptideSequence>ADFATGTGYNGWATIDVEYR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_13_4">
+      <peptideSequence>ADFATGTGYNGWATIDVEYR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_13_10">
+      <peptideSequence>VVKVFIENEVTDVDISSADK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_13_12">
+      <peptideSequence>ITDHLYVSGGGQIYNSLIEK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_13_17">
+      <peptideSequence>ADFATGTGYNGWATIDVEYR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_13_18">
+      <peptideSequence>ADFATGTGYNGWATIDVEYR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_13_27">
+      <peptideSequence>CLQGQGFTDSEVLQLLSKLK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_13_29">
+      <peptideSequence>EVGAQAVWSLSSCKPGFGVER</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_13_39">
+      <peptideSequence>IRLQPQVGWEVNDPDGDLR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_13_40">
+      <peptideSequence>IRLQPQVGWEVNDPDGDLR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_13_41">
+      <peptideSequence>ADFATGTGYNGWATIDVEYR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_13_42">
+      <peptideSequence>GDLAVTVGRNIIHGSDGPETAK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_13_49">
+      <peptideSequence>TLGETSDVVSKEMYTFEDR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_14_5">
+      <peptideSequence>SQQSLVSLMVETLVTMNTAR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_14_15">
+      <peptideSequence>VGPYCIIGPEVILHDNVELK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_14_43">
+      <peptideSequence>EETYSAFENIYPVLTEFR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_14_47">
+      <peptideSequence>QSEYLSVPVAGPYKVDHYR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_15_38">
+      <peptideSequence>GDALYAMELALSLEKLTNEK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_15_45">
+      <peptideSequence>QVGLIIVNALKDPSEENLEK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_16_6">
+      <peptideSequence>ISHGHSVRYLVPEAVAAYIK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_16_8">
+      <peptideSequence>THTLFSLLGLDRAYVTSMGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_16_9">
+      <peptideSequence>THTLFSLLGLDRAYVTSMGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_16_15">
+      <peptideSequence>HSMIGGLSPVGADVIPFGLASGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_16_28">
+      <peptideSequence>VSAIAEALDVHPSSVTKMVQK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_16_34">
+      <peptideSequence>GEVSRDQANESNLLQLALPR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_16_45">
+      <peptideSequence>KVDLAVFPGSQGGPLENLIAGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_20">
+      <peptideSequence>VFPLSNWTELDVWQYVAR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_25">
+      <peptideSequence>ILSNITLNELLNYDDVAFR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_31">
+      <peptideSequence>KELPQFQSFYDAHPSDSVK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_32">
+      <peptideSequence>ASSKVGADYIEIHTGTFAEAR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_33">
+      <peptideSequence>VVTIGGGSSYTPELLEGFIKR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_35">
+      <peptideSequence>AAAIRAAIEELEQGDALLIAGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_36">
+      <peptideSequence>KQVPNNLNSAFIFGNFVEGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_45">
+      <peptideSequence>AVLELNGSVLTNKYAEGYPGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_17_49">
+      <peptideSequence>ELGLGDHVTLELNTLGDLASR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_2">
+      <peptideSequence>FRQEGFYYTNMLEAPPEIDR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_3">
+      <peptideSequence>FRQEGFYYTNMLEAPPEIDR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_4">
+      <peptideSequence>FRQEGFYYTNMLEAPPEIDR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_7">
+      <peptideSequence>IWRPDIVLYNNAVGDFLVEDK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_17">
+      <peptideSequence>FRQEGFYYTNMLEAPPEIDR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_18">
+      <peptideSequence>FRQEGFYYTNMLEAPPEIDR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_21">
+      <peptideSequence>FRQEGFYYTNMLEAPPEIDR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_22">
+      <peptideSequence>LCEAVCPALAITIESETRADNTR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_23">
+      <peptideSequence>LCEAVCPALAITIESETRADNTR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_24">
+      <peptideSequence>LCEAVCPALAITIESETRADNTR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_29">
+      <peptideSequence>EVGAQAVWSLSSCKPGFGVERLR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_31">
+      <peptideSequence>GELMKEYHIITIPTSFLLNEK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_34">
+      <peptideSequence>ALDGISFVAHPGQVHALMGENGAGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_41">
+      <peptideSequence>FRQEGFYYTNMLEAPPEIDR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_18_50">
+      <peptideSequence>EGLVIAGYYAAPENFYDNQVDK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_19_1">
+      <peptideSequence>EGLDIPEVSLVAILDADKEGFLR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_19_11">
+      <peptideSequence>TPIVEGTPLFVRSIGEVTDIVEK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_19_27">
+      <peptideSequence>TVIASILERCPEAIICSPAAVNTK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_19_37">
+      <peptideSequence>IPLVIATVAVGGLAGFAALYGLGLSR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_20_32">
+      <peptideSequence>QELTTEGGLDVRVGMQALADAIGR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_20_38">
+      <peptideSequence>VCAASNAPAPLAGVIFEPFQELKK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_20_42">
+      <peptideSequence>DEISLWFKPQELVSYTSNSEK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_20_46">
+      <peptideSequence>LDTSAAGFSEDFATLLAARGSDER</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_20_48">
+      <peptideSequence>YRDQPIDVEFEQQQLLAHDR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_20_50">
+      <peptideSequence>LMTLQHDRAAIQVFNCPGDSGAR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_21_2">
+      <peptideSequence>IYLALMFPGQIVLDLKIDPGER</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_21_6">
+      <peptideSequence>TIAVEDRANMVQEAIVDNPLFR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_21_11">
+      <peptideSequence>ADGSGAEFALIVGENEIQAGQVVVK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_21_14">
+      <peptideSequence>AFFSIFKQGQIYLNTWPLEAK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_21_25">
+      <peptideSequence>IISGLSVGTLVVEATEKSGSLITAR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_21_30">
+      <peptideSequence>IIIIPVGIPSHRENNLEQSDTR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_21_35">
+      <peptideSequence>ALALAAARFFPAQPATIAAVTGTSGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_22_2">
+      <peptideSequence>ITTTGPFAILTGSTPTAQQLNDVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_22_3">
+      <peptideSequence>ITTTGPFAILTGSTPTAQQLNDVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_22_4">
+      <peptideSequence>ITTTGPFAILTGSTPTAQQLNDVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_22_6">
+      <peptideSequence>YLVPEAVAAYIKEHHLYEQND</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_22_17">
+      <peptideSequence>ITTTGPFAILTGSTPTAQQLNDVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_22_18">
+      <peptideSequence>ITTTGPFAILTGSTPTAQQLNDVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_22_21">
+      <peptideSequence>ITTTGPFAILTGSTPTAQQLNDVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_22_32">
+      <peptideSequence>LQDGGIVVSLFIDPDADQVKASSK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_22_41">
+      <peptideSequence>ITTTGPFAILTGSTPTAQQLNDVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_23_14">
+      <peptideSequence>QGQIYLNTWPLEAKLGIIFPENR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_23_39">
+      <peptideSequence>ANLLTLSAPEMTVLVGGLRVLGANYK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_23_40">
+      <peptideSequence>ANLLTLSAPEMTVLVGGLRVLGANYK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_24_30">
+      <peptideSequence>IAIYGGSFNPMHIGHEKIVDYVLK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_24_33">
+      <peptideSequence>ELDERIPLSHGYLGQETNGAGGLFK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_24_36">
+      <peptideSequence>QIAMALSKELTSHSLPEIGQMFGGR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_24_37">
+      <peptideSequence>AAVATAQKIAPLAHGEVAALTMASAPLK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_25_8">
+      <peptideSequence>EGPFVHIASICATLLNQLLCFISGR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_25_9">
+      <peptideSequence>EGPFVHIASICATLLNQLLCFISGR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_25_12">
+      <peptideSequence>KGISSSNENVLVFPSIEIALQELSK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_25_19">
+      <peptideSequence>MELDDILDAGVGDRLFLLGNEAAVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_25_28">
+      <peptideSequence>PTPSMEDYIEIIYNLIESKGYAR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_25_38">
+      <peptideSequence>SSRVCAASNAPAPLAGVIFEPFQELK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_25_39">
+      <peptideSequence>SPAGAWQYTAKDGAGAGTIPDPFGGPGR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_25_40">
+      <peptideSequence>SPAGAWQYTAKDGAGAGTIPDPFGGPGR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_25_47">
+      <peptideSequence>YPQFLAGIKGISEETTHGVHNLYK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_5">
+      <peptideSequence>SGGGAVIPGQRSTVSVFVLGPSVTDDADK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_7">
+      <peptideSequence>VDEVNQIMETNLWLRHIWNDYK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_16">
+      <peptideSequence>CEFMIGATHIKSLPDFSIPEIAIAGR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_39">
+      <peptideSequence>QTLLWQDPVPAVSHDLVGEAEIASLK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_40">
+      <peptideSequence>QTLLWQDPVPAVSHDLVGEAEIASLK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_26_43">
+      <peptideSequence>LEGLAYSHGAFSSYEPELFPGLIYR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_27_1">
+      <peptideSequence>ELPGFVLFPATHYLSPEGLEEILKEIEK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_28_10">
+      <peptideSequence>MVAVGSTLPKVTLWENKPEEVVEFPSQGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_28_26">
+      <peptideSequence>GQIFVLGLSSSEVAGGVIGKNSNLDIGEVIVK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_29_7">
+      <peptideSequence>YNQFIRPVENVSDPVTVEFEVSISQLVK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_29_8">
+      <peptideSequence>VLGEDWIFLLLLGALMALVSWAMDFIGSR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_29_9">
+      <peptideSequence>VLGEDWIFLLLLGALMALVSWAMDFIGSR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_29_10">
+      <peptideSequence>FIIVGVPGAFTPPCSSQVPGYIANEKQFAAK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_29_11">
+      <peptideSequence>QFHQVGVEALGLAGPDIDAEIIAMTADLWR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_29_16">
+      <peptideSequence>EIDLDFINWLELHQIHYQLVLTKIDK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_29_20">
+      <peptideSequence>SFAPAPVPFALLHVDTGHNFPEVIAYRDR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_29_46">
+      <peptideSequence>LVALDLLAQAEHDEQAQAILITTDAAFAER</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_30_2">
+      <peptideSequence>FTNLTQNMARQLDIALNDYLLYMYNTR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_30_3">
+      <peptideSequence>FTNLTQNMARQLDIALNDYLLYMYNTR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_30_4">
+      <peptideSequence>FTNLTQNMARQLDIALNDYLLYMYNTR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_30_5">
+      <peptideSequence>AMQQYVTGGTYLDMEMFLLGQAVAKDAESK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_30_12">
+      <peptideSequence>IPENFNLVFEQFFLSNINYTYQIWKK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_30_13">
+      <peptideSequence>DRVLVNTNNYDEIFQSMQLAHWNMQTK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_30_17">
+      <peptideSequence>FTNLTQNMARQLDIALNDYLLYMYNTR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_30_18">
+      <peptideSequence>FTNLTQNMARQLDIALNDYLLYMYNTR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_30_21">
+      <peptideSequence>FTNLTQNMARQLDIALNDYLLYMYNTR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_31_13">
+      <peptideSequence>TSENMTTGTSTIDIMGLQAAYAKLHTEQER</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_31_46">
+      <peptideSequence>RLAMCVPSPDGVLNPLVLAAAQLCGVEEIYR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_33_5">
+      <peptideSequence>VAADPDTLLQTYGYPACLGAIIVQVWIVLVKAITSSAGLR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_33_15">
+      <peptideSequence>IGNNVVFANYVSLAGHIEVEDYVIIGGLSAVHQYARIGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_33_20">
+      <peptideSequence>DSIVMLHLALKSFAPAPVPFALLHVDTGHNFPEVIAYR</peptideSequence>
+    </Peptide>
+  </SequenceCollection>
+  <AnalysisCollection>
+    <SpectrumIdentification id="SI" SpectrumIdentificationProtocol_ref="SIP"  SpectrumIdentificationList_ref="SIL_1" activityDate="2009-06-24T17:58:37">
+      <InputSpectra SpectraData_ref="SD_1"/>
+      <SearchDatabase SearchDatabase_ref="SDB_SwissProt"/>
+    </SpectrumIdentification>
+    <ProteinDetection id="PD_1" ProteinDetectionProtocol_ref="PDP_MascotParser_1" ProteinDetectionList_ref="PDL_1" activityDate="2009-08-18T18:50:59">
+      <InputSpectrumIdentifications SpectrumIdentificationList_ref="SIL_1"/>
+    </ProteinDetection>
+  </AnalysisCollection>
+  <AnalysisProtocolCollection>
+    <SpectrumIdentificationProtocol id="SIP" AnalysisSoftware_ref="AS_mascot_server">
+      <SearchType>
+        <cvParam accession="MS:1001081" name="pmf search" cvRef="PSI-MS" value=""/>
+      </SearchType>
+      <AdditionalSearchParams>
+        <userParam name="Mascot User Comment" value="Figure 8. MALDI-TOF spectrum of an in-gel tryptic digest of a protein isolated from a thermophilic bacterium"/>
+        <cvParam accession="MS:1001211" name="parent mass type mono"    cvRef="PSI-MS"/>
+      </AdditionalSearchParams>
+      <Enzymes>
+        <Enzyme id="ENZ_0" CTermGain="OH" NTermGain="H" missedCleavages="1" semiSpecific="0">
+          <SiteRegexp><![CDATA[(?<=[KR])(?!P)]]></SiteRegexp>
+          <EnzymeName>
+            <cvParam accession="MS:1001251" name="Trypsin" cvRef="PSI-MS" />
+          </EnzymeName>
+        </Enzyme>
+      </Enzymes>
+      <MassTable id="MT" msLevel="1 2">
+        <Residue Code="A" Mass="71.037114"/>
+        <Residue Code="C" Mass="103.009185"/>
+        <Residue Code="D" Mass="115.026943"/>
+        <Residue Code="E" Mass="129.042593"/>
+        <Residue Code="F" Mass="147.068414"/>
+        <Residue Code="G" Mass="57.021464"/>
+        <Residue Code="H" Mass="137.058912"/>
+        <Residue Code="I" Mass="113.084064"/>
+        <Residue Code="K" Mass="128.094963"/>
+        <Residue Code="L" Mass="113.084064"/>
+        <Residue Code="M" Mass="131.040485"/>
+        <Residue Code="N" Mass="114.042927"/>
+        <Residue Code="P" Mass="97.052764"/>
+        <Residue Code="Q" Mass="128.058578"/>
+        <Residue Code="R" Mass="156.101111"/>
+        <Residue Code="S" Mass="87.032028"/>
+        <Residue Code="T" Mass="101.047679"/>
+        <Residue Code="U" Mass="150.95363"/>
+        <Residue Code="V" Mass="99.068414"/>
+        <Residue Code="W" Mass="186.079313"/>
+        <Residue Code="Y" Mass="163.063329"/>
+        <AmbiguousResidue Code="B">
+          <cvParam accession="MS:1001360" name="alternate single letter codes" cvRef="PSI-MS" value="D N"/>
+        </AmbiguousResidue>
+        <AmbiguousResidue Code="Z">
+          <cvParam accession="MS:1001360" name="alternate single letter codes" cvRef="PSI-MS" value="E Q"/>
+        </AmbiguousResidue>
+        <AmbiguousResidue Code="X">
+          <cvParam accession="MS:1001360" name="alternate single letter codes" cvRef="PSI-MS" value="A C D E F G H I K L M N O P Q R S T U V W Y"/>
+        </AmbiguousResidue>
+      </MassTable>
+      <ParentTolerance>
+        <cvParam accession="MS:1001412" name="search tolerance plus value" value="0.1" cvRef="PSI-MS" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO" />
+        <cvParam accession="MS:1001413" name="search tolerance minus value" value="0.1" cvRef="PSI-MS" unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO" />
+      </ParentTolerance>
+      <Threshold>
+        <cvParam accession="MS:1001494" name="no threshold" cvRef="PSI-MS" />
+      </Threshold>
+      <DatabaseFilters>
+        <Filter>
+          <FilterType>
+            <cvParam accession="MS:1001020" name="DB filter taxonomy" cvRef="PSI-MS" />
+          </FilterType>
+        </Filter>
+      </DatabaseFilters>
+    </SpectrumIdentificationProtocol>
+    <ProteinDetectionProtocol id="PDP_MascotParser_1"  AnalysisSoftware_ref="AS_mascot_parser">
+      <AnalysisParams>
+        <cvParam accession="MS:1001316" name="mascot:SigThreshold"                               cvRef="PSI-MS" value="0.05"/>
+        <cvParam accession="MS:1001317" name="mascot:MaxProteinHits"                             cvRef="PSI-MS" value="Auto"/>
+        <cvParam accession="MS:1001320" name="mascot:ShowHomologousProteinsWithSamePeptides"     cvRef="PSI-MS" value="1"/>
+        <cvParam accession="MS:1001321" name="mascot:ShowHomologousProteinsWithSubsetOfPeptides" cvRef="PSI-MS" value="1"/>
+        <cvParam accession="MS:1001325" name="mascot:ShowDecoyMatches"                           cvRef="PSI-MS" value="0"/>
+      </AnalysisParams>
+      <Threshold>
+        <cvParam accession="MS:1001316" name="mascot:SigThreshold" cvRef="PSI-MS" value="0.05"/>
+      </Threshold>
+    </ProteinDetectionProtocol>
+  </AnalysisProtocolCollection>
+  <DataCollection>
+    <Inputs>
+      <SourceFile location="file:///../data/Mascot_PMF_example.dat" id="SF_1" >
+        <fileFormat>
+          <cvParam accession="MS:1001199" name="Mascot DAT file" cvRef="PSI-MS" />
+        </fileFormat>
+      </SourceFile>
+      <SearchDatabase location="file:///c:/inetpub/mascot/sequence/SwissProt/current/SwissProt_51.6.fasta" id="SDB_SwissProt" name="SwissProt" numDatabaseSequences="257964" numResidues="93947433" releaseDate="SwissProt_51.6.fasta" version="SwissProt_51.6.fasta">
+        <fileFormat>
+          <cvParam accession="MS:1001348" name="FASTA format" cvRef="PSI-MS" />
+        </fileFormat>
+        <DatabaseName>
+          <userParam name="SwissProt_51.6.fasta" />
+        </DatabaseName>
+        <cvParam accession="MS:1001073" name="database type amino acid" cvRef="PSI-MS" />
+      </SearchDatabase>
+      <SpectraData location="file:///thermophilic_bacterium.txt" id="SD_1">
+        <fileFormat>
+          <cvParam accession="MS:1001369" name="text file" cvRef="PSI-MS" />
+        </fileFormat>
+        <spectrumIDFormat>
+          <cvParam accession="MS:1000775" name="single peak list nativeID format" cvRef="PSI-MS" />
+        </spectrumIDFormat>
+      </SpectraData>
+    </Inputs>
+    <AnalysisData>
+      <SpectrumIdentificationList id="SIL_1" numSequencesSearched="257964">
+        <SpectrumIdentificationResult id="SIR_1" spectrumID="file=SD_1" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_1_1"  calculatedMassToCharge="1108.542173" chargeState="1" experimentalMassToCharge="1108.53" Peptide_ref="peptide_1_1" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_1_1_UVRB_THET8_0" start="542" end="550" pre="R" post="V" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_UVRB_THET8" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_1_8"  calculatedMassToCharge="1108.62486" chargeState="1" experimentalMassToCharge="1108.53" Peptide_ref="peptide_1_8" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_1_9"  calculatedMassToCharge="1108.62486" chargeState="1" experimentalMassToCharge="1108.53" Peptide_ref="peptide_1_9" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_1_13"  calculatedMassToCharge="1108.50514" chargeState="1" experimentalMassToCharge="1108.53" Peptide_ref="peptide_1_13" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_1_25"  calculatedMassToCharge="1108.599683" chargeState="1" experimentalMassToCharge="1108.53" Peptide_ref="peptide_1_25" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_1_26"  calculatedMassToCharge="1108.599683" chargeState="1" experimentalMassToCharge="1108.53" Peptide_ref="peptide_1_26" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_1_35"  calculatedMassToCharge="1108.574552" chargeState="1" experimentalMassToCharge="1108.53" Peptide_ref="peptide_1_35" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_1_50"  calculatedMassToCharge="1108.54556" chargeState="1" experimentalMassToCharge="1108.53" Peptide_ref="peptide_1_50" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_2_1"  calculatedMassToCharge="1202.689146" chargeState="1" experimentalMassToCharge="1202.66" Peptide_ref="peptide_2_1" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_2_1_UVRB_THET8_0" start="65" end="75" pre="K" post="E" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_UVRB_THET8" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_2_6"  calculatedMassToCharge="1202.63751" chargeState="1" experimentalMassToCharge="1202.66" Peptide_ref="peptide_2_6" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_2_7"  calculatedMassToCharge="1202.584043" chargeState="1" experimentalMassToCharge="1202.66" Peptide_ref="peptide_2_7" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_2_19"  calculatedMassToCharge="1202.689161" chargeState="1" experimentalMassToCharge="1202.66" Peptide_ref="peptide_2_19" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_2_36"  calculatedMassToCharge="1202.601133" chargeState="1" experimentalMassToCharge="1202.66" Peptide_ref="peptide_2_36" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_2_37"  calculatedMassToCharge="1202.67793" chargeState="1" experimentalMassToCharge="1202.66" Peptide_ref="peptide_2_37" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_2_45"  calculatedMassToCharge="1202.681287" chargeState="1" experimentalMassToCharge="1202.66" Peptide_ref="peptide_2_45" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_2_47"  calculatedMassToCharge="1202.562253" chargeState="1" experimentalMassToCharge="1202.66" Peptide_ref="peptide_2_47" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_2_49"  calculatedMassToCharge="1202.64874" chargeState="1" experimentalMassToCharge="1202.66" Peptide_ref="peptide_2_49" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_4_1"  calculatedMassToCharge="1429.685865" chargeState="1" experimentalMassToCharge="1429.59" Peptide_ref="peptide_4_1" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_4_1_UVRB_THET8_0" start="469" end="479" pre="R" post="Q" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_UVRB_THET8" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_4_27"  calculatedMassToCharge="1429.677991" chargeState="1" experimentalMassToCharge="1429.59" Peptide_ref="peptide_4_27" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_4_28"  calculatedMassToCharge="1429.684522" chargeState="1" experimentalMassToCharge="1429.59" Peptide_ref="peptide_4_28" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_5_1"  calculatedMassToCharge="1731.873411" chargeState="1" experimentalMassToCharge="1731.9" Peptide_ref="peptide_5_1" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_5_1_UVRB_THET8_0" start="452" end="466" pre="R" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_UVRB_THET8" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_5_8"  calculatedMassToCharge="1731.822431" chargeState="1" experimentalMassToCharge="1731.9" Peptide_ref="peptide_5_8" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_5_9"  calculatedMassToCharge="1731.822431" chargeState="1" experimentalMassToCharge="1731.9" Peptide_ref="peptide_5_9" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_5_43"  calculatedMassToCharge="1731.846906" chargeState="1" experimentalMassToCharge="1731.9" Peptide_ref="peptide_5_43" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_6_33"  calculatedMassToCharge="1732.828397" chargeState="1" experimentalMassToCharge="1732.78" Peptide_ref="peptide_6_33" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_6_44"  calculatedMassToCharge="1732.762906" chargeState="1" experimentalMassToCharge="1732.78" Peptide_ref="peptide_6_44" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_7_1"  calculatedMassToCharge="1918.148405" chargeState="1" experimentalMassToCharge="1918.13" Peptide_ref="peptide_7_1" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_7_1_UVRB_THET8_0" start="402" end="418" pre="R" post="V" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_UVRB_THET8" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_7_26"  calculatedMassToCharge="1918.06442" chargeState="1" experimentalMassToCharge="1918.13" Peptide_ref="peptide_7_26" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_7_31"  calculatedMassToCharge="1918.03201" chargeState="1" experimentalMassToCharge="1918.13" Peptide_ref="peptide_7_31" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_8_22"  calculatedMassToCharge="1918.961225" chargeState="1" experimentalMassToCharge="1919.05" Peptide_ref="peptide_8_22" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_8_23"  calculatedMassToCharge="1918.961225" chargeState="1" experimentalMassToCharge="1919.05" Peptide_ref="peptide_8_23" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_8_24"  calculatedMassToCharge="1918.961225" chargeState="1" experimentalMassToCharge="1919.05" Peptide_ref="peptide_8_24" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_8_27"  calculatedMassToCharge="1918.965742" chargeState="1" experimentalMassToCharge="1919.05" Peptide_ref="peptide_8_27" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_8_48"  calculatedMassToCharge="1919.107252" chargeState="1" experimentalMassToCharge="1919.05" Peptide_ref="peptide_8_48" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_9_8"  calculatedMassToCharge="1920.120481" chargeState="1" experimentalMassToCharge="1920.13" Peptide_ref="peptide_9_8" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_9_9"  calculatedMassToCharge="1920.120481" chargeState="1" experimentalMassToCharge="1920.13" Peptide_ref="peptide_9_9" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_9_30"  calculatedMassToCharge="1920.03642" chargeState="1" experimentalMassToCharge="1920.13" Peptide_ref="peptide_9_30" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_9_33"  calculatedMassToCharge="1920.043653" chargeState="1" experimentalMassToCharge="1920.13" Peptide_ref="peptide_9_33" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_9_47"  calculatedMassToCharge="1920.054868" chargeState="1" experimentalMassToCharge="1920.13" Peptide_ref="peptide_9_47" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_10_2"  calculatedMassToCharge="2042.001142" chargeState="1" experimentalMassToCharge="2041.99" Peptide_ref="peptide_10_2" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_10_2_VP3_BTV10_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_10_2_VP3_BTV11_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_10_2_VP3_BTV17_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_10_2_VP3_BTV1S_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_10_2_VP3_BTV1A_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_10_2_VP3_BTV13_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_10_3"  calculatedMassToCharge="2042.001142" chargeState="1" experimentalMassToCharge="2041.99" Peptide_ref="peptide_10_3" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_10_3_VP3_BTV10_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_10_3_VP3_BTV11_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_10_3_VP3_BTV17_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_10_3_VP3_BTV1S_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_10_3_VP3_BTV1A_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_10_3_VP3_BTV13_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_10_4"  calculatedMassToCharge="2042.001142" chargeState="1" experimentalMassToCharge="2041.99" Peptide_ref="peptide_10_4" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_10_4_VP3_BTV10_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_10_4_VP3_BTV11_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_10_4_VP3_BTV17_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_10_4_VP3_BTV1S_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_10_4_VP3_BTV1A_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_10_4_VP3_BTV13_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_10_7"  calculatedMassToCharge="2041.917783" chargeState="1" experimentalMassToCharge="2041.99" Peptide_ref="peptide_10_7" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_10_16"  calculatedMassToCharge="2042.073896" chargeState="1" experimentalMassToCharge="2041.99" Peptide_ref="peptide_10_16" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_10_18"  calculatedMassToCharge="2042.001142" chargeState="1" experimentalMassToCharge="2041.99" Peptide_ref="peptide_10_18" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_10_18_VP3_BTV10_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_10_18_VP3_BTV11_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_10_18_VP3_BTV17_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_10_18_VP3_BTV1S_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_10_18_VP3_BTV1A_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_10_18_VP3_BTV13_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_10_21"  calculatedMassToCharge="2042.001142" chargeState="1" experimentalMassToCharge="2041.99" Peptide_ref="peptide_10_21" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_10_21_VP3_BTV10_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_10_21_VP3_BTV11_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_10_21_VP3_BTV17_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_10_21_VP3_BTV1S_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_10_21_VP3_BTV1A_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_10_21_VP3_BTV13_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_10_34"  calculatedMassToCharge="2042.058637" chargeState="1" experimentalMassToCharge="2041.99" Peptide_ref="peptide_10_34" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_10_41"  calculatedMassToCharge="2042.001142" chargeState="1" experimentalMassToCharge="2041.99" Peptide_ref="peptide_10_41" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_10_41_VP3_BTV10_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_10_41_VP3_BTV11_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_10_41_VP3_BTV17_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_10_41_VP3_BTV1S_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_10_41_VP3_BTV1A_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_10_41_VP3_BTV13_0" start="152" end="169" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_10_44"  calculatedMassToCharge="2042.029645" chargeState="1" experimentalMassToCharge="2041.99" Peptide_ref="peptide_10_44" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_11_1"  calculatedMassToCharge="2185.140058" chargeState="1" experimentalMassToCharge="2185.16" Peptide_ref="peptide_11_1" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_11_1_UVRB_THET8_0" start="381" end="401" pre="R" post="V" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_UVRB_THET8" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_11_13"  calculatedMassToCharge="2185.195051" chargeState="1" experimentalMassToCharge="2185.16" Peptide_ref="peptide_11_13" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_11_25"  calculatedMassToCharge="2185.111677" chargeState="1" experimentalMassToCharge="2185.16" Peptide_ref="peptide_11_25" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_11_29"  calculatedMassToCharge="2185.165845" chargeState="1" experimentalMassToCharge="2185.16" Peptide_ref="peptide_11_29" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_11_34"  calculatedMassToCharge="2185.135984" chargeState="1" experimentalMassToCharge="2185.16" Peptide_ref="peptide_11_34" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_11_36"  calculatedMassToCharge="2185.102949" chargeState="1" experimentalMassToCharge="2185.16" Peptide_ref="peptide_11_36" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_11_49"  calculatedMassToCharge="2185.151227" chargeState="1" experimentalMassToCharge="2185.16" Peptide_ref="peptide_11_49" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_1"  calculatedMassToCharge="2206.084821" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_1" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_12_1_UVRB_THET8_0" start="614" end="632" pre="R" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_UVRB_THET8" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_2"  calculatedMassToCharge="2206.197828" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_2" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_12_2_VP3_BTV10_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_12_2_VP3_BTV11_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_12_2_VP3_BTV17_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_12_2_VP3_BTV2A_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_12_2_VP3_BTV1A_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_12_2_VP3_BTV13_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_3"  calculatedMassToCharge="2206.197828" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_3" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_12_3_VP3_BTV10_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_12_3_VP3_BTV11_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_12_3_VP3_BTV17_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_12_3_VP3_BTV2A_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_12_3_VP3_BTV1A_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_12_3_VP3_BTV13_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_4"  calculatedMassToCharge="2206.197828" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_4" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_12_4_VP3_BTV10_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_12_4_VP3_BTV11_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_12_4_VP3_BTV17_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_12_4_VP3_BTV2A_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_12_4_VP3_BTV1A_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_12_4_VP3_BTV13_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_11"  calculatedMassToCharge="2206.172239" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_11" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_14"  calculatedMassToCharge="2206.155805" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_14" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_17"  calculatedMassToCharge="2206.197828" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_17" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_12_17_VP3_BTV10_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_12_17_VP3_BTV11_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_12_17_VP3_BTV17_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_12_17_VP3_BTV2A_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_12_17_VP3_BTV1A_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_12_17_VP3_BTV13_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_21"  calculatedMassToCharge="2206.197828" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_21" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_12_21_VP3_BTV10_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_12_21_VP3_BTV11_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_12_21_VP3_BTV17_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_12_21_VP3_BTV2A_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_12_21_VP3_BTV1A_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_12_21_VP3_BTV13_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_22"  calculatedMassToCharge="2206.198057" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_22" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_23"  calculatedMassToCharge="2206.198057" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_23" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_24"  calculatedMassToCharge="2206.198057" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_24" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_35"  calculatedMassToCharge="2206.073484" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_35" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_41"  calculatedMassToCharge="2206.197828" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_41" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_12_41_VP3_BTV10_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_12_41_VP3_BTV11_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_12_41_VP3_BTV17_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_12_41_VP3_BTV2A_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_12_41_VP3_BTV1A_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_12_41_VP3_BTV13_0" start="216" end="233" pre="R" post="N" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_42"  calculatedMassToCharge="2206.197828" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_42" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_12_48"  calculatedMassToCharge="2206.147092" chargeState="1" experimentalMassToCharge="2206.1" Peptide_ref="peptide_12_48" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_13_2"  calculatedMassToCharge="2207.003995" chargeState="1" experimentalMassToCharge="2207.09" Peptide_ref="peptide_13_2" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_13_2_VP3_BTV10_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_13_2_VP3_BTV11_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_13_2_VP3_BTV17_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_13_2_VP3_BTV2A_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_13_2_VP3_BTV1S_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_13_2_VP3_BTV13_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_13_3"  calculatedMassToCharge="2207.003995" chargeState="1" experimentalMassToCharge="2207.09" Peptide_ref="peptide_13_3" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_13_3_VP3_BTV10_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_13_3_VP3_BTV11_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_13_3_VP3_BTV17_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_13_3_VP3_BTV2A_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_13_3_VP3_BTV1S_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_13_3_VP3_BTV13_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_13_4"  calculatedMassToCharge="2207.003995" chargeState="1" experimentalMassToCharge="2207.09" Peptide_ref="peptide_13_4" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_13_4_VP3_BTV10_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_13_4_VP3_BTV11_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_13_4_VP3_BTV17_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_13_4_VP3_BTV2A_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_13_4_VP3_BTV1S_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_13_4_VP3_BTV13_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_13_10"  calculatedMassToCharge="2207.144178" chargeState="1" experimentalMassToCharge="2207.09" Peptide_ref="peptide_13_10" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_13_12"  calculatedMassToCharge="2207.13426" chargeState="1" experimentalMassToCharge="2207.09" Peptide_ref="peptide_13_12" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_13_17"  calculatedMassToCharge="2207.003995" chargeState="1" experimentalMassToCharge="2207.09" Peptide_ref="peptide_13_17" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_13_17_VP3_BTV10_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_13_17_VP3_BTV11_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_13_17_VP3_BTV17_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_13_17_VP3_BTV2A_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_13_17_VP3_BTV1S_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_13_17_VP3_BTV13_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_13_18"  calculatedMassToCharge="2207.003995" chargeState="1" experimentalMassToCharge="2207.09" Peptide_ref="peptide_13_18" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_13_18_VP3_BTV10_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_13_18_VP3_BTV11_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_13_18_VP3_BTV17_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_13_18_VP3_BTV2A_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_13_18_VP3_BTV1S_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_13_18_VP3_BTV13_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_13_27"  calculatedMassToCharge="2207.174024" chargeState="1" experimentalMassToCharge="2207.09" Peptide_ref="peptide_13_27" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_13_29"  calculatedMassToCharge="2207.091367" chargeState="1" experimentalMassToCharge="2207.09" Peptide_ref="peptide_13_29" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_13_39"  calculatedMassToCharge="2207.120359" chargeState="1" experimentalMassToCharge="2207.09" Peptide_ref="peptide_13_39" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_13_40"  calculatedMassToCharge="2207.120359" chargeState="1" experimentalMassToCharge="2207.09" Peptide_ref="peptide_13_40" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_13_41"  calculatedMassToCharge="2207.003995" chargeState="1" experimentalMassToCharge="2207.09" Peptide_ref="peptide_13_41" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_13_41_VP3_BTV10_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_13_41_VP3_BTV11_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_13_41_VP3_BTV17_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_13_41_VP3_BTV2A_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_13_41_VP3_BTV1S_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_13_41_VP3_BTV13_0" start="441" end="460" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_13_42"  calculatedMassToCharge="2207.141492" chargeState="1" experimentalMassToCharge="2207.09" Peptide_ref="peptide_13_42" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_13_49"  calculatedMassToCharge="2207.017255" chargeState="1" experimentalMassToCharge="2207.09" Peptide_ref="peptide_13_49" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_14_5"  calculatedMassToCharge="2208.136259" chargeState="1" experimentalMassToCharge="2208.09" Peptide_ref="peptide_14_5" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_14_15"  calculatedMassToCharge="2208.173292" chargeState="1" experimentalMassToCharge="2208.09" Peptide_ref="peptide_14_15" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_14_43"  calculatedMassToCharge="2208.049512" chargeState="1" experimentalMassToCharge="2208.09" Peptide_ref="peptide_14_43" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_14_47"  calculatedMassToCharge="2208.108381" chargeState="1" experimentalMassToCharge="2208.09" Peptide_ref="peptide_14_47" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_15_38"  calculatedMassToCharge="2209.141996" chargeState="1" experimentalMassToCharge="2209.24" Peptide_ref="peptide_15_38" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_15_45"  calculatedMassToCharge="2209.207395" chargeState="1" experimentalMassToCharge="2209.24" Peptide_ref="peptide_15_45" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_16_6"  calculatedMassToCharge="2210.208021" chargeState="1" experimentalMassToCharge="2210.24" Peptide_ref="peptide_16_6" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_16_8"  calculatedMassToCharge="2210.163801" chargeState="1" experimentalMassToCharge="2210.24" Peptide_ref="peptide_16_8" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_16_9"  calculatedMassToCharge="2210.163801" chargeState="1" experimentalMassToCharge="2210.24" Peptide_ref="peptide_16_9" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_16_15"  calculatedMassToCharge="2210.163816" chargeState="1" experimentalMassToCharge="2210.24" Peptide_ref="peptide_16_15" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_16_28"  calculatedMassToCharge="2210.184919" chargeState="1" experimentalMassToCharge="2210.24" Peptide_ref="peptide_16_28" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_16_34"  calculatedMassToCharge="2210.152341" chargeState="1" experimentalMassToCharge="2210.24" Peptide_ref="peptide_16_34" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_16_45"  calculatedMassToCharge="2210.217939" chargeState="1" experimentalMassToCharge="2210.24" Peptide_ref="peptide_16_45" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_17_20"  calculatedMassToCharge="2223.123319" chargeState="1" experimentalMassToCharge="2223.16" Peptide_ref="peptide_17_20" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_17_25"  calculatedMassToCharge="2223.16554" chargeState="1" experimentalMassToCharge="2223.16" Peptide_ref="peptide_17_25" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_17_31"  calculatedMassToCharge="2223.071668" chargeState="1" experimentalMassToCharge="2223.16" Peptide_ref="peptide_17_31" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_17_32"  calculatedMassToCharge="2223.104017" chargeState="1" experimentalMassToCharge="2223.16" Peptide_ref="peptide_17_32" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_17_33"  calculatedMassToCharge="2223.201963" chargeState="1" experimentalMassToCharge="2223.16" Peptide_ref="peptide_17_33" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_17_35"  calculatedMassToCharge="2223.23425" chargeState="1" experimentalMassToCharge="2223.16" Peptide_ref="peptide_17_35" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_17_36"  calculatedMassToCharge="2223.155668" chargeState="1" experimentalMassToCharge="2223.16" Peptide_ref="peptide_17_36" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_17_45"  calculatedMassToCharge="2223.16554" chargeState="1" experimentalMassToCharge="2223.16" Peptide_ref="peptide_17_45" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_17_49"  calculatedMassToCharge="2223.161542" chargeState="1" experimentalMassToCharge="2223.16" Peptide_ref="peptide_17_49" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_2"  calculatedMassToCharge="2476.160139" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_2" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_18_2_VP3_BTV10_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_18_2_VP3_BTV11_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_18_2_VP3_BTV17_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_18_2_VP3_BTV2A_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_18_2_VP3_BTV1S_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_18_2_VP3_BTV1A_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_18_2_VP3_BTV13_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_3"  calculatedMassToCharge="2476.160139" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_3" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_18_3_VP3_BTV10_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_18_3_VP3_BTV11_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_18_3_VP3_BTV17_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_18_3_VP3_BTV2A_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_18_3_VP3_BTV1S_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_18_3_VP3_BTV1A_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_18_3_VP3_BTV13_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_4"  calculatedMassToCharge="2476.160139" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_4" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_18_4_VP3_BTV10_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_18_4_VP3_BTV11_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_18_4_VP3_BTV17_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_18_4_VP3_BTV2A_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_18_4_VP3_BTV1S_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_18_4_VP3_BTV1A_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_18_4_VP3_BTV13_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_7"  calculatedMassToCharge="2476.287076" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_7" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_17"  calculatedMassToCharge="2476.160139" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_17" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_18_17_VP3_BTV10_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_18_17_VP3_BTV11_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_18_17_VP3_BTV17_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_18_17_VP3_BTV2A_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_18_17_VP3_BTV1S_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_18_17_VP3_BTV1A_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_18_17_VP3_BTV13_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_18"  calculatedMassToCharge="2476.160139" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_18" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_18_18_VP3_BTV10_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_18_18_VP3_BTV11_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_18_18_VP3_BTV17_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_18_18_VP3_BTV2A_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_18_18_VP3_BTV1S_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_18_18_VP3_BTV1A_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_18_18_VP3_BTV13_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_21"  calculatedMassToCharge="2476.160139" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_21" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_18_21_VP3_BTV10_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_18_21_VP3_BTV11_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_18_21_VP3_BTV17_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_18_21_VP3_BTV2A_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_18_21_VP3_BTV1S_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_18_21_VP3_BTV1A_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_18_21_VP3_BTV13_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_22"  calculatedMassToCharge="2476.216993" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_22" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_23"  calculatedMassToCharge="2476.216993" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_23" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_24"  calculatedMassToCharge="2476.216993" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_24" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_29"  calculatedMassToCharge="2476.276533" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_29" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_31"  calculatedMassToCharge="2476.315565" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_31" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_34"  calculatedMassToCharge="2476.240156" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_34" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_41"  calculatedMassToCharge="2476.160139" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_41" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_18_41_VP3_BTV10_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_18_41_VP3_BTV11_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_18_41_VP3_BTV17_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_18_41_VP3_BTV2A_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_18_41_VP3_BTV1S_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_18_41_VP3_BTV1A_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_18_41_VP3_BTV13_0" start="721" end="740" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_18_50"  calculatedMassToCharge="2476.166669" chargeState="1" experimentalMassToCharge="2476.24" Peptide_ref="peptide_18_50" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_19_1"  calculatedMassToCharge="2499.334073" chargeState="1" experimentalMassToCharge="2499.41" Peptide_ref="peptide_19_1" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_19_1_UVRB_THET8_0" start="502" end="524" pre="R" post="S" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_UVRB_THET8" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_19_11"  calculatedMassToCharge="2499.370496" chargeState="1" experimentalMassToCharge="2499.41" Peptide_ref="peptide_19_11" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_19_27"  calculatedMassToCharge="2499.3309" chargeState="1" experimentalMassToCharge="2499.41" Peptide_ref="peptide_19_27" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_19_37"  calculatedMassToCharge="2499.469739" chargeState="1" experimentalMassToCharge="2499.41" Peptide_ref="peptide_19_37" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_20_32"  calculatedMassToCharge="2500.282407" chargeState="1" experimentalMassToCharge="2500.29" Peptide_ref="peptide_20_32" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_20_38"  calculatedMassToCharge="2500.32681" chargeState="1" experimentalMassToCharge="2500.29" Peptide_ref="peptide_20_38" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_20_42"  calculatedMassToCharge="2500.22418" chargeState="1" experimentalMassToCharge="2500.29" Peptide_ref="peptide_20_42" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_20_46"  calculatedMassToCharge="2500.19502" chargeState="1" experimentalMassToCharge="2500.29" Peptide_ref="peptide_20_46" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_20_48"  calculatedMassToCharge="2500.221509" chargeState="1" experimentalMassToCharge="2500.29" Peptide_ref="peptide_20_48" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_20_50"  calculatedMassToCharge="2500.218366" chargeState="1" experimentalMassToCharge="2500.29" Peptide_ref="peptide_20_50" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_21_2"  calculatedMassToCharge="2501.383604" chargeState="1" experimentalMassToCharge="2501.34" Peptide_ref="peptide_21_2" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_21_2_VP3_BTV10_0" start="343" end="364" pre="K" post="M" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_21_6"  calculatedMassToCharge="2501.28166" chargeState="1" experimentalMassToCharge="2501.34" Peptide_ref="peptide_21_6" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_21_11"  calculatedMassToCharge="2501.288206" chargeState="1" experimentalMassToCharge="2501.34" Peptide_ref="peptide_21_11" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_21_14"  calculatedMassToCharge="2501.322721" chargeState="1" experimentalMassToCharge="2501.34" Peptide_ref="peptide_21_14" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_21_25"  calculatedMassToCharge="2501.418485" chargeState="1" experimentalMassToCharge="2501.34" Peptide_ref="peptide_21_25" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_21_30"  calculatedMassToCharge="2501.347028" chargeState="1" experimentalMassToCharge="2501.34" Peptide_ref="peptide_21_30" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_21_35"  calculatedMassToCharge="2501.387449" chargeState="1" experimentalMassToCharge="2501.34" Peptide_ref="peptide_21_35" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_22_2"  calculatedMassToCharge="2502.319868" chargeState="1" experimentalMassToCharge="2502.22" Peptide_ref="peptide_22_2" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_22_2_VP3_BTV10_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_22_2_VP3_BTV11_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_22_2_VP3_BTV17_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_22_2_VP3_BTV2A_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_22_2_VP3_BTV1S_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_22_2_VP3_BTV1A_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_22_2_VP3_BTV13_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_22_3"  calculatedMassToCharge="2502.319868" chargeState="1" experimentalMassToCharge="2502.22" Peptide_ref="peptide_22_3" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_22_3_VP3_BTV10_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_22_3_VP3_BTV11_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_22_3_VP3_BTV17_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_22_3_VP3_BTV2A_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_22_3_VP3_BTV1S_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_22_3_VP3_BTV1A_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_22_3_VP3_BTV13_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_22_4"  calculatedMassToCharge="2502.319868" chargeState="1" experimentalMassToCharge="2502.22" Peptide_ref="peptide_22_4" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_22_4_VP3_BTV10_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_22_4_VP3_BTV11_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_22_4_VP3_BTV17_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_22_4_VP3_BTV2A_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_22_4_VP3_BTV1S_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_22_4_VP3_BTV1A_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_22_4_VP3_BTV13_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_22_6"  calculatedMassToCharge="2502.229917" chargeState="1" experimentalMassToCharge="2502.22" Peptide_ref="peptide_22_6" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_22_17"  calculatedMassToCharge="2502.319868" chargeState="1" experimentalMassToCharge="2502.22" Peptide_ref="peptide_22_17" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_22_17_VP3_BTV10_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_22_17_VP3_BTV11_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_22_17_VP3_BTV17_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_22_17_VP3_BTV2A_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_22_17_VP3_BTV1S_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_22_17_VP3_BTV1A_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_22_17_VP3_BTV13_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_22_18"  calculatedMassToCharge="2502.319868" chargeState="1" experimentalMassToCharge="2502.22" Peptide_ref="peptide_22_18" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_22_18_VP3_BTV10_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_22_18_VP3_BTV11_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_22_18_VP3_BTV17_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_22_18_VP3_BTV2A_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_22_18_VP3_BTV1S_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_22_18_VP3_BTV1A_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_22_18_VP3_BTV13_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_22_21"  calculatedMassToCharge="2502.319868" chargeState="1" experimentalMassToCharge="2502.22" Peptide_ref="peptide_22_21" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_22_21_VP3_BTV10_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_22_21_VP3_BTV11_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_22_21_VP3_BTV17_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_22_21_VP3_BTV2A_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_22_21_VP3_BTV1S_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_22_21_VP3_BTV1A_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_22_21_VP3_BTV13_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_22_32"  calculatedMassToCharge="2502.308622" chargeState="1" experimentalMassToCharge="2502.22" Peptide_ref="peptide_22_32" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_22_41"  calculatedMassToCharge="2502.319868" chargeState="1" experimentalMassToCharge="2502.22" Peptide_ref="peptide_22_41" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_22_41_VP3_BTV10_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_22_41_VP3_BTV11_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_22_41_VP3_BTV17_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_22_41_VP3_BTV2A_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_22_41_VP3_BTV1S_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_22_41_VP3_BTV1A_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+            <PeptideEvidence id="PE_22_41_VP3_BTV13_0" start="318" end="341" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV13" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_23_14"  calculatedMassToCharge="2700.450757" chargeState="1" experimentalMassToCharge="2700.54" Peptide_ref="peptide_23_14" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_23_39"  calculatedMassToCharge="2700.511655" chargeState="1" experimentalMassToCharge="2700.54" Peptide_ref="peptide_23_39" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_23_40"  calculatedMassToCharge="2700.511655" chargeState="1" experimentalMassToCharge="2700.54" Peptide_ref="peptide_23_40" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_24_30"  calculatedMassToCharge="2701.417036" chargeState="1" experimentalMassToCharge="2701.45" Peptide_ref="peptide_24_30" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_24_33"  calculatedMassToCharge="2701.357999" chargeState="1" experimentalMassToCharge="2701.45" Peptide_ref="peptide_24_33" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_24_36"  calculatedMassToCharge="2701.379987" chargeState="1" experimentalMassToCharge="2701.45" Peptide_ref="peptide_24_36" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_24_37"  calculatedMassToCharge="2701.506879" chargeState="1" experimentalMassToCharge="2701.45" Peptide_ref="peptide_24_37" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_25_8"  calculatedMassToCharge="2702.415662" chargeState="1" experimentalMassToCharge="2702.37" Peptide_ref="peptide_25_8" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_25_9"  calculatedMassToCharge="2702.415662" chargeState="1" experimentalMassToCharge="2702.37" Peptide_ref="peptide_25_9" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_25_12"  calculatedMassToCharge="2702.461042" chargeState="1" experimentalMassToCharge="2702.37" Peptide_ref="peptide_25_12" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_25_19"  calculatedMassToCharge="2702.381772" chargeState="1" experimentalMassToCharge="2702.37" Peptide_ref="peptide_25_19" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_25_28"  calculatedMassToCharge="2702.338132" chargeState="1" experimentalMassToCharge="2702.37" Peptide_ref="peptide_25_28" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_25_38"  calculatedMassToCharge="2702.397016" chargeState="1" experimentalMassToCharge="2702.37" Peptide_ref="peptide_25_38" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_25_39"  calculatedMassToCharge="2702.295774" chargeState="1" experimentalMassToCharge="2702.37" Peptide_ref="peptide_25_39" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_25_40"  calculatedMassToCharge="2702.295774" chargeState="1" experimentalMassToCharge="2702.37" Peptide_ref="peptide_25_40" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_25_47"  calculatedMassToCharge="2702.393659" chargeState="1" experimentalMassToCharge="2702.37" Peptide_ref="peptide_25_47" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_26_5"  calculatedMassToCharge="2816.442533" chargeState="1" experimentalMassToCharge="2816.43" Peptide_ref="peptide_26_5" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_26_7"  calculatedMassToCharge="2816.382429" chargeState="1" experimentalMassToCharge="2816.43" Peptide_ref="peptide_26_7" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_26_16"  calculatedMassToCharge="2816.447339" chargeState="1" experimentalMassToCharge="2816.43" Peptide_ref="peptide_26_16" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_26_39"  calculatedMassToCharge="2816.482877" chargeState="1" experimentalMassToCharge="2816.43" Peptide_ref="peptide_26_39" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_26_40"  calculatedMassToCharge="2816.482877" chargeState="1" experimentalMassToCharge="2816.43" Peptide_ref="peptide_26_40" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_26_43"  calculatedMassToCharge="2816.392972" chargeState="1" experimentalMassToCharge="2816.43" Peptide_ref="peptide_26_43" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_27_1"  calculatedMassToCharge="3198.697248" chargeState="1" experimentalMassToCharge="3198.78" Peptide_ref="peptide_27_1" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_27_1_UVRB_THET8_0" start="233" end="260" pre="R" post="E" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_UVRB_THET8" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_28_10"  calculatedMassToCharge="3199.670759" chargeState="1" experimentalMassToCharge="3199.77" Peptide_ref="peptide_28_10" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_28_26"  calculatedMassToCharge="3199.757276" chargeState="1" experimentalMassToCharge="3199.77" Peptide_ref="peptide_28_26" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_29_7"  calculatedMassToCharge="3236.683774" chargeState="1" experimentalMassToCharge="3236.71" Peptide_ref="peptide_29_7" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_29_8"  calculatedMassToCharge="3236.725034" chargeState="1" experimentalMassToCharge="3236.71" Peptide_ref="peptide_29_8" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_29_9"  calculatedMassToCharge="3236.725034" chargeState="1" experimentalMassToCharge="3236.71" Peptide_ref="peptide_29_9" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_29_10"  calculatedMassToCharge="3236.681272" chargeState="1" experimentalMassToCharge="3236.71" Peptide_ref="peptide_29_10" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_29_11"  calculatedMassToCharge="3236.640851" chargeState="1" experimentalMassToCharge="3236.71" Peptide_ref="peptide_29_11" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_29_16"  calculatedMassToCharge="3236.73538" chargeState="1" experimentalMassToCharge="3236.71" Peptide_ref="peptide_29_16" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_29_20"  calculatedMassToCharge="3236.663984" chargeState="1" experimentalMassToCharge="3236.71" Peptide_ref="peptide_29_20" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_29_46"  calculatedMassToCharge="3236.6797" chargeState="1" experimentalMassToCharge="3236.71" Peptide_ref="peptide_29_46" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_30_2"  calculatedMassToCharge="3295.623777" chargeState="1" experimentalMassToCharge="3295.64" Peptide_ref="peptide_30_2" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_30_2_VP3_BTV10_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_30_2_VP3_BTV11_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_30_2_VP3_BTV17_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_30_2_VP3_BTV2A_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_30_2_VP3_BTV1S_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_30_2_VP3_BTV1A_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_30_3"  calculatedMassToCharge="3295.623777" chargeState="1" experimentalMassToCharge="3295.64" Peptide_ref="peptide_30_3" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_30_3_VP3_BTV10_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_30_3_VP3_BTV11_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_30_3_VP3_BTV17_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_30_3_VP3_BTV2A_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_30_3_VP3_BTV1S_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_30_3_VP3_BTV1A_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_30_4"  calculatedMassToCharge="3295.623777" chargeState="1" experimentalMassToCharge="3295.64" Peptide_ref="peptide_30_4" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_30_4_VP3_BTV10_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_30_4_VP3_BTV11_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_30_4_VP3_BTV17_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_30_4_VP3_BTV2A_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_30_4_VP3_BTV1S_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_30_4_VP3_BTV1A_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_30_5"  calculatedMassToCharge="3295.568326" chargeState="1" experimentalMassToCharge="3295.64" Peptide_ref="peptide_30_5" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_30_12"  calculatedMassToCharge="3295.682615" chargeState="1" experimentalMassToCharge="3295.64" Peptide_ref="peptide_30_12" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_30_13"  calculatedMassToCharge="3295.562269" chargeState="1" experimentalMassToCharge="3295.64" Peptide_ref="peptide_30_13" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_30_17"  calculatedMassToCharge="3295.623777" chargeState="1" experimentalMassToCharge="3295.64" Peptide_ref="peptide_30_17" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_30_17_VP3_BTV10_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_30_17_VP3_BTV11_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_30_17_VP3_BTV17_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_30_17_VP3_BTV2A_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_30_17_VP3_BTV1S_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_30_17_VP3_BTV1A_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_30_18"  calculatedMassToCharge="3295.623777" chargeState="1" experimentalMassToCharge="3295.64" Peptide_ref="peptide_30_18" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_30_18_VP3_BTV10_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_30_18_VP3_BTV11_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_30_18_VP3_BTV17_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_30_18_VP3_BTV2A_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_30_18_VP3_BTV1S_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_30_18_VP3_BTV1A_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_30_21"  calculatedMassToCharge="3295.623777" chargeState="1" experimentalMassToCharge="3295.64" Peptide_ref="peptide_30_21" rank="0" passThreshold="true">
+            <PeptideEvidence id="PE_30_21_VP3_BTV10_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV10" />
+            <PeptideEvidence id="PE_30_21_VP3_BTV11_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV11" />
+            <PeptideEvidence id="PE_30_21_VP3_BTV17_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV17" />
+            <PeptideEvidence id="PE_30_21_VP3_BTV2A_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV2A" />
+            <PeptideEvidence id="PE_30_21_VP3_BTV1S_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1S" />
+            <PeptideEvidence id="PE_30_21_VP3_BTV1A_0" start="387" end="413" pre="R" post="V" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_VP3_BTV1A" />
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_31_13"  calculatedMassToCharge="3297.572553" chargeState="1" experimentalMassToCharge="3297.66" Peptide_ref="peptide_31_13" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_31_46"  calculatedMassToCharge="3297.715589" chargeState="1" experimentalMassToCharge="3297.66" Peptide_ref="peptide_31_46" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_33_5"  calculatedMassToCharge="4186.298444" chargeState="1" experimentalMassToCharge="4186.3" Peptide_ref="peptide_33_5" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_33_15"  calculatedMassToCharge="4186.208372" chargeState="1" experimentalMassToCharge="4186.3" Peptide_ref="peptide_33_15" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+          <SpectrumIdentificationItem id="SII_33_20"  calculatedMassToCharge="4186.231031" chargeState="1" experimentalMassToCharge="4186.3" Peptide_ref="peptide_33_20" rank="0" passThreshold="true">
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+      </SpectrumIdentificationList>
+      <ProteinDetectionList id="PDL_1">
+        <ProteinAmbiguityGroup id="PAG_hit_1" >
+          <ProteinDetectionHypothesis id="PDH_UVRB_THET8_0" DBSequence_ref="DBSeq_UVRB_THET8"  passThreshold="true">
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_1_1_UVRB_THET8_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_2_1_UVRB_THET8_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_4_1_UVRB_THET8_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_5_1_UVRB_THET8_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_7_1_UVRB_THET8_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_11_1_UVRB_THET8_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_12_1_UVRB_THET8_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_19_1_UVRB_THET8_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_27_1_UVRB_THET8_0" />
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="82.2" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="0.00155" />
+            <cvParam accession="MS:1001093" name="sequence coverage" cvRef="PSI-MS" value="23" />
+            <cvParam accession="MS:1001097" name="distinct peptide sequences" cvRef="PSI-MS" value="9" />
+            <cvParam accession="MS:1001362" name="number of unmatched peaks" cvRef="PSI-MS" value="25" />
+          </ProteinDetectionHypothesis>
+        </ProteinAmbiguityGroup>
+        <ProteinAmbiguityGroup id="PAG_hit_2" >
+          <ProteinDetectionHypothesis id="PDH_VP3_BTV10_0" DBSequence_ref="DBSeq_VP3_BTV10"  passThreshold="false">
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_10_2_VP3_BTV10_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_12_2_VP3_BTV10_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_13_2_VP3_BTV10_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_18_2_VP3_BTV10_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_21_2_VP3_BTV10_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_22_2_VP3_BTV10_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_30_2_VP3_BTV10_0" />
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="58.7" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="0.348" />
+            <cvParam accession="MS:1001093" name="sequence coverage" cvRef="PSI-MS" value="16" />
+            <cvParam accession="MS:1001097" name="distinct peptide sequences" cvRef="PSI-MS" value="7" />
+            <cvParam accession="MS:1001362" name="number of unmatched peaks" cvRef="PSI-MS" value="27" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis id="PDH_VP3_BTV11_0" DBSequence_ref="DBSeq_VP3_BTV11"  passThreshold="false">
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_10_3_VP3_BTV11_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_12_3_VP3_BTV11_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_13_3_VP3_BTV11_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_18_3_VP3_BTV11_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_22_3_VP3_BTV11_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_30_3_VP3_BTV11_0" />
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="46.9" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="5.27" />
+            <cvParam accession="MS:1001093" name="sequence coverage" cvRef="PSI-MS" value="14" />
+            <cvParam accession="MS:1001097" name="distinct peptide sequences" cvRef="PSI-MS" value="6" />
+            <cvParam accession="MS:1001362" name="number of unmatched peaks" cvRef="PSI-MS" value="28" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis id="PDH_VP3_BTV17_0" DBSequence_ref="DBSeq_VP3_BTV17"  passThreshold="false">
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_10_4_VP3_BTV17_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_12_4_VP3_BTV17_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_13_4_VP3_BTV17_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_18_4_VP3_BTV17_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_22_4_VP3_BTV17_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_30_4_VP3_BTV17_0" />
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="46.9" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="5.27" />
+            <cvParam accession="MS:1001093" name="sequence coverage" cvRef="PSI-MS" value="14" />
+            <cvParam accession="MS:1001097" name="distinct peptide sequences" cvRef="PSI-MS" value="6" />
+            <cvParam accession="MS:1001362" name="number of unmatched peaks" cvRef="PSI-MS" value="28" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis id="PDH_VP3_BTV2A_0" DBSequence_ref="DBSeq_VP3_BTV2A"  passThreshold="false">
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_12_17_VP3_BTV2A_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_13_17_VP3_BTV2A_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_18_17_VP3_BTV2A_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_22_17_VP3_BTV2A_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_30_17_VP3_BTV2A_0" />
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="37.2" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="49.2" />
+            <cvParam accession="MS:1001093" name="sequence coverage" cvRef="PSI-MS" value="12" />
+            <cvParam accession="MS:1001097" name="distinct peptide sequences" cvRef="PSI-MS" value="5" />
+            <cvParam accession="MS:1001362" name="number of unmatched peaks" cvRef="PSI-MS" value="29" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis id="PDH_VP3_BTV1S_0" DBSequence_ref="DBSeq_VP3_BTV1S"  passThreshold="false">
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_10_18_VP3_BTV1S_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_13_18_VP3_BTV1S_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_18_18_VP3_BTV1S_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_22_18_VP3_BTV1S_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_30_18_VP3_BTV1S_0" />
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="37.2" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="49.2" />
+            <cvParam accession="MS:1001093" name="sequence coverage" cvRef="PSI-MS" value="12" />
+            <cvParam accession="MS:1001097" name="distinct peptide sequences" cvRef="PSI-MS" value="5" />
+            <cvParam accession="MS:1001362" name="number of unmatched peaks" cvRef="PSI-MS" value="29" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis id="PDH_VP3_BTV1A_0" DBSequence_ref="DBSeq_VP3_BTV1A"  passThreshold="false">
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_10_21_VP3_BTV1A_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_12_21_VP3_BTV1A_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_18_21_VP3_BTV1A_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_22_21_VP3_BTV1A_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_30_21_VP3_BTV1A_0" />
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="36.3" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="60.5" />
+            <cvParam accession="MS:1001093" name="sequence coverage" cvRef="PSI-MS" value="11" />
+            <cvParam accession="MS:1001097" name="distinct peptide sequences" cvRef="PSI-MS" value="5" />
+            <cvParam accession="MS:1001362" name="number of unmatched peaks" cvRef="PSI-MS" value="29" />
+          </ProteinDetectionHypothesis>
+          <ProteinDetectionHypothesis id="PDH_VP3_BTV13_0" DBSequence_ref="DBSeq_VP3_BTV13"  passThreshold="false">
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_10_41_VP3_BTV13_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_12_41_VP3_BTV13_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_13_41_VP3_BTV13_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_18_41_VP3_BTV13_0" />
+            <PeptideHypothesis  PeptideEvidence_Ref="PE_22_41_VP3_BTV13_0" />
+            <cvParam accession="MS:1001171" name="mascot:score" cvRef="PSI-MS" value="34.1" />
+            <cvParam accession="MS:1001172" name="mascot:expectation value" cvRef="PSI-MS" value="100" />
+            <cvParam accession="MS:1001093" name="sequence coverage" cvRef="PSI-MS" value="11" />
+            <cvParam accession="MS:1001097" name="distinct peptide sequences" cvRef="PSI-MS" value="5" />
+            <cvParam accession="MS:1001362" name="number of unmatched peaks" cvRef="PSI-MS" value="29" />
+          </ProteinDetectionHypothesis>
+        </ProteinAmbiguityGroup>
+      </ProteinDetectionList>
+    </AnalysisData>
+  </DataCollection>
+  <BibliographicReference authors="David N. Perkins, Darryl J. C. Pappin, David M. Creasy, John S. Cottrell" editor="" id="10.1002/(SICI)1522-2683(19991201)20:18&lt;3551::AID-ELPS3551&gt;3.0.CO;2-2" name="Probability-based protein identification by searching sequence databases using mass spectrometry data" issue="18" pages="3551-3567" publication="Electrophoresis" volume="20" year="1999" publisher="Wiley VCH" title="Probability-based protein identification by searching sequence databases using mass spectrometry data"/>
+</mzIdentML>
