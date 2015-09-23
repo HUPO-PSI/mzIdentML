@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleFilter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://proteo.cnb.csic.es/miape-api/schemas/ruleFilter_v1.4.xsd">
+    <!-- Rule filter for de novo search -->
+	<ruleConditions>
+		<ruleCondition valid="true" id="DenovoSearchType_rule">
+			<ruleToSkip id="DenovoSearchType_rule"/>
+			<ruleToSkip id="SpectrumIdentificationItemPeptideEvidenceRefObjectRule"/>
+		</ruleCondition>
+		<ruleCondition valid="false" id="DenovoSearchType_rule">
+			<ruleToSkip id="SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule"/>
+			<ruleToSkip id="DenovoSearchType_rule"/> <!-- discard its error messages -->
+		</ruleCondition>	
+	</ruleConditions>
+    <!-- Rule filter for peptide-level scoring -->
+	<ruleConditions>
+		<ruleCondition valid="true" id="PeptideLevelStatsSearchType_rule">
+			<ruleToSkip id="PeptideLevelStatsSearchType_rule"/>
+		</ruleCondition>
+		<ruleCondition valid="false" id="PeptideLevelStatsSearchType_rule">
+			<ruleToSkip id="PeptideLevelStatsSpectrumIdentificationItem_must_rule"/>
+			<ruleToSkip id="PeptideLevelStatsSearchType_rule"/> <!-- discard its error messages -->
+		</ruleCondition>	
+	</ruleConditions>
+    <!-- Rule filter for modification location scoring -->
+	<ruleConditions>
+		<ruleCondition valid="true" id="ModLocalizationSearchType_rule">
+			<ruleToSkip id="ModLocalizationSearchType_rule"/>
+		</ruleCondition>
+		<ruleCondition valid="false" id="ModLocalizationSearchType_rule">
+			<ruleToSkip id="ModLocalizationSpectrumIdentificationItem_must_rule"/>
+			<ruleToSkip id="ModLocalizationSearchType_rule"/> <!-- discard its error messages -->
+		</ruleCondition>	
+	</ruleConditions>
+</ruleFilter>

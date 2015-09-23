@@ -1,0 +1,13 @@
+<objectRuleList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/object-rule.xsd">
+    <!-- List of rules that this specific validator should use (Provide class names)-->
+    <rule class="psidev.psi.pi.validator.objectrules.SearchModificationRule"/>
+	<rule class="psidev.psi.pi.validator.objectrules.ProviderObjectRule"/>
+	<rule class="psidev.psi.pi.validator.objectrules.RegExpEnzymeObjectRule"/>
+	<rule class="psidev.psi.pi.validator.objectrules.NoEnzymeObjectRule"/>
+	<rule class="psidev.psi.pi.validator.objectrules.FragmentToleranceObjectRule"/>
+	<rule class="psidev.psi.pi.validator.objectrules.ParentToleranceObjectRule"/>
+	<rule class="psidev.psi.pi.validator.objectrules.SpectrumIdentificationItemObjectRule"/>
+	<rule class="psidev.psi.pi.validator.objectrules.MatchedUnmatchedSubmittedPeaksValueObjectRule"/>
+	<rule class="psidev.psi.pi.validator.objectrules.AnalysisSoftwareObjectRule"/>
+</objectRuleList>

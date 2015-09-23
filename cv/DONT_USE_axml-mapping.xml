@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="https://psidev.svn.sourceforge.net/svnroot/psidev/psi/tools/current/xsl/cv-mapping/CvMappingRules.xsl" type="text/xsl"?>
+<!-- test mapping file created by ARJ based on mzML mapping file -->
+<!-- extended with some useful mappings by AB -->
+<CvMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/CvMapping.xsd" modelName="axml.xsd" modelURI="http://code.google.com/p/psi-pi/source/browse/#svn/trunk/schema/AnalysisXML_working.xsd.xsd" modelVersion="beta">
+
+    <CvReferenceList>
+        <CvReference cvName="PSI-PI" cvIdentifier="PI"/>
+        <CvReference cvName="PSI-MS" cvIdentifier="MS"/>
+        <CvReference cvName="Brenda" cvIdentifier="BTO"/>
+        <CvReference cvName="GO" cvIdentifier="GO"/>
+        <CvReference cvName="PATO" cvIdentifier="PATO"/>
+        <CvReference cvName="UO" cvIdentifier="UO"/>
+    </CvReferenceList>
+
+    <CvMappingRuleList>
+        <!-- start of file description -->
+        <CvMappingRule id="R1" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisSoftwareList/psi-pi:AnalysisSoftware/pf:ContactRole/pf:role/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00266" useTermName="false" useTerm="false" termName="role type" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R2" cvElementPath="/psi-pi:AnalysisXML/pf:Provider/pf:ContactRole/pf:role/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00266" useTermName="false" useTerm="false" termName="role type" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R3" cvElementPath="/psi-pi:AnalysisXML/pf:ReferenceableCollection/pf:Database/pf:ContactRole/pf:role/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00266" useTermName="false" useTerm="false" termName="role type" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+				<!--TODO disabled for validation-->
+        <!--CvMappingRule id="R4" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisSampleCollection/pf:GenericMaterial/pf:ContactRole/pf:role/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00266" useTermName="false" useTerm="false" termName="role type" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule-->
+
+				<!--TODO disabled for validation-->
+        <!--CvMappingRule id="R5" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisSampleCollection/pf:GenericMaterial/pf:cvParam/@accession" requirementLevel="SHOULD"  scopePath="" cvTermsCombinationLogic="OR">
+						<CvTerm termAccession="BTO:0000000" useTermName="false" useTerm="false" termName="brenda source tissue ontology" isRepeatable="true" allowChildren="true" cvIdentifierRef="BTO" />
+        </CvMappingRule-->
+
+        <CvMappingRule id="R6" cvElementPath="/psi-pi:AnalysisXML/psi-pi:SequenceCollection/psi-pi:DBSequence/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+						<CvTerm termAccession="PI:00342" useTermName="false" useTerm="false" termName="database sequence details" isRepeatable="false" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R7" cvElementPath="/psi-pi:AnalysisXML/psi-pi:SequenceCollection/psi-pi:Peptide/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00355" useTermName="false" useTerm="false" termName="peptide descriptions" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R8" cvElementPath="/psi-pi:AnalysisXML/psi-pi:SequenceCollection/psi-pi:Peptide/psi-pi:Modification/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="UNIMOD:0" useTermName="false" useTerm="false" termName="UNIMOD root" isRepeatable="true" allowChildren="true" cvIdentifierRef="UNIMOD" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R9" cvElementPath="/psi-pi:AnalysisXML/psi-pi:SequenceCollection/psi-pi:Peptide/psi-pi:SubstitutionModification/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="UNIMOD:0" useTermName="false" useTerm="false" termName="UNIMOD root" isRepeatable="true" allowChildren="true" cvIdentifierRef="UNIMOD" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R10" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisCollection/psi-pi:SpectrumIdentification/pf:ContactRole/pf:role/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00266" useTermName="false" useTerm="false" termName="role type" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R13" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/psi-pi:SpectrumIdentificationProtocol/psi-pi:SearchType/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00080" useTermName="false" useTerm="false" termName="search type" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R14" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/psi-pi:SpectrumIdentificationProtocol/psi-pi:AdditionalSearchParams/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00210" useTermName="false" useTerm="false" termName="mass type settings" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+						<CvTerm termAccession="PI:00302" useTermName="false" useTerm="false" termName="search engine specific input parameter" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />						
+						<CvTerm termAccession="PI:00066" useTermName="false" useTerm="false" termName="ions series considered in search" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+						<CvTerm termAccession="PI:00063" useTermName="false" useTerm="false" termName="instrument details" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+						<CvTerm termAccession="PI:00001" useTermName="false" useTerm="false" termName="user details" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+				<CvMappingRule id="R15" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/psi-pi:SpectrumIdentificationProtocol/psi-pi:ModificationParams/psi-pi:SearchModification/psi-pi:ModName" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="UNIMOD:0" useTermName="false" useTerm="false" termName="UNIMOD root" isRepeatable="true" allowChildren="true" cvIdentifierRef="UNIMOD" />
+        </CvMappingRule>
+        <CvMappingRule id="R16" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/psi-pi:SpectrumIdentificationProtocol/psi-pi:ModificationParams/psi-pi:SearchModification/psi-pi:SpecificityRule" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00056" useTermName="false" useTerm="false" termName="modification specificity rule" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R17" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/psi-pi:SpectrumIdentificationProtocol/psi-pi:Enzymes/psi-pi:Enzyme/psi-pi:EnzymeName/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00045" useTermName="false" useTerm="false" termName="cleavage agent name" isRepeatable="false" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R17a" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/psi-pi:SpectrumIdentificationProtocol/psi-pi:ParentTolerance/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="AND">
+            <CvTerm termAccession="PI:00412" useTermName="false" useTerm="true" termName="search tolerance plus value" isRepeatable="false" allowChildren="false" cvIdentifierRef="PSI-PI" />
+						<CvTerm termAccession="PI:00413" useTermName="false" useTerm="true" termName="search tolerance minus value" isRepeatable="false" allowChildren="false" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R17b" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/psi-pi:SpectrumIdentificationProtocol/psi-pi:FragmentTolerance/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="AND">
+						<CvTerm termAccession="PI:00412" useTermName="false" useTerm="true" termName="search tolerance plus value" isRepeatable="false" allowChildren="false" cvIdentifierRef="PSI-PI" />
+            <CvTerm termAccession="PI:00413" useTermName="false" useTerm="true" termName="search tolerance minus value" isRepeatable="false" allowChildren="false" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R18" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/psi-pi:SpectrumIdentificationProtocol/psi-pi:MassTable/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00354" useTermName="false" useTerm="false" termName="mass table options" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R19" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/psi-pi:SpectrumIdentificationProtocol/psi-pi:MassTable/psi-pi:AmbiguousResidue/pf:cvParam/@accession" requirementLevel="MAY" scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00359" useTermName="false" useTerm="false" termName="ambiguous residues" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R20" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/psi-pi:SpectrumIdentificationProtocol/psi-pi:DatabaseFilters/psi-pi:Filter/psi-pi:FilterType/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00019" useTermName="false" useTerm="false" termName="database filtering" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R21" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/psi-pi:SpectrumIdentificationProtocol/psi-pi:DatabaseFilters/psi-pi:Filter/psi-pi:Include/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00019" useTermName="false" useTerm="false" termName="database filtering" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R22" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/psi-pi:SpectrumIdentificationProtocol/psi-pi:DatabaseFilters/psi-pi:Filter/psi-pi:Exclude/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00019" useTermName="false" useTerm="false" termName="database filtering" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R23" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/psi-pi:SpectrumIdentificationProtocol/psi-pi:DatabaseTranslation/psi-pi:TranslationTable/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00025" useTermName="false" useTerm="true" termName="translation table" isRepeatable="false" allowChildren="false" cvIdentifierRef="PSI-PI" />
+						<CvTerm termAccession="PI:00410" useTermName="false" useTerm="true" termName="translation start codons" isRepeatable="false" allowChildren="false" cvIdentifierRef="PSI-PI" />
+            <CvTerm termAccession="PI:00423" useTermName="false" useTerm="true" termName="translation table description" isRepeatable="false" allowChildren="false" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R24" cvElementPath="/psi-pi:AnalysisXML/psi-pi:AnalysisProtocolCollection/psi-pi:ProteinDetectionProtocol/psi-pi:AnalysisParams/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00194" useTermName="false" useTerm="false" termName="quality estimation with decoy database" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+						<CvTerm termAccession="PI:00302" useTermName="false" useTerm="false" termName="search engine specific input parameter" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R25" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:Inputs/psi-pi:SourceFile/pf:fileFormat/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00040" useTermName="false" useTerm="false" termName="source file format" isRepeatable="false" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R26" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:Inputs/psi-pi:SourceFile/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00008" useTermName="false" useTerm="false" termName="source file name" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R27" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:Inputs/psi-pi:SearchDatabase/pf:fileFormat/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00347" useTermName="false" useTerm="false" termName="database file formats" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+				<CvMappingRule id="R27a" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:Inputs/psi-pi:SpectraData/pf:fileFormat/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+					<CvTerm termAccession="PI:00043" useTermName="false" useTerm="false" termName="input data type" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+				</CvMappingRule>
+
+        <CvMappingRule id="R28" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:Inputs/psi-pi:SearchDatabase/psi-pi:DatabaseName/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00013" useTermName="false" useTerm="false" termName="database name" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+				<CvMappingRule id="R28a" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:Inputs/psi-pi:SearchDatabase/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00011" useTermName="false" useTerm="false" termName="search database details" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+
+        <CvMappingRule id="R29" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:AnalysisData/psi-pi:SpectrumIdentificationList/psi-pi:FragmentationTable/psi-pi:Measure/pf:cvParam/@accession" requirementLevel="MUST"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00225" useTermName="false" useTerm="true" termName="product ion m/z" isRepeatable="false" allowChildren="false" cvIdentifierRef="PSI-PI" />
+						<CvTerm termAccession="PI:00226" useTermName="false" useTerm="true" termName="product ion intensity" isRepeatable="false" allowChildren="false" cvIdentifierRef="PSI-PI" />
+						<CvTerm termAccession="PI:00227" useTermName="false" useTerm="true" termName="product ion m/z error" isRepeatable="false" allowChildren="false" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <!--CvMappingRule id="R30" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:AnalysisData/psi-pi:SpectrumIdentificationList/psi-pi:SpectrumIdentificationResult/psi-pi:SpectrumIdentificationItem/psi-pi:PeptideEvidence/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="" useTermName="false" useTerm="false" termName="[to complete]" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule-->
+
+        <CvMappingRule id="R31" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:AnalysisData/psi-pi:SpectrumIdentificationList/psi-pi:SpectrumIdentificationResult/psi-pi:SpectrumIdentificationItem/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00213" useTermName="false" useTerm="false" termName="search result details" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+
+        <CvMappingRule id="R32" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:AnalysisData/psi-pi:SpectrumIdentificationList/psi-pi:SpectrumIdentificationResult/psi-pi:SpectrumIdentificationItem/psi-pi:Fragmentation/psi-pi:IonType" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00221" useTermName="false" useTerm="false" termName="fragmentation information" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+    
+        <CvMappingRule id="R33" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:AnalysisData/psi-pi:SpectrumIdentificationList/psi-pi:SpectrumIdentificationResult/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00405" useTermName="false" useTerm="false" termName="spectrum identification result details" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+    
+        <CvMappingRule id="R34" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:AnalysisData/psi-pi:SpectrumIdentificationList/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00184" useTermName="false" useTerm="false" termName="search statistics" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+    
+        <CvMappingRule id="R35" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:AnalysisData/psi-pi:ProteinDetectionList/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00184" useTermName="false" useTerm="false" termName="search statistics" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+        
+        <CvMappingRule id="R36" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:AnalysisData/psi-pi:ProteinDetectionList/psi-pi:ProteinAmbiguityGroup/psi-pi:ProteinDetectionHypothesis/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="PI:00153" useTermName="false" useTerm="false" termName="search engine specific score" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+						<CvTerm termAccession="PI:00085" useTermName="false" useTerm="false" termName="protein result details" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+						<CvTerm termAccession="PI:00060" useTermName="false" useTerm="false" termName="quality estimation method" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule>
+        
+        <!--CvMappingRule id="R37" cvElementPath="/psi-pi:AnalysisXML/psi-pi:DataCollection/psi-pi:AnalysisData/psi-pi:ProteinDetectionList/psi-pi:ProteinAmbiguityGroup/pf:cvParam/@accession" requirementLevel="MAY"  scopePath="" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="" useTermName="false" useTerm="false" termName="[to complete]" isRepeatable="true" allowChildren="true" cvIdentifierRef="PSI-PI" />
+        </CvMappingRule-->
+    </CvMappingRuleList>
+</CvMapping>

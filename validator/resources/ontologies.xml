@@ -1,0 +1,38 @@
+<cvSourceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/CvSourceList.xsd">
+    <!--
+    <cvSource
+        source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology"
+        uri="https://code.google.com/p/ebi-pride/source/browse/trunk/pride-core/schema/pride_cv.obo"
+        format="OBO" name="PRIDE Ontology" identifier="PRIDE" version="06:03:2012 11:34"/>
+    -->
+    
+	<cvSource 
+		source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
+        uri="http://www.brenda-enzymes.info/ontology/tissue/tree/update/update_files/BrendaTissueOBO"
+		format="OBO" name="BRENDA Tissue and Enzyme Source Ontology" identifier="BTO" version="22:10:2014 18:45"/>
+    <cvSource 
+    	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
+        uri="http://obo.cvs.sourceforge.net/obo/obo/ontology/genomic-proteomic/gene_ontology.obo"
+    	format="OBO" name="Gene Ontology" identifier="GO" version="releases/2014-12-22"/>
+    <cvSource 
+    	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
+        uri="http://obo.cvs.sourceforge.net/obo/obo/ontology/phenotype/quality.obo"
+    	format="OBO" name="Phenotypic Quality Ontology" identifier="PATO" version="15:08:2014 14:45"/>
+    <cvSource 
+    	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
+        uri="http://psidev.cvs.sourceforge.net/psidev/psi/mod/data/PSI-MOD.obo"
+    	format="OBO"  name="Protein Modification Ontology" identifier="MOD" version="30:05:2014 00:48"/>
+    <cvSource 
+    	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
+        uri="http://psidev.cvs.sourceforge.net/viewvc/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"
+    	format="OBO" name="Mass Spectrometry Ontology" identifier="MS" version="3.73.0"/>
+    <cvSource 
+    	source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" 
+    	uri="http://www.unimod.org/obo/unimod.obo"
+    	format="OBO" name="UNIMOD" identifier="UNIMOD" version="2015:01:12 16:11"/>
+    <cvSource 
+    	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology"
+        uri="http://unit-ontology.googlecode.com/svn/trunk/unit.obo"
+    	format="OBO" name="Units of Measurement Ontology" identifier="UO" version="09:04:2014 13:37"/>
+</cvSourceList>

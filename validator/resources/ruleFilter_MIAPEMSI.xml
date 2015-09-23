@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleFilter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://proteo.cnb.csic.es/miape-api/schemas/ruleFilter_v1.4.xsd">
+	<userConditions>
+		<userCondition id="USER_SPECIFIC_CLEAVAGE_RULE">
+			<userOption id="USER_SPECIFIC_CLEAVAGE_RULE">
+				<ruleToSkip id="EnzymeName_rule"/>
+			</userOption>
+			<userOption id="NO_USER_SPECIFIC_CLEAVAGE_RULE">
+				<ruleToSkip id="RegExpEnzymeObjectRule"/>
+			</userOption>
+		</userCondition>
+		<userCondition id="DATABASE_TYPE">
+			<userOption id="DECOY_DATABASE">
+			</userOption>
+			<userOption id="NO_DECOY_DATABASE">
+				<ruleToSkip id="DecoyDatabase_rule"/>
+			</userOption>
+		</userCondition>
+		<userCondition id="MASS_SPECTRA_TYPE">
+			<userOption id="PMF">
+				<ruleToSkip id="SpectrumIdentificationItem_PeptideScore_rule"/>
+				<ruleToSkip id="FragmentToleranceObjectRule"/>
+			</userOption>
+			<userOption id="PFF">
+				<ruleToSkip id="ProteinAmbiguityGroupProteinDetectionHypothesis_MatchedPeaks_rule"/>
+				<ruleToSkip id="ProteinAmbiguityGroupProteinDetectionHypothesis_SubmittedUnmatchedPeaks_rule"/>
+			</userOption>
+			<userOption id="PMFPFF">
+				<ruleToSkip id="SpectrumIdentificationItem_PeptideScore_rule"/>
+				<ruleToSkip id="ProteinAmbiguityGroupProteinDetectionHypothesis_MatchedPeaks_rule"/>
+				<ruleToSkip id="ProteinAmbiguityGroupProteinDetectionHypothesis_SubmittedUnmatchedPeaks_rule"/>
+				<ruleToSkip id="FragmentToleranceObjectRule"/>
+			</userOption>
+		</userCondition>
+	</userConditions>
+    <!-- Rule filter for de novo search -->
+	<ruleConditions>
+		<ruleCondition valid="true" id="DenovoSearchType_rule">
+			<ruleToSkip id="DenovoSearchType_rule"/>
+			<ruleToSkip id="SpectrumIdentificationItemPeptideEvidenceRefObjectRule"/>
+		</ruleCondition>
+		<ruleCondition valid="false" id="DenovoSearchType_rule">
+			<ruleToSkip id="SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule"/>
+			<ruleToSkip id="DenovoSearchType_rule"/> <!-- discard its error messages -->
+		</ruleCondition>	
+	</ruleConditions>
+    <!-- Rule filter for peptide-level scoring -->
+	<ruleConditions>
+		<ruleCondition valid="true" id="PeptideLevelStatsSearchType_rule">
+			<ruleToSkip id="PeptideLevelStatsSearchType_rule"/>
+		</ruleCondition>
+		<ruleCondition valid="false" id="PeptideLevelStatsSearchType_rule">
+			<ruleToSkip id="PeptideLevelStatsSpectrumIdentificationItem_must_rule"/>
+			<ruleToSkip id="PeptideLevelStatsSearchType_rule"/> <!-- discard its error messages -->
+		</ruleCondition>	
+	</ruleConditions>
+    <!-- Rule filter for modification location scoring -->
+	<ruleConditions>
+		<ruleCondition valid="true" id="ModLocalizationSearchType_rule">
+			<ruleToSkip id="ModLocalizationSearchType_rule"/>
+		</ruleCondition>
+		<ruleCondition valid="false" id="ModLocalizationSearchType_rule">
+			<ruleToSkip id="ModLocalizationSpectrumIdentificationItem_must_rule"/>
+			<ruleToSkip id="ModLocalizationSearchType_rule"/> <!-- discard its error messages -->
+		</ruleCondition>	
+	</ruleConditions>
+	<mandatoryElements>
+		<mandatoryElement element="AnalysisSoftware"/>
+		<mandatoryElement element="Provider"/>
+		<mandatoryElement element="Enzyme"/>
+		<mandatoryElement element="SearchDatabase"/>
+	</mandatoryElements>
+</ruleFilter>

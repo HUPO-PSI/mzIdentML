@@ -1,0 +1,1035 @@
+format-version: 1.2
+date: 28:04:2008 19:28
+saved-by: luisa
+auto-generated-by: OBO-Edit 1.101
+default-namespace: PI
+
+[Term]
+id: PI:00000
+name: protein informatics cv
+def: "collection of terms bla" [ref:ref]
+
+[Term]
+id: PI:00001
+name: user info
+def: "User info." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00002
+name: user name
+def: "The name of the submitter to the search engine (could be individual, lab head, institution if unclear)." [ref:ref]
+is_a: PI:00001 ! user info
+
+[Term]
+id: PI:00003
+name: user email address
+def: "User email address." [ref:ref]
+is_a: PI:00001 ! user info
+
+[Term]
+id: PI:00004
+name: user comments
+def: "Note: lookup Mascot .dat file for definition/example." [ref:ref]
+is_a: PI:00001 ! user info
+
+[Term]
+id: PI:00005
+name: sample name
+def: "The name of the biological sample(s)." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00006
+name: sample description
+def: "Further details on sample." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00007
+name: analysis title
+def: "Further information on provenance of analysis (e.g. search, engine(s), MS, etc)." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00008
+name: input file name(s)
+def: "Input file name(s)." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00009
+name: date file created
+def: "Date file created." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00011
+name: database(s) searched min=0 for denovo?
+def: "Database(s) searched min=0 for denovo?." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00012
+name: database source (uniprot, ncbi, private)
+def: "The organisation, project or laboratory from where the database is obtained." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00013
+name: name of the database, e.g. nr, uniprot or est_human
+def: "The name of source database(s), public or private." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00014
+name: database local file path
+def: "Database local file path." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00015
+name: database original uri
+def: "Database original URI." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00016
+name: database version
+def: "Database version." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00017
+name: database release date
+def: "Database release date." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00018
+name: database type (na/aa)
+def: "Protein or nucleic acid." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00019
+name: database filtering
+def: "Was there filtering used on the database(s), public or private." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00020
+name: database taxonomy filter
+def: "The taxonomy filter applied (if any) to the database search." [ref:ref]
+is_a: PI:00019 ! database filtering
+
+[Term]
+id: PI:00021
+name: filter on individual accession numbers/ sequences
+def: "filtering applied specifically by accession number or amino acid sequence pattern." [ref:ref]
+is_a: PI:00019 ! database filtering
+
+[Term]
+id: PI:00022
+name: mw filter (range or maximum value)
+def: "filtering applied specifically by protein molecular weight, specified as either a range or above/below a threshold value." [ref:ref]
+is_a: PI:00019 ! database filtering
+
+[Term]
+id: PI:00023
+name: pi filter (range or maximum value)
+def: "filtering applied specifically by predicted protein isoelectric focussing point (pI),  specified as either a range or above/below a threshold value." [ref:ref]
+is_a: PI:00019 ! database filtering
+
+[Term]
+id: PI:00024
+name: translation frames: e.g. 1-6
+def: "The translated open reading frames from a nucleotide database considered in the search." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00025
+name: translation table(s)
+def: "The translation table(s) used to translate the nucleotides to amino acids." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00026
+name: number of protein sequences in database
+def: "The number of protein sequences in source database." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00027
+name: number of nucleotide sequences in database
+def: "The number of nucleotide sequences in source database." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00028
+name: number of residues
+def: "The number of residues (amino acids or nucleotides) in the source database after filtering." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00029
+name: number of protein sequences searched
+def: "The number of protein sequences from the database search after filtering (and potentially, translation)." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00030
+name: number of peptide seqs compared to each spectrum
+def: "Number of peptide seqs compared to each spectrum." [ref:ref]
+is_a: PI:00011 ! database(s) searched min=0 for denovo?
+
+[Term]
+id: PI:00032
+name: software version
+def: "The version of the search engine software." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00033
+name: software name
+def: "The name of the search engine used." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00034
+name: software type
+def: "Software status (commerical, open source, freely distributed, other)." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00035
+name: date / time search performed
+def: "Date / Time search performed." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00036
+name: time taken to search (seconds)
+def: "The time taken to complete the search in seconds." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00037
+name: customisations to the s/w
+def: "Has the search software been modified or customised ?." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00038
+name: description of customised s/w
+def: "Description of modifications or customisations made to the search software." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00039
+name: availabillity of s/w
+def: "The organisation, project or laboratory from where the software is obtained (preferably with URL)." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00041
+name: masses of residues used during search
+def: "Masses of residues used during search." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00042
+name: masses of h,c,o,n and electron
+def: "Masses of H,C,O,N and electron." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00044
+name: cleavage agent settings
+def: "Cleavage agent settings." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00045
+name: agent name(s)
+def: "The name of the cleavage agent(s), if any." [ref:ref]
+is_a: PI:00044 ! cleavage agent settings
+
+[Term]
+id: PI:00046
+name: agent rules
+def: "Agent rules." [ref:ref]
+is_a: PI:00044 ! cleavage agent settings
+
+[Term]
+id: PI:00047
+name: sense
+def: "Cleavage is N-terminal or C-terminal to a peptide bond w.r.t the specificity constraint." [ref:ref]
+is_a: PI:00046 ! agent rules
+
+[Term]
+id: PI:00048
+name: minspacing
+def: "The minimum separation between adjacent cleavages." [ref:ref]
+is_a: PI:00046 ! agent rules
+
+[Term]
+id: PI:00049
+name: cut (cleave)
+def: "Amino acids allowed at primary cleavage site." [ref:ref]
+is_a: PI:00046 ! agent rules
+
+[Term]
+id: PI:00050
+name: no cut (not cleave)
+def: "Amino acids not allowed at site adjacent to primary cleavage site." [ref:ref]
+is_a: PI:00046 ! agent rules
+
+[Term]
+id: PI:00051
+name: multiple enzyme combination rules
+def: "Description of multiple enzyme digestion protocol, if any." [ref:ref]
+is_a: PI:00044 ! cleavage agent settings
+
+[Term]
+id: PI:00052
+name: missed cleavages
+def: "The maximum number of potential missed cleavages per peptide." [ref:ref]
+is_a: PI:00044 ! cleavage agent settings
+
+[Term]
+id: PI:00053
+name: specificity constraint
+def: "Note: need to look up from somewhere such as Matrix Science website ?." [ref:ref]
+is_a: PI:00044 ! cleavage agent settings
+
+[Term]
+id: PI:00055
+name: modification settings
+def: "Modification Settings." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00056
+name: type - fixed/variable
+def: "The status of the modifications applied by the search engine (fixed, variable)." [ref:ref]
+is_a: PI:00055 ! modification settings
+
+[Term]
+id: PI:00057
+name: tolerance on types
+def: "Tolerance on types." [ref:ref]
+is_a: PI:00055 ! modification settings
+
+[Term]
+id: PI:00058
+name: name
+def: "The name of the modification." [ref:ref]
+is_a: PI:00055 ! modification settings
+
+[Term]
+id: PI:00059
+name: delta (mono isotopic and average)
+def: "The type of mass difference value, generated by the modification, (monoisotopic or average)." [ref:ref]
+is_a: PI:00055 ! modification settings
+
+[Term]
+id: PI:00060
+name: rules - e.g. specificity
+def: "Note: leave this to PSI-MOD !!." [ref:ref]
+is_a: PI:00055 ! modification settings
+
+[Term]
+id: PI:00061
+name: neutral loss
+def: "Note: leave this to PSI-MOD !!." [ref:ref]
+is_a: PI:00055 ! modification settings
+
+[Term]
+id: PI:00063
+name: data scoring rules (was instrument)
+def: "Data scoring rules (was Instrument)." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00064
+name: type
+def: "We don't know the intention of this is ? (perhaps type of instrument? And if not, it should be added, as Required attribute OR the ion series must be specifically defined)." [ref:ref]
+is_a: PI:00063 ! data scoring rules (was instrument)
+
+[Term]
+id: PI:00065
+name: scoring model (more detailed granularity)
+def: "Scoring model (more detailed granularity)." [ref:ref]
+is_a: PI:00063 ! data scoring rules (was instrument)
+
+[Term]
+id: PI:00066
+name: ions series considered in search
+def: "The description of the ion fragment series (including charges and neutral losses) that are considered by the search engine." [ref:ref]
+is_a: PI:00063 ! data scoring rules (was instrument)
+
+[Term]
+id: PI:00068
+name: tolerances + units
+def: "Not completed (see comment)." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00069
+name: peptide
+def: "Peptide." [ref:ref]
+is_a: PI:00068 ! tolerances + units
+
+[Term]
+id: PI:00070
+name: fragment
+def: "Fragment." [ref:ref]
+is_a: PI:00068 ! tolerances + units
+
+[Term]
+id: PI:00071
+name: min / max peptide mass
+def: "Min / Max peptide mass." [ref:ref]
+is_a: PI:00068 ! tolerances + units
+
+[Term]
+id: PI:00072
+name: min / max fragment mass
+def: "Min / Max fragment mass." [ref:ref]
+is_a: PI:00068 ! tolerances + units
+
+[Term]
+id: PI:00074
+name: input data
+def: "Input data." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00075
+name: complete copy of input data
+def: "Complete copy of input data." [ref:ref]
+is_a: PI:00074 ! input data
+
+[Term]
+id: PI:00076
+name: reference to input data
+def: "Reference to input data." [ref:ref]
+is_a: PI:00074 ! input data
+
+[Term]
+id: PI:00077
+name: sequence query data
+def: "Sequence query data." [ref:ref]
+is_a: PI:00074 ! input data
+
+[Term]
+id: PI:00078
+name: sequence tag search data
+def: "The sequence tag (eg. Regular expression) used in the search." [ref:ref]
+is_a: PI:00074 ! input data
+
+[Term]
+id: PI:00080
+name: types of search
+def: "Enumeration of type of search value (ie. from PMF, sequence tag, MS-MS)." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00081
+name: pmf
+def: "Note: are these 3 elements redundant if the Type of search is used instead ?." [ref:ref]
+is_a: PI:00080 ! types of search
+
+[Term]
+id: PI:00082
+name: tag searches
+def: "Note: are these 3 elements redundant if the Type of search is used instead ?." [ref:ref]
+is_a: PI:00080 ! types of search
+
+[Term]
+id: PI:00083
+name: ms-ms
+def: "Note: are these 3 elements redundant if the Type of search is used instead ?." [ref:ref]
+is_a: PI:00080 ! types of search
+
+[Term]
+id: PI:00085
+name: protein result information
+def: "Protein result information." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00086
+name: accession
+def: "The accession number of the protein which refers to the source database. (e.g.  Q10741 and Q10741-2)." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00087
+name: uniprot id
+def: "The id value from a SwissProt database." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00088
+name: description
+def: "The protein description line from the protein entry in the source database FASTA file." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00089
+name: taxonomy
+def: "The taxonomy of the resultant protein from the search." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00090
+name: taxonomy nomenclature
+def: "The system used to indicate taxonomy. There should be an enumerated list of options: latin name, NCBI TaxID, common name, Swiss-Prot species ID (ex. RABIT from the full protein ID ALBU_RABIT)." [ref:ref]
+is_a: PI:00089 ! taxonomy
+
+[Term]
+id: PI:00091
+name: molecular weight
+def: "The molecular weight of the protein." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00092
+name: pi
+def: "The isoelectric value for the protein." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00093
+name: coverage (can be calculated)
+def: "The percent coverage for the protein based upon the matched peptide sequences." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00094
+name: protein score(s)
+def: "Metrics used by the search engine." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00095
+name: complete protein sequence
+def: "(handled by Molecule object of type 'polypeptide')." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00096
+name: frame number for nucleic acid
+def: "The open reading frame in which the translated protein is encoded." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00097
+name: distinct peptide sequences
+def: "This counts distinct sequences hitting the protein without regard to a minimal confidence threshold.." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00098
+name: confident distinct peptide sequences
+def: "This counts the number of distinct peptide sequences. Multiple charges states and multiple modification states do NOT count as multiple sequences. The definition of 'confident' must be qualified elsewhere.." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00099
+name: confident peptide qualification
+def: "The point of this entry is to define what is meant by confident for the term Confident distinct peptide sequence and/or Confident peptides. Example 1 - metric=Paragon:Confidence value=95 sense=greater than Example 2 - metric=Mascot:Eval value=0.05 sense=less than." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00100
+name: confident peptide
+def: "This counts the number of peptide sequences without regard to whether they are distinct. Multiple charges states and multiple modification states DO count as multiple peptides. The definition of 'confident' must be qualified elsewhere.." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00101
+name: protein group/subset relationships
+def: "Protein group/subset relationships." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00102
+name: estimate of fdr or probability or expect value
+def: "Estimate of FDR or Probability or expect value." [ref:ref]
+is_a: PI:00085 ! protein result information
+
+[Term]
+id: PI:00103
+name: false positive rate qualifier
+def: "- Type=(P-value, E-value, confidence) method=(reverse, randomized, forward+reverse, plus other stuff…)." [ref:ref]
+is_a: PI:00102 ! estimate of fdr or probability or expect value
+
+[Term]
+id: PI:00105
+name: peptide level information (ms-ms)
+def: "Peptide level information (ms-ms)." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00106
+name: peptide sequence
+def: "An ordered list of amino acids using one letter abbreviations of the amino acid.  A substitution from mutation should not be included in the sequence." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00107
+name: starting residue position (in protein(s))
+def: "The numerical index with respect to the n terminus of the parent polypeptde denoting where the peptide starts." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00108
+name: ending residue position (in protein(s))
+def: "The numerical index with respect to the n terminus of the parent polypeptide denoting where the peptide ends." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00109
+name: residue modification information
+def: "Information describing the occurances of modified amino acids." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00110
+name: modification position
+def: "The position of the modification in the peptide with respect to the n-terminus of the peptide, if known." [ref:ref]
+is_a: PI:00109 ! residue modification information
+
+[Term]
+id: PI:00111
+name: modification name
+def: "The name of the modification (using PSI-MOD names).  Substitutions should be denoted by Val ->Ala." [ref:ref]
+is_a: PI:00109 ! residue modification information
+
+[Term]
+id: PI:00112
+name: n-terminal flanking residue
+def: "The residue preceeding the first amino acid in the peptide sequence as it occurs in the protein.  Use N-term to denote if the peptide starts at the N terminus of the protein.." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00113
+name: c-terminal flanking residue
+def: "The residue following the last amino acid in the peptide sequence as it occurs in the protein.  Use C-term to denote if the peptide ends at the C terminus of the protein.." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00114
+name: retention time(s)
+def: "Take from mzData." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00115
+name: scan number(s)
+def: "Take from mzData." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00116
+name: observed mass
+def: "The experimentally measured mass for the molecule." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00117
+name: theoretical mass
+def: "The theoretical mass of the molecule (e.g. the peptide sequence and its modifications)." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00118
+name: delta mass (value and units)
+def: "The difference between observed - theoretical mass." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00119
+name: charge
+def: "The charge state for the molecule.  This is the charge necessary to relate mass to m/z therefore an unknown charge state should not be reported.." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00120
+name: scores
+def: "This field is a header who's sub-fields are dependent upon the search engine used.  A list of CV values will be created for the each search engine.." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00121
+name: number of peaks matched
+def: "The number of peaks that were matched as qualified by the ion series considered field.  If a peak matches multiple ions then only 1 would be added the count.." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00122
+name: ions series considered
+def: "The ion series that were used during the calculation of the count (e.g. b, y, a, b, c, y, z, b, b-NH3, b-H20, b+,  z, z-, z+, y-H3PO4, immonium)." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00123
+name: number of peaks used
+def: "The number of peaks from the original peak list that are used to calculate the scores for a particular search engine.  All ions that have the opportunity to match or be counted even if they don't.." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00124
+name: number of peaks submitted
+def: "The number of peaks from the original peaks listed that were submitted to the search engine." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00125
+name: missed cleavages (can be calculated)
+def: "The number of expected cleavages sites that aren't cleaved in the peptide." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00126
+name: residue substitution information
+def: "delete - covered in the Modifications Information section." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00127
+name: sequence shared across multiple proteins or unique to one protein
+def: "Accessions Containing Sequence - Accessions for each protein containing this peptide." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00128
+name: reference to input data
+def: "reference to input data." [ref:ref]
+is_a: PI:00105 ! peptide level information (ms-ms)
+
+[Term]
+id: PI:00129
+name: quantification information
+def: "Quantification information." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00130
+name: peptide raw areas
+def: "Peptide raw areas." [ref:ref]
+is_a: PI:00129 ! quantification information
+
+[Term]
+id: PI:00131
+name: errors on peptide areas
+def: "Errors on peptide areas." [ref:ref]
+is_a: PI:00129 ! quantification information
+
+[Term]
+id: PI:00132
+name: peptide ratios
+def: "Peptide ratios." [ref:ref]
+is_a: PI:00129 ! quantification information
+
+[Term]
+id: PI:00133
+name: errors on peptide ratios
+def: "Errors on peptide ratios." [ref:ref]
+is_a: PI:00129 ! quantification information
+
+[Term]
+id: PI:00134
+name: protein ratios
+def: "Protein ratios." [ref:ref]
+is_a: PI:00129 ! quantification information
+
+[Term]
+id: PI:00135
+name: errors on protein ratios
+def: "Errors on protein ratios." [ref:ref]
+is_a: PI:00129 ! quantification information
+
+[Term]
+id: PI:00136
+name: p-value (protein diff from 1 randomly)
+def: "P-value (protein diff from 1 randomly)." [ref:ref]
+is_a: PI:00129 ! quantification information
+
+[Term]
+id: PI:00137
+name: absolute quantities
+def: "Absolute quantities." [ref:ref]
+is_a: PI:00129 ! quantification information
+
+[Term]
+id: PI:00138
+name: error on absolute quantity
+def: "Error on absolute quantity." [ref:ref]
+is_a: PI:00129 ! quantification information
+
+[Term]
+id: PI:00139
+name: quantitation software name
+def: "Quantitation software name." [ref:ref]
+is_a: PI:00129 ! quantification information
+
+[Term]
+id: PI:00140
+name: quantitation software version
+def: "Quantitation software version." [ref:ref]
+is_a: PI:00129 ! quantification information
+
+[Term]
+id: PI:00141
+name: intensity of precursor ion
+def: "The intensity of the precursor ion.." [ref:ref]
+is_a: PI:00129 ! quantification information
+
+[Term]
+id: PI:00143
+name: peak list generation (not required if from mzdata file?)
+def: "Peak list generation (not required if from mzData file?)." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00144
+name: peak list generation software name
+def: "Peak list generation software name." [ref:ref]
+is_a: PI:00143 ! peak list generation (not required if from mzdata file?)
+
+[Term]
+id: PI:00145
+name: peak list generation software version
+def: "Peak list generation software version." [ref:ref]
+is_a: PI:00143 ! peak list generation (not required if from mzdata file?)
+
+[Term]
+id: PI:00146
+name: peak list generation parameters (for example:)
+def: "Peak list generation parameters (for example:)." [ref:ref]
+is_a: PI:00143 ! peak list generation (not required if from mzdata file?)
+
+[Term]
+id: PI:00147
+name: was smoothing applied?
+def: "Was smoothing applied?." [ref:ref]
+is_a: PI:00146 ! peak list generation parameters (for example:)
+
+[Term]
+id: PI:00148
+name: signal to noise criteria
+def: "Signal to noise criteria." [ref:ref]
+is_a: PI:00146 ! peak list generation parameters (for example:)
+
+[Term]
+id: PI:00149
+name: were charge states calculated?
+def: "Were charge states calculated?." [ref:ref]
+is_a: PI:00146 ! peak list generation parameters (for example:)
+
+[Term]
+id: PI:00150
+name: was deisotoping used?
+def: "Was deisotoping used?." [ref:ref]
+is_a: PI:00146 ! peak list generation parameters (for example:)
+
+[Term]
+id: PI:00151
+name: was clustering performed?
+def: "Was clustering performed?." [ref:ref]
+is_a: PI:00146 ! peak list generation parameters (for example:)
+
+[Term]
+id: PI:00152
+name: clustering criteria
+def: "Clustering criteria." [ref:ref]
+is_a: PI:00146 ! peak list generation parameters (for example:)
+
+[Term]
+id: PI:00153
+name: search engine scores
+def: "Search Engine Scores." [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00154
+name: sequest:probability
+def: "SEQUEST:Probability." [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00155
+name: sequest:xtion (not required if from mzdata file?)
+
+[Term]
+id: PI:00150
+name:     was deisotoping used?
+def: "    Was deisotoping used?" [ref:ref]
+is_a: PI:00143 ! peak list generation (not required if from mzdata file?)
+
+[Term]
+id: PI:00151
+name:     was clustering performed?
+def: "    Was clustering performed?" [ref:ref]
+is_a: PI:00143 ! peak list generation (not required if from mzdata file?)
+
+[Term]
+id: PI:00152
+name:       clustering criteria
+def: "      Clustering criteria" [ref:ref]
+is_a: PI:00143 ! peak list generation (not required if from mzdata file?)
+
+[Term]
+id: PI:00153
+name: search engine scores
+def: "Search Engine Scores" [ref:ref]
+is_a: PI:00000 ! protein informatics cv
+
+[Term]
+id: PI:00154
+name: sequest:probability
+def: "  SEQUEST:Probability" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00155
+name: sequest:xcorr
+def: "  SEQUEST:Xcorr" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00156
+name: sequest:deltacn
+def: "  SEQUEST:DeltaCn" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00157
+name: sequest:sp
+def: "  SEQUEST:Sp" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00158
+name: sequest:rsp
+def: "  SEQUEST:RSp" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00159
+name: sequest:expectation value
+def: "  SEQUEST:Expectation value" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00160
+name: sequest:sf
+def: "  SEQUEST:Sf" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00161
+name: sequest:matched ions
+def: "  SEQUEST:Matched Ions" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00162
+name: sequest:total ions
+def: "  SEQUEST:Total Ions" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00163
+name: sequest:consensus score
+def: "  SEQUEST:Consensus Score" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00164
+name: paragon:unused protscore
+def: "  Paragon:Unused ProtScore" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00165
+name: paragon:total protscore
+def: "  Paragon:Total ProtScore" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00166
+name: paragon:score
+def: "  Paragon:Score" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00167
+name: paragon:confidence
+def: "  Paragon:Confidence" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00168
+name: paragon:expression error factor
+def: "  Paragon:Expression Error Factor" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00169
+name: paragon:expression change p-value
+def: "  Paragon:Expression change P-value" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00170
+name: paragon:contrib
+def: "  Paragon:Contrib" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00171
+name: mascot:score
+def: "  Mascot:Score" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00172
+name: mascot:expectation value
+def: "  Mascot:Expectation value" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00173
+name: mascot:matched ions
+def: "  Mascot:Matched ions" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00174
+name: mascot:total ions
+def: "  Mascot:Total ions" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00175
+name: peptide validation status
+def: "Unresolved - does this mean manual validation is a separate analysis" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00176
+name: estimate of fdr or probability
+def: "  Estimate of FDR or Probability" [ref:ref]
+is_a: PI:00153 ! search engine scores
+
+[Term]
+id: PI:00177
+name: number of molecular hypothesis considered
+def: " Number of Molecular Hypothesis Considered - This is the number of molecules (e.g. peptides for proteomics) considered for a particular search " [ref:ref]
+is_a: PI:00153 ! search engine scores
+

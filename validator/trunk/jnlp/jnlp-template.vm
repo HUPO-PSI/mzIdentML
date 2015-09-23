@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0+" codebase="http://psi-pi.googlecode.com/svn/trunk/validator/trunk/jnlp/">
+	<information>
+		<title>PSI mzIdentML semantic and MIAPE validator Webstart</title>
+		<vendor>HUPO-PSI</vendor>
+		<homepage href="http://psidev.info"/>
+		<description>A semantic and MIAPE validator for HUPO-PSI mzIdentML XML files.</description>
+		<offline-allowed/>
+		<shortcut online="false">
+			<desktop/>
+		</shortcut>
+	</information>
+	<security>
+		<all-permissions/>
+	</security>
+	<resources>
+		<j2se version="1.7+" max-heap-size="2048m"/>
+         $dependencies
+     </resources>
+	<application-desc main-class="$mainClass">
+		<!-- Insert Arguments-->
+	</application-desc>
+</jnlp>
