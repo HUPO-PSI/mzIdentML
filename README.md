@@ -36,5 +36,69 @@ Jones A.R., Eisenacher M., Mayer G., Kohlbacher O., Siepen J., Hubbard S.J., Sel
 Several example of the format can be download from the next link [Examples](https://github.com/HUPO-PSI/mzIdentML/tree/master/examples/1_1examples)
 [PRIDE Toolsuite Examples](https://github.com/PRIDE-Toolsuite/inspector-example-files/tree/master/mzIdentML)
 
+## Tools, Libraries, readers and exporters
+
+
+|Mascot |	mzIdentML Version 1.0 available in Mascot version 2.3         |
+|       |mzid stable version 1.1 available in Mascot version 2.4	       |EXPORT
+OMSSA	http://code.google.com/p/mzidentml-lib/ from the U.Liverpool group	EXPORT
+MSGF+	Full support for results into mzid 1.1	EXPORT
+Peaks	Native export of mzIdentML version 1.1	EXPORT
+Phenyx	Exporter to mzIdentML v1.1 now available - contact GeneBio for details.	EXPORT
+PLGS	 	 
+ProCon	
+- conversion of SEQUEST resp. Comet *.out files/folder information into mzIdentML 1.0 / 1.1 (SpectrumIdentificationResults only)
+
+- conversion of ProteinScape 1.3 results into mzIdentML
+
+- conversion of ProteinScape2.1 results into mzIdentML 1.1
+
+- conversion of ProteomeDiscoverer 1.1 + 1.2 *.msf and *.prot.xml files (Thermo) resp. ProteomeDiscoverer 1.3 + 1.4 *.msf files (Thermo) into mzIdentML 1.1
+
+EXPORT
+ProteinPilot	Contact is Sean Seymour	 
+ProteinScape	Work in progress	 
+SEQUEST - Native	ProCon (see above)	 
+ProteoWizard	pepXML converter available now - impl. of C++ library for reading/writing MzIdentML / interface for importing other formats	IMPORT AND EXPORT
+SEQUEST - BioWorks	Work in progress	 
+SEQUEST - Proteome Discoverer	Work in progress (exporters available from ProCon project)	 
+SpectraST	Proteowizard conversion from pepXML	EXPORT
+Spectrum Mill	 	 
+X!Tandem	http://code.google.com/p/mzidentml-lib/ from the U.Liverpool group.	EXPORT
+OpenMS	Fully supported in release 1.9	IMPORT AND EXPORT
+Scaffold	
+Available now in Scaffold version 3.0 (export only); Scaffold 4.0 supports IMPORT AND EXPORT
+
+IMPORT AND EXPORT (In 4.0)
+Scaffold PTM	Scaffold PTM tool imports identifications in mzIdentML	IMPORT
+Scaffold perSPECtives	Supports import of mzIdentML (as long as a ProteinDetectionList is present)	IMPORT
+TPP	pepXML to mzIdentML converter available from ProteoWizard	IMPORT AND EXPORT
+Mascot Integra	Scheduled
+MIAPE MSI Extractor	Tool available from the ProteoRed team: latest version available here.	IMPORT
+CSV exporter
+
+mzIdentML2CSV in http://code.google.com/p/mzidentml-lib/ converter written by U.Liverpool group
+
+IMPORT
+PAnalyzer	The PAnalyzer tool developed by the University of the Basque Country also imports and exports mzIdentML (v1.0.0 and v1.1.0)	IMPORT AND EXPORT
+Myrimatch	Identifications exported in mzIdentML	EXPORT
+TagRecon	Identifications exported in mzIdentML	EXPORT
+Pepitome	Identifications exported in mzIdentML	EXPORT
+IDPicker	Version 3.x implements mzIdentML import	IMPORT
+jmzIdentML	Java API for reading and writing mzIdentML	IMPORT AND EXPORT
+mzidLibrary	Library of routines for post-processing mzIdentML (setting thresholds, FDR, protein inference, CSV export)	IMPORT AND EXPORT
+ProteoIDViewer	Open source viewer	IMPORT
+mzID package
+
+ R package available throgh Bioconductor	IMPORT
+PeptideShaker
+
+Java standalone tool for the analysis and post-processing of MS proteomics experiments	IMPORT AND EXPORT
+Crux
+
+Software toolkit for tandem mass spectrometry analysis. PMID: 18505281.	IMPORT AND EXPORT 
+PIA
+
+PIA is a toolbox for MS based protein inference and identification analysis. PMID: 25938255.	IMPORT AND EXPORT 
 
 
