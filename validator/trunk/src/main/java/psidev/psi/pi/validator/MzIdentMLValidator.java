@@ -848,8 +848,8 @@ public class MzIdentMLValidator extends Validator {
 
     /**
      * Validates an object.
-     * @param objectToCheck
-     * @return Collection<>
+     * @param objectToCheck the onject to check
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -889,7 +889,7 @@ public class MzIdentMLValidator extends Validator {
      * @param collection
      * @param xPath
      * @throws ValidatorException 
-     * @return Collection<>
+     * @return collection of messages
      */
     @Override
     @SuppressWarnings("unchecked")
@@ -1277,14 +1277,26 @@ public class MzIdentMLValidator extends Validator {
         // CV Mapping rules
         this.addTableRow(sb, "CvMappingRule total count:", this.extendedReport.getTotalCvRules());
         this.addTableRow(sb, "CvMappingRules not run:", this.extendedReport.getNonCheckedCvRules().size());
-        this.addPossiblyColouredRow(sb, "Invalid CvMappingRules:", this.extendedReport.getInvalidCvRules().size(), this.gui.getInvalidCvMappingColor());
+        String cvMappingRuleColor = this.gui.getInvalidCvMappingColor();
+        if (cvMappingRuleColor.equals(this.gui.COLOR_RED)) {
+            this.addPossiblyColouredRow(sb, "Invalid CvMappingRules:", this.extendedReport.getInvalidCvRules().size(), cvMappingRuleColor);
+        }
+        else {
+            this.addPossiblyColouredRow(sb, "Not matching CvMappingRules:", this.extendedReport.getInvalidCvRules().size(), cvMappingRuleColor);
+        }
         this.addTableRow(sb, "CvMappingRules run & valid:", this.extendedReport.getValidCvRules().size());
         this.addEmptyRow(sb);
         
         // Object rules
         this.addTableRow(sb, "ObjectRules total count:", this.extendedReport.getTotalObjectRules());
         this.addTableRow(sb, "ObjectRules not run:", this.extendedReport.getObjectRulesNotChecked().size());
-        this.addPossiblyColouredRow(sb, "ObjectRules run & invalid:", this.extendedReport.getObjectRulesInvalid().size(), this.gui.getInvalidObjectRuleColor());
+        String objRuleColor = this.gui.getInvalidObjectRuleColor();
+        if (objRuleColor.equals(this.gui.COLOR_RED)) {
+            this.addPossiblyColouredRow(sb, "ObjectRules run & invalid:", this.extendedReport.getObjectRulesInvalid().size(), objRuleColor);
+        }
+        else {
+            this.addPossiblyColouredRow(sb, "ObjectRules run & not matching:", this.extendedReport.getObjectRulesInvalid().size(), objRuleColor);
+        }
         this.addTableRow(sb, "ObjectRules run & valid:", this.extendedReport.getObjectRulesValid().size());
         this.addEmptyRow(sb);
         
@@ -1299,7 +1311,7 @@ public class MzIdentMLValidator extends Validator {
 
     /**
      * Gets the statistics report
-     * @param messageNumber
+     * @param messageNumber the message number
      * @return the statistics report as String
      */
     public String getStatisticsReport(int messageNumber) {
@@ -1314,14 +1326,26 @@ public class MzIdentMLValidator extends Validator {
         
         sb.append("CvMappingRule total count: ").append(this.extendedReport.getTotalCvRules()).append(NEW_LINE);
         sb.append("CvMappingRules not run: ").append(this.extendedReport.getNonCheckedCvRules().size()).append(NEW_LINE);
-        sb.append("CvMappingRules run & invalid: ").append(this.extendedReport.getInvalidCvRules().size()).append(NEW_LINE);
+        String cvMappingRuleColor = this.gui.getInvalidCvMappingColor();
+        if (cvMappingRuleColor.equals(this.gui.COLOR_RED)) {
+            sb.append("CvMappingRules run & invalid: ").append(this.extendedReport.getInvalidCvRules().size()).append(NEW_LINE);
+        }
+        else {
+            sb.append("CvMappingRules run & not matching: ").append(this.extendedReport.getInvalidCvRules().size()).append(NEW_LINE);
+        }
         sb.append("CvMappingRules invalid XPath: ").append(this.extendedReport.getCvRulesInvalidXpath().size()).append(NEW_LINE);
         sb.append("CvMappingRules run & valid: ").append(this.extendedReport.getValidCvRules().size()).append(NEW_LINE);
         sb.append(NEW_LINE);
         
         sb.append("ObjectRules total count: ").append(this.extendedReport.getTotalObjectRules()).append(NEW_LINE);
         sb.append("ObjectRules not run: ").append(this.extendedReport.getObjectRulesNotChecked().size()).append(NEW_LINE);
-        sb.append("ObjectRules run & invalid: ").append(this.extendedReport.getObjectRulesInvalid().size()).append(NEW_LINE);
+        String objRuleColor = this.gui.getInvalidObjectRuleColor();
+        if (objRuleColor.equals(this.gui.COLOR_RED)) {
+            sb.append("ObjectRules run & invalid: ").append(this.extendedReport.getObjectRulesInvalid().size()).append(NEW_LINE);
+        }
+        else {
+            sb.append("ObjectRules run & not matching: ").append(this.extendedReport.getObjectRulesInvalid().size()).append(NEW_LINE);
+        }
         sb.append("ObjectRules run & valid: ").append(this.extendedReport.getObjectRulesValid().size()).append(NEW_LINE);
         sb.append(NEW_LINE);
         
@@ -1378,7 +1402,7 @@ public class MzIdentMLValidator extends Validator {
     
     /**
      * Main method for command line execution.
-     * @param args
+     * @param args the command line arguments
      * @throws ValidatorException
      * @throws OntologyLoaderException
      * @throws URISyntaxException 
@@ -1439,7 +1463,7 @@ public class MzIdentMLValidator extends Validator {
 
     /**
      * Sets the rule filter manager
-     * @param ruleFilterManager
+     * @param ruleFilterManager the rule filter manager
      */
     public void setRuleFilterManager(RuleFilterManager ruleFilterManager) {
         this.ruleFilterManager = ruleFilterManager;
@@ -1448,7 +1472,7 @@ public class MzIdentMLValidator extends Validator {
     /**
      * Clusters the ValidatorMessages
      * 
-     * @param messages
+     * @param messages collection of messages
      * @return a collection of validator messages
      */
     public Collection<ValidatorMessage> clusterByMessagesAndRules(Collection<ValidatorMessage> messages) {
@@ -1545,7 +1569,7 @@ public class MzIdentMLValidator extends Validator {
 
     /**
      * Gets the validator messages.
-     * @param aMessages
+     * @param aMessages collection of messages
      * @return the validator messages
      */
     public String getValidatorMessages(Collection<ValidatorMessage> aMessages) {
@@ -1568,8 +1592,8 @@ public class MzIdentMLValidator extends Validator {
 
     /**
      * Removes messages which occur more than a given number of times.
-     * @param aMessages
-     * @return Collection<>
+     * @param aMessages collection of messages
+     * @return collection of cleared messages
      */
     public Collection<ValidatorMessage> clearMultipleMessages(Collection<ValidatorMessage> aMessages) {
         this.updateProgress("Clear multiple messages" + this. STR_ELLIPSIS);

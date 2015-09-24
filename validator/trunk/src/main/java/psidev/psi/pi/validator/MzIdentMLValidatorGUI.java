@@ -830,7 +830,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
      * Gets the file name/path of a mapping or object rule file.<br>
      * Note: If found in the folder were application has launched it overrides the default files.
      * 
-     * @param mzIdVersion the {@link MzIdVersion} of the file to validate> 1.1 or 1.2.
+     * @param mzIdVersion the {@link MzIdVersion} of the file to validate: 1.1 or 1.2.
      * @param ruleKind "mapping" or "object"
      * @return InputStream for the rule file
      * @throws FileNotFoundException
@@ -1447,7 +1447,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
 
     /**
      * 
-     * @param e 
+     * @param e exception
      */
     public void notifyOfError(Exception e) {
         this.errorException = e;
@@ -1455,9 +1455,9 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
 
     /**
      * Initializes the progress bar.
-     * @param min
-     * @param max
-     * @param current 
+     * @param min   minimum value
+     * @param max   maximum value
+     * @param current   the actual value
      */
     public void initProgress(int min, int max, int current) {
         this.jProgressBar.setIndeterminate(false);
@@ -1468,8 +1468,8 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     
     /**
      * Sets the progress bar.
-     * @param value
-     * @param message 
+     * @param value value to set
+     * @param message message
      */
     public void setProgress(int value, String message) {
         if (value > this.jProgressBar.getMaximum()) {
@@ -1483,7 +1483,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     /**
      * Main program for GUI execution.
      * .
-     * @param args 
+     * @param args command line arguments
      */
     public static void main(String[] args) {
         try {
@@ -1521,7 +1521,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
 
     /**
      * Gets the options selected by the user.
-     * @return HashMap<>
+     * @return mapping the ID#s to the options
      */
     @Override
     public HashMap<String, String> getSelectedOptions() {

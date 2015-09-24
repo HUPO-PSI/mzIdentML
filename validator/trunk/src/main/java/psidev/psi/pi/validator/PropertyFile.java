@@ -49,7 +49,7 @@ public class PropertyFile {
 
     /**
      * Reads a property from the property file.
-     * @param propName
+     * @param propName the property name
      * @return value for the read property
      */
     public String readProperty(String propName) {

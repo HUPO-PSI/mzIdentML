@@ -44,7 +44,7 @@ public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetection
     /**
      * Checks, if the object is a ProteinDetectionList.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a ProteinDetectionList
      */
     @Override
@@ -54,8 +54,8 @@ public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetection
 
     /**
      * 
-     * @param pdl
-     * @return Collection<>
+     * @param pdl the ProteinDetectionList element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -133,7 +133,7 @@ public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetection
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return  Collection<>
+     * @return  collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

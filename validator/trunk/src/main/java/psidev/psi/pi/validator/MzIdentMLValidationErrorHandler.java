@@ -138,23 +138,19 @@ public class MzIdentMLValidationErrorHandler implements ErrorHandler {
 
     /**
      * Receive notification of a warning.
-     * <p/>
      * <p>SAX parsers will use this method to report conditions that
      * are not errors or fatal errors as defined by the XML 1.0
      * recommendation.  The default behaviour is to take no action.</p>
-     * <p/>
      * <p>The SAX parser must continue to provide normal parsing events
      * after invoking this method: it should still be possible for the
      * application to process the document through to the end.</p>
-     * <p/>
-     * <p>Filters may use this method to report other, non-XML warnings
-     * as well.</p>
+     * <p>Filters may use this method to report other, non-XML warnings as well.</p>
      *
      * @param exception The warning information encapsulated in a
      *                  SAX parse exception.
      * @throws org.xml.sax.SAXException Any SAX exception, possibly
      *                                  wrapping another exception.
-     * @see org.xml.sax.SAXParseException
+     * @see org.xml.sax.SAXParseException SAX parsing exception
      */
     @Override
     public void warning(SAXParseException exception) throws SAXException {

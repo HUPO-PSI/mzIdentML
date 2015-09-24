@@ -47,7 +47,7 @@ public class RuleFilterManager {
     /**
      * Constructor.
      * 
-     * @param xmlFile
+     * @param xmlFile the XML file
      * @throws JAXBException 
      */
     public RuleFilterManager(InputStream xmlFile) throws JAXBException {
@@ -62,7 +62,7 @@ public class RuleFilterManager {
     /**
      * Sets the RuleFilter.
      * 
-     * @param filter 
+     * @param filter the rule filter
      */
     public void setFilter(RuleFilter filter) {
         this.filter = filter;
@@ -225,7 +225,7 @@ public class RuleFilterManager {
     /**
      * Check if it is necessary to add some rules to skip since the result of the execution of a cvRule.
      * 
-     * @param rule
+     * @param rule the rule
      * @param valid flag indicating if the rule has been passed or not
      */
     public void updateRulesToSkipByARuleResult(Rule rule, boolean valid) {
@@ -257,7 +257,7 @@ public class RuleFilterManager {
     /**
      * Filters the list of ValidatorMessages checking each message with the lists of rules to skip and return the final list of messages
      * 
-     * @param msgs
+     * @param msgs list of messages
      * @param extendedReport
      * @return the collection of validation messages after the filter
      */

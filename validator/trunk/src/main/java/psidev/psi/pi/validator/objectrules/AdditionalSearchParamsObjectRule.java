@@ -45,7 +45,7 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
 
     /**
      * 
-     * @param ontologyManager 
+     * @param ontologyManager  the ontology manager
      */
     public AdditionalSearchParamsObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
@@ -54,7 +54,7 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
     /**
      * Checks, if the object is a SpectrumIdentificationProtocol.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a SpectrumIdentificationProtocol
      */
     @Override
@@ -65,8 +65,8 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
     /**
      * Checks, what special kind of mzIdentML file we have.
      * 
-     * @param sip
-     * @return Collection<>
+     * @param sip the SpectrumIdentificationProtocol element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -124,7 +124,7 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

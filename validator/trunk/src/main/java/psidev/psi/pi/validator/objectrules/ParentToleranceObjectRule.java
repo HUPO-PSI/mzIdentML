@@ -36,7 +36,7 @@ public class ParentToleranceObjectRule extends AObjectRule<SpectrumIdentificatio
     /**
      * Checks, if the object is a SpectrumIdentificationProtocol.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a SpectrumIdentificationProtocol
      */
     @Override
@@ -46,8 +46,8 @@ public class ParentToleranceObjectRule extends AObjectRule<SpectrumIdentificatio
 
     /**
      * 
-     * @param protocol
-     * @return Collection<>
+     * @param protocol the SpectrumIdentificationProtocol element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -68,7 +68,7 @@ public class ParentToleranceObjectRule extends AObjectRule<SpectrumIdentificatio
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return  Collection<>
+     * @return  collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

@@ -10,8 +10,8 @@ public class ObjectRuleUtil {
     /**
      * Checks, if one of the accessions occurs in the list of cvParams.
      * 
-     * @param cvParams
-     * @param accessions
+     * @param cvParams      list of CV params
+     * @param accessions    collection of accessions
      * @return The list of {@link CvParam} found, or an empty list if not found
      **/
     public static List<CvParam> checkAccessionsInCVParams(List<CvParam> cvParams, Collection<String> accessions) {
@@ -32,8 +32,8 @@ public class ObjectRuleUtil {
     /**
      * Checks, if the accession occurs in the list of cvParams.
      * 
-     * @param cvParams
-     * @param accession
+     * @param cvParams      list of CV params
+     * @param accession    collection of accessions
      * @return The CvParam found or null if not found
      */
     public static CvParam checkAccessionsInCVParams(List<CvParam> cvParams, String accession) {

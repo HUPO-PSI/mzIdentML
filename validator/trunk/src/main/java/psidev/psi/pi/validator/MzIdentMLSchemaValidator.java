@@ -85,8 +85,8 @@ public class MzIdentMLSchemaValidator {
 
     /**
      * Sets the XML schema.
-     * @param aSchemaUri
-     * @throws SAXException
+     * @param aSchemaUri    the URI (Uniform Resource Identifier) of the schema
+     * @throws SAXException SAX parsing exception
      * @throws MalformedURLException 
      */
     public void setSchema(URI aSchemaUri) throws SAXException, MalformedURLException {
@@ -108,7 +108,7 @@ public class MzIdentMLSchemaValidator {
      *            the XML file being validated as a Stream (Reader)
      * @return an XMLValidationErrorHandler that can be queried to return all of the
      *         error in the XML file as plain text or HTML.
-     * @throws SAXException
+     * @throws SAXException SAX parsing exception
      */
     protected MzIdentMLValidationErrorHandler validateReader(Reader reader) throws SAXException {
         if (this.schema == null) {
@@ -120,7 +120,7 @@ public class MzIdentMLSchemaValidator {
 
     /**
      * Main program for XML schema validation.
-     * @param args 
+     * @param args the command line arguments
      */
     public static void main(String[] args) {
         MzIdentMLSchemaValidator validator = new MzIdentMLSchemaValidator();

@@ -53,7 +53,7 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
     /**
      * Checks, if the object is a ProteinAmbiguityGroup.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a ProteinAmbiguityGroup
      */
     @Override
@@ -61,6 +61,12 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
         return (obj instanceof ProteinAmbiguityGroup);
     }
 
+    /**
+     * 
+     * @param pag the ProteinAmbiguityGroup element
+     * @return collection of messages
+     * @throws ValidatorException 
+     */
     @Override
     public Collection<ValidatorMessage> check(ProteinAmbiguityGroup pag) throws ValidatorException {
         List<ValidatorMessage> messages = new ArrayList<>();
@@ -133,7 +139,7 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

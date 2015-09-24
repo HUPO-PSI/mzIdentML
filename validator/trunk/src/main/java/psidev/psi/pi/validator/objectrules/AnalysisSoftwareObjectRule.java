@@ -47,7 +47,7 @@ public class AnalysisSoftwareObjectRule extends AObjectRule<AnalysisSoftware> {
     /**
      * Checks, if the object is an AnalysisSoftware.
      * 
-     * @param obj
+     * @param obj   object to check
      * @return true, if obj is an AnalysisSoftware
      */
     @Override
@@ -57,8 +57,8 @@ public class AnalysisSoftwareObjectRule extends AObjectRule<AnalysisSoftware> {
 
     /**
      * 
-     * @param software
-     * @return Collection<>
+     * @param software the AnalysisSoftware element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -88,7 +88,7 @@ public class AnalysisSoftwareObjectRule extends AObjectRule<AnalysisSoftware> {
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

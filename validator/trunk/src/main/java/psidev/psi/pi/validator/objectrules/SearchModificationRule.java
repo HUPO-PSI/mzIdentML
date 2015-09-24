@@ -36,7 +36,7 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
     /**
      * Checks, if the object is a SearchModification.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a SearchModification
      */
     @Override
@@ -47,7 +47,7 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return collection of messages
      */
     @Override
     public Collection<String> getHowToFixTips() {
@@ -60,8 +60,8 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
 
     /**
      * 
-     * @param searchModification
-     * @return Collection<>
+     * @param searchModification the SearchModification element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override

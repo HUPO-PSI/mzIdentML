@@ -45,7 +45,7 @@ public class MatchedUnmatchedSubmittedPeaksValueObjectRule extends AObjectRule<P
     /**
      * Checks, if the object is a ProteinDetectionHypothesis.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a ProteinDetectionHypothesis
      */
     @Override
@@ -55,8 +55,8 @@ public class MatchedUnmatchedSubmittedPeaksValueObjectRule extends AObjectRule<P
 
     /**
      * 
-     * @param proteinDetectionHypotesis
-     * @return Collection<>
+     * @param proteinDetectionHypotesis the ProteinDetectionHypothesis element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -112,7 +112,7 @@ public class MatchedUnmatchedSubmittedPeaksValueObjectRule extends AObjectRule<P
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return  Collection<>
+     * @return  collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

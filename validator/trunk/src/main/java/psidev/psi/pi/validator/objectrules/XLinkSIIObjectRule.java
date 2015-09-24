@@ -38,7 +38,7 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
 
     /**
      * Constructor.
-     * @param ontologyManager 
+     * @param ontologyManager the ontology manager
      */
     public XLinkSIIObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
@@ -47,7 +47,7 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
     /**
      * Checks, if the object is a SpectrumIdentificationResult.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a SpectrumIdentificationResult
      */
     @Override
@@ -59,8 +59,8 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
      * Checks, if for each CV term MS:1002511 - 'cross-link spectrum identification item' there exists the same CV term
      * with the same value in another SpectrumIdentificationItem of the same SpectrumIdentificationResult.
      * 
-     * @param sir
-     * @return Collection<>
+     * @param sir the SpectrumIdentificationResult element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -100,7 +100,7 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
 
     /**
      * Checks the rules by access to the HashMap.
-     * @return Collection<>
+     * @return collection of messages
      */
     public static Collection<ValidatorMessage> checkRulesWithHashMapContent() {
         List<ValidatorMessage> messages = new ArrayList<>();
@@ -146,7 +146,7 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

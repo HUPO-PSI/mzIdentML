@@ -38,7 +38,7 @@ public class SpectrumIdentificationItemPeptideEvidenceRefObjectRule extends AObj
     /**
      * Checks, if the object is a SpectrumIdentificationItem.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a SpectrumIdentificationItem
      */
     @Override
@@ -48,8 +48,8 @@ public class SpectrumIdentificationItemPeptideEvidenceRefObjectRule extends AObj
 
     /**
      * 
-     * @param spectrumIdentificationItem
-     * @return Collection<>
+     * @param spectrumIdentificationItem the SpectrumIdentificationItem element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -68,7 +68,7 @@ public class SpectrumIdentificationItemPeptideEvidenceRefObjectRule extends AObj
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return  Collection<>
+     * @return  collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

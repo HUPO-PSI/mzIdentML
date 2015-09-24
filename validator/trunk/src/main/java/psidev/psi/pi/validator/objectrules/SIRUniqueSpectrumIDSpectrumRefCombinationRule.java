@@ -41,7 +41,7 @@ public class SIRUniqueSpectrumIDSpectrumRefCombinationRule extends AObjectRule<S
 
     /**
      * 
-     * @param ontologyManager 
+     * @param ontologyManager the ontology manager
      */
     public SIRUniqueSpectrumIDSpectrumRefCombinationRule(OntologyManager ontologyManager) {
         super(ontologyManager);
@@ -50,7 +50,7 @@ public class SIRUniqueSpectrumIDSpectrumRefCombinationRule extends AObjectRule<S
     /**
      * Checks, if the object is a SpectrumIdentificationResult.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a SpectrumIdentificationResult
      */
     @Override
@@ -61,8 +61,8 @@ public class SIRUniqueSpectrumIDSpectrumRefCombinationRule extends AObjectRule<S
     /**
      * Checks, if the combination of spectrumId and spectrumRef is unique for "final PSM lists'
      * 
-     * @param sir
-     * @return Collection<>
+     * @param sir the SpectrumIdentificationResult element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -91,7 +91,7 @@ public class SIRUniqueSpectrumIDSpectrumRefCombinationRule extends AObjectRule<S
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

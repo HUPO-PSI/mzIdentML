@@ -34,7 +34,7 @@ public class OrganizationObjectRule extends AObjectRule<Organization> {
 
     /**
      * Constructor.
-     * @param ontologyManager 
+     * @param ontologyManager the ontology manager
      */
     public OrganizationObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
@@ -43,7 +43,7 @@ public class OrganizationObjectRule extends AObjectRule<Organization> {
     /**
      * Checks, if the object is an Organization.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a Organization
      */
     @Override
@@ -53,8 +53,8 @@ public class OrganizationObjectRule extends AObjectRule<Organization> {
 
     /**
      * 
-     * @param org
-     * @return Collection<>
+     * @param org the Organization element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -101,7 +101,7 @@ public class OrganizationObjectRule extends AObjectRule<Organization> {
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

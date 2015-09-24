@@ -61,7 +61,7 @@ public class ProviderObjectRule extends AObjectRule<Provider> {
     /**
      * Checks, if the object is a Provider.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a Provider
      */
     @Override
@@ -71,8 +71,8 @@ public class ProviderObjectRule extends AObjectRule<Provider> {
 
     /**
      * 
-     * @param provider
-     * @return Collection<>
+     * @param provider the Provider element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -348,7 +348,7 @@ public class ProviderObjectRule extends AObjectRule<Provider> {
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return  Collection<>
+     * @return  collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

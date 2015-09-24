@@ -36,7 +36,7 @@ public class RegExpEnzymeObjectRule extends AObjectRule<Enzyme> {
     /**
      * Checks, if the object is an Enzyme.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is an Enzyme
      */
     @Override
@@ -46,8 +46,8 @@ public class RegExpEnzymeObjectRule extends AObjectRule<Enzyme> {
 
     /**
      * 
-     * @param enzyme
-     * @return Collection<>
+     * @param enzyme the Enzyme element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -66,7 +66,7 @@ public class RegExpEnzymeObjectRule extends AObjectRule<Enzyme> {
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

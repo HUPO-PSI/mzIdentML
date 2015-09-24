@@ -34,7 +34,7 @@ public class PersonObjectRule extends AObjectRule<Person> {
 
     /**
      * Constructor.
-     * @param ontologyManager 
+     * @param ontologyManager the ontology manager
      */
     public PersonObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
@@ -43,7 +43,7 @@ public class PersonObjectRule extends AObjectRule<Person> {
     /**
      * Checks, if the object is a Person.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a Person
      */
     @Override
@@ -53,8 +53,8 @@ public class PersonObjectRule extends AObjectRule<Person> {
 
     /**
      * 
-     * @param pers
-     * @return Collection<>
+     * @param pers the Person element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -101,7 +101,7 @@ public class PersonObjectRule extends AObjectRule<Person> {
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

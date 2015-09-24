@@ -39,7 +39,7 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
 
     /**
      * Constructor.
-     * @param ontologyManager 
+     * @param ontologyManager the ontology manager
      */
     public XLinkPeptideModificationObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
@@ -48,7 +48,7 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
     /**
      * Checks, if the object is a Peptide.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a Peptide
      */
     @Override
@@ -60,8 +60,8 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
      * Checks, if there are cross-link donor and cross-link receiver and if the
      * CV terms MS:1002509 - 'cross-link donor' and MS:1002510 - 'cross-link receiver' are paired with the same value in two different Peptide Modifications
      * 
-     * @param pept
-     * @return Collection<>
+     * @param pept the Peptide element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -115,7 +115,7 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
     
     /**
      * Checks the rules by access to the HashMap.
-     * @return Collection<>
+     * @return collection of messages
      */
     public static Collection<ValidatorMessage> checkRulesWithHashMapContent() {
         List<ValidatorMessage> messages = new ArrayList<>();
@@ -205,7 +205,7 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return Ccollection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

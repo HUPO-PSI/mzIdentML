@@ -50,7 +50,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * Gets the collection of not checked object rules.
      * 
-     * @return  Collection<>
+     * @return collection of not checked object rules
      */
     public Collection<ObjectRule> getObjectRulesNotChecked() {
         return this.objectRulesNotChecked.values();
@@ -59,7 +59,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * Gets the collection of valid object rules.
      * 
-     * @return  Collection<>
+     * @return collection of valid object rules
      */
     public Collection<ObjectRule> getObjectRulesValid() {
         return this.objectRulesValid.values();
@@ -68,7 +68,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * Gets the collection of invalid object rules.
      * 
-     * @return Collection<>
+     * @return collection of invalid object rules
      */
     public Collection<ObjectRule> getObjectRulesInvalid() {
         return this.objectRulesInvalid.values();
@@ -77,9 +77,9 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * Sets the Cv mapping rules.
      * 
-     * @param cvRules
-     * @param filterManager
-     * @param messages 
+     * @param cvRules   the CV rules
+     * @param filterManager the filter manager
+     * @param messages  the messages
      */
     public void setCvRules(Collection<CvRule> cvRules, RuleFilterManager filterManager, HashMap<String, List<ValidatorMessage>> messages) {
         this.clearCvMappingRules();
@@ -189,7 +189,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * Update the lists of object rules depending on the result of the rule.
      * 
-     * @param rule
+     * @param rule  the rule
      * @param resultCheck
      */
     public void objectRuleExecuted(ObjectRule rule, Collection<ValidatorMessage> resultCheck) {
@@ -215,7 +215,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
 
     /**
      * 
-     * @param rule
+     * @param rule  the rule
      * @param resultCheck 
      */
     public void objectRuleExecuted(ObjectRule rule, ValidatorMessage resultCheck) {
@@ -226,7 +226,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
 
     /**
      * 
-     * @param ruleId 
+     * @param ruleId the rule ID
      */
     public void setObjectRuleAsSkipped(String ruleId) {
         ObjectRule objectRule = this.getObjectRuleById(ruleId);
@@ -257,7 +257,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * Search for an object rule in all collections in the class
      * 
-     * @param ruleId
+     * @param ruleId    the rule ID
      * @return ObjectRule
      */
     public ObjectRule getObjectRuleById(String ruleId) {
@@ -329,7 +329,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
 
     /**
      * 
-     * @param ruleId 
+     * @param ruleId the rule ID
      */
     public void setObjectRuleAsInvalid(String ruleId) {
         ObjectRule objectRule = this.getObjectRuleById(ruleId);
@@ -390,7 +390,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * Gets the invalid Cv rules maping rules.
      * 
-     * @return  HashSet<>
+     * @return hash with the invalid CV mapping rules
      */
     public HashSet<String> getInvalidCvRules() {
         return this.invalidCvRules;
@@ -399,7 +399,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * Gets the valid Cv rules maping rules.
      * 
-     * @return  HashSet<>
+     * @return hash with the valid CV mapping rules
      */
     public HashSet<String> getValidCvRules() {
         return this.validCvRules;
@@ -408,7 +408,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * Gets the non-checked Cv rules maping rules.
      * 
-     * @return HashSet<>
+     * @return hash with the non-checked CV mapping rules
      */
     public HashSet<String> getNonCheckedCvRules() {
         return this.notCheckedCvRules;
@@ -426,7 +426,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * Adds an invalid XML schema validation message.
      * 
-     * @param msg
+     * @param msg   message
      */
     public void addInvalidSchemaValidationMessage(String msg) {
         this.invalidSchemaValidation.add(msg);

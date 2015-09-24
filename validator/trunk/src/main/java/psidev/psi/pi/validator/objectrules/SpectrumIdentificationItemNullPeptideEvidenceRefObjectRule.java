@@ -33,7 +33,7 @@ public class SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule extends	
 
     /**
      *  Another constructor that calls to ObjectRule.
-     * @param ontologyManager 
+     * @param ontologyManager  the ontology manager
      */
     public SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
@@ -42,7 +42,7 @@ public class SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule extends	
     /**
      * Checks, if the object is a SpectrumIdentificationItem.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a SpectrumIdentificationItem
      */
     @Override
@@ -52,8 +52,8 @@ public class SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule extends	
 
     /**
      * 
-     * @param spectrumIdentificationItem
-     * @return Collection<>
+     * @param spectrumIdentificationItem the SpectrumIdentificationItem element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -70,7 +70,7 @@ public class SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule extends	
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

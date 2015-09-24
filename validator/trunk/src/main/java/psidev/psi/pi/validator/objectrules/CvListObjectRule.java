@@ -34,7 +34,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
 
     /**
      * Constructor.
-     * @param ontologyManager 
+     * @param ontologyManager the ontology manager
      */
     public CvListObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
@@ -43,7 +43,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
     /**
      * Checks, if the object is a CvList.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a CvList
      */
     @Override
@@ -53,8 +53,8 @@ public class CvListObjectRule extends AObjectRule<CvList> {
 
     /**
      * 
-     * @param cvList
-     * @return Collection<>
+     * @param cvList the CvList element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -99,7 +99,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

@@ -26,7 +26,7 @@ public class SILCheckForFinalPSMListRule extends AObjectRule<SpectrumIdentificat
 
     /**
      * 
-     * @param ontologyManager 
+     * @param ontologyManager the ontology manager
      */
     public SILCheckForFinalPSMListRule(OntologyManager ontologyManager) {
         super(ontologyManager);
@@ -35,7 +35,7 @@ public class SILCheckForFinalPSMListRule extends AObjectRule<SpectrumIdentificat
     /**
      * Checks, if the object is a SpectrumIdentificationList.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a SpectrumIdentificationList
      */
     @Override
@@ -46,8 +46,8 @@ public class SILCheckForFinalPSMListRule extends AObjectRule<SpectrumIdentificat
     /**
      * Checks, if the SpectrumIdentificationList is a final one.
      * 
-     * @param sil
-     * @return Collection<>
+     * @param sil the SpectrumIdentificationList element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -68,7 +68,7 @@ public class SILCheckForFinalPSMListRule extends AObjectRule<SpectrumIdentificat
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

@@ -3,7 +3,7 @@
 	<groupId>psidev.psi.pi</groupId>
 	<artifactId>mzIdentMLValidator</artifactId>
 	<packaging>jar</packaging>
-	<version>1.4.13-SNAPSHOT</version>
+	<version>1.4.14-SNAPSHOT</version>
 	<name>PSI mzIdentML semantic and MIAPE validator</name>
 	<description>A semantic and MIAPE validator for PSI mzIdentML XML files.</description>
 	<properties>
@@ -327,14 +327,14 @@
 			<version>0.14</version>
 		</dependency>
 		<dependency>
-			<groupId>xerces</groupId>
-			<artifactId>xercesImpl</artifactId>
-			<version>2.11.0</version>
+			<groupId>org.eclipse.birt.runtime.3_7_1</groupId>
+			<artifactId>org.apache.xerces</artifactId>
+			<version>2.9.0</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
+			<version>4.12</version>
             <scope>test</scope>
 		</dependency>
 	</dependencies>

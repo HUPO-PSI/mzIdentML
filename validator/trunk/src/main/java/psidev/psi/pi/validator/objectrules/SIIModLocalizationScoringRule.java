@@ -35,7 +35,7 @@ public class SIIModLocalizationScoringRule extends AObjectRule<SpectrumIdentific
 
     /**
      * 
-     * @param ontologyManager 
+     * @param ontologyManager the ontology manager
      */
     public SIIModLocalizationScoringRule(OntologyManager ontologyManager) {
         super(ontologyManager);
@@ -44,7 +44,7 @@ public class SIIModLocalizationScoringRule extends AObjectRule<SpectrumIdentific
     /**
      * Checks, if the object is a SpectrumIdentificationItem.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a SpectrumIdentificationItem
      */
     @Override
@@ -55,8 +55,8 @@ public class SIIModLocalizationScoringRule extends AObjectRule<SpectrumIdentific
     /**
      * Checks, if the modification localization is compatible with the regex.
      * 
-     * @param sii
-     * @return Collection<>
+     * @param sii the SpectrumIdentificationItem element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -111,7 +111,7 @@ public class SIIModLocalizationScoringRule extends AObjectRule<SpectrumIdentific
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

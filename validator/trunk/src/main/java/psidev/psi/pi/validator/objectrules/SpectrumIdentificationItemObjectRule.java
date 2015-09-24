@@ -37,7 +37,7 @@ public class SpectrumIdentificationItemObjectRule extends AObjectRule<SpectrumId
     /**
      * Checks, if the object is a SpectrumIdentificationItem.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is an SpectrumIdentificationItem
      */
     @Override
@@ -47,8 +47,8 @@ public class SpectrumIdentificationItemObjectRule extends AObjectRule<SpectrumId
 
     /**
      * 
-     * @param spectrumIdentificationItem
-     * @return Collection<>
+     * @param spectrumIdentificationItem the SpectrumIdentificationItem element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -70,7 +70,7 @@ public class SpectrumIdentificationItemObjectRule extends AObjectRule<SpectrumId
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return  Collection<>
+     * @return  collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

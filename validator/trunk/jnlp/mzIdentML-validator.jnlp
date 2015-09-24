@@ -16,7 +16,7 @@
 	<resources>
 		<j2se version="1.7+" max-heap-size="2048m"/>
         <!-- Used libraries -->
-        <jar href="lib/mzIdentMLValidator-1.4.13-SNAPSHOT.jar" main="true"/>
+        <jar href="lib/mzIdentMLValidator-1.4.14-SNAPSHOT.jar" main="true"/>
         <jar href="lib/bbop-2.0.jar"/>
         <jar href="lib/commons-beanutils-1.9.2.jar"/>
         <jar href="lib/commons-collections-3.2.1.jar"/>

@@ -45,7 +45,7 @@ public class PeptideLevelStatsObjectRule extends AObjectRule<SpectrumIdentificat
 
     /**
      * 
-     * @param ontologyManager 
+     * @param ontologyManager the ontology manager
      */
     public PeptideLevelStatsObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
@@ -57,7 +57,7 @@ public class PeptideLevelStatsObjectRule extends AObjectRule<SpectrumIdentificat
     /**
      * Checks, if the object is a SpectrumIdentificationItem.
      * 
-     * @param obj
+     * @param obj   the object to check
      * @return true, if obj is a SpectrumIdentificationItem
      */
     @Override
@@ -68,8 +68,8 @@ public class PeptideLevelStatsObjectRule extends AObjectRule<SpectrumIdentificat
     /**
      * Checks, if the required triplet of terms is present in case of peptide-level scoring.
      * 
-     * @param sii
-     * @return Collection<>
+     * @param sii the SpectrumIdentificationItem element
+     * @return collection of messages
      * @throws ValidatorException 
      */
     @Override
@@ -132,7 +132,7 @@ public class PeptideLevelStatsObjectRule extends AObjectRule<SpectrumIdentificat
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Collection<>
+     * @return collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {

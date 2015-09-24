@@ -31,7 +31,7 @@ public abstract class AObjectRule<T extends Object> extends ObjectRule<T> {
 
     /**
      * Constructor.
-     * @param ontologyManager 
+     * @param ontologyManager the ontology manager
      */
     public AObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
@@ -48,8 +48,8 @@ public abstract class AObjectRule<T extends Object> extends ObjectRule<T> {
     
     /**
      * Calls OLS webserver and gets child terms for a termId.
-     * @param ontology
-     * @param termId
+     * @param ontology  the ontology
+     * @param termId    the ID of the CV term
      * @return HashMap of child terms - key is termId, value is termName.
      */
     protected HashMap<String, String> getTermChildren(String ontology, String termId) {
