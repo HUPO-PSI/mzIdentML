@@ -7,7 +7,7 @@ set MANIFEST_FILE=C:\Users\mayerg97\Documents\GitHub\HUPO-PSI\mzIdentML\validato
 cd %OutDir%
 del %JAR_FILE%
 
-"C:\Program Files\Java\jdk1.8.0_60\bin\jar.exe" -cmvf %MANIFEST_FILE% %JAR_FILE% *
+"C:\Program Files\Java\jdk1.8.0_74\bin\jar.exe" -cmvf %MANIFEST_FILE% %JAR_FILE% *
 
 @echo on
 pause
