@@ -407,7 +407,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 	</xsd:complexType>
 	<xsd:complexType name="SearchDatabaseType">
 		<xsd:annotation>
-			<xsd:documentation>A database for searching mass spectra. Examples include a set of amino acid sequence entries, or annotated spectra libraries. </xsd:documentation>
+			<xsd:documentation>A database for searching mass spectra. Examples include a set of amino acid sequence entries, nucleotide databases (e.g. 6 frame translated) or annotated spectra libraries. </xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="ExternalDataType">
@@ -1486,7 +1486,7 @@ Material.</xsd:documentation>
 							<xsd:documentation>A URI to access documentation and tools to interpret the external format of the ExternalData instance. For example, XML Schema or static libraries (APIs) to access binary formats.</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="FileFormat" type="FileFormatType" minOccurs="0"/>
+					<xsd:element name="FileFormat" type="FileFormatType" minOccurs="1"/>
 				</xsd:sequence>
 				<xsd:attribute name="location" type="xsd:anyURI" use="required">
 					<xsd:annotation>
