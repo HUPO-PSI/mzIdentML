@@ -8,6 +8,7 @@
     <rule class="psidev.psi.pi.validator.objectrules.PersonObjectRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.ProteinAmbiguityGroupObjectRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.ProteinDetectionListObjectRule"/>
+    <rule class="psidev.psi.pi.validator.objectrules.ProteoGenomicsObjectRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.SIIModLocalizationScoringRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.SILCheckForFinalPSMListRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.SIRUniqueSpectrumIDSpectrumRefCombinationRule"/>

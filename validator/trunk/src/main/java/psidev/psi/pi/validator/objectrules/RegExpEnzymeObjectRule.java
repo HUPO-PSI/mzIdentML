@@ -21,7 +21,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.Enzyme;
 public class RegExpEnzymeObjectRule extends AObjectRule<Enzyme> {
 
     // Contexts
-    private static final Context EnzymeContext = new Context(MzIdentMLElement.Enzyme.getXpath());
+    private static final Context ENZYME_CONTEXT = new Context(MzIdentMLElement.Enzyme.getXpath());
 
     // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
     public RegExpEnzymeObjectRule() {
@@ -48,7 +48,7 @@ public class RegExpEnzymeObjectRule extends AObjectRule<Enzyme> {
      * 
      * @param enzyme the Enzyme element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(Enzyme enzyme) throws ValidatorException {
@@ -56,8 +56,8 @@ public class RegExpEnzymeObjectRule extends AObjectRule<Enzyme> {
 
         if (enzyme.getSiteRegexp() == null || enzyme.getSiteRegexp().isEmpty()) {
             messages.add(new ValidatorMessage("There is not a regular expression in Enzyme (id='"
-            + enzyme.getId() + "') element at " + RegExpEnzymeObjectRule.EnzymeContext.getContext()
-            + "/SiteRegexp", MessageLevel.ERROR, RegExpEnzymeObjectRule.EnzymeContext, this));
+            + enzyme.getId() + "') element at " + RegExpEnzymeObjectRule.ENZYME_CONTEXT.getContext()
+            + "/SiteRegexp", MessageLevel.ERROR, RegExpEnzymeObjectRule.ENZYME_CONTEXT, this));
         }
 
         return messages;
@@ -72,7 +72,7 @@ public class RegExpEnzymeObjectRule extends AObjectRule<Enzyme> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Add the element 'SiteRegexp' to the Enzyme at " + RegExpEnzymeObjectRule.EnzymeContext.getContext());
+        ret.add("Add the element 'SiteRegexp' to the Enzyme at " + RegExpEnzymeObjectRule.ENZYME_CONTEXT.getContext());
         
         return ret;
     }

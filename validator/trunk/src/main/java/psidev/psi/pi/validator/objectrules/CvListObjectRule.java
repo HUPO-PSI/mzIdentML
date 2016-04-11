@@ -23,7 +23,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
     /**
      * Constants.
      */
-    private static final Context CVContext = new Context(MzIdentMLElement.CvList.getXpath());
+    private static final Context CV_CONTEXT = new Context(MzIdentMLElement.CvList.getXpath());
 
     /**
      * Constructor.
@@ -55,7 +55,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
      * 
      * @param cvList the CvList element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(CvList cvList) throws ValidatorException {
@@ -93,7 +93,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
     private ValidatorMessage getValidatorMsg(String cvID) {
         String strB = "The cv element for " + cvID + " uses an old version.";
         
-        return new ValidatorMessage(strB, MessageLevel.INFO, CvListObjectRule.CVContext, this);        
+        return new ValidatorMessage(strB, MessageLevel.INFO, CvListObjectRule.CV_CONTEXT, this);        
     }
     
     /**
@@ -105,7 +105,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Provide the newest version for all cv element under the cvList element." + CvListObjectRule.CVContext.getContext());
+        ret.add("Provide the newest version for all cv element under the cvList element." + CvListObjectRule.CV_CONTEXT.getContext());
 
         return ret;
     }

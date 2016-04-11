@@ -48,7 +48,7 @@ public class SILCheckForFinalPSMListRule extends AObjectRule<SpectrumIdentificat
      * 
      * @param sil the SpectrumIdentificationList element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(SpectrumIdentificationList sil) throws ValidatorException {

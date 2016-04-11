@@ -24,7 +24,7 @@ public class SIRUniqueSpectrumIDSpectrumRefCombinationRule extends AObjectRule<S
     /**
      * Constants.
      */
-    private static final Context SIRContext = new Context(MzIdentMLElement.SpectrumIdentificationResult.getXpath());
+    private static final Context SIR_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationResult.getXpath());
     
     /**
      * Members.
@@ -63,7 +63,7 @@ public class SIRUniqueSpectrumIDSpectrumRefCombinationRule extends AObjectRule<S
      * 
      * @param sir the SpectrumIdentificationResult element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(SpectrumIdentificationResult sir) throws ValidatorException {
@@ -74,8 +74,8 @@ public class SIRUniqueSpectrumIDSpectrumRefCombinationRule extends AObjectRule<S
             
             if (this.spectIDSpectDataRefMap.containsKey(pair)) {
                 messages.add(new ValidatorMessage("The combination of spectrumId and spectrumRef of the SpectrumIdentificationResult (id='"
-                + sir.getId() + "') element at " + SIRUniqueSpectrumIDSpectrumRefCombinationRule.SIRContext.getContext()
-                + "must be unique for 'final PSM lists', ", MessageLevel.ERROR, SIRUniqueSpectrumIDSpectrumRefCombinationRule.SIRContext, this));
+                + sir.getId() + "') element at " + SIRUniqueSpectrumIDSpectrumRefCombinationRule.SIR_CONTEXT.getContext()
+                + "must be unique for 'final PSM lists', ", MessageLevel.ERROR, SIRUniqueSpectrumIDSpectrumRefCombinationRule.SIR_CONTEXT, this));
             }
             else {
                 this.spectIDSpectDataRefMap.put(pair, Boolean.TRUE);
@@ -97,7 +97,7 @@ public class SIRUniqueSpectrumIDSpectrumRefCombinationRule extends AObjectRule<S
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("The combination for each SpectrumIdentificationResult of a 'final PSM list' has to be unique at" + SIRUniqueSpectrumIDSpectrumRefCombinationRule.SIRContext.getContext());
+        ret.add("The combination for each SpectrumIdentificationResult of a 'final PSM list' has to be unique at" + SIRUniqueSpectrumIDSpectrumRefCombinationRule.SIR_CONTEXT.getContext());
 
         return ret;
     }

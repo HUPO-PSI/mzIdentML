@@ -48,7 +48,7 @@ public class RuleFilterManager {
      * Constructor.
      * 
      * @param xmlFile the XML file
-     * @throws JAXBException 
+     * @throws JAXBException  JAXB exception
      */
     public RuleFilterManager(InputStream xmlFile) throws JAXBException {
         if (xmlFile == null) {
@@ -258,7 +258,7 @@ public class RuleFilterManager {
      * Filters the list of ValidatorMessages checking each message with the lists of rules to skip and return the final list of messages
      * 
      * @param msgs list of messages
-     * @param extendedReport
+     * @param extendedReport    the extended validation report
      * @return the collection of validation messages after the filter
      */
     public Collection<ValidatorMessage> filterValidatorMessages(HashMap<String, List<ValidatorMessage>> msgs, ExtendedValidatorReport extendedReport) {

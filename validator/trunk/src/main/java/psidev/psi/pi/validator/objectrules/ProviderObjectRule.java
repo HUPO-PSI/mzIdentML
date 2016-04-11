@@ -33,10 +33,10 @@ import uk.ac.ebi.jmzidml.model.mzidml.Role;
  */
 public class ProviderObjectRule extends AObjectRule<Provider> {
 
-    private static final String locNEW_LINE = System.getProperty("line.separator");
+    private static final String LOC_NEW_LINE = System.getProperty("line.separator");
 
     // Contexts
-    private static final Context providerContext = new Context(MzIdentMLElement.Provider.getXpath());
+    private static final Context PROVIDER_CONTEXT = new Context(MzIdentMLElement.Provider.getXpath());
     private static final String EMAIL_ACC = "MS:1000589";
     private static final String CONTACT_ORGANIZATION = "MS:1000590";
     private static final String ROLE_TYPE_ACC = "MS:1001266";
@@ -73,7 +73,7 @@ public class ProviderObjectRule extends AObjectRule<Provider> {
      * 
      * @param provider the Provider element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(Provider provider) throws ValidatorException {
@@ -82,33 +82,33 @@ public class ProviderObjectRule extends AObjectRule<Provider> {
         
         if (provider.getContactRole() == null) {
             this.contactRoleError = true;
-            messageString.append("There is not a ContactRole in the Provider (id='").append(provider.getId()).append("') element at ").append(ProviderObjectRule.providerContext.getContext());
+            messageString.append("There is not a ContactRole in the Provider (id='").append(provider.getId()).append("') element at ").append(ProviderObjectRule.PROVIDER_CONTEXT.getContext());
         }
         else {
             // check if the provider has an email
             if (!hasEmail(provider.getContactRole())) {
                 this.emailError = true;
                 if (!messageString.toString().isEmpty())
-                    messageString.append(locNEW_LINE);
+                    messageString.append(LOC_NEW_LINE);
                 messageString
                     .append("There is not a valid e-mail contact ('")
                     .append(EMAIL_ACC)
                     .append("') in provider (id='")
                     .append(provider.getId())
                     .append("') or referenced person or organizations element at ")
-                    .append(ProviderObjectRule.providerContext.getContext());
+                    .append(ProviderObjectRule.PROVIDER_CONTEXT.getContext());
             }
             
             // check if the provider has an organization name
             if (!hasOrganizationName(provider.getContactRole())) {
                 this.organizationNameError = true;
                 if (!messageString.toString().isEmpty())
-                    messageString.append(locNEW_LINE);
+                    messageString.append(LOC_NEW_LINE);
                 messageString
                     .append("There is not an affiliation name for the organizations referenced by the provider (id='")
                     .append(provider.getId())
                     .append("') at ")
-                    .append(ProviderObjectRule.providerContext.getContext());
+                    .append(ProviderObjectRule.PROVIDER_CONTEXT.getContext());
             }
 
             // check if the provider has a valid person or a role type
@@ -117,17 +117,17 @@ public class ProviderObjectRule extends AObjectRule<Provider> {
             if (!validPerson && !validRoleType) {
                 //this.validPersonError = true;
                 if (!messageString.toString().isEmpty())
-                    messageString.append(locNEW_LINE);
+                    messageString.append(LOC_NEW_LINE);
                 messageString
                     .append("There is not a valid person or a valid role type referenced by the provider (id='")
                     .append(provider.getId())
                     .append("') at ")
-                    .append(ProviderObjectRule.providerContext.getContext());
+                    .append(ProviderObjectRule.PROVIDER_CONTEXT.getContext());
             }
         }
         
         if (!messageString.toString().isEmpty()) {
-            messages.add(new ValidatorMessage(messageString.toString(), MessageLevel.ERROR, ProviderObjectRule.providerContext, this));
+            messages.add(new ValidatorMessage(messageString.toString(), MessageLevel.ERROR, ProviderObjectRule.PROVIDER_CONTEXT, this));
         }
         
         return messages;
@@ -355,15 +355,15 @@ public class ProviderObjectRule extends AObjectRule<Provider> {
         List<String> ret = new ArrayList<>();
 
         if (this.contactRoleError) {
-            ret.add("Add a ContactRole element in the Provider element at " + ProviderObjectRule.providerContext.getContext());
+            ret.add("Add a ContactRole element in the Provider element at " + ProviderObjectRule.PROVIDER_CONTEXT.getContext());
         }
         
         if (this.emailError) {
-            ret.add("Add a valid contact email ('" + EMAIL_ACC + "') in any referenced element in the provider at " + ProviderObjectRule.providerContext.getContext());
+            ret.add("Add a valid contact email ('" + EMAIL_ACC + "') in any referenced element in the provider at " + ProviderObjectRule.PROVIDER_CONTEXT.getContext());
         }
         
         if (this.organizationNameError) {
-            ret.add("Add an affiliation name ('" + CONTACT_ORGANIZATION + "') in any referenced element in the provider at " + ProviderObjectRule.providerContext.getContext());
+            ret.add("Add an affiliation name ('" + CONTACT_ORGANIZATION + "') in any referenced element in the provider at " + ProviderObjectRule.PROVIDER_CONTEXT.getContext());
         }
         
         return ret;

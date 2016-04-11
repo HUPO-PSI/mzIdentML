@@ -13,6 +13,7 @@
     <rule class="psidev.psi.pi.validator.objectrules.PersonObjectRule"/>
 	<rule class="psidev.psi.pi.validator.objectrules.ProteinAmbiguityGroupObjectRule"/>
 	<rule class="psidev.psi.pi.validator.objectrules.ProteinDetectionListObjectRule"/>
+    <rule class="psidev.psi.pi.validator.objectrules.ProteoGenomicsObjectRule"/>
 	<rule class="psidev.psi.pi.validator.objectrules.ProviderObjectRule"/>
 	<rule class="psidev.psi.pi.validator.objectrules.RegExpEnzymeObjectRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.SIIModLocalizationScoringRule"/>

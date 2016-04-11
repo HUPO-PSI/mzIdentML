@@ -850,7 +850,7 @@ public class MzIdentMLValidator extends Validator {
      * Validates an object.
      * @param objectToCheck the onject to check
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> validate(Object objectToCheck) throws ValidatorException {
@@ -886,9 +886,9 @@ public class MzIdentMLValidator extends Validator {
 
     /**
      * Checks the CV mappings.
-     * @param collection
-     * @param xPath
-     * @throws ValidatorException 
+     * @param collection the collection
+     * @param xPath the XPATH
+     * @throws ValidatorException validator exception
      * @return collection of messages
      */
     @Override
@@ -1149,9 +1149,9 @@ public class MzIdentMLValidator extends Validator {
      * @param objectRuleFile
      *            if null, a new objectRuleFile will be loaded accordingly with
      *            mzIdVersion and GUI selection
-     * @throws CvRuleReaderException
-     * @throws ValidatorException
-     * @throws IOException
+     * @throws CvRuleReaderException CvRule reader exception
+     * @throws ValidatorException validator exception
+     * @throws IOException IO exception
      */
     protected void reset(InputStream cvMappingRuleFile, InputStream objectRuleFile) throws CvRuleReaderException, ValidatorException, IOException {
         this.resetCounters();
@@ -1261,7 +1261,7 @@ public class MzIdentMLValidator extends Validator {
     
     /**
      * Gets the HTML report.
-     * @param messageNumber
+     * @param messageNumber the message number
      * @return the HTML report as String
      */
     public String getHtmlStatisticsReport(int messageNumber) {
@@ -1403,9 +1403,9 @@ public class MzIdentMLValidator extends Validator {
     /**
      * Main method for command line execution.
      * @param args the command line arguments
-     * @throws ValidatorException
-     * @throws OntologyLoaderException
-     * @throws URISyntaxException 
+     * @throws ValidatorException validator exception
+     * @throws OntologyLoaderException ontology loader exception
+     * @throws URISyntaxException URI syntax exception
      */
     public static void main(String[] args) throws ValidatorException, OntologyLoaderException, URISyntaxException {
         if (args == null || args.length != 6) {

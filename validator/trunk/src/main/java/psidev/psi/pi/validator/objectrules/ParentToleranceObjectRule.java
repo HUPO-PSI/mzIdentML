@@ -21,7 +21,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationProtocol;
 public class ParentToleranceObjectRule extends AObjectRule<SpectrumIdentificationProtocol> {
 
     // Contexts
-    private static final Context SIPContext = new Context(MzIdentMLElement.SpectrumIdentificationProtocol.getXpath());
+    private static final Context SIP_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationProtocol.getXpath());
 
     // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
     public ParentToleranceObjectRule() {
@@ -48,7 +48,7 @@ public class ParentToleranceObjectRule extends AObjectRule<SpectrumIdentificatio
      * 
      * @param protocol the SpectrumIdentificationProtocol element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(SpectrumIdentificationProtocol protocol) throws ValidatorException {
@@ -57,9 +57,9 @@ public class ParentToleranceObjectRule extends AObjectRule<SpectrumIdentificatio
         if (protocol.getParentTolerance() == null) {
             messages.add(new ValidatorMessage("There is not a parent tolerance in SpectrumIdentificationProtocol (id='"
                 + protocol.getId() + "') element at "
-                + ParentToleranceObjectRule.SIPContext.getContext()
+                + ParentToleranceObjectRule.SIP_CONTEXT.getContext()
                 + "/SiteRegexp", MessageLevel.ERROR,
-                ParentToleranceObjectRule.SIPContext, this));
+                ParentToleranceObjectRule.SIP_CONTEXT, this));
         }
 
         return messages;
@@ -74,7 +74,7 @@ public class ParentToleranceObjectRule extends AObjectRule<SpectrumIdentificatio
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Add the element 'FragmentTolerance' to the SpectrumIdentificationProtocol at " + ParentToleranceObjectRule.SIPContext.getContext());
+        ret.add("Add the element 'FragmentTolerance' to the SpectrumIdentificationProtocol at " + ParentToleranceObjectRule.SIP_CONTEXT.getContext());
         
         return ret;
     }

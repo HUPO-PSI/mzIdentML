@@ -15,8 +15,8 @@ import uk.ac.ebi.jmzidml.model.mzidml.ProteinAmbiguityGroup;
 import uk.ac.ebi.jmzidml.model.mzidml.ProteinDetectionList;
 
 /**
- * iterating over all PAGs and if one of them contains a "cluster identifier"
- * CV, all the rest will also must have it. Check also that the value of the CV is an integer.
+ * Iterating over all PAGs and if one of them contains a "cluster identifier"
+ * CV, all the rest also must have it. Check also that the value of the CV is an integer.
  * 
  * @author Salva
  * 
@@ -24,8 +24,8 @@ import uk.ac.ebi.jmzidml.model.mzidml.ProteinDetectionList;
 public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetectionList> {
 
     // Contexts
-    private static final Context PAGContext = new Context(MzIdentMLElement.ProteinAmbiguityGroup.getXpath());
-    private static final Context PDLContext = new Context(MzIdentMLElement.ProteinDetectionList.getXpath());
+    private static final Context PAG_CONTEXT = new Context(MzIdentMLElement.ProteinAmbiguityGroup.getXpath());
+    private static final Context PDL_CONTEXT = new Context(MzIdentMLElement.ProteinDetectionList.getXpath());
     private static final String PROTEIN_CLUSTER_IDENTIFIER_CV = "MS:1002407";
 
     private boolean clusterIdentifierTypeError = false;
@@ -56,7 +56,7 @@ public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetection
      * 
      * @param pdl the ProteinDetectionList element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(ProteinDetectionList pdl) throws ValidatorException {
@@ -99,9 +99,9 @@ public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetection
                                         + ") is not a valid integer value (id="
                                         + pag.getId()
                                         + "') element at "
-                                        + PAGContext.getContext(),
+                                        + PAG_CONTEXT.getContext(),
                                         MessageLevel.ERROR,
-                                        PAGContext, this));
+                                        PAG_CONTEXT, this));
                                 }
                             }
                         } // rof
@@ -116,9 +116,9 @@ public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetection
                                 + ") has been detected in some Protein Ambiguity Group (PAG) but not in all in the PDL "
                                 + pdl.getId()
                                 + "') element at "
-                                + PDLContext.getContext(),
+                                + PDL_CONTEXT.getContext(),
                                 MessageLevel.ERROR,
-                                PAGContext, this));
+                                PAG_CONTEXT, this));
                         }
 
                         this.clusterIdentifierUseError = true;
@@ -143,14 +143,14 @@ public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetection
             ret.add("Add the appropriate CV term 'cluster identifier' ("
                 + PROTEIN_CLUSTER_IDENTIFIER_CV
                 + ") to all the Protein Ambiguity Groups at "
-                + ProteinDetectionListObjectRule.PAGContext.getContext());
+                + ProteinDetectionListObjectRule.PAG_CONTEXT.getContext());
         }
         
         if (this.clusterIdentifierTypeError) {
             ret.add("Introduce a valid Integer value on the CV term 'cluster identifier' ("
                 + PROTEIN_CLUSTER_IDENTIFIER_CV
                 + ") at "
-                + ProteinDetectionListObjectRule.PAGContext.getContext());
+                + ProteinDetectionListObjectRule.PAG_CONTEXT.getContext());
         }
         
         return ret;

@@ -23,7 +23,7 @@ public class OrganizationObjectRule extends AObjectRule<Organization> {
     /**
      * Constants.
      */
-    private static final Context OrganizationContext = new Context(MzIdentMLElement.Organization.getXpath());
+    private static final Context ORGANIZATION_CONTEXT = new Context(MzIdentMLElement.Organization.getXpath());
 
     /**
      * Constructor.
@@ -55,7 +55,7 @@ public class OrganizationObjectRule extends AObjectRule<Organization> {
      * 
      * @param org the Organization element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(Organization org) throws ValidatorException {
@@ -93,9 +93,9 @@ public class OrganizationObjectRule extends AObjectRule<Organization> {
     private ValidatorMessage getValidatorMsg(Organization org, String cvName) {
         StringBuilder strB = new StringBuilder("The '");
         strB.append(cvName).append("' cvParam in the Organization (id='");
-        strB.append(org.getId()).append("') element at ").append(OrganizationObjectRule.OrganizationContext.getContext()).append(" has an empty value.");
+        strB.append(org.getId()).append("') element at ").append(OrganizationObjectRule.ORGANIZATION_CONTEXT.getContext()).append(" has an empty value.");
         
-        return new ValidatorMessage(strB.toString(), MessageLevel.WARN, OrganizationObjectRule.OrganizationContext, this);        
+        return new ValidatorMessage(strB.toString(), MessageLevel.WARN, OrganizationObjectRule.ORGANIZATION_CONTEXT, this);        
     }
     
     /**
@@ -107,7 +107,7 @@ public class OrganizationObjectRule extends AObjectRule<Organization> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Provide a value for all CV terms under the Organization element." + OrganizationObjectRule.OrganizationContext.getContext());
+        ret.add("Provide a value for all CV terms under the Organization element." + OrganizationObjectRule.ORGANIZATION_CONTEXT.getContext());
 
         return ret;
     }

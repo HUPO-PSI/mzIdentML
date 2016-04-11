@@ -23,7 +23,7 @@ public class SIIModLocalizationScoringRule extends AObjectRule<SpectrumIdentific
     /**
      * Constants.
      */
-    private static final Context SIIContext = new Context(MzIdentMLElement.SpectrumIdentificationItem.getXpath());
+    private static final Context SII_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationItem.getXpath());
     private final String STR_REGEXP_MOD_LOCALIZATION = "(\\d+:\\d+.\\d+:\\d+[|]*\\d*:(true|false){1})";
 
     /**
@@ -57,7 +57,7 @@ public class SIIModLocalizationScoringRule extends AObjectRule<SpectrumIdentific
      * 
      * @param sii the SpectrumIdentificationItem element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(SpectrumIdentificationItem sii) throws ValidatorException {
@@ -104,8 +104,8 @@ public class SIIModLocalizationScoringRule extends AObjectRule<SpectrumIdentific
      */
     private void addMessageToCollection(CvParam cv, SpectrumIdentificationItem sii, List<ValidatorMessage> messages) {
         messages.add(new ValidatorMessage("The regular expression in SpectrumIdentificationItem (id='"
-        + sii.getId() + "') element at " + SIIModLocalizationScoringRule.SIIContext.getContext()
-        + "/cvParam ('" + cv.getName() + "') is not valid.", MessageLevel.ERROR, SIIModLocalizationScoringRule.SIIContext, this));
+        + sii.getId() + "') element at " + SIIModLocalizationScoringRule.SII_CONTEXT.getContext()
+        + "/cvParam ('" + cv.getName() + "') is not valid.", MessageLevel.ERROR, SIIModLocalizationScoringRule.SII_CONTEXT, this));
     }
     
     /**
@@ -117,7 +117,7 @@ public class SIIModLocalizationScoringRule extends AObjectRule<SpectrumIdentific
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("The value for the cvParam 'modification localization scoring' under the SpectrumIdentificationItem must have the format MOD_ORDER:SCORE:POSITION:PASS_THRESHOLD at" + SIIModLocalizationScoringRule.SIIContext.getContext());
+        ret.add("The value for the cvParam 'modification localization scoring' under the SpectrumIdentificationItem must have the format MOD_ORDER:SCORE:POSITION:PASS_THRESHOLD at" + SIIModLocalizationScoringRule.SII_CONTEXT.getContext());
         ret.add("with MOD_ORDER = <Modification> element order in the referenced <Peptide> object");
         ret.add("SCORE = Score or statistical measure associated with the modification position");
         ret.add("POSITION = Position of the modification on the peptide (N-terminus = 0, C-terminus = peptide length + 1). If the score pertains to grouped positions, different positions MUST be separated by '|'");

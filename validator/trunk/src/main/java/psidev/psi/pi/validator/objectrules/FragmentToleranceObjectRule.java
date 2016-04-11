@@ -21,7 +21,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationProtocol;
 public class FragmentToleranceObjectRule extends AObjectRule<SpectrumIdentificationProtocol> {
 
     // Contexts
-    private static final Context SIPContext = new Context(MzIdentMLElement.SpectrumIdentificationProtocol.getXpath());
+    private static final Context SIP_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationProtocol.getXpath());
 
     // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
     public FragmentToleranceObjectRule() {
@@ -48,7 +48,7 @@ public class FragmentToleranceObjectRule extends AObjectRule<SpectrumIdentificat
      * 
      * @param protocol the SpectrumIdentificationProtocol element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(SpectrumIdentificationProtocol protocol) throws ValidatorException {
@@ -56,8 +56,8 @@ public class FragmentToleranceObjectRule extends AObjectRule<SpectrumIdentificat
 
         if (protocol.getFragmentTolerance() == null) {
             messages.add(new ValidatorMessage("There is not a fragment tolerance in SpectrumIdentificationProtocol (id='"
-                + protocol.getId() + "') element at " + FragmentToleranceObjectRule.SIPContext.getContext()
-                + "/SiteRegexp", MessageLevel.ERROR, FragmentToleranceObjectRule.SIPContext, this));
+                + protocol.getId() + "') element at " + FragmentToleranceObjectRule.SIP_CONTEXT.getContext()
+                + "/SiteRegexp", MessageLevel.ERROR, FragmentToleranceObjectRule.SIP_CONTEXT, this));
         }
 
         return messages;
@@ -72,7 +72,7 @@ public class FragmentToleranceObjectRule extends AObjectRule<SpectrumIdentificat
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Add the element 'FragmentTolerance' to the SpectrumIdentificationProtocol at " + FragmentToleranceObjectRule.SIPContext.getContext());
+        ret.add("Add the element 'FragmentTolerance' to the SpectrumIdentificationProtocol at " + FragmentToleranceObjectRule.SIP_CONTEXT.getContext());
         
         return ret;
     }

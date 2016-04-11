@@ -15,7 +15,7 @@ import psidev.psi.tools.validator.ValidatorMessage;
 public class MandatoryElementsObjectRule extends AObjectRule<Object> {
     /**
      * Constructor.
-     * @param ontologyManager 
+     * @param ontologyManager the ontology manager
      */
     public MandatoryElementsObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
@@ -41,7 +41,7 @@ public class MandatoryElementsObjectRule extends AObjectRule<Object> {
      * 
      * @param obj   the object to check
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(Object obj) throws ValidatorException {

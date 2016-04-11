@@ -23,7 +23,7 @@ public class PersonObjectRule extends AObjectRule<Person> {
     /**
      * Constants.
      */
-    private static final Context PersonContext = new Context(MzIdentMLElement.Person.getXpath());
+    private static final Context PERSON_CONTEXT = new Context(MzIdentMLElement.Person.getXpath());
 
     /**
      * Constructor.
@@ -55,7 +55,7 @@ public class PersonObjectRule extends AObjectRule<Person> {
      * 
      * @param pers the Person element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(Person pers) throws ValidatorException {
@@ -93,9 +93,9 @@ public class PersonObjectRule extends AObjectRule<Person> {
     private ValidatorMessage getValidatorMsg(Person pers, String cvName) {
         StringBuilder strB = new StringBuilder("The '");
         strB.append(cvName).append("' cvParam in the Person (id='");
-        strB.append(pers.getId()).append("') element at ").append(PersonObjectRule.PersonContext.getContext()).append(" has an empty value.");
+        strB.append(pers.getId()).append("') element at ").append(PersonObjectRule.PERSON_CONTEXT.getContext()).append(" has an empty value.");
         
-        return new ValidatorMessage(strB.toString(), MessageLevel.WARN, PersonObjectRule.PersonContext, this);        
+        return new ValidatorMessage(strB.toString(), MessageLevel.WARN, PersonObjectRule.PERSON_CONTEXT, this);        
     }
     
     /**
@@ -107,7 +107,7 @@ public class PersonObjectRule extends AObjectRule<Person> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Provide a value for all CV terms under the Person element." + PersonObjectRule.PersonContext.getContext());
+        ret.add("Provide a value for all CV terms under the Person element." + PersonObjectRule.PERSON_CONTEXT.getContext());
 
         return ret;
     }

@@ -32,7 +32,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.ProteinDetectionHypothesis;
 public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguityGroup> {
 
     // Contexts
-    private static final Context PAGContext = new Context(MzIdentMLElement.ProteinAmbiguityGroup.getXpath());
+    private static final Context PAG_CONTEXT = new Context(MzIdentMLElement.ProteinAmbiguityGroup.getXpath());
     private static final String GROUP_REPRESENTATIVE = "MS:1002403";
     private static final String LEADING_PROTEIN = "MS:1002401";
 
@@ -65,7 +65,7 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
      * 
      * @param pag the ProteinAmbiguityGroup element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(ProteinAmbiguityGroup pag) throws ValidatorException {
@@ -102,9 +102,9 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
                                     + "' can contain the CV Term "
                                     + GROUP_REPRESENTATIVE
                                     + " (group representative) at "
-                                    + PAGContext.getContext(),
+                                    + PAG_CONTEXT.getContext(),
                                     MessageLevel.ERROR,
-                                    PAGContext, this));
+                                    PAG_CONTEXT, this));
                                 break;
                             }
                             anyGroupRepresentativeInPAGFound = true;
@@ -125,8 +125,8 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
                     + GROUP_REPRESENTATIVE
                     + ") in Protein Ambiguity Group id='"
                     + pag.getId() + "' at "
-                    + PAGContext.getContext(),
-                    MessageLevel.INFO, PAGContext, this));
+                    + PAG_CONTEXT.getContext(),
+                    MessageLevel.INFO, PAG_CONTEXT, this));
             }
             else {
                 this.groupRepresentativeError2 = false;
@@ -149,7 +149,7 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
             ret.add("Remove the CV term 'group representative' ("
                 + GROUP_REPRESENTATIVE
                 + ") from all the ProteinDetectionHypothesis in the Protein Ambiguity Group excepting one, at "
-                + ProteinAmbiguityGroupObjectRule.PAGContext.getContext());
+                + ProteinAmbiguityGroupObjectRule.PAG_CONTEXT.getContext());
         }
         
         if (this.groupRepresentativeError2) {
@@ -157,7 +157,7 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
                 + GROUP_REPRESENTATIVE
                 + ") to at least one of the ProteinDetectionHypothesis labeled as 'leading protein' ("
                 + LEADING_PROTEIN + ") in the Protein Ambiguity Group at "
-                + PAGContext.getContext());
+                + PAG_CONTEXT.getContext());
         }
         
         return ret;

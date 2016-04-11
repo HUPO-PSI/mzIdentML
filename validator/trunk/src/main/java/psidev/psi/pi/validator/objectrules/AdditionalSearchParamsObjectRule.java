@@ -23,13 +23,15 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
     /**
      * Constants.
      */
-    private static final Context SIPContext = new Context(MzIdentMLElement.SpectrumIdentificationProtocol.getXpath());
+    private static final Context SIP_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationProtocol.getXpath());
     
     /**
      * Members.
      */
     public static boolean bIsDeNovoSearch                       = false;
     public static boolean bIsPeptideLevelScoring                = false;
+    public static boolean bIsProteoGenomicsSearch               = false;
+    public static boolean bIsSpectralLibrarySearch              = false;
     public static boolean bIsModificationLocalizationScoring    = false;
     public static boolean bIsConsensusScoring                   = false;
     public static boolean bIsSamplePreFractionation             = false;
@@ -67,7 +69,7 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
      * 
      * @param sip the SpectrumIdentificationProtocol element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(SpectrumIdentificationProtocol sip) throws ValidatorException {
@@ -79,6 +81,10 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
                 case "MS:1001010":  // de novo search
                     cnt++;
                     bIsDeNovoSearch = true;
+                    break;
+                case "MS:1001031":  // spectral library search
+                    cnt++;
+                    bIsSpectralLibrarySearch = true;
                     break;
                 case "MS:1002490":  // peptide-level scoring
                     cnt++;
@@ -100,6 +106,10 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
                     cnt++;
                     bIsCrossLinkingSearch = true;
                     break;
+                case "MS:1002635":  // proteogenomics search
+                    cnt++;
+                    bIsProteoGenomicsSearch = true;
+                    break;
                 case "MS:1002495":  // no special processing
                     cnt++;
                     bIsNoSpecialProcessing = true;
@@ -109,13 +119,13 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
         
         if (cnt == 0) {
             messages.add(new ValidatorMessage("At least one child term of 'special processing' must occur in the AdditionalSearchParams of the SpectrumIdentificationProtocol (id='"
-            + sip.getId() + "') element at " + AdditionalSearchParamsObjectRule.SIPContext.getContext(),
-            MessageLevel.ERROR, AdditionalSearchParamsObjectRule.SIPContext, this));
+            + sip.getId() + "') element at " + AdditionalSearchParamsObjectRule.SIP_CONTEXT.getContext(),
+            MessageLevel.ERROR, AdditionalSearchParamsObjectRule.SIP_CONTEXT, this));
         }
         else if (cnt > 5) {
             messages.add(new ValidatorMessage("Found more than five childs term of 'special processing' in the AdditionalSearchParams of the SpectrumIdentificationProtocol (id='"
-            + sip.getId() + "') element at " + AdditionalSearchParamsObjectRule.SIPContext.getContext(),
-            MessageLevel.INFO, AdditionalSearchParamsObjectRule.SIPContext, this));
+            + sip.getId() + "') element at " + AdditionalSearchParamsObjectRule.SIP_CONTEXT.getContext(),
+            MessageLevel.INFO, AdditionalSearchParamsObjectRule.SIP_CONTEXT, this));
         }
         
         return messages;
@@ -130,7 +140,7 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("The AdditionalSearchParams element of SpectrumIdentificationProtocol must contain a CV term for the type of 'special processing' at" + AdditionalSearchParamsObjectRule.SIPContext.getContext());
+        ret.add("The AdditionalSearchParams element of SpectrumIdentificationProtocol must contain a CV term for the type of 'special processing' at" + AdditionalSearchParamsObjectRule.SIP_CONTEXT.getContext());
 
         return ret;
     }

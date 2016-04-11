@@ -24,7 +24,7 @@ public class PeptideLevelStatsObjectRule extends AObjectRule<SpectrumIdentificat
     /**
      * Constants.
      */
-    private static final Context SIIContext = new Context(MzIdentMLElement.SpectrumIdentificationItem.getXpath());
+    private static final Context SII_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationItem.getXpath());
     private final String tripletMsg = " triplet of terms MS:1002520 (peptide group ID), MS:1002500 (peptide passes threshold) and a child of MS:1002358 (search engine specific score for distinct peptides) ";
     private boolean firstTerm = false;
     private boolean secondTerm = false;
@@ -70,7 +70,7 @@ public class PeptideLevelStatsObjectRule extends AObjectRule<SpectrumIdentificat
      * 
      * @param sii the SpectrumIdentificationItem element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(SpectrumIdentificationItem sii) throws ValidatorException {
@@ -125,8 +125,8 @@ public class PeptideLevelStatsObjectRule extends AObjectRule<SpectrumIdentificat
      */
     private void addMessageToCollection(SpectrumIdentificationItem sii, List<ValidatorMessage> messages) {
         messages.add(new ValidatorMessage("The SpectrumIdentificationItem (id='"
-        + sii.getId() + "') element at " + PeptideLevelStatsObjectRule.SIIContext.getContext()
-        + " doesn't contain the " + this.tripletMsg + "required in case of peptide-level scoring", MessageLevel.ERROR, PeptideLevelStatsObjectRule.SIIContext, this));
+        + sii.getId() + "') element at " + PeptideLevelStatsObjectRule.SII_CONTEXT.getContext()
+        + " doesn't contain the " + this.tripletMsg + "required in case of peptide-level scoring", MessageLevel.ERROR, PeptideLevelStatsObjectRule.SII_CONTEXT, this));
     }
     
     /**
@@ -138,7 +138,7 @@ public class PeptideLevelStatsObjectRule extends AObjectRule<SpectrumIdentificat
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Add the " + this.tripletMsg + "to each SpectrumIdentificationItem");
+        ret.add("Add the" + this.tripletMsg + "to each SpectrumIdentificationItem");
         
         return ret;
     }

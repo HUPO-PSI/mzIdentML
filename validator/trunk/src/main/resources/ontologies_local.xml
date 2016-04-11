@@ -1,10 +1,10 @@
 <cvSourceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/CvSourceList.xsd">
-    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:BrendaTissue.obo" format="OBO" name="BTO" identifier="BTO" version="22:10:2014 18:45"/>
-    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:gene_ontology.obo" format="OBO" name="Gene Ontology" identifier="GO" version="releases/2015-02-26"/>
-    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:psi-ms.obo" format="OBO" name="PSI-MS" identifier="MS" version="3.73.0"/>
+    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:BrendaTissueOBO.obo" format="OBO" name="BTO" identifier="BTO" version="24:10:2015 14:39"/>
+    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:gene_ontology.obo" format="OBO" name="Gene Ontology" identifier="GO" version="releases/2016-04-06"/>
+    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:psi-ms.obo" format="OBO" name="PSI-MS" identifier="MS" version="3.84.0"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:PSI-MOD.obo" format="OBO" name="PSI-MOD" identifier="MOD" version="30:05:2014 00:48"/>
-    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:quality.obo" format="OBO" name="PATO" identifier="PATO" version="15:08:2014 14:45"/>
-    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:unimod.obo" format="OBO" name="UNIMOD" identifier="UNIMOD" version="2015:01:12 16:11"/>
+    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:pato.obo" format="OBO" name="PATO" identifier="PATO" version="releases/2015-11-18"/>
+    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:unimod.obo" format="OBO" name="UNIMOD" identifier="UNIMOD" version="2016:02:01 14:24"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:unit.obo" format="OBO" name="UO" identifier="UO" version="09:04:2014 13:37"/>
 </cvSourceList>

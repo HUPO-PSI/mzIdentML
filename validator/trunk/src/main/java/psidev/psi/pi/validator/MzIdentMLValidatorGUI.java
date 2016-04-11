@@ -1,7 +1,3 @@
-/*
- * mzIdentMLValidatorGUI.java Created on __DATE__, __TIME__
- */
-
 package psidev.psi.pi.validator;
 
 import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
@@ -62,7 +58,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     /**
      * Constants.
      */
-    private static final Logger logger = Logger.getLogger(MzIdentMLValidatorGUI.class);
+    private static final Logger LOGGER = Logger.getLogger(MzIdentMLValidatorGUI.class);
     private static final String STR_LAF_NAME_WINDOWS = "WINDOWS";
     private static final String NEW_LINE = System.getProperty("line.separator");
     private static final String STR_FILE_SEPARATOR = System.getProperty("file.separator");
@@ -710,7 +706,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                     boolean remoteOntologies = jCheckBoxUseRemoteOntologies.isSelected();
                     if (remoteOntologies) {
                         ontology = getOntologiesFileInputStream("ols.ontologies.file");
-                        logger.debug("Remote ontology: " + ontology);
+                        LOGGER.debug("Remote ontology: " + ontology);
                         if (ontology != null) {
                             this.validator = new MzIdentMLValidator(ontology, MzIdentMLValidatorGUI.this);
                             ontology.close();
@@ -722,13 +718,13 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
 
                     if (!remoteOntologies) {
                         ontology = getOntologiesFileInputStream("local.ontologies.file");
-                        logger.debug("Local ontology: " + ontology);
+                        LOGGER.debug("Local ontology: " + ontology);
                         if (ontology != null) {
                             this.validator = new MzIdentMLValidator(ontology, MzIdentMLValidatorGUI.this);
                             ontology.close();
                         }
                         else {
-                            logger.error("No ontologies file for validation.");
+                            LOGGER.error("No ontologies file for validation.");
                         }
                     }
                 }
@@ -760,7 +756,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
 
         // check if the file exists. If not, return the path
         if (!file.exists()) {
-            logger.debug("ontologiesFile does not exist: " + ontologiesFile);
+            LOGGER.debug("ontologiesFile does not exist: " + ontologiesFile);
             return this.cl.getResourceAsStream(ontologiesFile);
         }
 
@@ -780,7 +776,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
 
         // check if the file exists. If not, return the path
         if (!file.exists()) {
-            logger.debug("ruleFilterFileName does not exist: " + ruleFilterFileName);
+            LOGGER.debug("ruleFilterFileName does not exist: " + ruleFilterFileName);
             return this.cl.getResourceAsStream(ruleFilterFileName);
         }
 
@@ -801,7 +797,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
 
         // check if the file exists. If not, return the path
         if (!file.exists()) {
-            logger.debug("ruleFilterFileName does not exist: " + ruleFilterFileName);
+            LOGGER.debug("ruleFilterFileName does not exist: " + ruleFilterFileName);
             return this.cl.getResourceAsStream(ruleFilterFileName);
         }
 
@@ -833,7 +829,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
      * @param mzIdVersion the {@link MzIdVersion} of the file to validate: 1.1 or 1.2.
      * @param ruleKind "mapping" or "object"
      * @return InputStream for the rule file
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException file not found exception
      */
     public InputStream getRuleFileInputStream(MzIdVersion mzIdVersion, String ruleKind) throws FileNotFoundException {
         String propertyName = ruleKind;
@@ -856,7 +852,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         }
         else {
             // set default
-            logger.error("Usupported .mzid version: " + mzIdVersion);
+            LOGGER.error("Usupported .mzid version: " + mzIdVersion);
             switch (ruleKind) {
                 case STR_MAPPING:
                     ruleFile = "mzIdentML-mapping_1.2.0.xml";
@@ -865,7 +861,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                     ruleFile = "ObjectRules.1.2.0.xml";
                     break;
                 default:
-                    logger.error("Unsupported ruleKind: " + ruleKind);
+                    LOGGER.error("Unsupported ruleKind: " + ruleKind);
             }
         }
 
@@ -876,7 +872,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         catch (IOException e) {
             File file = new File(MzIdentMLValidatorGUI.STR_RESOURCE_FOLDER + ruleFile);
             if (!file.exists()) {
-                logger.debug(ruleKind + "RuleFile does not exist: " + ruleFile);
+                LOGGER.debug(ruleKind + "RuleFile does not exist: " + ruleFile);
                 return this.cl.getResourceAsStream(ruleFile);
             }
             return new FileInputStream(file);
@@ -901,7 +897,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
 
     /**
      * Reads a property from the .properties file.
-     * @param propertyName
+     * @param propertyName the property name
      * @return The property value
      */
     public static String getProperty(String propertyName) {
@@ -926,7 +922,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     */
 
         PropertyFile propFile = new PropertyFile();
-        logger.debug("Resources: " + MzIdentMLValidatorGUI.STR_RESOURCE_FOLDER);
+        LOGGER.debug("Resources: " + MzIdentMLValidatorGUI.STR_RESOURCE_FOLDER);
         Properties properties = propFile.loadProperties(MzIdentMLValidatorGUI.STR_RESOURCE_FOLDER + "validation.properties");
         return properties.getProperty(propertyName);
     }
@@ -1474,7 +1470,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     public void setProgress(int value, String message) {
         if (value > this.jProgressBar.getMaximum()) {
             value = this.jProgressBar.getMaximum();
-            logger.error("ProgressValue is too big: " + value);
+            LOGGER.error("ProgressValue is too big: " + value);
         }
         this.jProgressBar.setValue(value);
         this.jProgressBar.setString(message);

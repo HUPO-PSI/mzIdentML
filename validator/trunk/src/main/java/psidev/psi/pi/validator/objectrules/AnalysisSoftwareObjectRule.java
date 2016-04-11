@@ -26,7 +26,7 @@ public class AnalysisSoftwareObjectRule extends AObjectRule<AnalysisSoftware> {
     /**
      * Constants.
      */
-    private static final Context asContext = new Context(MzIdentMLElement.AnalysisSoftware.getXpath());
+    private static final Context ANALYSISSW_CONTEXT = new Context(MzIdentMLElement.AnalysisSoftware.getXpath());
 
     /**
      * Members.
@@ -59,7 +59,7 @@ public class AnalysisSoftwareObjectRule extends AObjectRule<AnalysisSoftware> {
      * 
      * @param software the AnalysisSoftware element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(AnalysisSoftware software) throws ValidatorException {
@@ -70,16 +70,16 @@ public class AnalysisSoftwareObjectRule extends AObjectRule<AnalysisSoftware> {
             this.versionError = true;
             messages.add(new ValidatorMessage(
                 "There is not a version in the Analysis Software (id='" + software.getId()
-                + "') element at " + AnalysisSoftwareObjectRule.asContext.getContext(),
-                MessageLevel.ERROR, AnalysisSoftwareObjectRule.asContext, this));
+                + "') element at " + AnalysisSoftwareObjectRule.ANALYSISSW_CONTEXT.getContext(),
+                MessageLevel.ERROR, AnalysisSoftwareObjectRule.ANALYSISSW_CONTEXT, this));
         }
         // contactRole
         if (software.getContactRole() == null) {
             this.contactRoleMissingError = true;
             messages.add(new ValidatorMessage(
                 "There is not a contactRole element to refer to a software vendor in the Analysis Software (id='"
-                + software.getId() + "') element at " + AnalysisSoftwareObjectRule.asContext.getContext(), MessageLevel.ERROR,
-                AnalysisSoftwareObjectRule.asContext, this));
+                + software.getId() + "') element at " + AnalysisSoftwareObjectRule.ANALYSISSW_CONTEXT.getContext(), MessageLevel.ERROR,
+                AnalysisSoftwareObjectRule.ANALYSISSW_CONTEXT, this));
         }
 
         return messages;
@@ -95,11 +95,11 @@ public class AnalysisSoftwareObjectRule extends AObjectRule<AnalysisSoftware> {
         List<String> ret = new ArrayList<>();
 
         if (this.versionError) {
-            ret.add("Add the attribute 'version' to the AnalysisSoftware at " + AnalysisSoftwareObjectRule.asContext.getContext());
+            ret.add("Add the attribute 'version' to the AnalysisSoftware at " + AnalysisSoftwareObjectRule.ANALYSISSW_CONTEXT.getContext());
         }
         
         if (this.contactRoleMissingError) {
-            ret.add("Add the contactRole element to the AnalysisSoftware at " + AnalysisSoftwareObjectRule.asContext.getContext() + " with the appropriate role type (software vendor)");
+            ret.add("Add the contactRole element to the AnalysisSoftware at " + AnalysisSoftwareObjectRule.ANALYSISSW_CONTEXT.getContext() + " with the appropriate role type (software vendor)");
         }
 
         return ret;

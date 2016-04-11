@@ -26,8 +26,8 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
     /**
      * Constants.
      */
-    private static final Context SIRContext = new Context(MzIdentMLElement.SpectrumIdentificationResult.getXpath());
-    private final static HashMap<String, ArrayList<String>> xlCvValue2SiiIdListMap = new HashMap<>();
+    private static final Context SIR_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationResult.getXpath());
+    private final static HashMap<String, ArrayList<String>> XL_CVVALUE2SII_IDLISTMAP = new HashMap<>();
 
     /**
      * Constructor.
@@ -61,7 +61,7 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
      * 
      * @param sir the SpectrumIdentificationResult element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(SpectrumIdentificationResult sir) throws ValidatorException {
@@ -78,16 +78,16 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
                             if (cvValue.isEmpty()) {
                                 valMsg = new ValidatorMessage("The '" + cv.getName()
                                     + "' cvParam in the SpectrumIdentificationItem (id='" + sii.getId() + "') element at "
-                                    + XLinkSIIObjectRule.SIRContext.getContext() + " has an empty value.",
-                                    MessageLevel.WARN, XLinkSIIObjectRule.SIRContext, this);
+                                    + XLinkSIIObjectRule.SIR_CONTEXT.getContext() + " has an empty value.",
+                                    MessageLevel.WARN, XLinkSIIObjectRule.SIR_CONTEXT, this);
                                 messages.add(valMsg);
                             }
 
                             // fill data to map
-                            if (!XLinkSIIObjectRule.xlCvValue2SiiIdListMap.containsKey(cvValue)) {
-                                XLinkSIIObjectRule.xlCvValue2SiiIdListMap.put(cvValue, new ArrayList<String>());
+                            if (!XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.containsKey(cvValue)) {
+                                XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.put(cvValue, new ArrayList<String>());
                             }
-                            XLinkSIIObjectRule.xlCvValue2SiiIdListMap.get(cvValue).add(sii.getId());
+                            XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.get(cvValue).add(sii.getId());
 
                             break;
                     }
@@ -106,34 +106,34 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
         List<ValidatorMessage> messages = new ArrayList<>();
         ValidatorMessage valMsg;
         
-        if (XLinkSIIObjectRule.xlCvValue2SiiIdListMap.isEmpty()) {
+        if (XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.isEmpty()) {
             valMsg = new ValidatorMessage("No CV terms MS:1002511 - 'cross-link spectrum identification item' found for a cross-linking file."
-                + XLinkSIIObjectRule.SIRContext.getContext(),
+                + XLinkSIIObjectRule.SIR_CONTEXT.getContext(),
                 MessageLevel.ERROR);
             messages.add(valMsg);
         }
         else {
-            for (String cvValue: XLinkSIIObjectRule.xlCvValue2SiiIdListMap.keySet()) {
-                ArrayList<String> siiIdList = XLinkSIIObjectRule.xlCvValue2SiiIdListMap.get(cvValue);
+            for (String cvValue: XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.keySet()) {
+                ArrayList<String> siiIdList = XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.get(cvValue);
 
                 if (siiIdList.size() == 1) {
                     valMsg = new ValidatorMessage("The '"
                         + "' cvParam with value " + cvValue + " in the SpectrumIdentificationItem (id='" + siiIdList.get(0) + "') element at "
-                        + XLinkSIIObjectRule.SIRContext.getContext() + " has no corresponding cvParam in another SpectrumIdentificationItem of the same SpectrumIdentificationResult.",
+                        + XLinkSIIObjectRule.SIR_CONTEXT.getContext() + " has no corresponding cvParam in another SpectrumIdentificationItem of the same SpectrumIdentificationResult.",
                         MessageLevel.ERROR);
                     messages.add(valMsg);
                 }
                 else if (siiIdList.size() > 2) {
                     valMsg = new ValidatorMessage("The '"
                         + "' cvParam's with value " + cvValue + " in the SpectrumIdentificationItem "
-                        + XLinkSIIObjectRule.SIRContext.getContext() + " occur more than 2 times, but must occur paired, i.e. EXCATLY 2 times.",
+                        + XLinkSIIObjectRule.SIR_CONTEXT.getContext() + " occur more than 2 times, but must occur paired, i.e. EXCATLY 2 times.",
                         MessageLevel.ERROR);
                     messages.add(valMsg);
                 }
                 else if (siiIdList.get(0).equals(siiIdList.get(1))) {
                     valMsg = new ValidatorMessage("The '"
                         + "' cvParam's with value " + cvValue + " in the SpectrumIdentificationItem (id='" + siiIdList.get(0) + "') element at "
-                        + XLinkSIIObjectRule.SIRContext.getContext() + " occur at the same SpectrumIdentificationItem, but must occur in different SpectrumIdentification items of the same SpectrumIdentificationResult.",
+                        + XLinkSIIObjectRule.SIR_CONTEXT.getContext() + " occur at the same SpectrumIdentificationItem, but must occur in different SpectrumIdentification items of the same SpectrumIdentificationResult.",
                         MessageLevel.ERROR);
                     messages.add(valMsg);
                 }
@@ -152,7 +152,7 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Provide the term MS:1002511 - 'cross-link spectrum identification item' at two different SpectrumIdentificationItems of the same SpectrumIdentificationResult" + XLinkSIIObjectRule.SIRContext.getContext());
+        ret.add("Provide the term MS:1002511 - 'cross-link spectrum identification item' at two different SpectrumIdentificationItems of the same SpectrumIdentificationResult" + XLinkSIIObjectRule.SIR_CONTEXT.getContext());
 
         return ret;
     }

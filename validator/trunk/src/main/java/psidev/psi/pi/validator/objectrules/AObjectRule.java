@@ -13,7 +13,7 @@ import uk.ac.ebi.ols.soap.QueryServiceLocator;
  * Abstract base class for all custom ObjectRules.
  * 
  * @author Gerhard
- * @param <T> 
+ * @param <T> type of jmzIdentML object
  */
 public abstract class AObjectRule<T extends Object> extends ObjectRule<T> {
 

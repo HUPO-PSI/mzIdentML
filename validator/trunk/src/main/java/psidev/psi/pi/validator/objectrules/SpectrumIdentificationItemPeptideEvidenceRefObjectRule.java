@@ -23,7 +23,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationItem;
 public class SpectrumIdentificationItemPeptideEvidenceRefObjectRule extends AObjectRule<SpectrumIdentificationItem> {
 
     // Contexts
-    private static final Context SIIContext = new Context(MzIdentMLElement.SpectrumIdentificationItem.getXpath());
+    private static final Context SII_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationItem.getXpath());
 
     // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
     public SpectrumIdentificationItemPeptideEvidenceRefObjectRule() {
@@ -50,7 +50,7 @@ public class SpectrumIdentificationItemPeptideEvidenceRefObjectRule extends AObj
      * 
      * @param spectrumIdentificationItem the SpectrumIdentificationItem element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(SpectrumIdentificationItem spectrumIdentificationItem) throws ValidatorException {
@@ -59,7 +59,7 @@ public class SpectrumIdentificationItemPeptideEvidenceRefObjectRule extends AObj
         if (spectrumIdentificationItem.getPeptideEvidenceRef().isEmpty()) {
             messages.add(new ValidatorMessage(
                 "A PeptideEvidenceRef in needed at the SpectrumIdentificationItem element for MS/MS or PMF searches",
-                MessageLevel.ERROR, SIIContext, this));
+                MessageLevel.ERROR, SII_CONTEXT, this));
         }
 
         return messages;
@@ -74,7 +74,7 @@ public class SpectrumIdentificationItemPeptideEvidenceRefObjectRule extends AObj
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Add the PeptideEvidenceRef element at "+  SpectrumIdentificationItemPeptideEvidenceRefObjectRule.SIIContext.getContext());
+        ret.add("Add the PeptideEvidenceRef element at "+  SpectrumIdentificationItemPeptideEvidenceRefObjectRule.SII_CONTEXT.getContext());
         
         return ret;
     }

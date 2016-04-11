@@ -24,7 +24,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.Enzyme;
 public class NoEnzymeObjectRule extends AObjectRule<Enzyme> {
 
     // Contexts
-    private static final Context EnzymeContext = new Context(MzIdentMLElement.Enzyme.getXpath());
+    private static final Context ENZYME_CONTEXT = new Context(MzIdentMLElement.Enzyme.getXpath());
     private static final String NO_ENZYME_ACC = "MS:1001091";
 
     // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
@@ -52,7 +52,7 @@ public class NoEnzymeObjectRule extends AObjectRule<Enzyme> {
      * 
      * @param enzyme the Enzyme element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(Enzyme enzyme) throws ValidatorException {
@@ -64,27 +64,27 @@ public class NoEnzymeObjectRule extends AObjectRule<Enzyme> {
             if (noEnzymeTerm != null) {
                 if (enzyme.getMissedCleavages() != null) {
                     messages.add(new ValidatorMessage("The attribute 'missed cleavages' at "
-                        + NoEnzymeObjectRule.EnzymeContext.getContext()
+                        + NoEnzymeObjectRule.ENZYME_CONTEXT.getContext()
                         + " has no sense since 'No enzyme' ('"
                         + NO_ENZYME_ACC + "') has been specified.",
-                        MessageLevel.ERROR, NoEnzymeObjectRule.EnzymeContext, this));
+                        MessageLevel.ERROR, NoEnzymeObjectRule.ENZYME_CONTEXT, this));
                 }
                 
                 if (enzyme.getSiteRegexp() != null) {
                     messages.add(new ValidatorMessage("A definition of the element 'SiteRegexp' at "
-                        + NoEnzymeObjectRule.EnzymeContext.getContext()
+                        + NoEnzymeObjectRule.ENZYME_CONTEXT.getContext()
                         + " has no sense since 'No enzyme' ('"
                         + NO_ENZYME_ACC + "') has been specified.",
-                        MessageLevel.ERROR, NoEnzymeObjectRule.EnzymeContext, this));
+                        MessageLevel.ERROR, NoEnzymeObjectRule.ENZYME_CONTEXT, this));
                 }
             }
             else {
                 if (enzyme.getMissedCleavages() == null) {
                     messages.add(new ValidatorMessage("The attribute 'missed cleavages' at "
-                        + NoEnzymeObjectRule.EnzymeContext.getContext()
+                        + NoEnzymeObjectRule.ENZYME_CONTEXT.getContext()
                         + " MUST be provided if an enzyme is provided (different from a 'No enzyme'/'"
                         + NO_ENZYME_ACC + "') has been specified.",
-                        MessageLevel.ERROR, NoEnzymeObjectRule.EnzymeContext, this));
+                        MessageLevel.ERROR, NoEnzymeObjectRule.ENZYME_CONTEXT, this));
                 }
             }
         }
@@ -101,7 +101,7 @@ public class NoEnzymeObjectRule extends AObjectRule<Enzyme> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Remove the information specified in the message at " + NoEnzymeObjectRule.EnzymeContext.getContext());
+        ret.add("Remove the information specified in the message at " + NoEnzymeObjectRule.ENZYME_CONTEXT.getContext());
         return ret;
     }
 }

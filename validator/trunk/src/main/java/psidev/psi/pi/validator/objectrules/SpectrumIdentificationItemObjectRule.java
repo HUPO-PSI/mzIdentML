@@ -22,7 +22,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationItem;
 public class SpectrumIdentificationItemObjectRule extends AObjectRule<SpectrumIdentificationItem> {
 
     // Contexts
-    private static final Context SIIContext = new Context(MzIdentMLElement.SpectrumIdentificationItem.getXpath());
+    private static final Context SII_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationItem.getXpath());
 
     // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
     public SpectrumIdentificationItemObjectRule() {
@@ -49,7 +49,7 @@ public class SpectrumIdentificationItemObjectRule extends AObjectRule<SpectrumId
      * 
      * @param spectrumIdentificationItem the SpectrumIdentificationItem element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(SpectrumIdentificationItem spectrumIdentificationItem) throws ValidatorException {
@@ -60,8 +60,7 @@ public class SpectrumIdentificationItemObjectRule extends AObjectRule<SpectrumId
                 "There is not a definition of the calculatedMassToCharge in SpectrumIdentificationItem (id='"
                 + spectrumIdentificationItem.getId()
                 + "') element at "
-                + SpectrumIdentificationItemObjectRule.SIIContext.getContext(), MessageLevel.INFO,
-                SIIContext, this));
+                + SpectrumIdentificationItemObjectRule.SII_CONTEXT.getContext(), MessageLevel.INFO, SII_CONTEXT, this));
         }
 
         return messages;
@@ -76,7 +75,7 @@ public class SpectrumIdentificationItemObjectRule extends AObjectRule<SpectrumId
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Add the attribute 'calculatedMassToCharge' to the SpectrumIdentificationItem at " + SpectrumIdentificationItemObjectRule.SIIContext.getContext());
+        ret.add("Add the attribute 'calculatedMassToCharge' to the SpectrumIdentificationItem at " + SpectrumIdentificationItemObjectRule.SII_CONTEXT.getContext());
         
         return ret;
     }

@@ -35,7 +35,7 @@ public class MzIdentMLSchemaValidator {
     private static final String NEW_LINE = System.getProperty("line.separator");
     private static final String DOUBLE_NEW_LINE = NEW_LINE + NEW_LINE;
     private static final String TRIPLE_NEW_LINE = DOUBLE_NEW_LINE + NEW_LINE;
-    private static final String STR_4_INDENTATION   = "    ";
+    private static final String STR4_INDENTATION= "    ";
     private static final String STR_FILE_EXT_MZID   = ".mzid";
     private static final String STR_FILE_EXT_XML    = ".xml";
     private static final int EXIT_FAILURE  = -1;
@@ -87,7 +87,7 @@ public class MzIdentMLSchemaValidator {
      * Sets the XML schema.
      * @param aSchemaUri    the URI (Uniform Resource Identifier) of the schema
      * @throws SAXException SAX parsing exception
-     * @throws MalformedURLException 
+     * @throws MalformedURLException malformed URl exception
      */
     public void setSchema(URI aSchemaUri) throws SAXException, MalformedURLException {
         this.schema = SCHEMA_FACTORY.newSchema(aSchemaUri.toURL());
@@ -182,10 +182,10 @@ public class MzIdentMLSchemaValidator {
                 br = new BufferedReader(new FileReader(inputFile));
                 MzIdentMLValidationErrorHandler xveh = validator.validateReader(br);
                 if (xveh.noErrors()) {
-                    System.out.println(STR_4_INDENTATION + "File is valid!");
+                    System.out.println(MzIdentMLSchemaValidator.STR4_INDENTATION + "File is valid!");
                 }
                 else {
-                    System.out.println(STR_4_INDENTATION + "* Errors detected: ");
+                    System.out.println(MzIdentMLSchemaValidator.STR4_INDENTATION + "* Errors detected: ");
                     for (ValidatorMessage vMsg : xveh.getErrorsAsValidatorMessages()) {
                         System.out.println(vMsg.getMessage());
                     }

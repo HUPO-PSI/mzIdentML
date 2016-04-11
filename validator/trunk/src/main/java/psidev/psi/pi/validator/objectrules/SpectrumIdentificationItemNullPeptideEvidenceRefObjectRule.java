@@ -22,7 +22,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationItem;
 public class SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule extends	AObjectRule<SpectrumIdentificationItem> {
 
     // Contexts
-    private static final Context SIIContext = new Context(MzIdentMLElement.SpectrumIdentificationItem.getXpath());
+    private static final Context SII_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationItem.getXpath());
 
     /**
      * We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule constructor (below):
@@ -54,14 +54,14 @@ public class SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule extends	
      * 
      * @param spectrumIdentificationItem the SpectrumIdentificationItem element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(SpectrumIdentificationItem spectrumIdentificationItem) throws ValidatorException {
         List<ValidatorMessage> messages = new ArrayList<>();
 
         if (!spectrumIdentificationItem.getPeptideEvidenceRef().isEmpty()) {
-            messages.add(new ValidatorMessage("PeptideEvidenceRef in the SpectrumIdentificationItem element is not allowed for de novo searches", MessageLevel.ERROR, SIIContext, this));
+            messages.add(new ValidatorMessage("PeptideEvidenceRef in the SpectrumIdentificationItem element is not allowed for de novo searches", MessageLevel.ERROR, SII_CONTEXT, this));
         }
 
         return messages;
@@ -76,7 +76,7 @@ public class SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule extends	
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Remove the PeptideEvidenceRef element at " + SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule.SIIContext.getContext());
+        ret.add("Remove the PeptideEvidenceRef element at " + SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule.SII_CONTEXT.getContext());
         return ret;
     }
 }

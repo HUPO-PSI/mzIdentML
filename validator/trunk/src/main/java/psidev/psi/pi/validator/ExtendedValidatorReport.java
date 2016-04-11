@@ -25,7 +25,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * Constants.
      */
-    private static final Logger log = Logger.getLogger(ExtendedValidatorReport.class);
+    private static final Logger LOG = Logger.getLogger(ExtendedValidatorReport.class);
     private static final String NEW_LINE = System.getProperty("line.separator");;
     private final HashMap<String, ObjectRule> objectRulesNotChecked = new HashMap<>();
     private final HashMap<String, ObjectRule> objectRulesValid = new HashMap<>();
@@ -40,7 +40,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * Constructor.
      * 
-     * @param objectRules 
+     * @param objectRules collection of object rules
      */
     public ExtendedValidatorReport(Collection<ObjectRule> objectRules) {
         super(new ArrayList<CvRule>());
@@ -85,24 +85,28 @@ public class ExtendedValidatorReport extends ValidatorReport {
         this.clearCvMappingRules();
 
         for (CvRule rule : cvRules) {
-            if (rule.getStatus() == MappingRuleStatus.INVALID_XPATH) {
-                this.getCvRulesInvalidXpath().add(rule);
-            }
-            else if (rule.getStatus() == MappingRuleStatus.NOT_CHECKED) {
-                this.getCvRulesNotChecked().add(rule);
-            }
-            else if (rule.getStatus() == MappingRuleStatus.VALID_RULE) {
-                this.getCvRulesValid().add(rule);
-            }
-            else if (rule.getStatus() == MappingRuleStatus.VALID_XPATH) {
-                this.getCvRulesValidXpath().add(rule);
+            if (null != rule.getStatus()) switch (rule.getStatus()) {
+                case INVALID_XPATH:
+                    this.getCvRulesInvalidXpath().add(rule);
+                    break;
+                case NOT_CHECKED:
+                    this.getCvRulesNotChecked().add(rule);
+                    break;
+                case VALID_RULE:
+                    this.getCvRulesValid().add(rule);
+                    break;
+                case VALID_XPATH:
+                    this.getCvRulesValidXpath().add(rule);
+                    break;
+                default:
+                    break;
             }
 
             // classify on rules that results errors, valid executed rules and not executed rules
             String ruleID = rule.getId();
             if (messages.containsKey(ruleID) || rule.getStatus() == MappingRuleStatus.INVALID_XPATH) {
                 this.invalidCvRules.add(ruleID);
-                log.debug("INVALID RULE id=" + ruleID + this.BLANK_HYPHEN_BLANK + rule.getStatus());
+                ExtendedValidatorReport.LOG.debug("INVALID RULE id=" + ruleID + this.BLANK_HYPHEN_BLANK + rule.getStatus());
             }
             else if (rule.getStatus() == MappingRuleStatus.NOT_CHECKED) {
                 this.notCheckedCvRules.add(ruleID);
@@ -190,7 +194,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
      * Update the lists of object rules depending on the result of the rule.
      * 
      * @param rule  the rule
-     * @param resultCheck
+     * @param resultCheck the validator message to check
      */
     public void objectRuleExecuted(ObjectRule rule, Collection<ValidatorMessage> resultCheck) {
         boolean valid;
@@ -216,7 +220,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * 
      * @param rule  the rule
-     * @param resultCheck 
+     * @param resultCheck the validator message to check
      */
     public void objectRuleExecuted(ObjectRule rule, ValidatorMessage resultCheck) {
         Collection<ValidatorMessage> messages = new ArrayList<>();
@@ -417,7 +421,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * Gets the invalid XML schema validations.
      * 
-     * @return HashSet<>
+     * @return HashSet of message strings
      */
     public HashSet<String> getInvalidSchemaValidation() {
         return this.invalidSchemaValidation;

@@ -24,7 +24,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.ProteinDetectionHypothesis;
 public class MatchedUnmatchedSubmittedPeaksValueObjectRule extends AObjectRule<ProteinDetectionHypothesis> {
 
     // Contexts
-    private static final Context PDHContext = new Context(MzIdentMLElement.ProteinDetectionHypothesis.getXpath());
+    private static final Context PDH_CONTEXT = new Context(MzIdentMLElement.ProteinDetectionHypothesis.getXpath());
     private static final String MATCHED_PEAKS_ACC = "MS:1001121";
     private static final String UNMATCHED_PEAKS_ACC = "MS:1001362";
     private static final String SUBMITTED_PEAKS_ACC = "MS:1001124";
@@ -57,7 +57,7 @@ public class MatchedUnmatchedSubmittedPeaksValueObjectRule extends AObjectRule<P
      * 
      * @param proteinDetectionHypotesis the ProteinDetectionHypothesis element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(ProteinDetectionHypothesis proteinDetectionHypotesis) throws ValidatorException {
@@ -72,8 +72,8 @@ public class MatchedUnmatchedSubmittedPeaksValueObjectRule extends AObjectRule<P
                     "There is not a value for the term 'number of matched peaks' ('"
                     + MATCHED_PEAKS_ACC + "') in the ProteinDetectionHypotesis (id='"
                     + proteinDetectionHypotesis.getId() + "') element at "
-                    + MatchedUnmatchedSubmittedPeaksValueObjectRule.PDHContext.getContext() + "/cvParam",
-                    MessageLevel.ERROR, MatchedUnmatchedSubmittedPeaksValueObjectRule.PDHContext, this));
+                    + MatchedUnmatchedSubmittedPeaksValueObjectRule.PDH_CONTEXT.getContext() + "/cvParam",
+                    MessageLevel.ERROR, MatchedUnmatchedSubmittedPeaksValueObjectRule.PDH_CONTEXT, this));
             }
         }
 
@@ -86,8 +86,8 @@ public class MatchedUnmatchedSubmittedPeaksValueObjectRule extends AObjectRule<P
                     "There is not a value for the term 'number of unmatched peaks' ('"
                     + UNMATCHED_PEAKS_ACC + "') in the ProteinDetectionHypotesis (id='"
                     + proteinDetectionHypotesis.getId() + "') element at "
-                    + MatchedUnmatchedSubmittedPeaksValueObjectRule.PDHContext.getContext() + "/cvParam",
-                    MessageLevel.ERROR, MatchedUnmatchedSubmittedPeaksValueObjectRule.PDHContext, this));
+                    + MatchedUnmatchedSubmittedPeaksValueObjectRule.PDH_CONTEXT.getContext() + "/cvParam",
+                    MessageLevel.ERROR, MatchedUnmatchedSubmittedPeaksValueObjectRule.PDH_CONTEXT, this));
             }
         }
 
@@ -101,8 +101,8 @@ public class MatchedUnmatchedSubmittedPeaksValueObjectRule extends AObjectRule<P
                     "There is not a value for the term 'number of peaks submitted' ('"
                     + SUBMITTED_PEAKS_ACC + "') in the ProteinDetectionHypotesis (id='"
                     + proteinDetectionHypotesis.getId() + "') element at "
-                    + MatchedUnmatchedSubmittedPeaksValueObjectRule.PDHContext.getContext() + "/cvParam",
-                    MessageLevel.ERROR, MatchedUnmatchedSubmittedPeaksValueObjectRule.PDHContext, this));
+                    + MatchedUnmatchedSubmittedPeaksValueObjectRule.PDH_CONTEXT.getContext() + "/cvParam",
+                    MessageLevel.ERROR, MatchedUnmatchedSubmittedPeaksValueObjectRule.PDH_CONTEXT, this));
             }
         }
 

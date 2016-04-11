@@ -26,7 +26,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.SearchModification;
  */
 public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.mzidml.SearchModification> {
 
-    private static final Context SearchModContext = new Context(MzIdentMLElement.SearchModification.getXpath());
+    private static final Context SEARCHMOD_CONTEXT = new Context(MzIdentMLElement.SearchModification.getXpath());
 
     // Another constructor that calls to ObjectRule
     public SearchModificationRule(OntologyManager ontologyManager) {
@@ -62,7 +62,7 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
      * 
      * @param searchModification the SearchModification element
      * @return collection of messages
-     * @throws ValidatorException 
+     * @throws ValidatorException validator exception
      */
     @Override
     public Collection<ValidatorMessage> check(SearchModification searchModification) throws ValidatorException {
@@ -99,8 +99,8 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
                 messages.add(new ValidatorMessage(
                     "There is not a valid cvParam for the search modification  (id='"
                     + searchModification + "') element at "
-                    + SearchModificationRule.SearchModContext.getContext(),
-                    MessageLevel.ERROR, SearchModificationRule.SearchModContext, this));
+                    + SearchModificationRule.SEARCHMOD_CONTEXT.getContext(),
+                    MessageLevel.ERROR, SearchModificationRule.SEARCHMOD_CONTEXT, this));
             }
             else {
                 return new ArrayList<>();
