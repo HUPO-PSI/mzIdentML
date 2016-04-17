@@ -784,7 +784,7 @@ PeptideEvidence elements should be given for all mappings of the corresponding P
 						<xsd:documentation>The calculated isoelectric point of the (poly)peptide, with relevant modifications included. Do not supply this value if the PI cannot be calcuated properly. </xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
-				<xsd:attribute name="peptide_ref" type="xsd:string">
+				<xsd:attribute name="peptide_ref" type="xsd:string" use="required">
 					<xsd:annotation>
 						<xsd:documentation>A reference to the identified (poly)peptide sequence in the Peptide element. </xsd:documentation>
 					</xsd:annotation>
