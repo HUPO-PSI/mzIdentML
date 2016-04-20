@@ -32,6 +32,7 @@ import javax.swing.text.StyleContext;
 import javax.xml.bind.JAXBException;
 import org.apache.commons.lang.mutable.MutableInt;
 import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.commons.lang3.SystemUtils;
 import org.apache.log4j.Logger;
 import psidev.psi.pi.rulefilter.CleavageRuleCondition;
 import psidev.psi.pi.rulefilter.DatabaseTypeCondition;
@@ -60,8 +61,8 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
      */
     private static final Logger LOGGER = Logger.getLogger(MzIdentMLValidatorGUI.class);
     private static final String STR_LAF_NAME_WINDOWS = "WINDOWS";
-    private static final String NEW_LINE = System.getProperty("line.separator");
-    private static final String STR_FILE_SEPARATOR = System.getProperty("file.separator");
+    private static final String NEW_LINE= System.getProperty("line.separator");
+    private static final String STR_FILE_SEPARATOR  = System.getProperty("file.separator");
     private static final String STR_RESOURCE_FOLDER = System.getProperty("user.dir") + STR_FILE_SEPARATOR + "resources" + STR_FILE_SEPARATOR;
     private static final String STR_ELLIPSIS = "...";
     private static final String DEFAULT_PROGRESS_MESSAGE = "Select a file and press validate" + STR_ELLIPSIS;
@@ -1483,10 +1484,16 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
      */
     public static void main(String[] args) {
         try {
-            UIManager.setLookAndFeel(new WindowsLookAndFeel());
+            if (SystemUtils.IS_OS_WINDOWS) {
+                UIManager.setLookAndFeel(new WindowsLookAndFeel());
+            }
+            else {
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());                
+            }
         }
-        catch (UnsupportedLookAndFeelException e) {
-            System.out.println("No Windows LookAndFeel found");
+        catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException exc) {
+            exc.printStackTrace(System.err);
+            System.out.println("No Windows LookAndFeel found.");
         }
         MzIdentMLValidatorGUI jpanValidator = new MzIdentMLValidatorGUI();
 

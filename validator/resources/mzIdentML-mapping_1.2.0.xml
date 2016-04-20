@@ -98,12 +98,15 @@
 			<CvTerm termAccession="MS:1001066" useTermName="false" useTerm="false" termName="ions series considered in search" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 			<!-- added for mzIdentML 1.2 validation: -->
             <CvTerm termAccession="MS:1001010" useTermName="false" useTerm="true" termName="de novo search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001031" useTermName="false" useTerm="true" termName="spectral library search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1002490" useTermName="false" useTerm="true" termName="peptide-level scoring" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1002491" useTermName="false" useTerm="true" termName="modification localization scoring" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1002492" useTermName="false" useTerm="true" termName="consensus scoring" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1002493" useTermName="false" useTerm="true" termName="sample pre-fractionation" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1002494" useTermName="false" useTerm="true" termName="cross-linking search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1002495" useTermName="false" useTerm="true" termName="no special processing" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1002635" useTermName="false" useTerm="true" termName="proteogenomics search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1002658" useTermName="false" useTerm="false" termName="identification parameter" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
 		<!-- commented out due to inefficient CV term use (root of the whole ontology)

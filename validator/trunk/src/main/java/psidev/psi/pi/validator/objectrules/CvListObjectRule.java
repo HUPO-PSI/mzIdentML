@@ -65,20 +65,22 @@ public class CvListObjectRule extends AObjectRule<CvList> {
         for (Cv cv: cvList.getCv()) {
             version = cv.getVersion();
             
-            id = cv.getId();
-            switch (id) {
-                case "MOD":
-                    if (version.compareTo("1.013.0") < 0) {
-                        messages.add(this.getValidatorMsg(id));
-                    }
-                    break;
-                case "PSI-MS":
-                case "MS":
-                    if (version.compareTo("3.73.0") < 0) {
-                        messages.add(this.getValidatorMsg(id));
-                    }
-                    break;
-                // TODO: add other possible ontologies here / update when new schemas are out
+            if (version != null) {
+                id = cv.getId();
+                switch (id) {
+                    case "MOD":
+                        if (version.compareTo("1.013.0") < 0) {
+                            messages.add(this.getValidatorMsg(id));
+                        }
+                        break;
+                    case "PSI-MS":
+                    case "MS":
+                        if (version.compareTo("3.85.2") < 0) {
+                            messages.add(this.getValidatorMsg(id));
+                        }
+                        break;
+                    // TODO: add other possible ontologies here / update when new schemas are out
+                }
             }
         }
 
