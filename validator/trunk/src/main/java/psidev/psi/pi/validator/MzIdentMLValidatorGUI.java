@@ -674,8 +674,10 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                     this.resetAfterPressedValidationButton();
 
                     final Collection<ValidatorMessage> validationResult = this.validator.startValidation(inputFile);
-                    Collection<ValidatorMessage> clearedMsgs = this.validator.clearMultipleMessages(validationResult);
-                    messages.addAll(clearedMsgs);
+                    if (validationResult != null) {
+                        Collection<ValidatorMessage> clearedMsgs = this.validator.clearMultipleMessages(validationResult);
+                        messages.addAll(clearedMsgs);
+                    }
                 }
 
                 return messages;

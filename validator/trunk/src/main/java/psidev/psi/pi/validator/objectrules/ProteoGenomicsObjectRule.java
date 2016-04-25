@@ -13,7 +13,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.CvParam;
 import uk.ac.ebi.jmzidml.model.mzidml.PeptideEvidence;
 
 /**
- * Check if the octuplet of mandatory CV terms is present for a proteogenomics search.
+ * Check if the heptapletMsg of mandatory CV terms is present for a proteogenomics search.
  * 
  * @author Gerhard
  * 
@@ -24,7 +24,7 @@ public class ProteoGenomicsObjectRule extends AObjectRule<PeptideEvidence> {
      * Constants.
      */
     private static final Context PEV_CONTEXT = new Context(MzIdentMLElement.PeptideEvidence.getXpath());
-    private final String octupletMsg = " octuplet of proteogenomics attribute terms (childs of MS:1002520) ";
+    private final String heptapletMsg = " heptapletMsg of proteogenomics attribute terms (childs of MS:1002520) ";
 
     /**
      * Members.
@@ -36,7 +36,7 @@ public class ProteoGenomicsObjectRule extends AObjectRule<PeptideEvidence> {
     private boolean peptideExonCountTerm                    = false;
     private boolean peptideExonNucleotideSizesTerm          = false;
     private boolean peptideStartPositionsOnChromosomeTerm   = false;
-    private boolean genomeReferenceVersionTerm              = false;
+//    private boolean genomeReferenceVersionTerm              = false;
     
     /**
      * Constructors.
@@ -65,7 +65,7 @@ public class ProteoGenomicsObjectRule extends AObjectRule<PeptideEvidence> {
     }
 
     /**
-     * Checks, if the required octuplet of terms is present in case of a proteogenomics search.
+     * Checks, if the required heptapletMsg of terms is present in case of a proteogenomics search.
      * 
      * @param pev the PeptideEvidence element
      * @return collection of messages
@@ -75,7 +75,7 @@ public class ProteoGenomicsObjectRule extends AObjectRule<PeptideEvidence> {
     public Collection<ValidatorMessage> check(PeptideEvidence pev) throws ValidatorException {
         List<ValidatorMessage> messages = new ArrayList<>();
 
-        if (AdditionalSearchParamsObjectRule.bIsProteoGenomicsSearch) {
+        if (AdditionalSearchParamsObjectRule.bIsProteoGenomicsSearch && !pev.isIsDecoy()) {
             String acc;
             for (CvParam cv: pev.getCvParam()) {
                 acc = cv.getAccession();
@@ -101,9 +101,6 @@ public class ProteoGenomicsObjectRule extends AObjectRule<PeptideEvidence> {
                     case "MS:1002643":  // peptide start positions on chromosome
                         this.peptideStartPositionsOnChromosomeTerm = true;
                         break;
-                    case "MS:1002644":  // genome reference version
-                        this.genomeReferenceVersionTerm = true;
-                        break;
                 }
             }
             
@@ -113,8 +110,7 @@ public class ProteoGenomicsObjectRule extends AObjectRule<PeptideEvidence> {
                     this.peptideEndOnChromosomeTerm             &&
                     this.peptideExonCountTerm                   &&
                     this.peptideExonNucleotideSizesTerm         &&
-                    this.peptideStartPositionsOnChromosomeTerm  &&
-                    this.genomeReferenceVersionTerm)) {
+                    this.peptideStartPositionsOnChromosomeTerm)) {
                 this.addMessageToCollection(pev, messages);
             }
         }
@@ -130,7 +126,7 @@ public class ProteoGenomicsObjectRule extends AObjectRule<PeptideEvidence> {
     private void addMessageToCollection(PeptideEvidence pev, List<ValidatorMessage> messages) {
         messages.add(new ValidatorMessage("The PeptideEvidence (id='"
         + pev.getId() + "') element at " + ProteoGenomicsObjectRule.PEV_CONTEXT.getContext()
-        + " doesn't contain the " + this.octupletMsg + "required in case of a proteogenomics search", MessageLevel.ERROR, ProteoGenomicsObjectRule.PEV_CONTEXT, this));
+        + " doesn't contain the " + this.heptapletMsg + "required in case of a proteogenomics search", MessageLevel.ERROR, ProteoGenomicsObjectRule.PEV_CONTEXT, this));
     }
     
     /**
@@ -142,7 +138,7 @@ public class ProteoGenomicsObjectRule extends AObjectRule<PeptideEvidence> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Add the" + this.octupletMsg + "to each PeptideEvidence");
+        ret.add("Add the" + this.heptapletMsg + "to each PeptideEvidence");
         
         return ret;
     }

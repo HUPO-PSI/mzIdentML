@@ -1,5 +1,6 @@
 package psidev.psi.pi.validator;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -356,70 +357,120 @@ public class MzIdentMLValidator extends Validator {
      * turned off), validation against the CV-mapping rules and validation
      * against the registered ObjectRules.
      * 
-     * @param xmlFile
-     *            the PRIDE XML file to validate.
-     * @return a Collection of ValidatorMessages documenting the validation
-     *         result.
+     * @param xmlFile the mzIdentML file to validate.
+     * @return a Collection of ValidatorMessages documenting the validation result.
      */
     public Collection<ValidatorMessage> startValidation(File xmlFile) {
-        if (this.logger.isInfoEnabled()) {
-            this.logger.info(NEW_LINE + "Starting new validation, input file: " + xmlFile.getAbsolutePath());
+        Collection<ValidatorMessage> locMsgs = this.makeBasicXMLFileChecks(xmlFile);
+        if (locMsgs != null) {
+            return locMsgs;
         }
+        else {
+            this.initGuiProgress();
 
-        this.initGuiProgress();
+            this.updateProgress("Indexing input file" + this. STR_ELLIPSIS);
+            this.unmarshaller = new MzIdentMLUnmarshaller(xmlFile);
+            String mzIdentMLVersion = this.unmarshaller.getMzIdentMLVersion();
 
-        this.updateProgress("Indexing input file" + this. STR_ELLIPSIS);
-        this.unmarshaller = new MzIdentMLUnmarshaller(xmlFile);
-        String mzIdentMLVersion = this.unmarshaller.getMzIdentMLVersion();
+            // flag if the version has changed
+            MzIdVersion currentFileVersionTMP = this.getMzIdentMLVersion(mzIdentMLVersion);
+            boolean versionChange = false;
+            if (this.currentFileVersion != null && this.currentFileVersion != currentFileVersionTMP) {
+                versionChange = true;
+            }
+            this.logger.debug("MzIdentML file version set to :" + this.currentFileVersion);
+            this.currentFileVersion = currentFileVersionTMP;
 
-        // flag if the version has changed
-        MzIdVersion currentFileVersionTMP = this.getMzIdentMLVersion(mzIdentMLVersion);
-        boolean versionChange = false;
-        if (this.currentFileVersion != null && this.currentFileVersion != currentFileVersionTMP) {
-            versionChange = true;
-        }
-        this.logger.debug("MzIdentML file version set to :" + this.currentFileVersion);
-        this.currentFileVersion = currentFileVersionTMP;
+            try {
+                // in case of not having a cvRule manager, load the rules depending
+                // on the version of the file or if the version of the file has changed
+                if (this.getCvRuleManager() == null || versionChange) {
+                    this.loadRulesByMzIdentVersion();
+                }
 
-        try {
-            // in case of not having a cvRule manager, load the rules depending
-            // on the version of the file or if the version of the file has changed
-            if (this.getCvRuleManager() == null || versionChange) {
-                this.loadRulesByMzIdentVersion();
+                // Reset old validation results. This will currently reset the status of all CvRules to a "not run" status
+                super.resetCvRuleStatus();
+
+                this.extendedReport = new ExtendedValidatorReport(this.getObjectRules());
+
+                // reset the WhiteListHack (hack to find terms that are not covered by the CvMapping)
+                ValidatorCvContext.getInstance().resetRecognised();
+                ValidatorCvContext.getInstance().resetNotRecognised();
+
+                // XML Schema validation
+                this.schemaValidation(xmlFile);
+                this.logSchemaValidationErrors();
+
+                // ---------------- Internal consistency check of the CvMappingRules
+                // Validate CV Mapping Rules
+                this.updateProgress("Checking internal consistency of CV rules" + this. STR_ELLIPSIS);
+                if (this.gui != null && !this.gui.skipCvRulesChecking()) {
+                    this.addMessages(this.checkCvMappingRules(), this.msgL);
+                }
+            }
+            catch (ValidatorException ve) {
+                this.logger.error("Exceptions during validation!", ve);
+                ve.printStackTrace(System.err);
             }
 
-            // Reset old validation results. This will currently reset the status of all CvRules to a "not run" status
-            super.resetCvRuleStatus();
+            System.out.println("Number of valid rules: " + this.getCvRuleManager().getCvRules().size());
+            this.doValidationWork();
 
-            this.extendedReport = new ExtendedValidatorReport(this.getObjectRules());
+            this.updateProgress("Validation complete, compiling output" + this. STR_ELLIPSIS);
+            this.checkForNonAnticipatedCvTerms();
 
-            // reset the WhiteListHack (hack to find terms that are not covered by the CvMapping)
-            ValidatorCvContext.getInstance().resetRecognised();
-            ValidatorCvContext.getInstance().resetNotRecognised();
+            return this.filterAndClusterMessages();
+        }
+    }
 
-            // XML Schema validation
-            this.schemaValidation(xmlFile);
-            this.logSchemaValidationErrors();
-
-            // ---------------- Internal consistency check of the CvMappingRules
-            // Validate CV Mapping Rules
-            this.updateProgress("Checking internal consistency of CV rules" + this. STR_ELLIPSIS);
-            if (this.gui != null && !this.gui.skipCvRulesChecking()) {
-                this.addMessages(this.checkCvMappingRules(), this.msgL);
+    /**
+     * Makes some simple test, e.g. if it's an non-empty and valid mzIdentML file
+     * @param xmlFile the mzIdentML file to validate.
+     * @return a Collection of ValidatorMessages documenting the validation result.
+     */
+    private Collection<ValidatorMessage> makeBasicXMLFileChecks(File xmlFile) {
+        if (xmlFile.length() > 0) {
+            if (this.logger.isInfoEnabled()) {
+                this.logger.info(NEW_LINE + "Starting new validation, input file: " + xmlFile.getAbsolutePath());
+            }
+            try {
+                BufferedReader fr = new BufferedReader(new FileReader(xmlFile));
+                if (!fr.readLine().startsWith("<?xml ")) {
+                    return this.getInvalidOrEmptyFileErrorMessages(xmlFile, " is not a XML file.");
+                }
+                else {
+                    if (!fr.readLine().startsWith("<MzIdentML ")) {
+                        return this.getInvalidOrEmptyFileErrorMessages(xmlFile, " is not a mzIdentML file.");
+                    }
+                }
+            }
+            catch (IOException exc) {
+                exc.printStackTrace(System.err);
+            }
+            catch (NullPointerException exc) {
+                return this.getInvalidOrEmptyFileErrorMessages(xmlFile, " seems to be uncomplete or errorneous.");
             }
         }
-        catch (ValidatorException ve) {
-            this.logger.error("Exceptions during validation!", ve);
-            ve.printStackTrace(System.err);
+        else {
+            return this.getInvalidOrEmptyFileErrorMessages(xmlFile, " is empty.");
         }
+        
+        return null;
+    }
+    
+    /**
+     * Gets error messages in case of an empty or invalid file.
+     * @param xmlFile the mzIdentML file to validate.
+     * @param msgSuffix the end of the error message.
+     * @return a Collection of ValidatorMessages documenting the validation result.
+     */
+    private Collection<ValidatorMessage> getInvalidOrEmptyFileErrorMessages(File xmlFile, String msgSuffix) {
+        String errStr = "The file " + xmlFile.getName() + msgSuffix;
+        System.err.println(errStr);
 
-        System.out.println("Number of valid rules: " + this.getCvRuleManager().getCvRules().size());
-        this.doValidationWork();
-
-        this.updateProgress("Validation complete, compiling output" + this. STR_ELLIPSIS);
-        this.checkForNonAnticipatedCvTerms();
-
-        return this.filterAndClusterMessages();
+        final Collection<ValidatorMessage> clusteredMessages = new ArrayList<>();
+        clusteredMessages.add(new ValidatorMessage(errStr, MessageLevel.ERROR));
+        return clusteredMessages;
     }
 
     /**
@@ -528,7 +579,7 @@ public class MzIdentMLValidator extends Validator {
             }
         }
         else {
-            throw new ValidatorException("No gui has been specified, which is needed to know which type of validation (semantic or MIAPE) is going to be performed.");
+            throw new ValidatorException("No GUI has been specified, which is needed to know which type of validation (semantic or MIAPE) is going to be performed.");
         }
     }
 
@@ -1446,14 +1497,17 @@ public class MzIdentMLValidator extends Validator {
             validator.setMessageReportLevel(msgLevel);
             validator.setRuleFilterManager(ruleFilterManager);
 
-            messages.addAll(validator.startValidation(mzIdML));
-            
-            System.out.println(validator.getValidatorMessages(messages));
-            System.out.println(NEW_LINE);
-            System.out.println(validator.getStatisticsReport(messages.size()));
-            System.out.println(NEW_LINE);
-            System.out.println(validator.getCvContextReport());
-            System.out.println(DOUBLE_NEW_LINE + "All done. Goodbye.");
+            Collection<ValidatorMessage> msgs = validator.startValidation(mzIdML);
+            if (msgs != null) {
+                messages.addAll(msgs);
+
+                System.out.println(validator.getValidatorMessages(messages));
+                System.out.println(NEW_LINE);
+                System.out.println(validator.getStatisticsReport(messages.size()));
+                System.out.println(NEW_LINE);
+                System.out.println(validator.getCvContextReport());
+                System.out.println(DOUBLE_NEW_LINE + "All done. Goodbye.");
+            }
         }
         catch (FileNotFoundException | JAXBException | OntologyLoaderException | ValidatorException | CvRuleReaderException e) {
             System.err.println(DOUBLE_NEW_LINE + "Exception occurred: " + e.getMessage());
