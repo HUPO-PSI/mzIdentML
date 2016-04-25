@@ -3,13 +3,13 @@
 
 ### General
 The mzIdentML validator is based on the [PSI validator generic framework] (http://www.psidev.info/validator)
-which is described in detail in the following [tutorial] (http://www.psidev.info/validator-tutorial-0)
+which is described in detail in the following [tutorial] (http://www.psidev.info/validator-tutorial-0).
 
 The mzIdentML validator makes use of mapping files describing at which positions in the data files which CV terms from
 the [psi-ms.obo ontology] (https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo) are allowed.
 In addition there are object rules (encoded in Java) for cases where a configuration via the mapping file mechanism is not possible.
 
-All mapping / object rules which are violoated are reported in coloured output encoding the type of violated rule:`
+All mapping / object rules which are violoated are reported in coloured output encoding the type of violated rule:
 
         A violated MUST   rule is reported in red
         A violated SHOULD rule is reported in orange
