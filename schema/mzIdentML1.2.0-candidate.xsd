@@ -103,6 +103,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:selector xpath="./psi-pi:BibliographicReference"/>
 			<xsd:field xpath="@id"/>
 		</xsd:unique>
+		<xsd:unique name="PK_spectrumID">		
+			<xsd:selector xpath="./psi-pi:DataCollection/psi-pi:AnalysisData/psi-pi:SpectrumIdentificationList/psi-pi:SpectrumIdentificationResult/psi-pi:SpectrumIdentificationItem"/>
+			<xsd:field xpath="@spectrumID"/>
+			<xsd:field xpath="@spectraData_ref"/>
+		</xsd:unique>
 		<xsd:keyref name="FK_SoftwareContact" refer="PK_AUDIT">
 			<xsd:selector xpath="./psi-pi:AnalysisSoftwareList/psi-pi:AnalysisSoftware/psi-pi:ContactRole"/>
 			<xsd:field xpath="@contact_ref"/>
