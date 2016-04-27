@@ -9,7 +9,7 @@
     
 	<cvSource 
 		source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
-        uri="http://www.brenda-enzymes.info/ontology/tissue/tree/update/update_files/BrendaTissueOBO"
+        uri="http://www.brenda-enzymes.org/ontology/tissue/tree/update/update_files/BrendaTissueOBO"
 		format="OBO" name="BRENDA Tissue and Enzyme Source Ontology" identifier="BTO" version="24:10:2015 14:39"/>
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
@@ -18,7 +18,7 @@
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/pato-ontology/pato/master/pato.obo"
-    	format="OBO" name="Phenotypic Quality Ontology" identifier="PATO" version="releases/2015-11-18"/>
+    	format="OBO" name="Phenotypic Quality Ontology" identifier="PATO" version=""/>
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/MICommunity/psidev/master/psi/mod/data/PSI-MOD-1.013.1.OBO"
@@ -26,7 +26,7 @@
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo"
-    	format="OBO" name="Mass Spectrometry Ontology" identifier="MS" version="3.84.0"/>
+    	format="OBO" name="Mass Spectrometry Ontology" identifier="MS" version="3.86.1"/>
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" 
     	uri="http://www.unimod.org/obo/unimod.obo"

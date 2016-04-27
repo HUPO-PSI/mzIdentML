@@ -122,7 +122,7 @@
 				CvTerm termAccession="MS:100XXXX" useTermName="false" useTerm="false" termName="modification specificity attribute" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" / -->
          </CvMappingRule>
 
-        <CvMappingRule id="EnzymeName_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/enzymes/enzyme/enzymeName/cvParam/@accession" requirementLevel="MAY"  scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/enzymes/enzyme/enzymeName" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="EnzymeName_may_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/enzymes/enzyme/enzymeName/cvParam/@accession" requirementLevel="MAY"  scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/enzymes/enzyme/enzymeName" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001045" useTermName="false" useTerm="false" termName="cleavage agent name" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 

@@ -2,7 +2,7 @@
 	xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/CvSourceList.xsd">
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:BrendaTissueOBO.obo" format="OBO" name="BTO" identifier="BTO" version="24:10:2015 14:39"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:gene_ontology.obo" format="OBO" name="Gene Ontology" identifier="GO" version="releases/2016-04-06"/>
-    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:psi-ms.obo" format="OBO" name="PSI-MS" identifier="MS" version="3.84.0"/>
+    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:psi-ms.obo" format="OBO" name="PSI-MS" identifier="MS" version="3.86.1"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:PSI-MOD.obo" format="OBO" name="PSI-MOD" identifier="MOD" version="30:05:2014 00:48"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:pato.obo" format="OBO" name="PATO" identifier="PATO" version="releases/2015-11-18"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:unimod.obo" format="OBO" name="UNIMOD" identifier="UNIMOD" version="2016:02:01 14:24"/>

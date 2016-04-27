@@ -83,11 +83,15 @@
 			<CvTerm termAccession="MS:1001267" useTermName="false" useTerm="true" termName="software vendor" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
 		</CvMappingRule>
 				
-		<CvMappingRule id="ProteinDetectionProtocolThreshold_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/ProteinDetectionProtocol/threshold/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/ProteinDetectionProtocol/threshold" cvTermsCombinationLogic="OR">
+		<CvMappingRule id="ProteinDetectionProtocolThreshold_must_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/ProteinDetectionProtocol/threshold/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/ProteinDetectionProtocol/threshold" cvTermsCombinationLogic="OR">
 			<CvTerm termAccession="MS:1001494" useTermName="false" useTerm="true" termName="no threshold" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1002572" useTermName="false" useTerm="false" termName="protein detection statistical threshold" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		    <CvTerm termAccession="MS:1001153" useTermName="false" useTerm="false" termName="search engine specific score" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		    <CvTerm termAccession="MS:1001302" useTermName="false" useTerm="false" termName="search engine specific input parameter" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+		</CvMappingRule>
+
+		<CvMappingRule id="ProteinDetectionProtocolThreshold_may_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/ProteinDetectionProtocol/threshold/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/ProteinDetectionProtocol/threshold" cvTermsCombinationLogic="OR">
+			<CvTerm termAccession="MS:1002555" useTermName="false" useTerm="false" termName="PTM localization score threshold" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 
 		<CvMappingRule id="SpectrumIdentificationProtocolThreshold_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/threshold/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/threshold" cvTermsCombinationLogic="OR">
@@ -131,7 +135,7 @@
          </CvMappingRule>
 	
 		<!-- This rule will be skipped if user specific cleavage rule is provided -->
-        <CvMappingRule id="EnzymeName_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/enzymes/enzyme/enzymeName/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/enzymes/enzyme/enzymeName" cvTermsCombinationLogic="AND">
+        <CvMappingRule id="EnzymeName_must_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/enzymes/enzyme/enzymeName/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/enzymes/enzyme/enzymeName" cvTermsCombinationLogic="AND">
             <CvTerm termAccession="MS:1001045" useTerm="false" termName="cleavage agent name" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
         
@@ -207,7 +211,7 @@
             <CvTerm termAccession="MS:1000561" useTermName="false" useTerm="false" termName="data file checksum type" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
         
-        <CvMappingRule id="DecoyDatabase_rule" cvElementPath="/MzIdentML/DataCollection/Inputs/searchDatabase/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/Inputs/searchDatabase" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="DecoyDatabase_must_rule" cvElementPath="/MzIdentML/DataCollection/Inputs/searchDatabase/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/Inputs/searchDatabase" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001450" useTermName="false" useTerm="false" termName="decoy DB details" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
@@ -236,7 +240,7 @@
         </CvMappingRule>
         
         <!-- NEW RULE - just for PFF -->
-        <CvMappingRule id="SpectrumIdentificationItem_PeptideScore_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="SpectrumIdentificationItem_PeptideScore_must_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001143" useTermName="false" useTerm="false" termName="search engine specific score for peptides" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1001105" useTermName="false" useTerm="false" termName="peptide result details" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
@@ -275,12 +279,12 @@
         </CvMappingRule>
 		
         <!-- NEW RULE - JUST FOR PMF EXPERIMENTS -->
-        <CvMappingRule id="ProteinAmbiguityGroupProteinDetectionHypothesis_MatchedPeaks_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/proteinDetectionHypothesis/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/proteinDetectionHypothesis" cvTermsCombinationLogic="AND">
+        <CvMappingRule id="ProteinAmbiguityGroupProteinDetectionHypothesis_MatchedPeaks_must_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/proteinDetectionHypothesis/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/proteinDetectionHypothesis" cvTermsCombinationLogic="AND">
             <CvTerm termAccession="MS:1001121" useTermName="false" useTerm="true" termName="number of matched peaks" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
         
         <!-- NEW RULE - JUST FOR PMF EXPERIMENTS -->
-        <CvMappingRule id="ProteinAmbiguityGroupProteinDetectionHypothesis_SubmittedUnmatchedPeaks_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/proteinDetectionHypothesis/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/proteinDetectionHypothesis" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="ProteinAmbiguityGroupProteinDetectionHypothesis_SubmittedUnmatchedPeaks_must_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/proteinDetectionHypothesis/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/proteinDetectionHypothesis" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001124" useTermName="false" useTerm="true" termName="number of peaks submitted" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1001362" useTermName="false" useTerm="true" termName="number of unmatched peaks" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
@@ -307,21 +311,21 @@
 		<!--  addition for mzIdentML 1.2 validation: -->
 		<!-- NOTE THAT THE INTENTION OF THIS RULE IS TO BE USED BY THE SEMANTIC VALIDATION FOR A CONDITIONAL APPLICATION OF ANOTHER TWO RULES THAT CHECK THE EXISTENCE OR NOT OF PeptideEvidenceRef AT SII DEPENDING ON THE RESULT OF THIS RULE -->
 		<!-- IN ANY CASE, THE ERROR REPORTED BY THIS RULE IS NOT GOING TO BE REPORTED BY THE SEMANTIC VALIDATOR AS IT IS CONFIGURED AT ruleFilter_semantic.xml -->
-		<CvMappingRule id="DenovoSearchType_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams" cvTermsCombinationLogic="AND">
+		<CvMappingRule id="DenovoSearchType_may_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams" cvTermsCombinationLogic="AND">
             <CvTerm termAccession="MS:1001010" useTermName="false" useTerm="true" termName="de novo search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 	
 		<!--  addition for mzIdentML 1.2 validation: -->
 		<!-- NOTE THAT THE INTENTION OF THIS RULE IS TO BE USED BY THE SEMANTIC VALIDATION FOR A CONDITIONAL APPLICATION OF OTHER RULES THAT CHECK THE EXISTENCE OF THE TRIPLET OF TERMS THAT MUST BE PRESENT UNDER SPECTRUMIDENTIFICATIONITEM FOR PEPTIDE-LEVEL STATS -->
 		<!-- IN ANY CASE, THE ERROR REPORTED BY THIS RULE IS NOT GOING TO BE REPORTED BY THE SEMANTIC VALIDATOR AS IT IS CONFIGURED AT ruleFilter_semantic.xml -->
-		<CvMappingRule id="PeptideLevelStatsSearchType_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams" cvTermsCombinationLogic="OR">
+		<CvMappingRule id="PeptideLevelStatsSearchType_may_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1002490" useTermName="false" useTerm="true" termName="peptide-level scoring" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 
 		<!--  addition for mzIdentML 1.2 validation: -->
 		<!-- NOTE THAT THE INTENTION OF THIS RULE IS TO BE USED BY THE SEMANTIC VALIDATION FOR A CONDITIONAL APPLICATION OF OTHER RULES THAT CHECKS THE EXISTENCE OF THE TERM THAT MUST BE PRESENT UNDER SPECTRUMIDENTIFICATIONITEM FOR MODIFICATION LOCALIZATION SCORING -->
 		<!-- IN ANY CASE, THE ERROR REPORTED BY THIS RULE IS NOT GOING TO BE REPORTED BY THE SEMANTIC VALIDATOR AS IT IS CONFIGURED AT ruleFilter_semantic.xml -->
-		<CvMappingRule id="ModLocalizationSearchType_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams" cvTermsCombinationLogic="OR">
+		<CvMappingRule id="ModLocalizationSearchType_may_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1002491" useTermName="false" useTerm="true" termName="modification localization scoring" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 
