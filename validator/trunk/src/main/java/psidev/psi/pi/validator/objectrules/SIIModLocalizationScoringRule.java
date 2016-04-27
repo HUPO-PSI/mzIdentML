@@ -24,7 +24,7 @@ public class SIIModLocalizationScoringRule extends AObjectRule<SpectrumIdentific
      * Constants.
      */
     private static final Context SII_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationItem.getXpath());
-    private final String STR_REGEXP_MOD_LOCALIZATION = "(\\d+:\\d+.\\d+[Ee]{0,1}[+-]{0,1}\\d+:\\d+[|]*\\d*:(true|false){1})";
+    private final String STR_REGEXP_MOD_LOCALIZATION = "(\\d+:\\d+.\\d+[Ee]{0,1}[+-]{0,1}\\d*:\\d+[|]*\\d*:(true|false){1})";
 
     /**
      * Constructors.
