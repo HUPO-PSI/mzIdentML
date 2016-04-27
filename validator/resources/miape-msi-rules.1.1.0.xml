@@ -301,7 +301,7 @@
             <CvTerm termAccession="MS:1001362" useTermName="false" useTerm="true" termName="number of unmatched peaks" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
         
-        <CvMappingRule id="ProteinAmbiguityGroup_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/cvParam/@accession" requirementLevel="MAY"  scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="ProteinAmbiguityGroup_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/cvParam/@accession" requirementLevel="MAY"  scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001147" useTermName="false" useTerm="false" termName="protein ambiguity group result details" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 	

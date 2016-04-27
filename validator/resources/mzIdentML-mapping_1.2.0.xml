@@ -257,8 +257,11 @@
         	<CvTerm termAccession="MS:1001101" useTermName="false" useTerm="false" termName="protein group or subset relationship" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
         
-        <CvMappingRule id="ProteinAmbiguityGroup_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="ProteinAmbiguityGroup_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001147" useTermName="false" useTerm="false" termName="protein ambiguity group result details" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1002470" useTermName="false" useTerm="true" termName="PeptideShaker protein group score" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1002471" useTermName="false" useTerm="true" termName="PeptideShaker protein group confidence" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1002542" useTermName="false" useTerm="true" termName="PeptideShaker protein confidence type" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 	
 		<!--  addition for mzIdentML 1.2 validation: -->
