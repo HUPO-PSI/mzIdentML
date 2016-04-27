@@ -335,7 +335,7 @@
 
 		<!--  addition for mzIdentML 1.2 validation: -->
     	<CvMappingRule id="ModLocalizationSpectrumIdentificationItem_must_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem" cvTermsCombinationLogic="OR">
-            <CvTerm termAccession="MS:1002507" useTermName="false" useTerm="true" termName="modification rescoring:false localization rate" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001968" useTermName="false" useTerm="false" termName="PSM-level PTM localization score" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
             <Description>Term that must be present under SpectrumIdentificationItem in case of modification location scoring.</Description>
         </CvMappingRule>
     </CvMappingRuleList>
