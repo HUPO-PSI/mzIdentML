@@ -75,7 +75,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
                         break;
                     case "PSI-MS":
                     case "MS":
-                        if (version.compareTo("3.85.2") < 0) {
+                        if (version.compareTo("3.86.1") < 0) {
                             messages.add(this.getValidatorMsg(id));
                         }
                         break;
