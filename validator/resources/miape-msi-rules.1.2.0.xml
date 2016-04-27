@@ -235,8 +235,9 @@
             <CvTerm termAccession="MS:1001221" useTermName="false" useTerm="false" termName="fragmentation information" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
     
-        <CvMappingRule id="SpectrumIdentificationResult_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="SpectrumIdentificationResult_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001405" useTermName="false" useTerm="false" termName="spectrum identification result details" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1000894" useTermName="false" useTerm="true" termName="retention time" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
         
         <!-- NEW RULE - just for PFF -->
