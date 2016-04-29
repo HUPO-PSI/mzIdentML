@@ -85,11 +85,15 @@
 			<CvTerm termAccession="MS:1002555" useTermName="false" useTerm="false" termName="PTM localization score threshold" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 
-		<CvMappingRule id="SpectrumIdentificationProtocolThreshold_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/threshold/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/threshold" cvTermsCombinationLogic="OR">
+		<CvMappingRule id="SpectrumIdentificationProtocolThreshold_must_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/threshold/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/threshold" cvTermsCombinationLogic="OR">
+		    <CvTerm termAccession="MS:1001153" useTermName="false" useTerm="false" termName="search engine specific score" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+		    <CvTerm termAccession="MS:1001302" useTermName="false" useTerm="false" termName="search engine specific input parameter" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1001494" useTermName="false" useTerm="true" termName="no threshold" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1002573" useTermName="false" useTerm="false" termName="spectrum identification statistical threshold" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
-		    <CvTerm termAccession="MS:1001153" useTermName="false" useTerm="false" termName="search engine specific score" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
-		    <CvTerm termAccession="MS:1001302" useTermName="false" useTerm="false" termName="search engine specific input parameter" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />				    
+		</CvMappingRule>
+
+		<CvMappingRule id="SpectrumIdentificationProtocolThreshold_may_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/threshold/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/threshold" cvTermsCombinationLogic="OR">
+		    <CvTerm termAccession="MS:1002555" useTermName="false" useTerm="false" termName="PTM localization score threshold" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 
         <CvMappingRule id="SearchType_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/searchType/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/searchType" cvTermsCombinationLogic="OR">
@@ -272,11 +276,11 @@
 	
 		<!--  addition for mzIdentML 1.2 validation: -->
     	<CvMappingRule id="PeptideLevelStatsSpectrumIdentificationItem_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem" cvTermsCombinationLogic="OR">
-            <CvTerm termAccession="MS:1001968" useTermName="false" useTerm="false" termName="PSM-level PTM localization score" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002549" useTermName="false" useTerm="false" termName="peptide-level PTM localization score" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002538" useTermName="false" useTerm="false" termName="PTM localization confidence metric" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002555" useTermName="false" useTerm="false" termName="PTM localization score threshold" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1001143" useTermName="false" useTerm="false" termName="search engine specific score for PSMs" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001968" useTermName="false" useTerm="false" termName="PSM-level PTM localization score" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1002538" useTermName="false" useTerm="false" termName="PTM localization confidence metric" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1002549" useTermName="false" useTerm="false" termName="peptide-level PTM localization score" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1002555" useTermName="false" useTerm="false" termName="PTM localization score threshold" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
             <Description>PTM location scores and thresholds.</Description>
         </CvMappingRule>
         
@@ -303,7 +307,14 @@
 
 		<!--  addition for mzIdentML 1.2 validation: -->
     	<CvMappingRule id="ModLocalizationSpectrumIdentificationItem_must_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="MS:1001143" useTermName="false" useTerm="false" termName="search engine specific score for PSMs" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1001968" useTermName="false" useTerm="false" termName="PSM-level PTM localization score" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1002538" useTermName="false" useTerm="false" termName="PTM localization confidence metric" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1002549" useTermName="false" useTerm="false" termName="peptide-level PTM localization score" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1002555" useTermName="false" useTerm="false" termName="PTM localization score threshold" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+			<!--
+            <CvTerm termAccession="MS:1002505" useTermName="false" useTerm="false" termName="regular expression for modification localization scoring" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+			-->
             <Description>Term that must be present under SpectrumIdentificationItem in case of modification location scoring.</Description>
         </CvMappingRule>
     </CvMappingRuleList>

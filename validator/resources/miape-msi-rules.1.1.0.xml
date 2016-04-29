@@ -93,7 +93,7 @@
 		    <CvTerm termAccession="MS:1001302" useTermName="false" useTerm="false" termName="search engine specific input parameter" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 
-		<CvMappingRule id="SpectrumIdentificationProtocolThreshold_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/threshold/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/threshold" cvTermsCombinationLogic="OR">
+		<CvMappingRule id="SpectrumIdentificationProtocolThreshold_must_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/threshold/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/threshold" cvTermsCombinationLogic="OR">
 			<CvTerm termAccession="MS:1001448" useTermName="false" useTerm="true" termName="pep:FDR threshold" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1001494" useTermName="false" useTerm="true" termName="no threshold" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
 		    <CvTerm termAccession="MS:1001153" useTermName="false" useTerm="false" termName="search engine specific score" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
