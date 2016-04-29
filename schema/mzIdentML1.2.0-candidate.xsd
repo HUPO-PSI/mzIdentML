@@ -668,6 +668,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:sequence>
 			<xsd:element name="cvParam" type="CVParamType" minOccurs="1" maxOccurs="unbounded"/>
 		</xsd:sequence>
+		<xsd:attribute name="tmp" type="xsd:string" />
 	</xsd:complexType>
 	<xsd:complexType name="SearchModificationType">
 		<xsd:annotation>
