@@ -230,7 +230,7 @@
         --> 
     
         <!-- to validate this the whole List element would have to be loaded into one object! Since such an object would be huge, the rule was disabled
-        <CvMappingRule id="ProteinDetectionList_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/cvParam/@accession" requirementLevel="MAY"  scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="ProteinDetectionList_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/cvParam/@accession" requirementLevel="MAY"  scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001184" useTermName="false" useTerm="false" termName="search statistics" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
         -->

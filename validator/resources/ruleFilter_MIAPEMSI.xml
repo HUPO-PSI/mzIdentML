@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleFilter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://proteo.cnb.csic.es/miape-api/schemas/ruleFilter_v1.4.xsd">
 	<userConditions>
-		<userCondition id="USER_SPECIFIC_CLEAVAGE_RULE">
+		<userCondition id="CLEAVAGE_TYPE">
 			<userOption id="USER_SPECIFIC_CLEAVAGE_RULE">
 				<ruleToSkip id="EnzymeName_must_rule"/>
 			</userOption>
