@@ -1015,7 +1015,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
             
             if (!AdditionalSearchParamsObjectRule.bIsDeNovoSearch) { 
                 switch (ruleID) {
-                    case "DenovoSearchType_rule":
+                    case "DenovoSearchType_may_rule":
                         report.getInvalidCvRules().remove(ruleID);
                         bAdd = false;
                         break;
@@ -1027,23 +1027,27 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
             }
             if (!AdditionalSearchParamsObjectRule.bIsPeptideLevelScoring) {
                 switch (ruleID) {
-                    case "PeptideLevelStatsSearchType_rule":
+                    case "PeptideLevelStatsSpectrumIdentificationItem_may_rule":
+                        report.getInvalidCvRules().remove(ruleID);
+                        bAdd = false;
+                        break;
+                    case "PeptideLevelStatsSearchType_may_rule":
                         report.getInvalidCvRules().remove(ruleID);
                         bAdd = false;
                         break;
                     case "PeptideLevelStatsObjectRule":
-                        report.getInvalidCvRules().remove(ruleID);
-                        bAdd = false;
-                        break;
-                    case "PeptideLevelStatsSpectrumIdentificationItem_may_rule":
-                        report.getInvalidCvRules().remove(ruleID);
+                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
                         bAdd = false;
                         break;
                 }
             }
             if (!AdditionalSearchParamsObjectRule.bIsModificationLocalizationScoring) {
                 switch (ruleID) {
-                    case "ModLocalizationSearchType_rule":
+                    case "ModLocalizationSearchType_may_rule":
+                        report.getInvalidCvRules().remove(ruleID);
+                        bAdd = false;
+                        break;
+                    case "ModLocalizationSpectrumIdentificationItem_must_rule":
                         report.getInvalidCvRules().remove(ruleID);
                         bAdd = false;
                         break;
@@ -1051,17 +1055,37 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                         report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
                         bAdd = false;
                         break;
-                    case "ModLocalizationSpectrumIdentificationItem_must_rule":
-                        report.getInvalidCvRules().remove(ruleID);
+                }
+            }
+            if (!AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch) {
+                switch (ruleID) {
+                    case "XLinkPeptideModificationObjectRule":
+                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                        bAdd = false;
+                        break;
+                    case "XLinkSIIObjectRule":
+                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                        bAdd = false;
+                        break;
+                }
+            }
+            if (!AdditionalSearchParamsObjectRule.bIsProteoGenomicsSearch) {
+                switch (ruleID) {
+                    case "ProteoGenomicsObjectRule":
+                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                        bAdd = false;
+                        break;
+                    case "ProteoGenomicsReferenceObjectRule":
+                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
                         bAdd = false;
                         break;
                 }
             }
             /*
-            if (!AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch) {
-                // Not necessary here, because all croo-lniking rules are implemented as ObjectRules
-            }
             if (!AdditionalSearchParamsObjectRule.bIsSamplePreFractionation) {
+                // TODO: implement
+            }
+            if (!AdditionalSearchParamsObjectRule.bIsSpectralLibrarySearch) {
                 // TODO: implement
             }
             if (!AdditionalSearchParamsObjectRule.bIsConsensusScoring) {
@@ -1558,17 +1582,6 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         else if (this.jRadioNoDecoy.isSelected()) {
             conditionSet.put(DatabaseTypeCondition.getID(), DatabaseTypeCondition.NO_DECOY_DATABASE.getOption());
         }
-        
-        /*
-        // DENOVO
-        conditionSet.put(DeNovoCondition.getID(), DeNovoCondition.USER_SPECIFIC_DENOVO_RULE.getOption());
-        
-        // PEPTIDELEVELSTATS
-        conditionSet.put(PeptideLevelStatsCondition.getID(), PeptideLevelStatsCondition.USER_SPECIFIC_PEPTIDELEVELSTATS_RULE.getOption());
-        
-        // MODLOCALIZATION
-        conditionSet.put(ModLocalizationCondition.getID(), ModLocalizationCondition.USER_SPECIFIC_MODLOCALIZATION_RULE.getOption());
-        */
         
         return conditionSet;
     }
