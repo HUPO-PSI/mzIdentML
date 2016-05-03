@@ -36,7 +36,7 @@ Jones A.R., Eisenacher M., Mayer G., Kohlbacher O., Siepen J., Hubbard S.J., Sel
 Several example of the format can be download from the next link [Examples](https://github.com/HUPO-PSI/mzIdentML/tree/master/examples/1_1examples)
 [PRIDE Toolsuite Examples](https://github.com/PRIDE-Toolsuite/inspector-example-files/tree/master/mzIdentML)
 
-## Download link
+## Download link for the mzIdentML validator
 Here is the latest version of the [mzIdentML validator] (https://github.com/HUPO-PSI/mzIdentML/tree/master/validator/trunk/mzIdentMLValidator)
 
 ## Tools, Libraries, readers and exporters
