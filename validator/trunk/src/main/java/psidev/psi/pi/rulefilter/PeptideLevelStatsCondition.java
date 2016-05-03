@@ -1,12 +1,12 @@
 package psidev.psi.pi.rulefilter;
 
 /**
- * Enum for the DB type.
+ * Enum for the peptides level stats case.
  */
-public enum DatabaseTypeCondition {
+public enum PeptideLevelStatsCondition {
     // enum values
-    DECOY_DATABASE("DECOY_DATABASE"),
-    NO_DECOY_DATABASE("NO_DECOY_DATABASE");
+    USER_SPECIFIC_PEPTIDELEVELSTATS_RULE("USER_SPECIFIC_PEPTIDELEVELSTATS_RULE"),
+    NO_USER_SPECIFIC_PEPTIDELEVELSTATS_RULE("NO_USER_SPECIFIC_PEPTIDELEVELSTATSS_RULE");
 
     // members
     private final String option;
@@ -15,7 +15,7 @@ public enum DatabaseTypeCondition {
      * Standard constructor.
      * @param option 
      */
-    DatabaseTypeCondition(String option) {
+    PeptideLevelStatsCondition(String option) {
         this.option = option;
     }
 
@@ -24,7 +24,7 @@ public enum DatabaseTypeCondition {
      * @return the ID
      */
     public static String getID() {
-        return "DATABASE_TYPE";
+        return "PEPTIDELEVELSTATS_RULE";
     }
 
     /**
