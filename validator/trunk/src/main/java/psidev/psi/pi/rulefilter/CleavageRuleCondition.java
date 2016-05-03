@@ -24,7 +24,7 @@ public enum CleavageRuleCondition {
      * @return the ID
      */
     public static String getID() {
-        return "CLEAVAGE_RULE";
+        return "CLEAVAGE_TYPE";
     }
 
     /**

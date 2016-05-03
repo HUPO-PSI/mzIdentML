@@ -36,7 +36,10 @@ import org.apache.commons.lang3.SystemUtils;
 import org.apache.log4j.Logger;
 import psidev.psi.pi.rulefilter.CleavageRuleCondition;
 import psidev.psi.pi.rulefilter.DatabaseTypeCondition;
+import psidev.psi.pi.rulefilter.DeNovoCondition;
 import psidev.psi.pi.rulefilter.MassSpectraTypeCondition;
+import psidev.psi.pi.rulefilter.ModLocalizationCondition;
+import psidev.psi.pi.rulefilter.PeptideLevelStatsCondition;
 import psidev.psi.pi.rulefilter.RuleFilterAgent;
 import psidev.psi.pi.rulefilter.RuleFilterManager;
 import psidev.psi.pi.validator.MzIdentMLValidator.MzIdVersion;
@@ -1558,6 +1561,17 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         else if (this.jRadioNoDecoy.isSelected()) {
             conditionSet.put(DatabaseTypeCondition.getID(), DatabaseTypeCondition.NO_DECOY_DATABASE.getOption());
         }
+        
+        /*
+        // DENOVO
+        conditionSet.put(DeNovoCondition.getID(), DeNovoCondition.USER_SPECIFIC_DENOVO_RULE.getOption());
+        
+        // PEPTIDELEVELSTATS
+        conditionSet.put(PeptideLevelStatsCondition.getID(), PeptideLevelStatsCondition.USER_SPECIFIC_PEPTIDELEVELSTATS_RULE.getOption());
+        
+        // MODLOCALIZATION
+        conditionSet.put(ModLocalizationCondition.getID(), ModLocalizationCondition.USER_SPECIFIC_MODLOCALIZATION_RULE.getOption());
+        */
         
         return conditionSet;
     }
