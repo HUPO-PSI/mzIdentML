@@ -364,6 +364,13 @@ public class MzIdentMLValidator extends Validator {
      * @return a Collection of ValidatorMessages documenting the validation result.
      */
     public Collection<ValidatorMessage> startValidation(File xmlFile) {
+        if (xmlFile.getName().endsWith(".gz")) {
+            String unzippedPath = xmlFile.getPath().replace(".gz", "");
+            File unzippedFile = new File(unzippedPath);
+            ArchiveUnpacker.gunzipFile(xmlFile.getPath(), unzippedFile.getPath());
+            xmlFile = unzippedFile;
+        }
+        
         Collection<ValidatorMessage> locMsgs = this.makeBasicXMLFileChecks(xmlFile);
         if (locMsgs != null) {
             return locMsgs;

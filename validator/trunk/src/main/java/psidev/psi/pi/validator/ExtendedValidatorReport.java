@@ -35,7 +35,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
     private final HashSet<String> validCvRules = new HashSet<>();
     private final HashSet<String> invalidCvRules = new HashSet<>();
     private final String BLANK_HYPHEN_BLANK = " - ";
-    private final String STR_LINE = "-----------------------------------------------------";
+    private final String STR_DASHED_LINE    = "-----------------------------------------------------";
     
     /**
      * Constructor.
@@ -288,7 +288,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
      */
     private void printCvMappingRules(StringBuilder sb, String header, Collection<CvRule> cvMappingRules) {
         sb.append(header).append(" (").append(cvMappingRules.size()).append(")").append(NEW_LINE);
-        sb.append(this.STR_LINE).append(NEW_LINE);
+        sb.append(this.STR_DASHED_LINE).append(NEW_LINE);
         for (Rule rule : cvMappingRules) {
             sb.append(rule.getId()).append(this.BLANK_HYPHEN_BLANK).append(rule.getName()).append(NEW_LINE);
         }
@@ -304,7 +304,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
      */
     private void printObjectRules(StringBuilder sb, String header, Collection<ObjectRule> objRules) {
         sb.append(header).append(" (").append(objRules.size()).append(")").append(NEW_LINE);
-        sb.append(this.STR_LINE).append(NEW_LINE);
+        sb.append(this.STR_DASHED_LINE).append(NEW_LINE);
         for (Rule rule : objRules) {
             sb.append(rule.getId()).append(this.BLANK_HYPHEN_BLANK).append(rule.getName()).append(NEW_LINE);
         }
