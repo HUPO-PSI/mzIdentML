@@ -25,6 +25,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
@@ -60,7 +61,6 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
      * Constants.
      */
     private static final Logger LOGGER = Logger.getLogger(MzIdentMLValidatorGUI.class);
-    private static final String STR_LAF_NAME_WINDOWS = "WINDOWS";
     private static final String NEW_LINE= System.getProperty("line.separator");
     private static final String STR_FILE_SEPARATOR  = System.getProperty("file.separator");
     private static final String STR_RESOURCE_FOLDER = System.getProperty("user.dir") + STR_FILE_SEPARATOR + "resources" + STR_FILE_SEPARATOR;
@@ -69,14 +69,15 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     private final String STR_4_INDENTATION  = "    ";
     private final int DEFAULT_MAX_NUMBER_TO_REPORT_SAME_MESSAGE = 1;
     private static final int EXIT_SUCCESS = 0;
-    public final String STR_FILE_EXT_MZID = ".mzid";
-    public final String STR_FILE_EXT_XML  = ".xml";
+    public final String STR_FILE_EXT_MZID_GZ    = ".mzid.gz";
+    public final String STR_FILE_EXT_MZID       = ".mzid";
+    public final String STR_FILE_EXT_XML        = ".xml";
     public final String STR_MAPPING = "mapping";
     public final String STR_OBJECT  = "object";
-    public final String COLOR_RED    = "red";
-    public final String COLOR_ORANGE = "orange";
-    public final String COLOR_GREEN  = "green";
-    public final String COLOR_BLACK    = "black";
+    public final String COLOR_RED   = "red";
+    public final String COLOR_ORANGE= "orange";
+    public final String COLOR_GREEN = "green";
+    public final String COLOR_BLACK = "black";
 
     /**
      * Members.
@@ -1362,8 +1363,8 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
      * Select the file to validate.
      */
     private void selectFile() {
-        JFileChooser jfc = this.getFileChooser("Select mzIdentML file to validate");
-        
+        JFileChooser jfc = this.getFileChooser("Select mzIdentML (.mzid / .mzid.gz) file to validate");
+
         int returnVal = jfc.showOpenDialog(this.jTextInputFile);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             this.lastSelectedPath = jfc.getSelectedFile().getPath();
@@ -1414,6 +1415,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                 boolean result = false;
                 if (f.isDirectory()
                         || f.getName().toLowerCase().endsWith(STR_FILE_EXT_MZID)
+                        || f.getName().toLowerCase().endsWith(STR_FILE_EXT_MZID_GZ)
                         || f.getName().toLowerCase().endsWith(STR_FILE_EXT_XML)) {
                     result = true;
                 }

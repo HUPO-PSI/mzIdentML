@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
 <jnlp spec="1.0+" codebase="http://psi-pi.googlecode.com/svn/trunk/validator/trunk/jnlp/">
+-->
+<jnlp spec="1.0+" codebase="https://github.com/HUPO-PSI/mzIdentML/tree/master/validator/trunk/jnlp/">
 	<information>
 		<title>PSI mzIdentML semantic and MIAPE validator Webstart</title>
 		<vendor>HUPO-PSI</vendor>
