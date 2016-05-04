@@ -40,7 +40,7 @@
         <jar href="lib/oscache-2.4.1.jar"/>
         <jar href="lib/proteomics-common-1.6.jar"/>
         <jar href="lib/slf4j-api-1.7.21.jar"/>
-        <jar href="lib/validator-2.0.4.jar"/>
+        <jar href="lib/validator-2.0.5.jar"/>
         <jar href="lib/xercesImpl-2.11.0.jar"/>
         <jar href="lib/xml-apis.jar"/>
         <jar href="lib/xxindex-0.17.jar"/>
