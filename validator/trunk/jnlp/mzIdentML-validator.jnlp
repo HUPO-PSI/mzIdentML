@@ -43,7 +43,7 @@
         <jar href="lib/validator-2.0.5.jar"/>
         <jar href="lib/xercesImpl-2.11.0.jar"/>
         <jar href="lib/xml-apis.jar"/>
-        <jar href="lib/xxindex-0.17.jar"/>
+        <jar href="lib/xxindex-0.14.jar"/>
         
         <!-- Used libraries for testing -->
         <jar href="lib/hamcrest-core-1.3.jar"/>
