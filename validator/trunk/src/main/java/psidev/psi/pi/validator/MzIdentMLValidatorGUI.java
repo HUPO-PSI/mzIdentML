@@ -1071,11 +1071,11 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
             }
             if (!AdditionalSearchParamsObjectRule.bIsProteoGenomicsSearch) {
                 switch (ruleID) {
-                    case "ProteoGenomicsObjectRule":
+                    case "ProteoGenomicsPeptEvObjectRule":
                         report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
                         bAdd = false;
                         break;
-                    case "ProteoGenomicsReferenceObjectRule":
+                    case "ProteoGenomicsDBSeqObjectRule":
                         report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
                         bAdd = false;
                         break;
