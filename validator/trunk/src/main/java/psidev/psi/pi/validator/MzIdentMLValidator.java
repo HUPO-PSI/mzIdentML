@@ -59,6 +59,8 @@ public class MzIdentMLValidator extends Validator {
      * Constants.
      */
     private final Logger logger = Logger.getLogger(this.getClass().getName());
+    
+    private final String STR_NOT_MATCHING_MSGS_RECV = "Not matching messages received: ";
     private static final String NEW_LINE = System.getProperty("line.separator");
     private static final String DOUBLE_NEW_LINE = NEW_LINE + NEW_LINE;
     private static final String TRIPLE_NEW_LINE = DOUBLE_NEW_LINE + NEW_LINE;
@@ -66,6 +68,7 @@ public class MzIdentMLValidator extends Validator {
     private static final String DOUBLE_TAB = TAB + TAB;
     private static final String NEW_LINE_DOUBLE_TAB = NEW_LINE + DOUBLE_TAB;
     private final String STR_ELLIPSIS = "...";
+    
     private static int progressSteps = 55;
     private static final int EXIT_FAILURE  = -1;
 
@@ -361,6 +364,13 @@ public class MzIdentMLValidator extends Validator {
      * @return a Collection of ValidatorMessages documenting the validation result.
      */
     public Collection<ValidatorMessage> startValidation(File xmlFile) {
+        if (xmlFile.getName().endsWith(".gz")) {
+            String unzippedPath = xmlFile.getPath().replace(".gz", "");
+            File unzippedFile = new File(unzippedPath);
+            ArchiveUnpacker.gunzipFile(xmlFile.getPath(), unzippedFile.getPath());
+            xmlFile = unzippedFile;
+        }
+        
         Collection<ValidatorMessage> locMsgs = this.makeBasicXMLFileChecks(xmlFile);
         if (locMsgs != null) {
             return locMsgs;
@@ -1351,7 +1361,7 @@ public class MzIdentMLValidator extends Validator {
         this.addTableRow(sb, "ObjectRules run & valid:", this.extendedReport.getObjectRulesValid().size());
         this.addEmptyRow(sb);
         
-        this.addPossiblyColouredRow(sb, "Messages received:", messageNumber, this.gui.getInvalidMsgColor());
+        this.addPossiblyColouredRow(sb, this.STR_NOT_MATCHING_MSGS_RECV, messageNumber, this.gui.getInvalidMsgColor());
         
         this.addConditionalTableRow(sb, "Messages not reported since they occur more than " + this.gui.jSpinner.getValue() + " times: ", this.cntMultipleClearedMessages, this.gui.COLOR_BLACK);
 
@@ -1400,7 +1410,7 @@ public class MzIdentMLValidator extends Validator {
         sb.append("ObjectRules run & valid: ").append(this.extendedReport.getObjectRulesValid().size()).append(NEW_LINE);
         sb.append(NEW_LINE);
         
-        sb.append("Messages received: ").append(messageNumber);
+        sb.append(this.STR_NOT_MATCHING_MSGS_RECV).append(messageNumber);
         if (this.cntMultipleClearedMessages > 0) {
             sb.append(NEW_LINE);
             sb.append("Messages not reported since they occur more than ").append(this.gui.jSpinner.getValue()).append(" times: ").append(this.cntMultipleClearedMessages).append(NEW_LINE);

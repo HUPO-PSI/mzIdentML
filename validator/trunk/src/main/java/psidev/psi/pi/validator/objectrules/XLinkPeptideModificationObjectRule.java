@@ -15,7 +15,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.Modification;
 import uk.ac.ebi.jmzidml.model.mzidml.Peptide;
 
 /**
- * Checks, if the CV terms MS:1002509 - 'cross-link donor' and MS:1002510 - 'cross-link receiver' are paired with the same value in two different Peptide Modifications.
+ * Checks, if the CV terms MS:1002509 - 'cross-link donor' and MS:1002510 - 'cross-link acceptor' are paired with the same value in two different Peptide Modifications.
  * 
  * @author Gerhard
  * 
@@ -57,8 +57,8 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
     }
 
     /**
-     * Checks, if there are cross-link donor and cross-link receiver and if the
-     * CV terms MS:1002509 - 'cross-link donor' and MS:1002510 - 'cross-link receiver' are paired with the same value in two different Peptide Modifications
+     * Checks, if there are cross-link donor and cross-link acceptor and if the
+     * CV terms MS:1002509 - 'cross-link donor' and MS:1002510 - 'cross-link acceptor' are paired with the same value in two different Peptide Modifications
      * 
      * @param pept the Peptide element
      * @return collection of messages
@@ -75,7 +75,7 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
                         case ACC_XL_DONOR:      // cross-link donor
                             this.checkForEmptyCVValueAndFillMap(pept, mod, cv, messages);
                             break;
-                        case ACC_XL_RECEIVER:   // cross-link receiver
+                        case ACC_XL_RECEIVER:   // cross-link acceptor
                             this.checkForEmptyCVValueAndFillMap(pept, mod, cv, messages);
                             break;
                     }
@@ -134,7 +134,7 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
     }
         
     /**
-     * Checks, if 'cross-link donor' and 'cross-link receiver' are always paired correctly.
+     * Checks, if 'cross-link donor' and 'cross-link acceptor' are always paired correctly.
      * @param messages 
      */
     private static void checkForPairedDonorReceiverPairs(Collection<ValidatorMessage> messages) {
@@ -165,7 +165,7 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
                     messages.add(valMsg);
                 }
                 else if (cntReceiver == 0) {
-                    valMsg = new ValidatorMessage("Cross-link receiver with the value " + cvVal
+                    valMsg = new ValidatorMessage("Cross-link acceptor with the value " + cvVal
                         + " is missing in Peptides with ID's " + XLinkPeptideModificationObjectRule.getPeptideIDList(acc2PeptIDMap)
                         + XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT.getContext(),
                         MessageLevel.ERROR, XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT, null);
@@ -173,7 +173,7 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
                 }
             }
             else {
-                valMsg = new ValidatorMessage("There must be exactly one pair of 'cross-link donor' and 'cross-link receiver' with the value " + cvVal
+                valMsg = new ValidatorMessage("There must be exactly one pair of 'cross-link donor' and 'cross-link acceptor' with the value " + cvVal
                     + " in Peptides with ID's " + XLinkPeptideModificationObjectRule.getPeptideIDList(acc2PeptIDMap)
                     + XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT.getContext(),
                     MessageLevel.ERROR, XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT, null);
@@ -211,7 +211,7 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("The CV terms MS:1002509 - 'cross-link donor' and MS:1002510 - 'cross-link receiver' must be paired with the same value in two different Peptide Modifications"
+        ret.add("The CV terms MS:1002509 - 'cross-link donor' and MS:1002510 - 'cross-link acceptor' must be paired with the same value in two different Peptide Modifications"
                 + XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT.getContext());
 
         return ret;

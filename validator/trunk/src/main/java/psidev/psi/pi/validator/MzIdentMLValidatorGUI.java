@@ -60,7 +60,6 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
      * Constants.
      */
     private static final Logger LOGGER = Logger.getLogger(MzIdentMLValidatorGUI.class);
-    private static final String STR_LAF_NAME_WINDOWS = "WINDOWS";
     private static final String NEW_LINE= System.getProperty("line.separator");
     private static final String STR_FILE_SEPARATOR  = System.getProperty("file.separator");
     private static final String STR_RESOURCE_FOLDER = System.getProperty("user.dir") + STR_FILE_SEPARATOR + "resources" + STR_FILE_SEPARATOR;
@@ -69,14 +68,15 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     private final String STR_4_INDENTATION  = "    ";
     private final int DEFAULT_MAX_NUMBER_TO_REPORT_SAME_MESSAGE = 1;
     private static final int EXIT_SUCCESS = 0;
-    public final String STR_FILE_EXT_MZID = ".mzid";
-    public final String STR_FILE_EXT_XML  = ".xml";
+    public final String STR_FILE_EXT_MZID_GZ    = ".mzid.gz";
+    public final String STR_FILE_EXT_MZID       = ".mzid";
+    public final String STR_FILE_EXT_XML        = ".xml";
     public final String STR_MAPPING = "mapping";
     public final String STR_OBJECT  = "object";
-    public final String COLOR_RED    = "red";
-    public final String COLOR_ORANGE = "orange";
-    public final String COLOR_GREEN  = "green";
-    public final String COLOR_BLACK    = "black";
+    public final String COLOR_RED   = "red";
+    public final String COLOR_ORANGE= "orange";
+    public final String COLOR_GREEN = "green";
+    public final String COLOR_BLACK = "black";
 
     /**
      * Members.
@@ -1015,7 +1015,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
             
             if (!AdditionalSearchParamsObjectRule.bIsDeNovoSearch) { 
                 switch (ruleID) {
-                    case "DenovoSearchType_rule":
+                    case "DenovoSearchType_may_rule":
                         report.getInvalidCvRules().remove(ruleID);
                         bAdd = false;
                         break;
@@ -1027,23 +1027,27 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
             }
             if (!AdditionalSearchParamsObjectRule.bIsPeptideLevelScoring) {
                 switch (ruleID) {
-                    case "PeptideLevelStatsSearchType_rule":
+                    case "PeptideLevelStatsSpectrumIdentificationItem_may_rule":
+                        report.getInvalidCvRules().remove(ruleID);
+                        bAdd = false;
+                        break;
+                    case "PeptideLevelStatsSearchType_may_rule":
                         report.getInvalidCvRules().remove(ruleID);
                         bAdd = false;
                         break;
                     case "PeptideLevelStatsObjectRule":
-                        report.getInvalidCvRules().remove(ruleID);
-                        bAdd = false;
-                        break;
-                    case "PeptideLevelStatsSpectrumIdentificationItem_may_rule":
-                        report.getInvalidCvRules().remove(ruleID);
+                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
                         bAdd = false;
                         break;
                 }
             }
             if (!AdditionalSearchParamsObjectRule.bIsModificationLocalizationScoring) {
                 switch (ruleID) {
-                    case "ModLocalizationSearchType_rule":
+                    case "ModLocalizationSearchType_may_rule":
+                        report.getInvalidCvRules().remove(ruleID);
+                        bAdd = false;
+                        break;
+                    case "ModLocalizationSpectrumIdentificationItem_must_rule":
                         report.getInvalidCvRules().remove(ruleID);
                         bAdd = false;
                         break;
@@ -1051,17 +1055,37 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                         report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
                         bAdd = false;
                         break;
-                    case "ModLocalizationSpectrumIdentificationItem_must_rule":
-                        report.getInvalidCvRules().remove(ruleID);
+                }
+            }
+            if (!AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch) {
+                switch (ruleID) {
+                    case "XLinkPeptideModificationObjectRule":
+                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                        bAdd = false;
+                        break;
+                    case "XLinkSIIObjectRule":
+                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                        bAdd = false;
+                        break;
+                }
+            }
+            if (!AdditionalSearchParamsObjectRule.bIsProteoGenomicsSearch) {
+                switch (ruleID) {
+                    case "ProteoGenomicsObjectRule":
+                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                        bAdd = false;
+                        break;
+                    case "ProteoGenomicsReferenceObjectRule":
+                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
                         bAdd = false;
                         break;
                 }
             }
             /*
-            if (!AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch) {
-                // Not necessary here, because all croo-lniking rules are implemented as ObjectRules
-            }
             if (!AdditionalSearchParamsObjectRule.bIsSamplePreFractionation) {
+                // TODO: implement
+            }
+            if (!AdditionalSearchParamsObjectRule.bIsSpectralLibrarySearch) {
                 // TODO: implement
             }
             if (!AdditionalSearchParamsObjectRule.bIsConsensusScoring) {
@@ -1338,8 +1362,8 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
      * Select the file to validate.
      */
     private void selectFile() {
-        JFileChooser jfc = this.getFileChooser("Select mzIdentML file to validate");
-        
+        JFileChooser jfc = this.getFileChooser("Select mzIdentML (.mzid / .mzid.gz) file to validate");
+
         int returnVal = jfc.showOpenDialog(this.jTextInputFile);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             this.lastSelectedPath = jfc.getSelectedFile().getPath();
@@ -1390,6 +1414,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                 boolean result = false;
                 if (f.isDirectory()
                         || f.getName().toLowerCase().endsWith(STR_FILE_EXT_MZID)
+                        || f.getName().toLowerCase().endsWith(STR_FILE_EXT_MZID_GZ)
                         || f.getName().toLowerCase().endsWith(STR_FILE_EXT_XML)) {
                     result = true;
                 }
