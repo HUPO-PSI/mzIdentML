@@ -18,8 +18,6 @@
 	<rule class="psidev.psi.pi.validator.objectrules.ProviderObjectRule"/>
 	<rule class="psidev.psi.pi.validator.objectrules.RegExpEnzymeObjectRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.SIIModLocalizationScoringRule"/>
-    <rule class="psidev.psi.pi.validator.objectrules.SILCheckForFinalPSMListRule"/>
-    <rule class="psidev.psi.pi.validator.objectrules.SIRUniqueSpectrumIDSpectrumRefCombinationRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.SearchModificationRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule"/>
 	<rule class="psidev.psi.pi.validator.objectrules.SpectrumIdentificationItemObjectRule"/>

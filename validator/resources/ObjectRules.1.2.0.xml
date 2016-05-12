@@ -11,8 +11,6 @@
     <rule class="psidev.psi.pi.validator.objectrules.ProteoGenomicsPeptEvObjectRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.ProteoGenomicsDBSeqObjectRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.SIIModLocalizationScoringRule"/>
-    <rule class="psidev.psi.pi.validator.objectrules.SILCheckForFinalPSMListRule"/>
-    <rule class="psidev.psi.pi.validator.objectrules.SIRUniqueSpectrumIDSpectrumRefCombinationRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.SearchModificationRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.SpectrumIdentificationItemPeptideEvidenceRefObjectRule"/>

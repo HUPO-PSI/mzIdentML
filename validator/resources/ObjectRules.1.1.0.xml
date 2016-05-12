@@ -2,5 +2,4 @@
 	xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/object-rule.xsd">
     <!-- List of rules that this specific validator should use (Provide class names)-->
     <rule class="psidev.psi.pi.validator.objectrules.SearchModificationRule"/>
-<!-- 	<rule class="psidev.psi.pi.validator.objectrules.TemplateObjectRule"/> -->
 </objectRuleList>

@@ -15,7 +15,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationResult;
 
 /**
  * Check if there is a unique combination of spectrumID and spectrumRef for each SpectrumIdentificationResult of "final PSM lists".
- * 
+ * Remark: This object rule is deactivated, since not listed in ObjectRules.1.2.0.xml and ObjectRulesMIAPE.1.2.0.xml
  * @author Gerhard
  * 
  */

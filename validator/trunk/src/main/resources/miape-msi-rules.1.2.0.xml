@@ -63,9 +63,11 @@
 			<CvTerm termAccession="MS:1001088" useTermName="false" useTerm="true" termName="protein description" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 
+		<!--
         <CvMappingRule id="Peptide_rule" cvElementPath="/MzIdentML/SequenceCollection/Peptide/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/SequenceCollection/Peptide" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001355" useTermName="false" useTerm="true" termName="peptide descriptions" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
+		-->
 
 		<!--  commented out due to inefficient CV term use (root of the whole ontology)
         <CvMappingRule id="PeptideModification_rule" cvElementPath="/MzIdentML/SequenceCollection/Peptide/Modification/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/SequenceCollection/Peptide/Modification" cvTermsCombinationLogic="OR">

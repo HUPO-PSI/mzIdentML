@@ -61,10 +61,11 @@
             <CvTerm termAccession="MS:1001089" useTermName="false" useTerm="false" termName="molecule taxonomy" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
+		<!--
         <CvMappingRule id="Peptide_rule" cvElementPath="/MzIdentML/SequenceCollection/Peptide/cvParam/@accession" requirementLevel="MAY"  scopePath="/MzIdentML/SequenceCollection/Peptide" cvTermsCombinationLogic="OR">
-            <!-- TODO: This term does not seem to have children in the latest MS version available via OLS -->
             <CvTerm termAccession="MS:1001355" useTermName="false" useTerm="true" termName="peptide descriptions" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
+		-->
 
 		<!--  commented out due to inefficient CV term use (root of the whole ontology)
         <CvMappingRule id="PeptideModification_rule" cvElementPath="/MzIdentML/SequenceCollection/Peptide/Modification/cvParam/@accession" requirementLevel="MUST"  scopePath="/MzIdentML/SequenceCollection/Peptide/Modification" cvTermsCombinationLogic="OR">

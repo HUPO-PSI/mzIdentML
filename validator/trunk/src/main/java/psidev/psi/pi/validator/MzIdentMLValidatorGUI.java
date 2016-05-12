@@ -1089,12 +1089,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                 // TODO: implement
             }
             if (!AdditionalSearchParamsObjectRule.bIsConsensusScoring) {
-                switch (ruleID) {
-                    case "SIRUniqueSpectrumIDSpectrumRefCombinationRule":
-                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
-                        bAdd = false;
-                        break;
-                }
+                // TODO: implement
             }
             */
             
