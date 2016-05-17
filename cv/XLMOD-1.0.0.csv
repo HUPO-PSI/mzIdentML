@@ -9,7 +9,7 @@ XL:00007,Xlink:DSG,2,96.0211294,"(K,S,T,Y,N-term)&(K,S,T,Y,N-term)"
 XL:00008,Xlink:DSG:d4,2,146.118293562,"(K,S,T,Y,N-term)&(K,S,T,Y,N-term)"
 XL:00009,Xlink:BS2G:d4,2,100.046236376,"(K,S,T,Y,N-term)&(K,S,T,Y,N-term)"
 XL:00010,Xlink:Disulfide,2,-2.01565007,(C)&(C)
-XL:00011,Xlink:EDC,2,-18.01056027,"(K,S,T,Y,n-term)&(E,D,c-term)"
+XL:00011,Xlink:EDC,2,-18.01056027,"(K,S,T,Y,N-term)&(E,D,C-term)"
 XL:01000,Xlink:BS3!Hydrolyzed,1,156.07864431,"(K,S,T,Y,N-term)"
 XL:01001,Xlink:BS3!Amidated,1,155.094628715,"(K,S,T,Y,N-term)"
 XL:01002,Xlink:DSS!Hydrolyzed,1,156.07864431,"(K,S,T,Y,N-term)"
