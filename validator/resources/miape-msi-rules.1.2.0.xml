@@ -256,7 +256,7 @@
             <CvTerm termAccession="MS:1001184" useTermName="false" useTerm="false" termName="search statistics" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
     
-        <CvMappingRule id="ProteinDetectionList_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList" cvTermsCombinationLogic="AND">
+        <CvMappingRule id="ProteinDetectionList_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001184" useTermName="false" useTerm="false" termName="search statistics" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1002406" useTermName="false" useTerm="true" termName="count of identified clusters" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
        	</CvMappingRule>
