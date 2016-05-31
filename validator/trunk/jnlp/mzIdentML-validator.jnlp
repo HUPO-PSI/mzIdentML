@@ -17,7 +17,7 @@
 	<resources>
 		<j2se version="1.7+" max-heap-size="2048m"/>
         <!-- Used libraries -->
-        <jar href="lib/mzIdentMLValidator-1.4.16-SNAPSHOT.jar" main="true"/>
+        <jar href="lib/mzIdentMLValidator-1.4.17-SNAPSHOT.jar" main="true"/>
         <jar href="lib/bbop-2.0.jar"/>
         <jar href="lib/commons-beanutils-1.9.2.jar"/>
         <jar href="lib/commons-collections-3.2.2.jar"/>
@@ -39,7 +39,7 @@
         <jar href="lib/oboedit-1.101.jar"/>
         <jar href="lib/ols-core-1.19.jar"/>
         <jar href="lib/ontology-config-reader-2.0.5.jar"/>
-        <jar href="lib/ontology-manager-2.0.5.jar"/>
+        <jar href="lib/ontology-manager-4.jar"/>
         <jar href="lib/org.geneontology-1.101.jar"/>
         <jar href="lib/oscache-2.4.1.jar"/>
         <jar href="lib/proteomics-common-1.6.jar"/>

@@ -12,9 +12,9 @@ Class-Path: lib/axis-1.4.jar lib/axis-jaxrpc-1.4.jar lib/axis-saaj-1.4
  NAPSHOT.jar lib/jmzidentml-1.2.0-SNAPSHOT.jar lib/log4j-1.2.17.jar li
  b/object-rule-reader-2.0.5.jar lib/obo-2.0.jar lib/oboedit-1.101.jar 
  lib/ols-client-1.18.jar lib/ols-core-1.19.jar lib/ontology-config-rea
- der-2.0.5.jar lib/ontology-manager-2.0.5.jar lib/org.geneontology-1.1
- 01.jar lib/oscache-2.4.1.jar lib/proteomics-common-1.6.jar lib/slf4j-
- api-1.7.21 lib/validator-2.0.5.jar lib/wsdl4j-1.6.3.jar lib/xercesImp
- l-2.11.0 lib/xml-apis.jar lib/xxindex-0.14.jar
+ der-2.0.5.jar lib/ontology-manager-4.jar lib/org.geneontology-1.101.j
+ ar lib/oscache-2.4.1.jar lib/proteomics-common-1.6.jar lib/slf4j-api-
+ 1.7.21 lib/validator-2.0.5.jar lib/wsdl4j-1.6.3.jar lib/xercesImpl-2.
+ 11.0 lib/xml-apis.jar lib/xxindex-0.14.jar
 Created-By: 1.7.0_40-b43 (Oracle Corporation)
 Main-Class: psidev.psi.pi.validator.MzIdentMLValidatorGUI

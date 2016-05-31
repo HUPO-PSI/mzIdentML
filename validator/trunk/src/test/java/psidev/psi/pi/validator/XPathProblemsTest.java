@@ -3,6 +3,7 @@ package psidev.psi.pi.validator;
 import java.io.File;
 import java.util.Iterator;
 import java.util.List;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertEquals;
@@ -34,42 +35,42 @@ public class XPathProblemsTest {
      */
     private final String STR_FILE_SEPARATOR = System.getProperty("file.separator");
     private final String STR_MZID_TEST_FILE_NAME = STR_FILE_SEPARATOR + "src" + STR_FILE_SEPARATOR + "test" + STR_FILE_SEPARATOR + "resources" + STR_FILE_SEPARATOR + "mzidLib_rosetta_2a_uniprot_proteogrouped.mzid";
+    private static final Logger LOGGER = Logger.getLogger(XPathProblemsTest.class.getName());
 
     /**
      * Members.
      */
-    //private static final Logger logger = LoggerFactory.getLogger(XPathProblemsTest.class);
     
     /**
      * Constructor.
      */
     public XPathProblemsTest() {
-        
+        super();
     }
     
     /**
-     * 
+     * Time-intensive initializations executed ONCE before the start of all tests.
      */
     @BeforeClass
     public static void setUpClass() {
     }
     
     /**
-     * 
+     * Clean-up executed ONCE after all tests have finished.
      */
     @AfterClass
     public static void tearDownClass() {
     }
     
     /**
-     * 
+     * Prepare test environment before each test.
      */
     @Before
     public void setUp() {
     }
     
     /**
-     * 
+     * Cleanup test environment after each test.
      */
     @After
     public void tearDown() {
@@ -105,14 +106,14 @@ public class XPathProblemsTest {
     }
 
     /**
-     * 
+     * Main class for unit testing.
      * @param args 
      */
     public static void main(String[] args) {
         Result res = JUnitCore.runClasses(psidev.psi.pi.validator.XPathProblemsTest.class);
         
         for (Failure fail : res.getFailures()) {
-            //logger.error(fail.toString());
+            LOGGER.error(fail.toString());
         }
     }
 }

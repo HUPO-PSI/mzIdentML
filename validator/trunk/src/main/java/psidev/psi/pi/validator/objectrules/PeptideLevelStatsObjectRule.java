@@ -33,8 +33,8 @@ public class PeptideLevelStatsObjectRule extends AObjectRule<SpectrumIdentificat
     /**
      * Members.
      */
-    private HashMap<String, String> map_1001143;
-    private HashMap<String, String> map_1002358;
+    private HashMap<String, String> map_1001143;    // maps accession to term name
+    private HashMap<String, String> map_1002358;    // maps accession to term name
     
     /**
      * Constructors.

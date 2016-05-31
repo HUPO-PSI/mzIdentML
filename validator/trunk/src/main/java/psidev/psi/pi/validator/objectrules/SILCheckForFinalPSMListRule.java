@@ -11,9 +11,8 @@ import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationList;
 
 /**
  * Check if there SpectrumIdentificationList is a "final PSM lists".
- * Remark: This object rule is deactivated, since not listed in ObjectRules.1.2.0.xml and ObjectRulesMIAPE.1.2.0.xml
- * @author Gerhard
- * 
+ * Remark: This object rule is DEACTIVATED, since not listed in ObjectRules.1.2.0.xml and ObjectRulesMIAPE.1.2.0.xml
+ * @author Gerhard Mayer
  */
 public class SILCheckForFinalPSMListRule extends AObjectRule<SpectrumIdentificationList> {
 

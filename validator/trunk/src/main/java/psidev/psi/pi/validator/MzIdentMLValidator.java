@@ -423,7 +423,7 @@ public class MzIdentMLValidator extends Validator {
                 ve.printStackTrace(System.err);
             }
 
-            System.out.println("Number of valid rules: " + this.getCvRuleManager().getCvRules().size());
+            System.out.println("Number of rules to check: " + this.getCvRuleManager().getCvRules().size());
             this.doValidationWork();
 
             this.updateProgress("Validation complete, compiling output" + this. STR_ELLIPSIS);
@@ -753,7 +753,7 @@ public class MzIdentMLValidator extends Validator {
 
         if (this.currentFileVersion == MzIdVersion._1_2) {
             //this.checkElementObjectRule(MzIdentMLElement.SequenceCollection);
-            this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationList);
+            //this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationList);
             this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationResult);
         }
         

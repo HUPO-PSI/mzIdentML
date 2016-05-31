@@ -723,7 +723,13 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                         ontology = getOntologiesFileInputStream("local.ontologies.file");
                         LOGGER.debug("Local ontology: " + ontology);
                         if (ontology != null) {
-                            this.validator = new MzIdentMLValidator(ontology, MzIdentMLValidatorGUI.this);
+                            // QUICK AND DIRTY HACK
+                            try {
+                                this.validator = new MzIdentMLValidator(ontology, MzIdentMLValidatorGUI.this);
+                            }
+                            catch (OntologyLoaderException | FileNotFoundException | ValidatorException | CvRuleReaderException exc) {
+                                exc.printStackTrace(System.err);
+                            }
                             ontology.close();
                         }
                         else {
