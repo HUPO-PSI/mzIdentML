@@ -749,12 +749,12 @@ public class MzIdentMLValidator extends Validator {
         this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationItem);
         this.checkElementObjectRule(MzIdentMLElement.ProteinDetectionList);
         this.checkElementObjectRule(MzIdentMLElement.ProteinAmbiguityGroup);
-        this.checkElementObjectRule(MzIdentMLElement.ProteinDetectionHypothesis);
 
         if (this.currentFileVersion == MzIdVersion._1_2) {
             //this.checkElementObjectRule(MzIdentMLElement.SequenceCollection);
             //this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationList);
             this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationResult);
+            //this.checkElementObjectRule(MzIdentMLElement.ProteinDetectionHypothesis);
         }
         
         this.logger.info("Object Rule validation done in " + (System.currentTimeMillis() - startTime) + "ms.");

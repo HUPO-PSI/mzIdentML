@@ -61,23 +61,31 @@ public class PersonObjectRule extends AObjectRule<Person> {
     public Collection<ValidatorMessage> check(Person pers) throws ValidatorException {
         List<ValidatorMessage> messages = new ArrayList<>();
 
+        String cvValue;
         for (CvParam cv: pers.getCvParam()) {
-            switch (cv.getAccession()) {
-                case "MS:1000587":  // contact address
-                    if (cv.getValue().isEmpty()) {
-                        messages.add(this.getValidatorMsg(pers, "contact address"));
-                    }
-                    break;
-                case "MS:1000588":  // contact URL
-                    if (cv.getValue().isEmpty()) {
-                        messages.add(this.getValidatorMsg(pers, "contact URL"));
-                    }
-                    break;
-                case "MS:1000589":  // contact email
-                    if (cv.getValue().isEmpty()) {
-                        messages.add(this.getValidatorMsg(pers, "contact email"));
-                    }
-                    break;
+            cvValue = cv.getValue();
+            
+            if (cvValue != null) {
+                switch (cv.getAccession()) {
+                    case "MS:1000587":  // contact address
+                        if (cv.getValue().isEmpty()) {
+                            messages.add(this.getValidatorMsg(pers, "contact address"));
+                        }
+                        break;
+                    case "MS:1000588":  // contact URL
+                        if (cv.getValue().isEmpty()) {
+                            messages.add(this.getValidatorMsg(pers, "contact URL"));
+                        }
+                        break;
+                    case "MS:1000589":  // contact email
+                        if (cv.getValue().isEmpty()) {
+                            messages.add(this.getValidatorMsg(pers, "contact email"));
+                        }
+                        break;
+                }
+            }
+            else {
+                messages.add(this.getValidatorMsg(pers, "Value is missing for CV: " + cv.getName()));
             }
         }
 
