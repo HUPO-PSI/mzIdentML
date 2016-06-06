@@ -3,7 +3,7 @@
 	<groupId>psidev.psi.pi</groupId>
 	<artifactId>mzIdentMLValidator</artifactId>
 	<packaging>jar</packaging>
-	<version>1.4.17-SNAPSHOT</version>
+	<version>1.4.18-SNAPSHOT</version>
 	<name>PSI mzIdentML semantic and MIAPE validator</name>
 	<description>A semantic and MIAPE validator for PSI mzIdentML XML files.</description>
 	<properties>
@@ -20,14 +20,14 @@
             </resource>
 		</resources>
 		<plugins>
-			<!-- To compile with JDK7.0 -->
+			<!-- To compile with JDK8.0 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.5.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<!-- To copy the dependencies from the maven repository to the lib directory -->
@@ -93,6 +93,7 @@
 					<plugin>
 						<groupId>org.codehaus.mojo.webstart</groupId>
 						<artifactId>webstart-maven-plugin</artifactId>
+						<version>1.0-beta-4</version>
 						<executions>
 							<execution>
 								<id>jnlp-building</id>
@@ -142,7 +143,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-jar-plugin</artifactId>
-						<version>2.6</version>
+						<version>3.0.0</version>
 						<configuration>
 							<archive>
 								<manifest>
@@ -188,7 +189,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-jar-plugin</artifactId>
-						<version>2.6</version>						
+						<version>3.0.0</version>						
 						<configuration>
 							<finalName>mzIdentMLSchemaValidator</finalName>
 							<outputDirectory>mzIdentMLValidator</outputDirectory>
@@ -212,7 +213,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-jar-plugin</artifactId>
-						<version>2.6</version>
+						<version>3.0.0</version>
 						<configuration>
 							<finalName>mzIdentMLValidator</finalName>
                             <!--

@@ -15,7 +15,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
-import org.junit.runner.notification.Failure;
 import uk.ac.ebi.jmzidml.MzIdentMLElement;
 import uk.ac.ebi.jmzidml.model.mzidml.CvParam;
 import uk.ac.ebi.jmzidml.model.mzidml.ProteinDetectionList;
@@ -98,9 +97,9 @@ public class XPathProblemsTest {
 
                 final List<CvParam> cvParam = pdl.getCvParam();
                 assertTrue(cvParam.size() > 0);
-                for (CvParam cvParam2 : cvParam) {
+                cvParam.stream().forEach((cvParam2) -> {
                     System.out.println(cvParam2.getAccession() + " " + cvParam2.getName());
-                }
+                });
             }
         }
     }
@@ -112,8 +111,8 @@ public class XPathProblemsTest {
     public static void main(String[] args) {
         Result res = JUnitCore.runClasses(psidev.psi.pi.validator.XPathProblemsTest.class);
         
-        for (Failure fail : res.getFailures()) {
+        res.getFailures().stream().forEach((fail) -> {
             LOGGER.error(fail.toString());
-        }
+        });
     }
 }

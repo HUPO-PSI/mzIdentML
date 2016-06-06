@@ -222,10 +222,13 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="User selection (for MIAPE validation)"/>
+            <TitledBorder title="User selection (for MIAPE validation only)"/>
           </Border>
         </Property>
       </Properties>
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="User selection (for MIAPE validation only)"/>
+      </AccessibilityProperties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -309,7 +312,7 @@
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroupPMForPFF"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="PMF+PFF"/>
+                <Property name="text" type="java.lang.String" value="PMF+ PFF"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -573,6 +576,7 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="jCheckBoxShowUnanticipatedCVTerms">
           <Properties>
+            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="Show unanticipated CV terms"/>
             <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Shows CV terms, which don&apos;t occur &lt;br&gt; in a mapping rule of the mapping file.&lt;/html&gt;"/>
           </Properties>

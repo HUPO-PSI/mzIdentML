@@ -52,7 +52,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
     }
 
     /**
-     * 
+     * Checks the CvList element.
      * @param cvList the CvList element
      * @return collection of messages
      * @throws ValidatorException validator exception
@@ -61,7 +61,20 @@ public class CvListObjectRule extends AObjectRule<CvList> {
     public Collection<ValidatorMessage> check(CvList cvList) throws ValidatorException {
         List<ValidatorMessage> messages = new ArrayList<>();
 
+        this.checkCvVersion(cvList, messages);
+        this.checkCvURI(cvList, messages);
+
+        return messages;
+    }
+
+    /**
+     * Checks the verison of the CV's.
+     * @param cvList the CvList element
+     * @param messages list of ValidatorMessage's
+     */
+    private void checkCvVersion(CvList cvList, List<ValidatorMessage> messages) {
         String version, id;
+        
         for (Cv cv: cvList.getCv()) {
             version = cv.getVersion();
             
@@ -69,31 +82,96 @@ public class CvListObjectRule extends AObjectRule<CvList> {
                 id = cv.getId();
                 switch (id) {
                     case "MOD":
+                    case "PSI-MOD":
                         if (version.compareTo("1.013.0") < 0) {
-                            messages.add(this.getValidatorMsg(id));
+                            messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
-                    case "PSI-MS":
                     case "MS":
+                    case "PSI-MS":
                         if (version.compareTo("3.86.1") < 0) {
-                            messages.add(this.getValidatorMsg(id));
+                            messages.add(this.getValidatorVersionMsg(id));
+                        }
+                        break;
+                    case "PATO":
+                        if (version.compareTo("releases/2016-05-22") < 0) {
+                            messages.add(this.getValidatorVersionMsg(id));
+                        }
+                        break;
+                    case "UNIMOD":
+                        if (version.compareTo("2016:02:01 14:24") < 0) {
+                            messages.add(this.getValidatorVersionMsg(id));
+                        }
+                        break;
+                    case "UO":
+                    case "UNIT":
+                        break;
+                    case "XLMOD":
+                        if (version.compareTo("1.0.0") < 0) {
+                            messages.add(this.getValidatorVersionMsg(id));
+                        }
+                        break;
+                    // TODO: add other possible ontologies here / update when new schemas are out of date
+                }
+            }
+        }
+    }
+    
+    /**
+     * Checks the URI of the CV's.
+     * @param cvList the CvList element
+     * @param messages list of ValidatorMessage's
+     */
+    private void checkCvURI(CvList cvList, List<ValidatorMessage> messages) {
+        String uri, id;
+        
+        for (Cv cv: cvList.getCv()) {
+            uri = cv.getUri();
+            
+            if (uri != null) {
+                id = cv.getId();
+                switch (id) {
+                    case "MOD":
+                    case "PSI-MOD":
+                    case "MS":
+                    case "PSI-MS":
+                    case "XLMOD":
+                    case "PATO":
+                    case "UO":
+                    case "UNIT":
+                        if (!uri.startsWith("https://raw.githubusercontent.com")) {
+                            messages.add(this.getValidatorURIMsg(id));
+                        }
+                        break;
+                    case "UNIMOD":
+                        if (!uri.equals("http://www.unimod.org/obo/unimod.obo")) {
+                            messages.add(this.getValidatorURIMsg(id));
                         }
                         break;
                     // TODO: add other possible ontologies here / update when new schemas are out
                 }
             }
         }
-
-        return messages;
     }
-
+    
    /**
-     * Gets the validator message for a CV term.
+     * Gets the validator message for the CV version.
      * @param cvID
      * @return the ValidatorMessage
      */
-    private ValidatorMessage getValidatorMsg(String cvID) {
+    private ValidatorMessage getValidatorVersionMsg(String cvID) {
         String strB = "The cv element for " + cvID + " uses an old version.";
+        
+        return new ValidatorMessage(strB, MessageLevel.INFO, CvListObjectRule.CV_CONTEXT, this);        
+    }
+    
+   /**
+     * Gets the validator message for the CV URI.
+     * @param cvID
+     * @return the ValidatorMessage
+     */
+    private ValidatorMessage getValidatorURIMsg(String cvID) {
+        String strB = "The cv element for " + cvID + " uses an old or wrong URI.";
         
         return new ValidatorMessage(strB, MessageLevel.INFO, CvListObjectRule.CV_CONTEXT, this);        
     }

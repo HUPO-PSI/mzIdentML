@@ -18,12 +18,9 @@ public class ObjectRuleUtil {
         List<CvParam> ret = new ArrayList<>();
         
         if (cvParams != null && accessions != null) {
-            for (String accession : accessions) {
-                CvParam cvParam = checkAccessionsInCVParams(cvParams, accession);
-                if (cvParam != null) {
-                    ret.add(cvParam);
-                }
-            }
+            accessions.stream().map((accession) -> checkAccessionsInCVParams(cvParams, accession)).filter((cvParam) -> (cvParam != null)).forEach((cvParam) -> {
+                ret.add(cvParam);
+            });
         }
         
         return ret;

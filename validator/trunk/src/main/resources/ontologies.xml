@@ -18,7 +18,7 @@
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/pato-ontology/pato/master/pato.obo"
-    	format="OBO" name="Phenotypic Quality Ontology" identifier="PATO" version=""/>
+    	format="OBO" name="Phenotypic Quality Ontology" identifier="PATO" version="releases/2016-05-22"/>
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/MICommunity/psidev/master/psi/mod/data/PSI-MOD-1.013.1.OBO"

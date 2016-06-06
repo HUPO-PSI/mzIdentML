@@ -54,6 +54,7 @@ import psidev.psi.tools.validator.rules.cvmapping.CvRule;
 /**
  * The GUI of the MzIdentML validator software.
  * @author __USER__
+ * @see "http://www.ebi.ac.uk/~maven/m2repo_snapshots/uk/ac/ebi/jmzidml/jmzidentml/"
  */
 public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFilterAgent {
     /**
@@ -77,6 +78,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     public final String COLOR_ORANGE= "orange";
     public final String COLOR_GREEN = "green";
     public final String COLOR_BLACK = "black";
+    private final ClassLoader cl;
 
     /**
      * Members.
@@ -84,13 +86,14 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     private Exception errorException;
     private long runStartTime = -1L;
     private SwingWorker sw;
+
     protected RuleFilterManager ruleFilterManager;
-    private final ClassLoader cl;
     private String lastSelectedPath = "";
     private boolean bHasCvErrors;
     private boolean bHasCvWarnings;
     private boolean bHasObjErrors;
     private boolean bHasObjWarnings;
+    public int cntDoubledUnanticipatedCVTermMessages = 0;
     
     /**
      * Constructor: Creates new form mzIdentMLValidatorGUI
@@ -157,7 +160,6 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         setMaximumSize(new java.awt.Dimension(1980, 1200));
         setMinimumSize(new java.awt.Dimension(600, 400));
         setName("MzIdentMLValidator-GUI"); // NOI18N
-        setPreferredSize(null);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("File selection"));
 
@@ -233,7 +235,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("User selection (for MIAPE validation)"));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("User selection (for MIAPE validation only)"));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("PMF or PFF"));
         jPanel4.setToolTipText("State if the mass spectra data is Peptide Mass Fingerprinting, Peptide Fragment Fingerprinting or both");
@@ -248,7 +250,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         jRadioPFF.setToolTipText("Peptide Fragment Fingerprint (MS2)");
 
         buttonGroupPMForPFF.add(jRadioPMFPFF);
-        jRadioPMFPFF.setText("PMF+PFF");
+        jRadioPMFPFF.setText("PMF+ PFF");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -405,6 +407,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         jCheckBoxUseRemoteOntologies.setText("Use remote (OLS) ontologies");
         jCheckBoxUseRemoteOntologies.setToolTipText("<html>\nUsing remote ontologies, the OLS service, the latest version of the<br> ontologies is being used. In the other hand, it can take more time.<br>\nIf no remote ontologies is selected, local ontology files (OBO files)<br>\nwill be used instead.</html>");
 
+        jCheckBoxShowUnanticipatedCVTerms.setSelected(true);
         jCheckBoxShowUnanticipatedCVTerms.setText("Show unanticipated CV terms");
         jCheckBoxShowUnanticipatedCVTerms.setToolTipText("<html>\nShows CV terms, which don't occur <br> in a mapping rule of the mapping file.</html>");
 
@@ -513,6 +516,8 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel3.getAccessibleContext().setAccessibleName("User selection (for MIAPE validation only)");
 
         getAccessibleContext().setAccessibleName("MzIdentMLValidator-GUI");
         getAccessibleContext().setAccessibleDescription("");
@@ -704,15 +709,15 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
             private void loadOntologyFiles() {
                 try {
                     jProgressBar.setString("Loading configuration files" + STR_ELLIPSIS);
-                    InputStream ontology;
 
+                    InputStream isOntology;
                     boolean remoteOntologies = jCheckBoxUseRemoteOntologies.isSelected();
                     if (remoteOntologies) {
-                        ontology = getOntologiesFileInputStream("ols.ontologies.file");
-                        LOGGER.debug("Remote ontology: " + ontology);
-                        if (ontology != null) {
-                            this.validator = new MzIdentMLValidator(ontology, MzIdentMLValidatorGUI.this);
-                            ontology.close();
+                        isOntology = getOntologiesFileInputStream("ols.ontologies.file");
+                        LOGGER.debug("Remote ontology: " + isOntology);
+                        if (isOntology != null) {
+                            this.validator = new MzIdentMLValidator(isOntology, MzIdentMLValidatorGUI.this);
+                            isOntology.close();
                         }
                         else {
                             remoteOntologies = false;
@@ -720,17 +725,17 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                     }
 
                     if (!remoteOntologies) {
-                        ontology = getOntologiesFileInputStream("local.ontologies.file");
-                        LOGGER.debug("Local ontology: " + ontology);
-                        if (ontology != null) {
+                        isOntology = getOntologiesFileInputStream("local.ontologies.file");
+                        LOGGER.debug("Local ontology: " + isOntology);
+                        if (isOntology != null) {
                             // QUICK AND DIRTY HACK
                             try {
-                                this.validator = new MzIdentMLValidator(ontology, MzIdentMLValidatorGUI.this);
+                                this.validator = new MzIdentMLValidator(isOntology, MzIdentMLValidatorGUI.this);
                             }
                             catch (OntologyLoaderException | FileNotFoundException | ValidatorException | CvRuleReaderException exc) {
                                 exc.printStackTrace(System.err);
                             }
-                            ontology.close();
+                            isOntology.close();
                         }
                         else {
                             LOGGER.error("No ontologies file for validation.");
@@ -970,8 +975,8 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         // jCheckBoxUseRemoteOntologies.setEnabled(true);
 
         // show results
-        int cntMessages = this.showMessages(true, validator);
         if (validator != null) {
+            int cntMessages = this.showMessages(true, validator);
             String reportString = validator.getHtmlStatisticsReport(cntMessages);
             if (reportString != null) 
                 JOptionPane.showMessageDialog(this, new String[] { "", reportString }, "Rule Execution Report", JOptionPane.INFORMATION_MESSAGE);
@@ -1001,108 +1006,116 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
 
     /**
      * Filters out not relevant special processing related messages.
-     * @param msgs
-     * @param validator
+     * @param msgs      the messages
+     * @param report    the report
      * @return Collection<>
      */
-    private Collection<ValidatorMessage> filterOutSpecialProcessingMessages(Collection<ValidatorMessage> msgs, MzIdentMLValidator validator) {
+    private Collection<ValidatorMessage> filterOutSpecialProcessingMessages(Collection<ValidatorMessage> msgs, ExtendedValidatorReport report) {
         Collection<ValidatorMessage> filteredMsgs = new ArrayList<>();
-        ExtendedValidatorReport report = validator.getExtendedReport();
+        ArrayList<String> messageList = new ArrayList<>();
         
-        String ruleID;
+        String ruleID, message;
         for (ValidatorMessage msg: msgs) {
-            boolean bAdd = true;
-            if (msg.getRule() != null) {
-                ruleID = msg.getRule().getId();
+            message = msg.getMessage();
+            if (!messageList.contains(message)) {
+                messageList.add(message);
+
+                boolean bAdd = true;
+                if (msg.getRule() != null) {
+                    ruleID = msg.getRule().getId();
+                }
+                else {
+                    ruleID = "-";
+                }
+
+                if (!AdditionalSearchParamsObjectRule.bIsDeNovoSearch) { 
+                    switch (ruleID) {
+                        case "DenovoSearchType_may_rule":
+                            report.getInvalidCvRules().remove(ruleID);
+                            bAdd = false;
+                            break;
+                        case "SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule":
+                            report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                            bAdd = false;
+                            break;
+                    }
+                }
+                if (!AdditionalSearchParamsObjectRule.bIsPeptideLevelScoring) {
+                    switch (ruleID) {
+                        case "PeptideLevelStatsSpectrumIdentificationItem_may_rule":
+                            report.getInvalidCvRules().remove(ruleID);
+                            bAdd = false;
+                            break;
+                        case "PeptideLevelStatsSearchType_may_rule":
+                            report.getInvalidCvRules().remove(ruleID);
+                            bAdd = false;
+                            break;
+                        case "PeptideLevelStatsObjectRule":
+                            report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                            bAdd = false;
+                            break;
+                    }
+                }
+                if (!AdditionalSearchParamsObjectRule.bIsModificationLocalizationScoring) {
+                    switch (ruleID) {
+                        case "ModLocalizationSearchType_may_rule":
+                            report.getInvalidCvRules().remove(ruleID);
+                            bAdd = false;
+                            break;
+                        case "ModLocalizationSpectrumIdentificationItem_must_rule":
+                            report.getInvalidCvRules().remove(ruleID);
+                            bAdd = false;
+                            break;
+                        case "SIIModLocalizationScoringRule":
+                            report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                            bAdd = false;
+                            break;
+                    }
+                }
+                if (!AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch) {
+                    switch (ruleID) {
+                        case "XLinkPeptideModificationObjectRule":
+                            report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                            bAdd = false;
+                            break;
+                        case "XLinkSIIObjectRule":
+                            report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                            bAdd = false;
+                            break;
+                    }
+                }
+                if (!AdditionalSearchParamsObjectRule.bIsProteoGenomicsSearch) {
+                    switch (ruleID) {
+                        case "ProteoGenomicsPeptEvObjectRule":
+                            report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                            bAdd = false;
+                            break;
+                        case "ProteoGenomicsDBSeqObjectRule":
+                            report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                            bAdd = false;
+                            break;
+                    }
+                }
+                /*
+                if (!AdditionalSearchParamsObjectRule.bIsSamplePreFractionation) {
+                    // TODO: implement
+                }
+                if (!AdditionalSearchParamsObjectRule.bIsSpectralLibrarySearch) {
+                    // TODO: implement
+                }
+                if (!AdditionalSearchParamsObjectRule.bIsConsensusScoring) {
+                    // TODO: implement
+                }
+                */
+
+                if (bAdd) {
+                    filteredMsgs.add(msg);
+                }
             }
             else {
-                ruleID = "-";
+                this.cntDoubledUnanticipatedCVTermMessages++;
             }
-            
-            if (!AdditionalSearchParamsObjectRule.bIsDeNovoSearch) { 
-                switch (ruleID) {
-                    case "DenovoSearchType_may_rule":
-                        report.getInvalidCvRules().remove(ruleID);
-                        bAdd = false;
-                        break;
-                    case "SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule":
-                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
-                        bAdd = false;
-                        break;
-                }
-            }
-            if (!AdditionalSearchParamsObjectRule.bIsPeptideLevelScoring) {
-                switch (ruleID) {
-                    case "PeptideLevelStatsSpectrumIdentificationItem_may_rule":
-                        report.getInvalidCvRules().remove(ruleID);
-                        bAdd = false;
-                        break;
-                    case "PeptideLevelStatsSearchType_may_rule":
-                        report.getInvalidCvRules().remove(ruleID);
-                        bAdd = false;
-                        break;
-                    case "PeptideLevelStatsObjectRule":
-                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
-                        bAdd = false;
-                        break;
-                }
-            }
-            if (!AdditionalSearchParamsObjectRule.bIsModificationLocalizationScoring) {
-                switch (ruleID) {
-                    case "ModLocalizationSearchType_may_rule":
-                        report.getInvalidCvRules().remove(ruleID);
-                        bAdd = false;
-                        break;
-                    case "ModLocalizationSpectrumIdentificationItem_must_rule":
-                        report.getInvalidCvRules().remove(ruleID);
-                        bAdd = false;
-                        break;
-                    case "SIIModLocalizationScoringRule":
-                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
-                        bAdd = false;
-                        break;
-                }
-            }
-            if (!AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch) {
-                switch (ruleID) {
-                    case "XLinkPeptideModificationObjectRule":
-                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
-                        bAdd = false;
-                        break;
-                    case "XLinkSIIObjectRule":
-                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
-                        bAdd = false;
-                        break;
-                }
-            }
-            if (!AdditionalSearchParamsObjectRule.bIsProteoGenomicsSearch) {
-                switch (ruleID) {
-                    case "ProteoGenomicsPeptEvObjectRule":
-                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
-                        bAdd = false;
-                        break;
-                    case "ProteoGenomicsDBSeqObjectRule":
-                        report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
-                        bAdd = false;
-                        break;
-                }
-            }
-            /*
-            if (!AdditionalSearchParamsObjectRule.bIsSamplePreFractionation) {
-                // TODO: implement
-            }
-            if (!AdditionalSearchParamsObjectRule.bIsSpectralLibrarySearch) {
-                // TODO: implement
-            }
-            if (!AdditionalSearchParamsObjectRule.bIsConsensusScoring) {
-                // TODO: implement
-            }
-            */
-            
-            if (bAdd) {
-                filteredMsgs.add(msg);
-            }
-        }
+        } // rof
         
         return filteredMsgs;
     }
@@ -1116,7 +1129,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     private int showMessages(boolean showStatistics, MzIdentMLValidator validator) {
         @SuppressWarnings("unchecked")
         Collection<ValidatorMessage> msgs = (Collection<ValidatorMessage>) this.sw.get();
-        Collection<ValidatorMessage> messages = this.filterOutSpecialProcessingMessages(msgs, validator);
+        Collection<ValidatorMessage> messages = this.filterOutSpecialProcessingMessages(msgs, validator.getExtendedReport());
 
         Color col_BLACK = new Color(0, 0, 0);
         Color col_RED   = new Color(255, 0, 0);
@@ -1147,7 +1160,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
             }
         }
 
-        if (validator != null && showStatistics) {
+        if (showStatistics) {
             if (messages != null) {
                 final String statisticsReport = validator.getStatisticsReport(messages.size());
                 if (statisticsReport != null) {
@@ -1162,13 +1175,14 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         }
         
         if (messages != null) {
-            return messages.size();
+            int noOfOutFilteredMsgs = msgs.size() - messages.size();
+            return messages.size() - noOfOutFilteredMsgs;
         }
         else {
             return 0;
         }
     }
-
+    
     /**
      * Appends a coloured message text to the TextPane.
      * @param txtPane
@@ -1203,7 +1217,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         
         return strB.toString();
     }
-
+    
     /**
      * Gets a string containing all validator messages sorted according to the MessageLevel.
      * @param aMessages
@@ -1217,7 +1231,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         
         return strB.toString();
     }
-
+    
     /**
      * Gets a string containing all validator messages sorted according to the MessageLevel.
      * @param aMessages
@@ -1258,31 +1272,25 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         StringBuilder sb = new StringBuilder();
         
         MessageLevel selectedMsgLevel = this.getSelectedLevel();
-        for (ValidatorMessage message : aMessages) {
-            // only get messages that have the same message level as selected by the user
-            if (message.getLevel().isSame(specLevel) && (message.getLevel().isSame(selectedMsgLevel) || message.getLevel().isHigher(selectedMsgLevel))) {
-                count.increment();
-                sb.append(NEW_LINE).append(NEW_LINE).append("Message ").append(count.intValue()).append(":").append(NEW_LINE);
-                
-                final Rule rule = message.getRule();
-                this.setFlagsFromRule(rule, message.getLevel());
-                
-                if (rule != null) {
-                    sb.append(this.STR_4_INDENTATION).append("Rule ID: ").append(rule.getId()).append(NEW_LINE);
-                }
-                sb.append(this.STR_4_INDENTATION).append("Level: ").append(message.getLevel()).append(NEW_LINE);
-                if (message.getContext() != null) {
-                    sb.append(this.STR_4_INDENTATION).append(message.getContext()).append(NEW_LINE);
-                }
-
-                sb.append(this.STR_4_INDENTATION).append("--> ").append(message.getMessage()).append(NEW_LINE);
-                if (rule != null && rule.getHowToFixTips() != null) {
-                    for (String howToFixTip : rule.getHowToFixTips()) {
-                        sb.append(this.STR_4_INDENTATION).append("Tip: ").append(howToFixTip).append(NEW_LINE);
-                    }
-                }
+        aMessages.stream().filter((message) -> (message.getLevel().isSame(specLevel) && (message.getLevel().isSame(selectedMsgLevel) || message.getLevel().isHigher(selectedMsgLevel)))).forEach((ValidatorMessage message) -> {
+            count.increment();
+            sb.append(NEW_LINE).append(NEW_LINE).append("Message ").append(count.intValue()).append(":").append(NEW_LINE);
+            final Rule rule = message.getRule();
+            MzIdentMLValidatorGUI.this.setFlagsFromRule(rule, message.getLevel());
+            if (rule != null) {
+                sb.append(MzIdentMLValidatorGUI.this.STR_4_INDENTATION).append("Rule ID: ").append(rule.getId()).append(NEW_LINE);
             }
-        }
+            sb.append(MzIdentMLValidatorGUI.this.STR_4_INDENTATION).append("Level: ").append(message.getLevel()).append(NEW_LINE);
+            if (message.getContext() != null) {
+                sb.append(MzIdentMLValidatorGUI.this.STR_4_INDENTATION).append(message.getContext()).append(NEW_LINE);
+            }
+            sb.append(MzIdentMLValidatorGUI.this.STR_4_INDENTATION).append("--> ").append(message.getMessage()).append(NEW_LINE);
+            if (rule != null && rule.getHowToFixTips() != null) {
+                rule.getHowToFixTips().stream().forEach((howToFixTip) -> {
+                    sb.append(MzIdentMLValidatorGUI.this.STR_4_INDENTATION).append("Tip: ").append(howToFixTip).append(NEW_LINE);
+                });
+            }
+        }); // only get messages that have the same message level as selected by the user
 
         return sb.toString();
     }
@@ -1309,6 +1317,19 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                 this.bHasObjWarnings = true;
             }
         }
+    }
+    
+    /**
+     * Gets the overall color for unanticipated Cv terms.
+     * @param noOfUnanticipatedCVs number of unanticipated CV terms
+     * @return String the color to use for the unanticipated CV message.
+     */
+    public String getUnanticipatedCVColor(int noOfUnanticipatedCVs) {
+        if (noOfUnanticipatedCVs > 0) {
+            return this.COLOR_ORANGE;
+        }
+        
+        return this.COLOR_GREEN;
     }
     
     /**

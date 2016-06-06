@@ -18,17 +18,24 @@ import uk.ac.ebi.jmzidml.model.mzidml.CvParam;
 import uk.ac.ebi.jmzidml.model.mzidml.SearchModification;
 
 /**
- * Checks if any modification of the peptide comes from a child of the following
- * terms:'UNIMOD:0','MOD:00000','MS:1001471' (peptide modification details)
+ * Checks if any SearchModification of the comes from a child of the following
+ * terms:'UNIMOD:0', 'MOD:00000', 'MS:1001471' (peptide modification details), 'MS:1002509' (cross-link donor), 'MS:1002510' (cross-link acceptor), 'XL:0nnnn'
  * 
- * @author Salva
+ * @author Salva, Gerhard
  * 
  */
 public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.mzidml.SearchModification> {
 
+    /**
+     * Constants.
+     */
     private static final Context SEARCHMOD_CONTEXT = new Context(MzIdentMLElement.SearchModification.getXpath());
+    private final String STR_XL_ZERO = "XL:0";
 
-    // Another constructor that calls to ObjectRule
+    /**
+     * Constructor.
+     * @param ontologyManager the ontology manager
+     */
     public SearchModificationRule(OntologyManager ontologyManager) {
         super(ontologyManager);
     }
@@ -53,13 +60,13 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Include just child term of the following terms: 'UNIMOD:0','MOD:00000','MS:1001471'");
+        ret.add("Include just the terms 'MS:1001471', 'MS:1002509', 'MS:1002510' or a child term of the following terms: 'UNIMOD:0', 'MOD:00000', or a term from the XLinker ontology 'XL:0nnnn'");
         
         return ret;
     }
 
     /**
-     * 
+     * Checks, if the SearchModification element contains an allowed CV term.
      * @param searchModification the SearchModification element
      * @return collection of messages
      * @throws ValidatorException validator exception
@@ -68,18 +75,30 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
     public Collection<ValidatorMessage> check(SearchModification searchModification) throws ValidatorException {
         List<ValidatorMessage> messages = new ArrayList<>();
 
-        final OntologyAccess msOntology = ontologyManager.getOntologyAccess("MS");
-        final OntologyAccess modOntology = ontologyManager.getOntologyAccess("MOD");
+        final OntologyAccess msOntology     = ontologyManager.getOntologyAccess("MS");
+        final OntologyAccess modOntology    = ontologyManager.getOntologyAccess("MOD");
         final OntologyAccess unimodOntology = ontologyManager.getOntologyAccess("UNIMOD");
 
         List<CvParam> cvParams = searchModification.getCvParam();
         for (CvParam cvParam : cvParams) {
+            String accession = cvParam.getAccession();
+                
+            // check for XLinker ontology
+            if (accession.startsWith(this.STR_XL_ZERO)) {
+                return new ArrayList<>();
+            }
+            
             // check in MS ontology
-            Set<OntologyTermI> allParents = msOntology
-                            .getAllParents(new OntologyTermImpl(cvParam.getAccession()));
+            if (accession.equals("MS:1002509")  ||  // cross-link donor
+                accession.equals("MS:1002510")) {   // cross-link acceptor
+                return new ArrayList<>();
+            }
+            
+            Set<OntologyTermI> allParents = msOntology.getAllParents(new OntologyTermImpl(accession));
             if (allParents != null) {
                 for (OntologyTermI ontologyTermI : allParents) {
-                    if (ontologyTermI.getTermAccession().equals("MS:1001471")) {
+                    String acc = ontologyTermI.getTermAccession();
+                    if (acc.equals("MS:1001471")) { // peptide modification details
                         return new ArrayList<>();
                     }
                 }
@@ -97,7 +116,7 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
             
             if (term == null) {
                 messages.add(new ValidatorMessage(
-                    "There is not a valid cvParam for the search modification  (id='"
+                    "There is not a valid cvParam for the search modification (id='"
                     + searchModification + "') element at "
                     + SearchModificationRule.SEARCHMOD_CONTEXT.getContext(),
                     MessageLevel.ERROR, SearchModificationRule.SEARCHMOD_CONTEXT, this));

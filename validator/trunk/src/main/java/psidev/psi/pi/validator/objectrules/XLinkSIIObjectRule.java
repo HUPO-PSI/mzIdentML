@@ -17,6 +17,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationResult;
 /**
  * Checks, if for each CV term MS:1002511 - 'cross-link spectrum identification item' there exists the same CV term
  * with the same value in another SpectrumIdentificationItem of the same SpectrumIdentificationResult.
+ * For isotope labelled linker we have 4 SIIs for the same cross-link .
  * 
  * @author Gerhard
  * 
@@ -85,7 +86,7 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
 
                             // fill data to map
                             if (!XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.containsKey(cvValue)) {
-                                XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.put(cvValue, new ArrayList<String>());
+                                XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.put(cvValue, new ArrayList<>());
                             }
                             XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.get(cvValue).add(sii.getId());
 
@@ -123,10 +124,10 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
                         MessageLevel.ERROR);
                     messages.add(valMsg);
                 }
-                else if (siiIdList.size() > 2) {
+                else if (siiIdList.size() > 2 && siiIdList.size() != 4) {
                     valMsg = new ValidatorMessage("The '"
                         + "' cvParam's with value " + cvValue + " in the SpectrumIdentificationItem "
-                        + XLinkSIIObjectRule.SIR_CONTEXT.getContext() + " occur more than 2 times, but must occur paired, i.e. EXCATLY 2 times.",
+                        + XLinkSIIObjectRule.SIR_CONTEXT.getContext() + " occurs not paired (" + siiIdList.size() + "times), i.e. EXCATLY 2 times resp. 4 times for isotope labelled linkers.",
                         MessageLevel.ERROR);
                     messages.add(valMsg);
                 }

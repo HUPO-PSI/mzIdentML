@@ -9,14 +9,9 @@ import java.util.List;
 import java.util.Set;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import psidev.psi.pi.rulefilter.jaxb.MandatoryElement;
-import psidev.psi.pi.rulefilter.jaxb.ReferencedRules;
-import psidev.psi.pi.rulefilter.jaxb.RuleCondition;
 import psidev.psi.pi.rulefilter.jaxb.RuleFilter;
 import psidev.psi.pi.rulefilter.jaxb.RuleToSkip;
-import psidev.psi.pi.rulefilter.jaxb.RulesToSkipRef;
 import psidev.psi.pi.rulefilter.jaxb.UserCondition;
-import psidev.psi.pi.rulefilter.jaxb.UserOption;
 import psidev.psi.pi.validator.ExtendedValidatorReport;
 import psidev.psi.tools.validator.ValidatorMessage;
 import psidev.psi.tools.validator.rules.Rule;
@@ -86,12 +81,9 @@ public class RuleFilterManager {
         List<String> ret = new ArrayList<>();
         
         if (this.filter.getMandatoryElements() != null) {
-            for (MandatoryElement mandatoryElement : this.filter.getMandatoryElements().getMandatoryElement()) {
-                String mzIdentMLElement = mandatoryElement.getElement();
-                if (!mzIdentMLElement.isEmpty()) {
-                    ret.add(mzIdentMLElement);
-                }
-            }
+            this.filter.getMandatoryElements().getMandatoryElement().stream().map((mandatoryElement) -> mandatoryElement.getElement()).filter((mzIdentMLElement) -> (!mzIdentMLElement.isEmpty())).forEach((mzIdentMLElement) -> {
+                ret.add(mzIdentMLElement);
+            });
         }
         
         return ret;
@@ -108,24 +100,18 @@ public class RuleFilterManager {
         List<RuleToSkip> locRulesToSkip = new ArrayList<>();
         
         if (optionId != null) {
-            for (UserOption option : userCondition.getUserOption()) {
-                if (option.getId().equals(optionId)) {
-                    if (option.getRuleToSkip() != null) {
-                        locRulesToSkip.addAll(option.getRuleToSkip());
-                    }
-                    if (option.getRulesToSkipRef() != null) {
-                        for (RulesToSkipRef rulesToSkipRef : option.getRulesToSkipRef()) {
-                            if (this.filter.getReferences() != null && this.filter.getReferences().getReferencedRules() != null) {
-                                for (ReferencedRules referencedRuleSet : this.filter.getReferences().getReferencedRules()) {
-                                    if (referencedRuleSet.getId().equals(rulesToSkipRef.getRef())) {
-                                        locRulesToSkip.addAll(referencedRuleSet.getRuleToSkip());
-                                    }
-                                }
-                            }
-                        }
-                    }
+            userCondition.getUserOption().stream().filter((option) -> (option.getId().equals(optionId))).map((option) -> {
+                if (option.getRuleToSkip() != null) {
+                    locRulesToSkip.addAll(option.getRuleToSkip());
                 }
-            }
+                return option;
+            }).filter((option) -> (option.getRulesToSkipRef() != null)).forEach((option) -> {
+                option.getRulesToSkipRef().stream().filter((rulesToSkipRef) -> (this.filter.getReferences() != null && this.filter.getReferences().getReferencedRules() != null)).forEach((rulesToSkipRef) -> {
+                    this.filter.getReferences().getReferencedRules().stream().filter((referencedRuleSet) -> (referencedRuleSet.getId().equals(rulesToSkipRef.getRef()))).forEach((referencedRuleSet) -> {
+                        locRulesToSkip.addAll(referencedRuleSet.getRuleToSkip());
+                    });
+                });
+            });
         }
 
         return locRulesToSkip;
@@ -163,15 +149,15 @@ public class RuleFilterManager {
     private Set<String> getRulesToSkipByUserOptions(HashMap<String, String> selectedOptions) {
         Set<String> ret = new HashSet<>();
 
-        for (String conditionId : selectedOptions.keySet()) {
+        selectedOptions.keySet().stream().forEach((conditionId) -> {
             UserCondition condition = this.getCondition(conditionId);
             if (condition != null) {
                 List<RuleToSkip> rules = this.getRulesToSkip(condition, selectedOptions.get(conditionId));
-                for (RuleToSkip objectRule : rules) {
+                rules.stream().forEach((objectRule) -> {
                     ret.add(objectRule.getId());
-                }
+                });
             }
-        }
+        });
 
         return ret;
     }
@@ -186,15 +172,11 @@ public class RuleFilterManager {
         List<String> ret = new ArrayList<>();
 
         if (this.filter.getRuleConditions() != null) {
-            for (RuleCondition objectRuleCondition : this.filter.getRuleConditions().getRuleCondition()) {
-                if (objectRuleCondition.getId().equals(ruleId)) {
-                    if ((valid && objectRuleCondition.isValid()) || (!valid && !objectRuleCondition.isValid())) {
-                        for (RuleToSkip objectRule : objectRuleCondition.getRuleToSkip()) {
-                            ret.add(objectRule.getId());
-                        }
-                    }
-                }
-            }
+            this.filter.getRuleConditions().getRuleCondition().stream().filter((objectRuleCondition) -> (objectRuleCondition.getId().equals(ruleId))).filter((objectRuleCondition) -> ((valid && objectRuleCondition.isValid()) || (!valid && !objectRuleCondition.isValid()))).forEach((objectRuleCondition) -> {
+                objectRuleCondition.getRuleToSkip().stream().forEach((objectRule) -> {
+                    ret.add(objectRule.getId());
+                });
+            });
         }
         
         return ret;
@@ -206,11 +188,9 @@ public class RuleFilterManager {
      * @param objectRulesIdentifiers
      */
     private void addRulesToSkip(Collection<String> objectRulesIdentifiers) {
-        for (String objectRuleIdentifier : objectRulesIdentifiers) {
-            if (!this.rulesToSkip.contains(objectRuleIdentifier)) {
-                this.rulesToSkip.add(objectRuleIdentifier);
-            }
-        }
+        objectRulesIdentifiers.stream().filter((objectRuleIdentifier) -> (!this.rulesToSkip.contains(objectRuleIdentifier))).forEach((objectRuleIdentifier) -> {
+            this.rulesToSkip.add(objectRuleIdentifier);
+        });
     }
 
     /**
@@ -267,7 +247,7 @@ public class RuleFilterManager {
         // for each message, check if the rule that generated it is in the list of rules to skip
         if (msgs != null && !msgs.isEmpty()) {
             List<String> skipList = this.getRulesToSkipList();                
-            for (String ruleIdentifier : msgs.keySet()) {
+            msgs.keySet().stream().forEach((ruleIdentifier) -> {
                 // if the rule that generated the messages is in the list of rules to skip, not add to the final message list
                 if (skipList.contains(ruleIdentifier)) {
                     // move the rule to the list of non checked rules
@@ -276,7 +256,7 @@ public class RuleFilterManager {
                 else {
                     finalMessages.addAll(msgs.get(ruleIdentifier));
                 }
-            }
+            });
         }
         
         return finalMessages;
@@ -288,43 +268,42 @@ public class RuleFilterManager {
     public void printRuleFilter() {
         for (UserCondition condition : this.filter.getUserConditions().getUserCondition()) {
             System.out.println(NEW_LINE + "Condition: " + condition.getId());
-            for (UserOption option : condition.getUserOption()) {
+            condition.getUserOption().stream().map((option) -> {
                 System.out.println(this.TAB + "Option " + option.getId());
-                for (RuleToSkip rule : option.getRuleToSkip()) {
+                return option;
+            }).map((option) -> {
+                option.getRuleToSkip().stream().forEach((rule) -> {
                     System.out.println(this.DOUBLE_TAB + "rule id: " + rule.getId());
-                }
-                
-                if (option.getRulesToSkipRef() != null) {
-                    for (RulesToSkipRef ruleSetReference : option.getRulesToSkipRef()) {
-                        if (this.filter.getReferences() != null) {
-                            for (ReferencedRules referencedRuleSet : this.filter.getReferences().getReferencedRules()) {
-                                if (referencedRuleSet.getId().equals(ruleSetReference.getRef())) {
-                                    for (RuleToSkip rule : referencedRuleSet.getRuleToSkip()) {
-                                        System.out.println(this.DOUBLE_TAB + "mapping rule id: " + rule.getId());
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+                });
+                return option;
+            }).filter((option) -> (option.getRulesToSkipRef() != null)).forEach((option) -> {
+                option.getRulesToSkipRef().stream().filter((ruleSetReference) -> (this.filter.getReferences() != null)).forEach((ruleSetReference) -> {
+                    this.filter.getReferences().getReferencedRules().stream().filter((referencedRuleSet) -> (referencedRuleSet.getId().equals(ruleSetReference.getRef()))).forEach((referencedRuleSet) -> {
+                        referencedRuleSet.getRuleToSkip().stream().forEach((rule) -> {
+                            System.out.println(this.DOUBLE_TAB + "mapping rule id: " + rule.getId());
+                        });
+                    });
+                });
+            });
         }
         
         if (this.filter.getRuleConditions() != null) {
             System.out.println(NEW_LINE + "ObjectRuleConditions:");
-            for (RuleCondition ruleCondition : this.filter.getRuleConditions().getRuleCondition()) {
+            this.filter.getRuleConditions().getRuleCondition().stream().map((ruleCondition) -> {
                 System.out.println(this.TAB + "Rule condition: " + ruleCondition.getId() + " isValid: " + ruleCondition.isValid());
-                for (RuleToSkip objectRule : ruleCondition.getRuleToSkip()) {
+                return ruleCondition;
+            }).forEach((ruleCondition) -> {
+                ruleCondition.getRuleToSkip().stream().forEach((objectRule) -> {
                     System.out.println(this.DOUBLE_TAB + "rule to skip: " + objectRule.getId());
-                }
-            }
+                });
+            });
         }
         
         if (this.filter.getMandatoryElements() != null) {
             System.out.println(NEW_LINE + "Mandatory elements:");
-            for (MandatoryElement mandatorymzMLElement : this.filter.getMandatoryElements().getMandatoryElement()) {
+            this.filter.getMandatoryElements().getMandatoryElement().stream().forEach((mandatorymzMLElement) -> {
                 System.out.println(this.TAB + "Mandatory element: " + mandatorymzMLElement.getElement());
-            }
+            });
         }
     }
 }

@@ -1,2 +1,2 @@
 #!/bin/bash
-java -Xms2048m -jar mzIdentMLValidator-1.4.17-SNAPSHOT.jar
+java -Xms2048m -jar mzIdentMLValidator-1.4.18-SNAPSHOT.jar

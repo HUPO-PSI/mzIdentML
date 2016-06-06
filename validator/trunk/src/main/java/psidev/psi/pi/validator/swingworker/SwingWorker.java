@@ -129,31 +129,21 @@ public abstract class SwingWorker {
      * Start a thread that will call the <code>construct</code> method and then exit.
      */
     public SwingWorker() {
-        final Runnable doFinished = new Runnable() {
-            /**
-             * 
-             */
-            @Override
-            public void run() { finished(); }
+        final Runnable doFinished = () -> {
+            finished();
         };
 
-        Runnable doConstruct = new Runnable() {
-            /**
-             * 
-             */
-            @Override
-            public void run() {
-                try {
-                    setValue(construct());
-                    if (Thread.currentThread().isInterrupted()) {
-                        return;
-                    }
+        Runnable doConstruct = () -> {
+            try {
+                setValue(construct());
+                if (Thread.currentThread().isInterrupted()) {
+                    return;
                 }
-                finally {
-                    threadVar.clear();
-                }
-                SwingUtilities.invokeLater(doFinished);
             }
+            finally {
+                threadVar.clear();
+            }
+            SwingUtilities.invokeLater(doFinished);
         };
 
         this.threadVar = new ThreadVar(new Thread(doConstruct));
