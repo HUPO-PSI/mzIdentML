@@ -23,20 +23,30 @@ import uk.ac.ebi.jmzidml.model.mzidml.ProteinDetectionList;
  */
 public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetectionList> {
 
-    // Contexts
+    /**
+     * Constants.
+     */
     private static final Context PAG_CONTEXT = new Context(MzIdentMLElement.ProteinAmbiguityGroup.getXpath());
     private static final Context PDL_CONTEXT = new Context(MzIdentMLElement.ProteinDetectionList.getXpath());
     private static final String PROTEIN_CLUSTER_IDENTIFIER_CV = "MS:1002407";
 
+    /**
+     * Members.
+     */
     private boolean clusterIdentifierTypeError = false;
     private boolean clusterIdentifierUseError = false;
 
-    // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
+    /**
+     * Constructor.
+     */
     public ProteinDetectionListObjectRule() {
         this(null);
     }
 
-    // Another constructor that calls to ObjectRule
+    /**
+     * Constructor.
+     * @param ontologyManager the ontology manager
+     */
     public ProteinDetectionListObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
     }

@@ -182,8 +182,32 @@ public class MzIdentMLValidator extends Validator {
      */
     private void resetCountersAndGUI() {
         this.resetCounters();
+        this.resetAdditionalSearchParams();
+        this.resetObjectRuleMaps();
         this.setValidatorGUI(this.gui);
         this.msgs = new HashMap<>();
+    }
+    
+    /**
+     * Rsets the flags for all additional search parameters.
+     */
+    private void resetAdditionalSearchParams() {
+        AdditionalSearchParamsObjectRule.bIsDeNovoSearch = false;
+        AdditionalSearchParamsObjectRule.bIsPeptideLevelScoring = false;
+        AdditionalSearchParamsObjectRule.bIsProteoGenomicsSearch = false;
+        AdditionalSearchParamsObjectRule.bIsSpectralLibrarySearch = false;
+        AdditionalSearchParamsObjectRule.bIsModificationLocalizationScoring = false;
+        AdditionalSearchParamsObjectRule.bIsConsensusScoring = false;
+        AdditionalSearchParamsObjectRule.bIsSamplePreFractionation = false;
+        AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch = false;
+        AdditionalSearchParamsObjectRule.bIsNoSpecialProcessing = false;
+    }
+
+    /**
+     * Resets the maps of the object rules.
+     */
+    private void resetObjectRuleMaps() {
+        
     }
     
     /**
@@ -902,7 +926,7 @@ public class MzIdentMLValidator extends Validator {
                 if (element.getClazz().getName().endsWith("SpectrumIdentificationResult")) {
                     objectRuleResult.addAll(XLinkSIIObjectRule.checkRulesWithHashMapContent());
                 }
-                else if (element.getClazz().getName().endsWith("SequenceCollection")) {
+                else if (element.getClazz().getName().endsWith("Peptide")) {
                     objectRuleResult.addAll(XLinkPeptideModificationObjectRule.checkRulesWithHashMapContent());
                 }
             }

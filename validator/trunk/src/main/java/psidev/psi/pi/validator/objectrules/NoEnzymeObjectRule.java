@@ -23,16 +23,23 @@ import uk.ac.ebi.jmzidml.model.mzidml.Enzyme;
  */
 public class NoEnzymeObjectRule extends AObjectRule<Enzyme> {
 
-    // Contexts
+    /**
+     * Constants.
+     */
     private static final Context ENZYME_CONTEXT = new Context(MzIdentMLElement.Enzyme.getXpath());
     private static final String NO_ENZYME_ACC = "MS:1001091";
 
-    // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
+    /**
+     * Constructor.
+     */
     public NoEnzymeObjectRule() {
         this(null);
     }
 
-    // Another constructor that calls to ObjectRule
+    /**
+     * Constructor.
+     * @param ontologyManager the ontology manager
+     */
     public NoEnzymeObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
     }

@@ -21,19 +21,21 @@ import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationItem;
  */
 public class SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule extends	AObjectRule<SpectrumIdentificationItem> {
 
-    // Contexts
+    /**
+     * Constants.
+     */
     private static final Context SII_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationItem.getXpath());
 
     /**
-     * We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule constructor (below):
+     * Constructor.
      */
     public SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule() {
         this(null);
     }
 
     /**
-     *  Another constructor that calls to ObjectRule.
-     * @param ontologyManager  the ontology manager
+     * Constructor.
+     * @param ontologyManager the ontology manager
      */
     public SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);

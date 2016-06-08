@@ -28,6 +28,7 @@ public class MandatoryElementsObjectRule extends AObjectRule<Object> {
     }
 
     /**
+     * Checks, if the object is a Object.
      * 
      * @param obj   the object to check
      * @return boolean
@@ -38,7 +39,7 @@ public class MandatoryElementsObjectRule extends AObjectRule<Object> {
     }
 
     /**
-     * 
+     * Checks the Object.
      * @param obj   the object to check
      * @return collection of messages
      * @throws ValidatorException validator exception

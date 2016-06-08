@@ -24,7 +24,7 @@ public class SpectralLibraryObjectRule extends AObjectRule<SpectrumIdentificatio
     }
 
     /**
-     * 
+     * Constructor.
      * @param ontologyManager the ontology manager
      */
     public SpectralLibraryObjectRule(OntologyManager ontologyManager) {

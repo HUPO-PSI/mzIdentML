@@ -33,26 +33,35 @@ import uk.ac.ebi.jmzidml.model.mzidml.Role;
  */
 public class ProviderObjectRule extends AObjectRule<Provider> {
 
+    /**
+     * Constants.
+     */
     private static final String LOC_NEW_LINE = System.getProperty("line.separator");
-
-    // Contexts
     private static final Context PROVIDER_CONTEXT = new Context(MzIdentMLElement.Provider.getXpath());
     private static final String EMAIL_ACC = "MS:1000589";
     private static final String CONTACT_ORGANIZATION = "MS:1000590";
     private static final String ROLE_TYPE_ACC = "MS:1001266";
     private static final String CONTACT_NAME_ACC = "MS:1000586";
+    
+    /**
+     * Members.
+     */
     private Collection<String> roleTypeAccessions;
-    //private boolean validPersonError = false;
     private boolean contactRoleError = false;
     private boolean emailError = false;
     private boolean organizationNameError = false;
 
-    // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
+    /**
+     * Constructor.
+     */
     public ProviderObjectRule() {
         this(null);
     }
 
-    // Another constructor that calls to ObjectRule
+    /**
+     * Constructor.
+     * @param ontologyManager the ontology manager
+     */
     public ProviderObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
         this.getRequiredAccessionsFromOntology();
@@ -212,11 +221,8 @@ public class ProviderObjectRule extends AObjectRule<Provider> {
             return true;
         if (person.getAffiliation() != null) {
             final List<Affiliation> affiliations = person.getAffiliation();
-            for (Affiliation affiliation : affiliations) {
-                if (affiliation.getOrganization() != null) {
-                    if (hasOrganizationName(affiliation.getOrganization()))
-                        return true;
-                }
+            if (affiliations.stream().filter((affiliation) -> (affiliation.getOrganization() != null)).anyMatch((affiliation) -> (hasOrganizationName(affiliation.getOrganization())))) {
+                return true;
             }
         }
         
@@ -297,11 +303,8 @@ public class ProviderObjectRule extends AObjectRule<Provider> {
             if (hasEmail(person.getCvParam()))
                 return true;
             if (person.getAffiliation() != null) {
-                for (Affiliation affiliation : person.getAffiliation()) {
-                    if (affiliation.getOrganization() != null) {
-                        if (hasEmail(affiliation.getOrganization()))
-                            return true;
-                    }
+                if (person.getAffiliation().stream().filter((affiliation) -> (affiliation.getOrganization() != null)).anyMatch((affiliation) -> (hasEmail(affiliation.getOrganization())))) {
+                    return true;
                 }
             }
         }

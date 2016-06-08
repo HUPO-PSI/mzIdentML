@@ -31,21 +31,30 @@ import uk.ac.ebi.jmzidml.model.mzidml.ProteinDetectionHypothesis;
  */
 public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguityGroup> {
 
-    // Contexts
+    /**
+     * Constants.
+     */
     private static final Context PAG_CONTEXT = new Context(MzIdentMLElement.ProteinAmbiguityGroup.getXpath());
     private static final String GROUP_REPRESENTATIVE = "MS:1002403";
     private static final String LEADING_PROTEIN = "MS:1002401";
 
+    /**
+     * Members.
+     */
     private boolean groupRepresentativeError = false;
     private boolean groupRepresentativeError2 = false;
 
-    // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
-    // constructor (below):
+    /**
+     * Constructor.
+     */
    public ProteinAmbiguityGroupObjectRule() {
         this(null);
     }
 
-    // Another constructor that calls to ObjectRule
+    /**
+     * Constructor.
+     * @param ontologyManager the ontology manager
+     */
     public ProteinAmbiguityGroupObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
     }

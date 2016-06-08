@@ -29,21 +29,25 @@ public class SIRUniqueSpectrumIDSpectrumRefCombinationRule extends AObjectRule<S
      * Members.
      */
     public static boolean bIsFinalPSMList = false;
-    HashMap<ImmutablePair, Boolean> spectIDSpectDataRefMap = new HashMap<>();
+    private static HashMap<ImmutablePair, Boolean> spectIDSpectDataRefMap = null;
 
     /**
      * Constructors.
      */
     public SIRUniqueSpectrumIDSpectrumRefCombinationRule() {
         this(null);
+        
+        SIRUniqueSpectrumIDSpectrumRefCombinationRule.spectIDSpectDataRefMap = new HashMap<>();
     }
 
     /**
-     * 
+     * Constructor.
      * @param ontologyManager the ontology manager
      */
     public SIRUniqueSpectrumIDSpectrumRefCombinationRule(OntologyManager ontologyManager) {
         super(ontologyManager);
+        
+        SIRUniqueSpectrumIDSpectrumRefCombinationRule.spectIDSpectDataRefMap = new HashMap<>();
     }
 
     /**
@@ -71,17 +75,17 @@ public class SIRUniqueSpectrumIDSpectrumRefCombinationRule extends AObjectRule<S
         if (bIsFinalPSMList) {
             ImmutablePair<String, String> pair = new ImmutablePair<>(sir.getSpectrumID(), sir.getSpectraDataRef());
             
-            if (this.spectIDSpectDataRefMap.containsKey(pair)) {
+            if (SIRUniqueSpectrumIDSpectrumRefCombinationRule.spectIDSpectDataRefMap.containsKey(pair)) {
                 messages.add(new ValidatorMessage("The combination of spectrumId and spectrumRef of the SpectrumIdentificationResult (id='"
                 + sir.getId() + "') element at " + SIRUniqueSpectrumIDSpectrumRefCombinationRule.SIR_CONTEXT.getContext()
                 + "must be unique for 'final PSM lists', ", MessageLevel.ERROR, SIRUniqueSpectrumIDSpectrumRefCombinationRule.SIR_CONTEXT, this));
             }
             else {
-                this.spectIDSpectDataRefMap.put(pair, Boolean.TRUE);
+                SIRUniqueSpectrumIDSpectrumRefCombinationRule.spectIDSpectDataRefMap.put(pair, Boolean.TRUE);
             }
         }
         else {
-            this.spectIDSpectDataRefMap.clear();
+            SIRUniqueSpectrumIDSpectrumRefCombinationRule.spectIDSpectDataRefMap.clear();
         }
         
         return messages;

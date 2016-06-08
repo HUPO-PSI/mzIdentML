@@ -42,7 +42,7 @@ public class ProteoGenomicsPeptEvObjectRule extends AObjectRule<PeptideEvidence>
     }
 
     /**
-     * 
+     * Constructor.
      * @param ontologyManager the ontology manager
      */
     public ProteoGenomicsPeptEvObjectRule(OntologyManager ontologyManager) {

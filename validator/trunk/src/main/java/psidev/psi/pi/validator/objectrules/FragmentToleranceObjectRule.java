@@ -20,15 +20,22 @@ import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationProtocol;
  */
 public class FragmentToleranceObjectRule extends AObjectRule<SpectrumIdentificationProtocol> {
 
-    // Contexts
+    /**
+     * Constants.
+     */
     private static final Context SIP_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationProtocol.getXpath());
 
-    // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
+    /**
+     * Constructor.
+     */
     public FragmentToleranceObjectRule() {
         this(null);
     }
 
-    // Another constructor that calls to ObjectRule
+    /**
+     * Constructor.
+     * @param ontologyManager the ontology manager
+     */
     public FragmentToleranceObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
     }

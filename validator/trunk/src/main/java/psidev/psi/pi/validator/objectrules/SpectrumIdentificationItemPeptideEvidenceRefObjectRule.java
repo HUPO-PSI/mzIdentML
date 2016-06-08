@@ -22,15 +22,22 @@ import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationItem;
  */
 public class SpectrumIdentificationItemPeptideEvidenceRefObjectRule extends AObjectRule<SpectrumIdentificationItem> {
 
-    // Contexts
+    /**
+     * Constants.
+     */
     private static final Context SII_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationItem.getXpath());
 
-    // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
+    /**
+     * Constants.
+     */
     public SpectrumIdentificationItemPeptideEvidenceRefObjectRule() {
         this(null);
     }
 
-    // Another constructor that calls to ObjectRule
+    /**
+     * Constructor.
+     * @param ontologyManager the ontology manager
+     */
     public SpectrumIdentificationItemPeptideEvidenceRefObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
     }

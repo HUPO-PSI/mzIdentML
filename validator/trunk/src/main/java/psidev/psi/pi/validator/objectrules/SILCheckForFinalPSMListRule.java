@@ -24,7 +24,7 @@ public class SILCheckForFinalPSMListRule extends AObjectRule<SpectrumIdentificat
     }
 
     /**
-     * 
+     * Constructor.
      * @param ontologyManager the ontology manager
      */
     public SILCheckForFinalPSMListRule(OntologyManager ontologyManager) {

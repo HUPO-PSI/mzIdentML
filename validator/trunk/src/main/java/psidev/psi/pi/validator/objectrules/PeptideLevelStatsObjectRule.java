@@ -33,8 +33,8 @@ public class PeptideLevelStatsObjectRule extends AObjectRule<SpectrumIdentificat
     /**
      * Members.
      */
-    private HashMap<String, String> map_1001143;    // maps accession to term name
-    private HashMap<String, String> map_1002358;    // maps accession to term name
+    private HashMap<String, String> map_1001143 = null; // maps accession to term name
+    private HashMap<String, String> map_1002358 = null; // maps accession to term name
     
     /**
      * Constructors.
@@ -44,7 +44,7 @@ public class PeptideLevelStatsObjectRule extends AObjectRule<SpectrumIdentificat
     }
 
     /**
-     * 
+     * Constructor.
      * @param ontologyManager the ontology manager
      */
     public PeptideLevelStatsObjectRule(OntologyManager ontologyManager) {

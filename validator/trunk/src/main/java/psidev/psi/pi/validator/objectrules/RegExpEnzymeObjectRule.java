@@ -20,15 +20,22 @@ import uk.ac.ebi.jmzidml.model.mzidml.Enzyme;
  */
 public class RegExpEnzymeObjectRule extends AObjectRule<Enzyme> {
 
-    // Contexts
+    /**
+     * Constants.
+     */
     private static final Context ENZYME_CONTEXT = new Context(MzIdentMLElement.Enzyme.getXpath());
 
-    // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
+    /**
+     * Constructor.
+     */
     public RegExpEnzymeObjectRule() {
         this(null);
     }
 
-    // Another constructor that calls to ObjectRule
+    /**
+     * Constructor.
+     * @param ontologyManager the ontology manager
+     */
     public RegExpEnzymeObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
     }

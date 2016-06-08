@@ -28,13 +28,19 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
     private static final Context PEPTIDE_CONTEXT = new Context(MzIdentMLElement.Peptide.getXpath());
     private static final String ACC_XL_DONOR   = "MS:1002509";
     private static final String ACC_XL_RECEIVER= "MS:1002510";
-    private final static HashMap<String, HashMap<String, String>> XL_CVVALUE2CVACCESSION2PEPTID_MAP = new HashMap<>();
+    
+    /**
+     * Members.
+     */
+    private static HashMap<String, HashMap<String, String>> XL_CVVALUE2CVACCESSION2PEPTID_MAP = null;   // CV value --> (CV accession--> peptide ID)
 
     /**
      * Constructor.
      */
     public XLinkPeptideModificationObjectRule() {
         this(null);
+        
+        XLinkPeptideModificationObjectRule.XL_CVVALUE2CVACCESSION2PEPTID_MAP = new HashMap<>();
     }
 
     /**
@@ -43,6 +49,8 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
      */
     public XLinkPeptideModificationObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
+        
+        XLinkPeptideModificationObjectRule.XL_CVVALUE2CVACCESSION2PEPTID_MAP = new HashMap<>();
     }
 
     /**
@@ -70,7 +78,7 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
         
         if (AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch) {
             for (Modification mod: pept.getModification()) {
-                for (CvParam cv: pept.getCvParam()) {
+                for (CvParam cv: mod.getCvParam()) {
                     switch (cv.getAccession()) {
                         case ACC_XL_DONOR:      // cross-link donor
                             this.checkForEmptyCVValueAndFillMap(pept, mod, cv, messages);
@@ -108,7 +116,7 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
         
         // fill data to map
         if (!XLinkPeptideModificationObjectRule.XL_CVVALUE2CVACCESSION2PEPTID_MAP.containsKey(cvValue)) {
-            XLinkPeptideModificationObjectRule.XL_CVVALUE2CVACCESSION2PEPTID_MAP.put(cvValue, new HashMap<String, String>());
+            XLinkPeptideModificationObjectRule.XL_CVVALUE2CVACCESSION2PEPTID_MAP.put(cvValue, new HashMap<>());
         }
         XLinkPeptideModificationObjectRule.XL_CVVALUE2CVACCESSION2PEPTID_MAP.get(cvValue).put(cv.getAccession(), pept.getId());
     }
@@ -147,7 +155,7 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
                 int cntDonor = 0;
                 int cntReceiver = 0;
                 for (String acc: acc2PeptIDMap.keySet()) {
-                    switch (acc2PeptIDMap.get(acc)) {
+                    switch (acc) {
                         case ACC_XL_DONOR:
                             cntDonor++;
                             break;
@@ -158,17 +166,17 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
                 }
                 
                 if (cntDonor == 0) {
-                    valMsg = new ValidatorMessage("Cross-link donors with the value " + cvVal
+                    valMsg = new ValidatorMessage("Cross-link donor with the value " + cvVal
                         + " is missing in Peptides with ID's " + XLinkPeptideModificationObjectRule.getPeptideIDList(acc2PeptIDMap)
                         + XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT.getContext(),
-                        MessageLevel.ERROR, XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT, null);
+                        MessageLevel.ERROR);
                     messages.add(valMsg);
                 }
                 else if (cntReceiver == 0) {
                     valMsg = new ValidatorMessage("Cross-link acceptor with the value " + cvVal
                         + " is missing in Peptides with ID's " + XLinkPeptideModificationObjectRule.getPeptideIDList(acc2PeptIDMap)
                         + XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT.getContext(),
-                        MessageLevel.ERROR, XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT, null);
+                        MessageLevel.ERROR);
                     messages.add(valMsg);
                 }
             }
@@ -176,7 +184,7 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
                 valMsg = new ValidatorMessage("There must be exactly one pair of 'cross-link donor' and 'cross-link acceptor' with the value " + cvVal
                     + " in Peptides with ID's " + XLinkPeptideModificationObjectRule.getPeptideIDList(acc2PeptIDMap)
                     + XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT.getContext(),
-                    MessageLevel.ERROR, XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT, null);
+                    MessageLevel.ERROR);
                 messages.add(valMsg);
             }
         }

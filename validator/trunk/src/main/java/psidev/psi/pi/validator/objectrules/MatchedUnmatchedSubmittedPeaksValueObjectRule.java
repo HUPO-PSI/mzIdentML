@@ -23,21 +23,32 @@ import uk.ac.ebi.jmzidml.model.mzidml.ProteinDetectionHypothesis;
  */
 public class MatchedUnmatchedSubmittedPeaksValueObjectRule extends AObjectRule<ProteinDetectionHypothesis> {
 
-    // Contexts
+    /**
+     * Constants.
+     */
     private static final Context PDH_CONTEXT = new Context(MzIdentMLElement.ProteinDetectionHypothesis.getXpath());
     private static final String MATCHED_PEAKS_ACC = "MS:1001121";
     private static final String UNMATCHED_PEAKS_ACC = "MS:1001362";
     private static final String SUBMITTED_PEAKS_ACC = "MS:1001124";
+    
+    /**
+     * Members.
+     */
     private boolean matchedValueError = false;
     private boolean unmatchedValueError = false;
     private boolean submittedValueError = false;
 
-    // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
+    /**
+     * Constructor.
+     */
     public MatchedUnmatchedSubmittedPeaksValueObjectRule() {
         this(null);
     }
 
-    // Another constructor that calls to ObjectRule
+    /**
+     * Constructor.
+     * @param ontologyManager the ontology manager
+     */
     public MatchedUnmatchedSubmittedPeaksValueObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
     }

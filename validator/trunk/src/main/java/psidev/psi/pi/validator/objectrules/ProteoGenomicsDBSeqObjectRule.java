@@ -41,7 +41,7 @@ public class ProteoGenomicsDBSeqObjectRule extends AObjectRule<DBSequence> {
     }
 
     /**
-     * 
+     * Constructor.
      * @param ontologyManager the ontology manager
      */
     public ProteoGenomicsDBSeqObjectRule(OntologyManager ontologyManager) {

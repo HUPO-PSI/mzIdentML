@@ -34,12 +34,17 @@ public class AnalysisSoftwareObjectRule extends AObjectRule<AnalysisSoftware> {
     private boolean versionError = false;
     private boolean contactRoleMissingError = false;
 
-    // We had a problem with the default constructor. It was necessary to build a new one this way to call the ObjectRule
+    /**
+     * Constructor.
+     */
     public AnalysisSoftwareObjectRule() {
         this(null);
     }
 
-    // Another constructor that calls to ObjectRule
+    /**
+     * Constructor.
+     * @param ontologyManager the ontology manager
+     */
     public AnalysisSoftwareObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
     }

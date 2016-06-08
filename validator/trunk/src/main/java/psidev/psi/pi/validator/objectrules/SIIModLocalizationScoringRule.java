@@ -34,7 +34,7 @@ public class SIIModLocalizationScoringRule extends AObjectRule<SpectrumIdentific
     }
 
     /**
-     * 
+     * Constructor.
      * @param ontologyManager the ontology manager
      */
     public SIIModLocalizationScoringRule(OntologyManager ontologyManager) {

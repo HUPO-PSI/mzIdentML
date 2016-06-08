@@ -28,13 +28,19 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
      * Constants.
      */
     private static final Context SIR_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationResult.getXpath());
-    private final static HashMap<String, ArrayList<String>> XL_CVVALUE2SII_IDLISTMAP = new HashMap<>();
+    
+    /**
+     * Members.
+     */
+    private static HashMap<String, ArrayList<String>> XL_CVVALUE2SII_IDLISTMAP = null;
 
     /**
      * Constructor.
      */
     public XLinkSIIObjectRule() {
         this(null);
+        
+        XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP = new HashMap<>();
     }
 
     /**
@@ -43,6 +49,8 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
      */
     public XLinkSIIObjectRule(OntologyManager ontologyManager) {
         super(ontologyManager);
+        
+        XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP = new HashMap<>();
     }
 
     /**
