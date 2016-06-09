@@ -163,16 +163,16 @@
             <CvTerm termAccession="MS:1001359" useTermName="false" useTerm="false" termName="ambiguous residues" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
-        <CvMappingRule id="DatabaseFiltersFilterType_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/databaseFilters/Filter/FilterType/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/databaseFilters/Filter/FilterType" cvTermsCombinationLogic="AND">
+        <CvMappingRule id="DatabaseFiltersFilterType_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/databaseFilters/filter/filterType/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/databaseFilters/filter/filterType" cvTermsCombinationLogic="AND">
             <CvTerm termAccession="MS:1001511" useTermName="false" useTerm="false" termName="Sequence database filter types" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
         
 
-        <CvMappingRule id="DatabaseFiltersInclude_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/databaseFilters/Filter/Include/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/databaseFilters/Filter/Include" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="DatabaseFiltersInclude_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/databaseFilters/filter/include/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/databaseFilters/filter/include" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001512" useTermName="false" useTerm="false" termName="Sequence database filters" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
-        <CvMappingRule id="DatabaseFiltersExclude_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/databaseFilters/Filter/Exclude/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/databaseFilters/Filter/Exclude" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="DatabaseFiltersExclude_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/databaseFilters/filter/exclude/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/databaseFilters/filter/exclude" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001512" useTermName="false" useTerm="false" termName="Sequence database filters" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 

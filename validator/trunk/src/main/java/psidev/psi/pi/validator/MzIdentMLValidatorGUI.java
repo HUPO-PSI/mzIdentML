@@ -859,10 +859,12 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         if (this.isVersion11(mzIdVersion)) {
             propertyName += "1.1.0";
             ruleFile = MzIdentMLValidatorGUI.getProperty(propertyName);
+            LOGGER.debug(".mzid version: 1.1.0");
         }
         else if (this.isVersion12(mzIdVersion)) {
             propertyName += "1.2.0";
             ruleFile = MzIdentMLValidatorGUI.getProperty(propertyName);
+            LOGGER.debug(".mzid version: 1.2.0");
         }
         else {
             // set default
