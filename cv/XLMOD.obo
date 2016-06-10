@@ -1,0 +1,251 @@
+format-version: 1.2
+data-version: releases/2016-06-10
+ontology: xl
+property_value: hasSubset "reactionSites \"reactionSites\""
+property_value: hasSubset "monoisotopicMass \"monoisotopicMass\""
+property_value: hasSubset "specificities \"specificities\""
+
+date: 10:06:2016 11:01
+saved-by: Gerhard Mayer
+auto-generated-by: OBO-Edit 2.3.1
+default-namespace: XL
+remark: namespace: XL
+remark: version: 1.0.0
+remark: release date: 2016-06-10
+remark: coverage: cross-linking reagents
+remark: creator: Lutz Fischer <lfischer <-at-> staffmail.ed.ac.uk>
+remark: creator: Gerhard Mayer <mayerg97 <-at-> rub.de>
+remark: This work is licensed under the Creative Commons Attribution 3.0 Unported License.
+remark: To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+
+[Term]
+id: XL:00001
+name: BS3
+def: "Bis(sulfosuccinimidyl)suberate." [PSI:XL]
+reactionSites: 2
+monoisotopicMass: 138.06807961
+specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:00002
+name: DSS
+def: "Disuccinimidyl suberate." [PSI:XL]
+reactionSites: 2
+monoisotopicMass: 138.06807961
+specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:00003
+name: DSS:d4
+def: "Deuterium-labelled disuccinimidyl 2,2,7,7-suberate." [PSI:XL]
+reactionSites: 2
+monoisotopicMass: 142.093186586
+specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:00004
+name: DSS:d12
+def: "Deuterium-labelled disuccinimidyl 2,2,3,3,4,4,5,5,6,6,7,7-suberate." [PSI:XL]
+reactionSites: 2
+monoisotopicMass: 150.143400538
+specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:00005
+name: BS3:d4
+def: "Deuterium-labelled (bis(sulfosuccinimidyl) 2,2,7,7-suberate-d4)." [PSI:XL]
+reactionSites: 2
+monoisotopicMass: 142.093186586
+specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:00006
+name: BS2G
+def: "Bis(sulfosuccinimidyl) glutarat." [PSI:XL]
+reactionSites: 2
+monoisotopicMass: 96.0211294
+specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:00007
+name: DSG
+def: "Disuccinimidyl glutarate." [PSI:XL]
+reactionSites: 2
+monoisotopicMass: 96.0211294
+specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:00008
+name: DSG:d4
+def: "Deuterium-labelled disuccinimidyl 2,2,4,4-glutarate." [PSI:XL]
+reactionSites: 2
+monoisotopicMass: 146.118293562
+specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:00009
+name: BS2G:d4
+def: "Deuterium-labelled bis(sulfosuccinimidyl) 2,2,4,4-glutarate." [PSI:XL]
+reactionSites: 2
+monoisotopicMass: 100.046236376
+specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:00010
+name: Disulfide
+def: "Disulfde." [PSI:XL]
+reactionSites: 2
+monoisotopicMass: -2.01565007
+specificities: (C)&(C)
+
+[Term]
+id: XL:00011
+name: EDC
+def: "1-ethyl-3-(3-dimethylaminopropyl)carbodiimide hydrochloride." [PSI:XL]
+reactionSites: 2
+monoisotopicMass: -18.01056027
+specificities: (K,S,T,Y,Protein N-term)&(E,D,Protein C-term)
+
+[Term]
+id: XL:01000
+name: BS3!Hydrolyzed
+def: "Hydrolyzed bis(sulfosuccinimidyl)suberate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 156.07864431
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01001
+name: BS3!Amidated
+def: "Amidated bis(sulfosuccinimidyl)suberate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 155.094628715
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01002
+name: DSS!Hydrolyzed
+def: "Hydrolyzed disuccinimidyl suberate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 156.07864431
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01003
+name: DSS!Amidated
+def: "Amidated disuccinimidyl suberate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 155.094628715
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01004
+name: DSS:d4!Hydrolyzed
+def: "Deuterium-labelled hydrolyzed disuccinimidyl 2,2,7,7-suberate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 160.1037416836
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01005
+name: DSS:d4!Amidated
+def: "Deuterium-labelled amidated disuccinimidyl 2,2,7,7-suberate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 159.1197260886
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01006
+name: DSS:d12!Hydrolyzed
+def: "Deuterium-labelled hydrolyzed disuccinimidyl 2,2,3,3,4,4,5,5,6,6,7,7-suberate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 168.153965238
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01007
+name: DSS:d12!Amidated
+def: "Deuterium-labelled amidated disuccinimidyl 2,2,3,3,4,4,5,5,6,6,7,7-suberate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 167.169949643
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01008
+name: BS3:d4!Hydrolyzed
+def: "Deuterium-labelled hydrolyzed bis(sulfosuccinimidyl) 2,2,7,7-suberate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 160.103751286
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01009
+name: BS3:d4!Amidated
+def: "Deuterium-labelled amidated bis(sulfosuccinimidyl) 2,2,7,7-suberate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 159.119735691
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01010
+name: BS2G!Hydrolyzed
+def: "Hydrolyzed bis(sulfosuccinimidyl) glutarate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 114.0316941
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01011
+name: BS2G!Amidated
+def: "Amidated bis(sulfosuccinimidyl) glutarate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 113.047678505
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01012
+name: DSG!Hydrolyzed
+def: "Hydrolyzed disuccinimidyl glutarate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 114.0316941
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01013
+name: DSG!Amidated
+def: "Amidated disuccinimidyl glutarate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 113.047678505
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01014
+name: DSG:d4!Hydrolyzed
+def: "Deuterium-labelled amidated disuccinimidyl 2,2,4,4-glutarate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 164.128858262
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01015
+name: DSG:d4!Amidated
+def: "Deuterium-labelled hydrolized disuccinimidyl 2,2,4,4-glutarate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 163.144842667
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01016
+name: BS2G:d4!Hydrolyzed
+def: "Deuterium-labelled hydrolized bis(sulfosuccinimidyl) 2,2,4,4-glutarate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 118.056801076
+specificities: (K,S,T,Y,Protein N-term)
+
+[Term]
+id: XL:01017
+name: BS2G:d4!Amidated
+def: "Deuterium-labelled amidated bis(sulfosuccinimidyl) 2,2,4,4-glutarate." [PSI:XL]
+reactionSites: 1
+monoisotopicMass: 117.072785481
+specificities: (K,S,T,Y,Protein N-term)

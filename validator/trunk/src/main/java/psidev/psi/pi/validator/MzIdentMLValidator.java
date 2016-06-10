@@ -435,8 +435,11 @@ public class MzIdentMLValidator extends Validator {
 
                 // XML Schema validation
                 this.schemaValidation(xmlFile);
-                this.logSchemaValidationErrors();
-
+                boolean bSchemaCompliant = this.logSchemaValidationErrors();
+                if (!bSchemaCompliant) {
+                    this.LOGGER.warn("Please make the .mzid file first schema compliant.");
+                }
+                
                 // ---------------- Internal consistency check of the CvMappingRules
                 // Validate CV Mapping Rules
                 this.updateProgress("Checking internal consistency of CV rules" + this. STR_ELLIPSIS);
@@ -511,18 +514,25 @@ public class MzIdentMLValidator extends Validator {
 
     /**
      * Logs the errors from schema validation.
+     * @return true, if validation should proceed; else false
      */
-    private void logSchemaValidationErrors() {
+    private boolean logSchemaValidationErrors() {
+        boolean bRet = true;
+            
         if (!this.msgs.isEmpty()) {
             System.err.println(DOUBLE_NEW_LINE + "There were errors validating against the XML schema:" + NEW_LINE);
             String msg;
             for (ValidatorMessage lMessage : this.getMessageCollection()) {
                 msg = TAB + " - " + lMessage;
                 System.err.println(msg);
+                this.LOGGER.warn(msg);
                 this.extendedReport.addInvalidSchemaValidationMessage(msg);
+                bRet = false;
             }
             this.cntXMLSchemaValidatingMessages++;
         }
+        
+        return bRet;
     }
     
     /**
@@ -854,10 +864,10 @@ public class MzIdentMLValidator extends Validator {
         mzIdentMLIter = this.unmarshaller.unmarshalCollectionFromXpath(MzIdentMLElement.SpectrumIdentificationItem);
 
         // check the first SII to see if some rule is applied to these objects
-        final SpectrumIdentificationItem sii = mzIdentMLIter.next();
-        List<SpectrumIdentificationItem> siis = new ArrayList<>();
-        siis.add(sii);
         try {
+            final SpectrumIdentificationItem sii = mzIdentMLIter.next();
+            List<SpectrumIdentificationItem> siis = new ArrayList<>();
+            siis.add(sii);
             this.checkCvMapping(siis, MzIdentMLElement.SpectrumIdentificationItem.getXpath());
         }
         catch (IllegalArgumentException e) {
@@ -907,8 +917,8 @@ public class MzIdentMLValidator extends Validator {
         }
 
         while (mzMLIter.hasNext()) {
-            final MzIdentMLObject next = mzMLIter.next();
             try {
+                final MzIdentMLObject next = mzMLIter.next();
                 final Collection<ValidatorMessage> validationResult = this.validate(next);
                 if (validationResult != null && !validationResult.isEmpty())
                     objectRuleResult.addAll(validationResult);
@@ -1178,6 +1188,9 @@ public class MzIdentMLValidator extends Validator {
         catch (NullPointerException e) {
             // this is because the element has no XPath, and has to be validated in another way
             this.checkCvMapping(this.unmarshaller.unmarshal(element), null);
+        }
+        catch (NumberFormatException e) {
+            e.printStackTrace(System.err);
         }
     }
 
