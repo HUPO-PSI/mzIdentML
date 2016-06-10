@@ -45,7 +45,7 @@ specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
 [Term]
 id: XL:00004
 name: DSS:d12
-def: "Deuterium-labelled bis(sulfosuccinimidyl) 2,2,7,7-suberate." [PSI:XL]
+def: "Deuterium-labelled disuccinimidyl 2,2,3,3,4,4,5,5,6,6,7,7-suberate." [PSI:XL]
 reactionSites: 2
 monoisotopicMass: 150.143400538
 specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
