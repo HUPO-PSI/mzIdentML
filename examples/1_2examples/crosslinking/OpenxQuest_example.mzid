@@ -4,7 +4,7 @@
 	xmlns="http://psidev.info/psi/pi/mzIdentML/1.2"
 	version="1.2.0"
 	id="OpenMS_16258960883797523280"
-	creationDate="2016-05-31T17:31:14">
+	creationDate="2016-06-09T16:42:01">
 <cvList> 
  	<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" uri="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="3.15.0"></cv> 
  	<cv id="UNIMOD" fullName="UNIMOD" uri="http://www.unimod.org/obo/unimod.obo"></cv> 
@@ -14,7 +14,7 @@
 <AnalysisSoftwareList>
 	<AnalysisSoftware version="2.0.1" name="OpenMSxQuest" id="SOF_3504641602946411848"> 
 		<SoftwareName> 
- 			<cvParam accession="MS:1001456" cvRef="PSI-MS" name="analysis software"/>
+ 			<cvParam accession="MS:1002673" cvRef="PSI-MS" name="OpenXQuest"/>
 		</SoftwareName> 
 	</AnalysisSoftware> 
 	<AnalysisSoftware version="OpenMS TOPP v2.0.1" name="TOPP software" id="SOF_2222638124699078856"> 
@@ -132,17 +132,6 @@
 			<userParam name="algorithm:candidate_search" unitName="xsd:string" value="enumeration"/>
 			<userParam name="charges" unitName="xsd:string" value="2,3,4,5,6"/>
 		</AdditionalSearchParams>
-		<FragmentTolerance>
-			<cvParam accession="MS:1001412" name="search tolerance plus value" unitCvRef="UO" unitName="parts per million" unitAccession="UO:0000169" cvRef="PSI-MS" value="0.2"/>
-			<cvParam accession="MS:1001413" name="search tolerance minus value" unitCvRef="UO" unitName="parts per million" unitAccession="UO:0000169" cvRef="PSI-MS" value="0.2"/>
-		</FragmentTolerance>
-		<ParentTolerance>
-			<cvParam accession="MS:1001412" name="search tolerance plus value" unitCvRef="UO" unitName="parts per million" unitAccession="UO:0000169" cvRef="PSI-MS" value="10"/>
-			<cvParam accession="MS:1001413" name="search tolerance minus value" unitCvRef="UO" unitName="parts per million" unitAccession="UO:0000169" cvRef="PSI-MS" value="10"/>
-		</ParentTolerance>
-		<Threshold>
-			<cvParam accession="MS:1001494" cvRef="PSI-MS" name="no threshold"/>
-		</Threshold>
 		<ModificationParams>
 			<SearchModification fixedMod="true" massDelta="0" residues="C">
 				<cvParam accession="UNIMOD:4" cvRef="PSI-MS" name="Carbamidomethyl"/>
@@ -158,6 +147,17 @@
 				</EnzymeName>
 			</Enzyme>
 		</Enzymes>
+		<FragmentTolerance>
+			<cvParam accession="MS:1001412" name="search tolerance plus value" unitCvRef="UO" unitName="parts per million" unitAccession="UO:0000169" cvRef="PSI-MS" value="0.2"/>
+			<cvParam accession="MS:1001413" name="search tolerance minus value" unitCvRef="UO" unitName="parts per million" unitAccession="UO:0000169" cvRef="PSI-MS" value="0.2"/>
+		</FragmentTolerance>
+		<ParentTolerance>
+			<cvParam accession="MS:1001412" name="search tolerance plus value" unitCvRef="UO" unitName="parts per million" unitAccession="UO:0000169" cvRef="PSI-MS" value="10"/>
+			<cvParam accession="MS:1001413" name="search tolerance minus value" unitCvRef="UO" unitName="parts per million" unitAccession="UO:0000169" cvRef="PSI-MS" value="10"/>
+		</ParentTolerance>
+		<Threshold>
+			<cvParam accession="MS:1001494" cvRef="PSI-MS" name="no threshold"/>
+		</Threshold>
 	</SpectrumIdentificationProtocol>
 </AnalysisProtocolCollection>
 <DataCollection>
