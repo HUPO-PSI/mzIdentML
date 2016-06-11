@@ -718,6 +718,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="FragmentArray" type="FragmentArrayType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="userParam" type="UserParamType">
+				<xsd:annotation>
+					<xsd:documentation>In case more information about the ions annotation has to be conveyed, that has no fit in FragmentArray. Note: It is suggested that the value attribute takes the form of a list of the same size as FragmentArray values. However, there is no formal encoding and it cannot be expeceted that other software will process or impart that information properly.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 			<xsd:element name="cvParam" type="CVParamType" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>The type of ion identified. In the case of neutral losses, one term should report the ion type, a second term should report the neutral loss - note: this is a change in practice from mzIdentML 1.1.</xsd:documentation>
