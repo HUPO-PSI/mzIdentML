@@ -71,7 +71,7 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
     }
 
     /**
-     * 
+     * Checks a ProteinAmbiguityGroup element.
      * @param pag the ProteinAmbiguityGroup element
      * @return collection of messages
      * @throws ValidatorException validator exception
@@ -105,15 +105,7 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
                             groupRepresentative = true;
                             if (anyGroupRepresentativeInPAGFound) {
                                 this.groupRepresentativeError = true;
-                                messages.add(new ValidatorMessage(
-                                    "Only one ProteinDetectionHypothesis in the ProteinAmbiguityGroup '"
-                                    + pag.getId()
-                                    + "' can contain the CV Term "
-                                    + GROUP_REPRESENTATIVE
-                                    + " (group representative) at "
-                                    + PAG_CONTEXT.getContext(),
-                                    MessageLevel.ERROR,
-                                    PAG_CONTEXT, this));
+                                messages.add(this.getValidatorNotUniqueGroupRepresentativeMsg(pag));
                                 break;
                             }
                             anyGroupRepresentativeInPAGFound = true;
@@ -126,25 +118,45 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
                 }
             }
             
+            // Check for group representative
             if (this.groupRepresentativeError2 && anyLeadingProteinInPAGFound) {
-                messages.add(new ValidatorMessage(
-                    "At least one of the ProteinDetectionHypothesis labeled as 'leading protein' ("
-                    + LEADING_PROTEIN
-                    + ") may be a 'group representative' ("
-                    + GROUP_REPRESENTATIVE
-                    + ") in Protein Ambiguity Group id='"
-                    + pag.getId() + "' at "
-                    + PAG_CONTEXT.getContext(),
-                    MessageLevel.INFO, PAG_CONTEXT, this));
+                messages.add(this.getValidatorMustContainGroupRepresentativeMsg(pag));
             }
             else {
                 this.groupRepresentativeError2 = false;
             }
+            
+            // Check for protein interaction evidence (only in cross-linking case)
+            // TODO: implement
+            
         }
 
         return messages;
     }
 
+    /**
+     * Gets the message for unique group representative.
+     * @param pag the ProteinAmbiguityGroup element
+     * @return the ValidatorMessage
+     */
+    private ValidatorMessage getValidatorNotUniqueGroupRepresentativeMsg(ProteinAmbiguityGroup pag) {
+        String strB = "Only one ProteinDetectionHypothesis in the ProteinAmbiguityGroup '" +
+                       pag.getId() + "' can contain the CV Term " + GROUP_REPRESENTATIVE + " (group representative) at ";
+        return new ValidatorMessage(strB + PAG_CONTEXT.getContext(), MessageLevel.ERROR, PAG_CONTEXT, this);
+    }
+    
+    /**
+     * Gets the message for unique group representative.
+     * @param pag the ProteinAmbiguityGroup element
+     * @return the ValidatorMessage
+     */
+    private ValidatorMessage getValidatorMustContainGroupRepresentativeMsg(ProteinAmbiguityGroup pag) {
+        String strB = "At least one of the ProteinDetectionHypothesis labeled as 'leading protein' (" +
+                      LEADING_PROTEIN + ") may be a 'group representative' (" + GROUP_REPRESENTATIVE +
+                      ") in Protein Ambiguity Group id='" + pag.getId() + "' at ";
+        return new ValidatorMessage(strB + PAG_CONTEXT.getContext(), MessageLevel.INFO, PAG_CONTEXT, this);       
+    }
+    
     /**
      * Gets the tips how to fix the error.
      * 

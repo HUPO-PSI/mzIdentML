@@ -185,7 +185,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Provide the newest version for all cv element under the cvList element." + CvListObjectRule.CV_CONTEXT.getContext());
+        ret.add("Provide the newest version for all cv element under the CvList element." + CvListObjectRule.CV_CONTEXT.getContext());
 
         return ret;
     }

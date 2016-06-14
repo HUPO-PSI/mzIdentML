@@ -37,14 +37,14 @@ public class RESTClient {
     
     /**
      * Calls a REST API via GET.
-     * @param urlStr the complete REST API URl string
+     * @param urlStr the complete REST API URL string
      * @return the respone string
      */
     public String callGET(String urlStr) {
         StringBuilder strB = new StringBuilder();
+        this.LOGGER.debug("urlStr: {}" + urlStr);
         
         try {
-            this.LOGGER.debug("urlStr: {}" + urlStr);
             URL url = new URL(urlStr);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod(this.STR_GET);
