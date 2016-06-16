@@ -10,7 +10,6 @@ import org.apache.log4j.Logger;
 
 import psidev.psi.pi.rulefilter.RuleFilterManager;
 import psidev.psi.tools.validator.ValidatorMessage;
-import psidev.psi.tools.validator.rules.Rule;
 import psidev.psi.tools.validator.rules.codedrule.ObjectRule;
 import psidev.psi.tools.validator.rules.cvmapping.CvRule;
 import psidev.psi.tools.validator.rules.cvmapping.MappingRuleStatus;
@@ -43,7 +42,7 @@ public class ExtendedValidatorReport extends ValidatorReport {
      * @param objectRules collection of object rules
      */
     public ExtendedValidatorReport(Collection<ObjectRule> objectRules) {
-        super(new ArrayList<CvRule>());
+        super(new ArrayList<>());
         this.addObjectRules(objectRules);
     }
 
@@ -132,41 +131,51 @@ public class ExtendedValidatorReport extends ValidatorReport {
                 
                 // look in valid rules
                 List<CvRule> toRemove = new ArrayList<>();
-                for (String ruleId : filterManager.getRulesToSkipList()) {
-                    for (CvRule cvRuleValid : this.getCvRulesValid()) {
-                        if (cvRuleValid.getId().equals(ruleId)) {
-                            toRemove.add(cvRuleValid);
-                        }
-                    }
-                    
+                filterManager.getRulesToSkipList().stream().map((ruleId) -> {
+                    this.getCvRulesValid().stream().filter((cvRuleValid) -> (cvRuleValid.getId().equals(ruleId))).forEach((cvRuleValid) -> {
+                        toRemove.add(cvRuleValid);
+                    });
+                    return ruleId;                    
+                }).map((ruleId) -> {
                     this.validCvRules.remove(ruleId);
+                    return ruleId;
+                }).map((ruleId) -> {
                     this.invalidCvRules.remove(ruleId);
+                    return ruleId;
+                }).forEach((ruleId) -> {
                     this.notCheckedCvRules.add(ruleId);
-                }
+                });
                 
-                for (CvRule cvRule : toRemove) {
+                toRemove.stream().map((cvRule) -> {
                     this.getCvRulesValid().remove(cvRule);
+                    return cvRule;
+                }).forEach((cvRule) -> {
                     this.getCvRulesNotChecked().add(cvRule);
-                }
+                });
                 
                 // look in valid XPath rules
                 toRemove.clear();
-                for (String ruleId : filterManager.getRulesToSkipList()) {
-                    for (CvRule cvRuleValidXpath : this.getCvRulesValidXpath()) {
-                        if (cvRuleValidXpath.getId().equals(ruleId)) {
-                            toRemove.add(cvRuleValidXpath);
-                        }
-                    }
-                }
+                filterManager.getRulesToSkipList().stream().forEach((ruleId) -> {
+                    this.getCvRulesValidXpath().stream().filter((cvRuleValidXpath) -> (cvRuleValidXpath.getId().equals(ruleId))).forEach((cvRuleValidXpath) -> {
+                        toRemove.add(cvRuleValidXpath);
+                    });
+                });
                 
-                for (CvRule cvRule : toRemove) {
+                toRemove.stream().map((cvRule) -> {
                     this.getCvRulesValidXpath().remove(cvRule);
+                    return cvRule;
+                }).map((cvRule) -> {
                     this.getCvRulesNotChecked().add(cvRule);
-                    
+                    return cvRule;                    
+                }).map((cvRule) -> {
                     this.validCvRules.remove(cvRule.getId());
+                    return cvRule;
+                }).map((cvRule) -> {
                     this.invalidCvRules.remove(cvRule.getId());
+                    return cvRule;
+                }).forEach((cvRule) -> {
                     this.notCheckedCvRules.add(cvRule.getId());
-                }
+                });
             }
         }
     }
@@ -289,9 +298,9 @@ public class ExtendedValidatorReport extends ValidatorReport {
     private void printCvMappingRules(StringBuilder sb, String header, Collection<CvRule> cvMappingRules) {
         sb.append(header).append(" (").append(cvMappingRules.size()).append(")").append(NEW_LINE);
         sb.append(this.STR_DASHED_LINE).append(NEW_LINE);
-        for (Rule rule : cvMappingRules) {
+        cvMappingRules.stream().forEach((rule) -> {
             sb.append(rule.getId()).append(this.BLANK_HYPHEN_BLANK).append(rule.getName()).append(NEW_LINE);
-        }
+        });
         sb.append(NEW_LINE);
     }
 
@@ -305,9 +314,9 @@ public class ExtendedValidatorReport extends ValidatorReport {
     private void printObjectRules(StringBuilder sb, String header, Collection<ObjectRule> objRules) {
         sb.append(header).append(" (").append(objRules.size()).append(")").append(NEW_LINE);
         sb.append(this.STR_DASHED_LINE).append(NEW_LINE);
-        for (Rule rule : objRules) {
+        objRules.stream().forEach((rule) -> {
             sb.append(rule.getId()).append(this.BLANK_HYPHEN_BLANK).append(rule.getName()).append(NEW_LINE);
-        }
+        });
         sb.append(NEW_LINE);
     }
 
@@ -368,9 +377,9 @@ public class ExtendedValidatorReport extends ValidatorReport {
      * @param map 
      */
     private void addAllToMap(Collection<ObjectRule> objectRules, HashMap<String, ObjectRule> map) {
-        for (ObjectRule objectRule : objectRules) {
+        objectRules.stream().forEach((objectRule) -> {
             this.addToMap(objectRule, map);
-        }
+        });
     }
 
     /**

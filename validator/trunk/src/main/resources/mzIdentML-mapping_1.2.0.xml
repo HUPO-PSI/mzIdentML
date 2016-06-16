@@ -251,6 +251,7 @@
 			<CvTerm termAccession="MS:1001085" useTermName="false" useTerm="false" termName="protein result details" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1001060" useTermName="false" useTerm="false" termName="quality estimation method details" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         	<CvTerm termAccession="MS:1001101" useTermName="false" useTerm="false" termName="protein group or subset relationship" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+        	<CvTerm termAccession="MS:1002664" useTermName="false" useTerm="false" termName="interaction score derived from cross-linking" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
         
         <!-- added for mzIdentML 1.2 validation: -->

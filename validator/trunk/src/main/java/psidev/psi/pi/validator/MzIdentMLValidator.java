@@ -29,6 +29,7 @@ import org.xml.sax.SAXException;
 import psidev.psi.pi.rulefilter.RuleFilterManager;
 import psidev.psi.pi.validator.objectrules.AdditionalSearchParamsObjectRule;
 import psidev.psi.pi.validator.objectrules.MandatoryElementsObjectRule;
+import psidev.psi.pi.validator.objectrules.ProteinAmbiguityGroupObjectRule;
 import psidev.psi.pi.validator.objectrules.XLinkPeptideModificationObjectRule;
 import psidev.psi.pi.validator.objectrules.XLinkSIIObjectRule;
 import psidev.psi.tools.cvrReader.CvRuleReaderException;
@@ -83,7 +84,7 @@ public class MzIdentMLValidator extends Validator {
      */
     private MzIdentMLValidatorGUI gui = null;
 
-    private MessageLevel msgL = MessageLevel.DEBUG;
+    private MessageLevel msgLevel = MessageLevel.DEBUG;
     private HashMap<String, List<ValidatorMessage>> msgs = null;
 
     private URI schemaUri = null;
@@ -99,6 +100,7 @@ public class MzIdentMLValidator extends Validator {
     private int cntMultipleClearedMessages;
     private int cntXMLSchemaValidatingMessages;
     private int cntUnanticipatedCVTerms = 0;
+    private int cntXLInteractionScoringMessages = 0;
     
     /**
      * Constructor to initialise the validator with the custom ontology and cv-mapping without object rule settings.
@@ -183,7 +185,7 @@ public class MzIdentMLValidator extends Validator {
     private void resetCountersAndGUI() {
         this.resetCounters();
         this.resetAdditionalSearchParams();
-        this.resetObjectRuleMaps();
+        this.resetStaticObjectRuleMaps();
         this.setValidatorGUI(this.gui);
         this.msgs = new HashMap<>();
     }
@@ -204,10 +206,10 @@ public class MzIdentMLValidator extends Validator {
     }
 
     /**
-     * Resets the maps of the object rules.
+     * Resets the (static) maps of the object rules.
      */
-    private void resetObjectRuleMaps() {
-        
+    private void resetStaticObjectRuleMaps() {
+        ProteinAmbiguityGroupObjectRule.XL_ID_SCORE_PAIR_TO_PAGID2PDHID.clear();
     }
     
     /**
@@ -310,7 +312,7 @@ public class MzIdentMLValidator extends Validator {
      * @param level MessageLevel with the minimal message level to report.
      */
     public void setMessageReportLevel(MessageLevel level) {
-        this.msgL = level;
+        this.msgLevel = level;
     }
 
     /**
@@ -322,7 +324,7 @@ public class MzIdentMLValidator extends Validator {
      * @return the current MessageLevel.
      */
     public MessageLevel getMessageReportLevel() {
-        return this.msgL;
+        return this.msgLevel;
     }
 
     /**
@@ -444,7 +446,7 @@ public class MzIdentMLValidator extends Validator {
                 // Validate CV Mapping Rules
                 this.updateProgress("Checking internal consistency of CV rules" + this. STR_ELLIPSIS);
                 if (this.gui != null && !this.gui.skipCvRulesChecking()) {
-                    this.addMessages(this.checkCvMappingRules(), this.msgL);
+                    this.addMessages(this.checkCvMappingRules(), this.msgLevel);
                 }
             }
             catch (ValidatorException ve) {
@@ -695,7 +697,7 @@ public class MzIdentMLValidator extends Validator {
         ValidatorMessage valMessage = new ValidatorMessage(msg, MessageLevel.ERROR);
         
         this.extendedReport.addInvalidSchemaValidationMessage(msg);
-        this.addValidatorMessage("Schema Validation error", valMessage, this.msgL);
+        this.addValidatorMessage("Schema Validation error", valMessage, this.msgLevel);
     }
     
     /**
@@ -735,7 +737,7 @@ public class MzIdentMLValidator extends Validator {
                             MessageLevel.ERROR, new Context(mzMLElement.getXpath()), mandatoryObjectRule);
                         // extendedReport.objectRuleExecuted(mandatoryObjectRule, validatorMessage);
                         // this.addObjectRule(mandatoryObjectRule);
-                        this.addValidatorMessage(validatorMessage.getRule().getId(), validatorMessage, this.msgL);
+                        this.addValidatorMessage(validatorMessage.getRule().getId(), validatorMessage, this.msgLevel);
                     }
                 }
                 catch (IllegalStateException exc) {
@@ -787,6 +789,7 @@ public class MzIdentMLValidator extends Validator {
         this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationItem);
         this.checkElementObjectRule(MzIdentMLElement.ProteinDetectionList);
         this.checkElementObjectRule(MzIdentMLElement.ProteinAmbiguityGroup);
+        this.checkXLInterActionScorePairing();
 
         if (this.currentFileVersion == MzIdVersion._1_2) {
             //this.checkElementObjectRule(MzIdentMLElement.SequenceCollection);
@@ -798,6 +801,48 @@ public class MzIdentMLValidator extends Validator {
         this.LOGGER.info("Object Rule validation done in " + (System.currentTimeMillis() - startTime) + "ms.");
     }
 
+    /**
+     * Checks the pairing of the cross-linking interaction scores (only in cross-linking case).
+     */
+    private void checkXLInterActionScorePairing() {
+        if (AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch) {
+            int cnt = 0;
+            for (ImmutablePair<String, String> key: ProteinAmbiguityGroupObjectRule.XL_ID_SCORE_PAIR_TO_PAGID2PDHID.keySet()) {
+                HashMap<String, String> pagID2PDHID_Map = ProteinAmbiguityGroupObjectRule.XL_ID_SCORE_PAIR_TO_PAGID2PDHID.get(key);
+                
+                if (pagID2PDHID_Map.size() != 2) {
+                    String msgText = this.getXLInteractionScoreMsg(key, pagID2PDHID_Map);
+                    this.addValidatorMessage("XL interaction scoring " + cnt++, new ValidatorMessage(msgText, MessageLevel.ERROR), this.msgLevel);
+                    this.cntXLInteractionScoringMessages++;
+                }
+            }
+            
+            this.gui.bHasXLErrors = this.cntXLInteractionScoringMessages > 0;
+        }
+    }
+    
+    /**
+     * Gets the message text for a cross-linking interaction score message.
+     * @param key               mapping from xlInteractID to score
+     * @param pagID2PDHID_Map   mapping from the PAG-ID to the PDH-ID
+     * @return the error message
+     */
+    private String getXLInteractionScoreMsg(ImmutablePair<String, String> key, HashMap<String, String> pagID2PDHID_Map) {
+        StringBuilder strB = new StringBuilder();
+        
+        String pagIDs_pdhIDs = "";
+        String pdhID;
+        for (String pagID : pagID2PDHID_Map.keySet()) {
+            pdhID = pagID2PDHID_Map.get(pagID);
+            pagIDs_pdhIDs += "PAG: " + pagID + " and PDH: " + pdhID + TAB;
+        }                    
+        strB.append("Interaction score is not paired for XL interaction ID ");
+        strB.append(key.left).append(" and score ").append(key.right);
+        strB.append(" (has only ").append(pagID2PDHID_Map.size()).append(" entries for : ").append(pagIDs_pdhIDs);
+
+        return strB.toString();
+    }
+    
     /**
      * Applies all Cv mapping rules (except the ones for SII's).
      * Retrieve the XML snippets we want to check and validate them against the CV rules.
@@ -897,7 +942,7 @@ public class MzIdentMLValidator extends Validator {
         lock.isDone(runners.size());
         
         // now we add all the collected messages from the spectra validators to the general message list
-        this.addSyncMessages(sync_msgs, this.msgL);        
+        this.addSyncMessages(sync_msgs, this.msgLevel);        
     }
     
     /**
@@ -942,7 +987,7 @@ public class MzIdentMLValidator extends Validator {
             }
         }
         
-        this.addMessages(objectRuleResult, this.msgL);
+        this.addMessages(objectRuleResult, this.msgLevel);
     }
 
     /**
@@ -980,6 +1025,7 @@ public class MzIdentMLValidator extends Validator {
             throw new IllegalArgumentException("There are no object rules to check the object: " + objectToCheck + " at the severity level: " + this.getMessageReportLevel());
         }
         
+        this.LOGGER.debug("Total number of validation messages: " + messages.size());
         return messages;
     }
 
@@ -1035,7 +1081,7 @@ public class MzIdentMLValidator extends Validator {
             final List<ValidatorMessage> list = sync_msgs.get(key);
             
             list.stream().filter((aNewMessage) -> (aNewMessage.getLevel().isHigher(aLevel) || aNewMessage.getLevel().isSame(aLevel))).forEach((aNewMessage) -> {
-                this.addValidatorMessage(key, aNewMessage, this.msgL);
+                this.addValidatorMessage(key, aNewMessage, this.msgLevel);
             });
         });
     }
@@ -1056,16 +1102,15 @@ public class MzIdentMLValidator extends Validator {
 
     /**
      * Adds a collection of messages.
-     * @param aNewMessages
-     * @param aLevel 
+     * @param aNewMessages  the collection of messages
+     * @param aLevel        error level of the messages
      */
     private void addMessages(Collection<ValidatorMessage> aNewMessages, MessageLevel aLevel) {
-        aNewMessages.stream().filter((aNewMessage) -> (aNewMessage.getLevel().isHigher(aLevel) || aNewMessage.getLevel().isSame(aLevel))).forEach((aNewMessage) -> {
+        aNewMessages.stream().filter((aNewMessage) -> (aNewMessage.getLevel().isHigher(aLevel) || aNewMessage.getLevel().isSame(aLevel))).forEach((ValidatorMessage aNewMessage) -> {
             if (aNewMessage.getRule() != null) {
-                this.addValidatorMessage(aNewMessage.getRule().getId(), aNewMessage, this.msgL);
-            }
-            else {
-                this.addValidatorMessage("unknown", aNewMessage, this.msgL);
+                MzIdentMLValidator.this.addValidatorMessage(aNewMessage.getRule().getId(), aNewMessage, MzIdentMLValidator.this.msgLevel);
+            } else {
+                MzIdentMLValidator.this.addValidatorMessage("unknown", aNewMessage, MzIdentMLValidator.this.msgLevel);
             }
         });
     }
@@ -1095,7 +1140,7 @@ public class MzIdentMLValidator extends Validator {
                         if (rule != null) {
                             ruleId = rule.getId();
                         }
-                        this.addValidatorMessage(ruleId, validatorMessage, this.msgL);
+                        this.addValidatorMessage(ruleId, validatorMessage, this.msgLevel);
                     });
                 }
 
@@ -1165,7 +1210,7 @@ public class MzIdentMLValidator extends Validator {
                 toValidate.add(next);
                 try {
                     final Collection<ValidatorMessage> cvMappingResult = this.checkCvMapping(toValidate, element.getXpath());
-                    this.addMessages(cvMappingResult, this.msgL);
+                    this.addMessages(cvMappingResult, this.msgLevel);
                 }
                 catch (IllegalArgumentException e) {
                     this.LOGGER.debug(e.getMessage());
@@ -1179,7 +1224,7 @@ public class MzIdentMLValidator extends Validator {
             }
             try {
                 final Collection<ValidatorMessage> cvMappingResult = this.checkCvMapping(toValidate, element.getXpath());
-                this.addMessages(cvMappingResult, this.msgL);
+                this.addMessages(cvMappingResult, this.msgLevel);
             }
             catch (IllegalArgumentException e) {
                 this.LOGGER.info(e.getMessage());
@@ -1189,7 +1234,7 @@ public class MzIdentMLValidator extends Validator {
             // this is because the element has no XPath, and has to be validated in another way
             this.checkCvMapping(this.unmarshaller.unmarshal(element), null);
         }
-        catch (NumberFormatException e) {
+        catch (NumberFormatException | IllegalStateException e) {
             e.printStackTrace(System.err);
         }
     }
@@ -1234,7 +1279,9 @@ public class MzIdentMLValidator extends Validator {
         this.cntMultipleClearedMessages = 0;
         this.cntXMLSchemaValidatingMessages = 0;
         this.cntUnanticipatedCVTerms = 0;
+        this.cntXLInteractionScoringMessages = 0;
         this.gui.cntDoubledUnanticipatedCVTermMessages = 0;
+        this.gui.bHasXLErrors = false;
     }
     
     /**
@@ -1260,7 +1307,7 @@ public class MzIdentMLValidator extends Validator {
         }
 
         // reset the message reporting level to the default
-        this.msgL = MessageLevel.DEBUG;
+        this.msgLevel = MessageLevel.DEBUG;
         // reset the unmarshaller
         this.unmarshaller = null;
         // reset the progress counter
@@ -1404,7 +1451,11 @@ public class MzIdentMLValidator extends Validator {
         if (this.gui.jCheckBoxShowUnanticipatedCVTerms.isSelected()) {
             this.addPossiblyColouredRow(sb, "Unanticipated CV terms:", this.cntUnanticipatedCVTerms, this.gui.getUnanticipatedCVColor(this.cntUnanticipatedCVTerms));
         }
-        messageNumber = noOfInvalidCvRules + noOfInvalidObjectRules + this.cntUnanticipatedCVTerms + this.extendedReport.getInvalidSchemaValidation().size();
+        if (AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch) {
+            this.addPossiblyColouredRow(sb, "XL interaction scoring messages:", this.cntXLInteractionScoringMessages, this.gui.getXLInteractionScoreColor(this.cntXLInteractionScoringMessages));
+        }
+
+        messageNumber = noOfInvalidCvRules + noOfInvalidObjectRules + this.cntUnanticipatedCVTerms + this.cntXLInteractionScoringMessages + this.extendedReport.getInvalidSchemaValidation().size();
         this.addPossiblyColouredRow(sb, this.STR_NOT_MATCHING_MSGS_RECV, messageNumber, this.gui.getInvalidMsgColor());
         
         this.addConditionalTableRow(sb, "Messages not reported since they occur more than " + this.gui.jSpinner.getValue() + " times: ", this.cntMultipleClearedMessages + this.gui.cntDoubledUnanticipatedCVTermMessages, this.gui.COLOR_BLACK);
@@ -1461,9 +1512,12 @@ public class MzIdentMLValidator extends Validator {
         if (this.gui.jCheckBoxShowUnanticipatedCVTerms.isSelected()) {
             sb.append("Unanticipated CV terms: ").append(this.cntUnanticipatedCVTerms).append(NEW_LINE);
         }
+        if (AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch) {
+            sb.append("XL interaction scoring messages: ").append(this.cntXLInteractionScoringMessages).append(NEW_LINE);
+        }
         
         // Total number of rules
-        messageNumber = noOfInvalidCvRules + noOfInvalidObjectRules + this.cntUnanticipatedCVTerms + this.extendedReport.getInvalidSchemaValidation().size();
+        messageNumber = noOfInvalidCvRules + noOfInvalidObjectRules + this.cntUnanticipatedCVTerms + this.cntXLInteractionScoringMessages + this.extendedReport.getInvalidSchemaValidation().size();
         sb.append(this.STR_NOT_MATCHING_MSGS_RECV).append(messageNumber);
         
         if (this.cntMultipleClearedMessages > 0) {
@@ -1720,19 +1774,19 @@ public class MzIdentMLValidator extends Validator {
         
         HashMap<ImmutablePair, Integer> msgID_msgLevelMap = new HashMap<>();
         
-        MessageLevel msgLevel;
+        MessageLevel locMsgLevel;
         final Collection<ValidatorMessage> clearedMultipleMessages = new ArrayList<>();
         ImmutablePair<String, MessageLevel> idLevelPair;
         int cnt = 1;
         for (ValidatorMessage msg: aMessages) {
             if (msg != null) { 
-                msgLevel = msg.getLevel();
+                locMsgLevel = msg.getLevel();
                 
                 if (msg.getRule() != null) {
-                    idLevelPair = new ImmutablePair<>(msg.getRule().getId(), msgLevel);
+                    idLevelPair = new ImmutablePair<>(msg.getRule().getId(), locMsgLevel);
                 }
                 else {
-                    idLevelPair = new ImmutablePair<>(String.valueOf(cnt++), msgLevel);
+                    idLevelPair = new ImmutablePair<>(String.valueOf(cnt++), locMsgLevel);
                 }
                 
                 if (msgID_msgLevelMap.containsKey(idLevelPair)) {
@@ -1875,10 +1929,10 @@ public class MzIdentMLValidator extends Validator {
             while ((element = this.iterat.next()) != null) {
                 try {
                     // check cvMapping rules
-                    addMessages(checkCvMapping(element, MzIdentMLElement.SpectrumIdentificationItem.getXpath()), msgL); // hard coded
+                    addMessages(checkCvMapping(element, MzIdentMLElement.SpectrumIdentificationItem.getXpath()), msgLevel); // hard coded
                     
                     // check object rules
-                    addMessages(validate(element), msgL);
+                    addMessages(validate(element), msgLevel);
                 }
                 catch (ValidatorException ve) {
                     ve.printStackTrace(System.err);

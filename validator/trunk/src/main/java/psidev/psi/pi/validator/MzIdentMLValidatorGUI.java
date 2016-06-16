@@ -90,6 +90,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     protected RuleFilterManager ruleFilterManager;
     private String lastSelectedPath = "";
     private boolean bHasCvErrors;
+    public boolean bHasXLErrors;
     private boolean bHasCvWarnings;
     private boolean bHasObjErrors;
     private boolean bHasObjWarnings;
@@ -1335,11 +1336,24 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     }
     
     /**
+     * Gets the overall color for cross-linking interaction score messages.
+     * @param noOfXLInteractionScoreMsgs number ofcross-linking interaction score messages
+     * @return String the color to use for the cross-linking interaction score messages.
+     */
+    public String getXLInteractionScoreColor(int noOfXLInteractionScoreMsgs) {
+        if (noOfXLInteractionScoreMsgs > 0) {
+            return this.COLOR_RED;
+        }
+        
+        return this.COLOR_GREEN;
+    }
+    
+    /**
      * Gets the overall color for the invalid messages.
      * @return String the color to use for the invalid messages.
      */
     public String getInvalidMsgColor() {
-        if (this.bHasCvErrors || this.bHasObjErrors) {
+        if (this.bHasCvErrors || this.bHasObjErrors || this.bHasXLErrors) {
             return this.COLOR_RED;
         }
         else if (this.bHasCvWarnings || this.bHasObjWarnings) {

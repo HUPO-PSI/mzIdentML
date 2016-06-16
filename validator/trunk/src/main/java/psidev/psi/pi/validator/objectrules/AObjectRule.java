@@ -148,6 +148,13 @@ public abstract class AObjectRule<T extends Object> extends ObjectRule<T> {
         }
     };
     
+    private final HashMap<String, String> childOf1002664= new HashMap<String, String>(){
+        {
+            put("MS:1002676", "protein-pair-level global FDR");
+            put("MS:1002677", "residue-pair-level global FDR");
+        }
+    };
+    
     /**
      * Constructor.
      */
@@ -183,24 +190,27 @@ D     */
         
         /*
         try {
-            Query olsQuery = new QueryServiceLocator().getOntologyQuery();
-            @SuppressWarnings("unchecked")
-            HashMap<String, String> terms = olsQuery.getTermChildren(termID, ontology, -1, null);
-            if (terms != null){
-                retMap.putAll(terms);
-            }
+        Query olsQuery = new QueryServiceLocator().getOntologyQuery();
+        @SuppressWarnings("unchecked")
+        HashMap<String, String> terms = olsQuery.getTermChildren(termID, ontology, -1, null);
+        if (terms != null){
+        retMap.putAll(terms);
+        }
         }
         catch (ServiceException | RemoteException ex) {
-            ex.printStackTrace(System.err);
+        ex.printStackTrace(System.err);
         }
-        */
-        
+         */
         // Quick and dirty hardcoded hack - replace later by OLS REST API calls
-        if (termID.equals("MS:1001143")) {
-            return this.childOf1001143;
-        }
-        else if (termID.equals("MS:1002358")) {
-            return this.childOf1002358;
+        switch (termID) {
+            case "MS:1001143":
+                return this.childOf1001143;
+            case "MS:1002358":
+                return this.childOf1002358;
+            case "MS:1002664":
+                return this.childOf1002664;
+            default:
+                break;
         }
      
         // TODO: Use the new OLS REST API
