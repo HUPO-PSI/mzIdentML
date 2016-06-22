@@ -93,6 +93,6 @@ Several example of the format can be download from the next link [Examples](http
 
 21- [mzID package](http://www.bioconductor.org/packages/release/bioc/html/mzID.html): R package available through Bioconductor (**IMPORT**)
 
-22- [PeptideShaker](https://code.google.com/p/peptide-shaker/): Java standalone tool for the analysis and post-processing of MS proteomics experiments (**IMPORT AND EXPORT**)
+22- [PeptideShaker](http://compomics.github.io/projects/peptide-shaker.html): Java standalone tool for the analysis and post-processing of MS proteomics experiments (**IMPORT AND EXPORT**)
 
 23- [PIA](https://github.com/mpc-bioinformatics/pia): PIA is a toolbox for MS based protein inference and identification analysis. [PMID: <span>25938255</span>](http://www.ncbi.nlm.nih.gov/pubmed?term=25938255). ( **IMPORT AND EXPORT**)
