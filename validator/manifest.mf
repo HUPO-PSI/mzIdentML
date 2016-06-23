@@ -4,17 +4,18 @@ X-COMMENT: Main-Class will be added automatically by build
 Class-Path: lib/axis-1.4.jar lib/axis-jaxrpc-1.4.jar lib/axis-saaj-1.4
  .jar lib/axis-wsdl4j-1.5.1.jar lib/bbop-2.0.jar lib/commons-beanutils
  -1.9.2.jar lib/commons-collections-3.2.2.jar lib/commons-collections4
- -4.1.jar lib/commons-discovery-0.5.jar lib/commons-io-2.4.jar lib/com
- mons-jxpath-1.3.jar lib/commons-lang-2.6.jar lib/commons-lang3-3.4.ja
- r lib/commons-logging-1.1.1.jar lib/commons-logging-1.1.3.jar lib/cpd
- etector_1.0.10.jar lib/cv-rule-reader-2.0.5.jar lib/fastutil-7.0.11.j
- ar lib/jargs-1.0.jar lib/jaxb-core-2.2.11.jar lib/jmzidentml-1.1.9.ja
- r lib/jmzidentml-1.2.4.jar lib/log4j-1.2.17.jar lib/object-rule-reade
- r-2.0.5.jar lib/obo-2.0.jar lib/oboedit-1.101.jar lib/ols-client-1.18
- .jar lib/ols-core-1.19.jar lib/ontology-config-reader-2.0.5.jar lib/o
- ntology-manager-4.jar lib/org.geneontology-1.101.jar lib/oscache-2.4.
- 1.jar lib/proteomics-common-1.6.jar lib/slf4j-api-1.7.21 lib/validato
- r-2.0.5.jar lib/wsdl4j-1.6.3.jar lib/xercesImpl-2.11.0 lib/xml-apis.j
- ar lib/xxindex-0.14.jar
+ -4.1.jar lib/commons-compress-1.11.jar lib/commons-discovery-0.5.jar 
+ lib/commons-io-2.4.jar lib/commons-jxpath-1.3.jar lib/commons-lang-2.
+ 6.jar lib/commons-lang3-3.4.jar lib/commons-logging-1.1.1.jar lib/com
+ mons-logging-1.1.3.jar lib/cpdetector_1.0.10.jar lib/cv-rule-reader-2
+ .0.5.jar lib/fastutil-7.0.12.jar lib/jargs-1.0.jar lib/jaxb-core-2.2.
+ 11.jar lib/jmzidentml-1.1.9.jar lib/jmzidentml-1.2.4.jar lib/log4j-1.
+ 2.17.jar lib/object-rule-reader-2.0.5.jar lib/obo-2.0.jar lib/oboedit
+ -1.101.jar lib/ols-client-1.18.jar lib/ols-core-1.19.jar lib/ontology
+ -config-reader-2.0.5.jar lib/ontology-manager-4.jar lib/org.geneontol
+ ogy-1.101.jar lib/oscache-2.4.1.jar lib/proteomics-common-1.6.jar lib
+ /slf4j-api-1.7.21 lib/slf4j-log4j12-1.7.21.jar lib/validator-2.0.5.ja
+ r lib/wsdl4j-1.6.3.jar lib/xercesImpl-2.11.0 lib/xml-apis.jar lib/xxi
+ ndex-0.14.jar
 Created-By: 1.7.0_40-b43 (Oracle Corporation)
 Main-Class: psidev.psi.pi.validator.MzIdentMLValidatorGUI

@@ -72,6 +72,11 @@ public class MzIdentMLValidator extends Validator {
     private static int progressSteps = 55;
     private static final int EXIT_FAILURE  = -1;
 
+    private final String STR_FILE_EXT_GZ  = ".gz";
+    private final String STR_FILE_EXT_ZIP = ".zip";
+    private final String STR_FILE_EXT_7Z  = ".7z";
+    private final String STR_EMPTY        = "";
+    
     /**
      * Enums.
      */
@@ -382,6 +387,34 @@ public class MzIdentMLValidator extends Validator {
         
         return this.extendedReport;
     }
+    
+    /**
+     * 
+     * @param xmlFile the mzIdentML file to validate.
+     * @param unzippedPath  the path to the unzipped file
+     * @param extension the file extension (.gzip or .zip)
+     * @return the unzipped XML file
+     */
+    private File unzipXMLFile(File xmlFile, String unzippedPath, String extension) {
+        File unzippedFile = new File(unzippedPath);
+        switch (extension) {
+            case STR_FILE_EXT_GZ:
+                ArchiveUnpacker.unGzipFile(xmlFile.getPath(), unzippedFile.getPath());
+                break;
+            case STR_FILE_EXT_ZIP:
+                ArchiveUnpacker.unZipFile(xmlFile.getPath(), unzippedFile.getPath());
+                break;
+            case STR_FILE_EXT_7Z:
+                ArchiveUnpacker.decompress7zFile(xmlFile.getPath(), unzippedFile.getPath());
+                break;
+            default:
+                break;
+        }
+        
+        xmlFile = unzippedFile;
+        
+        return xmlFile;
+    }
 
     /**
      * Performs the actual validation, including schema validation (if not
@@ -392,11 +425,15 @@ public class MzIdentMLValidator extends Validator {
      * @return a Collection of ValidatorMessages documenting the validation result.
      */
     public Collection<ValidatorMessage> startValidation(File xmlFile) {
-        if (xmlFile.getName().endsWith(".gz")) {
-            String unzippedPath = xmlFile.getPath().replace(".gz", "");
-            File unzippedFile = new File(unzippedPath);
-            ArchiveUnpacker.gunzipFile(xmlFile.getPath(), unzippedFile.getPath());
-            xmlFile = unzippedFile;
+        String unzippedPath;
+        
+        if (xmlFile.getName().endsWith(this.STR_FILE_EXT_GZ)) {
+            unzippedPath = xmlFile.getPath().replace(this.STR_FILE_EXT_GZ, this.STR_EMPTY);
+            xmlFile = this.unzipXMLFile(xmlFile, unzippedPath, this.STR_FILE_EXT_GZ);
+        }
+        else if (xmlFile.getName().endsWith(this.STR_FILE_EXT_ZIP)) {
+            unzippedPath = xmlFile.getPath().replace(this.STR_FILE_EXT_ZIP, this.STR_EMPTY);
+            xmlFile = this.unzipXMLFile(xmlFile, unzippedPath, this.STR_FILE_EXT_ZIP);
         }
         
         Collection<ValidatorMessage> locMsgs = this.makeBasicXMLFileChecks(xmlFile);

@@ -22,6 +22,7 @@
         <jar href="lib/commons-beanutils-1.9.2.jar"/>
         <jar href="lib/commons-collections-3.2.2.jar"/>
         <jar href="lib/commons-collections4-4.1.jar"/>
+        <jar href="lib/commons-compress-1-11.jar"/>
         <jar href="lib/commons-io-2.4.jar"/>
         <jar href="lib/commons-jxpath-1.3.jar"/>
         <jar href="lib/commons-lang-2.6.jar"/>
@@ -30,7 +31,7 @@
         <jar href="lib/commons-logging-1.2.jar"/>
         <jar href="lib/cpdetector_1.0.10.jar"/>
         <jar href="lib/cv-rule-reader-2.0.5.jar"/>
-        <jar href="lib/fastutil-7.0.11.jar"/>
+        <jar href="lib/fastutil-7.0.12.jar"/>
         <jar href="lib/jmzidentml-1.1.9.jar"/>
         <jar href="lib/jmzidentml-1.2.4.jar"/>
         <jar href="lib/log4j-1.2.17.jar"/>
@@ -44,6 +45,7 @@
         <jar href="lib/oscache-2.4.1.jar"/>
         <jar href="lib/proteomics-common-1.6.jar"/>
         <jar href="lib/slf4j-api-1.7.21.jar"/>
+        <jar href="lib/slf4j-log4j12-1.7.21.jar"/>
         <jar href="lib/validator-2.0.5.jar"/>
         <jar href="lib/xercesImpl-2.11.0.jar"/>
         <jar href="lib/xml-apis.jar"/>

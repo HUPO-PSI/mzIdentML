@@ -70,7 +70,9 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     private final int DEFAULT_MAX_NUMBER_TO_REPORT_SAME_MESSAGE = 1;
     private static final int EXIT_SUCCESS = 0;
     public final String STR_FILE_EXT_MZID_GZ    = ".mzid.gz";
+    public final String STR_FILE_EXT_MZID_ZIP   = ".mzid.zip";
     public final String STR_FILE_EXT_MZID       = ".mzid";
+    public final String STR_FILE_EXT_7Z         = ".7z";
     public final String STR_FILE_EXT_XML        = ".xml";
     public final String STR_MAPPING = "mapping";
     public final String STR_OBJECT  = "object";
@@ -1453,6 +1455,8 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                 if (f.isDirectory()
                         || f.getName().toLowerCase().endsWith(STR_FILE_EXT_MZID)
                         || f.getName().toLowerCase().endsWith(STR_FILE_EXT_MZID_GZ)
+                        || f.getName().toLowerCase().endsWith(STR_FILE_EXT_MZID_ZIP)
+                        || f.getName().toLowerCase().endsWith(STR_FILE_EXT_7Z)
                         || f.getName().toLowerCase().endsWith(STR_FILE_EXT_XML)) {
                     result = true;
                 }
