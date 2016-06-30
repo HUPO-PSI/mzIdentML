@@ -239,7 +239,7 @@
         
         <CvMappingRule id="ProteinAmbiguityGroupProteinDetectionHypothesis_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/proteinDetectionHypothesis/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/proteinDetectionHypothesis" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001153" useTermName="false" useTerm="false" termName="search engine specific score" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
-			<CvTerm termAccession="MS:1001085" useTermName="false" useTerm="false" termName="protein result details" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1001085" useTermName="false" useTerm="false" termName="protein-level identification attribute" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1001060" useTermName="false" useTerm="false" termName="quality estimation method details" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
         

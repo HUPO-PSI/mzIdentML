@@ -1,5 +1,5 @@
 echo off
 
-java.exe %JAVA_OPTS% -cp .\lib -jar .\mzIdentMLValidator-1.4.19-SNAPSHOT.jar
+java.exe %JAVA_OPTS% -cp .\lib -jar .\mzIdentMLValidator-1.4.20-SNAPSHOT.jar
 
 pause
