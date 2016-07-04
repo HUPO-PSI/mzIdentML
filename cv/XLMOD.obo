@@ -1,251 +1,458 @@
 format-version: 1.2
-data-version: releases/2016-06-10
+data-version: releases/2016-07-01
 ontology: xl
-property_value: hasSubset "reactionSites \"reactionSites\""
-property_value: hasSubset "monoisotopicMass \"monoisotopicMass\""
-property_value: hasSubset "specificities \"specificities\""
-
-date: 10:06:2016 11:01
+date: 04:07:2016 18:17
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: XL
 remark: namespace: XL
 remark: version: 1.0.0
-remark: release date: 2016-06-10
+remark: release date: 2016-07-04
 remark: coverage: cross-linking reagents
 remark: creator: Lutz Fischer <lfischer <-at-> staffmail.ed.ac.uk>
 remark: creator: Gerhard Mayer <mayerg97 <-at-> rub.de>
 remark: This work is licensed under the Creative Commons Attribution 3.0 Unported License.
 remark: To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
+[Typedef]
+id: part_of
+name: part_of
+is_transitive: true
+
+[Typedef]
+id: is_labelled
+name: is_labelled
+
+[Typedef]
+id: is_partially_reacted
+name: is_partially_reacted
+
+[Typedef]
+id: has_property
+name: has_property
+
+[Term]
+id: XL:00000
+name: Proteomics Standards Initiative cross-linking controlled vocabulary
+def: "Proteomics Standards Initiative cross-linking controlled vocabulary." [PSI:XL]
+
 [Term]
 id: XL:00001
-name: BS3
-def: "Bis(sulfosuccinimidyl)suberate." [PSI:XL]
-reactionSites: 2
-monoisotopicMass: 138.06807961
-specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+name: cross-linking entity
+def: "Entity relevant to the domain of cross-linking in proteomics." [PSI:XL]
+relationship: part_of XL:00000 ! Proteomics Standards Initiative cross-linking controlled vocabulary
 
 [Term]
 id: XL:00002
-name: DSS
-def: "Disuccinimidyl suberate." [PSI:XL]
-reactionSites: 2
-monoisotopicMass: 138.06807961
-specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+name: cross-linker related PTM
+def: "A cross-linker reagent with one reactive group." [PSI:XL]
+relationship: part_of XL:00000 ! Proteomics Standards Initiative cross-linking controlled vocabulary
 
 [Term]
 id: XL:00003
-name: DSS:d4
-def: "Deuterium-labelled disuccinimidyl 2,2,7,7-suberate." [PSI:XL]
-reactionSites: 2
-monoisotopicMass: 142.093186586
-specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+name: label transfer reagent
+def: "A cross-linker acting as label (e.g. biotin) transfer reagent." [PSI:XL]
+relationship: part_of XL:00000 ! Proteomics Standards Initiative cross-linking controlled vocabulary
 
 [Term]
 id: XL:00004
-name: DSS:d12
-def: "Deuterium-labelled disuccinimidyl 2,2,3,3,4,4,5,5,6,6,7,7-suberate." [PSI:XL]
-reactionSites: 2
-monoisotopicMass: 150.143400538
-specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+name: cross-linker
+def: "Compound that can link two or more polymer chains." [PSI:XL]
+is_a: XL:00001 ! cross-linking entity
 
 [Term]
 id: XL:00005
-name: BS3:d4
-def: "Deuterium-labelled (bis(sulfosuccinimidyl) 2,2,7,7-suberate-d4)." [PSI:XL]
-reactionSites: 2
-monoisotopicMass: 142.093186586
-specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+name: homofunctional cross-linker
+def: "A cross-linker reagent with identical reactive groups at each end of the spacer arm." [PSI:XL]
+is_a: XL:00004 ! cross-linker
 
 [Term]
 id: XL:00006
-name: BS2G
-def: "Bis(sulfosuccinimidyl) glutarat." [PSI:XL]
-reactionSites: 2
-monoisotopicMass: 96.0211294
-specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+name: heterofunctional cross-linker
+def: "A cross-linker reagent with at least two different reactive groups." [PSI:XL]
+is_a: XL:00004 ! cross-linker
 
 [Term]
 id: XL:00007
-name: DSG
-def: "Disuccinimidyl glutarate." [PSI:XL]
-reactionSites: 2
-monoisotopicMass: 96.0211294
-specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+name: photoreactive cross-linker
+def: "A cross-linker reagent that becomes reactive when exposed to ultraviolet or visible light." [PSI:XL]
+synonym: "non-selective cross-linker" EXACT [PSI:XL]
+is_a: XL:00004 ! cross-linker
 
 [Term]
 id: XL:00008
-name: DSG:d4
-def: "Deuterium-labelled disuccinimidyl 2,2,4,4-glutarate." [PSI:XL]
-reactionSites: 2
-monoisotopicMass: 146.118293562
-specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
-
-[Term]
-id: XL:00009
-name: BS2G:d4
-def: "Deuterium-labelled bis(sulfosuccinimidyl) 2,2,4,4-glutarate." [PSI:XL]
-reactionSites: 2
-monoisotopicMass: 100.046236376
-specificities: (K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)
+name: zero-length cross-linker
+def: "A cross-linker reagent causing direct conjugation without becoming part of the final cross-link between the target molecules." [PSI:XL]
+is_a: XL:00004 ! cross-linker
 
 [Term]
 id: XL:00010
-name: Disulfide
-def: "Disulfde." [PSI:XL]
-reactionSites: 2
-monoisotopicMass: -2.01565007
-specificities: (C)&(C)
+name: deuterium-labelled
+def: "Indicates that a cross-linker is deuterium-labelled." [PSI:XL]
+relationship: part_of XL:00001 ! cross-linking entity
 
 [Term]
 id: XL:00011
+name: hydrolyzed
+def: "Indicates that a cross-linker is hydrolyzed." [PSI:XL]
+relationship: part_of XL:00001 ! cross-linking entity
+
+[Term]
+id: XL:00012
+name: amidated
+def: "Indicates that a cross-linker is amidated." [PSI:XL]
+relationship: part_of XL:00001 ! cross-linking entity
+
+[Term]
+id: XL:00013
+name: membrane permeable
+def: "Indicates that a cross-linker is membrane permeable." [PSI:XL]
+relationship: part_of XL:00001 ! cross-linking entity
+
+[Term]
+id: XL:00014
+name: water soluble
+def: "Indicates that a cross-linker is water soluble." [PSI:XL]
+relationship: part_of XL:00001 ! cross-linking entity
+
+[Term]
+id: XL:00101
+name: BS3
+def: "Bis(sulfosuccinimidyl)suberate." [PSI:XL, CAS:82436-77-9, PubChem_Compound:6097991]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "138.06807961" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: has_property XL:00014 ! water soluble
+
+[Term]
+id: XL:00102
+name: DSS
+def: "Disuccinimidyl suberate." [PSI:XL, CAS:68528-80-3, PubChem_Compound:100658]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "138.06807961" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: has_property XL:00013 ! membrane_permeable
+
+[Term]
+id: XL:00103
+name: DSS-d4
+def: "Deuterium-labelled disuccinimidyl 2,2,7,7-suberate." [PSI:XL, PubChem_Compound:91757798]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "142.093186586" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_labelled XL:00010 ! deuterium-labelled
+
+[Term]
+id: XL:00104
+name: DSS-d12
+def: "Deuterium-labelled disuccinimidyl 2,2,3,3,4,4,5,5,6,6,7,7-suberate." [PSI:XL]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "150.143400538" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_labelled XL:00010 ! deuterium-labelled
+
+[Term]
+id: XL:00105
+name: BS3-d4
+def: "Deuterium-labelled (bis(sulfosuccinimidyl) 2,2,7,7-suberate-d4)." [PSI:XL, PubChem_Compound:91757801]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "142.093186586" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_labelled XL:00010 ! deuterium-labelled
+
+[Term]
+id: XL:00106
+name: BS2G
+def: "Bis(sulfosuccinimidyl) glutarat." [PSI:XL, PubChem_Compound:91757794]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "96.0211294" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "7.7" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+
+[Term]
+id: XL:00107
+name: DSG
+def: "Disuccinimidyl glutarate." [PSI:XL, CAS:79642-50-5, PubChem_Compound:4432628]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "96.0211294" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "7.7" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: has_property XL:00013 ! membrane_permeable
+
+[Term]
+id: XL:00108
+name: DSG-d4
+def: "Deuterium-labelled disuccinimidyl 2,2,4,4-glutarate." [PSI:XL, PubChem_Compound:91757797]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "146.118293562" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "7.7" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_labelled XL:00010 ! deuterium-labelled
+
+[Term]
+id: XL:00109
+name: BS2G-d4
+def: "Deuterium-labelled bis(sulfosuccinimidyl) 2,2,4,4-glutarate." [PSI:XL, PubChem_Compound:91757799]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "100.046236376" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)&(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "7.7" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_labelled XL:00010 ! deuterium-labelled
+
+[Term]
+id: XL:00110
+name: Disulfide
+def: "Disulfide." [PSI:XL]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "-2.01565007" xsd:double
+property_value: specificities: "(C)&(C)" xsd:string
+is_a: XL:00005 ! homofunctional cross-linker
+
+[Term]
+id: XL:00111
 name: EDC
-def: "1-ethyl-3-(3-dimethylaminopropyl)carbodiimide hydrochloride." [PSI:XL]
-reactionSites: 2
-monoisotopicMass: -18.01056027
-specificities: (K,S,T,Y,Protein N-term)&(E,D,Protein C-term)
+def: "1-ethyl-3-(3-dimethylaminopropyl)carbodiimide hydrochloride." [PSI:XL, CAS:25952-53-8, PubChem_Compound:2723939]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "-18.01056027" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)&(E,D,Protein C-term)" xsd:string
+is_a: XL:00008 ! zero-length cross-linker
+
+[Term]
+id: XL:00112
+name: BDP-NHP
+def: "Biotin Aspartate Proline n-hydroxyphthalamide." [PSI:XL]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "1241.469925525" xsd:double
+property_value: specificities: "(K,Protein N-term)&(K,Protein N-term)" xsd:string
+is_a: XL:00003 ! label transfer agent
 
 [Term]
 id: XL:01000
-name: BS3!Hydrolyzed
+name: hydrolyzed BS3
 def: "Hydrolyzed bis(sulfosuccinimidyl)suberate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 156.07864431
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "156.07864431" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00011 ! hydrolyzed
 
 [Term]
 id: XL:01001
-name: BS3!Amidated
+name: amidated BS3
 def: "Amidated bis(sulfosuccinimidyl)suberate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 155.094628715
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "155.094628715" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00012 ! amidated
 
 [Term]
 id: XL:01002
-name: DSS!Hydrolyzed
+name: hydrolyzed DSS
 def: "Hydrolyzed disuccinimidyl suberate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 156.07864431
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "156.07864431" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00011 ! hydrolyzed
 
 [Term]
 id: XL:01003
-name: DSS!Amidated
+name: amidated DSS
 def: "Amidated disuccinimidyl suberate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 155.094628715
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "155.094628715" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00012 ! amidated
 
 [Term]
 id: XL:01004
-name: DSS:d4!Hydrolyzed
+name: hydrolyzed DSS-d4
 def: "Deuterium-labelled hydrolyzed disuccinimidyl 2,2,7,7-suberate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 160.1037416836
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "160.1037416836" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00011 ! hydrolyzed
 
 [Term]
 id: XL:01005
-name: DSS:d4!Amidated
+name: amidated DSS-d4
 def: "Deuterium-labelled amidated disuccinimidyl 2,2,7,7-suberate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 159.1197260886
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "159.1197260886" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00012 ! amidated
+relationship: is_labelled XL:00010 ! deuterium-labelled
 
 [Term]
 id: XL:01006
-name: DSS:d12!Hydrolyzed
+name: hydrolyzed DSS-d12
 def: "Deuterium-labelled hydrolyzed disuccinimidyl 2,2,3,3,4,4,5,5,6,6,7,7-suberate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 168.153965238
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "168.153965238" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00011 ! hydrolyzed
+relationship: is_labelled XL:00010 ! deuterium-labelled
 
 [Term]
 id: XL:01007
-name: DSS:d12!Amidated
+name: amidated DSS-d12
 def: "Deuterium-labelled amidated disuccinimidyl 2,2,3,3,4,4,5,5,6,6,7,7-suberate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 167.169949643
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "167.169949643" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00012 ! amidated
+relationship: is_labelled XL:00010 ! deuterium-labelled
 
 [Term]
 id: XL:01008
-name: BS3:d4!Hydrolyzed
+name: hydrolyzed BS3-d4
 def: "Deuterium-labelled hydrolyzed bis(sulfosuccinimidyl) 2,2,7,7-suberate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 160.103751286
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "160.103751286" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00011 ! hydrolyzed
+relationship: is_labelled XL:00010 ! deuterium-labelled
 
 [Term]
 id: XL:01009
-name: BS3:d4!Amidated
+name: amidated BS3-d4
 def: "Deuterium-labelled amidated bis(sulfosuccinimidyl) 2,2,7,7-suberate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 159.119735691
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "159.119735691" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "11.4" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00012 ! amidated
+relationship: is_labelled XL:00010 ! deuterium-labelled
 
 [Term]
 id: XL:01010
-name: BS2G!Hydrolyzed
+name: hydrolyzed BS2G
 def: "Hydrolyzed bis(sulfosuccinimidyl) glutarate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 114.0316941
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "114.0316941" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "7.7" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00011 ! hydrolyzed
 
 [Term]
 id: XL:01011
-name: BS2G!Amidated
+name: amidated BS2G
 def: "Amidated bis(sulfosuccinimidyl) glutarate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 113.047678505
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "113.047678505" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "7.7" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00012 ! amidated
 
 [Term]
 id: XL:01012
-name: DSG!Hydrolyzed
+name: hydrolyzed DSG
 def: "Hydrolyzed disuccinimidyl glutarate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 114.0316941
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "114.0316941" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "7.7" xsd:double
+is_a: XL:00004 ! cross-linker
+relationship: is_partially_reacted XL:00011 ! hydrolyzed
 
 [Term]
 id: XL:01013
-name: DSG!Amidated
+name: amidated DSG
 def: "Amidated disuccinimidyl glutarate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 113.047678505
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "113.047678505" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "7.7" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00012 ! amidated
 
 [Term]
 id: XL:01014
-name: DSG:d4!Hydrolyzed
+name: hydrolyzed DSG-d4
 def: "Deuterium-labelled amidated disuccinimidyl 2,2,4,4-glutarate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 164.128858262
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "164.128858262" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "7.7" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00011 ! hydrolyzed
+relationship: is_labelled XL:00010 ! deuterium-labelled
 
 [Term]
 id: XL:01015
-name: DSG:d4!Amidated
-def: "Deuterium-labelled hydrolized disuccinimidyl 2,2,4,4-glutarate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 163.144842667
-specificities: (K,S,T,Y,Protein N-term)
+name: amidated DSG-d4
+def: "Deuterium-labelled hydrolyzed disuccinimidyl 2,2,4,4-glutarate." [PSI:XL]
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "163.144842667" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "7.7" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00012 ! amidated
+relationship: is_labelled XL:00010 ! deuterium-labelled
 
 [Term]
 id: XL:01016
-name: BS2G:d4!Hydrolyzed
-def: "Deuterium-labelled hydrolized bis(sulfosuccinimidyl) 2,2,4,4-glutarate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 118.056801076
-specificities: (K,S,T,Y,Protein N-term)
+name: hydrolyzed BS2G-d4
+def: "Deuterium-labelled hydrolyzed bis(sulfosuccinimidyl) 2,2,4,4-glutarate." [PSI:XL]
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "118.056801076" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "7.7" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00011 ! hydrolyzed
+relationship: is_labelled XL:00010 ! deuterium-labelled
 
 [Term]
 id: XL:01017
-name: BS2G:d4!Amidated
+name: amidated BS2G-d4
 def: "Deuterium-labelled amidated bis(sulfosuccinimidyl) 2,2,4,4-glutarate." [PSI:XL]
-reactionSites: 1
-monoisotopicMass: 117.072785481
-specificities: (K,S,T,Y,Protein N-term)
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "117.072785481" xsd:double
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+property_value: spacerLength: "7.7" xsd:double
+is_a: XL:00005 ! homofunctional cross-linker
+relationship: is_partially_reacted XL:00012 ! amidated
+relationship: is_labelled XL:00010 ! deuterium-labelled
+
+[Term]
+id: XL:01017
+name: BDP-NHP-stump
+def: "Biotin Aspartate Proline n-hydroxyphthalimide-stump." [PSI:XL]
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+property_value: monoisotopicMass: "197.032422395" xsd:double
+property_value: specificities: "(K,Protein N-term)" xsd:string
+is_a: XL:00003 ! label transfer agent
