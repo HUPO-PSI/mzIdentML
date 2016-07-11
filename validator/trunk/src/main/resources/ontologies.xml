@@ -26,7 +26,7 @@
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo"
-    	format="OBO" name="Mass Spectrometry Ontology" identifier="MS" version="3.86.1"/>
+    	format="OBO" name="Mass Spectrometry Ontology" identifier="MS" version="3.90.3"/>
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" 
     	uri="http://www.unimod.org/obo/unimod.obo"
@@ -35,4 +35,10 @@
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology"
         uri="https://raw.githubusercontent.com/bio-ontology-research-group/unit-ontology/master/unit.obo"
     	format="OBO" name="Units of Measurement Ontology" identifier="UO" version="09:04:2014 13:37"/>
+	<!--	
+    <cvSource 
+    	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
+        uri="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/cv/XLMOD.obo"
+    	format="OBO" name="Cross-Linker Reagents Ontology" identifier="XL" version="releases/2016-07-08"/>
+	-->
 </cvSourceList>

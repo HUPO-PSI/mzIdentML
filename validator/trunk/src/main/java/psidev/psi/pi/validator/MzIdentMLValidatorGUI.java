@@ -697,7 +697,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
             private void resetAfterPressedValidationButton() {
                 this.validator.setValidatorGUI(MzIdentMLValidatorGUI.this);
                 this.validator.setMessageReportLevel(getSelectedLevel());
-                // validator.setSchemaUris(getSchemaUri());
+                // this.validator.setSchemaUris(getSchemaUri());
                 this.validator.setSkipSchemaValidation(skipXMLSchemaValidation());
 
                 // set the rule filter manager

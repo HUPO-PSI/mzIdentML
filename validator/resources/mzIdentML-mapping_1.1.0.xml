@@ -16,35 +16,35 @@
     </CvReferenceList>
 
     <CvMappingRuleList>
-		<CvMappingRule id="AuditCollectionPerson_rule" cvElementPath="/MzIdentML/AuditCollection/person/cvParam/@accession" requirementLevel="SHOULD" scopePath="/MzIdentML/AuditCollection/person" cvTermsCombinationLogic="OR">
+		<CvMappingRule id="AuditCollectionPerson_should_rule" cvElementPath="/MzIdentML/AuditCollection/person/cvParam/@accession" requirementLevel="SHOULD" scopePath="/MzIdentML/AuditCollection/person" cvTermsCombinationLogic="OR">
 			<CvTerm termAccession="MS:1000587" useTermName="false" useTerm="true" termName="contact address" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1000588" useTermName="false" useTerm="true" termName="contact URL" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1000589" useTermName="false" useTerm="true" termName="contact email" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
             <Description>some text to describe this rule</Description>
 		</CvMappingRule>
 
-		<CvMappingRule id="AuditCollectionOrganization_rule" cvElementPath="/MzIdentML/AuditCollection/organization/cvParam/@accession" requirementLevel="SHOULD" scopePath="/MzIdentML/AuditCollection/organization" cvTermsCombinationLogic="OR">
+		<CvMappingRule id="AuditCollectionOrganization_should_rule" cvElementPath="/MzIdentML/AuditCollection/organization/cvParam/@accession" requirementLevel="SHOULD" scopePath="/MzIdentML/AuditCollection/organization" cvTermsCombinationLogic="OR">
 			<CvTerm termAccession="MS:1000586" useTermName="false" useTerm="true" termName="contact name" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1000587" useTermName="false" useTerm="true" termName="contact address" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1000588" useTermName="false" useTerm="true" termName="contact URL" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1000589" useTermName="false" useTerm="true" termName="contact email" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 		</CvMappingRule>
 
-        <CvMappingRule id="AnalysisSoftwareContactRole_rule" cvElementPath="/MzIdentML/AnalysisSoftwareList/AnalysisSoftware/contactRole/role/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisSoftwareList/AnalysisSoftware/contactRole/role" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="AnalysisSoftwareContactRole_must_rule" cvElementPath="/MzIdentML/AnalysisSoftwareList/AnalysisSoftware/contactRole/role/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisSoftwareList/AnalysisSoftware/contactRole/role" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001266" useTermName="false" useTerm="false" termName="role type" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
-        <CvMappingRule id="ProviderContactRole_rule" cvElementPath="/MzIdentML/Provider/contactRole/role/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/Provider/contactRole/role" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="ProviderContactRole_must_rule" cvElementPath="/MzIdentML/Provider/contactRole/role/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/Provider/contactRole/role" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001266" useTermName="false" useTerm="false" termName="role type" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
         <!-- removed, since the element 'ReferenceableCollection' does not exist
-        <CvMappingRule id="DatabaseContactRole_rule" cvElementPath="/MzIdentML/ReferenceableCollection/Database/contactRole/role/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/ReferenceableCollection/Database/contactRole/role" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="DatabaseContactRole_must_rule" cvElementPath="/MzIdentML/ReferenceableCollection/Database/contactRole/role/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/ReferenceableCollection/Database/contactRole/role" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001266" useTermName="false" useTerm="false" termName="role type" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
         -->
 
-        <CvMappingRule id="SampleContactRole_rule" cvElementPath="/MzIdentML/AnalysisSampleCollection/Sample/contactRole/role/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisSampleCollection/Sample/contactRole/role" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="SampleContactRole_must_rule" cvElementPath="/MzIdentML/AnalysisSampleCollection/Sample/contactRole/role/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisSampleCollection/Sample/contactRole/role" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001266" useTermName="false" useTerm="false" termName="role type" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
@@ -67,13 +67,11 @@
         </CvMappingRule>
 		-->
 
-		<!--  commented out due to inefficient CV term use (root of the whole ontology)
         <CvMappingRule id="PeptideModification_rule" cvElementPath="/MzIdentML/SequenceCollection/Peptide/Modification/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/SequenceCollection/Peptide/Modification" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="UNIMOD:0" useTermName="false" useTerm="false" termName="UNIMOD root" isRepeatable="false" allowChildren="true" cvIdentifierRef="UNIMOD" />
 			<CvTerm termAccession="MOD:00000" useTermName="false" useTerm="false" termName="protein modification" isRepeatable="false" allowChildren="true" cvIdentifierRef="MOD" />
 			<CvTerm termAccession="MS:1001471" useTermName="false" useTerm="false" termName="peptide modification details" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
-		-->
 
 		<CvMappingRule id="SoftwareName_rule" cvElementPath="/MzIdentML/AnalysisSoftwareList/AnalysisSoftware/softwareName/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisSoftwareList/AnalysisSoftware/softwareName" cvTermsCombinationLogic="OR">
 			<CvTerm termAccession="MS:1001456" useTermName="false" useTerm="false" termName="analysis software" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
@@ -107,6 +105,7 @@
             <CvTerm termAccession="MS:1001210" useTermName="false" useTerm="false" termName="mass type settings" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1001302" useTermName="false" useTerm="false" termName="search engine specific input parameter" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1001066" useTermName="false" useTerm="false" termName="ions series considered in search" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1000044" useTermName="false" useTerm="false" termName="dissociation method" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
 		<!-- commented out due to inefficient CV term use (root of the whole ontology)

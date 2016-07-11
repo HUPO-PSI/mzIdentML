@@ -89,7 +89,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
                         break;
                     case "MS":
                     case "PSI-MS":
-                        if (version.compareTo("3.90.3") < 0) {
+                        if (version.compareTo("4.0.0") < 0) {
                             messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
@@ -107,7 +107,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
                     case "UNIT":
                         break;
                     case "XLMOD":
-                        if (version.compareTo("1.0.0") < 0) {
+                        if (version.compareTo("releases/2016-07-08") < 0) {
                             messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
