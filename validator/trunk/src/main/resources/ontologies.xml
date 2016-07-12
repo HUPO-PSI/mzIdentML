@@ -35,10 +35,8 @@
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology"
         uri="https://raw.githubusercontent.com/bio-ontology-research-group/unit-ontology/master/unit.obo"
     	format="OBO" name="Units of Measurement Ontology" identifier="UO" version="09:04:2014 13:37"/>
-	<!--	
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/cv/XLMOD.obo"
-    	format="OBO" name="Cross-Linker Reagents Ontology" identifier="XL" version="releases/2016-07-08"/>
-	-->
+    	format="OBO" name="Cross-Linker Reagents Ontology" identifier="XL" version="releases/2016-07-11"/>
 </cvSourceList>

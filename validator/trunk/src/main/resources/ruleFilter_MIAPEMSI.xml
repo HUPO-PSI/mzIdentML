@@ -64,6 +64,28 @@
 			<ruleToSkip id="ModLocalizationSearchType_may_rule"/> <!-- discard its error messages -->
 		</ruleCondition>	
 	</ruleConditions>
+    <!-- Rule filter for proteogenomics search -->
+	<ruleConditions>
+		<ruleCondition valid="true" id="ProteogenomicsSearchType_may_rule">
+			<ruleToSkip id="ProteogenomicsSearchType_may_rule"/>
+		</ruleCondition>
+		<ruleCondition valid="false" id="ProteogenomicsSearchType_may_rule">
+			<ruleToSkip id="ProteogenomicsSearchType_may_rule"/>
+			<ruleToSkip id="ProteogenomicsDBSequence_must_rule"/> <!-- discard its error messages -->
+			<ruleToSkip id="ProteogenomicsPeptideEvidence_must_rule"/> <!-- discard its error messages -->
+		</ruleCondition>	
+	</ruleConditions>
+    <!-- Rule filter for cross-linking search -->
+	<ruleConditions>
+		<ruleCondition valid="true" id="CrosslinkingSearchType_may_rule">
+			<ruleToSkip id="CrosslinkingSearchType_may_rule"/>
+		</ruleCondition>
+		<ruleCondition valid="false" id="CrosslinkingSearchType_may_rule">
+			<ruleToSkip id="CrosslinkingSearchType_may_rule"/>
+			<ruleToSkip id="CrosslinkingPeptideModification_may_rule"/> <!-- discard its error messages -->
+		</ruleCondition>	
+	</ruleConditions>
+	<!-- Mandatorily required elements -->
 	<mandatoryElements>
 		<mandatoryElement element="AnalysisSoftware"/>
 		<mandatoryElement element="Provider"/>

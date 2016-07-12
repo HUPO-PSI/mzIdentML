@@ -1079,6 +1079,14 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                 }
                 if (!AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch) {
                     switch (ruleID) {
+                        case "CrosslinkingSearchType_may_rule":
+                            report.getInvalidCvRules().remove(ruleID);
+                            bAdd = false;
+                            break;
+                        case "CrosslinkingPeptideModification_may_rule":
+                            report.getInvalidCvRules().remove(ruleID);
+                            bAdd = false;
+                            break;
                         case "XLinkPeptideModificationObjectRule":
                             report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
                             bAdd = false;
@@ -1091,6 +1099,18 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                 }
                 if (!AdditionalSearchParamsObjectRule.bIsProteoGenomicsSearch) {
                     switch (ruleID) {
+                        case "ProteogenomicsSearchType_may_rule":
+                            report.getInvalidCvRules().remove(ruleID);
+                            bAdd = false;
+                            break;
+                        case "ProteogenomicsDBSequence_must_rule":
+                            report.getInvalidCvRules().remove(ruleID);
+                            bAdd = false;
+                            break;
+                        case "ProteogenomicsPeptideEvidence_must_rule":
+                            report.getInvalidCvRules().remove(ruleID);
+                            bAdd = false;
+                            break;
                         case "ProteoGenomicsPeptEvObjectRule":
                             report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
                             bAdd = false;
