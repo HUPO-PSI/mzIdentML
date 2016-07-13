@@ -27,7 +27,7 @@ public abstract class AObjectRule<T extends Object> extends ObjectRule<T> {
      */
     protected RESTClient restClient = new RESTClient();
     
-    private final HashMap<String, String> childOf1001143 = new HashMap<String, String>(){
+    private final HashMap<String, String> childOf1001143 = new HashMap<String, String>() {  // PSM-level search engine specific statistic
         {
             put("MS:1001154", "SEQUEST:probability");
             put("MS:1001155", "SEQUEST:xcorr");
@@ -89,14 +89,6 @@ public abstract class AObjectRule<T extends Object> extends ObjectRule<T> {
             put("MS:1001950", "PEAKS:peptideScore");
             put("MS:1001952", "ZCore:probScore");
             put("MS:1001974", "DeBunker:score");
-            put("MS:1001978", "MSQuant:PTM-score");
-            put("MS:1001979", "MaxQuant:PTM Score");
-            put("MS:1001980", "MaxQuant:Phospho (STY) Probabilities");
-            put("MS:1001981", "MaxQuant:Phospho (STY) Score Diffs");
-            put("MS:1001982", "MaxQuant:P-site localization probability");
-            put("MS:1001983", "MaxQuant:PTM Delta Score");
-            put("MS:1001985", "Ascore");
-            put("MS:1002012", "Mascot:PTM site assignment confidence");
             put("MS:1002044", "ProteinProspector:score");
             put("MS:1002045", "ProteinProspector:expectation value");
             put("MS:1002049", "MS-GF:RawScore");
@@ -107,7 +99,6 @@ public abstract class AObjectRule<T extends Object> extends ObjectRule<T> {
             put("MS:1002055", "MS-GF:PepQValue");
             put("MS:1002056", "MS-GF:PEP");
             put("MS:1002125", "combined FDRScore");
-            put("MS:1002221", "MRMaid:peptide score");
             put("MS:1002248", "SEQUEST:spscore");
             put("MS:1002249", "SEQUEST:sprank");
             put("MS:1002250", "SEQUEST:deltacnstar");
@@ -135,20 +126,28 @@ public abstract class AObjectRule<T extends Object> extends ObjectRule<T> {
             put("MS:1002534", "ProLuCID:xcorr");
             put("MS:1002535", "ProLuCID:deltacn");
             put("MS:1002545", "xi:score");
-            put("MS:1002662", "Morpheus:Morpheus score");
+            put("MS:1002662", "Morpheus:Morpheus score");            
+            put("MS:1002681", "OpenXQuest:combined score");
+            put("MS:1002682", "OpenXQuest:xcorr xlink");
+            put("MS:1002683", "OpenXQuest:xcorr common");
+            put("MS:1002684", "OpenXQuest:match-odds");
+            put("MS:1002685", "OpenXQuest:intsum");
+            put("MS:1002686", "OpenXQuest:wTIC");
         }
     };
     
-    private final HashMap<String, String> childOf1002358 = new HashMap<String, String>(){
+    private final HashMap<String, String> childOf1002358 = new HashMap<String, String>() {  // search engine specific peptide sequence-level identification statistic
         {
+            put("MS:1001396", "Phenyx:PepPvalue");
             put("MS:1002360", "distinct peptide-level FDRScore");
             put("MS:1002361", "distinct peptide-level combined FDRScore");
             put("MS:1002368", "PeptideShaker peptide score");
             put("MS:1002499", "peptide level score");
+            put("MS:1002541", "PeptideShaker peptide confidence type");
         }
     };
     
-    private final HashMap<String, String> childOf1002664= new HashMap<String, String>(){
+    private final HashMap<String, String> childOf1002664= new HashMap<String, String>() {   // interaction score derived from cross-linking
         {
             put("MS:1002676", "protein-pair-level global FDR");
             put("MS:1002677", "residue-pair-level global FDR");

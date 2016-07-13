@@ -15,7 +15,7 @@
         <CvReference cvName="GO" cvIdentifier="GO"/>
         <CvReference cvName="PATO" cvIdentifier="PATO"/>
         <CvReference cvName="UO" cvIdentifier="UO"/>
-        <CvReference cvName="XL" cvIdentifier="XL"/>
+        <CvReference cvName="XLMOD" cvIdentifier="XLMOD"/>
     </CvReferenceList>
 
     <CvMappingRuleList>
@@ -73,7 +73,8 @@
             <CvTerm termAccession="UNIMOD:0" useTermName="false" useTerm="false" termName="unimod root node" isRepeatable="false" allowChildren="true" cvIdentifierRef="UNIMOD" />
 			<CvTerm termAccession="MOD:00000" useTermName="false" useTerm="false" termName="protein modification" isRepeatable="false" allowChildren="true" cvIdentifierRef="MOD" />
 			<CvTerm termAccession="MS:1001471" useTermName="false" useTerm="false" termName="peptide modification details" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
-			<CvTerm termAccession="XL:00004" useTermName="false" useTerm="false" termName="cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="XL" />
+			<CvTerm termAccession="XLMOD:00002" useTermName="false" useTerm="false" termName="cross-linker related PTM" isRepeatable="false" allowChildren="true" cvIdentifierRef="XL" />
+			<CvTerm termAccession="XLMOD:00004" useTermName="false" useTerm="false" termName="cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="XL" />
         </CvMappingRule>
 
 		<CvMappingRule id="SoftwareName_rule" cvElementPath="/MzIdentML/AnalysisSoftwareList/AnalysisSoftware/softwareName/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisSoftwareList/AnalysisSoftware/softwareName" cvTermsCombinationLogic="OR">
