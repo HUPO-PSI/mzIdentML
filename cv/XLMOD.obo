@@ -58,7 +58,7 @@ relationship: part_of XL:00000 ! Proteomics Standards Initiative cross-linking c
 id: XL:00002
 name: cross-linker related PTM
 def: "A cross-linker reagent with one reactive group." [PSI:XL]
-is_A:  XL:00001 ! cross-linking entity
+is_a:  XL:00001 ! cross-linking entity
 relationship: part_of XL:00000 ! Proteomics Standards Initiative cross-linking controlled vocabulary
 
 [Term]
