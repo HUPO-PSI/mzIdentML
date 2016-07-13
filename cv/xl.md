@@ -1,7 +1,7 @@
 ---
 layout: ontology_detail
-id: xl
-label: XL
+id: xlmod
+label: XLMOD
 description: A structured controlled vocabulary for cross-linking reagents used with proteomics mass spectrometry.
 title: Cross-linker reagents ontology
 createdWith: http://oboedit.org
@@ -14,8 +14,8 @@ mailing_list: psidev-ms-vocab@lists.sourceforge.net
 homepage: http://www.psidev.info/groups/controlled-vocabularies
 page: http://www.psidev.info/groups/controlled-vocabularies
 products:
-  - id: xl.obo
-  - id: xl.owl
+  - id: xlmod.obo
+  - id: xlmod.owl
 license:
   url: https://creativecommons.org/licenses/by/3.0/
   label: CC-BY
