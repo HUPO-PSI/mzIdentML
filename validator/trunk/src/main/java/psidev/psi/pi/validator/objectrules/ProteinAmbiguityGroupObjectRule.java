@@ -45,7 +45,9 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
     private static final String XL_INTERACTION_SCORE_PPL= "MS:1002676"; // protein-pair-level global FDR
     private static final String XL_INTERACTION_SCORE_RPL= "MS:1002677"; // residue-pair-level global FDR
     private final String STR_REGEXP_XL_INTERACTION_SCORE= "(\\d+[.][a|b]:(\\d+|null):\\d+[.]\\d+([Ee][+-][0-9]+)*:(true|false]\\{1\\}))";
+
     private final String STR_COLON = ":";
+    private final String STR_POINT = ".";
 
     /**
      * Members.
@@ -170,11 +172,12 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
                     this.addRegexViolationMessageToCollection(cvParam, pag, pdh, messages);
                 }
                 else {
-                    int pos, posNext, posLast;
+                    int pos, posPoint, posNext, posLast;
 
                     pos = cvValueXLInteractionScore.indexOf(this.STR_COLON);
-                    if (pos > this.NOT_FOUND) {
-                        String xlInteractID = cvValueXLInteractionScore.substring(0, pos);
+                    posPoint = cvValueXLInteractionScore.indexOf(this.STR_POINT);
+                    if (posPoint > this.NOT_FOUND && pos > posPoint) {
+                        String xlInteractID = cvValueXLInteractionScore.substring(0, posPoint);
                         
                         String restStr = cvValueXLInteractionScore.substring(pos + 1);
                         posNext = restStr.indexOf(this.STR_COLON);
@@ -208,6 +211,9 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
                         messages.add(this.getValidatorWrongInteractionScoreMsg(pag, pdh));
                     }
                 }
+            }
+            else {
+                this.LOGGER.debug("Is not an XL interaction score: " + acc);
             }
         }
     }

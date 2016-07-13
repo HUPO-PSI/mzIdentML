@@ -78,6 +78,7 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
         final OntologyAccess msOntology     = ontologyManager.getOntologyAccess("MS");
         final OntologyAccess modOntology    = ontologyManager.getOntologyAccess("MOD");
         final OntologyAccess unimodOntology = ontologyManager.getOntologyAccess("UNIMOD");
+        final OntologyAccess xlmodOntology  = ontologyManager.getOntologyAccess("XLMOD");
 
         List<CvParam> cvParams = searchModification.getCvParam();
         for (CvParam cvParam : cvParams) {
@@ -109,6 +110,10 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
             if (term == null) {
                 // check in UNIMOD ontology
                 term = unimodOntology.getTermForAccession(cvParam.getAccession());
+                // check in XLMOD ontology
+                if (term == null) {
+                    term = xlmodOntology.getTermForAccession(cvParam.getAccession());
+                }
             }
             else {
                 return new ArrayList<>();
