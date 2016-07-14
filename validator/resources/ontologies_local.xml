@@ -7,5 +7,5 @@
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:pato.obo" format="OBO" name="PATO" identifier="PATO" version="releases/2015-11-18"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:unimod.obo" format="OBO" name="UNIMOD" identifier="UNIMOD" version="2016:02:01 14:24"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:unit.obo" format="OBO" name="UO" identifier="UO" version="09:04:2014 13:37"/>
-    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:XLMOD.obo" format="OBO" name="XL" identifier="XL" version="releases/2016-07-11"/>
+    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:XLMOD.obo" format="OBO" name="XLMOD" identifier="XLMOD" version="releases/2016-07-13"/>
 </cvSourceList>
