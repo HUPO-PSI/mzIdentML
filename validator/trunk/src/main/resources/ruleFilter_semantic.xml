@@ -11,6 +11,17 @@
 			<ruleToSkip id="DenovoSearchType_may_rule"/> <!-- discard its error messages -->
 		</ruleCondition>	
 	</ruleConditions>
+    <!-- Rule filter for spectral library search -->
+	<ruleConditions>
+		<ruleCondition valid="true" id="SpectralLibrarySearchType_may_rule">
+			<ruleToSkip id="SpectralLibrarySearchType_may_rule"/>
+			<ruleToSkip id="SpectrumIdentificationItemPeptideEvidenceRefObjectRule"/>
+		</ruleCondition>
+		<ruleCondition valid="false" id="SpectralLibrarySearchType_may_rule">
+			<ruleToSkip id="SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule"/>
+			<ruleToSkip id="SpectralLibrarySearchType_may_rule"/> <!-- discard its error messages -->
+		</ruleCondition>	
+	</ruleConditions>
     <!-- Rule filter for peptide-level scoring -->
 	<ruleConditions>
 		<ruleCondition valid="true" id="PeptideLevelStatsSearchType_may_rule">

@@ -30,6 +30,7 @@ import psidev.psi.pi.rulefilter.RuleFilterManager;
 import psidev.psi.pi.validator.objectrules.AdditionalSearchParamsObjectRule;
 import psidev.psi.pi.validator.objectrules.MandatoryElementsObjectRule;
 import psidev.psi.pi.validator.objectrules.ProteinAmbiguityGroupObjectRule;
+import psidev.psi.pi.validator.objectrules.SearchTypeObjectRule;
 import psidev.psi.pi.validator.objectrules.XLinkPeptideModificationObjectRule;
 import psidev.psi.pi.validator.objectrules.XLinkSIIObjectRule;
 import psidev.psi.tools.cvrReader.CvRuleReaderException;
@@ -199,10 +200,11 @@ public class MzIdentMLValidator extends Validator {
      * Rsets the flags for all additional search parameters.
      */
     private void resetAdditionalSearchParams() {
-        AdditionalSearchParamsObjectRule.bIsDeNovoSearch = false;
+        SearchTypeObjectRule.bIsDeNovoSearch = false;
+        SearchTypeObjectRule.bIsSpectralLibrarySearch = false;
+        
         AdditionalSearchParamsObjectRule.bIsPeptideLevelScoring = false;
         AdditionalSearchParamsObjectRule.bIsProteoGenomicsSearch = false;
-        AdditionalSearchParamsObjectRule.bIsSpectralLibrarySearch = false;
         AdditionalSearchParamsObjectRule.bIsModificationLocalizationScoring = false;
         AdditionalSearchParamsObjectRule.bIsConsensusScoring = false;
         AdditionalSearchParamsObjectRule.bIsSamplePreFractionation = false;

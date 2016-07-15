@@ -226,9 +226,6 @@
           </Border>
         </Property>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="User selection (for MIAPE validation only)"/>
-      </AccessibilityProperties>
 
       <Layout>
         <DimensionLayout dim="0">

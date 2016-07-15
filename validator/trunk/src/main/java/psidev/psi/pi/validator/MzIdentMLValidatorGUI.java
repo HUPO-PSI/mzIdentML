@@ -41,6 +41,7 @@ import psidev.psi.pi.rulefilter.RuleFilterAgent;
 import psidev.psi.pi.rulefilter.RuleFilterManager;
 import psidev.psi.pi.validator.MzIdentMLValidator.MzIdVersion;
 import psidev.psi.pi.validator.objectrules.AdditionalSearchParamsObjectRule;
+import psidev.psi.pi.validator.objectrules.SearchTypeObjectRule;
 import psidev.psi.pi.validator.swingworker.SwingWorker;
 import psidev.psi.tools.cvrReader.CvRuleReaderException;
 import psidev.psi.tools.ontology_manager.impl.local.OntologyLoaderException;
@@ -1033,7 +1034,22 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                     ruleID = "-";
                 }
 
-                if (!AdditionalSearchParamsObjectRule.bIsDeNovoSearch) { 
+                // positive testing
+                if (SearchTypeObjectRule.bIsDeNovoSearch || SearchTypeObjectRule.bIsSpectralLibrarySearch) { 
+                    switch (ruleID) {
+                        case "DenovoSearchType_may_rule":
+                            report.getInvalidCvRules().remove(ruleID);
+                            bAdd = false;
+                            break;
+                        case "SpectrumIdentificationItemPeptideEvidenceRefObjectRule":
+                            report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                            bAdd = false;
+                            break;
+                    }
+                }
+                
+                // negative testing
+                if (!SearchTypeObjectRule.bIsDeNovoSearch) { 
                     switch (ruleID) {
                         case "DenovoSearchType_may_rule":
                             report.getInvalidCvRules().remove(ruleID);
@@ -1043,6 +1059,20 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                             report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
                             bAdd = false;
                             break;
+                    }
+                }
+                if (!SearchTypeObjectRule.bIsSpectralLibrarySearch) { 
+                    switch (ruleID) {
+                        case "SpectralLibrarySearchType_may_rule":
+                            report.getInvalidCvRules().remove(ruleID);
+                            bAdd = false;
+                            break;
+                            /*
+                        case "SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule":
+                            report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
+                            bAdd = false;
+                            break;
+                        */
                     }
                 }
                 if (!AdditionalSearchParamsObjectRule.bIsPeptideLevelScoring) {
@@ -1123,9 +1153,6 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                 }
                 /*
                 if (!AdditionalSearchParamsObjectRule.bIsSamplePreFractionation) {
-                    // TODO: implement
-                }
-                if (!AdditionalSearchParamsObjectRule.bIsSpectralLibrarySearch) {
                     // TODO: implement
                 }
                 if (!AdditionalSearchParamsObjectRule.bIsConsensusScoring) {

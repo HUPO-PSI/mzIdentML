@@ -24,14 +24,13 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
      * Constants.
      */
     private static final Context SIP_CONTEXT = new Context(MzIdentMLElement.SpectrumIdentificationProtocol.getXpath());
+    private final int CNT_MAX = 5;
     
     /**
      * Members.
      */
-    public static boolean bIsDeNovoSearch                       = false;
     public static boolean bIsPeptideLevelScoring                = false;
     public static boolean bIsProteoGenomicsSearch               = false;
-    public static boolean bIsSpectralLibrarySearch              = false;
     public static boolean bIsModificationLocalizationScoring    = false;
     public static boolean bIsConsensusScoring                   = false;
     public static boolean bIsSamplePreFractionation             = false;
@@ -78,14 +77,6 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
         int cnt = 0;
         for (CvParam cvp: sip.getAdditionalSearchParams().getCvParam()) {
             switch (cvp.getAccession()) {
-                case "MS:1001010":  // de novo search
-                    cnt++;
-                    bIsDeNovoSearch = true;
-                    break;
-                case "MS:1001031":  // spectral library search
-                    cnt++;
-                    bIsSpectralLibrarySearch = true;
-                    break;
                 case "MS:1002490":  // peptide-level scoring
                     cnt++;
                     bIsPeptideLevelScoring = true;
@@ -122,8 +113,8 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
             + sip.getId() + "') element at " + AdditionalSearchParamsObjectRule.SIP_CONTEXT.getContext(),
             MessageLevel.ERROR, AdditionalSearchParamsObjectRule.SIP_CONTEXT, this));
         }
-        else if (cnt > 5) {
-            messages.add(new ValidatorMessage("Found more than five childs term of 'special processing' in the AdditionalSearchParams of the SpectrumIdentificationProtocol (id='"
+        else if (cnt > this.CNT_MAX) {
+            messages.add(new ValidatorMessage("Found more than " + this.CNT_MAX + " childs term of 'special processing' in the AdditionalSearchParams of the SpectrumIdentificationProtocol (id='"
             + sip.getId() + "') element at " + AdditionalSearchParamsObjectRule.SIP_CONTEXT.getContext(),
             MessageLevel.INFO, AdditionalSearchParamsObjectRule.SIP_CONTEXT, this));
         }

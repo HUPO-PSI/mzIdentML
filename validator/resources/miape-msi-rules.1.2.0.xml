@@ -122,8 +122,13 @@
 		    <CvTerm termAccession="MS:1002555" useTermName="false" useTerm="false" termName="PTM localization score threshold" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 
-        <CvMappingRule id="SearchType_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/searchType/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/searchType" cvTermsCombinationLogic="OR">
-            <CvTerm termAccession="MS:1001080" useTermName="false" useTerm="false" termName="search type" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+        <CvMappingRule id="SearchType_must_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/searchType/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/searchType" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="MS:1001010" useTermName="false" useTerm="true" termName="de novo search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001031" useTermName="false" useTerm="true" termName="spectral library search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001081" useTermName="false" useTerm="true" termName="pmf search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001082" useTermName="false" useTerm="true" termName="tag search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001083" useTermName="false" useTerm="true" termName="ms-ms search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001584" useTermName="false" useTerm="true" termName="combined pmf + ms-ms search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 
         <CvMappingRule id="AdditionalSearchParams" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams" cvTermsCombinationLogic="OR">
@@ -133,15 +138,7 @@
 			<CvTerm termAccession="MS:1001302" useTermName="false" useTerm="false" termName="search engine specific input parameter" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1002473" useTermName="false" useTerm="false" termName="ion series considered in search" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 			<!-- added for mzIdentML 1.2 validation: -->
-            <CvTerm termAccession="MS:1001010" useTermName="false" useTerm="true" termName="de novo search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1001031" useTermName="false" useTerm="true" termName="spectral library search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002490" useTermName="false" useTerm="true" termName="peptide-level scoring" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002491" useTermName="false" useTerm="true" termName="modification localization scoring" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002492" useTermName="false" useTerm="true" termName="consensus scoring" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002493" useTermName="false" useTerm="true" termName="sample pre-fractionation" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002494" useTermName="false" useTerm="true" termName="cross-linking search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002495" useTermName="false" useTerm="true" termName="no special processing" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002635" useTermName="false" useTerm="true" termName="proteogenomics search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1002489" useTermName="false" useTerm="false" termName="special processing" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1002658" useTermName="false" useTerm="false" termName="identification parameter" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
         
@@ -337,8 +334,15 @@
 		<!--  addition for mzIdentML 1.2 validation: -->
 		<!-- NOTE THAT THE INTENTION OF THIS RULE IS TO BE USED BY THE SEMANTIC VALIDATION FOR A CONDITIONAL APPLICATION OF ANOTHER TWO RULES THAT CHECK THE EXISTENCE OR NOT OF PeptideEvidenceRef AT SII DEPENDING ON THE RESULT OF THIS RULE -->
 		<!-- IN ANY CASE, THE ERROR REPORTED BY THIS RULE IS NOT GOING TO BE REPORTED BY THE SEMANTIC VALIDATOR AS IT IS CONFIGURED AT ruleFilter_semantic.xml -->
-		<CvMappingRule id="DenovoSearchType_may_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams" cvTermsCombinationLogic="AND">
+		<CvMappingRule id="DenovoSearchType_may_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/searchType/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/searchType" cvTermsCombinationLogic="AND">
             <CvTerm termAccession="MS:1001010" useTermName="false" useTerm="true" termName="de novo search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+        </CvMappingRule>
+	
+		<!--  addition for mzIdentML 1.2 validation: -->
+		<!-- NOTE THAT THE INTENTION OF THIS RULE IS TO BE USED BY THE SEMANTIC VALIDATION FOR A CONDITIONAL APPLICATION OF ANOTHER TWO RULES THAT CHECK THE EXISTENCE OR NOT OF PeptideEvidence under SequenceCollection DEPENDING ON THE RESULT OF THIS RULE -->
+		<!-- IN ANY CASE, THE ERROR REPORTED BY THIS RULE IS NOT GOING TO BE REPORTED BY THE SEMANTIC VALIDATOR AS IT IS CONFIGURED AT ruleFilter_semantic.xml -->
+		<CvMappingRule id="SpectralLibrarySearchType_may_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/searchType/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/searchType" cvTermsCombinationLogic="AND">
+            <CvTerm termAccession="MS:1001031" useTermName="false" useTerm="true" termName="spectral library search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 	
 		<!--  addition for mzIdentML 1.2 validation: -->

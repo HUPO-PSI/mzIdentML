@@ -65,7 +65,7 @@ public class SpectrumIdentificationItemPeptideEvidenceRefObjectRule extends AObj
 
         if (spectrumIdentificationItem.getPeptideEvidenceRef().isEmpty()) {
             messages.add(new ValidatorMessage(
-                "A PeptideEvidenceRef in needed at the SpectrumIdentificationItem element for MS/MS or PMF searches",
+                "A PeptideEvidenceRef is needed at the SpectrumIdentificationItem element for MS/MS or PMF searches",
                 MessageLevel.ERROR, SII_CONTEXT, this));
         }
 
