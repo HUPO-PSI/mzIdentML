@@ -96,3 +96,5 @@ Several example of the format can be download from the next link [Examples](http
 22- [PeptideShaker](http://compomics.github.io/projects/peptide-shaker.html): Java standalone tool for the analysis and post-processing of MS proteomics experiments (**IMPORT AND EXPORT**)
 
 23- [PIA](https://github.com/mpc-bioinformatics/pia): PIA is a toolbox for MS based protein inference and identification analysis. [PMID: <span>25938255</span>](http://www.ncbi.nlm.nih.gov/pubmed?term=25938255). ( **IMPORT AND EXPORT**)
+
+24- [DTASelect2MzId](https://github.com/proteomicsyates/DTASelect2MzId): DTASelect-filter.txt (output of DTASelect software) to mzIdentML converter (**EXPORT**)
