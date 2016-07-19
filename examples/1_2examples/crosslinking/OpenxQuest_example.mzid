@@ -2,7 +2,7 @@
 <MzIdentML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/schema/mzIdentML1.2.0-candidate.xsd"
 	xmlns="http://psidev.info/psi/pi/mzIdentML/1.2"
-	version="1.2.0-candidate"
+	version="1.2.0"
 	id="OpenMS_1273357601798287716"
 	creationDate="2016-07-19T17:33:04">
 <cvList> 
