@@ -12,6 +12,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -172,10 +173,12 @@ public class MzIdentMLValidator extends Validator {
      *             in case of any configuration file doesn't exist.
      * @throws CvRuleReaderException
      *             in case of problems while reading cv mapping rules.
+     * @throws UnknownHostException
+     *             in case of problems locating the host for .obo loading.
      * 
      */
     public MzIdentMLValidator(InputStream ontoConfig, MzIdentMLValidatorGUI mzIdentMLValidatorGUI)
-            throws OntologyLoaderException, FileNotFoundException, ValidatorException, CvRuleReaderException {
+            throws OntologyLoaderException, FileNotFoundException, ValidatorException, CvRuleReaderException, UnknownHostException {
         super(ontoConfig);
 
         this.gui = mzIdentMLValidatorGUI;

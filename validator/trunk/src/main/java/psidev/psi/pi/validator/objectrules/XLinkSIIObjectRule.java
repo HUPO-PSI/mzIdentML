@@ -17,7 +17,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationResult;
 /**
  * Checks, if for each CV term MS:1002511 - 'cross-link spectrum identification item' there exists the same CV term
  * with the same value in another SpectrumIdentificationItem of the same SpectrumIdentificationResult.
- * For isotope labelled linker we have 4 SIIs for the same cross-link .
+ * For isotope labelled linker we have 4 SIIs for the same cross-link.
  * 
  * @author Gerhard
  * 

@@ -58,6 +58,7 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
     public static final HashMap<ImmutablePair<String, String>, HashMap<String, String>> XL_ID_SCORE_PAIR_TO_PAGID2PDHID = new HashMap<>();
     private HashMap<String, String> map_1002664 = null; // maps accession to term name
     private final int NOT_FOUND = -1;
+    private static final HashMap<String, Character> INTERACT_ID_TO_SUFFIX_MAP = new HashMap<>(); // for detecting loop-links (maps XL interaction ID to 'a' or 'b'
 
     /**
      * Constructor.
@@ -172,38 +173,46 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
                     this.addRegexViolationMessageToCollection(cvParam, pag, pdh, messages);
                 }
                 else {
-                    int pos, posPoint, posNext, posLast;
-
-                    pos = cvValueXLInteractionScore.indexOf(this.STR_COLON);
-                    posPoint = cvValueXLInteractionScore.indexOf(this.STR_POINT);
+                    int pos = cvValueXLInteractionScore.indexOf(this.STR_COLON);
+                    int posPoint = cvValueXLInteractionScore.indexOf(this.STR_POINT);
                     if (posPoint > this.NOT_FOUND && pos > posPoint) {
                         String xlInteractID = cvValueXLInteractionScore.substring(0, posPoint);
+                        Character xlInteractIDSuffix = cvValueXLInteractionScore.substring(posPoint + 1, pos).charAt(0);
                         
                         String restStr = cvValueXLInteractionScore.substring(pos + 1);
-                        posNext = restStr.indexOf(this.STR_COLON);
-                        posLast = restStr.lastIndexOf(this.STR_COLON);
+                        int posNext = restStr.indexOf(this.STR_COLON);
+                        int posLast = restStr.lastIndexOf(this.STR_COLON);
                         if (posNext > this.NOT_FOUND && posLast > posNext) {
+                            boolean bIsLoopLink = false;
+                            
                             String score = restStr.substring(posNext + 1, posLast);
-
                             ImmutablePair<String, String> key = new ImmutablePair<>(xlInteractID, score);
                             if (!ProteinAmbiguityGroupObjectRule.XL_ID_SCORE_PAIR_TO_PAGID2PDHID.containsKey(key)) {
-                                HashMap<String, String> pagID2PDHIDMap = new HashMap<>();
-                                ProteinAmbiguityGroupObjectRule.XL_ID_SCORE_PAIR_TO_PAGID2PDHID.put((ImmutablePair<String, String>) key, pagID2PDHIDMap);
+                                ProteinAmbiguityGroupObjectRule.XL_ID_SCORE_PAIR_TO_PAGID2PDHID.put((ImmutablePair<String, String>) key, new HashMap<>());
+                                ProteinAmbiguityGroupObjectRule.INTERACT_ID_TO_SUFFIX_MAP.put(xlInteractID, xlInteractIDSuffix);
                             }
-                            HashMap<String, String> key2HashMap = ProteinAmbiguityGroupObjectRule.XL_ID_SCORE_PAIR_TO_PAGID2PDHID.get(key);
-                            if (key2HashMap.containsKey(pag.getId())) {
-                                String pdhIDFromMap = key2HashMap.get(pag.getId());
-                                if (pdh.getId().equals(pdhIDFromMap)) {
-                                    //messages.add(this.getValidatorWrongInteractionScoreMsg(pag, pdh));
+                            else { // special handling for loop links
+                                if (!ProteinAmbiguityGroupObjectRule.INTERACT_ID_TO_SUFFIX_MAP.get(xlInteractID).equals(xlInteractIDSuffix)) {
+                                    ProteinAmbiguityGroupObjectRule.XL_ID_SCORE_PAIR_TO_PAGID2PDHID.remove(key);    // special handling for loop-link
+                                    bIsLoopLink = true;
+                                }
+                            }
+                            
+                            // only if key was not removed (because it is a loop-link, e.g. no proteolytic site exists between the intra-molecular cross-linked residues
+                            if (!bIsLoopLink) {
+                            //if (ProteinAmbiguityGroupObjectRule.XL_ID_SCORE_PAIR_TO_PAGID2PDHID.containsKey(key)) {
+                                HashMap<String, String> key2HashMap = ProteinAmbiguityGroupObjectRule.XL_ID_SCORE_PAIR_TO_PAGID2PDHID.get(key);
+                                if (key2HashMap.containsKey(pag.getId())) {
+                                    String pdhIDFromMap = key2HashMap.get(pag.getId());
+                                    if (!pdh.getId().equals(pdhIDFromMap)) {
+                                        key2HashMap.put(pag.getId(), pdh.getId());
+                                        ProteinAmbiguityGroupObjectRule.XL_ID_SCORE_PAIR_TO_PAGID2PDHID.put(key, key2HashMap);
+                                    }
                                 }
                                 else {
                                     key2HashMap.put(pag.getId(), pdh.getId());
                                     ProteinAmbiguityGroupObjectRule.XL_ID_SCORE_PAIR_TO_PAGID2PDHID.put(key, key2HashMap);
                                 }
-                            }
-                            else {
-                                key2HashMap.put(pag.getId(), pdh.getId());
-                                ProteinAmbiguityGroupObjectRule.XL_ID_SCORE_PAIR_TO_PAGID2PDHID.put(key, key2HashMap);
                             }
                         }
                     }

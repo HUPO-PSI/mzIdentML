@@ -38,12 +38,6 @@
             <CvTerm termAccession="MS:1001266" useTermName="false" useTerm="false" termName="role type" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
-        <!-- removed, since the element 'ReferenceableCollection' does not exist
-        <CvMappingRule id="DatabaseContactRole_must_rule" cvElementPath="/MzIdentML/ReferenceableCollection/Database/contactRole/role/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/ReferenceableCollection/Database/contactRole/role" cvTermsCombinationLogic="OR">
-            <CvTerm termAccession="MS:1001266" useTermName="false" useTerm="false" termName="role type" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
-        </CvMappingRule>
-        -->
-
         <CvMappingRule id="SampleContactRole_must_rule" cvElementPath="/MzIdentML/AnalysisSampleCollection/Sample/contactRole/role/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisSampleCollection/Sample/contactRole/role" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001266" useTermName="false" useTerm="false" termName="role type" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
@@ -54,7 +48,6 @@
             <CvTerm termAccession="MS:1001089" useTermName="false" useTerm="false" termName="molecule taxonomy" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
         -->
-
 
         <CvMappingRule id="DBSequence_rule" cvElementPath="/MzIdentML/SequenceCollection/DBSequence/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/SequenceCollection/DBSequence" cvTermsCombinationLogic="OR">
 			<CvTerm termAccession="MS:1001342" useTermName="false" useTerm="false" termName="database sequence details" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
@@ -82,13 +75,26 @@
 		    <CvTerm termAccession="MS:1001302" useTermName="false" useTerm="false" termName="search engine specific input parameter" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1001494" useTermName="false" useTerm="true" termName="no threshold" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1002572" useTermName="false" useTerm="false" termName="protein detection statistical threshold" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002706" useTermName="false" useTerm="false" termName="protein group-level result list statistic" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+		</CvMappingRule>
+
+		<CvMappingRule id="ProteinDetectionProtocolThreshold_may_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/ProteinDetectionProtocol/threshold/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/ProteinDetectionProtocol/threshold" cvTermsCombinationLogic="OR">
+			<CvTerm termAccession="MS:1001494" useTermName="false" useTerm="true" termName="no threshold" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002485" useTermName="false" useTerm="false" termName="protein-level statistical threshold" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002555" useTermName="false" useTerm="false" termName="PTM localization score threshold" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002701" useTermName="false" useTerm="false" termName="PSM-level result list statistic" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002706" useTermName="false" useTerm="false" termName="protein group-level result list statistic" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 
 		<CvMappingRule id="SpectrumIdentificationProtocolThreshold_must_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/threshold/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/threshold" cvTermsCombinationLogic="OR">
 		    <CvTerm termAccession="MS:1001153" useTermName="false" useTerm="false" termName="search engine specific score" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		    <CvTerm termAccession="MS:1001302" useTermName="false" useTerm="false" termName="search engine specific input parameter" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />				    
 			<CvTerm termAccession="MS:1001494" useTermName="false" useTerm="true" termName="no threshold" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002363" useTermName="false" useTerm="false" termName="search engine specific score for proteins" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		    <CvTerm termAccession="MS:1002484" useTermName="false" useTerm="false" termName="peptide-level statistical threshold" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002573" useTermName="false" useTerm="false" termName="spectrum identification statistical threshold" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002701" useTermName="false" useTerm="false" termName="PSM-level result list statistic" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002703" useTermName="false" useTerm="false" termName="peptide sequence-level result list statistic" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 
         <!-- ContactRole does not exist in this location
@@ -108,18 +114,14 @@
 			<CvTerm termAccession="MS:1000044" useTermName="false" useTerm="false" termName="dissociation method" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
-		<!-- commented out due to inefficient CV term use (root of the whole ontology)
-		<CvMappingRule id="SearchModificationModParam_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/modificationParams/searchModification/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/modificationParams/searchModification" cvTermsCombinationLogic="OR">
+		<CvMappingRule id="SearchModificationModParam_must_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/modificationParams/searchModification/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/modificationParams/searchModification" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="UNIMOD:0" useTermName="false" useTerm="false" termName="UNIMOD root" isRepeatable="true" allowChildren="true" cvIdentifierRef="UNIMOD" />
 			<CvTerm termAccession="MOD:00000" useTermName="false" useTerm="false" termName="protein modification" isRepeatable="true" allowChildren="true" cvIdentifierRef="MOD" />
 			<CvTerm termAccession="MS:1001471" useTermName="false" useTerm="false" termName="peptide modification details" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
-		-->
         
 		<CvMappingRule id="SearchModificationSpecificityRules_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/modificationParams/searchModification/specificityRules/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/modificationParams/searchModification/specificityRules" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001056" useTermName="false" useTerm="false" termName="modification specificity rule" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
-			<!-- TODO: uncomment, if term is included!
-				CvTerm termAccession="MS:100XXXX" useTermName="false" useTerm="false" termName="modification specificity attribute" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" / -->
          </CvMappingRule>
 
         <CvMappingRule id="EnzymeName_may_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/enzymes/enzyme/enzymeName/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/enzymes/enzyme/enzymeName" cvTermsCombinationLogic="OR">
@@ -132,7 +134,7 @@
         </CvMappingRule>
 
         <CvMappingRule id="FragmentTolerance_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/fragmentTolerance/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/fragmentTolerance" cvTermsCombinationLogic="AND">
-						<CvTerm termAccession="MS:1001412" useTermName="false" useTerm="true" termName="search tolerance plus value" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1001412" useTermName="false" useTerm="true" termName="search tolerance plus value" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1001413" useTermName="false" useTerm="true" termName="search tolerance minus value" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 
@@ -158,7 +160,7 @@
 
         <CvMappingRule id="DatabaseTranslationTranslationTable_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/databaseTranslation/TranslationTable/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/databaseTranslation/TranslationTable" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001025" useTermName="false" useTerm="true" termName="translation table" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-						<CvTerm termAccession="MS:1001410" useTermName="false" useTerm="true" termName="translation start codons" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1001410" useTermName="false" useTerm="true" termName="translation start codons" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1001423" useTermName="false" useTerm="true" termName="translation table description" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 
@@ -204,12 +206,6 @@
 			<CvTerm termAccession="MS:1001227" useTermName="false" useTerm="true" termName="product ion m/z error" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 
-        <!-- TODO: add rule for PeptideEvidence, once there are CV terms:
-		<CvMappingRule id="PeptideEvidence_rule" cvElementPath="/MzIdentML/SequenceCollection/PeptideEvidence/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/SequenceCollection/PeptideEvidence" cvTermsCombinationLogic="OR">
-            <CvTerm termAccession="" useTermName="false" useTerm="false" termName="" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
-        </CvMappingRule>
-        -->
-        
         <CvMappingRule id="SpectrumIdentificationItem_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001405" useTermName="false" useTerm="false" termName="spectrum identification result details" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
@@ -224,17 +220,13 @@
             <CvTerm termAccession="MS:1000894" useTermName="false" useTerm="true" termName="retention time" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 
-        <!-- to validate this the whole List element would have to be loaded into one object! Since such an object would be huge, the rule was disabled
-        <CvMappingRule id="SpectrumIdentificationList_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList" cvTermsCombinationLogic="OR">
+        <CvMappingRule id="SpectrumIdentificationList_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001184" useTermName="false" useTerm="false" termName="search statistics" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
-        --> 
-    
-        <!-- to validate this the whole List element would have to be loaded into one object! Since such an object would be huge, the rule was disabled
+		
         <CvMappingRule id="ProteinDetectionList_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001184" useTermName="false" useTerm="false" termName="search statistics" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
-        -->
         
         <CvMappingRule id="ProteinAmbiguityGroupProteinDetectionHypothesis_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/proteinDetectionHypothesis/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/proteinDetectionHypothesis" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001153" useTermName="false" useTerm="false" termName="search engine specific score" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
@@ -244,6 +236,8 @@
         
         <CvMappingRule id="ProteinAmbiguityGroup_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1001147" useTermName="false" useTerm="false" termName="protein ambiguity group result details" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1002346" useTermName="false" useTerm="false" termName="protein group-level identification attribute" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1002698" useTermName="false" useTerm="false" termName="protein cluster identification attribute" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 	
     </CvMappingRuleList>

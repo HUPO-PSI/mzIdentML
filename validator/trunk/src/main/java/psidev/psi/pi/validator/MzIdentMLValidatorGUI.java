@@ -1067,12 +1067,10 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                             report.getInvalidCvRules().remove(ruleID);
                             bAdd = false;
                             break;
-                            /*
                         case "SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule":
                             report.getObjectRulesInvalid().remove(report.getObjectRuleById(ruleID));
                             bAdd = false;
                             break;
-                        */
                     }
                 }
                 if (!AdditionalSearchParamsObjectRule.bIsPeptideLevelScoring) {
