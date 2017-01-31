@@ -226,7 +226,7 @@ public class MzIdentMLValidator extends Validator {
      * Checks, if the ontology files can be accessed.
      */
     private void checkOntologyAccess() {
-        String[] ontologies = { "GO", "MS", "MOD", "UO", "PATO", "UNIMOD", "BTO" };
+        String[] ontologies = { "GO", "MS", "MOD", "UO", "UNIMOD", "BTO", "PATO" };
         for (String ontology : ontologies) {
             final OntologyAccess ontologyAccess = this.ontologyMngr.getOntologyAccess(ontology);
             if (ontologyAccess == null) {

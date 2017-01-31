@@ -15,38 +15,38 @@
 		<all-permissions/>
 	</security>
 	<resources>
-		<j2se version="1.8" max-heap-size="2048m"/>
+		<j2se version="1.8" max-heap-size="4096m"/>
         <!-- Used libraries -->
-        <jar href="lib/mzIdentMLValidator-1.4.24-SNAPSHOT.jar" main="true"/>
+        <jar href="lib/mzIdentMLValidator-1.4.25-SNAPSHOT.jar" main="true"/>
         <jar href="lib/bbop-2.0.jar"/>
-        <jar href="lib/commons-beanutils-1.9.2.jar"/>
+        <jar href="lib/commons-beanutils-1.9.3.jar"/>
         <jar href="lib/commons-collections-3.2.2.jar"/>
         <jar href="lib/commons-collections4-4.1.jar"/>
-        <jar href="lib/commons-compress-1-11.jar"/>
-        <jar href="lib/commons-io-2.4.jar"/>
+        <jar href="lib/commons-compress-1.13.jar"/>
+        <jar href="lib/commons-io-2.5.jar"/>
         <jar href="lib/commons-jxpath-1.3.jar"/>
         <jar href="lib/commons-lang-2.6.jar"/>
-        <jar href="lib/commons-lang3-3.4.jar"/>
+        <jar href="lib/commons-lang3-3.5.jar"/>
         <jar href="lib/commons-logging-1.1.3.jar"/>
         <jar href="lib/commons-logging-1.2.jar"/>
         <jar href="lib/cpdetector_1.0.10.jar"/>
-        <jar href="lib/cv-rule-reader-2.0.5.jar"/>
-        <jar href="lib/fastutil-7.0.12.jar"/>
+        <jar href="lib/cv-rule-reader-2.0.7.jar"/>
+        <jar href="lib/fastutil-7.0.13.jar"/>
         <jar href="lib/jmzidentml-1.1.9.jar"/>
         <jar href="lib/jmzidentml-1.2.4.jar"/>
         <jar href="lib/log4j-1.2.17.jar"/>
-        <jar href="lib/object-rule-reader-2.0.5.jar"/>
+        <jar href="lib/object-rule-reader-2.0.7.jar"/>
         <jar href="lib/obo-2.0.jar"/>
         <jar href="lib/oboedit-1.101.jar"/>
         <jar href="lib/ols-core-1.19.jar"/>
-        <jar href="lib/ontology-config-reader-2.0.5.jar"/>
+        <jar href="lib/ontology-config-reader-2.0.7.jar"/>
         <jar href="lib/ontology-manager-4.jar"/>
         <jar href="lib/org.geneontology-1.101.jar"/>
         <jar href="lib/oscache-2.4.1.jar"/>
         <jar href="lib/proteomics-common-1.6.jar"/>
-        <jar href="lib/slf4j-api-1.7.21.jar"/>
-        <jar href="lib/slf4j-log4j12-1.7.21.jar"/>
-        <jar href="lib/validator-2.0.5.jar"/>
+        <jar href="lib/slf4j-api-1.7.22.jar"/>
+        <jar href="lib/slf4j-log4j12-1.7.22.jar"/>
+        <jar href="lib/validator-2.0.7.jar"/>
         <jar href="lib/xercesImpl-2.11.0.jar"/>
         <jar href="lib/xml-apis.jar"/>
         <jar href="lib/xxindex-0.14.jar"/>

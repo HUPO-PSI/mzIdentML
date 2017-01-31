@@ -89,17 +89,17 @@ public class CvListObjectRule extends AObjectRule<CvList> {
                         break;
                     case "MS":
                     case "PSI-MS":
-                        if (version.compareTo("4.0.0") < 0) {
+                        if (version.compareTo("4.0.6") < 0) {
                             messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
                     case "PATO":
-                        if (version.compareTo("releases/2016-05-22") < 0) {
+                        if (version.compareTo("releases/2017-01-26") < 0) {
                             messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
                     case "UNIMOD":
-                        if (version.compareTo("2016:02:01 14:24") < 0) {
+                        if (version.compareTo("2016:09:23 13:49") < 0) {
                             messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
