@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MzIdentML id="12345" version="1.2.0" xmlns="http://psidev.info/psi/pi/mzIdentML/1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.2 http://www.psidev.info/files/mzIdentML1.2.0.xsd" creationDate="2016-07-14T13:09:18" >
+<MzIdentML id="12345" version="1.2.0" xmlns="http://psidev.info/psi/pi/mzIdentML/1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.2 http://www.psidev.info/files/mzIdentML1.2.0.xsd" creationDate="2016-08-05T10:42:56" >
 <cvList >
   <cv fullName="PSI-MS" version="4.0.0" uri="https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo" id="PSI-MS"></cv>
   <cv fullName="XLMOD" uri="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/cv/XLMOD.obo" id="XLMOD"></cv>
@@ -9,10 +9,10 @@
 <AnalysisSoftwareList >
   <AnalysisSoftware id="xi_id" name="xi">
     <SoftwareName>
-      <cvParam cvRef="PSI-MS" accession="MS:1002544" name="xiFDR"></cvParam>
+      <cvParam cvRef="PSI-MS" accession="MS:1002544" name="xi"></cvParam>
     </SoftwareName>
   </AnalysisSoftware>
-  <AnalysisSoftware version="1.0.7.18" id="xiFDR_id" name="XiFDR">
+  <AnalysisSoftware version="1.0.8.18" id="xiFDR_id" name="XiFDR">
     <SoftwareName>
       <cvParam cvRef="PSI-MS" accession="MS:1002543" name="xiFDR"></cvParam>
     </SoftwareName>
@@ -13591,7 +13591,7 @@ U.K."></cvParam>
   </SearchDatabase>
   <SpectraData location="120114_20_Orbi2_ZC_QC_220_HSAd0-d4-1to1-3_Din.raw" id="SD_4299_120114_20_Orbi2_ZC_QC_220_HSAd0-d4-1to1-3_Din.raw">
     <FileFormat>
-      <cvParam cvRef="PSI-MS" accession="MS:1000563" name="Thermo Raw file"></cvParam>
+      <cvParam cvRef="PSI-MS" accession="MS:1000563" name="Thermo RAW format"></cvParam>
     </FileFormat>
     <SpectrumIDFormat>
       <cvParam cvRef="PSI-MS" accession="MS:1000774" name="multiple peak list nativeID format"></cvParam>
@@ -22860,7 +22860,7 @@ U.K."></cvParam>
       <PeptideHypothesis peptideEvidence_ref="pepevid_psm252635366_pep54600874_protP02768-A_decoy_12">
         <SpectrumIdentificationItemRef spectrumIdentificationItem_ref="SII_803_2"></SpectrumIdentificationItemRef>
       </PeptideHypothesis>
-      <cvParam cvRef="PSI-MS" accession="MS:1001591" name="anchor protein"></cvParam>
+      <cvParam cvRef="PSI-MS" accession="MS:1002403" name="group representative"></cvParam>
       <cvParam cvRef="PSI-MS" accession="MS:1001593" name="group member with undefined relationship OR ortholog protein"></cvParam>
       <cvParam cvRef="PSI-MS" accession="MS:1002676" name="protein-pair-level global FDR" value="100.b:null:1.0:true"></cvParam>
       <cvParam cvRef="PSI-MS" accession="MS:1002677" name="residue-pair-level global FDR" value="106.b:146:0.029411764705882353:true"></cvParam>
@@ -25873,7 +25873,7 @@ U.K."></cvParam>
       <PeptideHypothesis peptideEvidence_ref="pepevid_psm252633486_pep54600696_protP02768-A_target_437">
         <SpectrumIdentificationItemRef spectrumIdentificationItem_ref="SII_805_1"></SpectrumIdentificationItemRef>
       </PeptideHypothesis>
-      <cvParam cvRef="PSI-MS" accession="MS:1001591" name="anchor protein"></cvParam>
+      <cvParam cvRef="PSI-MS" accession="MS:1002403" name="group representative"></cvParam>
       <cvParam cvRef="PSI-MS" accession="MS:1001593" name="group member with undefined relationship OR ortholog protein"></cvParam>
       <cvParam cvRef="PSI-MS" accession="MS:1002676" name="protein-pair-level global FDR" value="100.a:null:1.0:true"></cvParam>
       <cvParam cvRef="PSI-MS" accession="MS:1002676" name="protein-pair-level global FDR" value="200.a:null:0.0:true"></cvParam>
@@ -25950,7 +25950,7 @@ U.K."></cvParam>
     </ProteinDetectionHypothesis>
     <cvParam cvRef="PSI-MS" accession="MS:1002415" name="protein group passes threshold" value="true"></cvParam>
   </ProteinAmbiguityGroup>
-  <cvParam cvRef="PSI-MS" accession="MS:1002404" name="count of identified protein" value="2"></cvParam>
+  <cvParam cvRef="PSI-MS" accession="MS:1002404" name="count of identified proteins" value="2"></cvParam>
 </ProteinDetectionList></AnalysisData>
 </DataCollection>
 </MzIdentML>
