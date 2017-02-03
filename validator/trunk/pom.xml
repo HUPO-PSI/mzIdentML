@@ -3,7 +3,7 @@
 	<groupId>psidev.psi.pi</groupId>
 	<artifactId>mzIdentMLValidator</artifactId>
 	<packaging>jar</packaging>
-	<version>1.4.24-SNAPSHOT</version>
+	<version>1.4.25-SNAPSHOT</version>
 	<name>PSI mzIdentML semantic and MIAPE validator</name>
 	<description>A semantic and MIAPE validator for PSI mzIdentML XML files.</description>
 	<properties>
@@ -24,7 +24,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
+				<version>3.6.1</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
@@ -34,7 +34,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.10</version>
+				<version>3.0.0</version>
 				<executions>
 					<execution>
 						<id>copy-dependencies</id>
@@ -67,7 +67,7 @@
 	                        <pluginExecutionFilter>
 	                            <groupId>org.apache.maven.plugins</groupId>
 	                            <artifactId>maven-dependency-plugin</artifactId>
-	                            <versionRange>2.10</versionRange>
+	                            <versionRange>3.0.0</versionRange>
 	                            <goals>
 	                                <goal>copy-dependencies</goal>
 	                            </goals>
@@ -143,7 +143,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-jar-plugin</artifactId>
-						<version>3.0.0</version>
+						<version>3.0.2</version>
 						<configuration>
 							<archive>
 								<manifest>
@@ -156,7 +156,7 @@
 					</plugin>
 					<plugin>
 			            <artifactId>maven-assembly-plugin</artifactId>
-						<version>2.6</version>
+						<version>3.0.0</version>
 			            <executions>
 			              <execution>
 			                <id>assembly</id>
@@ -176,7 +176,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.10.3</version>
+                        <version>2.10.4</version>
                     </plugin>                      
 				</plugins>
 			</build>
@@ -189,7 +189,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-jar-plugin</artifactId>
-						<version>3.0.0</version>						
+						<version>3.0.2</version>						
 						<configuration>
 							<finalName>mzIdentMLSchemaValidator</finalName>
 							<outputDirectory>mzIdentMLValidator</outputDirectory>
@@ -213,7 +213,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-jar-plugin</artifactId>
-						<version>3.0.0</version>
+						<version>3.0.2</version>
 						<configuration>
 							<finalName>mzIdentMLValidator</finalName>
                             <!--
@@ -230,7 +230,7 @@
 					</plugin>
 					<plugin>
 			            <artifactId>maven-assembly-plugin</artifactId>
-						<version>2.6</version>
+						<version>3.0.0</version>
 			            <executions>
 			              <execution>
 			                <id>assembly</id>
@@ -325,7 +325,7 @@
 		<dependency>
 			<groupId>psidev.psi.tools</groupId>
 			<artifactId>xxindex</artifactId>
-			<version>0.14</version>
+			<version>0.20</version>
 		</dependency>
 		<dependency>
 			<groupId>xerces</groupId>
