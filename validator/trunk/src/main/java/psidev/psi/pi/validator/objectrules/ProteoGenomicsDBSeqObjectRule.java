@@ -13,7 +13,8 @@ import uk.ac.ebi.jmzidml.model.mzidml.CvParam;
 import uk.ac.ebi.jmzidml.model.mzidml.DBSequence;
 
 /**
- * Checks if the triplet of genome reference version (MS:1002644), chromosome name (MS:1002637) and chromosome strand (MS:1002638) is present under the DBSequence for a proteogenomics search.
+ * Checks if the triplet of genome reference version (MS:1002644), chromosome name (MS:1002637) and chromosome strand (MS:1002638)
+ * or the term unmapped protein (MS:1002741) is present under the DBSequence for a proteogenomics search.
  * 
  * @author Gerhard
  * 
@@ -24,7 +25,7 @@ public class ProteoGenomicsDBSeqObjectRule extends AObjectRule<DBSequence> {
      * Constants.
      */
     private static final Context DBSEQ_CONTEXT = new Context(MzIdentMLElement.DBSequence.getXpath());
-    private final String tripletMsg = "  triplet of proteogenomics attribute terms (childs of MS:1002520) ";
+    private final String tripletMsg = "  triplet of proteogenomics attribute terms (childs of MS:1002520) or 'unmapped protein' (MS:1002741) ";
 
     /**
      * Members.
@@ -32,6 +33,7 @@ public class ProteoGenomicsDBSeqObjectRule extends AObjectRule<DBSequence> {
     private boolean chromosomeNameTerm          = false;
     private boolean chromosomeStrandTerm        = false;
     private boolean genomeReferenceVersionTerm  = false;
+    private boolean unmappedProteinTerm         = false;
     
     /**
      * Constructors.
@@ -87,16 +89,22 @@ public class ProteoGenomicsDBSeqObjectRule extends AObjectRule<DBSequence> {
                         this.genomeReferenceVersionTerm = true;
                         bFound = true;
                         break;
+                    case "MS:1002741":  // unmappedProtein
+                        this.unmappedProteinTerm = true;
+                        bFound = true;
+                        break;
                 }
                 if (bFound) {
                     break;
                 }
             }
-            
-            if (!(this.chromosomeNameTerm           &&
-                  this.chromosomeStrandTerm         &&
-                  this.genomeReferenceVersionTerm)) {
-                this.addMessageToCollection(dbseq, messages);
+
+            if (!this.unmappedProteinTerm) {
+                if (  !(this.chromosomeNameTerm         &&
+                        this.chromosomeStrandTerm       &&
+                        this.genomeReferenceVersionTerm)) {
+                    this.addMessageToCollection(dbseq, messages);
+                }
             }
         }
 

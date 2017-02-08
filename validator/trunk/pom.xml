@@ -3,7 +3,7 @@
 	<groupId>psidev.psi.pi</groupId>
 	<artifactId>mzIdentMLValidator</artifactId>
 	<packaging>jar</packaging>
-	<version>1.4.25-SNAPSHOT</version>
+	<version>1.4.26-SNAPSHOT</version>
 	<name>PSI mzIdentML semantic and MIAPE validator</name>
 	<description>A semantic and MIAPE validator for PSI mzIdentML XML files.</description>
 	<properties>
@@ -325,7 +325,7 @@
 		<dependency>
 			<groupId>psidev.psi.tools</groupId>
 			<artifactId>xxindex</artifactId>
-			<version>0.20</version>
+			<version>0.14</version>
 		</dependency>
 		<dependency>
 			<groupId>xerces</groupId>

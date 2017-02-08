@@ -271,7 +271,7 @@
 			<CvTerm termAccession="MS:1002406" useTermName="false" useTerm="true" termName="count of identified clusters" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
        	</CvMappingRule>
   
-        <CvMappingRule id="ProteinDetectionList_must_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList" cvTermsCombinationLogic="AND">
+        <CvMappingRule id="ProteinDetectionList_must_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1002404" useTermName="false" useTerm="true" termName="count of identified proteins" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
        	</CvMappingRule>
 		
@@ -347,19 +347,6 @@
 		<!-- IN ANY CASE, THE ERROR REPORTED BY THIS RULE IS NOT GOING TO BE REPORTED BY THE SEMANTIC VALIDATOR AS IT IS CONFIGURED AT ruleFilter_semantic.xml -->
 		<CvMappingRule id="ProteogenomicsSearchType_may_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/additionalSearchParams" cvTermsCombinationLogic="AND">
             <CvTerm termAccession="MS:1002635" useTermName="false" useTerm="true" termName="proteogenomics search" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-        </CvMappingRule>
-		
-        <CvMappingRule id="ProteogenomicsDBSequence_must_rule" cvElementPath="/MzIdentML/SequenceCollection/DBSequence/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/SequenceCollection/DBSequence" cvTermsCombinationLogic="AND">
-            <CvTerm termAccession="MS:1002637" useTermName="false" useTerm="true" termName="chromosome name" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002638" useTermName="false" useTerm="true" termName="chromosome strand" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002644" useTermName="false" useTerm="true" termName="genome reference version" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-        </CvMappingRule>
-
-        <CvMappingRule id="ProteogenomicsPeptideEvidence_must_rule" cvElementPath="/MzIdentML/SequenceCollection/peptideEvidence/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/SequenceCollection/peptideEvidence" cvTermsCombinationLogic="AND">
-            <CvTerm termAccession="MS:1002640" useTermName="false" useTerm="true" termName="peptide end on chromosome" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002641" useTermName="false" useTerm="true" termName="peptide exon count" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002642" useTermName="false" useTerm="true" termName="peptide exon nucleotide sizes" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1002643" useTermName="false" useTerm="true" termName="peptide start positions on chromosome" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
         </CvMappingRule>
 		
     	<CvMappingRule id="ModLocalizationSpectrumIdentificationItem_must_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem" cvTermsCombinationLogic="OR">

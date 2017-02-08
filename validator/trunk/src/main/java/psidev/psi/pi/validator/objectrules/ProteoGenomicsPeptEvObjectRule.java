@@ -13,7 +13,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.CvParam;
 import uk.ac.ebi.jmzidml.model.mzidml.PeptideEvidence;
 
 /**
- * Check if the quartet of mandatory CV terms for each PeptideEvidence is present for a proteogenomics search.
+ * Check if the quartet of mandatory CV terms for each PeptideEvidence or the term unmapped peptide (MS:1002740) is present for a proteogenomics search.
  * 
  * @author Gerhard
  * 
@@ -24,7 +24,7 @@ public class ProteoGenomicsPeptEvObjectRule extends AObjectRule<PeptideEvidence>
      * Constants.
      */
     private static final Context PEV_CONTEXT = new Context(MzIdentMLElement.PeptideEvidence.getXpath());
-    private final String quartetMsg = " quartet of proteogenomics attribute terms (childs of MS:1002520) ";
+    private final String quartetMsg = " quartet of proteogenomics attribute terms (childs of MS:1002520) or 'unmapped peptide' (MS:1002740) ";
 
     /**
      * Members.
@@ -33,6 +33,7 @@ public class ProteoGenomicsPeptEvObjectRule extends AObjectRule<PeptideEvidence>
     private boolean peptideExonCountTerm                    = false;
     private boolean peptideExonNucleotideSizesTerm          = false;
     private boolean peptideStartPositionsOnChromosomeTerm   = false;
+    private boolean unmappedPeptideTerm                     = false;
     
     /**
      * Constructors.
@@ -88,14 +89,19 @@ public class ProteoGenomicsPeptEvObjectRule extends AObjectRule<PeptideEvidence>
                     case "MS:1002643":  // peptide start positions on chromosome
                         this.peptideStartPositionsOnChromosomeTerm = true;
                         break;
+                    case "MS:1002740":  // unmapped peptide
+                        this.unmappedPeptideTerm = true;
+                        break;
                 }
             }
             
-            if (  !(this.peptideEndOnChromosomeTerm             &&
-                    this.peptideExonCountTerm                   &&
-                    this.peptideExonNucleotideSizesTerm         &&
-                    this.peptideStartPositionsOnChromosomeTerm)) {
-                this.addMessageToCollection(pev, messages);
+            if (!this.unmappedPeptideTerm) {
+                if (  !(this.peptideEndOnChromosomeTerm             &&
+                        this.peptideExonCountTerm                   &&
+                        this.peptideExonNucleotideSizesTerm         &&
+                        this.peptideStartPositionsOnChromosomeTerm)) {
+                    this.addMessageToCollection(pev, messages);
+                }
             }
         }
 

@@ -1131,11 +1131,19 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                             report.getInvalidCvRules().remove(ruleID);
                             bAdd = false;
                             break;
-                        case "ProteogenomicsDBSequence_must_rule":
+                        case "ProteogenomicsDBSequence_may_rule":
                             report.getInvalidCvRules().remove(ruleID);
                             bAdd = false;
                             break;
-                        case "ProteogenomicsPeptideEvidence_must_rule":
+                        case "ProteogenomicsDBSequence_unmapped_may_rule":
+                            report.getInvalidCvRules().remove(ruleID);
+                            bAdd = false;
+                            break;
+                        case "ProteogenomicsPeptideEvidence_may_rule":
+                            report.getInvalidCvRules().remove(ruleID);
+                            bAdd = false;
+                            break;
+                        case "ProteogenomicsPeptideEvidence_unmapped_may_rule":
                             report.getInvalidCvRules().remove(ruleID);
                             bAdd = false;
                             break;

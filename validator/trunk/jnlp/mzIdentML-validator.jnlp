@@ -17,7 +17,7 @@
 	<resources>
 		<j2se version="1.8" max-heap-size="4096m"/>
         <!-- Used libraries -->
-        <jar href="lib/mzIdentMLValidator-1.4.25-SNAPSHOT.jar" main="true"/>
+        <jar href="lib/mzIdentMLValidator-1.4.26-SNAPSHOT.jar" main="true"/>
         <jar href="lib/bbop-2.0.jar"/>
         <jar href="lib/commons-beanutils-1.9.3.jar"/>
         <jar href="lib/commons-collections-3.2.2.jar"/>
@@ -35,6 +35,7 @@
         <jar href="lib/jmzidentml-1.1.9.jar"/>
         <jar href="lib/jmzidentml-1.2.4.jar"/>
         <jar href="lib/log4j-1.2.17.jar"/>
+        <jar href="lib/log4j-api-2.8.jar"/>
         <jar href="lib/object-rule-reader-2.0.7.jar"/>
         <jar href="lib/obo-2.0.jar"/>
         <jar href="lib/oboedit-1.101.jar"/>
@@ -45,7 +46,6 @@
         <jar href="lib/oscache-2.4.1.jar"/>
         <jar href="lib/proteomics-common-1.6.jar"/>
         <jar href="lib/slf4j-api-1.7.22.jar"/>
-        <jar href="lib/slf4j-log4j12-1.7.22.jar"/>
         <jar href="lib/validator-2.0.7.jar"/>
         <jar href="lib/xercesImpl-2.11.0.jar"/>
         <jar href="lib/xml-apis.jar"/>

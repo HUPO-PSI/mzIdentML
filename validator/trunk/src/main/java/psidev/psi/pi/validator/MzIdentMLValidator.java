@@ -834,6 +834,8 @@ public class MzIdentMLValidator extends Validator {
         this.checkXLInterActionScorePairing();
 
         if (this.currentFileVersion == MzIdVersion._1_2) {
+            this.checkElementObjectRule(MzIdentMLElement.DBSequence);
+            this.checkElementObjectRule(MzIdentMLElement.PeptideEvidence);
             //this.checkElementObjectRule(MzIdentMLElement.SequenceCollection);
             //this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationList);
             this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationResult);
@@ -965,7 +967,7 @@ public class MzIdentMLValidator extends Validator {
         // Get again the iterator over the SpectrumIdentificationItems.
         mzIdentMLIter = this.unmarshaller.unmarshalCollectionFromXpath(MzIdentMLElement.SpectrumIdentificationItem);
         // create synchronized List to which all threads can write their Validator messages
-        Map<String, List<ValidatorMessage>> sync_msgs = Collections.synchronizedMap(new HashMap<String, List<ValidatorMessage>>());
+        Map<String, List<ValidatorMessage>> sync_msgs = Collections.synchronizedMap(new HashMap<>());
 
         // Create lock.
         InnerLock lock = new InnerLock();

@@ -775,7 +775,7 @@ Configurations for various properties of model classes.
         <cvParamClass>uk.ac.ebi.jmzidml.model.mzidml.params.TranslationTableCvParam</cvParamClass>
         <idMapped>false</idMapped>
 <!--         <indexed>false</indexed> -->
-<!-- indexed due to rule(s) DatabaseTranslationTrasnlationTable_rule -->
+<!-- indexed due to rule(s) DatabaseTranslationTranslationTable_rule -->
 		<indexed>true</indexed>
         <tagName>TranslationTable</tagName>
         <xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/DatabaseTranslation/TranslationTable</xpath>

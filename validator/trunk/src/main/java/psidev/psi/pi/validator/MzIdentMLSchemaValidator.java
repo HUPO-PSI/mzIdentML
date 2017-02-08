@@ -3,7 +3,6 @@ package psidev.psi.pi.validator;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.Reader;
 import java.net.MalformedURLException;
@@ -20,8 +19,6 @@ import javax.xml.validation.Validator;
 
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
-
-import psidev.psi.tools.validator.ValidatorMessage;
 
 /**
  * @author Florian Reisinger
@@ -162,18 +159,12 @@ public class MzIdentMLSchemaValidator {
             // Set the schema.
             validator.setSchema(schemaFile.toURI());
             System.out.println(NEW_LINE + "Retrieving files from '" + inputFolder.getAbsolutePath() + "'...");
-            File[] inputFiles = inputFolder.listFiles(new FilenameFilter() {
-                /**
-                 * Tests, if the file has a valid extension.
-                 * @param dir
-                 * @param name
-                 * @return true, if it's a .mzid or .xml file
-                 */
-                @Override
-                public boolean accept(File dir, String name) {
-                    return name.toLowerCase().endsWith(STR_FILE_EXT_MZID) || name.toLowerCase().endsWith(STR_FILE_EXT_XML);
-                }
-            });
+            File[] inputFiles = inputFolder.listFiles((File dir, String name) -> name.toLowerCase().endsWith(STR_FILE_EXT_MZID) || name.toLowerCase().endsWith(STR_FILE_EXT_XML) /**
+             * Tests, if the file has a valid extension.
+             * @param dir
+             * @param name
+             * @return true, if it's a .mzid or .xml file
+             */ );
             
             System.out.println("Found " + inputFiles.length + " input files." + NEW_LINE);
             System.out.println("Validating files...");
@@ -186,9 +177,9 @@ public class MzIdentMLSchemaValidator {
                 }
                 else {
                     System.out.println(MzIdentMLSchemaValidator.STR4_INDENTATION + "* Errors detected: ");
-                    for (ValidatorMessage vMsg : xveh.getErrorsAsValidatorMessages()) {
+                    xveh.getErrorsAsValidatorMessages().forEach((vMsg) -> {
                         System.out.println(vMsg.getMessage());
-                    }
+                    });
                 }
                 br.close();
             }
