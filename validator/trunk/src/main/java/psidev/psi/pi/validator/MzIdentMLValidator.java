@@ -71,7 +71,7 @@ public class MzIdentMLValidator extends Validator {
     private static final String DOUBLE_TAB = TAB + TAB;
     private static final String NEW_LINE_DOUBLE_TAB = NEW_LINE + DOUBLE_TAB;
     private final String STR_ELLIPSIS = "...";
-    private static int progressSteps = 55;
+    private static int progressSteps = 64;
     private static final int EXIT_FAILURE  = -1;
 
     private final String STR_FILE_EXT_GZ  = ".gz";
@@ -842,7 +842,7 @@ public class MzIdentMLValidator extends Validator {
             //this.checkElementObjectRule(MzIdentMLElement.ProteinDetectionHypothesis);
         }
         
-        this.LOGGER.info("Object Rule validation done in " + (System.currentTimeMillis() - startTime) + "ms.");
+        this.LOGGER.debug("Object Rule validation done in " + (System.currentTimeMillis() - startTime) + "ms.");
     }
 
     /**
@@ -922,6 +922,7 @@ public class MzIdentMLValidator extends Validator {
         this.checkElementCvMapping(MzIdentMLElement.Inputs);
         this.checkElementCvMapping(MzIdentMLElement.SourceFile);
         this.checkElementCvMapping(MzIdentMLElement.SearchDatabase);
+        this.checkElementCvMapping(MzIdentMLElement.SearchModification);
         this.checkElementCvMapping(MzIdentMLElement.SpectraData);
         this.checkElementCvMapping(MzIdentMLElement.SpectrumIDFormat);
         this.checkElementCvMapping(MzIdentMLElement.SpecificityRules);

@@ -9,7 +9,7 @@
 	<properties>
 		<lib.dir>lib</lib.dir>
     	<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-	    <assembly.output.folder>Validator</assembly.output.folder>
+	    <assembly.output.folder>validator</assembly.output.folder>
 	    <assembly.dir>mzIdentMLValidator_GUI_v${project.version}</assembly.dir>
 	</properties>
 	<build>

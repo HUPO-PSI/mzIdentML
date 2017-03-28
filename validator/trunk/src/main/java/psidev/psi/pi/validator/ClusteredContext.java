@@ -61,7 +61,7 @@ public class ClusteredContext extends Context {
         if (!this.contexts.isEmpty()) {
             sb.append(this.contexts.iterator().next());
             if (this.contexts.size() > 1) {
-                sb.append(" in ").append(getNumberOfContexts()).append(" locations");
+                sb.append(" in ").append(this.getNumberOfContexts()).append(" locations");
             }
         }
 
