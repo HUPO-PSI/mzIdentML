@@ -1,4 +1,4 @@
-﻿<!-- mzIdentML version 1.2.0-candidate
+﻿<!-- mzIdentML version 1.2.0
 Distributed under the Creative Commons license http://creativecommons.org/licenses/by/2.0/.
 -->
 <xsd:schema xmlns:psi-pi="http://psidev.info/psi/pi/mzIdentML/1.2" xmlns="http://psidev.info/psi/pi/mzIdentML/1.2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://psidev.info/psi/pi/mzIdentML/1.2" elementFormDefault="qualified" version="1.2.0">
