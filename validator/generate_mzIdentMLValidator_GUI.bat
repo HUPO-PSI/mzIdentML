@@ -5,9 +5,9 @@ set JAR_FILE=%OutDir%mzIdentMLValidator-1.4.26-SNAPSHOT.jar
 set MANIFEST_FILE=C:\Users\mayerg97\Documents\GitHub\HUPO-PSI\mzIdentML\validator\manifest.mf
 
 cd %OutDir%
-del %JAR_FILE%
+REM del %JAR_FILE%
 
-"C:\Program Files\Java\jdk1.8.0_121\bin\jar.exe" -cmvf %MANIFEST_FILE% %JAR_FILE% *
+"C:\Program Files\Java\jdk1.8.0_131\bin\jar.exe" -cmvf %MANIFEST_FILE% %JAR_FILE% *
 
 @echo on
 pause

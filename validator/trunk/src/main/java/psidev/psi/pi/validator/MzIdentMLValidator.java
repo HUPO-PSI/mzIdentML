@@ -247,7 +247,7 @@ public class MzIdentMLValidator extends Validator {
             case _1_1:
                 return this.getMzIdentMLSchema("mzIdentML1.1.0.xsd", "url.schema.1.1.0");
             case _1_2:
-                return this.getMzIdentMLSchema("mzIdentML1.2.0-candidate.xsd", "url.schema.1.2.0"); // TODO: adapt as soon as version 1.2.0 is an official standard
+                return this.getMzIdentMLSchema("mzIdentML1.2.0.xsd", "url.schema.1.2.0");
             default:
                 throw new ValidatorException("Not supported mzIdentML version: " + version);
         }
