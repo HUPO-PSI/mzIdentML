@@ -8,12 +8,12 @@ A large number of different proteomics search engines are available that produce
 ## Citing mzIdentML
 When you use mzIdentML format, please cite the following publications:
 
-** mzIdentML v1.2: **
-Vizcaino, J. A., Mayer, G., Perkins, S. R., Barsnes, H., Vaudel, M., Perez-Riverol, Y., Ternent, T., Uszkoreit, J., Eisenacher, M., Fischer, L., Rappsilber, J., Netz, E., Walzer, M., Kohlbacher, O., Leitner, A., Chalkley, R. J., Ghali, F., Martinez-Bartolome, S., Deutsch, E. W., and Jones, A. R. (2017) The mzIdentML data standard version 1.2, supporting advances in proteome informatics. Molecular & cellular proteomics, mcp.M117.068429 (http://www.mcponline.org/content/early/2017/05/17/mcp.M117.068429.long)
+**mzIdentML v1.2: **
+Vizcaino, J. A., Mayer, G., Perkins, S. R., Barsnes, H., Vaudel, M., Perez-Riverol, Y., Ternent, T., Uszkoreit, J., Eisenacher, M., Fischer, L., Rappsilber, J., Netz, E., Walzer, M., Kohlbacher, O., Leitner, A., Chalkley, R. J., Ghali, F., Martinez-Bartolome, S., Deutsch, E. W., and Jones, A. R. (2017) The mzIdentML data standard version 1.2, supporting advances in proteome informatics. Molecular & cellular proteomics, mcp.M117.068429 [pdf] (http://www.mcponline.org/content/early/2017/05/17/mcp.M117.068429.long)
 
 
 
-** mzIdentML v1.1: **
+**mzIdentML v1.1: **
 Jones A.R., Eisenacher M., Mayer G., Kohlbacher O., Siepen J., Hubbard S.J., Selley J.N., Searle B.C., Shofstahl J., Seymour S.L., Julian R., Binz P.A., Deutsch E.W., Hermjakob H., Reisinger F., Griss J., Vizcaíno J.A., Chambers M., Pizarro A., Creasy D. The mzIdentML data standard for mass spectrometry-based proteomics results. Mol Cell Proteomics. 2012 Jul;11(7):M111.014381 [pdf](http://www.mcponline.org/content/11/7/M111.014381.full.pdf+html)
 
 
