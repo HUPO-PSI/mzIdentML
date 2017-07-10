@@ -1,11 +1,11 @@
 format-version: 1.2
-data-version: releases/2017-06-27
+data-version: releases/2017-07-10
 ontology: xlmod
-date: 27:06:2017 11:22
+date: 10:07:2017 14:24
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: XLMOD
-remark: version: 1.1.0_rc1
+remark: version: 1.1.0
 remark: coverage: cross-linking reagents and cross-linker related post-translational modifications
 remark: creator: Lutz Fischer <lfischer <-at-> staffmail.ed.ac.uk>
 remark: creator: Alexander Leitner <leitner <-at-> imsb.biol.ethz.ch>
