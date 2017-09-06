@@ -111,19 +111,18 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
                         break;
                 }
             }
-        }
         
-        if (cnt == 0) {
-            messages.add(new ValidatorMessage("At least one child term of 'special processing' must occur in the AdditionalSearchParams of the SpectrumIdentificationProtocol (id='"
-            + sip.getId() + "') element at " + AdditionalSearchParamsObjectRule.SIP_CONTEXT.getContext(),
-            MessageLevel.ERROR, AdditionalSearchParamsObjectRule.SIP_CONTEXT, this));
-        }
-        else if (cnt > this.CNT_MAX) {
-            messages.add(new ValidatorMessage("Found more than " + this.CNT_MAX + " childs term of 'special processing' in the AdditionalSearchParams of the SpectrumIdentificationProtocol (id='"
-            + sip.getId() + "') element at " + AdditionalSearchParamsObjectRule.SIP_CONTEXT.getContext(),
-            MessageLevel.INFO, AdditionalSearchParamsObjectRule.SIP_CONTEXT, this));
-        }
-
+        	if (cnt == 0) {
+            	messages.add(new ValidatorMessage("At least one child term of 'special processing' must occur in the AdditionalSearchParams of the SpectrumIdentificationProtocol (id='"
+            	+ sip.getId() + "') element at " + AdditionalSearchParamsObjectRule.SIP_CONTEXT.getContext(),
+           		MessageLevel.ERROR, AdditionalSearchParamsObjectRule.SIP_CONTEXT, this));
+        	}
+        	else if (cnt > this.CNT_MAX) {
+            	messages.add(new ValidatorMessage("Found more than " + this.CNT_MAX + " childs term of 'special processing' in the AdditionalSearchParams of the SpectrumIdentificationProtocol (id='"
+            	+ sip.getId() + "') element at " + AdditionalSearchParamsObjectRule.SIP_CONTEXT.getContext(),
+            	MessageLevel.INFO, AdditionalSearchParamsObjectRule.SIP_CONTEXT, this));
+        	}
+		}
         // check for threshold element in case of modification position scoring
         if (bIsModificationLocalizationScoring) {
             for (CvParam cvp: sip.getThreshold().getCvParam()) {
