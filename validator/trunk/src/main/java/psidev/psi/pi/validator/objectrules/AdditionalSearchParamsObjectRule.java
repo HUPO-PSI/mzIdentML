@@ -78,36 +78,38 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
 
         // check for the special processing types
         int cnt = 0;
-        for (CvParam cvp: sip.getAdditionalSearchParams().getCvParam()) {
-            switch (cvp.getAccession()) {
-                case "MS:1002490":  // peptide-level scoring
-                    cnt++;
-                    bIsPeptideLevelScoring = true;
-                    break;
-                case "MS:1002491":  // modification localization scoring
-                    cnt++;
-                    bIsModificationLocalizationScoring = true;
-                    break;
-                case "MS:1002492":  // consensus scoring
-                    cnt++;
-                    bIsConsensusScoring = true;
-                    break;
-                case "MS:1002493":  // sample pre-fractionation
-                    cnt++;
-                    bIsSamplePreFractionation = true;
-                    break;
-                case "MS:1002494":  // cross-linking search
-                    cnt++;
-                    bIsCrossLinkingSearch = true;
-                    break;
-                case "MS:1002635":  // proteogenomics search
-                    cnt++;
-                    bIsProteoGenomicsSearch = true;
-                    break;
-                case "MS:1002495":  // no special processing
-                    cnt++;
-                    bIsNoSpecialProcessing = true;
-                    break;
+        if (sip.getAdditionalSearchParams()!=null) {
+            for (CvParam cvp: sip.getAdditionalSearchParams().getCvParam()) {
+                switch (cvp.getAccession()) {
+                    case "MS:1002490":  // peptide-level scoring
+                        cnt++;
+                        bIsPeptideLevelScoring = true;
+                        break;
+                    case "MS:1002491":  // modification localization scoring
+                        cnt++;
+                        bIsModificationLocalizationScoring = true;
+                        break;
+                    case "MS:1002492":  // consensus scoring
+                        cnt++;
+                        bIsConsensusScoring = true;
+                        break;
+                    case "MS:1002493":  // sample pre-fractionation
+                        cnt++;
+                        bIsSamplePreFractionation = true;
+                        break;
+                    case "MS:1002494":  // cross-linking search
+                        cnt++;
+                        bIsCrossLinkingSearch = true;
+                        break;
+                    case "MS:1002635":  // proteogenomics search
+                        cnt++;
+                        bIsProteoGenomicsSearch = true;
+                        break;
+                    case "MS:1002495":  // no special processing
+                        cnt++;
+                        bIsNoSpecialProcessing = true;
+                        break;
+                }
             }
         }
         
