@@ -3,14 +3,12 @@ package psidev.psi.pi.validator;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
-//import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.BeforeClass;
 
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
-import org.junit.runner.notification.Failure;
 import psidev.psi.pi.validator.objectrules.AObjectRule;
 
 /**
@@ -87,8 +85,8 @@ public class URLEncodingTest {
     public static void main(String[] args) {
         Result res = JUnitCore.runClasses(psidev.psi.pi.validator.URLEncodingTest.class);
         
-        for (Failure fail : res.getFailures()) {
+        res.getFailures().forEach((fail) -> {
             LOGGER.error(fail.toString());
-        }
+        });
     }
 }

@@ -30,9 +30,9 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 import javax.xml.bind.JAXBException;
-import org.apache.commons.lang.mutable.MutableInt;
-import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.commons.lang3.mutable.MutableInt;
 import org.apache.commons.lang3.SystemUtils;
+import org.apache.commons.text.StringEscapeUtils;
 import org.apache.log4j.Logger;
 import psidev.psi.pi.rulefilter.CleavageRuleCondition;
 import psidev.psi.pi.rulefilter.DatabaseTypeCondition;
@@ -55,7 +55,9 @@ import psidev.psi.tools.validator.rules.cvmapping.CvRule;
 /**
  * The GUI of the MzIdentML validator software.
  * @author __USER__
- * @see "http://www.ebi.ac.uk/~maven/m2repo_snapshots/uk/ac/ebi/jmzidml/jmzidentml/"
+ * @see "http://www.ebi.ac.uk/Tools/maven/repos/content/groups/"
+ * @see "http://www.ebi.ac.uk/Tools/maven/repos/content/groups/ebi-repo/psidev/psi/tools/"
+ * @see "http://www.ebi.ac.uk/Tools/maven/repos/content/groups/ebi-repo/uk/ac/ebi/jmzidml/jmzidentml/"
  */
 public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFilterAgent {
     /**
@@ -67,21 +69,26 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     private static final String STR_RESOURCE_FOLDER = System.getProperty("user.dir") + STR_FILE_SEPARATOR + "resources" + STR_FILE_SEPARATOR;
     private static final String STR_ELLIPSIS = "...";
     private static final String DEFAULT_PROGRESS_MESSAGE = "Select a file and press validate" + STR_ELLIPSIS;
+    
     private final String STR_4_INDENTATION  = "    ";
+    private final String STR_FLAW_IN_RULE   = "Flaw in the rule definition: ";
     private final int DEFAULT_MAX_NUMBER_TO_REPORT_SAME_MESSAGE = 1;
     private static final int EXIT_SUCCESS = 0;
-    public final String STR_FILE_EXT_MZID_GZ    = ".mzid.gz";
-    public final String STR_FILE_EXT_MZID_ZIP   = ".mzid.zip";
-    public final String STR_FILE_EXT_MZID       = ".mzid";
-    public final String STR_FILE_EXT_7Z         = ".7z";
-    public final String STR_FILE_EXT_XML        = ".xml";
-    public final String STR_MAPPING = "mapping";
-    public final String STR_OBJECT  = "object";
-    public final String COLOR_RED   = "red";
-    public final String COLOR_ORANGE= "orange";
-    public final String COLOR_GREEN = "green";
-    public final String COLOR_BLACK = "black";
     private final ClassLoader cl;
+   
+    private final String STR_FILE_EXT_MZID_GZ   = ".mzid.gz";
+    private final String STR_FILE_EXT_MZID_ZIP  = ".mzid.zip";
+    private final String STR_FILE_EXT_MZID      = ".mzid";
+    private final String STR_FILE_EXT_XML       = ".xml";
+    private final String STR_FILE_EXT_7Z        = ".7z";
+    public final String STR_EMPTY       = "";
+    
+    public final String STR_MAPPING    = "mapping";
+    public final String STR_OBJECT     = "object";
+    public final String COLOR_RED      = "red";
+    public final String COLOR_ORANGE   = "orange";
+    public final String COLOR_GREEN    = "green";
+    public final String COLOR_BLACK    = "black";
 
     /**
      * Members.
@@ -91,13 +98,14 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     private SwingWorker sw;
 
     protected RuleFilterManager ruleFilterManager;
-    private String lastSelectedPath = "";
+    private String lastSelectedPath = this.STR_EMPTY;
     private boolean bHasCvErrors;
     public boolean bHasXLErrors;
     private boolean bHasCvWarnings;
     private boolean bHasObjErrors;
     private boolean bHasObjWarnings;
     public int cntDoubledUnanticipatedCVTermMessages = 0;
+    public int cntFlawErrors = 0;
     
     /**
      * Constructor: Creates new form mzIdentMLValidatorGUI
@@ -153,6 +161,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         jCheckBoxCheckCVRules = new javax.swing.JCheckBox();
         jCheckBoxUseRemoteOntologies = new javax.swing.JCheckBox();
         jCheckBoxShowUnanticipatedCVTerms = new javax.swing.JCheckBox();
+        jCBShowFlawErrors = new javax.swing.JCheckBox();
         jPanel7 = new javax.swing.JPanel();
         jButtonValidate = new javax.swing.JButton();
         jLabelSpinner = new javax.swing.JLabel();
@@ -161,9 +170,10 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         jTextField1.setText("jTextField1");
 
         setAutoscrolls(true);
-        setMaximumSize(new java.awt.Dimension(1980, 1200));
-        setMinimumSize(new java.awt.Dimension(600, 400));
+        setMaximumSize(new java.awt.Dimension(1200, 1980));
+        setMinimumSize(new java.awt.Dimension(768, 800));
         setName("MzIdentMLValidator-GUI"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(900, 1024));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("File selection"));
 
@@ -190,7 +200,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                 .addComponent(jTextInputFile, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonBrowse)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,7 +246,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                     .addComponent(jRadioWarnLevel)
                     .addComponent(jRadioErrorLevel)
                     .addComponent(jRadioDebugLevel))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("User selection (for MIAPE validation only)"));
@@ -365,7 +375,9 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 29, Short.MAX_VALUE))
         );
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Progress"));
@@ -415,19 +427,22 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         jCheckBoxShowUnanticipatedCVTerms.setText("Show unanticipated CV terms");
         jCheckBoxShowUnanticipatedCVTerms.setToolTipText("<html>\nShows CV terms, which don't occur <br> in a mapping rule of the mapping file.</html>");
 
+        jCBShowFlawErrors.setText("Show flaw errors");
+        jCBShowFlawErrors.setToolTipText("<html>Show flaw errors (i.e. check case sensitive).</html>");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCBShowFlawErrors)
                     .addComponent(jCheckBoxShowUnanticipatedCVTerms)
                     .addComponent(jCheckBoxUseRemoteOntologies)
                     .addComponent(jCheckBoxCheckCVRules)
                     .addComponent(jCheckBoxSkipSchemaValidation)
-                    .addComponent(jComboValidationType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addComponent(jComboValidationType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -438,10 +453,14 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBoxCheckCVRules)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBoxUseRemoteOntologies)
+                .addComponent(jCheckBoxUseRemoteOntologies, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBoxShowUnanticipatedCVTerms))
+                .addComponent(jCheckBoxShowUnanticipatedCVTerms)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCBShowFlawErrors))
         );
+
+        jCBShowFlawErrors.getAccessibleContext().setAccessibleDescription("<html>Show flaw errors (i.e. check case sensitive).</html>");
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Action"));
 
@@ -465,7 +484,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonValidate, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+                    .addComponent(jButtonValidate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabelSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -509,19 +528,19 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
-
-        jPanel3.getAccessibleContext().setAccessibleName("User selection (for MIAPE validation only)");
 
         getAccessibleContext().setAccessibleName("MzIdentMLValidator-GUI");
         getAccessibleContext().setAccessibleDescription("");
@@ -578,6 +597,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         this.jCheckBoxCheckCVRules.setEnabled(false);
         this.jCheckBoxUseRemoteOntologies.setEnabled(false);
         this.jCheckBoxShowUnanticipatedCVTerms.setEnabled(false);
+        this.jCBShowFlawErrors.setEnabled(false);
         this.jSpinner.setEnabled(false);
         this.jLabelSpinner.setEnabled(false);
     }
@@ -851,7 +871,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
      */
     public InputStream getRuleFileInputStream(MzIdVersion mzIdVersion, String ruleKind) throws FileNotFoundException {
         String propertyName = ruleKind;
-        String ruleFile = "";
+        String ruleFile = this.STR_EMPTY;
         
         if (this.isMIAPEValidationSelected()) {
             propertyName += ".rule.file.miape.validation.";
@@ -958,7 +978,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
             message = StringEscapeUtils.escapeHtml4(message);
             String skipSchemaValidation = "Try to run again not skipping the schema validation";
             if (!this.skipXMLSchemaValidation()) {
-                skipSchemaValidation = "";
+                skipSchemaValidation = this.STR_EMPTY;
             }
 
             JOptionPane.showMessageDialog(this,
@@ -985,7 +1005,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
             int cntMessages = this.showMessages(true, validator);
             String reportString = validator.getHtmlStatisticsReport(cntMessages);
             if (reportString != null) 
-                JOptionPane.showMessageDialog(this, new String[] { "", reportString }, "Rule Execution Report", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, new String[] { this.STR_EMPTY, reportString }, "Rule Execution Report", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -1005,6 +1025,8 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         this.jComboValidationTypeActionPerformed(null);
         this.jCheckBoxCheckCVRules.setEnabled(true);
         this.jCheckBoxShowUnanticipatedCVTerms.setEnabled(true);
+        this.jCBShowFlawErrors.setEnabled(true);
+        this.jCheckBoxUseRemoteOntologies.setEnabled(true);
         this.jSpinner.setEnabled(true);
         this.jSpinner.setValue(this.DEFAULT_MAX_NUMBER_TO_REPORT_SAME_MESSAGE);
         this.jLabelSpinner.setEnabled(true);
@@ -1023,10 +1045,21 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         String ruleID, message;
         for (ValidatorMessage msg: msgs) {
             message = msg.getMessage();
+            
+            boolean bAdd = true;
+            // filter out flaw error messages
+            if (!this.jCBShowFlawErrors.isSelected()) {
+                if (msg.getContext() != null) {
+                    if (msg.getContext().toString().contains(this.STR_FLAW_IN_RULE)) {
+                        bAdd = false;
+                        this.cntFlawErrors++;
+                    }
+                }
+            }
+            
             if (!messageList.contains(message)) {
                 messageList.add(message);
 
-                boolean bAdd = true;
                 if (msg.getRule() != null) {
                     ruleID = msg.getRule().getId();
                 }
@@ -1689,6 +1722,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     private javax.swing.ButtonGroup buttonGroupPMForPFF;
     private javax.swing.JButton jButtonBrowse;
     private javax.swing.JButton jButtonValidate;
+    private javax.swing.JCheckBox jCBShowFlawErrors;
     private javax.swing.JCheckBox jCheckBoxCheckCVRules;
     public javax.swing.JCheckBox jCheckBoxShowUnanticipatedCVTerms;
     private javax.swing.JCheckBox jCheckBoxSkipSchemaValidation;

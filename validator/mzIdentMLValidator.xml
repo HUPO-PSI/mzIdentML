@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="validator" default="all">
+  
+  
+  <property file="mzIdentMLValidator.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.zip"/>
+    <include name="*.egg"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/access-bridge-64.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunmscapi.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.lib.classpath">
+    <pathelement location="${basedir}/lib/axis-1.4.jar"/>
+    <pathelement location="${basedir}/lib/axis-jaxrpc-1.4.jar"/>
+    <pathelement location="${basedir}/lib/axis-saaj-1.4.jar"/>
+    <pathelement location="${basedir}/lib/axis-wsdl4j-1.5.1.jar"/>
+    <pathelement location="${basedir}/lib/bbop-2.0.jar"/>
+    <pathelement location="${basedir}/lib/commons-beanutils-1.9.3.jar"/>
+    <pathelement location="${basedir}/lib/commons-collections-3.2.2.jar"/>
+    <pathelement location="${basedir}/lib/commons-collections4-4.1.jar"/>
+    <pathelement location="${basedir}/lib/commons-compress-1.14.jar"/>
+    <pathelement location="${basedir}/lib/commons-discovery-0.5.jar"/>
+    <pathelement location="${basedir}/lib/commons-io-2.5.jar"/>
+    <pathelement location="${basedir}/lib/commons-jxpath-1.3.jar"/>
+    <pathelement location="${basedir}/lib/commons-lang-2.6.jar"/>
+    <pathelement location="${basedir}/lib/commons-lang3-3.6.jar"/>
+    <pathelement location="${basedir}/lib/commons-logging-1.2.jar"/>
+    <pathelement location="${basedir}/lib/commons-text-1.1.jar"/>
+    <pathelement location="${basedir}/lib/cpdetector_1.0.10.jar"/>
+    <pathelement location="${basedir}/lib/cv-rule-reader-2.0.7.jar"/>
+    <pathelement location="${basedir}/lib/fastutil-8.1.0.jar"/>
+    <pathelement location="${basedir}/lib/hamcrest-core-1.3.jar"/>
+    <pathelement location="${basedir}/lib/jargs-1.0.jar"/>
+    <pathelement location="${basedir}/lib/jaxb-core-2.3.0.jar"/>
+    <pathelement location="${basedir}/lib/jmzidentml-1.1.9.jar"/>
+    <pathelement location="${basedir}/lib/jmzidentml-1.2.7.jar"/>
+    <pathelement location="${basedir}/lib/junit-4.12.jar"/>
+    <pathelement location="${basedir}/lib/log4j-1.2.17.jar"/>
+    <pathelement location="${basedir}/lib/logback-classic-1.2.3.jar"/>
+    <pathelement location="${basedir}/lib/logback-core-1.2.3.jar"/>
+    <pathelement location="${basedir}/lib/object-rule-reader-2.0.7.jar"/>
+    <pathelement location="${basedir}/lib/obo-2.0.jar"/>
+    <pathelement location="${basedir}/lib/oboedit-1.101.jar"/>
+    <pathelement location="${basedir}/lib/ols-client-1.18.jar"/>
+    <pathelement location="${basedir}/lib/ols-core-1.19.jar"/>
+    <pathelement location="${basedir}/lib/ontology-config-reader-2.0.7.jar"/>
+    <pathelement location="${basedir}/lib/ontology-manager-4.jar"/>
+    <pathelement location="${basedir}/lib/org.geneontology-1.101.jar"/>
+    <pathelement location="${basedir}/lib/oscache-2.4.1.jar"/>
+    <pathelement location="${basedir}/lib/proteomics-common-1.6.jar"/>
+    <pathelement location="${basedir}/lib/slf4j-api-1.7.25.jar"/>
+    <pathelement location="${basedir}/lib/validator-2.0.7.jar"/>
+    <pathelement location="${basedir}/lib/wsdl4j-1.6.3.jar"/>
+    <pathelement location="${basedir}/lib/xercesImpl-2.11.0.jar"/>
+    <pathelement location="${basedir}/lib/xml-apis.jar"/>
+    <pathelement location="${basedir}/lib/xxindex-0.21.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module main -->
+  
+  <dirname property="module.main.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.main" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.main" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.main" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.main" value="-encoding ISO-8859-1 -source 1.8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="main.output.dir" value="${module.main.basedir}/out/production/main"/>
+  <property name="main.testoutput.dir" value="${module.main.basedir}/out/test/main"/>
+  
+  <path id="main.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="main.module.production.classpath">
+    <path refid="${module.jdk.classpath.main}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="main.runtime.production.module.classpath">
+    <pathelement location="${main.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="main.module.classpath">
+    <path refid="${module.jdk.classpath.main}"/>
+    <pathelement location="${main.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="main.runtime.module.classpath">
+    <pathelement location="${main.testoutput.dir}"/>
+    <pathelement location="${main.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.main">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.main">
+    <patternset refid="excluded.from.module.main"/>
+  </patternset>
+  
+  <path id="main.module.sourcepath">
+    <dirset dir="${module.main.basedir}/trunk/src/main">
+      <include name="java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.main" depends="compile.module.main.production,compile.module.main.tests" description="Compile module main"/>
+  
+  <target name="compile.module.main.production" depends="register.custom.compilers" description="Compile module main; production classes">
+    <mkdir dir="${main.output.dir}"/>
+    <javac2 destdir="${main.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.main}/javac">
+      <compilerarg line="${compiler.args.main}"/>
+      <bootclasspath refid="main.module.bootclasspath"/>
+      <classpath refid="main.module.production.classpath"/>
+      <src refid="main.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.main"/>
+    </javac2>
+    
+    <copy todir="${main.output.dir}">
+      <fileset dir="${module.main.basedir}/trunk/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.main.tests" depends="register.custom.compilers,compile.module.main.production" description="compile module main; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.main" description="cleanup module">
+    <delete dir="${main.output.dir}"/>
+    <delete dir="${main.testoutput.dir}"/>
+  </target>
+  
+  
+  <!-- Module test -->
+  
+  <dirname property="module.test.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.test" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.test" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.test" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.test" value="-encoding ISO-8859-1 -source 1.8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="test.output.dir" value="${module.test.basedir}/out/production/test"/>
+  <property name="test.testoutput.dir" value="${module.test.basedir}/out/test/test"/>
+  
+  <path id="test.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="test.module.production.classpath">
+    <path refid="${module.jdk.classpath.test}"/>
+    <path refid="library.lib.classpath"/>
+    <pathelement location="${main.output.dir}"/>
+  </path>
+  
+  <path id="test.runtime.production.module.classpath">
+    <pathelement location="${test.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="main.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="test.module.classpath">
+    <path refid="${module.jdk.classpath.test}"/>
+    <pathelement location="${test.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <pathelement location="${main.testoutput.dir}"/>
+    <pathelement location="${main.output.dir}"/>
+  </path>
+  
+  <path id="test.runtime.module.classpath">
+    <pathelement location="${test.testoutput.dir}"/>
+    <pathelement location="${test.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="main.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.test">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.test">
+    <patternset refid="excluded.from.module.test"/>
+  </patternset>
+  
+  <path id="test.module.sourcepath">
+    <dirset dir="${module.test.basedir}/trunk/src">
+      <include name="test"/>
+      <include name="test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.test" depends="compile.module.test.production,compile.module.test.tests" description="Compile module test"/>
+  
+  <target name="compile.module.test.production" depends="register.custom.compilers,compile.module.main" description="Compile module test; production classes">
+    <mkdir dir="${test.output.dir}"/>
+    <javac2 destdir="${test.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.test}/javac">
+      <compilerarg line="${compiler.args.test}"/>
+      <bootclasspath refid="test.module.bootclasspath"/>
+      <classpath refid="test.module.production.classpath"/>
+      <src refid="test.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.test"/>
+    </javac2>
+    
+    <copy todir="${test.output.dir}">
+      <fileset dir="${module.test.basedir}/trunk/src/test">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.test.basedir}/trunk/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.test.tests" depends="register.custom.compilers,compile.module.test.production" description="compile module test; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.test" description="cleanup module">
+    <delete dir="${test.output.dir}"/>
+    <delete dir="${test.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.main, clean.module.test" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.main, compile.module.test" description="build all modules"/>
+  
+  <target name="all" depends="build.modules" description="build all"/>
+</project>

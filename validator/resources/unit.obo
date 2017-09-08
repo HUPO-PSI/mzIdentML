@@ -234,7 +234,7 @@ name: angstrom
 namespace: unit.ontology
 def: "A length unit which is equal to 10 [-10] m." [NIST:NIST]
 subset: unit_slim
-synonym: "A" EXACT []
+synonym: "Å" EXACT []
 is_a: UO:0000001 ! length unit
 created_by: george gkoutos
 
@@ -848,7 +848,7 @@ created_by: george gkoutos
 id: UO:0000081
 name: square centimeter
 namespace: unit.ontology
-def: "An area unit which is equal to one thousand of square meter or 10^[-3] m^[2]." [NIST:NIST]
+def: "An area unit which is equal to one ten thousandth of a square meter or 10^[-4] m^[2]." [NIST:NIST]
 subset: unit_slim
 synonym: "cm^[2]" EXACT []
 synonym: "square centimetre" EXACT []

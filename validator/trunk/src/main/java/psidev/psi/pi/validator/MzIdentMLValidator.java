@@ -74,10 +74,9 @@ public class MzIdentMLValidator extends Validator {
     private static int progressSteps = 64;
     private static final int EXIT_FAILURE  = -1;
 
-    private final String STR_FILE_EXT_GZ  = ".gz";
-    private final String STR_FILE_EXT_ZIP = ".zip";
-    private final String STR_FILE_EXT_7Z  = ".7z";
-    private final String STR_EMPTY        = "";
+    private final String STR_FILE_EXT_GZ    = ".gz";
+    private final String STR_FILE_EXT_ZIP   = ".zip";
+    private final String STR_FILE_EXT_7Z    = ".7z";
     
     /**
      * Enums.
@@ -433,11 +432,11 @@ public class MzIdentMLValidator extends Validator {
         String unzippedPath;
         
         if (xmlFile.getName().endsWith(this.STR_FILE_EXT_GZ)) {
-            unzippedPath = xmlFile.getPath().replace(this.STR_FILE_EXT_GZ, this.STR_EMPTY);
+            unzippedPath = xmlFile.getPath().replace(this.STR_FILE_EXT_GZ, this.gui.STR_EMPTY);
             xmlFile = this.unzipXMLFile(xmlFile, unzippedPath, this.STR_FILE_EXT_GZ);
         }
         else if (xmlFile.getName().endsWith(this.STR_FILE_EXT_ZIP)) {
-            unzippedPath = xmlFile.getPath().replace(this.STR_FILE_EXT_ZIP, this.STR_EMPTY);
+            unzippedPath = xmlFile.getPath().replace(this.STR_FILE_EXT_ZIP, this.gui.STR_EMPTY);
             xmlFile = this.unzipXMLFile(xmlFile, unzippedPath, this.STR_FILE_EXT_ZIP);
         }
         
@@ -874,7 +873,7 @@ public class MzIdentMLValidator extends Validator {
     private String getXLInteractionScoreMsg(ImmutablePair<String, String> key, HashMap<String, String> pagID2PDHID_Map) {
         StringBuilder strB = new StringBuilder();
         
-        String pagIDs_pdhIDs = "";
+        String pagIDs_pdhIDs = this.gui.STR_EMPTY;
         String pdhID;
         for (String pagID : pagID2PDHID_Map.keySet()) {
             pdhID = pagID2PDHID_Map.get(pagID);
@@ -1180,7 +1179,7 @@ public class MzIdentMLValidator extends Validator {
             else {
                 if (errorHandler != null) {
                     errorHandler.getErrorsAsValidatorMessages().stream().forEach((validatorMessage) -> {
-                        String ruleId = "";
+                        String ruleId = this.gui.STR_EMPTY;
                         Rule rule = validatorMessage.getRule();
                         if (rule != null) {
                             ruleId = rule.getId();
@@ -1326,6 +1325,7 @@ public class MzIdentMLValidator extends Validator {
         this.cntUnanticipatedCVTerms = 0;
         this.cntXLInteractionScoringMessages = 0;
         this.gui.cntDoubledUnanticipatedCVTermMessages = 0;
+        this.gui.cntFlawErrors = 0;
         this.gui.bHasXLErrors = false;
     }
     
@@ -1468,7 +1468,7 @@ public class MzIdentMLValidator extends Validator {
         this.addTableRow(sb, "CvMappingRule total count:", this.extendedReport.getTotalCvRules());
         this.addTableRow(sb, "CvMappingRules not run:", this.extendedReport.getNonCheckedCvRules().size());
         String cvMappingRuleColor = this.gui.getInvalidCvMappingColor();
-        int noOfInvalidCvRules = this.extendedReport.getInvalidCvRules().size();
+        int noOfInvalidCvRules = this.extendedReport.getInvalidCvRules().size() - this.gui.cntFlawErrors;
         if (cvMappingRuleColor.equals(this.gui.COLOR_RED)) {
             this.addPossiblyColouredRow(sb, "Invalid CvMappingRules:", noOfInvalidCvRules, cvMappingRuleColor);
         }
@@ -1529,7 +1529,7 @@ public class MzIdentMLValidator extends Validator {
         sb.append("CvMappingRule total count: ").append(this.extendedReport.getTotalCvRules()).append(NEW_LINE);
         sb.append("CvMappingRules not run: ").append(this.extendedReport.getNonCheckedCvRules().size()).append(NEW_LINE);
         String cvMappingRuleColor = this.gui.getInvalidCvMappingColor();
-        int noOfInvalidCvRules = this.extendedReport.getInvalidCvRules().size();
+        int noOfInvalidCvRules = this.extendedReport.getInvalidCvRules().size() - this.gui.cntFlawErrors;
         if (cvMappingRuleColor.equals(this.gui.COLOR_RED)) {
             sb.append("CvMappingRules run & invalid: ").append(noOfInvalidCvRules).append(NEW_LINE);
         }
