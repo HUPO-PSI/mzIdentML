@@ -39,8 +39,7 @@
         <jar href="lib/jaxb-core-2.3.0.jar"/>
         <jar href="lib/jmzidentml-1.1.9.jar"/>
         <jar href="lib/jmzidentml-1.2.7.jar"/>
-        <jar href="lib/log4j-1.2.17.jar"/>
-        <jar href="lib/log4j-api-2.9.0.jar"/>
+		<jar href="lib/log4j-over-slf4j-1.7.25.jar"/>
         <jar href="lib/logback-classic-1.2.3.jar"/>
         <jar href="lib/logback-core-1.2.3.jar"/>
         <jar href="lib/object-rule-reader-2.0.7.jar"/>

@@ -72,7 +72,6 @@ public class MzIdentMLValidator extends Validator {
     private static final String NEW_LINE_DOUBLE_TAB = NEW_LINE + DOUBLE_TAB;
     private final String STR_ELLIPSIS = "...";
     private static int progressSteps = 64;
-    private static final int EXIT_FAILURE  = -1;
 
     private final String STR_FILE_EXT_GZ    = ".gz";
     private final String STR_FILE_EXT_ZIP   = ".zip";
@@ -718,7 +717,7 @@ public class MzIdentMLValidator extends Validator {
                     }).forEach((msg) -> {
                         this.extendedReport.addInvalidSchemaValidationMessage(msg.getMessage());
                     });
-                    System.exit(EXIT_FAILURE);
+                    System.exit(MzIdentMLValidatorGUI.EXIT_FAILURE);
                 }
             }
             System.out.println("XML schema validation complete, file valid against .xsd schema.");
@@ -928,14 +927,15 @@ public class MzIdentMLValidator extends Validator {
         this.checkElementCvMapping(MzIdentMLElement.SpectrumIdentificationList);    // this includes SIR and SII
         this.checkElementCvMapping(MzIdentMLElement.FragmentationTable);
         this.checkElementCvMapping(MzIdentMLElement.Measure);
+        this.checkElementCvMapping(MzIdentMLElement.ProteinAmbiguityGroup);
         // disabled because is included in the SIL
         // this.checkElementCvMapping(MzIdentMLElement.SpectrumIdentificationResult);
-        this.checkElementCvMapping(MzIdentMLElement.ProteinAmbiguityGroup);
+        
         if (this.currentFileVersion == MzIdVersion._1_2) {
             this.checkElementCvMapping(MzIdentMLElement.ProteinDetectionHypothesis);
             this.checkElementCvMapping(MzIdentMLElement.ProteinDetectionList);
         }
-
+        
         this.applyCvMappingRulesForSIIsInParallel();
         
         this.LOGGER.info("CV mapping validation done in " + (System.currentTimeMillis() - start) + "ms.");
@@ -1203,7 +1203,7 @@ public class MzIdentMLValidator extends Validator {
             e.printStackTrace(System.err);
         }
         
-        System.exit(EXIT_FAILURE);
+        System.exit(MzIdentMLValidatorGUI.EXIT_FAILURE);
         return false;
     }
 
@@ -1254,7 +1254,11 @@ public class MzIdentMLValidator extends Validator {
                 toValidate.add(next);
                 try {
                     final Collection<ValidatorMessage> cvMappingResult = this.checkCvMapping(toValidate, element.getXpath());
-                    this.addMessages(cvMappingResult, this.msgLevel);
+                    if (cvMappingResult.size() > 0) {
+                        //if (!element.getTagName().equals("ProteinDetectionList")) { // ONLY A WORKAROUND
+                            this.addMessages(cvMappingResult, this.msgLevel);
+                        //}                        
+                    }
                 }
                 catch (IllegalArgumentException e) {
                     this.LOGGER.debug(e.getMessage());
@@ -1775,7 +1779,7 @@ public class MzIdentMLValidator extends Validator {
      */
     private static void printError(String aMessage) {
         System.err.println(DOUBLE_NEW_LINE + aMessage + DOUBLE_NEW_LINE);
-        System.exit(EXIT_FAILURE);
+        System.exit(MzIdentMLValidatorGUI.EXIT_FAILURE);
     }
 
     /**

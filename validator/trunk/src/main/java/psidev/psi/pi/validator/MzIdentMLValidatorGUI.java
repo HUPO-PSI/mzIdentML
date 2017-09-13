@@ -68,12 +68,14 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     private static final String STR_FILE_SEPARATOR  = System.getProperty("file.separator");
     private static final String STR_RESOURCE_FOLDER = System.getProperty("user.dir") + STR_FILE_SEPARATOR + "resources" + STR_FILE_SEPARATOR;
     private static final String STR_ELLIPSIS = "...";
-    private static final String DEFAULT_PROGRESS_MESSAGE = "Select a file and press validate" + STR_ELLIPSIS;
+    private static final String DEFAULT_PROGRESS_MESSAGE    = "Select a file and press validate" + STR_ELLIPSIS;
+    private static final String STR_VALIDATION_PROPERTIES   = "validation.properties";
     
     private final String STR_4_INDENTATION  = "    ";
     private final String STR_FLAW_IN_RULE   = "Flaw in the rule definition: ";
     private final int DEFAULT_MAX_NUMBER_TO_REPORT_SAME_MESSAGE = 1;
     private static final int EXIT_SUCCESS = 0;
+    public static final int EXIT_FAILURE  = -1;
     private final ClassLoader cl;
    
     private final String STR_FILE_EXT_MZID_GZ   = ".mzid.gz";
@@ -89,6 +91,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     public final String COLOR_ORANGE   = "orange";
     public final String COLOR_GREEN    = "green";
     public final String COLOR_BLACK    = "black";
+    
 
     /**
      * Members.
@@ -941,29 +944,29 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
      * @return The property value
      */
     public static String getProperty(String propertyName) {
-    /*
-    // TODO: What is wrong here?
-        InputStream is = this.getClass().getClassLoader().getResourceAsStream("validation.properties");
+        // TODO: What is wrong here?
+        /*
+        InputStream is = MzIdentMLValidatorGUI.class.getClassLoader().getResourceAsStream(MzIdentMLValidatorGUI.STR_RESOURCE_FOLDER + MzIdentMLValidatorGUI.STR_VALIDATION_PROPERTIES);
         if (is == null) {
-            throw new IllegalArgumentException("validation.properties" + " file not found");
+            MzIdentMLValidatorGUI.LOGGER.error(MzIdentMLValidatorGUI.STR_VALIDATION_PROPERTIES + " file not found");
+            System.exit(EXIT_FAILURE);
         }
 
-        Properties prop = new Properties();
+        Properties properties = new Properties();
         try {
-            prop.load(is);
+            properties.load(is);
             is.close();
         }
         catch (IOException e) {
             e.printStackTrace(System.err);
             throw new IllegalArgumentException(e);
         }
-
-        return prop.getProperty(propertyName);
-    */
+        */
 
         PropertyFile propFile = new PropertyFile();
         LOGGER.debug("Resources: " + MzIdentMLValidatorGUI.STR_RESOURCE_FOLDER);
-        Properties properties = propFile.loadProperties(MzIdentMLValidatorGUI.STR_RESOURCE_FOLDER + "validation.properties");
+        Properties properties = propFile.loadProperties(MzIdentMLValidatorGUI.STR_RESOURCE_FOLDER + MzIdentMLValidatorGUI.STR_VALIDATION_PROPERTIES);
+        
         return properties.getProperty(propertyName);
     }
 
