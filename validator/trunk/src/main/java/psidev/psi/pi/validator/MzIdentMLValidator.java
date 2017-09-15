@@ -927,13 +927,15 @@ public class MzIdentMLValidator extends Validator {
         this.checkElementCvMapping(MzIdentMLElement.SpectrumIdentificationList);    // this includes SIR and SII
         this.checkElementCvMapping(MzIdentMLElement.FragmentationTable);
         this.checkElementCvMapping(MzIdentMLElement.Measure);
+        if (this.currentFileVersion == MzIdVersion._1_2) {
+            this.checkElementCvMapping(MzIdentMLElement.ProteinDetectionList);
+        }
         this.checkElementCvMapping(MzIdentMLElement.ProteinAmbiguityGroup);
         // disabled because is included in the SIL
         // this.checkElementCvMapping(MzIdentMLElement.SpectrumIdentificationResult);
         
         if (this.currentFileVersion == MzIdVersion._1_2) {
             this.checkElementCvMapping(MzIdentMLElement.ProteinDetectionHypothesis);
-            this.checkElementCvMapping(MzIdentMLElement.ProteinDetectionList);
         }
         
         this.applyCvMappingRulesForSIIsInParallel();

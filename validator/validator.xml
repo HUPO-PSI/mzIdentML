@@ -160,13 +160,13 @@
       <zipfileset src="${basedir}/lib/jmzidentml-1.2.7.jar"/>
       <zipfileset src="${basedir}/lib/junit-4.12.jar"/>
       <zipfileset src="${basedir}/lib/log4j-1.2.17.jar"/>
-      <zipfileset src="${basedir}/lib/log4j-api-2.9.0.jar"/>
+      <zipfileset src="${basedir}/lib/log4j-over-slf4j-1.7.25.jar"/>
       <zipfileset src="${basedir}/lib/logback-classic-1.2.3.jar"/>
       <zipfileset src="${basedir}/lib/logback-core-1.2.3.jar"/>
       <zipfileset src="${basedir}/lib/object-rule-reader-2.0.7.jar"/>
       <zipfileset src="${basedir}/lib/obo-2.0.jar"/>
       <zipfileset src="${basedir}/lib/oboedit-1.101.jar"/>
-      <zipfileset src="${basedir}/lib/ols-client-1.18.jar"/>
+      <zipfileset src="${basedir}/lib/ols-client-2.4.jar"/>
       <zipfileset src="${basedir}/lib/ols-core-1.19.jar"/>
       <zipfileset src="${basedir}/lib/ontology-config-reader-2.0.7.jar"/>
       <zipfileset src="${basedir}/lib/ontology-manager-4.jar"/>
@@ -174,10 +174,11 @@
       <zipfileset src="${basedir}/lib/oscache-2.4.1.jar"/>
       <zipfileset src="${basedir}/lib/proteomics-common-1.6.jar"/>
       <zipfileset src="${basedir}/lib/slf4j-api-1.7.25.jar"/>
+      <zipfileset src="${basedir}/lib/slf4j-log4j12-1.7.25.jar"/>
       <zipfileset src="${basedir}/lib/validator-2.0.7.jar"/>
       <zipfileset src="${basedir}/lib/wsdl4j-1.6.3.jar"/>
       <zipfileset src="${basedir}/lib/sercesImpl-2.11.0.jar"/>
-      <zipfileset src="${basedir}/lib/xml-apis.jar"/>
+      <zipfileset src="${basedir}/lib/xml-apis-1.4.01.jar"/>
       <zipfileset src="${basedir}/lib/xxindex-0.21.jar"/>
     </jar>
     <copy file="${temp.jar.path.main.jar}" tofile="${artifact.temp.output.main:jar}/main.jar"/>
