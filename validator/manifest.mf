@@ -9,14 +9,13 @@ Class-Path: lib/axis-1.4.jar lib/axis-jaxrpc-1.4.jar lib/axis-saaj-1.4
  6.jar lib/commons-lang3-3.6.jar lib/commons-logging-1.2.jar lib/commo
  ns-text-1.1.jar lib/cpdetector_1.0.10.jar lib/cv-rule-reader-2.0.7.ja
  r lib/fastutil-8.1.0.jar lib/jargs-1.0.jar lib/jaxb-core-2.3.0.jar li
- b/jmzidentml-1.1.9.jar lib/jmzidentml-1.2.7.jar lib/log4j-over-slf4j-
- 1.7.25.jar lib/logback-classic-1.2.3.jar lib/logback-core-1.2.3.jar l
- ib/object-rule-reader-2.0.7.jar lib/obo-2.0.jar lib/oboedit-1.101.jar
- lib/ols-client-2.4.jar lib/ols-core-1.19.jar lib/ontology-config-read
- er-2.0.7.jar lib/ontology-manager-4.jar lib/org.geneontology-1.101.ja
- r lib/oscache-2.4.1.jar lib/proteomics-common-1.6.jar lib/slf4j-api-1
- .7.25 lib/slf4j-log4j12-1.7.25.jar lib/validator-2.0.7.jar lib/wsdl4j
- -1.6.3.jar lib/xercesImpl-2.11.0 lib/xml-apis-1.4.01.jar lib/xxindex-
- 0.21.jar
+ b/jmzidentml-1.1.9.jar lib/jmzidentml-1.2.7.jar lib/log4j-1.2.17.jar 
+ lib/logback-classic-1.2.3.jar lib/logback-core-1.2.3.jar lib/object-r
+ ule-reader-2.0.7.jar lib/obo-2.0.jar lib/oboedit-1.101.jar lib/ols-cl
+ ient-2.4.jar lib/ols-core-1.19.jar lib/ontology-config-reader-2.0.7.j
+ ar lib/ontology-manager-4.jar lib/org.geneontology-1.101.jar lib/osca
+ che-2.4.1.jar lib/proteomics-common-1.6.jar lib/slf4j-api-1.8.0-alpha
+ 2.jar lib/validator-2.0.7.jar lib/wsdl4j-1.6.3.jar lib/xercesImpl-2.1
+ 1.0 lib/xml-apis-1.4.01.jar lib/xxindex-0.21.jar
 Created-By: 1.7.0_40-b43 (Oracle Corporation)
 Main-Class: psidev.psi.pi.validator.MzIdentMLValidatorGUI

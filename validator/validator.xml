@@ -160,7 +160,6 @@
       <zipfileset src="${basedir}/lib/jmzidentml-1.2.7.jar"/>
       <zipfileset src="${basedir}/lib/junit-4.12.jar"/>
       <zipfileset src="${basedir}/lib/log4j-1.2.17.jar"/>
-      <zipfileset src="${basedir}/lib/log4j-over-slf4j-1.7.25.jar"/>
       <zipfileset src="${basedir}/lib/logback-classic-1.2.3.jar"/>
       <zipfileset src="${basedir}/lib/logback-core-1.2.3.jar"/>
       <zipfileset src="${basedir}/lib/object-rule-reader-2.0.7.jar"/>
@@ -173,8 +172,7 @@
       <zipfileset src="${basedir}/lib/org.geneontology-1.101.jar"/>
       <zipfileset src="${basedir}/lib/oscache-2.4.1.jar"/>
       <zipfileset src="${basedir}/lib/proteomics-common-1.6.jar"/>
-      <zipfileset src="${basedir}/lib/slf4j-api-1.7.25.jar"/>
-      <zipfileset src="${basedir}/lib/slf4j-log4j12-1.7.25.jar"/>
+      <zipfileset src="${basedir}/lib/slf4j-api-1.8.0-alpha2.jar"/>
       <zipfileset src="${basedir}/lib/validator-2.0.7.jar"/>
       <zipfileset src="${basedir}/lib/wsdl4j-1.6.3.jar"/>
       <zipfileset src="${basedir}/lib/sercesImpl-2.11.0.jar"/>

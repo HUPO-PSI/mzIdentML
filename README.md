@@ -23,7 +23,7 @@ Jones A.R., Eisenacher M., Mayer G., Kohlbacher O., Siepen J., Hubbard S.J., Sel
   > Specification document [docx](https://github.com/HUPO-PSI/mzIdentML/blob/master/specification_document-releases/specdoc1_1/mzIdentML1.1.0.doc),
 
   Validator:
-  > Validator (Java) (https://github.com/HUPO-PSI/mzIdentML/releases),
+  > Validator (Java) (https://github.com/HUPO-PSI/mzIdentML/releases)
   
 **Version 1.1.0 (June 2014) - Still supported:**
 

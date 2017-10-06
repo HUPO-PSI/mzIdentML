@@ -3,7 +3,7 @@
 	<groupId>psidev.psi.pi</groupId>
 	<artifactId>mzIdentMLValidator</artifactId>
 	<packaging>jar</packaging>
-	<version>1.4.27-SNAPSHOT</version>
+	<version>1.4.28-SNAPSHOT</version>
 	<name>HUPO-PSI mzIdentML semantic and MIAPE validator</name>
 	<description>A semantic and MIAPE validator for HUPO-PSI mzIdentML XML files.</description>
 	<properties>
