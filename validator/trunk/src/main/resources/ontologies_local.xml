@@ -4,7 +4,7 @@
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:gene_ontology.obo" format="OBO" name="Gene Ontology" identifier="GO" version="releases/2017-09-05"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:pato.obo" format="OBO" name="PATO" identifier="PATO" version="releases/2017-07-10"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:PSI-MOD.obo" format="OBO" name="PSI-MOD" identifier="MOD" version="30:05:2014 00:48"/>
-    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:psi-ms.obo" format="OBO" name="PSI-MS" identifier="MS" version="4.0.14"/>
+    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:psi-ms.obo" format="OBO" name="PSI-MS" identifier="MS" version="4.0.17"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:unimod.obo" format="OBO" name="UNIMOD" identifier="UNIMOD" version="2017:09:06 10:04"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:unit.obo" format="OBO" name="UO" identifier="UO" version="09:04:2014 13:37"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:XLMOD.obo" format="OBO" name="XLMOD" identifier="XLMOD" version="releases/2017-07-10"/>

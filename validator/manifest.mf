@@ -12,7 +12,7 @@ Class-Path: lib/axis-1.4.jar lib/axis-jaxrpc-1.4.jar lib/axis-saaj-1.4
  b/jmzidentml-1.1.9.jar lib/jmzidentml-1.2.7.jar lib/log4j-1.2.17.jar 
  lib/logback-classic-1.2.3.jar lib/logback-core-1.2.3.jar lib/object-r
  ule-reader-2.0.7.jar lib/obo-2.0.jar lib/oboedit-1.101.jar lib/ols-cl
- ient-2.4.jar lib/ols-core-1.19.jar lib/ontology-config-reader-2.0.7.j
+ ient-2.8.jar lib/ols-core-1.19.jar lib/ontology-config-reader-2.0.7.j
  ar lib/ontology-manager-4.jar lib/org.geneontology-1.101.jar lib/osca
  che-2.4.1.jar lib/proteomics-common-1.6.jar lib/slf4j-api-1.8.0-alpha
  2.jar lib/validator-2.0.7.jar lib/wsdl4j-1.6.3.jar lib/xercesImpl-2.1

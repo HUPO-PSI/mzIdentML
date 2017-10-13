@@ -26,7 +26,7 @@
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo"
-    	format="OBO" name="Mass Spectrometry Ontology" identifier="MS" version="4.0.14"/>
+    	format="OBO" name="Mass Spectrometry Ontology" identifier="MS" version="4.0.17"/>
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" 
     	uri="http://www.unimod.org/obo/unimod.obo"

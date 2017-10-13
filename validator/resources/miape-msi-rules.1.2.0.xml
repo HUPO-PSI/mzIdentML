@@ -232,6 +232,7 @@
 		<CvMappingRule id="SpectraDataSpectrumIDFormat_must_rule" cvElementPath="/MzIdentML/DataCollection/Inputs/spectraData/spectrumIDFormat/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/Inputs/spectraData/spectrumIDFormat" cvTermsCombinationLogic="XOR">
 			<CvTerm termAccession="MS:1000767" useTermName="false" useTerm="false" termName="native spectrum identifier format" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1001529" useTermName="false" useTerm="false" termName="spectra data details" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002646" useTermName="false" useTerm="false" termName="native spectrum identifier format, combined spectra" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
 		</CvMappingRule>
 
         <CvMappingRule id="SearchDatabaseDatabaseName_may_rule" cvElementPath="/MzIdentML/DataCollection/Inputs/searchDatabase/databaseName/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/Inputs/searchDatabase/databaseName" cvTermsCombinationLogic="OR">

@@ -11,13 +11,16 @@ In addition there are object rules (encoded in Java) for cases where a configura
 
 All mapping / object rules which are violoated are reported in coloured output encoding the type of violated rule:
 
-        A violated MUST   rule is reported in red
-        A violated SHOULD rule is reported in orange
-        A violated MAY    rule is reported in green
+        A violated MUST   rule is reported in red		(ERROR message)
+        A violated SHOULD rule is reported in orange	(WARNING message)
+        A violated MAY    rule is reported in green		(INFO message)
 
-
+	An Unanticipated CV term (WARNING) message occurs, if there is a CV term is found in the .mzid data file, for which no mapping rule exists in the mapping file.
+	This points to a possibly forgotten CV mapping rule.
+	
+	
 ### Download link
-The latest version of the mzIdentML validator can be downloaded [here] (https://github.com/HUPO-PSI/mzIdentML/blob/master/validator/mzIdentMLValidator_GUI_v1.4.28-SNAPSHOT.zip)
+The latest version of the mzIdentML validator can be downloaded [here] (https://github.com/HUPO-PSI/mzIdentML/blob/master/validator/mzIdentMLValidator_GUI_v1.4.29-SNAPSHOT.zip)
 
 
 ### Literature

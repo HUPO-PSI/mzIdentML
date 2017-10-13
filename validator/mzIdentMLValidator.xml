@@ -122,7 +122,7 @@
     <pathelement location="${basedir}/lib/object-rule-reader-2.0.7.jar"/>
     <pathelement location="${basedir}/lib/obo-2.0.jar"/>
     <pathelement location="${basedir}/lib/oboedit-1.101.jar"/>
-    <pathelement location="${basedir}/lib/ols-client-2.4.jar"/>
+    <pathelement location="${basedir}/lib/ols-client-2.8.jar"/>
     <pathelement location="${basedir}/lib/ols-core-1.19.jar"/>
     <pathelement location="${basedir}/lib/ontology-config-reader-2.0.7.jar"/>
     <pathelement location="${basedir}/lib/ontology-manager-4.jar"/>

@@ -16,7 +16,7 @@
 	</security>
 	<resources>
 		<j2se version="1.8" max-heap-size="4096m"/>
-        <jar href="lib/mzIdentMLValidator-1.4.27-SNAPSHOT.jar" main="true"/>
+        <jar href="lib/mzIdentMLValidator-1.4.29-SNAPSHOT.jar" main="true"/>
         <jar href="lib/axis-1.4.jar"/>
         <jar href="lib/axis-jaxrpc-1.4.jar"/>
         <jar href="lib/axis-saaj-1.4.jar"/>
@@ -46,7 +46,7 @@
         <jar href="lib/object-rule-reader-2.0.7.jar"/>
         <jar href="lib/obo-2.0.jar"/>
         <jar href="lib/oboedit-1.101.jar"/>
-        <jar href="lib/ols-client-2.4.jar"/>
+        <jar href="lib/ols-client-2.8.jar"/>
         <jar href="lib/ols-core-1.19.jar"/>
         <jar href="lib/ontology-config-reader-2.0.7.jar"/>
         <jar href="lib/ontology-manager-4.jar"/>

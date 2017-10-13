@@ -1506,7 +1506,7 @@ public class MzIdentMLValidator extends Validator {
             this.addPossiblyColouredRow(sb, "XL interaction scoring messages:", this.cntXLInteractionScoringMessages, this.gui.getXLInteractionScoreColor(this.cntXLInteractionScoringMessages));
         }
 
-        messageNumber = noOfInvalidCvRules + noOfInvalidObjectRules + this.cntUnanticipatedCVTerms + this.cntXLInteractionScoringMessages + this.extendedReport.getInvalidSchemaValidation().size();
+        messageNumber = this.getTotalNumberOfInvalidRules(noOfInvalidCvRules, noOfInvalidObjectRules);
         this.addPossiblyColouredRow(sb, this.STR_NOT_MATCHING_MSGS_RECV, messageNumber, this.gui.getInvalidMsgColor());
         
         this.addConditionalTableRow(sb, "Messages not reported since they occur more than " + this.gui.jSpinner.getValue() + " times: ", this.cntMultipleClearedMessages + this.gui.cntDoubledUnanticipatedCVTermMessages, this.gui.COLOR_BLACK);
@@ -1568,7 +1568,7 @@ public class MzIdentMLValidator extends Validator {
         }
         
         // Total number of rules
-        messageNumber = noOfInvalidCvRules + noOfInvalidObjectRules + this.cntUnanticipatedCVTerms + this.cntXLInteractionScoringMessages + this.extendedReport.getInvalidSchemaValidation().size();
+        messageNumber = this.getTotalNumberOfInvalidRules(noOfInvalidCvRules, noOfInvalidObjectRules);
         sb.append(this.STR_NOT_MATCHING_MSGS_RECV).append(messageNumber);
         
         if (this.cntMultipleClearedMessages > 0) {
@@ -1579,6 +1579,14 @@ public class MzIdentMLValidator extends Validator {
         return sb.toString();
     }
 
+    /**
+     * Gets the total number of invalid rules.
+     * @return the total number of invalid rules
+     */
+    private int getTotalNumberOfInvalidRules(int invalidCVRules, int invalidObjectRules) {
+        return invalidCVRules + invalidObjectRules + this.cntUnanticipatedCVTerms + this.cntXLInteractionScoringMessages + this.extendedReport.getInvalidSchemaValidation().size() - this.gui.cntFlawErrors - (Integer) this.gui.jSpinner.getValue();
+    }
+    
     /**
      * Gets the CV context report.
      * @return the CV context report as String
