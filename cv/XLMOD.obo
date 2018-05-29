@@ -1,11 +1,11 @@
 format-version: 1.2
-data-version: releases/2018-03-22
+data-version: releases/2018-05-29
 ontology: xlmod
-date: 22:03:2018 10:05
+date: 29:05:2018 14:41
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: xlmod
-remark: version: 1.1.0
+remark: version: 1.1.1
 remark: coverage: cross-linking reagents and cross-linker related post-translational modifications
 remark: creator: Lutz Fischer <lfischer <-at-> staffmail.ed.ac.uk>
 remark: creator: Alexander Leitner <leitner <-at-> imsb.biol.ethz.ch>
@@ -410,7 +410,7 @@ is_a: xlmod:00019 ! enrichable
 [Term]
 id: xlmod:00055
 name: azide
-def: "An photoreactive group and an azide (-N3) tag to enable enrichment of cross-linked peptides with either immobilized alkyne linkers or by azide-alkyne click chemistry using biotin-alkyne respective biotin-phosphine." [PMID:20472459]
+def: "A photoreactive azide (-N3) tag to enable enrichment of cross-linked peptides with either immobilized alkyne linkers or by azide-alkyne click chemistry using biotin-alkyne respective biotin-phosphine." [PMID:20472459]
 is_a: xlmod:00050 ! handle
 is_a: xlmod:00019 ! enrichable
 is_a: xlmod:00100 ! reactive group
@@ -523,6 +523,139 @@ def: "Indicates that a reactive group is reactive with avidin, streptavidin or n
 is_a: xlmod:00027 ! chemically reactive
 
 [Term]
+id: xlmod:00073
+name: nucleobase
+def: "A nitrogeneous base occurring in nucleic acids." [PSI:XL]
+is_a: xlmod:00001 ! cross-linking entity
+
+[Term]
+id: xlmod:00074
+name: purine base
+def: "A purine base occurring in nucleic acids." [PSI:XL]
+is_a: xlmod:00073 ! nucleobase
+
+[Term]
+id: xlmod:00075
+name: pyrimidine base
+def: "A pyrimidine base occurring in nucleic acids." [PSI:XL]
+is_a: xlmod:00073 ! nucleobase
+
+[Term]
+id: xlmod:00076
+name: adenine
+def: "The nucleobase adenine." [PXI:XL]
+is_a: xlmod:00074 ! purine base
+
+[Term]
+id: xlmod:00077
+name: guanine
+def: "The nucleobase guanine." [PXI:XL]
+is_a: xlmod:00074 ! purine base
+
+[Term]
+id: xlmod:00078
+name: cytosine
+def: "The nucleobase cytosine." [PXI:XL]
+is_a: xlmod:00075 ! pyrimidine base
+
+[Term]
+id: xlmod:00079
+name: thymine
+def: "The nucleobase thymine." [PXI:XL]
+is_a: xlmod:00075 ! pyrimidine base
+
+[Term]
+id: xlmod:00080
+name: uracil
+def: "The nucleobase uracil." [PXI:XL]
+is_a: xlmod:00075 ! pyrimidine base
+
+[Term]
+id: xlmod:00081
+name: nucleobase derivative
+def: "A nucleobase derivative used in cross-linking experiments for protein-oligonucleotide cross-linking." [PSI:XL]
+is_a: xlmod:00001 ! cross-linking entity
+relationship: is_analog_of xlmod:00073 ! nucleobase
+
+[Term]
+id: xlmod:00082
+name: nucleoside
+def: "A combination of a nucleobase and a sugar (either ribose or deoxyribose)." [PSI:XL]
+is_a: xlmod:00001 ! cross-linking entity
+
+[Term]
+id: xlmod:00083
+name: adenosine
+def: "The nucleoside adenosine." [PXI:XL]
+is_a: xlmod:00082 ! nucleoside
+
+[Term]
+id: xlmod:00084
+name: guanosine
+def: "The nucleoside guanosine." [PXI:XL]
+is_a: xlmod:00082 ! nucleoside
+
+[Term]
+id: xlmod:00085
+name: cytidine
+def: "The nucleoside cytidine." [PXI:XL]
+is_a: xlmod:00082 ! nucleoside
+
+[Term]
+id: xlmod:00086
+name: uridine
+def: "The nucleoside uridine." [PXI:XL]
+is_a: xlmod:00082 ! nucleoside
+
+[Term]
+id: xlmod:00087
+name: 5-methyluridine
+def: "The nucleoside 5-methyluridine." [PXI:XL]
+is_a: xlmod:00082 ! nucleoside
+
+[Term]
+id: xlmod:00088
+name: nucleoside derivative
+def: "A nucleoside derivative used in cross-linking experiments for protein-oligonucleotide cross-linking." [PSI:XL]
+is_a: xlmod:00001 ! cross-linking entity
+relationship: is_analog_of xlmod:00082 ! nucleoside
+
+[Term]
+id: xlmod:00089
+name: RNA-SH
+def: "Thiol-modified RNA." [PSI:XL]
+is_a: xlmod:00001 ! cross-linking entity
+
+[Term]
+id: xlmod:00090
+name: biotin-alkyne
+def: "A biotin-alkyne affinity handle, which can be used for enrichment with click-chemistry." [PSI:XL]
+is_a: xlmod:00050 ! handle
+is_a: xlmod:00019 ! enrichable
+relationship: is_reactive_with xlmod:00033 ! azide reactive
+
+[Term]
+id: xlmod:00091
+name: tetramethylrhodamine-alkyne
+def: "A tetramethylrhodamine-alkyne affinity handle, which can be used for enrichment with click-chemistry." [PSI:XL]
+synonym: "TAMRA" EXACT []
+is_a: xlmod:00050 ! handle
+is_a: xlmod:00019 ! enrichable
+relationship: is_reactive_with xlmod:00033 ! azide reactive
+
+[Term]
+id: xlmod:00092
+name: lipid analogue
+def: "A lipid analogue used in cross-linking experiments for lipid-protein cross-linking." [PSI:XL]
+is_a: xlmod:00001 ! cross-linking entity
+
+[Term]
+id: xlmod:00093
+name: sialic acid analogue
+def: "A sialic acid analogue used in cross-linking experiments for glycan-protein cross-linking." [PSI:XL]
+is_a: xlmod:00001 ! cross-linking entity
+
+[Term]
 id: xlmod:00100
 name: reactive group
 def: "Part of a cross-linker that reacts with the amino-acids of the protein." [PSI:XL]
@@ -592,6 +725,7 @@ property_value: waveLengthRange: "320-370 nm" xsd:string
 is_a: xlmod:00114 ! aryl azide
 relationship: is_activatable xlmod:00149 ! photoactivatable
 relationship: is_reactive_with xlmod:00037 ! non-selective
+relationship: is_reactive_with xlmod:00089 ! RNA-SH
 
 [Term]
 id: xlmod:00108
@@ -649,12 +783,14 @@ def: "Photoreactive group that initiates addition reactions with double bonds or
 property_value: waveLengthRange: "250-350 nm" xsd:string
 is_a: xlmod:00055 ! azide
 relationship: is_activatable xlmod:00149 ! photoactivatable
+relationship: is_reactive_with xlmod:00028 ! amine reactive
 relationship: is_reactive_with xlmod:00037 ! non-selective
 
 [Term]
 id: xlmod:00115
 name: glyoxal
 def: "An arginine-specific reactive group." [PSI:XL]
+property_value: base specificities: "(Guanine)" xsd:string
 property_value: specificities: "(R)" xsd:string
 is_a: xlmod:00100 ! reactive group
 
@@ -691,6 +827,7 @@ property_value: waveLengthRange: "350-360 nm" xsd:string
 is_a: xlmod:00100 ! reactive group
 relationship: is_activatable xlmod:00149 ! photoactivatable
 relationship: is_reactive_with xlmod:00037 ! non-selective
+relationship: is_reactive_with xlmod:00089 ! RNA-SH
 
 [Term]
 id: xlmod:00120
@@ -797,6 +934,8 @@ relationship: is_reactive_with xlmod:00028 ! amine reactive
 id: xlmod:00132
 name: platinum(II)
 def: "Platinum(II) coordinates with the side chains of methionine (Met), cysteine (Cys), and histidine(His), namely, thioether, sulfhydryl, and imidazole." [PMID:21591778]
+property_value: base specificities: "(Guanine)" xsd:string
+property_value: secondary base specificities: "(Adenin, Cytosin)" xsd:string
 property_value: specificities: "(C,H,M)" xsd:string
 is_a: xlmod:00100 ! reactive group
 relationship: is_reactive_with xlmod:00029 ! sulfhydryl reactive
@@ -960,6 +1099,22 @@ name: Biotin
 def: "A biotin reactive group that reacts with avidin, streptavidin or neutravidin." [PSI:XL]
 is_a: xlmod:00100 ! reactive group
 relationship: is_reactive_with xlmod:00072 ! avidin reactive
+
+[Term]
+id: xlmod:00153
+name: chloroethyl
+def: "A reactive group that reacts with guanin." [PSI:XL]
+is_a: xlmod:00100 ! reactive group
+property_value: base specificities: "(Guanine)" xsd:string
+property_value: Secondary base specificities: "(Adenin, Cytosin)" xsd:string
+
+[Term]
+id: xlmod:00154
+name: imino
+def: "A imino reactive group that reacts with primary amines." [PSI:XL]
+property_value: specificities: "(D,E,K,Protein N-term)" xsd:string
+is_a: xlmod:00100 ! reactive group
+relationship: is_reactive_with xlmod:00028 ! amine reactive
 
 [Term]
 id: xlmod:01000
@@ -2022,6 +2177,261 @@ relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02227 ! PL
 
 [Term]
+id: xlmod:01700
+name: 8-methoxypsoralen
+def: "8-methoxypsoralen reagent." [PubChem_Compound:4114, PMID:9013628]
+synonym: "8-MOP" EXACT []
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00100 ! reactive group
+relationship: has_reactive_group xlmod:00134 ! psoralen
+relationship: is_activatable xlmod:00149 ! photoactivatable
+
+[Term]
+id: xlmod:01701
+name: 4'-hydroxymethyl-4,5'8-trimethylpsoralen
+def: "4'-hydroxymethyl-4,5'8-trimethylpsoralen reagent." [CAS:62442-59-5, PubChem_Compound:104953, MDL:MFCD00036888, PMID:9013628]
+synonym: "HMT" EXACT []
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00100 ! reactive group
+relationship: has_reactive_group xlmod:00134 ! psoralen
+relationship: is_activatable xlmod:00149 ! photoactivatable
+
+[Term]
+id: xlmod:01702
+name: 5-iodouracil
+def: "5-iodouracil reagent." [CAS:696-07-1, PubChem_Compound:69672, MDL:MFCD00006020, ChemSpiderID:62873, PMID:12476441, PMID:9013628]
+synonym: "5-IU" EXACT []
+synonym: "5IU" EXACT []
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00081 ! nucleobase derivative
+relationship: is_activatable xlmod:00149 ! photoactivatable
+relationship: is_analog_of xlmod:00080 ! uracil
+
+[Term]
+id: xlmod:01703
+name: 4-thiouracil
+def: "4-thiouracil reagent." [CAS:591-28-6, PubChem_Compound:2734394, MDL:MFCD00090842, ChemSpiderNo:2016146, PMID:12476441, PMID:22575267]
+synonym: "4-SU" EXACT []
+synonym: "4SU" EXACT []
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00081 ! nucleobase derivative
+relationship: is_activatable xlmod:00149 ! photoactivatable
+relationship: is_analog_of xlmod:00080 ! uracil
+
+[Term]
+id: xlmod:01704
+name: 6-thioguanosine
+def: "6-thioguanosine reagent." [CAS:85-31-4, PubChem_Compound:2724387, PMID:20946768, PMID:22575267]
+synonym: "6-SG" EXACT []
+synonym: "6SG" EXACT []
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00088 ! nucleoside derivative
+relationship: is_activatable xlmod:00149 ! photoactivatable
+relationship: is_analog_of xlmod:00084 ! guanosine
+
+[Term]
+id: xlmod:01705
+name: 5-bromouracil
+def: "5-bromouracil reagent." [CAS:51-20-7, PubChem_Compound:5802, Beilstein:127176, MDL:MFCD00006017, ChemSpiderNo:5597, PMID:9145285, PMID:22575267]
+synonym: "5-BU" EXACT []
+synonym: "5BU" EXACT []
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00081 ! nucleobase derivative
+relationship: is_activatable xlmod:00149 ! photoactivatable
+relationship: is_analog_of xlmod:00080 ! uracil
+
+[Term]
+id: xlmod:01706
+name: 5-iodocytosine
+def: "5-iodocytosine reagent." [CAS:1122-44-7, PubChem_Compound:14281, MDL:MFCD00023162, ChemSpiderNo:13643, PMID:9145285]
+synonym: "5-IC" EXACT []
+synonym: "5IC" EXACT []
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00088 ! nucleoside derivative
+relationship: is_activatable xlmod:00149 ! photoactivatable
+relationship: is_analog_of xlmod:00078 ! cytosine
+
+[Term]
+id: xlmod:01707
+name: 8-azidoadenosine
+def: "8-azidoadenosine reagent." [CAS:4372-67-2, PMID:9145285]
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00088 ! nucleoside derivative
+relationship: has_reactive_group xlmod:00055 ! azide
+relationship: is_activatable xlmod:00149 ! photoactivatable
+relationship: is_analog_of xlmod:00083 ! adenosine
+
+[Term]
+id: xlmod:01708
+name: 2-azidoadenosine
+def: "2-azidoadenosine reagent." [PubChem_Compound:510978, PMID:9145285]
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00088 ! nucleoside derivative
+relationship: has_reactive_group xlmod:00055 ! azide
+relationship: is_activatable xlmod:00149 ! photoactivatable
+relationship: is_analog_of xlmod:00083 ! adenosine
+
+[Term]
+id: xlmod:01709
+name: 8-azidoguanosine
+def: "8-azidoguanosine reagent." [PubChem_Compound:23375450, ChemSpiderID:8034117, PMID:9145285]
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00088 ! nucleoside derivative
+relationship: has_reactive_group xlmod:00055 ! azide
+relationship: is_activatable xlmod:00149 ! photoactivatable
+relationship: is_analog_of xlmod:00084 ! guanosine
+
+[Term]
+id: xlmod:01710
+name: 5-azidouridine
+def: "5-azidouridine reagent." [CAS:1261272-24-5, PubChem_Compound:20832934, ChemSpiderID:18697526, PMID:9145285]
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00088 ! nucleoside derivative
+relationship: has_reactive_group xlmod:00055 ! azide
+relationship: is_activatable xlmod:00149 ! photoactivatable
+relationship: is_analog_of xlmod:00086 ! uridine
+
+[Term]
+id: xlmod:01711
+name: bis-[3-(2-ketobutyraldehyde)ether
+def: "bis-[3-(2-ketobutyraldehyde)ether reagent." [CAS:84031-85-6, PubChem_Compound:134685, ChemSpiderID:118706, PMID:16875836]
+synonym: "Bikethoxal" EXACT []
+synonym: "BKT" EXACT []
+property_value: monoIsotopicMass: "230.079" xsd:double
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: spacerLength: "5.4" xsd:float
+is_a: xlmod:00005 ! homofunctional cross-linker
+relationship: has_reactive_group xlmod:00115 ! glyoxal
+
+[Term]
+id: xlmod:01712
+name: mechlorethamine
+def: "Mechlorethamine reagent." [CAS:55-86-7, PubChem_Compound:4033, MDL:MFCD00012517, ChemSpiderID:3893, ChemicalBookNo:CB5270716, PMID:16875836]
+synonym: "Nitrogen mustard" EXACT []
+synonym: "NM" EXACT []
+property_value: monoIsotopicMass: "83.073" xsd:double
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: spacerLength: "9.5" xsd:float
+is_a: xlmod:00005 ! homofunctional cross-linker
+relationship: has_reactive_group xlmod:00153 ! chloroethyl
+
+[Term]
+id: xlmod:01713
+name: 4-[bis-(2-chloroethyl)amino]benzenebutanoic acid
+def: "4-[bis-(2-chloroethyl)amino]benzenebutanoic acid reagent." [CAS:305-03-3, PubChem_Compound:2708, Beilstein:999011, MDL:MFCD00021783, ChemSpiderID:2607, ChemicalBookNo:CB5270716, PMID:16875836]
+synonym: "Chlorambucil" EXACT []
+synonym: "CHB" EXACT []
+property_value: monoIsotopicMass: "231.126" xsd:double
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: spacerLength: "9.5" xsd:float
+is_a: xlmod:00005 ! homofunctional cross-linker
+relationship: has_reactive_group xlmod:00153 ! chloroethyl
+
+[Term]
+id: xlmod:01714
+name: sym-triazine trichloride
+def: "Sym-triazine trichloride reagent." [CAS:108-80-5, PubChem_Compound:24851182, Beilstein:126982, MDL:MFCD00082990, ChemSpiderID:7668, ChemicalBookNo:CB5852763, PMID:16875836]
+synonym: "Cyanuric acid" EXACT []
+synonym: "STT" EXACT []
+property_value: monoIsotopicMass: "110.962" xsd:double
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: spacerLength: "2.4" xsd:float
+is_a: xlmod:00005 ! homofunctional cross-linker
+
+[Term]
+id: xlmod:01715
+name: Heteroconjugate 20
+def: "Heteroconjugate 20 reagent." [PMID:26335278]
+synonym: "HC20" EXACT []
+property_value: monoIsotopicMass: "1554.6871" xsd:double
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+is_a: xlmod:00005 ! bifunctional cross-linker
+relationship: has_handle xlmod:00051 ! biotin
+
+[Term]
+id: xlmod:01716
+name: benzophenone-4-iodoacetamide
+def: "Benzophenone-4-iodoacetamide reagent." [CAS:76809-63-7, PubChem_Compound:131289, PMID:10208813]
+synonym: "BPI" EXACT []
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00005 ! homofunctional cross-linker
+relationship: has_reactive_group xlmod:00119 ! benzophenone
+relationship: is_activatable xlmod:00149 ! photoactivatable
+
+[Term]
+id: xlmod:01717
+name: azidophenacyl bromide
+def: "Azidophenacyl bromide reagent." [CAS:57018-46-9, PubChem_Compound:92627, Beilstein:1961705, MDL:MFCD00042637, PMID:10208813]
+synonym: "APB" EXACT []
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00005 ! homofunctional cross-linker
+relationship: has_reactive_group xlmod:00126 ! phenyl azide
+relationship: is_activatable xlmod:00149 ! photoactivatable
+
+[Term]
+id: xlmod:01718
+name: benzophenone-phosphatidylcholine
+def: "Benzophenone-phosphatidylcholine." [PMID:19171301]
+synonym: "benzophenone-PC" EXACT []
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00092 ! lipid analogue
+relationship: has_reactive_group xlmod:00119 ! benzophenone
+relationship: is_activatable xlmod:00149 ! photoactivatable
+
+[Term]
+id: xlmod:01719
+name: phenylazide-phosphatidylcholine
+def: "Phenylazide-phosphatidylcholine." [PMID:19171301]
+synonym: "phenylazide-PC" EXACT []
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00092 ! lipid analogue
+relationship: has_reactive_group xlmod:00126 ! phenyl azide
+relationship: is_activatable xlmod:00149 ! photoactivatable
+
+[Term]
+id: xlmod:01720
+name: N-(4-azidosalicylamidyl)-1,2-dilauroyl-sn-glycero-3-phosphoethanolamine
+def: "The N-(4-azidosalicylamidyl)-1,2-dilauroyl-sn-glycero-3-phosphoethanolamine lipid analogue used for lipid-protein cross-linking." [PMID:19171301]
+synonym: "ASA" EXACT []
+is_a: xlmod:00092 ! lipid analogue
+
+[Term]
+id: xlmod:01721
+name: Ac5-5-SiaDAz
+def: "The Ac5-5-SiaDAz sialic acid analogue used for glycan-protein cross-linking." [PMID:18293988, PMID:19536272]
+is_a: xlmod:00093 ! sialic acid analogue
+
+[Term]
+id: xlmod:01722
+name: Ac4-ManNDAz
+def: "The Ac4-ManNDAz sialic acid analogue used for glycan-protein cross-linking." [PMID:18293988, PMID:19536272, PMID:20816498]
+is_a: xlmod:00093 ! sialic acid analogue
+
+[Term]
+id: xlmod:01723
+name: Ac4-ManNAc
+def: "The Ac4-ManNAc sialic acid analogue used for glycan-protein cross-linking." [PMID:19536272]
+is_a: xlmod:00093 ! sialic acid analogue
+
+[Term]
+id: xlmod:01723
+name: Ac4-GlcNDAz
+def: "The Ac4-GlcNDAz sialic acid analogue used for glycan-protein cross-linking." [PMID:19536272, PMID:20816498]
+is_a: xlmod:00093 ! sialic acid analogue
+
+[Term]
+id: xlmod:01723
+name: Ac5-methyl-SiaDAz
+def: "The Ac5-methyl-SiaDAz sialic acid analogue used for glycan-protein cross-linking." [PMID:20816498]
+is_a: xlmod:00093 ! sialic acid analogue
+
+[Term]
+id: xlmod:01724
+name: sialylated LacNAc-biotin
+def: "Sialylated LacNAc-biotin used for glycan-protein cross-linking." [PMID:26541974]
+is_a: xlmod:00093 ! sialic acid analogue
+
+[Term]
 id: xlmod:01800
 name: Psoralen-PEG3-Biotin
 def: "Psoralen-PEG3-Biotin biotinylation reagent." [PSI:XL]
@@ -2351,6 +2761,26 @@ is_a: xlmod:00003 ! label transfer reagent
 relationship: has_handle xlmod:00051 ! biotin
 relationship: has_handle xlmod:00053 ! alkyne
 relationship: is_cleavable xlmod:00034 ! photo cleavable
+
+[Term]
+id: xlmod:01829
+name: 2-iminothiolane
+def: "2-iminothiolane reagent." [CAS:4781-83-3, PubChem_Compound:433941, MDL:MFCD00039013, ChemSpiderID:10732937, ChemicalBookNo:CB7373482, PMID:6170935, PMID:11350598]
+synonym: "Traut's reagent" EXACT []
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00005 ! homofunctional cross-linker
+relationship: has_reactive_group xlmod:00154 ! imino
+relationship: is_activatable xlmod:00149 ! photoactivatable
+
+[Term]
+id: xlmod:01830
+name: 3-Azidopyridine-adenine dinucleotide
+def: "3-Azidopyridine-adenine dinucleotide reagent." [CAS:50695-15-3, PubChem_Compound:189126, MDL:MFCD00078882, ChemSpiderID:164324, ChemicalBookNo:CB91349828, PMID:20946768, PMID:6770736]
+synonym: "APA" EXACT []
+property_value: reactionSites: "1" xsd:nonNegativeInteger
+is_a: xlmod:00005 ! homofunctional cross-linker
+relationship: has_reactive_group xlmod:00114 ! aryl azide
+relationship: is_activatable xlmod:00149 ! photoactivatable
 
 [Term]
 id: xlmod:01900
@@ -2998,7 +3428,7 @@ relationship: is_cleavable xlmod:00034 ! photo cleavable
 [Term]
 id: xlmod:02041
 name: formaldehyde
-def: "Formaldehyde." [CAS:50-00-0, ChemSpiderID:692, PMID:18438963, PMID:25979347]
+def: "Formaldehyde reagent." [CAS:50-00-0, ChemSpiderID:692, PMID:18438963, PMID:25979347]
 property_value: reactionSites: "1" xsd:nonNegativeInteger
 property_value: spacerLength: "2.5" xsd:float
 is_a: xlmod:00005 ! homofunctional cross-linker
@@ -3723,9 +4153,13 @@ relationship: is_cleavable xlmod:00024 ! periodate cleavable
 
 [Term]
 id: xlmod:02103
-name: PDG
-def: "Phenyldiglyoxal." [CAS:1074-12-0, PubChem_Compound:14090, ChemSpiderID:13470, PMID:18936057]
+name: 1,4-diacetalbenzene
+def: "1,4-diacetalbenzene reagent." [CAS:1074-12-0, PubChem_Compound:14090, ChemSpiderID:13470, PMID:18936057, PMID:16875836]
+synonym: "Phenyldiglyoxal" EXACT []
+synonym: "PDG" EXACT []
+property_value: monoIsotopicMass: "190.027" xsd:double
 property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: spacerLength: "7.5" xsd:float
 is_a: xlmod:00005 ! homofunctional cross-linker
 relationship: has_reactive_group xlmod:00115 ! glyoxal
 
@@ -4002,8 +4436,11 @@ relationship: is_cleavable xlmod:00035 ! CID cleavable
 
 [Term]
 id: xlmod:02128
-name: Cisplatin
-def: "Cis-[Pt(NH3)2Cl2]." [CAS:15663-27-1, PubChem_Compound:441203, PMID:21591778]
+name: cis-Diamminedichloroplatinum (II)
+def: "Cis-[Pt(NH3)2Cl2]." [CAS:15663-27-1, PubChem_Compound:441203, PMID:21591778, PMID:16875836]
+synonym: "Cis-platin" EXACT []
+synonym: "CPT" EXACT []
+property_value: monoIsotopicMass: "225.995" xsd:double
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 property_value: spacerLength: "4.63" xsd:float
 is_a: xlmod:00005 ! homofunctional cross-linker
