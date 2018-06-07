@@ -1,14 +1,15 @@
 format-version: 1.2
-data-version: releases/2018-05-29
+data-version: releases/2018-06-07
 ontology: xlmod
-date: 29:05:2018 14:41
+date: 07:06:2018 16:54
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: xlmod
-remark: version: 1.1.1
-remark: coverage: cross-linking reagents and cross-linker related post-translational modifications
+remark: version: 1.1.2
+remark: coverage: cross-linking reagents, cross-linker related post-translational modifications, and derivatization reagents for GC-MS
 remark: creator: Lutz Fischer <lfischer <-at-> staffmail.ed.ac.uk>
 remark: creator: Alexander Leitner <leitner <-at-> imsb.biol.ethz.ch>
+remark: creator: Nils Hoffmann <nils.hoffmann <-at-> isas.de>
 remark: creator: Gerhard Mayer <mayerg97 <-at-> rub.de>
 remark: This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license.
 remark: To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
@@ -68,26 +69,26 @@ name: has_reactive_group
 
 [Term]
 id: xlmod:00000
-name: Proteomics Standards Initiative cross-linking controlled vocabulary
-def: "Proteomics Standards Initiative cross-linking controlled vocabulary." [PSI:XL]
+name: Proteomics Standards Initiative cross-linking and derivatization controlled vocabulary
+def: "Proteomics Standards Initiative cross-linking and derivatization controlled vocabulary." [PSI:XL]
 
 [Term]
 id: xlmod:00001
 name: cross-linking entity
 def: "Entity relevant to the domain of cross-linking in proteomics." [PSI:XL]
-relationship: part_of xlmod:00000 ! Proteomics Standards Initiative cross-linking controlled vocabulary
+relationship: part_of xlmod:00000 ! Proteomics Standards Initiative cross-linking and derivatization controlled vocabulary
 
 [Term]
 id: xlmod:00002
 name: cross-linker related PTM
 def: "A cross-linker reagent with one reactive group leading to a dead-end modification." [PSI:XL]
-relationship: part_of xlmod:00000 ! Proteomics Standards Initiative cross-linking controlled vocabulary
+relationship: part_of xlmod:00000 ! Proteomics Standards Initiative cross-linking and derivatization controlled vocabulary
 
 [Term]
 id: xlmod:00003
 name: label transfer reagent
 def: "A cross-linker acting as label transfer reagent." [PSI:XL]
-relationship: part_of xlmod:00000 ! Proteomics Standards Initiative cross-linking controlled vocabulary
+relationship: part_of xlmod:00000 ! Proteomics Standards Initiative cross-linking and derivatization controlled vocabulary
 
 [Term]
 id: xlmod:00004
@@ -2179,7 +2180,7 @@ relationship: is_side_product_of xlmod:02227 ! PL
 [Term]
 id: xlmod:01700
 name: 8-methoxypsoralen
-def: "8-methoxypsoralen reagent." [PubChem_Compound:4114, PMID:9013628]
+def: "8-methoxypsoralen reagent." [CAS:298-81-7, PubChem_Compound:4114, PMID:9013628]
 synonym: "8-MOP" EXACT []
 property_value: reactionSites: "1" xsd:nonNegativeInteger
 is_a: xlmod:00100 ! reactive group
@@ -2264,7 +2265,7 @@ relationship: is_analog_of xlmod:00083 ! adenosine
 [Term]
 id: xlmod:01708
 name: 2-azidoadenosine
-def: "2-azidoadenosine reagent." [PubChem_Compound:510978, PMID:9145285]
+def: "2-azidoadenosine reagent." [CAS:59587-07-4, PubChem_Compound:510978, PMID:9145285]
 property_value: reactionSites: "1" xsd:nonNegativeInteger
 is_a: xlmod:00088 ! nucleoside derivative
 relationship: has_reactive_group xlmod:00055 ! azide
@@ -2532,7 +2533,7 @@ relationship: is_cleavable xlmod:00023 ! cleavable S-S bond
 [Term]
 id: xlmod:01808
 name: NHS-Biotin
-def: "Biotin N-hydroxysuccinimide ester." [PubChem_Compound:434213, ChemSpiderID:5142865, ChemicalBookNo:CB7371998]
+def: "Biotin N-hydroxysuccinimide ester." [CAS:35013-72-0, PubChem_Compound:434213, ChemSpiderID:5142865, ChemicalBookNo:CB7371998]
 property_value: reactionSites: "1" xsd:nonNegativeInteger
 property_value: spacerLength: "13.5" xsd:float
 is_a: xlmod:00003 ! label transfer reagent
@@ -2553,7 +2554,7 @@ relationship: has_reactive_group xlmod:00101 ! NHS ester
 [Term]
 id: xlmod:01810
 name: NHS-SS-Biotin
-def: "Biotin disulfide N-hydroxysuccinimide ester." [PubChem_Compound:71312116, ChemSpiderID:3405732, ChemicalBookNo:CB4216304]
+def: "Biotin disulfide N-hydroxysuccinimide ester." [CAS:142439-92-7, PubChem_Compound:71312116, ChemSpiderID:3405732, ChemicalBookNo:CB4216304]
 property_value: reactionSites: "1" xsd:nonNegativeInteger
 property_value: spacerLength: "24.3" xsd:float
 is_a: xlmod:00003 ! label transfer reagent
@@ -2574,7 +2575,7 @@ relationship: has_reactive_group xlmod:00101 ! NHS ester
 [Term]
 id: xlmod:01812
 name: PFP-Biotin
-def: "Pentafluorophenyl-Biotin." [PubChem_Compound:11122445, ChemSpiderID:9297574, ChemicalBookNo:CB6307189]
+def: "Pentafluorophenyl-Biotin." [CAS:120550-35-8, PubChem_Compound:11122445, ChemSpiderID:9297574, ChemicalBookNo:CB6307189]
 synonym: "Biotin-PFP-ester" EXACT []
 property_value: reactionSites: "1" xsd:nonNegativeInteger
 property_value: spacerLength: "9.6" xsd:float
@@ -2631,7 +2632,7 @@ relationship: has_reactive_group xlmod:00127 ! iodoacetyl
 [Term]
 id: xlmod:01817
 name: Iodoacetyl-LC-Biotin
-def: "Iodoacetyl-LC-Biotin biotinylation reagent." [PubChem_Compound:125043, ChemSpiderID:4248811]
+def: "Iodoacetyl-LC-Biotin biotinylation reagent." [CAS:93285-75-7, PubChem_Compound:125043, ChemSpiderID:4248811]
 property_value: reactionSites: "1" xsd:nonNegativeInteger
 property_value: spacerLength: "27.1" xsd:float
 is_a: xlmod:00003 ! label transfer reagent
@@ -2641,7 +2642,7 @@ relationship: has_reactive_group xlmod:00127 ! iodoacetyl
 [Term]
 id: xlmod:01818
 name: Pentylamine-Biotin
-def: "5-(Biotinamido)pentylamine." [PubChem_Compound:83906, ChemicalBookNo:CB8415868]
+def: "5-(Biotinamido)pentylamine." [CAS:115416-38-1, PubChem_Compound:83906, ChemicalBookNo:CB8415868]
 property_value: reactionSites: "1" xsd:nonNegativeInteger
 property_value: spacerLength: "18.9" xsd:float
 is_a: xlmod:00003 ! label transfer reagent
@@ -2678,7 +2679,7 @@ relationship: has_reactive_group xlmod:00133 ! amine
 [Term]
 id: xlmod:01821
 name: Biocytine-Hydrazide
-def: "Biocytine-Hydrazide biotinylation reagent." [PubChem_Compound:128197]
+def: "Biocytine-Hydrazide biotinylation reagent." [CS:102743-85-1, PubChem_Compound:128197]
 property_value: reactionSites: "1" xsd:nonNegativeInteger
 property_value: spacerLength: "19.7" xsd:float
 is_a: xlmod:00003 ! label transfer reagent
@@ -2689,7 +2690,7 @@ relationship: has_reactive_group xlmod:00110 ! hydrazide
 [Term]
 id: xlmod:01822
 name: Biotin-Hydrazide
-def: "Biocytine-Hydrazide biotinylation reagent." [PubChem_Compound:83872, ChemSpiderID:75684, ChemicalBookNo:CB3175354]
+def: "Biocytine-Hydrazide biotinylation reagent." [CAS:66640-86-6, PubChem_Compound:83872, ChemSpiderID:75684, ChemicalBookNo:CB3175354]
 property_value: reactionSites: "1" xsd:nonNegativeInteger
 property_value: spacerLength: "15.7" xsd:float
 is_a: xlmod:00003 ! label transfer reagent
@@ -2722,7 +2723,7 @@ relationship: has_reactive_group xlmod:00110 ! hydrazide
 [Term]
 id: xlmod:01825
 name: Photobiotin
-def: "Photoactivatable Biotin." [PubChem_Compound:15949227, ChemicalBookNo:CB7301795]
+def: "Photoactivatable Biotin." [CAS:96087-37-5, PubChem_Compound:15949227, ChemicalBookNo:CB7301795]
 property_value: reactionSites: "1" xsd:nonNegativeInteger
 property_value: spacerLength: "30.0" xsd:float
 is_a: xlmod:00003 ! label transfer reagent
@@ -3447,7 +3448,7 @@ relationship: is_reactive_with xlmod:00037 ! non-selective
 [Term]
 id: xlmod:02043
 name: DSA
-def: "Disuccinimidyladipic acid." [PubChem_Compound:6438029, ChemSpiderID:9408133]
+def: "Disuccinimidyladipic acid." [CAS:26544-38-7, PubChem_Compound:6438029, ChemSpiderID:9408133]
 synonym: "disuccinimidyl adipate" EXACT []
 property_value: bridgeFormula: "C6 H6 O2" xsd:string
 property_value: monoIsotopicMass: "110.03624" xsd:double
@@ -3822,7 +3823,7 @@ relationship: has_reactive_group xlmod:00121 ! methanethiosulfonate
 [Term]
 id: xlmod:02074
 name: MTS-2-MTS
-def: "1,2-Ethanediyl Bismethanethiosulfonate." [CAS:55-95-8, MDL:MFCD01320400, PubChem_Compound:564320]
+def: "1,2-Ethanediyl Bismethanethiosulfonate." [CAS:55-95-8, PubChem_Compound:564320, MDL:MFCD01320400]
 synonym: "1,2-Ethanedithiol Dimethanesulfonate" EXACT []
 synonym: "Preparation 289" EXACT []
 property_value: reactionSites: "2" xsd:nonNegativeInteger
@@ -3893,7 +3894,7 @@ relationship: is_cleavable xlmod:00024 ! periodate cleavable
 [Term]
 id: xlmod:02081
 name: Sulfo-GMBS
-def: "N-gamma-Maleimidobutyryloxysulfosuccinimide ester." [PubChem_Compound:3435098, ChemSpiderID:2678121, ChemicalBookNo:CB4412935]
+def: "N-gamma-Maleimidobutyryloxysulfosuccinimide ester." [CAS:185332-92-7, PubChem_Compound:23683309, ChemSpiderID:2678121, ChemicalBookNo:CB4412935]
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 property_value: spacerLength: "6.8" xsd:float
 is_a: xlmod:00006 ! heterofunctional cross-linker
@@ -4108,7 +4109,7 @@ relationship: has_reactive_group xlmod:00107 ! nitrophenyl azide
 [Term]
 id: xlmod:02099
 name: Sulfo-SADP
-def: "Sulfosuccinimidyl (4-azidophenyl)-1,3'-dithiopropionate." [PubChem_Compound:128116, ChemSpiderID:113597, ChemicalBookNo:CB9210802]
+def: "Sulfosuccinimidyl (4-azidophenyl)-1,3'-dithiopropionate." [CAS:102568-45-6, PubChem_Compound:128116, ChemSpiderID:113597, ChemicalBookNo:CB9210802]
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 property_value: spacerLength: "13.9" xsd:float
 is_a: xlmod:00006 ! heterofunctional cross-linker
@@ -4638,7 +4639,7 @@ relationship: has_reactive_group xlmod:00145 ! aryl halide
 [Term]
 id: xlmod:02145
 name: SMPT
-def: "4-Succinimidyloxycarbonyl-methyl-alpha-(2-pyridyldithio)toluene." [PubChem_Compound:130706, MDL:MFCD00083161, ChemSpiderID:115608, ChemicalBookNo:CB5359464]
+def: "4-Succinimidyloxycarbonyl-methyl-alpha-(2-pyridyldithio)toluene." [CAS:112241-19-7, PubChem_Compound:130706, MDL:MFCD00083161, ChemSpiderID:115608, ChemicalBookNo:CB5359464]
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 property_value: spacerLength: "11.2" xsd:float
 is_a: xlmod:00006 ! heterofunctional cross-linker
@@ -4824,7 +4825,7 @@ relationship: has_reactive_group xlmod:00106 ! maleimide
 [Term]
 id: xlmod:02160
 name: 11-Maleimidoundecanoic Acid Sulfo-N-Succinimidyl Ester
-def: "11-Maleimidoundecanoic Acid Sulfo-N-Succinimidyl Ester cross-linker." [CAS:211236-68-9, MDL:MFCD01075057, PubChem_Compound:5066232, ChemSpiderID:4243138]
+def: "11-Maleimidoundecanoic Acid Sulfo-N-Succinimidyl Ester cross-linker." [CAS:211236-68-9, PubChem_Compound:5066232, MDL:MFCD01075057, ChemSpiderID:4243138]
 property_value: hydrophilicPEGchain: "4" xsd:nonNegativeInteger
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 property_value: spacerLength: "15.7" xsd:float
@@ -4835,7 +4836,7 @@ relationship: has_reactive_group xlmod:00106 ! maleimide
 [Term]
 id: xlmod:02161
 name: DTME
-def: "Dithio-bis-maleimidoethane." [CAS:71865-37-7, MDL:MFCD01863385, PubChem_Compound:191989, ChemSpiderID:166677, ChemicalBookNo:CB3134825]
+def: "Dithio-bis-maleimidoethane." [CAS:71865-37-7, PubChem_Compound:191989, MDL:MFCD01863385, ChemSpiderID:166677, ChemicalBookNo:CB3134825]
 synonym: "Dithio-bis-maleimidoethane" EXACT []
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 property_value: spacerLength: "13.3" xsd:float
@@ -4890,7 +4891,7 @@ relationship: has_reactive_group xlmod:00121 ! methanethiosulfonate
 [Term]
 id: xlmod:02167
 name: MTS-6-MTS
-def: "1,6-Hexanediyl bismethanethiosulfonate." [PubChem_Compound:3360826, ChemSpiderID:2606746]
+def: "1,6-Hexanediyl bismethanethiosulfonate." [CAS:56-01-9, PubChem_Compound:3360826, ChemSpiderID:2606746]
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 is_a: xlmod:00005 ! homofunctional cross-linker
 relationship: has_reactive_group xlmod:00121 ! methanethiosulfonate
@@ -5003,7 +5004,7 @@ relationship: has_reactive_group xlmod:00138 ! carboxyl
 [Term]
 id: xlmod:02178
 name: BMPH
-def: "N-(beta-Maleimidopropionic acid)hydrazide." [PubChem_Compound:4401583, ChemSpiderID:3602748, ChemicalBookNo:CB0106874]
+def: "N-(beta-Maleimidopropionic acid)hydrazide." [CAS:359436-60-5, PubChem_Compound:4401583, ChemSpiderID:3602748, ChemicalBookNo:CB0106874]
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 property_value: spacerLength: "8.1" xsd:float
 is_a: xlmod:00006 ! heterofunctional cross-linker
@@ -5844,3 +5845,401 @@ relationship: has_reactive_group xlmod:00118 ! tetrafluorophenyl azide
 relationship: has_reactive_group xlmod:00121 ! methanethiosulfonate 
 relationship: is_cleavable xlmod:00023 ! cleavable S-S bond
 
+[Term]
+id: xlmod:06000
+name: derivatization reagent
+def: "Chemical reagent, which transforms a polar group in a molecule into a non-polar group in order to make the molecule volatile and analyzable by GC/MS." [PSI:XL]
+relationship: part_of xlmod:00000 ! Proteomics Standards Initiative cross-linking and derivatization controlled vocabulary
+
+[Term]
+id: xlmod:06001
+name: alkylation reagent
+def: "Derivatization reagent replacing an active hydrogen by an aliphatic or aliphatic-aromatic group." [PSI:XL]
+synonym: "arylation" EXACT []
+is_a: xlmod:06000 ! derivatization reagent
+
+[Term]
+id: xlmod:06002
+name: silylation reagent
+def: "Silylation reagent replacing an active hydrogen by a silyl group." [PSI:XL]
+is_a: xlmod:06000 ! derivatization reagent
+
+[Term]
+id: xlmod:06003
+name: acylation reagent
+def: "Acylation reagent replacing an active hydrogen by a acyl group." [PSI:XL]
+is_a: xlmod:06000 ! derivatization reagent
+
+[Term]
+id: xlmod:06004
+name: fluorinated anhydride reagent
+def: "Fluorinated anhydride derivatization reagent." [PSI:XL]
+is_a: xlmod:06003 ! acylation reagent
+
+[Term]
+id: xlmod:06005
+name: fluoracylimidazole reagent
+def: "Fluoracylimidazole derivatization reagent." [PSI:XL]
+is_a: xlmod:06003 ! acylation reagent
+
+[Term]
+id: xlmod:06006
+name: halogenation reagent
+def: "Halogenation reagent replacing an active hydrogen by a halogen." [PSI:XL]
+is_a: xlmod:06000 ! derivatization reagent
+
+[Term]
+id: xlmod:06007
+name: halomethylsilyl reagent
+def: "Halogenation reagent which can produce both silylated and halogenated derivatives." [PSI:XL]
+is_a: xlmod:06000 ! derivatization reagent
+
+[Term]
+id: xlmod:06008
+name: chiral derivatization reagent
+def: "Chiral derivatization reagent with an enatiomerically pure chiral derivatizing agent to form two diastereomeric derivatives that can be separated by gas chromatography." [PSI:XL]
+is_a: xlmod:06001 ! derivatization reagent
+
+[Term]
+id: xlmod:06200
+name: dialkylacetal
+def: "Dialkylacetal reagent." [PSI:XL]
+is_a: xlmod:06001 ! alkylation reagent
+
+[Term]
+id: xlmod:06201
+name: diazoalkal
+def: "Diazoalkal reagent." [PSI:XL]
+is_a: xlmod:06001 ! alkylation reagent
+
+[Term]
+id: xlmod:06500
+name: alcohol reactive
+def: "Indicates that a derivatization reagent is reactive with alcohols and phenols." [PSI:XL]
+is_a: xlmod:00027 ! chemically reactive
+
+[Term]
+id: xlmod:06501
+name: active hydrogen reactive
+def: "Indicates that a derivatization reagent is reactive with active hydrogens like e.g. from -SH, -OH, -NH, -COOH groups." [PSI:XL]
+is_a: xlmod:00027 ! chemically reactive
+
+[Term]
+id: xlmod:06502
+name: amide reactive
+def: "Indicates that a derivatization reagent is reactive with amides." [PSI:XL]
+is_a: xlmod:00027 ! chemically reactive
+
+[Term]
+id: xlmod:06503
+name: amino acid reactive
+def: "Indicates that a derivatization reagent is reactive with amino acids." [PSI:XL]
+is_a: xlmod:00027 ! chemically reactive
+
+[Term]
+id: xlmod:06504
+name: nitrosamine reactive
+def: "Indicates that a derivatization reagent is reactive with nitrosamines." [PSI:XL]
+is_a: xlmod:00027 ! chemically reactive
+
+[Term]
+id: xlmod:06505
+name: sulfonamide reactive
+def: "Indicates that a derivatization reagent is reactive with sulfonamides." [PSI:XL]
+is_a: xlmod:00027 ! chemically reactive
+
+[Term]
+id: xlmod:06506
+name: carbohydrate and sugar reactive
+def: "Indicates that a derivatization reagent is reactive with carbohydrates and sugars." [PSI:XL]
+is_a: xlmod:00027 ! chemically reactive
+
+[Term]
+id: xlmod:06507
+name: catecholamine reactive
+def: "Indicates that a derivatization reagent is reactive with catecholamines." [PSI:XL]
+is_a: xlmod:00027 ! chemically reactive
+
+[Term]
+id: xlmod:06508
+name: sulfide reactive
+def: "Indicates that a derivatization reagent is reactive with sulfides." [PSI:XL]
+is_a: xlmod:00027 ! chemically reactive
+
+[Term]
+id: xlmod:07000
+name: dimethylformamide
+def: "Dimethylformamide derivatization reagent." [CAS:68-12-2, PubChem_Compound:6228, MDL:MFCD00003284, ChemSpiderID:5993, ChemicalBookNo:CB2854115, DOI:10.5772/33098]
+synonym: "DMF" EXACT []
+is_a: xlmod:06200 ! dialkylacetal
+relationship: is_reactive_with xlmod:00028 ! amine reactive
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+relationship: is_reactive_with xlmod:06500 ! alcohol reactive
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+relationship: is_reactive_with xlmod:06502 ! amide reactive
+relationship: is_reactive_with xlmod:06503 ! amino acid reactive
+relationship: is_reactive_with xlmod:06504 ! nitrosamine reactive
+
+[Term]
+id: xlmod:07001
+name: diazomethane
+def: "Diazomethane derivatization reagent." [CAS:334-88-3, PubChem_Compound:9550, ChemSpiderID:9176, ChemicalBookNo:CB4852342, DOI:10.5772/33098]
+is_a: xlmod:06201 ! diazoalkal
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+
+[Term]
+id: xlmod:07002
+name: pentafluorobenzylbromide
+def: "Pentafluorobenzylbromide derivatization reagent." [CAS:1765-40-8, PubChem_Compound:74484, MDL:MFCD00000299, ChemSpiderID:67069, ChemicalBookNo:CB9238273, DOI:10.5772/33098]
+synonym: "PFBBr" EXACT []
+is_a: xlmod:06001 ! alkylation reagent
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+relationship: is_reactive_with xlmod:06500 ! alcohol reactive
+relationship: is_reactive_with xlmod:06504 ! nitrosamine reactive
+relationship: is_reactive_with xlmod:06505 ! sulfonamide reactive
+
+[Term]
+id: xlmod:07003
+name: pentafluorobenzylhydroxylaminehydrochloride
+def: "Pentafluorobenzylhydroxylaminehydrochloride derivatization reagent." [CAS:57981-02-9, PubChem_Compound:129670358, Beilstein:4031190, MDL:MFCD00012953, ChemicalBookNo:CB8307815, DOI:10.5772/33098]
+synonym: "PFBHA" EXACT []
+is_a: xlmod:06001 ! alkylation reagent
+relationship: is_reactive_with xlmod:00063 ! carbonyl reactive
+
+[Term]
+id: xlmod:07004
+name: benzylbromide
+def: "Benzylbromide derivatization reagent." [CAS:100-39-0, PubChem_Compound:7498, ChemSpiderID:13851576, ChemicalBookNo:CB6761035, DOI:10.5772/33098]
+is_a: xlmod:06001 ! alkylation reagent
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+
+[Term]
+id: xlmod:07005
+name: tetrabutylammoniumhydroxide
+def: "Tetrabutylammoniumhydroxide derivatization reagent." [CAS:2052-49-5, PubChem_Compound:2723671, MDL:MFCD00009425, ChemSpiderID:13851576, ChemicalBookNo:CB6371870, DOI:10.5772/33098]
+synonym: "TBH" EXACT []
+is_a: xlmod:06001 ! alkylation reagent
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+relationship: is_reactive_with xlmod:06503 ! amino acid reactive
+
+[Term]
+id: xlmod:07006
+name: borontrifluoride in methanol or butanol
+def: "Borontrifluoride derivatization reagent." [CAS:7637-07-2, MDL:MFCD00011316, ChemSpiderID:6116, ChemicalBookNo:CB3238105, DOI:10.5772/33098]
+synonym: "BF3" EXACT []
+is_a: xlmod:06001 ! alkylation reagent
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+
+[Term]
+id: xlmod:07007
+name: bis(trimethylsilyl)acetamide
+def: "Bis(trimethylsilyl)acetamide derivatization reagent." [CAS:10416-59-8, PubChem_Compound:6913588, Beilstein:1306669, MDL:MFCD00008270, ChemSpiderID:4523073, ChemicalBookNo:CB7366985, DOI:10.5772/33098]
+synonym: "BSA" EXACT []
+is_a: xlmod:06002 ! silylation reagent
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+relationship: is_reactive_with xlmod:06500 ! alcohol reactive
+relationship: is_reactive_with xlmod:06502 ! amide reactive
+
+[Term]
+id: xlmod:07008
+name: bis(trimethylsilyl)trifluoroacetamide
+def: "Bis(trimethylsilyl)trifluoroacetamide derivatization reagent." [CAS:25561-30-2, PubChem_Compound:94358, ChemSpiderID:58770, ChemicalBookNo:CB5464744, DOI:10.5772/33098]
+synonym: "BSTFA" EXACT []
+is_a: xlmod:06002 ! silylation reagent
+relationship: is_reactive_with xlmod:00029 ! amine reactive
+relationship: is_reactive_with xlmod:00029 ! sulfhydryl reactive
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+relationship: is_reactive_with xlmod:00032 ! hydroxyl reactive
+relationship: is_reactive_with xlmod:06500 ! alcohol reactive
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+relationship: is_reactive_with xlmod:06503 ! amino acid reactive
+relationship: is_reactive_with xlmod:06504 ! nitrosamine reactive
+
+[Term]
+id: xlmod:07009
+name: N-methyl-trimethylsilyltrifluoroacetamide
+def: "N-methyl-trimethylsilyltrifluoroacetamide derivatization reagent." [CAS:24589-78-4, PubChem_Compound:32510, Beilstein:1941550, MDL:MFCD00000411, ChemSpiderID:30134, ChemicalBookNo:CB0161574, DOI:10.5772/33098]
+synonym: "MSTFA" EXACT []
+is_a: xlmod:06002 ! silylation reagent
+relationship: is_reactive_with xlmod:00029 ! sulfhydryl reactive
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+relationship: is_reactive_with xlmod:00032 ! hydroxyl reactive
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+
+[Term]
+id: xlmod:07010
+name: hexamethyldisilazane
+def: "Hexamethyldisilazane derivatization reagent." [CAS:999-97-3, PubChem_Compound:13838, ChemSpiderID:13238, ChemicalBookNo:CB9105784, DOI:10.5772/33098]
+synonym: "HMDS" EXACT []
+is_a: xlmod:06002 ! silylation reagent
+relationship: is_reactive_with xlmod:00029 ! sulfhydryl reactive
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+relationship: is_reactive_with xlmod:00032 ! hydroxyl reactive
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+relationship: is_reactive_with xlmod:06506 ! carbohydrate and sugar reactive
+
+[Term]
+id: xlmod:07011
+name: trimethylchlorosilane
+def: "Trimethylchlorosilane derivatization reagent." [CAS:75-77-4, PubChem_Compound:6397, Beilstein:1209232, MDL:MFCD00000502, ChemSpiderID:6157, ChemicalBookNo:CB4375627, DOI:10.5772/33098]
+synonym: "TMCS" EXACT []
+is_a: xlmod:06002 ! silylation reagent
+relationship: is_reactive_with xlmod:00029 ! sulfhydryl reactive
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+relationship: is_reactive_with xlmod:00032 ! hydroxyl reactive
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+relationship: is_reactive_with xlmod:06506 ! carbohydrate and sugar reactive
+
+[Term]
+id: xlmod:07012
+name: trimethylsilylimidazole
+def: "Trimethylsilylimidazole derivatization reagent." [CAS:18156-74-6, PubChem_Compound:28925, Beilstein:606148, MDL:MFCD00005280, ChemSpiderID:26905, ChemicalBookNo:CB5483743, DOI:10.5772/33098]
+synonym: "TMSI" EXACT []
+is_a: xlmod:06002 ! silylation reagent
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+relationship: is_reactive_with xlmod:06500 ! alcohol reactive
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+relationship: is_reactive_with xlmod:06503 ! amino acid reactive
+relationship: is_reactive_with xlmod:06506 ! carbohydrate and sugar reactive
+relationship: is_reactive_with xlmod:06507 ! catecholamine reactive
+relationship: is_reactive_with xlmod:06508 ! sulfide reactive
+
+[Term]
+id: xlmod:07013
+name: trimethylsilyldiethylamine
+def: "Trimethylsilyldiethylamine derivatization reagent." [CAS:996-50-9, PubChem_Compound:70454, ChemSpiderID:63633, ChemicalBookNo:CB3771284, DOI:10.5772/33098]
+synonym: "TMS-DEA" EXACT []
+is_a: xlmod:06002 ! silylation reagent
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+relationship: is_reactive_with xlmod:06503 ! amino acid reactive
+
+[Term]
+id: xlmod:07014
+name: N-methyl-N-t-butyldimethylsilyltrifluoroacetamide
+def: "N-methyl-N-t-butyldimethylsilyltrifluoroacetamide derivatization reagent." [CAS:77377-52-7, PubChem_Compound:2724275, Beilstein:3606546, MDL:MFCD00009671, ChemSpiderID:2006425, ChemicalBookNo:CB7707814, DOI:10.5772/33098]
+synonym: "MTBSTFA" EXACT []
+is_a: xlmod:06002 ! silylation reagent
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+
+[Term]
+id: xlmod:07015
+name: trifluoroacetoic anhydride
+def: "Trifluoroacetoic anhydride derivatization reagent." [CAS:407-25-0, PubChem_Compound:9845, DOI:10.5772/33098]
+synonym: "TFAA" EXACT []
+is_a: xlmod:06004 ! fluorinated anhydride reagent
+relationship: is_reactive_with xlmod:00029 ! amine reactive
+relationship: is_reactive_with xlmod:06500 ! alcohol reactive
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+
+[Term]
+id: xlmod:07016
+name: pentafluoropropionic anhydride
+def: "Pentafluoropropionic anhydride derivatization reagent." [CAS:356-42-3, PubChem_Compound:67742, Beilstein:1806446, MDL:MFCD00000429, ChemicalBookNo:CB2749284, DOI:10.5772/33098]
+synonym: "PFPA" EXACT []
+is_a: xlmod:06004 ! fluorinated anhydride reagent
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+relationship: is_reactive_with xlmod:06500 ! alcohol reactive
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+relationship: is_reactive_with xlmod:06504 ! nitrosamine reactive
+relationship: is_reactive_with xlmod:06507 ! catecholamine reactive
+
+[Term]
+id: xlmod:07017
+name: heptafluorobutyric anhydride
+def: "Heptafluorobutyric anhydride derivatization reagent." [CAS:336-59-4, PubChem_Compound:67643, Beilstein:856036, MDL:MFCD00000432, ChemSpiderID:60962, ChemicalBookNo:CB5217287, DOI:10.5772/33098]
+synonym: "HFBA" EXACT []
+is_a: xlmod:06004 ! fluorinated anhydride reagent
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+relationship: is_reactive_with xlmod:06504 ! nitrosamine reactive
+relationship: is_reactive_with xlmod:06505 ! sulfonamide reactive
+
+[Term]
+id: xlmod:07018
+name: trifluoroacetylimidazole
+def: "Trifluoroacetylimidazole derivatization reagent." [CAS:1546-79-8, PubChem_Compound:73767, Beilstein:608904, MDL:MFCD00014501, ChemSpiderID:66407, ChemicalBookNo:CB7308204, DOI:10.5772/33098]
+synonym: "TFAI" EXACT []
+is_a: xlmod:06005 ! fluoracylimidazole reagent
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+
+[Term]
+id: xlmod:07019
+name: pentafluoropropanylimidazole
+def: "Pentafluoropropanylimidazole derivatization reagent." [DOI:10.5772/33098]
+synonym: "PFPI" EXACT []
+is_a: xlmod:06005 ! fluoracylimidazole reagent
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+
+[Term]
+id: xlmod:07020
+name: heptafluorobutyrylimidazole
+def: "Heptafluorobutyrylimidazole derivatization reagent." [CAS:32477-35-3, PubChem_Compound:94431, MDL:MFCD00014503, ChemSpiderID:85218, ChemicalBookNo:CB4100522, DOI:10.5772/33098]
+synonym: "HFBI" EXACT []
+is_a: xlmod:06005 ! fluoracylimidazole reagent
+relationship: is_reactive_with xlmod:00029 ! amine reactive
+relationship: is_reactive_with xlmod:06500 ! alcohol reactive
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+relationship: is_reactive_with xlmod:06502 ! amide reactive
+relationship: is_reactive_with xlmod:06503 ! amino acid reactive
+relationship: is_reactive_with xlmod:06507 ! catecholamine reactive
+
+[Term]
+id: xlmod:07021
+name: N-Methyl-bis(trifluoroacetamide)
+def: "N-Methyl-bis(trifluoroacetamide) derivatization reagent." [CAS:685-27-8, PubChem_Compound:69635, Beilstein:1878402, MDL:MFCD00000412, ChemSpiderID:62836, ChemicalBookNo:CB0220312, DOI:10.5772/33098]
+synonym: "MBTFA" EXACT []
+is_a: xlmod:06003 ! acylation reagent
+relationship: is_reactive_with xlmod:06500 ! alcohol reactive
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+
+[Term]
+id: xlmod:07022
+name: pentafluorobenzoylchloride
+def: "Pentafluorobenzoylchloride derivatization reagent." [CAS:2251-50-5, PubChem_Compound:75256, Beilstein:2054397, MDL:MFCD00000657, ChemSpiderID:67799, ChemicalBookNo:CB6191348, DOI:10.5772/33098]
+synonym: "PFBCI" EXACT []
+is_a: xlmod:06003 ! acylation reagent
+relationship: is_reactive_with xlmod:00029 ! amine reactive
+relationship: is_reactive_with xlmod:06500 ! alcohol reactive
+
+[Term]
+id: xlmod:07023
+name: pentafluoropropanol
+def: "Pentafluoropropanol derivatization reagent." [CAS:679-86-7, PubChem_Compound:168785, MDL:MFCD00153226, ChemSpiderID:9488, ChemicalBookNo:CB9689963, DOI:10.5772/33098]
+synonym: "PFPOH" EXACT []
+is_a: xlmod:06003 ! acylation reagent
+relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
+relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
+
+[Term]
+id: xlmod:07024
+name: 4-Carbethoxyhexafluorobutyrylchloride
+def: "4-Carbethoxyhexafluorobutyrylchloride derivatization reagent." [CAS:18381-53-8, PubChem_Compound:161251, ChemSpiderID:141651, ChemicalBookNo:CB2153034, DOI:10.5772/33098]
+synonym: "4-CB" EXACT []
+is_a: xlmod:06003 ! acylation reagent
+relationship: is_reactive_with xlmod:00029 ! amine reactive
+
+[Term]
+id: xlmod:07025
+name: N-trifluoroacetyl-L-prolylchloride
+def: "N-trifluoroacetyl-L-prolylchloride derivatization reagent." [CAS:36724-68-2, PubChem_Compound:3082449, ChemicalBookNo:CB1411487, DOI:10.5772/33098]
+synonym: "TPC" EXACT []
+is_a: xlmod:06008 ! chiral derivatization reagent
+relationship: is_reactive_with xlmod:00029 ! amine reactive
+
+[Term]
+id: xlmod:07026
+name: (S)-(-)-N-(Trifluoroacetyl)-prolylchloride
+def: "(S)-(-)-N-(Trifluoroacetyl)-prolylchloride derivatization reagent." [CAS:36724-68-2, PubChem_Compound:3082449, ChemicalBookNo:3082449, DOI:10.5772/33098]
+synonym: "I-TPC" EXACT []
+is_a: xlmod:06008 ! chiral derivatization reagent
+relationship: is_reactive_with xlmod:00029 ! amine reactive
+
+[Term]
+id: xlmod:07027
+name: (-)-alpha-Methoxy-alpha-trifluoromethylphenylacetic acid
+def: "(-)-alpha-Methoxy-alpha-trifluoromethylphenylacetic acid derivatization reagent." [CAS:56135-03-6, PubChem_Compound:2723917, MDL:MFCD00066637, DOI:10.5772/33098]
+synonym: "MTPA" EXACT []
+is_a: xlmod:06008 ! chiral derivatization reagent
+relationship: is_reactive_with xlmod:00029 ! amine reactive
