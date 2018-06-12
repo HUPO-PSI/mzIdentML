@@ -2,14 +2,14 @@
 layout: ontology_detail
 id: xlmod
 label: xlmod
-description: A structured, controlled vocabulary for cross-linking reagents used in cross-linking mass spectrometry experiments.
-title: HUPO-PSI cross-linking reagents controlled vocabulary
+description: A structured, controlled vocabulary for cross-linking reagents and cross-linker related post-translational modifications used in cross-linking mass spectrometry experiments and derivatization reagents for GC-MS.
+title: HUPO-PSI cross-linking and derivatization reagents controlled vocabulary
 createdWith: http://oboedit.org
 contact:
   email: gerhard.mayer@rub.de
   label: Gerhard Mayer
 integration_server: https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/tree/master/cv
-domain: mass spectrometry cross-linking reagents
+domain: mass spectrometry cross-linking and derivatization reagents
 mailing_list: psidev-ms-vocab@lists.sourceforge.net
 homepage: http://www.psidev.info/groups/controlled-vocabularies
 page: http://www.psidev.info/groups/controlled-vocabularies
@@ -24,7 +24,7 @@ build:
   method: obo2owl
 ---
 
-A structured controlled vocabulary for cross-linker reagents used in cross-linking mass spectrometry experiments. Developed by the HUPO Proteomics Standards Initiative (PSI).
+A structured, controlled vocabulary for cross-linking reagents and cross-linker related post-translational modifications used in cross-linking mass spectrometry experiments and derivatization reagents for GC-MS. Developed by the HUPO Proteomics Standards Initiative (PSI).
 
 ## Mailing Lists
 
