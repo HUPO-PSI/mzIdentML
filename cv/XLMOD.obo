@@ -1,7 +1,7 @@
 format-version: 1.2
-data-version: releases/2018-06-07
+data-version: releases/2018-06-15
 ontology: xlmod
-date: 07:06:2018 16:54
+date: 15:06:2018 15:08
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: xlmod
@@ -2415,19 +2415,19 @@ def: "The Ac4-ManNAc sialic acid analogue used for glycan-protein cross-linking.
 is_a: xlmod:00093 ! sialic acid analogue
 
 [Term]
-id: xlmod:01723
+id: xlmod:01724
 name: Ac4-GlcNDAz
 def: "The Ac4-GlcNDAz sialic acid analogue used for glycan-protein cross-linking." [PMID:19536272, PMID:20816498]
 is_a: xlmod:00093 ! sialic acid analogue
 
 [Term]
-id: xlmod:01723
+id: xlmod:01725
 name: Ac5-methyl-SiaDAz
 def: "The Ac5-methyl-SiaDAz sialic acid analogue used for glycan-protein cross-linking." [PMID:20816498]
 is_a: xlmod:00093 ! sialic acid analogue
 
 [Term]
-id: xlmod:01724
+id: xlmod:01726
 name: sialylated LacNAc-biotin
 def: "Sialylated LacNAc-biotin used for glycan-protein cross-linking." [PMID:26541974]
 is_a: xlmod:00093 ! sialic acid analogue
