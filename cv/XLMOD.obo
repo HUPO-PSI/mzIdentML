@@ -1,11 +1,11 @@
 format-version: 1.2
-data-version: releases/2018-06-15
+data-version: releases/2018-06-19
 ontology: xlmod
-date: 15:06:2018 15:08
+date: 19:06:2018 15:54
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: xlmod
-remark: version: 1.1.2
+remark: version: 1.1.3
 remark: coverage: cross-linking reagents, cross-linker related post-translational modifications, and derivatization reagents for GC-MS
 remark: creator: Lutz Fischer <lfischer <-at-> staffmail.ed.ac.uk>
 remark: creator: Alexander Leitner <leitner <-at-> imsb.biol.ethz.ch>
@@ -1061,7 +1061,6 @@ relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
 id: xlmod:00147
 name: photocleavable
 def: "Indicates that a reactive group is photocleavable." [PSI:XL]
-is_a: xlmod:00026 ! reactive group attribute
 is_a: xlmod:00108 ! photoreactive
 
 [Term]
@@ -1076,7 +1075,6 @@ relationship: is_reactive_with xlmod:00037 ! non-selective
 id: xlmod:00149
 name: photoactivatable
 def: "Indicates that a reactive group is photoactivatable." [PSI:XL]
-is_a: xlmod:00026 ! reactive group attribute
 is_a: xlmod:00108 ! photoreactive
 
 [Term]
