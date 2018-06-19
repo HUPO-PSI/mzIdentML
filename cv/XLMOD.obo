@@ -1,7 +1,7 @@
 format-version: 1.2
 data-version: releases/2018-06-19
 ontology: xlmod
-date: 19:06:2018 15:54
+date: 19:06:2018 16:41
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: xlmod
@@ -112,7 +112,7 @@ is_a: xlmod:00004 ! cross-linker
 id: xlmod:00007
 name: photoreactive cross-linker
 def: "OBSOLETE A cross-linking reagent that becomes reactive when exposed to ultraviolet or visible light." [PSI:XL]
-comment: This term was made obsolete because photoreactivity is now encoded for the reactive groups of the cross-linkers, see (xlmod:00108).
+comment: This term was made obsolete because photo-reactivity is now encoded for the reactive groups of the cross-linkers, see (xlmod:00108).
 is_obsolete: true
 
 [Term]
@@ -124,8 +124,8 @@ is_a: xlmod:00004 ! cross-linker
 [Term]
 id: xlmod:00009
 name: cross-linking attribute
-def: "An attribute decsribing a cross-linker." [PSI:XL]
-relationship: part_of xlmod:00001 ! cross-linking entity
+def: "An attribute describing a cross-linker." [PSI:XL]
+is_a: xlmod:00001 ! cross-linking entity
 
 [Term]
 id: xlmod:00010
@@ -6045,7 +6045,7 @@ name: bis(trimethylsilyl)trifluoroacetamide
 def: "Bis(trimethylsilyl)trifluoroacetamide derivatization reagent." [CAS:25561-30-2, PubChem_Compound:94358, ChemSpiderID:58770, ChemicalBookNo:CB5464744, DOI:10.5772/33098]
 synonym: "BSTFA" EXACT []
 is_a: xlmod:06002 ! silylation reagent
-relationship: is_reactive_with xlmod:00029 ! amine reactive
+relationship: is_reactive_with xlmod:00028 ! amine reactive
 relationship: is_reactive_with xlmod:00029 ! sulfhydryl reactive
 relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
 relationship: is_reactive_with xlmod:00032 ! hydroxyl reactive
@@ -6128,7 +6128,7 @@ name: trifluoroacetoic anhydride
 def: "Trifluoroacetoic anhydride derivatization reagent." [CAS:407-25-0, PubChem_Compound:9845, DOI:10.5772/33098]
 synonym: "TFAA" EXACT []
 is_a: xlmod:06004 ! fluorinated anhydride reagent
-relationship: is_reactive_with xlmod:00029 ! amine reactive
+relationship: is_reactive_with xlmod:00028 ! amine reactive
 relationship: is_reactive_with xlmod:06500 ! alcohol reactive
 relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
 
@@ -6176,7 +6176,7 @@ name: heptafluorobutyrylimidazole
 def: "Heptafluorobutyrylimidazole derivatization reagent." [CAS:32477-35-3, PubChem_Compound:94431, MDL:MFCD00014503, ChemSpiderID:85218, ChemicalBookNo:CB4100522, DOI:10.5772/33098]
 synonym: "HFBI" EXACT []
 is_a: xlmod:06005 ! fluoracylimidazole reagent
-relationship: is_reactive_with xlmod:00029 ! amine reactive
+relationship: is_reactive_with xlmod:00028 ! amine reactive
 relationship: is_reactive_with xlmod:06500 ! alcohol reactive
 relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
 relationship: is_reactive_with xlmod:06502 ! amide reactive
@@ -6198,7 +6198,7 @@ name: pentafluorobenzoylchloride
 def: "Pentafluorobenzoylchloride derivatization reagent." [CAS:2251-50-5, PubChem_Compound:75256, Beilstein:2054397, MDL:MFCD00000657, ChemSpiderID:67799, ChemicalBookNo:CB6191348, DOI:10.5772/33098]
 synonym: "PFBCI" EXACT []
 is_a: xlmod:06003 ! acylation reagent
-relationship: is_reactive_with xlmod:00029 ! amine reactive
+relationship: is_reactive_with xlmod:00028 ! amine reactive
 relationship: is_reactive_with xlmod:06500 ! alcohol reactive
 
 [Term]
@@ -6216,7 +6216,7 @@ name: 4-Carbethoxyhexafluorobutyrylchloride
 def: "4-Carbethoxyhexafluorobutyrylchloride derivatization reagent." [CAS:18381-53-8, PubChem_Compound:161251, ChemSpiderID:141651, ChemicalBookNo:CB2153034, DOI:10.5772/33098]
 synonym: "4-CB" EXACT []
 is_a: xlmod:06003 ! acylation reagent
-relationship: is_reactive_with xlmod:00029 ! amine reactive
+relationship: is_reactive_with xlmod:00028 ! amine reactive
 
 [Term]
 id: xlmod:07025
@@ -6224,7 +6224,7 @@ name: N-trifluoroacetyl-L-prolylchloride
 def: "N-trifluoroacetyl-L-prolylchloride derivatization reagent." [CAS:36724-68-2, PubChem_Compound:3082449, ChemicalBookNo:CB1411487, DOI:10.5772/33098]
 synonym: "TPC" EXACT []
 is_a: xlmod:06008 ! chiral derivatization reagent
-relationship: is_reactive_with xlmod:00029 ! amine reactive
+relationship: is_reactive_with xlmod:00028 ! amine reactive
 
 [Term]
 id: xlmod:07026
@@ -6232,7 +6232,7 @@ name: (S)-(-)-N-(Trifluoroacetyl)-prolylchloride
 def: "(S)-(-)-N-(Trifluoroacetyl)-prolylchloride derivatization reagent." [CAS:36724-68-2, PubChem_Compound:3082449, ChemicalBookNo:3082449, DOI:10.5772/33098]
 synonym: "I-TPC" EXACT []
 is_a: xlmod:06008 ! chiral derivatization reagent
-relationship: is_reactive_with xlmod:00029 ! amine reactive
+relationship: is_reactive_with xlmod:00028 ! amine reactive
 
 [Term]
 id: xlmod:07027
@@ -6240,4 +6240,4 @@ name: (-)-alpha-Methoxy-alpha-trifluoromethylphenylacetic acid
 def: "(-)-alpha-Methoxy-alpha-trifluoromethylphenylacetic acid derivatization reagent." [CAS:56135-03-6, PubChem_Compound:2723917, MDL:MFCD00066637, DOI:10.5772/33098]
 synonym: "MTPA" EXACT []
 is_a: xlmod:06008 ! chiral derivatization reagent
-relationship: is_reactive_with xlmod:00029 ! amine reactive
+relationship: is_reactive_with xlmod:00028 ! amine reactive
