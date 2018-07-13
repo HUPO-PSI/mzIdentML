@@ -8,7 +8,7 @@ createdWith: http://oboedit.org
 contact:
   email: gerhard.mayer@rub.de
   label: Gerhard Mayer
-integration_server: https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/tree/master/cv
+integration_server: https://github.com/HUPO-PSI/mzIdentML/tree/master/cv
 domain: mass spectrometry cross-linking and derivatization reagents
 mailing_list: psidev-ms-vocab@lists.sourceforge.net
 homepage: http://www.psidev.info/groups/controlled-vocabularies
