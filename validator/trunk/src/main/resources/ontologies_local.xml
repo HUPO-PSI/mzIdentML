@@ -2,10 +2,10 @@
 	xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/CvSourceList.xsd">
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:BrendaTissueOBO.obo" format="OBO" name="BTO" identifier="BTO" version="14:05:2017 20:29"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:gene_ontology.obo" format="OBO" name="Gene Ontology" identifier="GO" version="releases/2017-09-05"/>
-    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:pato.obo" format="OBO" name="PATO" identifier="PATO" version="releases/2017-07-10"/>
+    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:pato.obo" format="OBO" name="PATO" identifier="PATO" version="releases/2018-03-28"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:PSI-MOD.obo" format="OBO" name="PSI-MOD" identifier="MOD" version="30:05:2014 00:48"/>
-    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:psi-ms.obo" format="OBO" name="PSI-MS" identifier="MS" version="4.0.17"/>
-    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:unimod.obo" format="OBO" name="UNIMOD" identifier="UNIMOD" version="2017:09:06 10:04"/>
+    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:psi-ms.obo" format="OBO" name="PSI-MS" identifier="MS" version="4.1.12"/>
+    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:unimod.obo" format="OBO" name="UNIMOD" identifier="UNIMOD" version="2018:04:17 09:27"/>
     <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:unit.obo" format="OBO" name="UO" identifier="UO" version="09:04:2014 13:37"/>
-    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:XLMOD.obo" format="OBO" name="XLMOD" identifier="XLMOD" version="releases/2017-07-10"/>
+    <cvSource source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" uri="classpath:XLMOD.obo" format="OBO" name="XLMOD" identifier="xlmod" version="release/2018-07-13"/>
 </cvSourceList>

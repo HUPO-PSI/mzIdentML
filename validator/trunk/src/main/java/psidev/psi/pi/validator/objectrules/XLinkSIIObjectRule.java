@@ -15,9 +15,12 @@ import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationItem;
 import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationResult;
 
 /**
- * Checks, if for each CV term MS:1002511 - 'cross-link spectrum identification item' there exists the same CV term
- * with the same value in another SpectrumIdentificationItem of the same SpectrumIdentificationResult.
- * For isotope labelled linker we have 4 SIIs for the same cross-link.
+ * Checks, if for each CV term MS:1002511 - 'cross-link spectrum identification item' there exists
+ * the same CV term with the same value in another SpectrumIdentificationItem of the same
+ * SpectrumIdentificationResult. For isotope labelled linker we can have the double number of SIIs
+ * for the same cross-link, e.g. 4 instead of 2.
+ * Remark: There can be multiple of 2 SIIs for the same cross-link, e.g. with different charge states,
+ *         so that the number of SIIs for the same cross-link must just be a multiple of 2.
  * 
  * @author Gerhard
  * 
@@ -132,10 +135,10 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
                         MessageLevel.ERROR);
                     messages.add(valMsg);
                 }
-                else if (siiIdList.size() > 2 && siiIdList.size() != 4) {
+                else if (siiIdList.size() > 2 && siiIdList.size() % 2 != 0) {
                     valMsg = new ValidatorMessage("The '"
                         + "' cvParam's with value " + cvValue + " in the SpectrumIdentificationItem "
-                        + XLinkSIIObjectRule.SIR_CONTEXT.getContext() + " occurs not paired (" + siiIdList.size() + "times), i.e. EXCATLY 2 times resp. 4 times for isotope labelled linkers.",
+                        + XLinkSIIObjectRule.SIR_CONTEXT.getContext() + " occurs not paired (" + siiIdList.size() + "times), i.e. a multiple of 2 times resp. a multiple of 4 times for isotope labelled linkers.",
                         MessageLevel.ERROR);
                     messages.add(valMsg);
                 }

@@ -25,6 +25,7 @@ import java.util.Map;
 import java.util.Set;
 import javax.xml.bind.JAXBException;
 import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 import psidev.psi.pi.rulefilter.RuleFilterManager;
@@ -61,7 +62,7 @@ public class MzIdentMLValidator extends Validator {
     /**
      * Constants.
      */
-    private final Logger LOGGER = Logger.getLogger(this.getClass().getName());
+    private final Logger LOGGER = LogManager.getLogger(MzIdentMLValidator.class);
     
     private final String STR_NOT_MATCHING_MSGS_RECV = "Not matching messages received: ";
     private static final String NEW_LINE = System.getProperty("line.separator");
@@ -1045,11 +1046,11 @@ public class MzIdentMLValidator extends Validator {
     @Override
     public Collection<ValidatorMessage> validate(Object objectToCheck) throws ValidatorException {
         Collection<ValidatorMessage> messages = new ArrayList<>();
-        boolean someObjRuleCanCheck = false;
+        boolean bSomeObjRuleCanCheck = false;
         
         for (ObjectRule rule : this.getObjectRules()) {
             if (rule.canCheck(objectToCheck)) {
-                someObjRuleCanCheck = true;
+                bSomeObjRuleCanCheck = true;
                 @SuppressWarnings("unchecked")
                 final Collection<ValidatorMessage> resultCheck = (Collection<ValidatorMessage>) rule.check(objectToCheck);
                 // update the object rule report
@@ -1067,7 +1068,7 @@ public class MzIdentMLValidator extends Validator {
                 }
             }
         }
-        if (!someObjRuleCanCheck) {
+        if (!bSomeObjRuleCanCheck) {
             throw new IllegalArgumentException("There are no object rules to check the object: " + objectToCheck + " at the severity level: " + this.getMessageReportLevel());
         }
         

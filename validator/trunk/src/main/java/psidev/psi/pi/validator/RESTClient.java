@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 /**
@@ -18,7 +19,7 @@ public class RESTClient {
     /**
      * Constants.
      */
-    private final Logger LOGGER = Logger.getLogger(this.getClass().getName());
+    private final Logger LOGGER = LogManager.getLogger(RESTClient.class);
     private final String STR_APPLICATION_HTML = "application/html";
     private final String STR_ACCEPT = "Accept";
     private final String STR_GET = "GET";

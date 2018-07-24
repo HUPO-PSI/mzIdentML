@@ -3,7 +3,7 @@
 	<groupId>psidev.psi.pi</groupId>
 	<artifactId>mzIdentMLValidator</artifactId>
 	<packaging>jar</packaging>
-	<version>1.4.29-SNAPSHOT</version>
+	<version>1.4.30-SNAPSHOT</version>
 	<name>HUPO-PSI mzIdentML semantic and MIAPE validator</name>
 	<description>A semantic and MIAPE validator for HUPO-PSI mzIdentML XML files.</description>
 	<properties>
@@ -11,6 +11,8 @@
     	<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 	    <assembly.output.folder>validator</assembly.output.folder>
 	    <assembly.dir>mzIdentMLValidator_GUI_v${project.version}</assembly.dir>
+		<junit.platform.version>1.0.0</junit.platform.version>
+		<junit.jupiter.version>5.0.0</junit.jupiter.version>
 	</properties>
 	<build>
 		<resources>
@@ -27,7 +29,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.2</version>
+				<version>3.7.0</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
@@ -37,7 +39,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.0.1</version>
+				<version>3.1.1</version>
 				<executions>
 					<execution>
 						<id>copy-dependencies</id>
@@ -70,7 +72,7 @@
 	                        <pluginExecutionFilter>
 	                            <groupId>org.apache.maven.plugins</groupId>
 	                            <artifactId>maven-dependency-plugin</artifactId>
-	                            <versionRange>3.0.1</versionRange>
+	                            <versionRange>3.1.1</versionRange>
 	                            <goals>
 	                                <goal>copy-dependencies</goal>
 	                            </goals>
@@ -146,7 +148,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-jar-plugin</artifactId>
-						<version>3.0.2</version>
+						<version>3.1.0</version>
 						<configuration>
 							<archive>
 								<manifest>
@@ -176,12 +178,12 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.10.4</version>
+                        <version>3.0.1</version>
                     </plugin>                      
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>2.20</version>
+                        <version>2.21.0</version>
 						<configuration>
 							<argLine>-Dfile.encoding=${project.build.sourceEncoding}</argLine>
 						</configuration>
@@ -197,7 +199,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-jar-plugin</artifactId>
-						<version>3.0.2</version>						
+						<version>3.1.0</version>						
 						<configuration>
 							<finalName>mzIdentMLSchemaValidator</finalName>
 							<outputDirectory>mzIdentMLValidator</outputDirectory>
@@ -221,7 +223,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-jar-plugin</artifactId>
-						<version>3.0.2</version>
+						<version>3.1.0</version>
 						<configuration>
 							<finalName>mzIdentMLValidator</finalName>
                             <!--
@@ -319,7 +321,7 @@
         <dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-text</artifactId>
-			<version>1.1</version>
+			<version>1.4</version>
         </dependency>
         <dependency>
             <groupId>commons-jxpath</groupId>
@@ -342,10 +344,10 @@
 			<version>2.11.0</version>
 		</dependency>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-            <scope>test</scope>
+		  <groupId>org.junit.jupiter</groupId>
+		  <artifactId>junit-jupiter-api</artifactId>
+		  <version>5.2.0</version>
+		  <scope>test</scope>
 		</dependency>
 	</dependencies>
 	<distributionManagement>

@@ -5,9 +5,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-
 import psidev.psi.pi.rulefilter.RuleFilterManager;
 import psidev.psi.tools.validator.ValidatorMessage;
 import psidev.psi.tools.validator.rules.codedrule.ObjectRule;
@@ -24,8 +23,8 @@ public class ExtendedValidatorReport extends ValidatorReport {
     /**
      * Constants.
      */
-    private static final Logger LOG = Logger.getLogger(ExtendedValidatorReport.class);
-    private static final String NEW_LINE = System.getProperty("line.separator");;
+    private static final Logger LOG = LogManager.getLogger(ExtendedValidatorReport.class);
+    private static final String NEW_LINE = System.getProperty("line.separator");
     private final HashMap<String, ObjectRule> objectRulesNotChecked = new HashMap<>();
     private final HashMap<String, ObjectRule> objectRulesValid = new HashMap<>();
     private final HashMap<String, ObjectRule> objectRulesInvalid = new HashMap<>();

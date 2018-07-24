@@ -18,7 +18,7 @@
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/pato-ontology/pato/master/pato.obo"
-    	format="OBO" name="Phenotypic Quality Ontology" identifier="PATO" version="releases/2017-07-10"/>
+    	format="OBO" name="Phenotypic Quality Ontology" identifier="PATO" version="releases/2018-03-28"/>
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/validator/trunk/src/main/resources/PSI-MOD.obo"
@@ -26,11 +26,11 @@
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo"
-    	format="OBO" name="Mass Spectrometry Ontology" identifier="MS" version="4.0.17"/>
+    	format="OBO" name="Mass Spectrometry Ontology" identifier="MS" version="4.1.12"/>
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" 
     	uri="http://www.unimod.org/obo/unimod.obo"
-    	format="OBO" name="UNIMOD" identifier="UNIMOD" version="2017:09:06 10:04"/>
+    	format="OBO" name="UNIMOD" identifier="UNIMOD" version="2018:04:17 09:27"/>
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology"
         uri="https://raw.githubusercontent.com/bio-ontology-research-group/unit-ontology/master/unit.obo"
@@ -38,5 +38,5 @@
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/cv/XLMOD.obo"
-    	format="OBO" name="Cross-Linker Reagents Ontology" identifier="XLMOD" version="releases/2017-07-10"/>
+    	format="OBO" name="Cross-Linker Reagents Ontology" identifier="xlmod" version="release/2018-07-13"/>
 </cvSourceList>

@@ -78,7 +78,7 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
         final OntologyAccess msOntology     = ontologyManager.getOntologyAccess("MS");
         final OntologyAccess modOntology    = ontologyManager.getOntologyAccess("MOD");
         final OntologyAccess unimodOntology = ontologyManager.getOntologyAccess("UNIMOD");
-        final OntologyAccess xlmodOntology  = ontologyManager.getOntologyAccess("XLMOD");
+        final OntologyAccess xlmodOntology  = ontologyManager.getOntologyAccess("xlmod");
 
         List<CvParam> cvParams = searchModification.getCvParam();
         for (CvParam cvParam : cvParams) {
@@ -110,9 +110,11 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
             if (term == null) {
                 // check in UNIMOD ontology
                 term = unimodOntology.getTermForAccession(cvParam.getAccession());
-                // check in XLMOD ontology
+                // check in xlmod ontology
                 if (term == null) {
-                    term = xlmodOntology.getTermForAccession(cvParam.getAccession());
+                    if (xlmodOntology != null) { // preliminary hack until xlmod.obo is correctly indexed by OBOFoundry and OLS
+                        term = xlmodOntology.getTermForAccession(cvParam.getAccession());
+                    }
                 }
             }
             else {

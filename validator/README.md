@@ -20,7 +20,7 @@ All mapping / object rules which are violoated are reported in coloured output e
 	
 	
 ### Download link
-The latest version of the mzIdentML validator can be downloaded [here] (https://github.com/HUPO-PSI/mzIdentML/blob/master/validator/mzIdentMLValidator_GUI_v1.4.29-SNAPSHOT.zip)
+The latest version of the mzIdentML validator can be downloaded [here] (https://github.com/HUPO-PSI/mzIdentML/blob/master/validator/mzIdentMLValidator_GUI_v1.4.30-SNAPSHOT.zip)
 
 
 ### Literature

@@ -3,6 +3,7 @@ package psidev.psi.pi.validator.objectrules;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import psidev.psi.pi.validator.RESTClient;
 import psidev.psi.tools.ontology_manager.OntologyManager;
@@ -19,7 +20,7 @@ public abstract class AObjectRule<T extends Object> extends ObjectRule<T> {
     /**
      * Constants.
      */
-    protected final Logger LOGGER = Logger.getLogger(this.getClass().getName());
+    protected final Logger LOGGER = LogManager.getLogger(AObjectRule.class);
     private static final String STR_ENCODING = "UTF-8";
     
     /**

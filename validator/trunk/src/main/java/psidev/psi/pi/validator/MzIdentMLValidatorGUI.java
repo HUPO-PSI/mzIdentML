@@ -33,6 +33,7 @@ import javax.xml.bind.JAXBException;
 import org.apache.commons.lang3.mutable.MutableInt;
 import org.apache.commons.lang3.SystemUtils;
 import org.apache.commons.text.StringEscapeUtils;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import psidev.psi.pi.rulefilter.CleavageRuleCondition;
 import psidev.psi.pi.rulefilter.DatabaseTypeCondition;
@@ -63,7 +64,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     /**
      * Constants.
      */
-    private static final Logger LOGGER = Logger.getLogger(MzIdentMLValidatorGUI.class);
+    private static final Logger LOGGER = LogManager.getLogger(MzIdentMLValidatorGUI.class);
     private static final String NEW_LINE= System.getProperty("line.separator");
     private static final String STR_FILE_SEPARATOR  = System.getProperty("file.separator");
     private static final String STR_RESOURCE_FOLDER = System.getProperty("user.dir") + STR_FILE_SEPARATOR + "resources" + STR_FILE_SEPARATOR;
@@ -961,9 +962,11 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         }
         */
 
+        
         PropertyFile propFile = new PropertyFile();
         LOGGER.debug("Resources: " + MzIdentMLValidatorGUI.STR_RESOURCE_FOLDER);
         Properties properties = propFile.loadProperties(MzIdentMLValidatorGUI.STR_RESOURCE_FOLDER + MzIdentMLValidatorGUI.STR_VALIDATION_PROPERTIES);
+        
         
         return properties.getProperty(propertyName);
     }

@@ -89,25 +89,25 @@ public class CvListObjectRule extends AObjectRule<CvList> {
                         break;
                     case "MS":
                     case "PSI-MS":
-                        if (version.compareTo("4.0.12") < 0) {
+                        if (version.compareTo("4.1.9") < 0) {
                             messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
                     case "PATO":
-                        if (version.compareTo("releases/2017-01-26") < 0) {
+                        if (version.compareTo("releases/2018-03-28") < 0) {
                             messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
                     case "UNIMOD":
-                        if (version.compareTo("2016:09:23 13:49") < 0) {
+                        if (version.compareTo("2018:04:17 09:27") < 0) {
                             messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
                     case "UO":
                     case "UNIT":
                         break;
-                    case "XLMOD":
-                        if (version.compareTo("releases/2016-07-08") < 0) {
+                    case "xlmod":
+                        if (version.compareTo("releases/2018-06-15") < 0) {
                             messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
@@ -135,7 +135,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
                     case "PSI-MOD":
                     case "MS":
                     case "PSI-MS":
-                    case "XLMOD":
+                    case "xlmod":
                     case "PATO":
                     case "UO":
                     case "UNIT":

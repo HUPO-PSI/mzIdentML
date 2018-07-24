@@ -3,15 +3,9 @@ package psidev.psi.pi.validator;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-/*
-import org.apache.commons.compress.archivers.ArchiveException;
-import org.apache.commons.compress.archivers.ArchiveInputStream;
-import org.apache.commons.compress.archivers.ArchiveStreamFactory;
-import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
-import org.apache.commons.io.IOUtils;
-*/
 import java.util.zip.GZIPInputStream;
 import java.util.zip.ZipInputStream;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 /**
@@ -22,7 +16,7 @@ public class ArchiveUnpacker {
     /**
      * Constants
      */
-    private static final Logger LOGGER = Logger.getLogger(ArchiveUnpacker.class);
+    private static final Logger LOGGER = LogManager.getLogger(ArchiveUnpacker.class);
     private static final int BUF_SIZE = 4096;
 
     /**
