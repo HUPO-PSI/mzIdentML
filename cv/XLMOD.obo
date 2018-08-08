@@ -1,7 +1,7 @@
 format-version: 1.2
-data-version: release/2018-08-07
+data-version: release/2018-08-08
 ontology: xlmod
-date: 07:08:2018 15:14
+date: 08:08:2018 15:27
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: xlmod
@@ -62,6 +62,18 @@ name: has_neutral_loss_reporter
 [Typedef]
 id: has_property
 name: has_property
+
+[Typedef]
+id: has_chromophore
+name: has_chromophore
+
+[Typedef]
+id: has_electrophore
+name: has_electrophore
+
+[Typedef]
+id: has_fluorophore
+name: has_fluorophore
 
 [Typedef]
 id: has_reactive_group
@@ -2502,6 +2514,7 @@ def: "Azidophenacyl bromide reagent." [CAS:57018-46-9, PubChem_Compound:92627, B
 synonym: "APB" EXACT []
 property_value: reactionSites: "1" xsd:nonNegativeInteger
 is_a: xlmod:00005 ! homofunctional cross-linker
+relationship: has_fluorophore xlmod:06110 ! phenacyl
 relationship: has_reactive_group xlmod:00126 ! phenyl azide
 relationship: is_activatable xlmod:00149 ! photoactivatable
 
@@ -6103,7 +6116,6 @@ is_a: xlmod:06000 ! derivatization entity
 id: xlmod:06002
 name: alkylation reagent
 def: "Derivatization reagent replacing an active hydrogen by an aliphatic or aliphatic-aromatic group." [PSI:XL]
-synonym: "arylation" EXACT []
 is_a: xlmod:06001 ! GCMS derivatization reagent
 
 [Term]
@@ -6131,16 +6143,10 @@ def: "Fluoracylimidazole derivatization reagent." [PSI:XL]
 is_a: xlmod:06004 ! acylation reagent
 
 [Term]
-id: xlmod:06007
-name: halogenation reagent
-def: "Halogenation reagent replacing an active hydrogen by a halogen." [PSI:XL]
-is_a: xlmod:06001 ! GCMS derivatization reagent
-
-[Term]
 id: xlmod:06008
 name: halomethylsilyl reagent
 def: "Halogenation reagent which can produce both silylated and halogenated derivatives." [PSI:XL]
-is_a: xlmod:06001 ! GCMS derivatization reagent
+is_a: xlmod:06003 ! silylation reagent
 
 [Term]
 id: xlmod:06009
@@ -6188,7 +6194,7 @@ is_a: xlmod:06004 ! acylation reagent
 id: xlmod:06016
 name: boron trifluoride reagent
 def: "Boron trifluoride reagent." [PSI:XL]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 is_a: xlmod:06010 ! LCMS derivatization reagent
 relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
 
@@ -6196,7 +6202,7 @@ relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
 id: xlmod:06017
 name: N,N-Dimethylformamidedialkyl acetal
 def: "N,N-Dimethylformamidedialkyl acetal." [PSI:XL]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
 
 [Term]
@@ -6214,7 +6220,99 @@ relationship: is_reactive_with xlmod:06513 ! thiol reactive
 id: xlmod:06019
 name: trialkyloxonium reagent
 def: "Trialkyloxonium reagent." [PSI:XL]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
+
+[Term]
+id: xlmod:06020
+name: arylation reagent
+def: "Derivatization reagent replacing an active hydrogen by an aliphatic-aromatic group, e.g. a -phenyl, -tolyl, -xylyl, -naphthy, -benzyl group." [PSI:XL]
+is_a: xlmod:06002 ! alkylation reagent
+
+[Term]
+id: xlmod:06100
+name: chromophore
+def: "A chromophore group attached to a derivatization reagent for enhanced UB- or VIS-detectability." [DOI:10.1016/B978-0-12-415806-1.00002-4]
+is_a: xlmod:06000 ! derivatization entity
+
+[Term]
+id: xlmod:06101
+name: fluorophore
+def: "A fluorophore group attached to a derivatization reagent for enhanced fluorescence or chemiluminescence detectability." [DOI:10.1016/B978-0-12-415806-1.00002-4]
+is_a: xlmod:06000 ! derivatization entity
+
+[Term]
+id: xlmod:06102
+name: electrophore
+def: "An electrophore group attached to a derivatization reagent for enhanced electrochemical detectability." [DOI:10.1016/B978-0-12-415806-1.00002-4]
+is_a: xlmod:06000 ! derivatization entity
+
+[Term]
+id: xlmod:06103
+name: 4-nitrophenyl
+def: "4-Nitrophenyl fluorophore." [DOI:10.1016/B978-0-12-415806-1.00002-4]
+is_a: xlmod:06101 ! fluorophore
+property_value: maxAbsorption: "265 nm" xsd:string
+
+[Term]
+id: xlmod:06104
+name: 2,4-dinitrophenyl
+def: "2,4-Dinitrophenyl fluorophore." [PSI:XL]
+is_a: xlmod:06101 ! fluorophore
+
+[Term]
+id: xlmod:06105
+name: 3,5-dinitrobenzyl
+def: "3,5-Dinitrobenzyl fluorophore." [DOI:10.1016/B978-0-12-415806-1.00002-4]
+is_a: xlmod:06101 ! fluorophore
+
+[Term]
+id: xlmod:06106
+name: 4-chlorobenzoate
+def: "4-Chlorobenzoatel fluorophore." [DOI:10.1016/B978-0-12-415806-1.00002-4]
+is_a: xlmod:06101 ! fluorophore
+property_value: maxAbsorption: "236 nm" xsd:string
+
+[Term]
+id: xlmod:06107
+name: 4-nitrobenzoate
+def: "4-Nitrobenzoatel fluorophore." [DOI:10.1016/B978-0-12-415806-1.00002-4]
+is_a: xlmod:06101 ! fluorophore
+property_value: maxAbsorption: "254 nm" xsd:string
+
+[Term]
+id: xlmod:06108
+name: toluoyl
+def: "Toluoyll fluorophore." [DOI:10.1016/B978-0-12-415806-1.00002-4]
+is_a: xlmod:06101 ! fluorophore
+property_value: maxAbsorption: "236 nm" xsd:string
+
+[Term]
+id: xlmod:06109
+name: anisyl
+def: "Anisyl fluorophore." [DOI:10.1016/B978-0-12-415806-1.00002-4]
+is_a: xlmod:06101 ! fluorophore
+property_value: maxAbsorption: "262 nm" xsd:string
+
+[Term]
+id: xlmod:06110
+name: phenacyl
+def: "Phenacyl fluorophore." [DOI:10.1016/B978-0-12-415806-1.00002-4]
+is_a: xlmod:06101 ! fluorophore
+property_value: maxAbsorption: "250 nm" xsd:string
+
+[Term]
+id: xlmod:06111
+name: 4-bromophenacyl
+def: "4-Bromophenacyl fluorophore." [DOI:10.1016/B978-0-12-415806-1.00002-4]
+is_a: xlmod:06101 ! fluorophore
+property_value: maxAbsorption: "260 nm" xsd:string
+
+[Term]
+id: xlmod:06112
+name: 2-naphthacyl
+def: "2-Naphthacyl fluorophore." [DOI:10.1016/B978-0-12-415806-1.00002-4]
+is_a: xlmod:06101 ! fluorophore
+property_value: maxAbsorption: "248 nm" xsd:string
 
 [Term]
 id: xlmod:06500
@@ -6394,7 +6492,7 @@ id: xlmod:07002
 name: pentafluorobenzyl bromide
 def: "Pentafluorobenzyl bromide." [CAS:1765-40-8, PubChem_Compound:74484, MDL:MFCD00000299, ChemSpiderID:67069, ChemicalBookNo:CB9238273, DOI:10.5772/33098, PMID:22191594]
 synonym: "PFBBr" EXACT []
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06020 ! arylation reagent
 is_a: xlmod:06010 ! LCMS derivatization reagent
 relationship: has_reactive_group xlmod:00167 ! benzyl bromide reactive group
 relationship: is_reactive_with xlmod:06504 ! nitrosamine reactive
@@ -6405,7 +6503,7 @@ id: xlmod:07003
 name: pentafluorobenzylhydroxylaminehydrochloride
 def: "Pentafluorobenzylhydroxylaminehydrochloride." [CAS:57981-02-9, PubChem_Compound:129670358, Beilstein:4031190, MDL:MFCD00012953, ChemicalBookNo:CB8307815, DOI:10.5772/33098]
 synonym: "PFBHA" EXACT []
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06020 ! arylation reagent
 relationship: is_reactive_with xlmod:00063 ! carbonyl reactive
 
 [Term]
@@ -6413,7 +6511,7 @@ id: xlmod:07004
 name: benzylbromide
 def: "Benzylbromide." [CAS:100-39-0, PubChem_Compound:7498, ChemSpiderID:13851576, ChemicalBookNo:CB6761035, DOI:10.5772/33098]
 synonym: "BnBr" EXACT []
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06020 ! arylation reagent
 relationship: has_reactive_group xlmod:00167 ! benzyl bromide reactive group
 
 [Term]
@@ -6421,7 +6519,7 @@ id: xlmod:07005
 name: tetrabutylammoniumhydroxide
 def: "Tetrabutylammoniumhydroxide." [CAS:2052-49-5, PubChem_Compound:2723671, MDL:MFCD00009425, ChemSpiderID:13851576, ChemicalBookNo:CB6371870, DOI:10.5772/33098]
 synonym: "TBH" EXACT []
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
 relationship: is_reactive_with xlmod:06501 ! active hydrogen reactive
 relationship: is_reactive_with xlmod:06503 ! amino acid reactive
@@ -6477,7 +6575,7 @@ id: xlmod:07010
 name: hexamethyldisilazane
 def: "Hexamethyldisilazane." [CAS:999-97-3, PubChem_Compound:13838, ChemSpiderID:13238, ChemicalBookNo:CB9105784, DOI:10.5772/33098]
 synonym: "HMDS" EXACT []
-is_a: xlmod:06002 ! silylation reagent
+is_a: xlmod:06003 ! silylation reagent
 relationship: is_reactive_with xlmod:00029 ! sulfhydryl reactive
 relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
 relationship: is_reactive_with xlmod:00032 ! hydroxyl reactive
@@ -6641,7 +6739,7 @@ id: xlmod:07025
 name: N-trifluoroacetyl-L-prolylchloride
 def: "N-trifluoroacetyl-L-prolylchloride." [CAS:36724-68-2, PubChem_Compound:3082449, ChemicalBookNo:CB1411487, DOI:10.5772/33098]
 synonym: "TPC" EXACT []
-is_a: xlmod:06008 ! chiral derivatization reagent
+is_a: xlmod:06009 ! chiral derivatization reagent
 relationship: is_reactive_with xlmod:00028 ! primary amine reactive
 
 [Term]
@@ -6649,7 +6747,7 @@ id: xlmod:07026
 name: (S)-(-)-N-(Trifluoroacetyl)-prolylchloride
 def: "(S)-(-)-N-(Trifluoroacetyl)-prolylchloride." [CAS:36724-68-2, PubChem_Compound:3082449, ChemicalBookNo:3082449, DOI:10.5772/33098]
 synonym: "I-TPC" EXACT []
-is_a: xlmod:06008 ! chiral derivatization reagent
+is_a: xlmod:06009 ! chiral derivatization reagent
 relationship: is_reactive_with xlmod:00028 ! primary amine reactive
 
 [Term]
@@ -6657,7 +6755,7 @@ id: xlmod:07027
 name: (-)-alpha-Methoxy-alpha-trifluoromethylphenylacetic acid
 def: "(-)-alpha-Methoxy-alpha-trifluoromethylphenylacetic acid." [CAS:56135-03-6, PubChem_Compound:2723917, MDL:MFCD00066637, DOI:10.5772/33098]
 synonym: "MTPA" EXACT []
-is_a: xlmod:06008 ! chiral derivatization reagent
+is_a: xlmod:06009 ! chiral derivatization reagent
 relationship: is_reactive_with xlmod:00028 ! primary amine reactive
 
 [Term]
@@ -6672,7 +6770,7 @@ name: methoxylamine hydrochloride
 def: "Methoxylamine hydrochloride." [CAS:593-56-6, PubChem_Compound:521874, MDL:MFCD00012951, Beilstein:3589723, ChemSpiderID:455236, ChemicalBookNo:CB3439014]
 synonym: "O-Methylhydroxylamine hydrochloride" EXACT []
 synonym: "Methoxyammonium chloride" EXACT []
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 is_a: xlmod:07028 ! oximation reagent
 relationship: is_reactive_with xlmod:00031 ! aldehyde reactive
 relationship: is_reactive_with xlmod:06506 ! carbohydrate reactive
@@ -6683,6 +6781,7 @@ name: Trimethyliodosilane
 def: "Trimethyliodosilane." [PMID:26478271, PMID:26478271]
 synonym: "TMIS" EXACT []
 is_a: xlmod:06009 ! chiral derivatization reagent
+is_a: xlmod:06013 ! TMS reagent
 is_a: xlmod:06010 ! LCMS derivatization reagent
 relationship: is_reactive_with xlmod:00032 ! hydroxyl reactive
 relationship: is_reactive_with xlmod:06512 ! steroid reactive
@@ -6802,7 +6901,7 @@ name: trimethylphenylammonium hydroxide
 def: "Trimethylphenylammonium hydroxide." [CAS:1899-02-1, PubChem_Compound:15913, ChemSpiderID:15124, ChemicalBookNo:CB5316173]
 synonym: "TMPAH" EXACT []
 synonym: "MethElute reagent" EXACT []
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 relationship: is_reactive_with xlmod:00028 ! primary amine reactive
 relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
 relationship: is_reactive_with xlmod:06502 ! amide reactive
@@ -7005,6 +7104,7 @@ name: 4-Bromophenacyl trifluoro-methanesulfonate
 def: "4-Bromophenacyl trifluoro-methanesulfonate." [CAS:93128-04-2, PubChem_Compound:125008, ChemSpiderID:111291, ChemicalBookNo:CB4137500]
 synonym: "4-Bromophenacyl triflate" EXACT []
 is_a: xlmod:06004 ! acylation reagent
+relationship: has_fluorophore xlmod:06111 ! 4-bromophenacyl
 
 [Term]
 id: xlmod:07077
@@ -7145,51 +7245,51 @@ is_a: xlmod:06016 ! boron trifluoride reagent
 id: xlmod:07098
 name: 1,1,1,3,3,3-Hexafluoro-2-propanol
 def: "1,1,1,3,3,3-Hexafluoro-2-propanol." [CAS:920-66-1, PubChem_Compound:13529, ChemSpiderID:10606755, ChemicalBookNo:CB3251829]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 
 [Term]
 id: xlmod:07099
 name: 2,2,3,3,3-Pentafluoro-1-propanol
 def: "2,2,3,3,3-Pentafluoro-1-propanol." [CAS:422-05-9, PubChem_Compound:9872, ChemSpiderID:9488, ChemicalBookNo:CB9689963]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 
 [Term]
 id: xlmod:07100
 name: 2,3,5,6-Tetrafluoro-4-ethanol(trifluoromethyl)benzyl bromide
 def: "2,3,5,6-Tetrafluoro-4-ethanol(trifluoromethyl)benzyl bromide." [CAS:76437-40-6, PubChem_Compound:127137, ChemSpiderID:112859, ChemicalBookNo:CB1682115]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 relationship: has_reactive_group xlmod:00167 ! benzyl bromide reactive group
 
 [Term]
 id: xlmod:07101
 name: 2,3-Dihydroxy-biphenyl
 def: "2,3-Dihydroxy-biphenyl." [CAS:1133-63-7, PubChem_Compound:254, ChemSpiderID:249, ChemicalBookNo:CB0302647]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 
 [Term]
 id: xlmod:07102
 name: O-(2,3,4,5,6-Pentafluorobenzyl)hydroxylamine hydrochloride
 def: "O-(2,3,4,5,6-Pentafluorobenzyl)hydroxylamine hydrochloride." [CAS:57981-02-9, PubChem_Compound:122307, ChemSpiderID:109062, ChemicalBookNo:CB8307815]
 synonym: "Florox reagent" EXACT []
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 
 [Term]
 id: xlmod:07103
 name: pentafluoroiodoethane
 def: "Pentafluoroiodoethane." [CAS:354-64-3, PubChem_Compound:9636, ChemSpiderID:9259, ChemicalBookNo:CB1226715]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 
 [Term]
 id: xlmod:07104
 name: tetrabutylammoniumtetrabutylborate
 def: "Tetrabutylammoniumtetrabutylborate." [CAS:23231-91-6, PubChem_Compound:11123692, ChemSpiderID:9298821, ChemicalBookNo:CB9765711]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 
 [Term]
 id: xlmod:07105
 name: trimethylboroxine
 def: "Trimethylboroxine." [CAS:823-96-1, PubChem_Compound:574072, ChemSpiderID:499140, ChemicalBookNo:499140]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 
 [Term]
 id: xlmod:07107
@@ -7202,7 +7302,7 @@ is_a: xlmod:06016 ! boron trifluoride reagent
 id: xlmod:07108
 name: 4-Bromobenzyl bromide
 def: "4-Bromobenzyl bromide." [CAS:589-15-1, PubChem_Compound:68527, ChemSpiderID:61802, ChemicalBookNo:CB8313784]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06020 ! arylation reagent
 relationship: has_reactive_group xlmod:00167 ! benzyl bromide reactive group
 
 [Term]
@@ -7249,7 +7349,7 @@ name: nonafluoro-1-iodobutane
 def: "Nonafluoro-1-iodobutane." [CAS:423-39-2, PubChem_Compound:67917, ChemSpiderID:61234, ChemicalBookNo:CB9474482]
 synonym: "Perfluorobutyl iodide" EXACT []
 synonym: "1-Iodoperfluorobutane" EXACT []
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 
 [Term]
 id: xlmod:07116
@@ -7261,7 +7361,7 @@ is_a: xlmod:06019 ! trialkyloxonium reagent
 id: xlmod:07117
 name: 2,2,2-Trichloroethanol
 def: "2,2,2-Trichloroethanol." [CAS:115-20-8, PubChem_Compound:8259, ChemSpiderID:7961, ChemicalBookNo:CB7257753]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 
 [Term]
 id: xlmod:07118
@@ -7273,7 +7373,7 @@ is_a: xlmod:06019 ! trialkyloxonium reagent
 id: xlmod:07119
 name: 2,2,2-Trifluoroethanol
 def: "2,2,2-Trifluoroethanol." [CAS:75-89-8, PubChem_Compound:6409, ChemSpiderID:21106169, ChemicalBookNo:CB5736665]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 
 [Term]
 id: xlmod:07120
@@ -7285,7 +7385,7 @@ is_a: xlmod:06019 ! trialkyloxonium reagent
 id: xlmod:07121
 name: 2,2-Dimethoxypropane
 def: "2,2-Dimethoxypropane." [CAS:77-76-9, PubChem_Compound:6495, ChemSpiderID:21106033, ChemicalBookNo:CB9373512]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 
 [Term]
 id: xlmod:07122
@@ -7293,13 +7393,13 @@ name: 4-Tolylsulfonylmethylnitrosamide
 def: "4-Tolylsulfonylmethylnitrosamide." [CAS:80-11-5, PubChem_Compound:6628, ChemSpiderID:6376, ChemicalBookNo:CB7663729]
 synonym: "Diazald" EXACT []
 synonym: "N-Methyl-N-nitrosotoluene-4-sulphonamide" EXACT []
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 
 [Term]
 id: xlmod:07123
 name: 18-Crown-6
 def: "18-Crown-6." [CAS:17455-13-9, PubChem_Compound:28557, ChemSpiderID:26563, ChemicalBookNo:CB4445218]
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 
 [Term]
 id: xlmod:09000
@@ -7433,6 +7533,7 @@ name: 2,4-dinitrophenylhydrazine
 def: "2,4-dinitrophenylhydrazine." [CAS:119-26-6, PubChem_Compound:3772977, ChemSpiderID:3001507, ChemicalBookNo:CB4852908, PMID:23524938]
 synonym: "DNPH" EXACT []
 is_a: xlmod:06010 ! LCMS derivatization reagent
+relationship: has_fluorophore xlmod:06104 ! 2,4-dinitrophenyl
 relationship: has_reactive_group xlmod:00159 ! hydrazine
 
 [Term]
@@ -7610,6 +7711,7 @@ def: "4-Bromophenacyl bromide." [CAS:99-73-0, PubChem_Compound:7454, ChemSpiderI
 synonym: "BPBr" EXACT []
 synonym: "p-Bromophenacyl bromide" EXACT []
 is_a: xlmod:06010 ! LCMS derivatization reagent
+relationship: has_fluorophore xlmod:06111 ! 4-bromophenacyl
 relationship: is_reactive_with xlmod:00028 ! primary amine reactive
 relationship: is_reactive_with xlmod:06522 ! perfluorinated carboxylic acid reactive
 
@@ -7665,6 +7767,7 @@ id: xlmod:09041
 name: pentafluorophenacyl trifluoromethanesulfonate
 def: "Pentafluorophenacyl trifluoromethanesulfonate." [PubChem_Compound:86038332, PMID:22191594]
 is_a: xlmod:06010 ! LCMS derivatization reagent
+relationship: has_fluorophore xlmod:06110 ! phenacyl
 relationship: has_reactive_group xlmod:00165 ! sulfonate
 relationship: is_reactive_with xlmod:06503 ! amino acid reactive
 
@@ -7723,7 +7826,7 @@ name: 4-nitrobenzyl bromide
 def: "4-nitrobenzyl bromide." [CAS:100-11-8, PubChem_Compound:66011, ChemSpiderID:59402, ChemicalBookNo:CB5485712, PMID:3394930]
 synonym: "4-NBB" EXACT []
 synonym: "p-nitrobenzyl bromide" EXACT []
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06020 ! arylation reagent
 is_a: xlmod:06010 ! LCMS derivatization reagent
 relationship: has_reactive_group xlmod:00167 ! benzyl bromide reactive group
 
@@ -7741,7 +7844,7 @@ id: xlmod:09050
 name: ethoxyamine hydrochloride
 def: "Ethoxyamine hydrochloride." [CAS:3332-29-4, PubChem_Compound:76850, ChemSpiderID:69303, ChemicalBookNo:CB0126027, PMID:22191594]
 synonym: "Ethylhydroxylamine hydrochloride" EXACT []
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 is_a: xlmod:06010 ! LCMS derivatization reagent
 relationship: is_reactive_with xlmod:06512 ! steroid reactive
 
@@ -7762,6 +7865,7 @@ def: "1-(5-Fluoro-2,4-dinitrophenyl)-4-methylpiperazine." [ChemSpiderID:17350721
 synonym: "PPZ" EXACT []
 synonym: "1-(2,4-dinitro-5-fluorophenyl)-4-methylpiperazine" EXACT []
 is_a: xlmod:06010 ! LCMS derivatization reagent
+relationship: has_fluorophore xlmod:06104 ! 2,4-dinitrophenyl
 relationship: is_reactive_with xlmod:06512 ! steroid reactive
 
 [Term]
@@ -7820,6 +7924,7 @@ synonym: "p-BPB" EXACT []
 synonym: "p-bromo-phenacyl-bromide" EXACT []
 synonym: "2,4'-Dibromoacetophenone" EXACT []
 is_a: xlmod:06010 ! LCMS derivatization reagent
+relationship: has_fluorophore xlmod:06111 ! 4-bromophenacyl
 relationship: is_reactive_with xlmod:06513 ! thiol reactive
 
 [Term]
@@ -7879,6 +7984,7 @@ name: 4-(4-Nitrophenyl)-1,2,4-triazole-3,5-dione
 def: "4-(4-Nitrophenyl)-1,2,4-triazole-3,5-dione." [CAS:13274-75-4, PubChem_Compound:11368000, ChemSpiderID:9542917, PMID:15897015]
 synonym: "NPTAD" EXACT []
 is_a: xlmod:09061 ! Cookson type reagent
+relationship: has_fluorophore xlmod:06103 ! 4-nitrophenyl
 relationship: has_reactive_group xlmod:00160 ! TAD
 
 [Term]
@@ -8381,6 +8487,7 @@ synonym: "DmPA-Br" EXACT []
 synonym: "2-Bromo-1-[4-(dimethylamino)phenyl]ethanone" EXACT []
 synonym: "p-dimethylaminophenacyl bromide" EXACT []
 is_a: xlmod:06010 ! LCMS derivatization reagent
+relationship: has_fluorophore xlmod:06110 ! phenacyl
 relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
 
 [Term]
@@ -8389,6 +8496,7 @@ name: 13C labelled p-dimethylaminophenacyl bromide
 def: "13C labelled p-dimethylaminophenacyl bromide." [PMID:22575224]
 synonym: "13C-DmPA-Br" EXACT []
 is_a: xlmod:06010 ! LCMS derivatization reagent
+relationship: has_fluorophore xlmod:06110 ! phenacyl
 relationship: is_labelled xlmod:00036 ! 13C labelled
 relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
 
@@ -8448,6 +8556,7 @@ synonym: "DNPH-d3" EXACT []
 synonym: "2,4-Dinitro-3,5,6-trideuterophenylhydrazine" EXACT []
 is_a: xlmod:06010 ! LCMS derivatization reagent
 relationship: is_labelled xlmod:00010 ! deuterium labelled
+relationship: has_fluorophore xlmod:06104 ! 2,4-dinitrophenyl
 relationship: has_reactive_group xlmod:00159 ! hydrazine
 
 [Term]
@@ -8631,6 +8740,7 @@ def: "N-(5-fluoro-2,4-dinitrophenyl)-D-leucinamide." [PMID:26496130]
 synonym: "D-FDLA" EXACT []
 is_a: xlmod:06009 ! chiral derivatization reagent
 is_a: xlmod:09244 ! Marfey type reagent
+relationship: has_fluorophore xlmod:06104 ! 2,4-dinitrophenyl
 
 [Term]
 id: xlmod:09152
@@ -8692,6 +8802,7 @@ name: phenacyl bromide
 def: "Phenacyl bromide." [CAS:70-11-1, PubChem_Compound:6259, ChemSpiderID:6023, ChemicalBookNo:CB6305185, PMID:3394930]
 synonym: "2-Bromoacetophenone" EXACT []
 is_a: xlmod:06010 ! LCMS derivatization reagent
+relationship: has_fluorophore xlmod:06110 ! phenacyl
 relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
 
 [Term]
@@ -9418,6 +9529,7 @@ synonym: "L-FDAA" EXACT []
 synonym: "1-Fluoro-2,4-dinitrophenyl-5-L-alanine amide" EXACT []
 is_a: xlmod:06009 ! chiral derivatization reagent
 is_a: xlmod:09244 ! Marfey type reagent
+relationship: has_fluorophore xlmod:06104 ! 2,4-dinitrophenyl
 relationship: has_reactive_group xlmod:00145 ! aryl halide
 
 [Term]
@@ -9428,6 +9540,7 @@ synonym: "D-FDAA" EXACT []
 synonym: "1-Fluoro-2,4-dinitrophenyl-5-D-alanine amide" EXACT []
 is_a: xlmod:06009 ! chiral derivatization reagent
 is_a: xlmod:09244 ! Marfey type reagent
+relationship: has_fluorophore xlmod:06104 ! 2,4-dinitrophenyl
 relationship: has_reactive_group xlmod:00145 ! aryl halide
 
 [Term]
@@ -9437,6 +9550,8 @@ def: "N-(5-fluoro-2,4-dinitrophenyl)-L-leucinamide." [PMID:26496130]
 synonym: "L-FDLA" EXACT []
 is_a: xlmod:06009 ! chiral derivatization reagent
 is_a: xlmod:09244 ! Marfey type reagent
+relationship: has_fluorophore xlmod:06104 ! 2,4-dinitrophenyl
+relationship: has_reactive_group xlmod:00145 ! aryl halide
 
 [Term]
 id: xlmod:09248
@@ -9771,7 +9886,7 @@ id: xlmod:09291
 name: trimethylsulfonium hydroxide
 def: "Trimethylsulfonium hydroxide." [CAS:17287-03-5, PubChem_Compound:11105313, ChemSpiderID:9280449, ChemicalBookNo:CB1421127, PMID:19525080]
 synonym: "TMSH" EXACT []
-is_a: xlmod:06001 ! alkylation reagent
+is_a: xlmod:06002 ! alkylation reagent
 is_a: xlmod:06010 ! LCMS derivatization reagent
 
 [Term]
@@ -9948,6 +10063,7 @@ def: "4-Bromophenacylate." [PSI:XL]
 synonym: "Phenacyl-8" EXACT []
 is_a: xlmod:06004 ! acylation reagent
 is_a: xlmod:06010 ! LCMS derivatization reagent
+relationship: has_fluorophore xlmod:06111 ! 4-bromophenacyl
 relationship: is_reactive_with xlmod:00030 ! carboxyl reactive
 
 [Term]
