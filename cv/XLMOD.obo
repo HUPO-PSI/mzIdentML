@@ -1,11 +1,11 @@
 format-version: 1.2
-data-version: release/2018-08-08
+data-version: release/2018-08-09
 ontology: xlmod
-date: 08:08:2018 15:27
+date: 09:08:2018 15:25
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: xlmod
-remark: version: 1.1.5
+remark: version: 1.1.6
 remark: coverage: cross-linking reagents, cross-linker related post-translational modifications, and derivatization reagents for GC-MS
 remark: creator: Lutz Fischer <lfischer <-at-> staffmail.ed.ac.uk>
 remark: creator: Alexander Leitner <leitner <-at-> imsb.biol.ethz.ch>
@@ -92,8 +92,8 @@ relationship: part_of xlmod:00000 ! Proteomics Standards Initiative cross-linkin
 
 [Term]
 id: xlmod:00002
-name: cross-linker related PTM
-def: "A cross-linker reagent with one reactive group leading to a dead-end modification." [PSI:XL]
+name: cross-linker related chemical modification
+def: "Dead-end modification resulting from a cross-linker reagent reacting only with one peptide." [PSI:XL]
 relationship: part_of xlmod:00000 ! Proteomics Standards Initiative cross-linking and derivatization controlled vocabulary
 
 [Term]
@@ -667,6 +667,36 @@ id: xlmod:00093
 name: sialic acid analogue
 def: "A sialic acid analogue used in cross-linking experiments for glycan-protein cross-linking." [PSI:XL]
 is_a: xlmod:00001 ! cross-linking entity
+
+[Term]
+id: xlmod:00094
+name: alkenized cross-linker related chemical modification
+def: "Alkenization dead-end modification resulting from a cross-linker reagent reacting only with one peptide." [PSI:XL]
+is_a: xlmod:00002 ! cross-linker related chemical modification
+
+[Term]
+id: xlmod:00095
+name: ammonium amidation cross-linker related chemical modification
+def: "Ammonium amidation dead-end modification resulting from a cross-linker reagent reacting only with one peptide." [PSI:XL]
+is_a: xlmod:00002 ! cross-linker related chemical modification
+
+[Term]
+id: xlmod:00096
+name: hydrolization cross-linker related chemical modification
+def: "Hydrolization dead-end modification resulting from a cross-linker reagent reacting only with one peptide." [PSI:XL]
+is_a: xlmod:00002 ! cross-linker related chemical modification
+
+[Term]
+id: xlmod:00097
+name: oxidation cross-linker related chemical modification
+def: "Oxidition dead-end modification resulting from a cross-linker reagent reacting only with one peptide." [PSI:XL]
+is_a: xlmod:00002 ! cross-linker related chemical modification
+
+[Term]
+id: xlmod:00098
+name: thioesterization cross-linker related chemical modification
+def: "Thio-esterization dead-end modification resulting from a cross-linker reagent reacting only with one peptide." [PSI:XL]
+is_a: xlmod:00002 ! cross-linker related chemical modification
 
 [Term]
 id: xlmod:00100
@@ -1273,7 +1303,7 @@ name: hydrolyzed BS3
 def: "Hydrolyzed bis(sulfosuccinimidyl)suberate." [PSI:XL]
 property_value: deadEndFormula: "C8 H12 O3" xsd:string
 property_value: monoIsotopicMass: "156.07864431" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02000 ! BS3
 
@@ -1283,7 +1313,7 @@ name: ammonium amidated BS3
 def: "Ammonium amidated bis(sulfosuccinimidyl)suberate." [PSI:XL]
 property_value: deadEndFormula: "C8 H13 O2 N" xsd:string
 property_value: monoIsotopicMass: "155.094628715" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02000 ! BS3
 
@@ -1293,7 +1323,7 @@ name: hydrolyzed DSS
 def: "Hydrolyzed disuccinimidyl suberate." [PSI:XL]
 property_value: deadEndFormula: "C8 H12 O3" xsd:string
 property_value: monoIsotopicMass: "156.07864431" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02001 ! DSS
 
@@ -1303,7 +1333,7 @@ name: ammonium amidated DSS
 def: "Ammonium amidated disuccinimidyl suberate." [PSI:XL]
 property_value: deadEndFormula: "C8 H13 O2 N" xsd:string
 property_value: monoIsotopicMass: "155.094628715" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02001 ! DSS
 
@@ -1312,7 +1342,7 @@ id: xlmod:01004
 name: hydrolyzed DSS-d4
 def: "Deuterium labelled hydrolyzed disuccinimidyl 2,2,7,7-suberate." [PSI:XL]
 property_value: monoIsotopicMass: "160.1037416836" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02002 ! DSS-d4
@@ -1322,7 +1352,7 @@ id: xlmod:01005
 name: ammonium amidated DSS-d4
 def: "Deuterium labelled ammonium amidated disuccinimidyl 2,2,7,7-suberate." [PSI:XL]
 property_value: monoIsotopicMass: "159.1197260886" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02002 ! DSS-d4
@@ -1332,7 +1362,7 @@ id: xlmod:01006
 name: hydrolyzed DSS-d12
 def: "Deuterium labelled hydrolyzed disuccinimidyl 2,2,3,3,4,4,5,5,6,6,7,7-suberate." [PSI:XL]
 property_value: monoIsotopicMass: "168.153965238" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02003 ! DSS-d12
@@ -1342,7 +1372,7 @@ id: xlmod:01007
 name: ammonium amidated DSS-d12
 def: "Deuterium labelled ammonium amidated disuccinimidyl 2,2,3,3,4,4,5,5,6,6,7,7-suberate." [PSI:XL]
 property_value: monoIsotopicMass: "167.169949643" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02003 ! DSS-d12
@@ -1353,7 +1383,7 @@ name: hydrolyzed BS3-d4
 def: "Deuterium labelled hydrolyzed bis(sulfosuccinimidyl) 2,2,7,7-suberate." [PSI:XL]
 property_value: deadEndFormula: "C8 D4 H8 O3" xsd:string
 property_value: monoIsotopicMass: "160.103751286" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02004 ! BS3-d4
@@ -1364,7 +1394,7 @@ name: ammonium amidated BS3-d4
 def: "Deuterium labelled ammonium amidated bis(sulfosuccinimidyl) 2,2,7,7-suberate." [PSI:XL]
 property_value: deadEndFormula: "C8 D4 H9 N1 O2" xsd:string
 property_value: monoIsotopicMass: "159.119735691" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02004 ! BS3-d4
@@ -1375,7 +1405,7 @@ name: hydrolyzed BS2G
 def: "Hydrolyzed bis(sulfosuccinimidyl) glutarate." [PSI:XL]
 property_value: deadEndFormula: "C5 H6 O3" xsd:string
 property_value: monoIsotopicMass: "114.0316941" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02005 ! BS2G
 
@@ -1385,7 +1415,7 @@ name: ammonium amidated BS2G
 def: "Ammonium amidated bis(sulfosuccinimidyl) glutarate." [PSI:XL]
 property_value: deadEndFormula: "C5 H7 N1 O2" xsd:string
 property_value: monoIsotopicMass: "113.047678505" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02005 ! BS2G
 
@@ -1395,7 +1425,7 @@ name: hydrolyzed DSG
 def: "Hydrolyzed disuccinimidyl glutarate." [PSI:XL]
 property_value: deadEndFormula: "C5 H6 O3" xsd:string
 property_value: monoIsotopicMass: "114.0316941" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02006 ! DSG
 
@@ -1405,7 +1435,7 @@ name: ammonium amidated DSG
 def: "Ammonium amidated disuccinimidyl glutarate." [PSI:XL]
 property_value: deadEndFormula: "C5 H7 N1 O2" xsd:string
 property_value: monoIsotopicMass: "113.047678505" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02006 ! DSG
 
@@ -1415,7 +1445,7 @@ name: hydrolyzed DSG-d4
 def: "Deuterium labelled hydrolyzed disuccinimidyl 2,2,4,4-glutarate." [PSI:XL]
 property_value: deadEndFormula: "C5 D4 H2 O3" xsd:string
 property_value: monoIsotopicMass: "118.0567741" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02007 ! DSG-d4
@@ -1426,7 +1456,7 @@ name: ammonium amidated DSG-d4
 def: "Deuterium labelled ammonium amidated disuccinimidyl 2,2,4,4-glutarate." [PSI:XL]
 property_value: deadEndFormula: "C5 D4 H3 N1 O2" xsd:string
 property_value: monoIsotopicMass: "117.072758505" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02007 ! DSG-d4
@@ -1437,7 +1467,7 @@ name: hydrolyzed BS2G-d4
 def: "Deuterium labelled hydrolyzed bis(sulfosuccinimidyl) 2,2,4,4-glutarate." [PSI:XL]
 property_value: deadEndFormula: "C5 D4 H2 O3" xsd:string
 property_value: monoIsotopicMass: "118.056801076" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02008 ! BS2G-d4
@@ -1448,7 +1478,7 @@ name: ammonium amidated BS2G-d4
 def: "Deuterium labelled ammonium amidated bis(sulfosuccinimidyl) 2,2,4,4-glutarate." [PSI:XL]
 property_value: deadEndFormula: "C5 D4 H3 N1 O2" xsd:string
 property_value: monoIsotopicMass: "117.072785481" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02008 ! BS2G-d4
@@ -1458,7 +1488,7 @@ id: xlmod:01018
 name: BDP-NHP-stump
 def: "Biotin Aspartate Proline n-hydroxyphthalimide-stump." [PMID:23413883, PMID:26235782, PMID:27089058]
 property_value: monoIsotopicMass: "197.032422395" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00002 ! cross-linker related chemical modification
 relationship: is_side_product_of xlmod:02011 ! BDP-NHP
 
 [Term]
@@ -1467,7 +1497,7 @@ name: hydrolyzed DSP
 def: "Hydrolyzed dithiobis[succinimidyl propionate." [PSI:XL]
 property_value: deadEndFormula: "C6 H8 O3 S2" xsd:string
 property_value: monoIsotopicMass: "191.99148557" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02029 ! DSP
 
@@ -1477,7 +1507,7 @@ name: ammonium amidated DSP
 def: "Ammonium amidated dithiobis[succinimidyl propionate." [PSI:XL]
 property_value: deadEndFormula: "C6 H9 N1 O2 S2" xsd:string
 property_value: monoIsotopicMass: "191.007469975" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02029 ! DSP
 
@@ -1487,7 +1517,7 @@ name: hydrolyzed EGS
 def: "Hydrolyzed ethylene glycolbis(succinimidylsuccinate)." [PSI:XL]
 property_value: deadEndFormula: "C10 H12 O7" xsd:string
 property_value: monoIsotopicMass: "244.0583027" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02034 ! EGS
 
@@ -1497,7 +1527,7 @@ name: ammonium amidated EGS
 def: "Ammonium amidated ethylene glycolbis(succinimidylsuccinate)." [PSI:XL]
 property_value: deadEndFormula: "C10 H13 N1 O6" xsd:string
 property_value: monoIsotopicMass: "243.074287105" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02034 ! EGS
 
@@ -1507,7 +1537,7 @@ name: hydrolyzed BiPS
 def: "Hydrolyzed bimane bisthiopropionic acid N-succinimidyl ester." [PMID:18838738]
 property_value: deadEndFormula: "C16 H18 N2 O5 S2" xsd:string
 property_value: monoIsotopicMass: "382.06571" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02040 ! BiPS
 
@@ -1517,7 +1547,7 @@ name: ammonium amidated BiPS
 def: "Ammonium amidated bimane bisthiopropionic acid N-succinimidyl ester." [PMID:18838738]
 property_value: deadEndFormula: "C16 H18 N3 O4 S2" xsd:string
 property_value: monoIsotopicMass: "381.08169" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02040 ! BiPS
 
@@ -1527,7 +1557,7 @@ name: hydrolyzed CBDPS
 def: "Hydrolyzed cyanurbiotindipropionylsuccinimide." [PMID:20622150]
 property_value: deadEndFormula: "C19 H25 N7 O5 S3" xsd:string
 property_value: monoIsotopicMass: "527.10738" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: has_handle xlmod:00051 ! biotin
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02041 ! CBDPS
@@ -1538,7 +1568,7 @@ name: ammonium amidated CBDPS
 def: "Ammonium amidated cyanurbiotindipropionylsuccinimide." [PMID:20622150]
 property_value: deadEndFormula: "C19 H25 N8 O4 S3" xsd:string
 property_value: monoIsotopicMass: "526.12336" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: has_handle xlmod:00051 ! biotin
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02041 ! CBDPS
@@ -1549,7 +1579,7 @@ name: hydrolyzed DSA
 def: "Hydrolyzed disuccinimidyladipic acid." [PSI:XL]
 property_value: deadEndFormula: "C6 H8 O3" xsd:string
 property_value: monoIsotopicMass: "128.04680" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02044 ! DSA
 
@@ -1559,7 +1589,7 @@ name: ammonium amidated DSA
 def: "Ammonium amidated disuccinimidyladipic acid." [PSI:XL]
 property_value: deadEndFormula: "C6 H9 N1 O2" xsd:string
 property_value: monoIsotopicMass: "127.06278" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02044 ! DSA
 
@@ -1569,7 +1599,7 @@ name: hydrolyzed DNBDPS
 def: "Hydrolyzed DNBDPS." [PMID:20109223]
 property_value: deadEndFormula: "C12 H10 N2 O7 S2" xsd:string
 property_value: monoIsotopicMass: "357.99294" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: has_handle xlmod:00054 ! DNB
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02045 ! DNBDPS
@@ -1580,7 +1610,7 @@ name: ammonium amidated DNBDPS
 def: "Ammonium amidated DNBDPS." [PMID:20109223]
 property_value: deadEndFormula: "C12 H10 N3 O6 S2" xsd:string
 property_value: monoIsotopicMass: "357.00892" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: has_handle xlmod:00054 ! DNB
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02045 ! DNBDPS
@@ -1591,7 +1621,7 @@ name: hydrolyzed TEABS
 def: "Hydrolyzed TEABS cross-linking reagent." [PMID:20109223]
 property_value: deadEndFormula: "C28 H41 N5 O12 S1" xsd:string
 property_value: monoIsotopicMass: "671.24724" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02046 ! TEABS
 
@@ -1601,7 +1631,7 @@ name: ammonium amidated TEABS
 def: "Ammonium amidated TEABS cross-linking reagent." [PMID:20109223]
 property_value: deadEndFormula: "C28 H41 N6 O11 S1" xsd:string
 property_value: monoIsotopicMass: "670.26322" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02046 ! TEABS
 
@@ -1611,7 +1641,7 @@ name: hydrolyzed DTSSP-d8
 def: "Hydrolyzed deuterium labelled 3,3'-Dithiobis[sulfosuccinimidylpropionate]." [PMID:10975572, PMID:18510349]
 property_value: deadEndFormula: "C6 D8 O3 S2" xsd:string
 property_value: monoIsotopicMass: "191.99149" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02049 ! DTSSP
@@ -1622,7 +1652,7 @@ name: ammonium amidated DTSSP-d8
 def: "Ammonium amidated deuterium labelled 3,3'-Dithiobis[sulfosuccinimidylpropionate]." [PMID:10975572, PMID:18510349]
 property_value: deadEndFormula: "C6 D8 H1 N1 O2 S2" xsd:string
 property_value: monoIsotopicMass: "191.00747" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02049 ! DTSSP
@@ -1633,7 +1663,7 @@ name: hydrolyzed DSP-d8
 def: "Hydrolyzed deuterium-labelled dithiobis[succinimidyl propionate." [PSI:XL]
 property_value: deadEndFormula: "C6 D8 O3 S2" xsd:string
 property_value: monoIsotopicMass: "200.04165" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02030 ! DSP-d8
@@ -1644,7 +1674,7 @@ name: ammonium amidated DSP-d8
 def: "Ammonium amidated deuterium-labelled dithiobis[succinimidyl propionate." [PSI:XL]
 property_value: deadEndFormula: "C6 D8 H1 N1 O2 S2" xsd:string
 property_value: monoIsotopicMass: "199.05763" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02030 ! DSP-d8
@@ -1655,7 +1685,7 @@ name: hydrolyzed Sulfo-EGS
 def: "Hydrolyzed ethylene glycolbis(sulfosuccinimidylsuccinate)." [PSI:XL]
 property_value: deadEndFormula: "C10 H12 O7" xsd:string
 property_value: monoIsotopicMass: "244.0583028" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02035 ! Sulfo-EGS
 
@@ -1665,7 +1695,7 @@ name: ammonium amidated Sulfo-EGS
 def: "Ammonium amidated ethylene glycolbis(sulfosuccinimidylsuccinate)." [PSI:XL]
 property_value: deadEndFormula: "C10 H12 N1 O6" xsd:string
 property_value: monoIsotopicMass: "243.07428" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02035 ! Sulfo-EGS
 
@@ -1675,7 +1705,7 @@ name: hydrolyzed EGS-d12
 def: "Deuterium labelled hydrolyzed ethylene glycolbis(succinimidylsuccinate)." [PSI:XL]
 property_value: deadEndFormula: "C10 D12 O7" xsd:string
 property_value: monoIsotopicMass: "256.13403" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02050 ! EGS-d12
@@ -1686,7 +1716,7 @@ name: ammonium amidated EGS-d12
 def: "Deuterium labelled ammonium amidated ethylene glycolbis(succinimidylsuccinate)." [PSI:XL]
 property_value: deadEndFormula: "C10 D12 N1 O6" xsd:string
 property_value: monoIsotopicMass: "255.15001" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02050 ! EGS-d12
@@ -1697,7 +1727,7 @@ name: hydrolyzed Sulfo-EGS-d12
 def: "Deuterium labelled hydrolyzed ethylene glycolbis(sulfosuccinimidylsuccinate)." [PSI:XL]
 property_value: deadEndFormula: "C10 D12 O7" xsd:string
 property_value: monoIsotopicMass: "256.13403" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02050 ! Sulfo-EGS-d12
@@ -1708,7 +1738,7 @@ name: ammonium amidated Sulfo-EGS-d12
 def: "Deuterium labelled ammonium amidated ethylene glycolbis(sulfosuccinimidylsuccinate)." [PSI:XL]
 property_value: deadEndFormula: "C10 D12 N1 O6" xsd:string
 property_value: monoIsotopicMass: "255.15001" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02050 ! Sulfo-EGS-d12
@@ -1719,7 +1749,7 @@ name: hydrolyzed DSA-13C6
 def: "Hydrolyzed 13C labelled disuccinimidyladipic acid." [PSI:XL]
 property_value: deadEndFormula: "13C6 H8 O3" xsd:string
 property_value: monoIsotopicMass: "134.06696" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00036 ! 13C labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02054 ! DSA-13C6
@@ -1730,7 +1760,7 @@ name: ammonium amidated DSA-13C6
 def: "Ammonium amidated 13C labelled disuccinimidyladipic acid." [PSI:XL]
 property_value: deadEndFormula: "13C6 H9 N1 O2" xsd:string
 property_value: monoIsotopicMass: "133.08294" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_labelled xlmod:00036 ! 13C labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02054 ! DSA-13C6
@@ -1741,7 +1771,7 @@ name: hydrolyzed CBDPS-d8
 def: "Deuterium labelled hydrolyzed cyanurbiotindipropionylsuccinimide." [PMID:20622150]
 property_value: deadEndFormula: "C19 D8 H17 N7 O5 S3" xsd:string
 property_value: monoIsotopicMass: "535.15754" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: has_handle xlmod:00051 ! biotin
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
@@ -1753,7 +1783,7 @@ name: ammonium amidated CBDPS-d8
 def: "Deuterium labelled ammonium amidated cyanurbiotindipropionylsuccinimide." [PMID:20622150]
 property_value: deadEndFormula: "C19 D8 H17 N8 O4 S3" xsd:string
 property_value: monoIsotopicMass: "534.17352 xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: has_handle xlmod:00051 ! biotin
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
@@ -1765,7 +1795,7 @@ name: hydrolyzed CBDPSS
 def: "Hydrolyzed cyanurbiotindimercaptopropionylsulfosuccinimide." [PMID:20622150]
 property_value: deadEndFormula: "C19 H25 N7 O5 S3" xsd:string
 property_value: monoIsotopicMass: "527.10738" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: has_handle xlmod:00051 ! biotin
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02056 ! CBDPSS
@@ -1776,7 +1806,7 @@ name: ammonium amidated CBDPSS
 def: "Ammonium amidated cyanurbiotindimercaptopropionylsulfosuccinimide." [PMID:20622150]
 property_value: deadEndFormula: "C19 H25 N8 O4 S3" xsd:string
 property_value: monoIsotopicMass: "526.12336" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: has_handle xlmod:00051 ! biotin
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02056 ! CBDPSS
@@ -1787,7 +1817,7 @@ name: hydrolyzed CBDPSS-d8
 def: "Deuterium labelled hydrolyzed cyanurbiotindimercaptopropionylsulfosuccinimide." [PMID:20622150]
 property_value: deadEndFormula: "C19 D8 H17 N7 O5 S3" xsd:string
 property_value: monoIsotopicMass: "535.15754" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: has_handle xlmod:00051 ! biotin
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
@@ -1799,7 +1829,7 @@ name: ammonium amidated CBDPSS-d8
 def: "Deuterium labelled ammonium amidated cyanurbiotindimercaptopropionylsulfosuccinimide." [PMID:20622150]
 property_value: deadEndFormula: "C19 D8 H17 N8 O4 S3" xsd:string
 property_value: monoIsotopicMass: "534.17352 xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: has_handle xlmod:00051 ! biotin
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
@@ -1811,7 +1841,7 @@ name: hydrolyzed BS3-d12
 def: "Deuterium labelled hydrolyzed bis(sulfosuccinimidyl) 2,2,3,3,4,4,5,5,6,6,7,7-suberate." [PSI:XL]
 property_value: deadEndFormula: "C8 D12 O3" xsd:string
 property_value: monoIsotopicMass: "168.15437" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02064 ! BS3-d12
@@ -1822,7 +1852,7 @@ name: ammonium amidated BS3-d12
 def: "Deuterium labelled ammonium amidated bis(sulfosuccinimidyl) 2,2,3,3,4,4,5,5,6,6,7,7-suberate." [PSI:XL]
 property_value: deadEndFormula: "C8 D12 H1 N1 O2" xsd:string
 property_value: monoIsotopicMass: "167.17035" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02064 ! BS3-d12
@@ -1833,7 +1863,7 @@ name: hydrolyzed DSG-d6
 def: "Deuterium labelled hydrolyzed disuccinimidyl 2,2,3,3,4,4-glutarate." [PSI:XL]
 property_value: deadEndFormula: "C5 D6 O3" xsd:string
 property_value: monoIsotopicMass: "120.07483" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02065 ! DSG-d6
@@ -1844,7 +1874,7 @@ name: ammonium amidated DSG-d6
 def: "Deuterium labelled ammonium amidated disuccinimidyl 2,2,3,3,4,4-glutarate." [PSI:XL]
 property_value: deadEndFormula: "C5 D6 H1 N1 O2" xsd:string
 property_value: monoIsotopicMass: "119.09081" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02065 ! DSG-d6
@@ -1855,7 +1885,7 @@ name: hydrolyzed BS2G-d6
 def: "Deuterium labelled hydrolyzed bis(sulfosuccinimidyl) 2,2,3,3,4,4-glutarate." [PSI:XL]
 property_value: deadEndFormula: "C5 D6 O3" xsd:string
 property_value: monoIsotopicMass: "120.06877" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02066 ! BS2G-d6
@@ -1866,7 +1896,7 @@ name: ammonium amidated BS2G-d6
 def: "Deuterium labelled ammonium amidated bis(sulfosuccinimidyl) 2,2,3,3,4,4-glutarate." [PSI:XL]
 property_value: deadEndFormula: "C5 D6 H1 N1 O2" xsd:string
 property_value: monoIsotopicMass: "119.08475" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02066 ! BS2G-d6
@@ -1877,7 +1907,7 @@ name: hydrolyzed SDH
 def: "Hydrolyzed Suberic acid 1,8-dihydrazide." [PMID:24938783]
 property_value: deadEndFormula: "C8 H16 N4 O1" xsd:string
 property_value: monoIsotopicMass: "184.13241119" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02058 ! SDH
 
@@ -1887,7 +1917,7 @@ name: hydrolyzed SDH-d12
 def: "Deuterium labelled hydrolyzed suberic acid 1,8-dihydrazide." [PMID:24938783]
 property_value: deadEndFormula: "C8 D12 H4 N4 O1" xsd:string
 property_value: monoIsotopicMass: "196.207732118" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02059 ! SDH-d12
@@ -1898,7 +1928,7 @@ name: hydrolyzed ADH
 def: "Hydrolyzed adipic acid 1,6-dihydrazide." [PMID:24938783]
 property_value: deadEndFormula: "C6 H12 N4 O1" xsd:string
 property_value: monoIsotopicMass: "156.10111105" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02060 ! ADH
 
@@ -1908,7 +1938,7 @@ name: hydrolyzed ADH-d8
 def: "Deuterium labelled hydrolyzed adipic acid 1,6-dihydrazide." [PMID:24938783]
 property_value: deadEndFormula: "C6 D8 H4 N4 O1" xsd:string
 property_value: monoIsotopicMass: "164.151325002" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02060 ! ADH-d8
@@ -1919,7 +1949,7 @@ name: hydrolyzed GDH
 def: "Hydrolyzed glutaric acid 1,5-dihydrazide." [PMID:24938783]
 property_value: deadEndFormula: "C5 H10 N4 O1" xsd:string
 property_value: monoIsotopicMass: "142.08546098" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02062 ! GDH
 
@@ -1929,7 +1959,7 @@ name: hydrolyzed GDH-d6
 def: "Deuterium labelled hydrolyzed glutaric acid 1,5-dihydrazide." [PMID:24938783]
 property_value: deadEndFormula: "C5 D6 H4 N4 O1" xsd:string
 property_value: monoIsotopicMass: "148.123121444" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_labelled xlmod:00010 ! deuterium labelled
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02063 ! GDH-d6
@@ -1939,7 +1969,7 @@ id: xlmod:01063
 name: hydrolyzed BCCL1
 def: "Hydrolyzed bis-(N-hydroxysuccinimidyl) 3-amino-N-biotinoyl-1,5-pentanedioate." [PMID:19412923]
 property_value: monoIsotopicMass: "355.12019" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: has_handle xlmod:00051 ! biotin
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02108 ! BCCL1
@@ -1949,7 +1979,7 @@ id: xlmod:01064
 name: hydrolyzed BCCL2
 def: "Hydrolyzed bis-(N-hydroxysuccinimidyl) 5-amino-N-biotinoyl-1,9-nonanedioate." [PMID:19412923]
 property_value: monoIsotopicMass: "411.18179" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: has_handle xlmod:00051 ! biotin
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02109 ! BCCL2
@@ -1959,7 +1989,7 @@ id: xlmod:01065
 name: hydrolyzed IRCX
 def: "Hydrolyzed dibenzoyloxysuccinimidylethyl phosphate." [PMID:18517224]
 property_value: monoIsotopicMass: "348.0" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02116 ! ICRX
 
@@ -1968,7 +1998,7 @@ id: xlmod:01066
 name: hydrolyzed azide-DSG
 def: "Hydrolyzed bis(succinimidyl)-3-azidomethyl glutarate." [PMID:20472459]
 property_value: monoIsotopicMass: "229.0" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02118 ! azide-DSG
 
@@ -1977,7 +2007,7 @@ id: xlmod:01067
 name: hydrolyzed JMV 3378
 def: "Hydrolyzed crosslinking reagent JMV 3378." [PMID:19902427]
 property_value: monoIsotopicMass: "286.0" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02120 ! JMV 3378
 
@@ -1986,7 +2016,7 @@ id: xlmod:01068
 name: hydrolyzed BuTuGPG
 def: "Hydrolyzed 4-[3-(2-{2-[(2,5-dioxo-pyrrolidin-1-yloxycarbonyl-methyl)-carbamoyl]-pyrrolidin-1-yl}-2-oxo-ethyl)-thioureido]-butyric acid 2,5-dioxo-pyrrolidin-1-yl ester." [PMID:19950134]
 property_value: monoIsotopicMass: "1704.86" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02121 ! BuTuGPG
 
@@ -1994,7 +2024,7 @@ relationship: is_side_product_of xlmod:02121 ! BuTuGPG
 id: xlmod:01069
 name: hydrolyzed BuUrBu
 def: "Hydrolyzed NHS-amino butyric acid-urea-amino butyric acid-NHS." [PMID:21157862]
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02122 ! BuUrBu
 
@@ -2004,7 +2034,7 @@ name: hydrolyzed DEST
 def: "Hydrolyzed diethylsuberthioimidate." [PMID:20795639, PMID:22460622]
 property_value: deadEndFormula: "C8 H14 N2 O1" xsd:string
 property_value: monoIsotopicMass: "154.11061312" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02129 ! DEST
 
@@ -2014,8 +2044,8 @@ name: ammonium amidated DEST
 def: "Ammonium amidated diethylsuberthioimidate." [PMID:20795639, PMID:22460622]
 property_value: deadEndFormula: "C8 H15 N3" xsd:string
 property_value: monoIsotopicMass: "153.126593" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
-relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
+relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02129 ! DEST
 
 [Term]
@@ -2024,7 +2054,7 @@ name: thioesterized DEST
 def: "Thioesterized diethylsuberthioimidate." [PMID:20795639, PMID:22460622]
 property_value: deadEndFormula: "C10 H17 N1 O1 S1" xsd:string
 property_value: monoIsotopicMass: "199.103084925" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00098 ! thioesterization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00047 ! thioesterized
 relationship: is_side_product_of xlmod:02129 ! DEST
 
@@ -2034,7 +2064,7 @@ name: hydrolyzed BS(PEG)5
 def: "Hydrolyzed bis(sulfosuccinimidyl)suberate pentaethyleneglycol." [PSI:XL]
 property_value: deadEndFormula: "C14 H24 O8" xsd:string
 property_value: monoIsotopicMass: "320.1471147" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02198 ! BS(PEG)5
 
@@ -2044,7 +2074,7 @@ name: ammonium amidated BS(PEG)5
 def: "Ammonium amidated bis(sulfosuccinimidyl)suberate pentaethyleneglycol." [PSI:XL]
 property_value: deadEndFormula: "C14 H27 N1 O7" xsd:string
 property_value: monoIsotopicMass: "320.1471147" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02198 ! BS(PEG)5
 
@@ -2054,7 +2084,7 @@ name: hydrolyzed BSOCOES
 def: "Hydrolyzed bis(2-[Succinimidooxycarbonyloxy]ethyl) sulfone." [PSI:XL]
 property_value: deadEndFormula: "C6 H8 O7 S1" xsd:string
 property_value: monoIsotopicMass: "223.9990767" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02079 ! BSOCOES
 
@@ -2064,7 +2094,7 @@ name: ammonium amidated BSOCOES
 def: "Ammonium amidated bis(2-[Succinimidooxycarbonyloxy]ethyl) sulfone." [PSI:XL]
 property_value: deadEndFormula: "C6 H9 N1 O6 S1" xsd:string
 property_value: monoIsotopicMass: "223.015061105" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02079 ! BSOCOES
 
@@ -2074,7 +2104,7 @@ name: hydrolyzed DST
 def: "Hydrolyzed disuccinimidyl tartrate." [PSI:XL]
 property_value: deadEndFormula: "C4 H4 O5" xsd:string
 property_value: monoIsotopicMass: "132.0058747" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02032 ! DST
 
@@ -2084,7 +2114,7 @@ name: ammonium amidated DST
 def: "Ammonium amidated disuccinimidyl tartrate." [PSI:XL]
 property_value: deadEndFormula: "C4 H5 N1 O4" xsd:string
 property_value: monoIsotopicMass: "131.021859105" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02032 ! DST
 
@@ -2094,7 +2124,7 @@ name: hydrolyzed SDA
 def: "Hydrolyzed succinimidyl-ester diazirine." [PSI:XL]
 property_value: deadEndFormula: "C5 H8 O2" xsd:string
 property_value: monoIsotopicMass: "100.05242954" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02138 ! SDA
 
@@ -2104,7 +2134,7 @@ name: oxidized SDA
 def: "Oxidized succinimidyl-ester diazirine." [PSI:XL]
 property_value: deadEndFormula: "C5 H6 O2" xsd:string
 property_value: monoIsotopicMass: "98.03677947" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00097 ! oxidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00064 ! oxidized
 relationship: is_side_product_of xlmod:02138 ! SDA
 
@@ -2114,7 +2144,7 @@ name: alkenized SDA
 def: "Alkenized succinimidyl-ester diazirine." [PSI:XL]
 property_value: deadEndFormula: "C4 H4 O1" xsd:string
 property_value: monoIsotopicMass: "68.02621477" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00094 ! alkenization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00065 ! alkenized
 relationship: is_side_product_of xlmod:02138 ! SDA
 
@@ -2124,7 +2154,7 @@ name: hydrolyzed LC-SDA
 def: "Hydrolyzed LC-SDA." [PSI:XL]
 property_value: deadEndFormula: "C11 H19 N1 O3" xsd:string
 property_value: monoIsotopicMass: "213.136493555" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02139 ! LC-SDA
 
@@ -2134,7 +2164,7 @@ name: oxidized LC-SDA
 def: "Oxidized LC-SDA." [PSI:XL]
 property_value: deadEndFormula: "C11 H17 N1 O3" xsd:string
 property_value: monoIsotopicMass: "211.120843485" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00097 ! oxidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00064 ! oxidized
 relationship: is_side_product_of xlmod:02139 ! LC-SDA
 
@@ -2144,7 +2174,7 @@ name: alkenized LC-SDA
 def: "Alkenized LC-SDA." [PSI:XL]
 property_value: deadEndFormula: "C10 H15 N1 O2" xsd:string
 property_value: monoIsotopicMass: "181.110278785" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00094 ! alkenization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00065 ! alkenized
 relationship: is_side_product_of xlmod:02139 ! LC-SDA
 
@@ -2154,7 +2184,7 @@ name: hydrolyzed L-Photo-Leucine
 def: "Hydrolyzed L-2-amino-4,4-azi-pentanoic acid." [PSI:XL]
 property_value: deadEndFormula: "-C1 -H2 O1" xsd:string
 property_value: monoIsotopicMass: "1.97926456" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:01900 ! L-Photo-Leucine
 
@@ -2164,7 +2194,7 @@ name: oxidized L-Photo-Leucine
 def: "Oxidized L-2-amino-4,4-azi-pentanoic acid." [PSI:XL]
 property_value: deadEndFormula: "-C1 -H4 O1" xsd:string
 property_value: monoIsotopicMass: "-0.036385501" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00097 ! oxidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00064 ! oxidized
 relationship: is_side_product_of xlmod:01900 ! L-Photo-Leucine
 
@@ -2174,7 +2204,7 @@ name: alkenized L-Photo-Leucine
 def: "Alkenized L-2-amino-4,4-azi-pentanoic acid." [PSI:XL]
 property_value: deadEndFormula: "-C2 -H6" xsd:string
 property_value: monoIsotopicMass: "-30.04695021" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00094 ! alkenization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00065 ! alkenized
 relationship: is_side_product_of xlmod:01900 ! L-Photo-Leucine
 
@@ -2184,7 +2214,7 @@ name: hydrolyzed L-Photo-Methionine
 def: "Hydrolyzed L-2-amino-5,5-azi-hexanoic acid." [PSI:XL]
 property_value: deadEndFormula: "C1 H2 O1 -S1" xsd:string
 property_value: monoIsotopicMass: "-1.96150744" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:01901 ! L-Photo-Methionine
 
@@ -2194,7 +2224,7 @@ name: oxidized L-Photo-Methionine
 def: "Oxidized L-2-amino-5,5-azi-hexanoic acid." [PSI:XL]
 property_value: deadEndFormula: "C1 O1 -S1" xsd:string
 property_value: monoIsotopicMass: "-3.97715607" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00097 ! oxidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00064 ! oxidized
 relationship: is_side_product_of xlmod:01901 ! L-Photo-Methionine
 
@@ -2204,7 +2234,7 @@ name: alkenized L-Photo-Methionine
 def: "Alkenized L-2-amino-5,5-azi-hexanoic acid." [PSI:XL]
 property_value: deadEndFormula: "-H2 -S1" xsd:string
 property_value: monoIsotopicMass: "-33.98772221" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00094 ! alkenization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00065 ! alkenized
 relationship: is_side_product_of xlmod:01901 ! L-Photo-Methionine
 
@@ -2212,7 +2242,7 @@ relationship: is_side_product_of xlmod:01901 ! L-Photo-Methionine
 id: xlmod:01091
 name: hydrolyzed BMOE
 def: "Hydrolyzed bis-Maleimidoethane." [PSI:XL]
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02188 ! BMOE
 
@@ -2222,7 +2252,7 @@ name: hydrolyzed BMPS
 def: "Hydrolyzed N-(beta-Maleimidopropyloxy)succinimide ester." [PSI:XL]
 property_value: bridgeFormula: "C7 H7 O4 N1" xsd:string
 property_value: monoIsotopicMass: "169.037507765" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02013 ! BMPS
 
@@ -2232,7 +2262,7 @@ name: ammonium amidated BMPS
 def: "Ammonium amidated N-(beta-Maleimidopropyloxy)succinimide ester." [PSI:XL]
 property_value: bridgeFormula: "C7 H8 O3 N2" xsd:string
 property_value: monoIsotopicMass: "168.05349217" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00021 ! ammonium amidated
 relationship: is_side_product_of xlmod:02013 ! BMPS
 
@@ -2242,7 +2272,7 @@ name: hydrolyzed PDH
 def: "Hydrolyzed pimelic acid dihydrazide." [PSI:XL]
 property_value: bridgeFormula: "C7 H12 N4" xsd:string
 property_value: monoIsotopicMass: "170.11676112" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02223 ! PDH
 
@@ -2253,7 +2283,7 @@ def: "Deuterium labelled hydrolyzed pimelic acid dihydrazide." [PSI:XL]
 property_value: bridgeFormula: "C7 D10 H2 N4" xsd:string
 property_value: doubletDeltaMass: "10.06276744" xsd:double
 property_value: monoIsotopicMass: "180.17952856" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02224 ! PDH-d10
 relationship: is_labelled xlmod:00010 ! deuterium labelled
@@ -2263,7 +2293,7 @@ id: xlmod:01096
 name: hydrolyzed SuDP
 def: "Hydrolyzed disuccinimidyl-succinamyl-aspartyl-proline." [PMID:26091612]
 property_value: monoIsotopicMass: "294.0852" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02112 ! SuDP
 
@@ -2273,7 +2303,7 @@ name: hydrolyzed L-Photo-Isoleucine
 def: "Hydrolyzed L-Photo-Isoleucine." [PSI:XL]
 property_value: deadEndFormula: "-C1 -H2 O1" xsd:string
 property_value: monoIsotopicMass: "1.97926456" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:01902 ! L-Photo-Isoleucine
 
@@ -2283,7 +2313,7 @@ name: oxidized L-Photo-Isoleucine
 def: "Oxidized L-Photo-Isoleucine." [PSI:XL]
 property_value: deadEndFormula: "-C1 -H4 O1" xsd:string
 property_value: monoIsotopicMass: "-0.036385501" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00097 ! oxidation cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00064 ! oxidized
 relationship: is_side_product_of xlmod:01902 ! L-Photo-Isoleucine
 
@@ -2293,7 +2323,7 @@ name: alkenized L-Photo-Isoleucine
 def: "Alkenized L-Photo-Isoleucine." [PSI:XL]
 property_value: deadEndFormula: "-C2 -H6" xsd:string
 property_value: monoIsotopicMass: "-30.04695021" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00094 ! alkenization cross-linker related chemical modification
 relationship: is_partially_reacted xlmod:00065 ! alkenized
 relationship: is_side_product_of xlmod:01902 ! L-Photo-Isoleucine
 
@@ -2302,7 +2332,7 @@ id: xlmod:01100
 name: hydrolyzed Sulfo-SBED
 def: "Hydrolyzed Sulfo-SBED cross-linker." [PMID:16246579]
 property_value: monoIsotopicMass: "652.217" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: has_handle xlmod:00051 ! biotin
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:03002 ! Sulfo-SBED
@@ -2312,7 +2342,7 @@ id: xlmod:01101
 name: hydrolyzed PIR
 def: "Hydrolized Protein Interaction Reporter." [PMID:15623310]
 property_value: CID fragment: "828.5" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_cleavable xlmod:00035 ! CID cleavable
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02237 ! PIR
@@ -2322,7 +2352,7 @@ id: xlmod:01102
 name: hydrolized PL
 def: "Hydrolyzed photo-cleavable Leiker." [PMID:26952210, PMID:27734140]
 property_value: monoIsotopicMass: "334.15" xsd:double
-is_a: xlmod:00002 ! cross-linker related PTM
+is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_cleavable xlmod:00147 ! photocleavable
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
 relationship: is_side_product_of xlmod:02227 ! PL
@@ -5964,6 +5994,7 @@ property_value: spacerLength: "9.1" xsd:float
 property_value: spacerLength: "13.7" xsd:float
 property_value: spacerLength: "19.1" xsd:float
 is_a: xlmod:00003 ! label transfer reagent
+is_a: xlmod:00004 ! cross-linker
 relationship: has_handle xlmod:00051 ! biotin
 relationship: has_reactive_group xlmod:00102 ! Sulfo NHS ester
 relationship: has_reactive_group xlmod:00126 ! phenyl azide
