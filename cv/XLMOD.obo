@@ -1,7 +1,7 @@
 format-version: 1.2
-data-version: release/2018-08-09
+data-version: release/2018-08-28
 ontology: xlmod
-date: 09:08:2018 15:25
+date: 28:08:2018 13:05
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: xlmod
@@ -1276,7 +1276,7 @@ is_a: xlmod:00100 ! reactive group
 relationship: is_reactive_with xlmod:00028 ! amine reactive
 
 [Term]
-id: xlmod:00167
+id: xlmod:00168
 name: benzyl bromide reactive group
 def: "A benzyl bromide (C6H5CH2Br) reactive group." [PMID:21557289]
 synonym: "Bn-Br" EXACT []
@@ -1287,7 +1287,7 @@ relationship: is_reactive_with xlmod:06509 ! phenol reactive
 relationship: is_reactive_with xlmod:06521 ! phosphate reactive
 
 [Term]
-id: xlmod:00168
+id: xlmod:00169
 name: benzoyl bromide
 def: "A benzoyl bromide (C6H5COBr) reactive group." [PMID:21557289]
 synonym: "Bz-Br" EXACT []
@@ -6525,7 +6525,7 @@ def: "Pentafluorobenzyl bromide." [CAS:1765-40-8, PubChem_Compound:74484, MDL:MF
 synonym: "PFBBr" EXACT []
 is_a: xlmod:06020 ! arylation reagent
 is_a: xlmod:06010 ! LCMS derivatization reagent
-relationship: has_reactive_group xlmod:00167 ! benzyl bromide reactive group
+relationship: has_reactive_group xlmod:00168 ! benzyl bromide reactive group
 relationship: is_reactive_with xlmod:06504 ! nitrosamine reactive
 relationship: is_reactive_with xlmod:06505 ! sulfonamide reactive
 
@@ -6543,7 +6543,7 @@ name: benzylbromide
 def: "Benzylbromide." [CAS:100-39-0, PubChem_Compound:7498, ChemSpiderID:13851576, ChemicalBookNo:CB6761035, DOI:10.5772/33098]
 synonym: "BnBr" EXACT []
 is_a: xlmod:06020 ! arylation reagent
-relationship: has_reactive_group xlmod:00167 ! benzyl bromide reactive group
+relationship: has_reactive_group xlmod:00168 ! benzyl bromide reactive group
 
 [Term]
 id: xlmod:07005
@@ -7289,7 +7289,7 @@ id: xlmod:07100
 name: 2,3,5,6-Tetrafluoro-4-ethanol(trifluoromethyl)benzyl bromide
 def: "2,3,5,6-Tetrafluoro-4-ethanol(trifluoromethyl)benzyl bromide." [CAS:76437-40-6, PubChem_Compound:127137, ChemSpiderID:112859, ChemicalBookNo:CB1682115]
 is_a: xlmod:06002 ! alkylation reagent
-relationship: has_reactive_group xlmod:00167 ! benzyl bromide reactive group
+relationship: has_reactive_group xlmod:00168 ! benzyl bromide reactive group
 
 [Term]
 id: xlmod:07101
@@ -7334,7 +7334,7 @@ id: xlmod:07108
 name: 4-Bromobenzyl bromide
 def: "4-Bromobenzyl bromide." [CAS:589-15-1, PubChem_Compound:68527, ChemSpiderID:61802, ChemicalBookNo:CB8313784]
 is_a: xlmod:06020 ! arylation reagent
-relationship: has_reactive_group xlmod:00167 ! benzyl bromide reactive group
+relationship: has_reactive_group xlmod:00168 ! benzyl bromide reactive group
 
 [Term]
 id: xlmod:07109
@@ -7859,7 +7859,7 @@ synonym: "4-NBB" EXACT []
 synonym: "p-nitrobenzyl bromide" EXACT []
 is_a: xlmod:06020 ! arylation reagent
 is_a: xlmod:06010 ! LCMS derivatization reagent
-relationship: has_reactive_group xlmod:00167 ! benzyl bromide reactive group
+relationship: has_reactive_group xlmod:00168 ! benzyl bromide reactive group
 
 [Term]
 id: xlmod:09049
@@ -10122,4 +10122,3 @@ synonym: "TNBSA" EXACT []
 synonym: "Picrylsulfonic acid" EXACT []
 is_a: xlmod:06010 ! LCMS derivatization reagent
 relationship: is_reactive_with xlmod:00028 ! primary amine reactive
-
