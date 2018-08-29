@@ -1,7 +1,7 @@
 format-version: 1.2
-data-version: release/2018-08-28
+data-version: release/2018-08-29
 ontology: xlmod
-date: 28:08:2018 13:05
+date: 29:08:2018 12:24
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: xlmod
@@ -8363,7 +8363,6 @@ id: xlmod:09104
 name: 4-methylpiperazine acetyl succinimide
 def: "4-methylpiperazine acetyl succinimide." [PMID:22575224]
 synonym: "MPAS" EXACT []
-is_a: xlmod:00101 ! NHS ester
 is_a: xlmod:06010 ! LCMS derivatization reagent
 relationship: has_reactive_group xlmod:00101 ! NHS ester
 relationship: is_reactive_with xlmod:00028 ! primary amine reactive
@@ -8374,7 +8373,6 @@ id: xlmod:09105
 name: deuterium labelled 4-methylpiperazine acetyl succinimide
 def: "Deuterium labelled 4-methylpiperazine acetyl succinimide." [PMID:22575224]
 synonym: "MPAS-d3" EXACT []
-is_a: xlmod:00101 ! NHS ester
 is_a: xlmod:06010 ! LCMS derivatization reagent
 relationship: has_reactive_group xlmod:00101 ! NHS ester
 relationship: is_labelled xlmod:00010 ! deuterium labelled
@@ -8386,7 +8384,6 @@ id: xlmod:09106
 name: 4-methylpiperadinebutyryl succinimide
 def: "4-methylpiperadinebutyryl succinimide." [PMID:22575224]
 synonym: "MPBS" EXACT []
-is_a: xlmod:00101 ! NHS ester
 is_a: xlmod:06010 ! LCMS derivatization reagent
 relationship: has_reactive_group xlmod:00101 ! NHS ester
 relationship: is_reactive_with xlmod:00028 ! primary amine reactive
@@ -8397,7 +8394,6 @@ id: xlmod:09107
 name: deuterium labelled 4-methylpiperadinebutyryl succinimide
 def: "Deuterium labelled 4-methylpiperadinebutyryl succinimide." [PMID:22575224]
 synonym: "MPBS-d3" EXACT []
-is_a: xlmod:00101 ! NHS ester
 is_a: xlmod:06010 ! LCMS derivatization reagent
 relationship: has_reactive_group xlmod:00101 ! NHS ester
 relationship: is_labelled xlmod:00010 ! deuterium labelled
@@ -8409,7 +8405,6 @@ id: xlmod:09108
 name: dimethylaminobutyryl succinimide
 def: "Dimethylaminobutyryl succinimide." [PMID:22575224]
 synonym: "DMABS" EXACT []
-is_a: xlmod:00101 ! NHS ester
 is_a: xlmod:06010 ! LCMS derivatization reagent
 relationship: has_reactive_group xlmod:00101 ! NHS ester
 relationship: is_reactive_with xlmod:00028 ! primary amine reactive
@@ -8420,7 +8415,6 @@ id: xlmod:09109
 name: deuterium labelled dimethylaminobutyryl succinimide
 def: "Deuterium labelled dimethylaminobutyryl succinimide." [PMID:22575224]
 synonym: "DMABS-d3" EXACT []
-is_a: xlmod:00101 ! NHS ester
 is_a: xlmod:06010 ! LCMS derivatization reagent
 relationship: has_reactive_group xlmod:00101 ! NHS ester
 relationship: is_labelled xlmod:00010 ! deuterium labelled
