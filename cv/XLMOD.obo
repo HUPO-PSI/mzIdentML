@@ -1,12 +1,12 @@
 format-version: 1.2
 data-version: release/2018-08-29
 ontology: xlmod
-date: 29:08:2018 12:24
+date: 29:08:2018 13:38
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: xlmod
-remark: version: 1.1.6
-remark: coverage: cross-linking reagents, cross-linker related post-translational modifications, and derivatization reagents for GC-MS
+remark: version: 1.1.7
+remark: coverage: cross-linking reagents, cross-linker related post-translational modifications, and derivatization reagents for GC-MS and LC-MS
 remark: creator: Lutz Fischer <lfischer <-at-> staffmail.ed.ac.uk>
 remark: creator: Alexander Leitner <leitner <-at-> imsb.biol.ethz.ch>
 remark: creator: Nils Hoffmann <nils.hoffmann <-at-> isas.de>
@@ -18,66 +18,82 @@ remark: To view a copy of this license, visit https://creativecommons.org/licens
 id: part_of
 name: part_of
 is_transitive: true
+def: "The basic part of relationship indicating a top-level branch of this ontology." [OBO:defs]
 
 [Typedef]
 id: is_activatable
 name: is_activatable
+def: "Indicates how the cross-linking reagent can be activated." [OBO:defs]
 
 [Typedef]
 id: is_analog_of
 name: is_analog_of
+def: "Indicates biochemical analogues of nucleobases, nucleosides or amino acids." [OBO:defs]
 
 [Typedef]
 id: is_cleavable
 name: is_cleavable
+def: "Indicates that the cross-linking reagent is cleavable." [OBO:defs]
 
 [Typedef]
 id: is_labelled
 name: is_labelled
+def: "Indicates that the cross-linking or derivatization reagent has an isotopic label." [OBO:defs]
 
 [Typedef]
 id: is_partially_reacted
 name: is_partially_reacted
+def: "Specifies the type of the cross-linker related chemical modification." [OBO:defs]
 
 [Typedef]
 id: is_reactive_with
 name: is_reactive_with
+def: "Indicates the chemical group that can react with the cross-linking or derivatization reagent." [OBO:defs]
 
 [Typedef]
 id: is_side_product_of
 name: is_side_product_of
+def: "Indicates the cross-linking reagent from which the chemical modification is derived." [OBO:defs]
 
 [Typedef]
 id: has_handle
 name: has_handle
+def: "Indicates that the cross-linking reagent has a handle that can be used for detection/identification, enrichment or purification." [OBO:defs]
 
 [Typedef]
 id: has_click_enabled_linker
 name: has_click_enabled_linker
+def: "Indicates that the cross-linking reagent has a linker that can be enabled by click chemistry." [OBO:defs]
 
 [Typedef]
 id: has_neutral_loss_reporter
 name: has_neutral_loss_reporter
+def: "Indicates that the cross-linking reagent has a neutral loss reporter." [OBO:defs]
 
 [Typedef]
 id: has_property
 name: has_property
+def: "Indicates a property of a cross-linking or derivatization reagent." [OBO:defs]
 
 [Typedef]
 id: has_chromophore
 name: has_chromophore
+def: "Indicates that the derivatization reagent can be detected by the specified chromophore." [OBO:defs]
 
 [Typedef]
 id: has_electrophore
 name: has_electrophore
+def: "Indicates that the derivatization reagent can be detected by the specified electrophore." [OBO:defs]
 
 [Typedef]
 id: has_fluorophore
 name: has_fluorophore
+def: "Indicates that the derivatization reagent can be detected by the specified fluorophore." [OBO:defs]
 
 [Typedef]
 id: has_reactive_group
 name: has_reactive_group
+def: "Indicates that the cross-linking or derivatization reagent has the specified reactive group." [OBO:defs]
 
 [Term]
 id: xlmod:00000
