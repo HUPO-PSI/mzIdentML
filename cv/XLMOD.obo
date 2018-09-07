@@ -1,11 +1,11 @@
 format-version: 1.2
-data-version: release/2018-08-29
+data-version: release/2018-09-07
 ontology: xlmod
-date: 29:08:2018 13:38
+date: 07:09:2018 09:26
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: xlmod
-remark: version: 1.1.7
+remark: version: 1.1.8
 remark: coverage: cross-linking reagents, cross-linker related post-translational modifications, and derivatization reagents for GC-MS and LC-MS
 remark: creator: Lutz Fischer <lfischer <-at-> staffmail.ed.ac.uk>
 remark: creator: Alexander Leitner <leitner <-at-> imsb.biol.ethz.ch>
@@ -2357,7 +2357,7 @@ relationship: is_side_product_of xlmod:03002 ! Sulfo-SBED
 id: xlmod:01101
 name: hydrolyzed PIR
 def: "Hydrolized Protein Interaction Reporter." [PMID:15623310]
-property_value: CID fragment: "828.5" xsd:double
+property_value: CID_Fragment: "828.5" xsd:double
 is_a: xlmod:00096 ! hydrolization cross-linker related chemical modification
 relationship: is_cleavable xlmod:00035 ! CID cleavable
 relationship: is_partially_reacted xlmod:00011 ! hydrolyzed
@@ -4384,8 +4384,8 @@ relationship: is_labelled xlmod:00044 ! mass defect labelled
 id: xlmod:02106
 name: BID
 def: "N-benzyliminodiacetoyloxysuccinimid." [PMID:11212007]
-property_value: CID fragment: "91" xsd:double
-property_value: CID fragment: "275.1" xsd:double
+property_value: CID_Fragment: "91" xsd:double
+property_value: CID_Fragment: "275.1" xsd:double
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 is_a: xlmod:00005 ! homofunctional cross-linker
 relationship: has_reactive_group xlmod:00101 ! NHS ester
@@ -4448,8 +4448,8 @@ id: xlmod:02112
 name: SuDP
 def: "Bisuccinimidyl-succinamyl-aspartyl-proline." [PMID:26091612, PMID:20560670, PMID:17134140]
 synonym: "Disuccinimidyl-succinamyl-aspartyl-proline" EXACT []
-property_value: CID fragment: "97.0528" xsd:double
-property_value: CID fragment: "197.0324" xsd:double
+property_value: CID_Fragment: "97.0528" xsd:double
+property_value: CID_Fragment: "197.0324" xsd:double
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 property_value: spacerLength: "11.2" xsd:float
 is_a: xlmod:00005 ! homofunctional cross-linker
@@ -4461,10 +4461,10 @@ id: xlmod:02113
 name: SuDPG
 def: "Bisuccinimidyl-succinamyl-aspartyl-prolyl-glycine." [PMID:26091612, PMID:17134140]
 synonym: "Disuccinimidyl-succinamyl-aspartyl-prolyl-glycine" EXACT []
-property_value: CID fragment: "97.1" xsd:double
-property_value: CID fragment: "154.1" xsd:double
-property_value: CID fragment: "197.1" xsd:double
-property_value: CID fragment: "215.1" xsd:double
+property_value: CID_Fragment: "97.1" xsd:double
+property_value: CID_Fragment: "154.1" xsd:double
+property_value: CID_Fragment: "197.1" xsd:double
+property_value: CID_Fragment: "215.1" xsd:double
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 property_value: spacerLength: "15.1" xsd:float
 is_a: xlmod:00005 ! homofunctional cross-linker
@@ -4544,8 +4544,8 @@ id: xlmod:02120
 name: BuUrBu
 def: "NHS-amino butyric acid-urea-amino butyric acid-NHS." [PMID:21157862, PMID:20704385, PMID:25261217, PMID:27428000]
 synonym: "NHS-BuUrBu-NHS" EXACT []
-property_value: CID fragment: "85.053" xsd:double
-property_value: CID fragment: "111.032" xsd:double
+property_value: CID_Fragment: "85.053" xsd:double
+property_value: CID_Fragment: "111.032" xsd:double
 property_value: doubletDeltaMass: "25.979" xsd:double
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 property_value: spacerLength: "12.5" xsd:float
@@ -5737,7 +5737,7 @@ relationship: is_cleavable xlmod:00067 ! CID cleavable C-S bond
 id: xlmod:02227
 name: PL
 def: "Photo-cleavable Leiker." [PMID:26952210, PMID:27734140]
-property_value: CID fragment: "122.06" xsd:double
+property_value: CID_Fragment: "122.06" xsd:double
 property_value: monoIsotopicMass: "316.14" xsd:double
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 is_a: xlmod:00005 ! homofunctional cross-linker
@@ -5857,7 +5857,7 @@ relationship: is_cleavable xlmod:00035 ! CID cleavable
 id: xlmod:02237
 name: PIR
 def: "Protein Interaction Reporter." [PMID:15623310]
-property_value: CID fragment: "711.4" xsd:double
+property_value: CID_Fragment: "711.4" xsd:double
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 is_a: xlmod:00005 ! homofunctional cross-linker
 relationship: has_property xlmod:00013 ! membrane permeable
@@ -5868,7 +5868,7 @@ relationship: is_cleavable xlmod:00035 ! CID cleavable
 id: xlmod:02238
 name: pcPIR
 def: "Photo-cleavable Protein Interaction Reporter." [PMID:20373789]
-property_value: CID fragment: "711.4" xsd:double
+property_value: CID_Fragment: "711.4" xsd:double
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 property_value: spacerLength: "40.0" xsd:float
 is_a: xlmod:00005 ! homofunctional cross-linker
