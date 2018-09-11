@@ -10,15 +10,15 @@
 	<cvSource 
 		source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="http://www.brenda-enzymes.org/ontology/tissue/tree/update/update_files/BrendaTissueOBO"
-		format="OBO" name="BRENDA Tissue and Enzyme Source Ontology" identifier="BTO" version="14:05:2017 20:29"/>
+		format="OBO" name="BRENDA Tissue and Enzyme Source Ontology" identifier="BTO" version="13:11:2017 13:58"/>
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="http://www.geneontology.org/ontology/gene_ontology.obo"
-    	format="OBO" name="Gene Ontology" identifier="GO" version="releases/2017-09-05"/>
+    	format="OBO" name="Gene Ontology" identifier="GO" version="releases/2018-08-03"/>
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/pato-ontology/pato/master/pato.obo"
-    	format="OBO" name="Phenotypic Quality Ontology" identifier="PATO" version="releases/2018-03-28"/>
+    	format="OBO" name="Phenotypic Quality Ontology" identifier="PATO" version="releases/2018-08-14"/>
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/validator/trunk/src/main/resources/PSI-MOD.obo"
@@ -26,11 +26,11 @@
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo"
-    	format="OBO" name="Mass Spectrometry Ontology" identifier="MS" version="4.1.12"/>
+    	format="OBO" name="Mass Spectrometry Ontology" identifier="MS" version="4.1.13"/>
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.local.LocalOntology" 
     	uri="http://www.unimod.org/obo/unimod.obo"
-    	format="OBO" name="UNIMOD" identifier="UNIMOD" version="2018:04:17 09:27"/>
+    	format="OBO" name="UNIMOD" identifier="UNIMOD" version="2018:08:13 13:42"/>
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology"
         uri="https://raw.githubusercontent.com/bio-ontology-research-group/unit-ontology/master/unit.obo"
@@ -38,5 +38,5 @@
     <cvSource 
     	source="psidev.psi.tools.ontology_manager.impl.ols.OlsOntology" 
         uri="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/cv/XLMOD.obo"
-    	format="OBO" name="Cross-Linker Reagents Ontology" identifier="xlmod" version="release/2018-07-13"/>
+    	format="OBO" name="Cross-Linker Reagents Ontology" identifier="XLMOD" version="release/2018-09-07"/>
 </cvSourceList>

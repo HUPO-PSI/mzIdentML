@@ -79,17 +79,19 @@ public class PeptideLevelStatsObjectRule extends AObjectRule<SpectrumIdentificat
         if (AdditionalSearchParamsObjectRule.bIsPeptideLevelScoring) {
             String acc;
             for (CvParam cv: sii.getCvParam()) {
-                acc = cv.getAccession();
-                if (this.isASearchEnginePeptideScore(acc) || this.isASearchEnginePSMScore(acc)) {
-                    this.firstTerm = true;
-                }
-                switch (acc) {
-                    case "MS:1002500":  // peptide passes threshold
-                        this.secondTerm = true;
-                        break;
-                    case "MS:1002520":  // peptide group ID
-                        this.thirdTerm = true;
-                        break;
+                if (cv != null) {
+                    acc = cv.getAccession();
+                    if (this.isASearchEnginePeptideScore(acc) || this.isASearchEnginePSMScore(acc)) {
+                        this.firstTerm = true;
+                    }
+                    switch (acc) {
+                        case "MS:1002500":  // peptide passes threshold
+                            this.secondTerm = true;
+                            break;
+                        case "MS:1002520":  // peptide group ID
+                            this.thirdTerm = true;
+                            break;
+                    }
                 }
             }
             if (!(this.firstTerm && this.secondTerm && this.thirdTerm)) {

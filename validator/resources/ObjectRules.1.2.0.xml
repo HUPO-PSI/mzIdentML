@@ -3,7 +3,9 @@
     <!-- List of rules that this specific validator should use (Provide class names)-->
 	<rule class="psidev.psi.pi.validator.objectrules.AdditionalSearchParamsObjectRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.CvListObjectRule"/>
+    <rule class="psidev.psi.pi.validator.objectrules.CvParamObjectRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.OrganizationObjectRule"/>
+    <rule class="psidev.psi.pi.validator.objectrules.PeptideEvidenceObjectRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.PeptideLevelStatsObjectRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.PersonObjectRule"/>
     <rule class="psidev.psi.pi.validator.objectrules.ProteinAmbiguityGroupObjectRule"/>

@@ -15,7 +15,7 @@
         <CvReference cvName="GO" cvIdentifier="GO"/>
         <CvReference cvName="PATO" cvIdentifier="PATO"/>
         <CvReference cvName="UO" cvIdentifier="UO"/>
-        <CvReference cvName="xlmod" cvIdentifier="xlmod"/>
+        <CvReference cvName="XLMOD" cvIdentifier="XLMOD"/>
     </CvReferenceList>
 
     <CvMappingRuleList>
@@ -75,9 +75,9 @@
             <CvTerm termAccession="UNIMOD:0" useTermName="false" useTerm="false" termName="unimod root node" isRepeatable="false" allowChildren="true" cvIdentifierRef="UNIMOD" />
 			<CvTerm termAccession="MOD:00000" useTermName="false" useTerm="false" termName="protein modification" isRepeatable="false" allowChildren="true" cvIdentifierRef="MOD" />
 			<CvTerm termAccession="MS:1001471" useTermName="false" useTerm="false" termName="peptide modification details" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
-			<CvTerm termAccession="xlmod:00005" useTermName="false" useTerm="false" termName="homofunctional cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="xlmod" />
-			<CvTerm termAccession="xlmod:00006" useTermName="false" useTerm="false" termName="heterofunctional cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="xlmod" />
-			<CvTerm termAccession="xlmod:00008" useTermName="false" useTerm="false" termName="zero-length cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="xlmod" />
+			<CvTerm termAccession="XLMOD:00005" useTermName="false" useTerm="false" termName="homofunctional cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="XLMOD" />
+			<CvTerm termAccession="XLMOD:00006" useTermName="false" useTerm="false" termName="heterofunctional cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="XLMOD" />
+			<CvTerm termAccession="XLMOD:00008" useTermName="false" useTerm="false" termName="zero-length cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="XLMOD" />
         </CvMappingRule>
 
 		<CvMappingRule id="SoftwareName_must_rule" cvElementPath="/MzIdentML/AnalysisSoftwareList/AnalysisSoftware/softwareName/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisSoftwareList/AnalysisSoftware/softwareName" cvTermsCombinationLogic="OR">
@@ -149,8 +149,8 @@
 			<CvTerm termAccession="MS:1002510" useTermName="false" useTerm="true" termName="cross-link acceptor" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
             <CvTerm termAccession="UNIMOD:0" useTermName="false" useTerm="false" termName="unimod root node" isRepeatable="false" allowChildren="true" cvIdentifierRef="UNIMOD" />
 			<CvTerm termAccession="MOD:00000" useTermName="false" useTerm="false" termName="protein modification" isRepeatable="false" allowChildren="true" cvIdentifierRef="MOD" />
-			<CvTerm termAccession="xlmod:00002" useTermName="false" useTerm="false" termName="cross-linker related PTM" isRepeatable="false" allowChildren="true" cvIdentifierRef="xlmod" />
-			<CvTerm termAccession="xlmod:00004" useTermName="false" useTerm="false" termName="cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="xlmod" />
+			<CvTerm termAccession="XLMOD:00002" useTermName="false" useTerm="false" termName="cross-linker related PTM" isRepeatable="false" allowChildren="true" cvIdentifierRef="XLMOD" />
+			<CvTerm termAccession="XLMOD:00004" useTermName="false" useTerm="false" termName="cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="XLMOD" />
 		</CvMappingRule>
         
 		<CvMappingRule id="SearchModification_may_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/modificationParams/searchModification/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/modificationParams/searchModification" cvTermsCombinationLogic="OR">
@@ -160,8 +160,8 @@
 			<CvTerm termAccession="MS:1002510" useTermName="false" useTerm="true" termName="cross-link acceptor" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
             <CvTerm termAccession="UNIMOD:0" useTermName="false" useTerm="false" termName="unimod root node" isRepeatable="false" allowChildren="true" cvIdentifierRef="UNIMOD" />
 			<CvTerm termAccession="MOD:00000" useTermName="false" useTerm="false" termName="protein modification" isRepeatable="false" allowChildren="true" cvIdentifierRef="MOD" />
-			<CvTerm termAccession="xlmod:00002" useTermName="false" useTerm="false" termName="cross-linker related PTM" isRepeatable="false" allowChildren="true" cvIdentifierRef="xlmod" />
-			<CvTerm termAccession="xlmod:00004" useTermName="false" useTerm="false" termName="cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="xlmod" />
+			<CvTerm termAccession="XLMOD:00002" useTermName="false" useTerm="false" termName="cross-linker related PTM" isRepeatable="false" allowChildren="true" cvIdentifierRef="XLMOD" />
+			<CvTerm termAccession="XLMOD:00004" useTermName="false" useTerm="false" termName="cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="XLMOD" />
 		</CvMappingRule>
         
 		<CvMappingRule id="SearchModificationSpecificityRules_must_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/modificationParams/searchModification/specificityRules/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/modificationParams/searchModification/specificityRules" cvTermsCombinationLogic="OR">
@@ -237,7 +237,7 @@
 		</CvMappingRule>
 
         <CvMappingRule id="SearchDatabaseDatabaseName_may_rule" cvElementPath="/MzIdentML/DataCollection/Inputs/searchDatabase/databaseName/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/Inputs/searchDatabase/databaseName" cvTermsCombinationLogic="OR">
-            <CvTerm termAccession="MS:1001013" useTermName="false" useTerm="false" termName="database name" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001013" useTermName="false" useTerm="false" termName="database name" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
         <CvMappingRule id="SearchDatabase_may_rule" cvElementPath="/MzIdentML/DataCollection/Inputs/searchDatabase/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/Inputs/searchDatabase" cvTermsCombinationLogic="OR">
@@ -281,8 +281,8 @@
             <CvTerm termAccession="MS:1001184" useTermName="false" useTerm="false" termName="search statistics" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
     
-        <CvMappingRule id="ProteinDetectionList_must_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList" cvTermsCombinationLogic="AND">
-			<CvTerm termAccession="MS:1002404" useTermName="false" useTerm="true" termName="count of identified proteins" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+        <CvMappingRule id="ProteinDetectionList_must_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList" cvTermsCombinationLogic="OR">
+			<CvTerm termAccession="MS:1002404" useTermName="false" useTerm="true" termName="count of identified proteins" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
        	</CvMappingRule>
 
         <CvMappingRule id="ProteinDetectionList_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList" cvTermsCombinationLogic="OR">
@@ -402,9 +402,9 @@
             <CvTerm termAccession="UNIMOD:0" useTermName="false" useTerm="false" termName="unimod root node" isRepeatable="false" allowChildren="true" cvIdentifierRef="UNIMOD" />
 			<CvTerm termAccession="MOD:00000" useTermName="false" useTerm="false" termName="protein modification" isRepeatable="false" allowChildren="true" cvIdentifierRef="MOD" />
 			<CvTerm termAccession="MS:1001471" useTermName="false" useTerm="false" termName="peptide modification details" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
-			<CvTerm termAccession="xlmod:00005" useTermName="false" useTerm="false" termName="homofunctional cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="xlmod" />
-			<CvTerm termAccession="xlmod:00006" useTermName="false" useTerm="false" termName="heterofunctional cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="xlmod" />
-			<CvTerm termAccession="xlmod:00008" useTermName="false" useTerm="false" termName="zero-length cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="xlmod" />
+			<CvTerm termAccession="XLMOD:00005" useTermName="false" useTerm="false" termName="homofunctional cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="XLMOD" />
+			<CvTerm termAccession="XLMOD:00006" useTermName="false" useTerm="false" termName="heterofunctional cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="XLMOD" />
+			<CvTerm termAccession="XLMOD:00008" useTermName="false" useTerm="false" termName="zero-length cross-linker" isRepeatable="false" allowChildren="true" cvIdentifierRef="XLMOD" />
         </CvMappingRule>
 	</CvMappingRuleList>
 </CvMapping>

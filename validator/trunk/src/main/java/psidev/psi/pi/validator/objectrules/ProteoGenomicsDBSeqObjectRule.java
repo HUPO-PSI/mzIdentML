@@ -77,22 +77,24 @@ public class ProteoGenomicsDBSeqObjectRule extends AObjectRule<DBSequence> {
             boolean bFound = false;
             
             for (CvParam cv: dbseq.getCvParam()) {
-                acc = cv.getAccession();
-                switch (acc) {
-                    case "MS:1002637":  // chromosome name
-                        this.chromosomeNameTerm = true;
-                        break;
-                    case "MS:1002638":  // chromosome strand
-                        this.chromosomeStrandTerm = true;
-                        break;
-                    case "MS:1002644":  // genome reference version
-                        this.genomeReferenceVersionTerm = true;
-                        bFound = true;
-                        break;
-                    case "MS:1002741":  // unmappedProtein
-                        this.unmappedProteinTerm = true;
-                        bFound = true;
-                        break;
+                if (cv != null) {
+                    acc = cv.getAccession();
+                    switch (acc) {
+                        case "MS:1002637":  // chromosome name
+                            this.chromosomeNameTerm = true;
+                            break;
+                        case "MS:1002638":  // chromosome strand
+                            this.chromosomeStrandTerm = true;
+                            break;
+                        case "MS:1002644":  // genome reference version
+                            this.genomeReferenceVersionTerm = true;
+                            bFound = true;
+                            break;
+                        case "MS:1002741":  // unmappedProtein
+                            this.unmappedProteinTerm = true;
+                            bFound = true;
+                            break;
+                    }
                 }
                 if (bFound) {
                     break;

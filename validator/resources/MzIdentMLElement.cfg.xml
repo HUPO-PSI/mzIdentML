@@ -2,17 +2,17 @@
 <!--
 Configurations for various properties of model classes.
 
-        - autoRefResolving This determines if references within a class are automatically resolved. For example,
-            PeptideEvidence contains references to three separate classes. Setting this property to true for the
-            PeptideEvidence config will cause these references to be resolved during unmarshaling.
-        - An element cannot be idMapped if it is not indexed.
-        - xpath entries with leading or trailing whitespace will prevent elements from being indexed!
-            make sure to use a non-whitespace notation:
-              <xpath>/MzIdentML/xyz</xpath>
-            instead of line breaks:
-              <xpath>
-                /MzIdentML/xyz
-              </xpath>
+- autoRefResolving: This determines, if references within a class are automatically resolved.
+	For example, PeptideEvidence contains references to three separate classes.
+	Setting this property to true for the PeptideEvidence config will cause these references to be resolved during unmarshalling.
+- An element cannot be idMapped, if it is not indexed.
+- xpath entries with leading or trailing whitespace will prevent elements from being indexed!
+	make sure to use a non-whitespace notation:
+	  <xpath>/MzIdentML/xyz</xpath>
+	instead of line breaks:
+	  <xpath>
+		/MzIdentML/xyz
+	  </xpath>
 -->
 <mzIdentMLElementProperties>
     <configurations>
@@ -37,7 +37,6 @@ Configurations for various properties of model classes.
         <refResolverClass>uk.ac.ebi.jmzidml.xml.jaxb.resolver.AbstractParamUnitCvRefResolver</refResolverClass>
     </configurations>
     <configurations>
-        <!--  <autoRefResolving>false</autoRefResolving> -->
         <autoRefResolving>true</autoRefResolving>
         <cached>false</cached>
         <clazz>uk.ac.ebi.jmzidml.model.mzidml.Affiliation</clazz>
@@ -417,7 +416,6 @@ Configurations for various properties of model classes.
         <indexed>false</indexed>
     </configurations>
     <configurations>
-        <!-- <autoRefResolving>false</autoRefResolving> -->
         <autoRefResolving>true</autoRefResolving>
         <cached>false</cached>
         <clazz>uk.ac.ebi.jmzidml.model.mzidml.ParentOrganization</clazz>
@@ -444,7 +442,7 @@ Configurations for various properties of model classes.
         <clazz>uk.ac.ebi.jmzidml.model.mzidml.PeptideEvidence</clazz>
         <cvParamClass>uk.ac.ebi.jmzidml.model.mzidml.params.PeptideEvidenceCvParam</cvParamClass>
         <idMapped>false</idMapped>
-        <indexed>false</indexed>
+        <indexed>true</indexed>
         <refResolverClass>uk.ac.ebi.jmzidml.xml.jaxb.resolver.PeptideEvidenceResolver</refResolverClass>
         <tagName>PeptideEvidence</tagName>
         <userParamClass>uk.ac.ebi.jmzidml.model.mzidml.params.PeptideEvidenceUserParam</userParamClass>

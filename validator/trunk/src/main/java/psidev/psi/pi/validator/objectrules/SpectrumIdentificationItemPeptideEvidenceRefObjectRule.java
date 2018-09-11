@@ -13,7 +13,7 @@ import uk.ac.ebi.jmzidml.MzIdentMLElement;
 import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationItem;
 
 /**
- * Reports an error if there is no a PeptideEvidenceRef element over the {@link SpectrumIdentificationItem}.<br>
+ * Reports an error if there is not a PeptideEvidenceRef element over the {@link SpectrumIdentificationItem}.<br>
  * <b>Important note: the results of this rule will be discarded when MSMS or
  * PMF search type is performed, that is, when "ms-ms  search", "pmf+msms" or
  * "pmf" CV Terms are reported on the APC/SIP/searchType.</b>

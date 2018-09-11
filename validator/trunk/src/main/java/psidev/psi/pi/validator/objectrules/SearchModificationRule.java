@@ -19,7 +19,7 @@ import uk.ac.ebi.jmzidml.model.mzidml.SearchModification;
 
 /**
  * Checks if any SearchModification of the comes from a child of the following
- * terms:'UNIMOD:0', 'MOD:00000', 'MS:1001471' (peptide modification details), 'MS:1002509' (cross-link donor), 'MS:1002510' (cross-link acceptor), 'XL:0nnnn'
+ * terms:'UNIMOD:0', 'MOD:00000', 'MS:1001471' (peptide modification details), 'MS:1002509' (cross-link donor), 'MS:1002510' (cross-link acceptor), 'XLMOD:0nnnn'
  * 
  * @author Salva, Gerhard
  * 
@@ -30,7 +30,7 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
      * Constants.
      */
     private static final Context SEARCHMOD_CONTEXT = new Context(MzIdentMLElement.SearchModification.getXpath());
-    private final String STR_XL_ZERO = "XL:0";
+    private final String STR_XLMOD_ZERO = "XLMOD:0";
 
     /**
      * Constructor.
@@ -60,7 +60,7 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Include just the terms 'MS:1001471', 'MS:1002509', 'MS:1002510' or a child term of the following terms: 'UNIMOD:0', 'MOD:00000', or a term from the XLinker ontology 'XL:0nnnn'");
+        ret.add("Include just the terms 'MS:1001471', 'MS:1002509', 'MS:1002510' or a child term of the following terms: 'UNIMOD:0', 'MOD:00000', or a term from the XLinker ontology 'XLMOD:0nnnn'");
         
         return ret;
     }
@@ -78,14 +78,14 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
         final OntologyAccess msOntology     = ontologyManager.getOntologyAccess("MS");
         final OntologyAccess modOntology    = ontologyManager.getOntologyAccess("MOD");
         final OntologyAccess unimodOntology = ontologyManager.getOntologyAccess("UNIMOD");
-        final OntologyAccess xlmodOntology  = ontologyManager.getOntologyAccess("xlmod");
+        final OntologyAccess xlmodOntology  = ontologyManager.getOntologyAccess("XLMOD");
 
         List<CvParam> cvParams = searchModification.getCvParam();
         for (CvParam cvParam : cvParams) {
             String accession = cvParam.getAccession();
                 
             // check for XLinker ontology
-            if (accession.startsWith(this.STR_XL_ZERO)) {
+            if (accession.startsWith(this.STR_XLMOD_ZERO)) {
                 return new ArrayList<>();
             }
             
@@ -110,9 +110,9 @@ public class SearchModificationRule extends AObjectRule<uk.ac.ebi.jmzidml.model.
             if (term == null) {
                 // check in UNIMOD ontology
                 term = unimodOntology.getTermForAccession(cvParam.getAccession());
-                // check in xlmod ontology
+                // check in XLMOD ontology
                 if (term == null) {
-                    if (xlmodOntology != null) { // preliminary hack until xlmod.obo is correctly indexed by OBOFoundry and OLS
+                    if (xlmodOntology != null) { // preliminary hack until XLMOD.obo is correctly indexed by OBOFoundry and OLS
                         term = xlmodOntology.getTermForAccession(cvParam.getAccession());
                     }
                 }

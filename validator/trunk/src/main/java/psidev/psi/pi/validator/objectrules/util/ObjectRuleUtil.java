@@ -29,7 +29,7 @@ public class ObjectRuleUtil {
     /**
      * Checks, if the accession occurs in the list of cvParams.
      * 
-     * @param cvParams      list of CV params
+     * @param cvParams     list of CV params
      * @param accession    collection of accessions
      * @return The CvParam found or null if not found
      */

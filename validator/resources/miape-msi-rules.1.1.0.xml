@@ -200,7 +200,7 @@
 		</CvMappingRule>
 
         <CvMappingRule id="SearchDatabaseDatabaseName_may_rule" cvElementPath="/MzIdentML/DataCollection/Inputs/searchDatabase/databaseName/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/Inputs/searchDatabase/databaseName" cvTermsCombinationLogic="OR">
-            <CvTerm termAccession="MS:1001013" useTermName="false" useTerm="false" termName="database name" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001013" useTermName="false" useTerm="false" termName="database name" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
 
         <CvMappingRule id="SearchDatabase_may_rule" cvElementPath="/MzIdentML/DataCollection/Inputs/searchDatabase/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/Inputs/searchDatabase" cvTermsCombinationLogic="OR">

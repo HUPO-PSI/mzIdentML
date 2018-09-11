@@ -740,7 +740,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                     boolean remoteOntologies = jCheckBoxUseRemoteOntologies.isSelected();
                     if (remoteOntologies) {
                         isOntology = getOntologiesFileInputStream("ols.ontologies.file");
-                        LOGGER.debug("Remote ontology: " + isOntology);
+                        MzIdentMLValidatorGUI.LOGGER.debug("Remote ontology: " + isOntology);
                         if (isOntology != null) {
                             this.validator = new MzIdentMLValidator(isOntology, MzIdentMLValidatorGUI.this);
                             isOntology.close();
@@ -752,7 +752,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
 
                     if (!remoteOntologies) {
                         isOntology = getOntologiesFileInputStream("local.ontologies.file");
-                        LOGGER.debug("Local ontology: " + isOntology);
+                        MzIdentMLValidatorGUI.LOGGER.debug("Local ontology: " + isOntology);
                         if (isOntology != null) {
                             // QUICK AND DIRTY HACK
                             try {
@@ -764,7 +764,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                             isOntology.close();
                         }
                         else {
-                            LOGGER.error("No ontologies file for validation.");
+                            MzIdentMLValidatorGUI.LOGGER.error("No ontologies file for validation.");
                         }
                     }
                 }
@@ -796,7 +796,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
 
         // check if the file exists. If not, return the path
         if (!file.exists()) {
-            LOGGER.debug("ontologiesFile does not exist: " + ontologiesFile);
+            MzIdentMLValidatorGUI.LOGGER.debug("ontologiesFile does not exist: " + ontologiesFile);
             return this.cl.getResourceAsStream(ontologiesFile);
         }
 
@@ -816,7 +816,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
 
         // check if the file exists. If not, return the path
         if (!file.exists()) {
-            LOGGER.debug("ruleFilterFileName does not exist: " + ruleFilterFileName);
+            MzIdentMLValidatorGUI.LOGGER.debug("ruleFilterFileName does not exist: " + ruleFilterFileName);
             return this.cl.getResourceAsStream(ruleFilterFileName);
         }
 
@@ -837,7 +837,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
 
         // check if the file exists. If not, return the path
         if (!file.exists()) {
-            LOGGER.debug("ruleFilterFileName does not exist: " + ruleFilterFileName);
+            MzIdentMLValidatorGUI.LOGGER.debug("ruleFilterFileName does not exist: " + ruleFilterFileName);
             return this.cl.getResourceAsStream(ruleFilterFileName);
         }
 
@@ -885,16 +885,16 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         if (this.isVersion11(mzIdVersion)) {
             propertyName += "1.1.0";
             ruleFile = MzIdentMLValidatorGUI.getProperty(propertyName);
-            LOGGER.debug(".mzid version: 1.1.0");
+            MzIdentMLValidatorGUI.LOGGER.debug(".mzid version: 1.1.0");
         }
         else if (this.isVersion12(mzIdVersion)) {
             propertyName += "1.2.0";
             ruleFile = MzIdentMLValidatorGUI.getProperty(propertyName);
-            LOGGER.debug(".mzid version: 1.2.0");
+            MzIdentMLValidatorGUI.LOGGER.debug(".mzid version: 1.2.0");
         }
         else {
             // set default
-            LOGGER.error("Usupported .mzid version: " + mzIdVersion);
+            MzIdentMLValidatorGUI.LOGGER.error("Usupported .mzid version: " + mzIdVersion);
             switch (ruleKind) {
                 case STR_MAPPING:
                     ruleFile = "mzIdentML-mapping_1.2.0.xml";
@@ -903,7 +903,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                     ruleFile = "ObjectRules.1.2.0.xml";
                     break;
                 default:
-                    LOGGER.error("Unsupported ruleKind: " + ruleKind);
+                    MzIdentMLValidatorGUI.LOGGER.error("Unsupported ruleKind: " + ruleKind);
             }
         }
 
@@ -914,7 +914,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
         catch (IOException e) {
             File file = new File(MzIdentMLValidatorGUI.STR_RESOURCE_FOLDER + ruleFile);
             if (!file.exists()) {
-                LOGGER.debug(ruleKind + "RuleFile does not exist: " + ruleFile);
+                MzIdentMLValidatorGUI.LOGGER.debug(ruleKind + "RuleFile does not exist: " + ruleFile);
                 return this.cl.getResourceAsStream(ruleFile);
             }
             return new FileInputStream(file);
@@ -964,7 +964,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
 
         
         PropertyFile propFile = new PropertyFile();
-        LOGGER.debug("Resources: " + MzIdentMLValidatorGUI.STR_RESOURCE_FOLDER);
+        MzIdentMLValidatorGUI.LOGGER.debug("Resources: " + MzIdentMLValidatorGUI.STR_RESOURCE_FOLDER);
         Properties properties = propFile.loadProperties(MzIdentMLValidatorGUI.STR_RESOURCE_FOLDER + MzIdentMLValidatorGUI.STR_VALIDATION_PROPERTIES);
         
         
@@ -1630,7 +1630,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     public void setProgress(int value, String message) {
         if (value > this.jProgressBar.getMaximum()) {
             value = this.jProgressBar.getMaximum();
-            LOGGER.error("ProgressValue is too big: " + value);
+            MzIdentMLValidatorGUI.LOGGER.error("ProgressValue is too big: " + value);
         }
         this.jProgressBar.setValue(value);
         this.jProgressBar.setString(message);

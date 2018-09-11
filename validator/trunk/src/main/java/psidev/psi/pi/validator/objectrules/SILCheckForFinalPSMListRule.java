@@ -54,9 +54,11 @@ public class SILCheckForFinalPSMListRule extends AObjectRule<SpectrumIdentificat
         List<ValidatorMessage> messages = new ArrayList<>();
 
         for (CvParam cv: sil.getCvParam()) {
-            if (cv.getAccession().equals("MS:1002439")) { // final PSM list
-                SIRUniqueSpectrumIDSpectrumRefCombinationRule.bIsFinalPSMList = true;
-                return messages;
+            if (cv != null) {
+                if (cv.getAccession().equals("MS:1002439")) { // final PSM list
+                    SIRUniqueSpectrumIDSpectrumRefCombinationRule.bIsFinalPSMList = true;
+                    return messages;
+                }
             }
         }
         

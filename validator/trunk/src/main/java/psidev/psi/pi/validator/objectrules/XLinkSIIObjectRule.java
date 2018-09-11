@@ -35,7 +35,7 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
     /**
      * Members.
      */
-    private static HashMap<String, ArrayList<String>> XL_CVVALUE2SII_IDLISTMAP = null;
+    private static HashMap<String, ArrayList<String>> XL_CVVALUE2SII_IDLISTMAP = null;  // TODO: consider the charge here
 
     /**
      * Constructor.
@@ -83,25 +83,27 @@ public class XLinkSIIObjectRule extends AObjectRule<SpectrumIdentificationResult
             ValidatorMessage valMsg;
             for (SpectrumIdentificationItem sii: sir.getSpectrumIdentificationItem()) {
                 for (CvParam cv: sii.getCvParam()) {
-                    switch (cv.getAccession()) {
-                        case "MS:1002511":  // cross-link spectrum identification item
-                            String cvValue = cv.getValue();
+                    if (cv != null) {
+                        switch (cv.getAccession()) {
+                            case "MS:1002511":  // cross-link spectrum identification item
+                                String cvValue = cv.getValue();
 
-                            if (cvValue.isEmpty()) {
-                                valMsg = new ValidatorMessage("The '" + cv.getName()
-                                    + "' cvParam in the SpectrumIdentificationItem (id='" + sii.getId() + "') element at "
-                                    + XLinkSIIObjectRule.SIR_CONTEXT.getContext() + " has an empty value.",
-                                    MessageLevel.WARN, XLinkSIIObjectRule.SIR_CONTEXT, this);
-                                messages.add(valMsg);
-                            }
+                                if (cvValue.isEmpty()) {
+                                    valMsg = new ValidatorMessage("The '" + cv.getName()
+                                        + "' cvParam in the SpectrumIdentificationItem (id='" + sii.getId() + "') element at "
+                                        + XLinkSIIObjectRule.SIR_CONTEXT.getContext() + " has an empty value.",
+                                        MessageLevel.WARN, XLinkSIIObjectRule.SIR_CONTEXT, this);
+                                    messages.add(valMsg);
+                                }
 
-                            // fill data to map
-                            if (!XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.containsKey(cvValue)) {
-                                XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.put(cvValue, new ArrayList<>());
-                            }
-                            XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.get(cvValue).add(sii.getId());
+                                // fill data to map
+                                if (!XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.containsKey(cvValue)) {
+                                    XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.put(cvValue, new ArrayList<>());
+                                }
+                                XLinkSIIObjectRule.XL_CVVALUE2SII_IDLISTMAP.get(cvValue).add(sii.getId());
 
-                            break;
+                                break;
+                        }
                     }
                 }
             }

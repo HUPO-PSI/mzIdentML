@@ -3,7 +3,7 @@
 	<groupId>psidev.psi.pi</groupId>
 	<artifactId>mzIdentMLValidator</artifactId>
 	<packaging>jar</packaging>
-	<version>1.4.30-SNAPSHOT</version>
+	<version>1.4.31-SNAPSHOT</version>
 	<name>HUPO-PSI mzIdentML semantic and MIAPE validator</name>
 	<description>A semantic and MIAPE validator for HUPO-PSI mzIdentML XML files.</description>
 	<properties>
@@ -12,7 +12,7 @@
 	    <assembly.output.folder>validator</assembly.output.folder>
 	    <assembly.dir>mzIdentMLValidator_GUI_v${project.version}</assembly.dir>
 		<junit.platform.version>1.0.0</junit.platform.version>
-		<junit.jupiter.version>5.0.0</junit.jupiter.version>
+		<junit.jupiter.version>5.3.0</junit.jupiter.version>
 	</properties>
 	<build>
 		<resources>
@@ -29,7 +29,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.7.0</version>
+				<version>3.8.0</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
@@ -89,9 +89,9 @@
 		</pluginManagement>
 	</build>
 	<profiles>
+		<!-- To run this profile, you will have to use Maven command line -->
+		<!-- mvn -P mzid-validator-webstart-build,webstart clean package -->
 		<profile>
-			<!-- To run this profile, you will have to use Maven command line -->
-			<!-- mvn -P mzid-validator-webstart-build,webstart clean package -->
 			<id>mzid-validator-webstart-build</id>
 			<build>
 				<plugins>
@@ -110,9 +110,7 @@
 						</executions>
 						<configuration>
 							<workDirectory>${project.basedir}/jnlp</workDirectory>
-							<!-- Include all the dependencies -->
 							<excludeTransitive>false</excludeTransitive>
-							<!-- The path where the libraries are stored -->
 							<libPath>lib</libPath>
 							<jnlp>
 								<inputTemplate>jnlp/jnlp-template.vm</inputTemplate>
@@ -129,10 +127,14 @@
 									<gen>false</gen>
 								</keystoreConfig>
 							</sign>
-							<!-- building process -->
 							<pack200>false</pack200>
 							<verbose>true</verbose>
 						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.2.1</version>
 					</plugin>
 				</plugins>
 			</build>
@@ -183,7 +185,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>2.21.0</version>
+                        <version>2.22.0</version>
 						<configuration>
 							<argLine>-Dfile.encoding=${project.build.sourceEncoding}</argLine>
 						</configuration>
@@ -273,7 +275,7 @@
 		<repository>
 			<id>ebi-repo</id>
 			<name>The EBI internal repository</name>
-			<url>http://www.ebi.ac.uk/Tools/maven/repos</url>
+			<url>https://www.ebi.ac.uk/Tools/maven/repos/content/groups/ebi-repo</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -284,7 +286,7 @@
 		<repository>
 			<id>ebi-snapshots</id>
 			<name>The EBI internal repository.SNAPSHOTS</name>
-			<url>http://www.ebi.ac.uk/Tools/maven/repos</url>
+			<url>https://www.ebi.ac.uk/Tools/maven/repos/content/groups/ebi-snapshots</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
@@ -297,7 +299,7 @@
 		<dependency>
 			<groupId>psidev.psi.tools</groupId>
 			<artifactId>validator</artifactId>
-			<version>2.0.7</version>
+			<version>2.0.9</version>
 			<exclusions>
 				<exclusion>
 					<groupId>xerces</groupId>
@@ -315,7 +317,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.6</version>
+            <version>3.8</version>
             <type>jar</type>
         </dependency>
         <dependency>
@@ -336,17 +338,17 @@
 		<dependency>
 			<groupId>psidev.psi.tools</groupId>
 			<artifactId>xxindex</artifactId>
-			<version>0.14</version>
+			<version>0.22</version>
 		</dependency>
 		<dependency>
 			<groupId>xerces</groupId>
 			<artifactId>xercesImpl</artifactId>
-			<version>2.11.0</version>
+			<version>2.12.0</version>
 		</dependency>
 		<dependency>
 		  <groupId>org.junit.jupiter</groupId>
 		  <artifactId>junit-jupiter-api</artifactId>
-		  <version>5.2.0</version>
+		  <version>5.3.0</version>
 		  <scope>test</scope>
 		</dependency>
 	</dependencies>

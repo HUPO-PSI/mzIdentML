@@ -1,14 +1,24 @@
 package psidev.psi.pi.validator;
 
+//import java.util.List;
 import org.apache.log4j.Logger;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
-import org.junit.runner.JUnitCore;
-import org.junit.runner.Result;
+/*
+import org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder;
+import org.junit.platform.launcher.Launcher;
+import org.junit.platform.launcher.LauncherDiscoveryRequest;
+import org.junit.platform.launcher.core.LauncherFactory;
+import static org.junit.platform.engine.discovery.DiscoverySelectors.selectClass;
+import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
+import org.junit.platform.launcher.listeners.TestExecutionSummary;
+import org.junit.platform.launcher.listeners.TestExecutionSummary.Failure;
+*/
+
 import psidev.psi.pi.validator.objectrules.AObjectRule;
 
 /**
@@ -37,7 +47,7 @@ public class URLEncodingTest {
     /**
      * Time-intensive initializations executed ONCE before the start of all tests.
      */
-    @BeforeClass
+    @BeforeAll
     public static void setUpClass() {
         restClient = new RESTClient();
     }
@@ -45,7 +55,7 @@ public class URLEncodingTest {
     /**
      * Clean-up executed ONCE after all tests have finished.
      */
-    @AfterClass
+    @AfterAll
     public static void tearDownClass() {
         restClient = null;
     }
@@ -53,14 +63,14 @@ public class URLEncodingTest {
     /**
      * Prepare test environment before each test.
      */
-    @Before
+    @BeforeEach
     public void setUp() {
     }
     
     /**
      * Cleanup test environment after each test.
      */
-    @After
+    @AfterEach
     public void tearDown() {
     }
 
@@ -70,11 +80,11 @@ public class URLEncodingTest {
     @Test
     public void testURLEncoding() {
         String olsAPIStr = AObjectRule.urlEncode("1001143");
-        LOGGER.debug("olsAPIStr: " + olsAPIStr);
+        URLEncodingTest.LOGGER.debug("olsAPIStr: " + olsAPIStr);
 
         /*
         String response = restClient.callGET(olsAPIStr);
-        LOGGER.debug(response);
+        this.LOGGER.debug(response);
         */
     }
 
@@ -83,10 +93,19 @@ public class URLEncodingTest {
      * @param args 
      */
     public static void main(String[] args) {
-        Result res = JUnitCore.runClasses(psidev.psi.pi.validator.URLEncodingTest.class);
+        /*
+        final LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder.request().selectors(selectClass(URLEncodingTest.class)).build();
+        final Launcher launcher = LauncherFactory.create();
+        final SummaryGeneratingListener listener = new SummaryGeneratingListener();
+
+        launcher.registerTestExecutionListeners(listener);
+        launcher.execute(request);
         
-        res.getFailures().forEach((fail) -> {
-            LOGGER.error(fail.toString());
-        });
+        TestExecutionSummary summary = listener.getSummary();
+        URLEncodingTest.LOGGER.info(summary.getTestsFoundCount() + " Unit tests executed, " + summary.getTestsSucceededCount() + " of them were successful.");
+        
+        List<Failure> failures = summary.getFailures();
+        failures.forEach(failure -> URLEncodingTest.LOGGER.error("failure - " + failure.getException()));
+        */
     }
 }

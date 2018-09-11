@@ -3,6 +3,7 @@ package psidev.psi.pi.validator.objectrules;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import psidev.psi.pi.validator.objectrules.util.URIValidator;
 import psidev.psi.tools.ontology_manager.OntologyManager;
 import psidev.psi.tools.validator.Context;
 import psidev.psi.tools.validator.MessageLevel;
@@ -23,7 +24,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
     /**
      * Constants.
      */
-    private static final Context CV_CONTEXT = new Context(MzIdentMLElement.CvList.getXpath());
+    private static final Context CVLIST_CONTEXT = new Context(MzIdentMLElement.CvList.getXpath());
 
     /**
      * Constructor.
@@ -89,25 +90,25 @@ public class CvListObjectRule extends AObjectRule<CvList> {
                         break;
                     case "MS":
                     case "PSI-MS":
-                        if (version.compareTo("4.1.9") < 0) {
+                        if (version.compareTo("4.1.13") < 0) {
                             messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
                     case "PATO":
-                        if (version.compareTo("releases/2018-03-28") < 0) {
+                        if (version.compareTo("releases/2018-08-14") < 0) {
                             messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
                     case "UNIMOD":
-                        if (version.compareTo("2018:04:17 09:27") < 0) {
+                        if (version.compareTo("2018:08:13 13:42") < 0) {
                             messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
                     case "UO":
                     case "UNIT":
                         break;
-                    case "xlmod":
-                        if (version.compareTo("releases/2018-06-15") < 0) {
+                    case "XLMOD":
+                        if (version.compareTo("release/2018-09-11") < 0) {
                             messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
@@ -130,27 +131,35 @@ public class CvListObjectRule extends AObjectRule<CvList> {
             
             if (uri != null) {
                 id = cv.getId();
-                switch (id) {
-                    case "MOD":
-                    case "PSI-MOD":
-                    case "MS":
-                    case "PSI-MS":
-                    case "xlmod":
-                    case "PATO":
-                    case "UO":
-                    case "UNIT":
-                        if (!uri.startsWith("https://raw.githubusercontent.com")) {
-                            messages.add(this.getValidatorURIMsg(id));
-                        }
-                        break;
-                    case "UNIMOD":
-                        if (!uri.equals("http://www.unimod.org/obo/unimod.obo")) {
-                            messages.add(this.getValidatorURIMsg(id));
-                        }
-                        break;
-                    // TODO: add other possible ontologies here / update when new schemas are out
+                if (!URIValidator.isURI(uri)) {
+                    messages.add(this.getValidatorInvalidURIMsg(id));
                 }
-            }
+                else {
+                    switch (id) {
+                        case "MOD":
+                        case "PSI-MOD":
+                        case "MS":
+                        case "PSI-MS":
+                        case "XLMOD":
+                        case "PATO":
+                        case "UO":
+                        case "UNIT":
+                            if (!uri.startsWith("https://raw.githubusercontent.com")) {
+                                messages.add(this.getValidatorOldURIMsg(id));
+                            }
+                            break;
+                        case "UNIMOD":
+                            if (!uri.equals("http://www.unimod.org/obo/unimod.obo")) {
+                                messages.add(this.getValidatorOldURIMsg(id));
+                            }
+                            break;
+                        // TODO: add other possible ontologies here / update when new schemas are out
+                    }
+                }
+                if (!URIValidator.isURI(uri)) {
+                    messages.add(this.getValidatorWrongURIMsg(id));
+                }
+            }            
         }
     }
     
@@ -162,18 +171,40 @@ public class CvListObjectRule extends AObjectRule<CvList> {
     private ValidatorMessage getValidatorVersionMsg(String cvID) {
         String strB = "The cv element for " + cvID + " uses an old version.";
         
-        return new ValidatorMessage(strB, MessageLevel.INFO, CvListObjectRule.CV_CONTEXT, this);        
+        return new ValidatorMessage(strB, MessageLevel.INFO, CvListObjectRule.CVLIST_CONTEXT, this);        
     }
     
    /**
-     * Gets the validator message for the CV URI.
+     * Gets the validator message for an old CV URI.
      * @param cvID
      * @return the ValidatorMessage
      */
-    private ValidatorMessage getValidatorURIMsg(String cvID) {
-        String strB = "The cv element for " + cvID + " uses an old or wrong URI.";
+    private ValidatorMessage getValidatorOldURIMsg(String cvID) {
+        String strB = "The cv element for " + cvID + " uses an old URI.";
         
-        return new ValidatorMessage(strB, MessageLevel.INFO, CvListObjectRule.CV_CONTEXT, this);        
+        return new ValidatorMessage(strB, MessageLevel.INFO, CvListObjectRule.CVLIST_CONTEXT, this);        
+    }
+    
+   /**
+     * Gets the validator message for an wrong CV URI.
+     * @param cvID
+     * @return the ValidatorMessage
+     */
+    private ValidatorMessage getValidatorWrongURIMsg(String cvID) {
+        String strB = "The cv element for " + cvID + " uses a wrong URI.";
+        
+        return new ValidatorMessage(strB, MessageLevel.INFO, CvListObjectRule.CVLIST_CONTEXT, this);        
+    }
+    
+   /**
+     * Gets the validator message for an invalid CV URI.
+     * @param cvID
+     * @return the ValidatorMessage
+     */
+    private ValidatorMessage getValidatorInvalidURIMsg(String cvID) {
+        String strB = "The cv element for " + cvID + " has an invalid URI.";
+        
+        return new ValidatorMessage(strB, MessageLevel.WARN, CvListObjectRule.CVLIST_CONTEXT, this);        
     }
     
     /**
@@ -185,7 +216,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Provide the newest version for all cv element under the CvList element." + CvListObjectRule.CV_CONTEXT.getContext());
+        ret.add("Provide the newest version for all cv element under the CvList element." + CvListObjectRule.CVLIST_CONTEXT.getContext());
 
         return ret;
     }

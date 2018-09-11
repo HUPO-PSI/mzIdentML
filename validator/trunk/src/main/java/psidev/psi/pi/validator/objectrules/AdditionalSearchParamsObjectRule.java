@@ -80,69 +80,73 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
         int cnt = 0;
         if (sip.getAdditionalSearchParams()!=null) {
             for (CvParam cvp: sip.getAdditionalSearchParams().getCvParam()) {
-                switch (cvp.getAccession()) {
-                    case "MS:1002490":  // peptide-level scoring
-                        cnt++;
-                        bIsPeptideLevelScoring = true;
-                        break;
-                    case "MS:1002491":  // modification localization scoring
-                        cnt++;
-                        bIsModificationLocalizationScoring = true;
-                        break;
-                    case "MS:1002492":  // consensus scoring
-                        cnt++;
-                        bIsConsensusScoring = true;
-                        break;
-                    case "MS:1002493":  // sample pre-fractionation
-                        cnt++;
-                        bIsSamplePreFractionation = true;
-                        break;
-                    case "MS:1002494":  // cross-linking search
-                        cnt++;
-                        bIsCrossLinkingSearch = true;
-                        break;
-                    case "MS:1002635":  // proteogenomics search
-                        cnt++;
-                        bIsProteoGenomicsSearch = true;
-                        break;
-                    case "MS:1002495":  // no special processing
-                        cnt++;
-                        bIsNoSpecialProcessing = true;
-                        break;
+                if (cvp != null) {
+                    switch (cvp.getAccession()) {
+                        case "MS:1002490":  // peptide-level scoring
+                            cnt++;
+                            bIsPeptideLevelScoring = true;
+                            break;
+                        case "MS:1002491":  // modification localization scoring
+                            cnt++;
+                            bIsModificationLocalizationScoring = true;
+                            break;
+                        case "MS:1002492":  // consensus scoring
+                            cnt++;
+                            bIsConsensusScoring = true;
+                            break;
+                        case "MS:1002493":  // sample pre-fractionation
+                            cnt++;
+                            bIsSamplePreFractionation = true;
+                            break;
+                        case "MS:1002494":  // cross-linking search
+                            cnt++;
+                            bIsCrossLinkingSearch = true;
+                            break;
+                        case "MS:1002635":  // proteogenomics search
+                            cnt++;
+                            bIsProteoGenomicsSearch = true;
+                            break;
+                        case "MS:1002495":  // no special processing
+                            cnt++;
+                            bIsNoSpecialProcessing = true;
+                            break;
+                    }
                 }
-            }
+            } // rof
         
-        	if (cnt == 0) {
-            	messages.add(new ValidatorMessage("At least one child term of 'special processing' must occur in the AdditionalSearchParams of the SpectrumIdentificationProtocol (id='"
-            	+ sip.getId() + "') element at " + AdditionalSearchParamsObjectRule.SIP_CONTEXT.getContext(),
-           		MessageLevel.ERROR, AdditionalSearchParamsObjectRule.SIP_CONTEXT, this));
-        	}
-        	else if (cnt > this.CNT_MAX) {
-            	messages.add(new ValidatorMessage("Found more than " + this.CNT_MAX + " childs term of 'special processing' in the AdditionalSearchParams of the SpectrumIdentificationProtocol (id='"
-            	+ sip.getId() + "') element at " + AdditionalSearchParamsObjectRule.SIP_CONTEXT.getContext(),
-            	MessageLevel.INFO, AdditionalSearchParamsObjectRule.SIP_CONTEXT, this));
-        	}
-		}
+            if (cnt == 0) {
+            messages.add(new ValidatorMessage("At least one child term of 'special processing' must occur in the AdditionalSearchParams of the SpectrumIdentificationProtocol (id='"
+            + sip.getId() + "') element at " + AdditionalSearchParamsObjectRule.SIP_CONTEXT.getContext(),
+                    MessageLevel.ERROR, AdditionalSearchParamsObjectRule.SIP_CONTEXT, this));
+            }
+            else if (cnt > this.CNT_MAX) {
+            messages.add(new ValidatorMessage("Found more than " + this.CNT_MAX + " childs term of 'special processing' in the AdditionalSearchParams of the SpectrumIdentificationProtocol (id='"
+            + sip.getId() + "') element at " + AdditionalSearchParamsObjectRule.SIP_CONTEXT.getContext(),
+            MessageLevel.INFO, AdditionalSearchParamsObjectRule.SIP_CONTEXT, this));
+            }
+        }
         // check for threshold element in case of modification position scoring
         if (bIsModificationLocalizationScoring) {
             for (CvParam cvp: sip.getThreshold().getCvParam()) {
-                switch (cvp.getAccession()) {
-                    case "MS:1002556":  // Ascore threshold
-                    case "MS:1002557":  // D-Score threshold
-                    case "MS:1002558":  // MD-Score threshold
-                    case "MS:1002559":  // H-Score threshold
-                    case "MS:1002560":  // DeBunker:score threshold
-                    case "MS:1002561":  // Mascot:PTM site assignment confidence threshold
-                    case "MS:1002562":  // MSQuant:PTM-score threshold
-                    case "MS:1002563":  // MaxQuant:PTM Score threshold
-                    case "MS:1002564":  // MaxQuant:P-site localization probability threshold
-                    case "MS:1002565":  // MaxQuant:PTM Delta Score threshold
-                    case "MS:1002566":  // MaxQuant:Phospho (STY) Probabilities threshold
-                    case "MS:1002567":  // phosphoRS score threshold
-                    case "MS:1002668":  // phosphoRS site probability threshold
-                    case "MS:1002672":  // no modification threshold
-                        this.bThresholdFoundForModPositionScoring = true;
-                        break;
+                if (cvp != null) {
+                    switch (cvp.getAccession()) {
+                        case "MS:1002556":  // Ascore threshold
+                        case "MS:1002557":  // D-Score threshold
+                        case "MS:1002558":  // MD-Score threshold
+                        case "MS:1002559":  // H-Score threshold
+                        case "MS:1002560":  // DeBunker:score threshold
+                        case "MS:1002561":  // Mascot:PTM site assignment confidence threshold
+                        case "MS:1002562":  // MSQuant:PTM-score threshold
+                        case "MS:1002563":  // MaxQuant:PTM Score threshold
+                        case "MS:1002564":  // MaxQuant:P-site localization probability threshold
+                        case "MS:1002565":  // MaxQuant:PTM Delta Score threshold
+                        case "MS:1002566":  // MaxQuant:Phospho (STY) Probabilities threshold
+                        case "MS:1002567":  // phosphoRS score threshold
+                        case "MS:1002668":  // phosphoRS site probability threshold
+                        case "MS:1002672":  // no modification threshold
+                            this.bThresholdFoundForModPositionScoring = true;
+                            break;
+                    }
                 }
             }
                 

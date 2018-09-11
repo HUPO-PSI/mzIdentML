@@ -1,12 +1,13 @@
 format-version: 1.2
-date: 14:05:2017 20:29
+date: 13:11:2017 13:58
 saved-by: Marion, contact@brenda-enzymes.org
 auto-generated-by: OBO-Edit 2.3.1
 synonymtypedef: FR "LANGUAGE FRENCH"
 synonymtypedef: GE "LANGUAGE GERMAN"
+synonymtypedef: MS "MISSPELLING"
 synonymtypedef: SCI "SCIENTIFIC NAME"
 default-namespace: BrendaTissueOBO
-remark: www.brenda-enzymes.org
+remark: www.brenda-enzymes.org, redistribution allowed according to the CC-BY
 
 [Term]
 id: BTO:0000000
@@ -212,6 +213,7 @@ relationship: part_of BTO:0001376 ! thigh
 [Term]
 id: BTO:0000031
 name: fruit peduncle
+def: "A short stalk at the base of a fruit." [curators:mgr]
 relationship: part_of BTO:0000486 ! fruit
 
 [Term]
@@ -960,6 +962,7 @@ id: BTO:0000130
 name: neutrophil
 def: "A granulocyte that is the chief phagocytic white blood cell of the blood." [From_Merriam-Webster's_Online_Dictionary_at_www.Merriam-Webster.com:http\://www.m-w.com/cgi-bin/dictionary?book=Dictionary&va=neutrophil]
 synonym: "neutrophil granulocyte" RELATED []
+synonym: "neutrophilic granulocyte" RELATED []
 synonym: "neutrophilic leucocyte" RELATED []
 synonym: "neutrophilic leukocyte" RELATED []
 is_a: BTO:0000539 ! granulocyte
@@ -1116,6 +1119,7 @@ synonym: "breast tumor cell" RELATED []
 synonym: "mammary adenocarcinoma cell" RELATED []
 synonym: "mammary cancer cell" RELATED []
 synonym: "mammary carcinoma cell" RELATED []
+synonym: "mammary gland carcinoma cell" RELATED []
 synonym: "mammary tumor cell" RELATED []
 is_a: BTO:0000604 ! adenocarcinoma cell
 relationship: develops_from BTO:0000149 ! breast
@@ -2087,7 +2091,7 @@ id: BTO:0000285
 name: corm
 def: "A rounded thick modified underground stem base bearing membranous or scaly leaves and buds and acting as a vegetative reproductive structure." [From_Merriam-Webster's_Online_Dictionary_at_www.Merriam-Webster.com:http\://www.m-w.com/cgi-bin/dictionary?book=Dictionary&va=corm]
 is_a: BTO:0000720 ! plant form
-is_a: BTO:0001300 ! stem
+relationship: part_of BTO:0001300 ! stem
 
 [Term]
 id: BTO:0000286
@@ -2232,6 +2236,7 @@ is_a: BTO:0000677 ! plant tumor tissue
 id: BTO:0000304
 name: PANC-1 cell
 def: "Human, Caucasian, pancreas, carcinoma cell line. Established from a pancreatic carcinoma of ductal origin from a 56-year-old Caucasian male. Cells possess the type B phenotype for G6PD." [HyperCLDB:http\://www.biotech.ist.unige.it/]
+synonym: "PANC1 cell" RELATED []
 is_a: BTO:0000794 ! pancreatic cancer cell line
 
 [Term]
@@ -2352,6 +2357,7 @@ id: BTO:0000322
 name: cytotrophoblast
 def: "The cellular (inner) layer of the trophoblast." [Dorlands_Medical_Dictionary:MerckSource]
 synonym: "Langhans' layer" RELATED []
+synonym: "Layer of Langhans" RELATED []
 relationship: part_of BTO:0001079 ! trophoblast
 
 [Term]
@@ -2413,7 +2419,7 @@ is_a: BTO:0001479 ! culture condition:-grown cell
 id: BTO:0000333
 name: renal corpuscle
 def: "A mass of arterial capillaries enveloped in a capsule and attached to a tubule in the kidney." [The_American_Heritage_Dictionary_of_the_English_Language:Fourth_Edition._2000.]
-synonym: "Malphigian corpuscle" RELATED []
+synonym: "Malpighian corpuscle" RELATED []
 relationship: part_of BTO:0000924 ! nephron
 
 [Term]
@@ -2940,7 +2946,7 @@ name: epididymis
 def: "A system of ductules emerging posteriorly from the testis that holds sperm during maturation and that forms a tangled mass before uniting into a single coiled duct which is continuous with the vas deferens." [From_Merriam-Webster's_Online_Dictionary_at_www.Merriam-Webster.com:http\://www.m-w.com/cgi-bin/dictionary?book=Dictionary&va=epididymis]
 synonym: "Epididymus" RELATED GE []
 synonym: "Nebenhoden" RELATED GE []
-synonym: "Ã©pididyme" RELATED FR []
+synonym: "épididyme" RELATED FR []
 is_a: BTO:0003096 ! internal male genital organ
 
 [Term]
@@ -3072,6 +3078,7 @@ is_a: BTO:0000284 ! organism form
 id: BTO:0000426
 name: erythroleukemia cell
 def: "Cancer cell of the blood-forming tissues in which large numbers of immature, abnormal red blood cells are found in the blood and bone marrow." [Cancer.gov_Dictionary:http\://www.nci.nih.gov/dictionary]
+synonym: "erythroleukemic cell" RELATED []
 is_a: BTO:0000583 ! bone marrow cancer cell
 is_a: BTO:0001271 ! leukemia cell
 
@@ -3312,6 +3319,7 @@ is_a: BTO:0000713 ! leaf
 id: BTO:0000463
 name: filament
 def: "Part of the stamen in a flower that supports the anther. A chainlike series of cells, as in many algae." [PAE_Virtual_Glossary:Plants\,_Animals_and_the_Environment_Glossary_derived_from_leading_WCB/McGraw-Hill_textbooks, The_American_Heritage_Dictionary_of_the_English_Language:Fourth_Edition_copyright_2000]
+synonym: "stamen filament" RELATED []
 relationship: part_of BTO:0001064 ! phycobiont
 relationship: part_of BTO:0001461 ! whole plant
 relationship: part_of BTO:0001559 ! stamen
@@ -3774,7 +3782,7 @@ name: renal glomerulus
 def: "Globular tufts of capillaries, one projecting into the expanded end or capsule of each of the uriniferous tubules, which together with its surrounding capsule (glomerular capsule) constitute the renal corpuscle." [Dorlands_Medical_Dictionary:MerckSource]
 synonym: "glomerular tuft" RELATED []
 synonym: "glomerulus" RELATED []
-synonym: "malphigian glomerulus" RELATED []
+synonym: "malpighian glomerulus" RELATED []
 relationship: part_of BTO:0000333 ! renal corpuscle
 
 [Term]
@@ -5762,7 +5770,7 @@ relationship: develops_from BTO:0000535 ! germ cell
 id: BTO:0000810
 name: malpighian tubule
 def: "Any of a group of long blind vessels opening into the posterior part of the alimentary canal in most insects and some other arthropods and functioning primarily as excretory organs." [From_Merriam-Webster's_Online_Dictionary_at_www.Merriam-Webster.com:http\://www.m-w.com/cgi-bin/dictionary?book=Dictionary&va=malphigian+tubule]
-synonym: "malphigian tube" RELATED []
+synonym: "malpighian tube" RELATED []
 synonym: "tuba Malpighii" RELATED []
 is_a: BTO:0000431 ! excretory gland
 is_a: BTO:0001491 ! viscus
@@ -6017,6 +6025,7 @@ is_a: BTO:0001434 ! vegetative cell
 [Term]
 id: BTO:0000846
 name: erythroleukemia cell line
+synonym: "erythroleukemic cell line" RELATED []
 is_a: BTO:0000737 ! leukemia cell line
 relationship: develops_from BTO:0000426 ! erythroleukemia cell
 
@@ -7883,10 +7892,11 @@ id: BTO:0001109
 name: HCT-116 cell
 def: "Human colon colorectal carcinoma cell line from a male organism. Human colon carcinoma cell line; established from the primary colon carcinoma of an adult man." [ATCC_American_Cell_Type_Culture_Collection:http\://www.lgcstandards-atcc.org/, Deutsche_Sammlung_von_Mikroorganismen_und_Zellkulturen_GmbH:DSMZ]
 synonym: "HCT 116 cell" RELATED []
+synonym: "HCT-166 cell" RELATED MS []
 synonym: "HCT116 cell" RELATED []
-synonym: "HTC 116 cell" RELATED []
-synonym: "HTC-116 cell" RELATED []
-synonym: "HTC116 cell" RELATED []
+synonym: "HTC 116 cell" RELATED MS []
+synonym: "HTC-116 cell" RELATED MS []
+synonym: "HTC116 cell" RELATED MS []
 is_a: BTO:0001616 ! colorectal cancer cell line
 
 [Term]
@@ -8089,6 +8099,7 @@ relationship: part_of BTO:0001494 ! fungus
 id: BTO:0001140
 name: psoas
 def: "Either of two muscles of the loin that rotate the hip joint and flex the spine." [The_American_Heritage_Dictionary_of_the_English_Language:Fourth_Edition._2000.]
+synonym: "psoas muscle" RELATED []
 is_a: BTO:0001261 ! abdominal muscle
 relationship: part_of BTO:0001505 ! loin
 
@@ -8944,7 +8955,6 @@ name: Friend erythroleukemia cell line
 def: "In 1957 Charlotte Friend described a novel retroviral disease in mice characterized by splenic enlargement, erythroleukemia, and death." [PMID:11090047]
 synonym: "F-MEL cell" RELATED []
 is_a: BTO:0000846 ! erythroleukemia cell line
-relationship: develops_from BTO:0000426 ! erythroleukemia cell
 
 [Term]
 id: BTO:0001264
@@ -10577,6 +10587,7 @@ is_a: BTO:0001537 ! small intestine cell line
 id: BTO:0001498
 name: renal proximal tubule
 def: "The convoluted portion of the vertebrate nephron that lies between Bowman's capsule and the loop of Henle and functions especially in the resorption of sugar, sodium and chloride ions, and water from the glomerular filtrate." [From_Merriam-Webster's_Online_Dictionary_at_www.Merriam-Webster.com:http\://www.m-w.com/cgi-bin/dictionary?book=Dictionary&va=proximal+tubule]
+synonym: "kidney proximal tubule" RELATED []
 synonym: "proximal convoluted tubule" RELATED []
 synonym: "proximal tubule" RELATED []
 relationship: part_of BTO:0000343 ! renal tubule
@@ -11162,10 +11173,11 @@ is_a: BTO:0001581 ! embryonic stem cell line
 id: BTO:0001583
 name: T-98G cell
 def: "Human brain glioblastoma multiforme cell line, established from a 61 years old caucasian male." [ATCC_American_Cell_Type_Culture_Collection:http\://www.lgcstandards-atcc.org/]
-synonym: "T-98 cell" RELATED []
-synonym: "T98 cell" RELATED []
+synonym: "T 98 G cell" RELATED []
+synonym: "T98 G cell" RELATED []
+synonym: "T98-G cell" RELATED []
 synonym: "T98G cell" RELATED []
-is_a: BTO:0001530 ! glioblastoma cell line
+is_a: BTO:0005949 ! glioblastoma multiforme cell line
 
 [Term]
 id: BTO:0001584
@@ -12217,6 +12229,9 @@ relationship: part_of BTO:0001307 ! stomach
 id: BTO:0001733
 name: gynoecium
 def: "The female reproductive organs of a flower; the pistil or pistils considered as a group." [The_American_Heritage_Dictionary_of_the_English_Language:Fourth_Edition._2000.]
+synonym: "gynaeceum" RELATED []
+synonym: "gynaecium" RELATED []
+synonym: "gynecium" RELATED []
 relationship: part_of BTO:0000469 ! flower
 
 [Term]
@@ -13239,12 +13254,16 @@ relationship: develops_from BTO:0001379 ! thyroid gland
 id: BTO:0001877
 name: psoas major
 def: "A powerful flexor of the thigh at the hip joint. Psoas is derived from the Greek psoa, the plural meaning muscles of the loin." [Medical_Terminology_Dictionary:http\://medical.webends.com/]
+synonym: "musculus psoas major" RELATED []
+synonym: "psoas major muscle" RELATED []
 is_a: BTO:0001140 ! psoas
 
 [Term]
 id: BTO:0001878
 name: psoas minor
 def: "A weak flexor of the trunk and lumbar spinal column. Psoas is derived from the Greek psoa, the plural meaning muscles of the loin." [Medical_Terminology_Dictionary:http\://medical.webends.com/]
+synonym: "musculus psoas minor" RELATED []
+synonym: "psoas minor muscle" RELATED []
 is_a: BTO:0001140 ! psoas
 
 [Term]
@@ -13833,6 +13852,7 @@ id: BTO:0001967
 name: cervical cancer cell line
 synonym: "cervical carcinoma cell line" RELATED []
 synonym: "cervix cancer cell" RELATED []
+synonym: "uterine cervix cancer cell" RELATED []
 is_a: BTO:0001966 ! cervical cell line
 relationship: develops_from BTO:0000180 ! cervical carcinoma cell
 
@@ -13904,6 +13924,7 @@ synonym: "NB2a cell" RELATED []
 synonym: "Neuro 2A cell" RELATED []
 synonym: "NEURO-2A cell" RELATED []
 synonym: "Neuro2A cell" RELATED []
+synonym: "Neuro2a cell" RELATED []
 is_a: BTO:0000932 ! neuroblastoma cell line
 
 [Term]
@@ -15755,6 +15776,8 @@ relationship: part_of BTO:0000469 ! flower
 [Term]
 id: BTO:0002244
 name: flower stalk
+def: "A slender stalk supporting or connecting another plant part, such as a leaf or flower." [Dictionary:http\://www.thefreedictionary.com/]
+synonym: "floral stalk" RELATED []
 synonym: "flower axis" RELATED []
 synonym: "flower stem" RELATED []
 relationship: part_of BTO:0000469 ! flower
@@ -15898,6 +15921,7 @@ id: BTO:0002262
 name: plant pedicel
 def: "1. A small stalk or stalklike part bearing a single flower in an inflorescence. 2. A support for a fern sporangium or moss capsule." [The_American_Heritage_Dictionary_of_the_English_Language:Fourth_Edition._2000.]
 synonym: "plant pedicle" RELATED []
+synonym: "plant peduncle" RELATED []
 is_a: BTO:0001300 ! stem
 
 [Term]
@@ -16137,7 +16161,7 @@ def: "The double-walled globular dilatation that forms the beginning of a urinif
 synonym: "Bowman's capsule" RELATED []
 synonym: "capsula glomeruli" RELATED []
 synonym: "glomerular capsule" RELATED []
-synonym: "malphigian capsule" RELATED []
+synonym: "malpighian capsule" RELATED []
 synonym: "Mueller capsule" RELATED []
 synonym: "muellerian capsule" RELATED []
 relationship: part_of BTO:0000333 ! renal corpuscle
@@ -16632,6 +16656,7 @@ synonym: "ductal carcinoma of the pancreas" RELATED []
 synonym: "pancreas duct-cell carcinoma cell" RELATED []
 synonym: "pancreatic duct cell carcinoma cell" RELATED []
 synonym: "PDC cell" RELATED []
+is_a: BTO:0000794 ! pancreatic cancer cell line
 relationship: develops_from BTO:0002362 ! pancreatic duct
 
 [Term]
@@ -18611,6 +18636,7 @@ is_a: BTO:0000932 ! neuroblastoma cell line
 id: BTO:0002640
 name: CHO-EM9 cell
 def: "This line is a derivative of the CHO-K1 cell line. EM9 is a repair deficient mutant derived from AA8." [ATCC_American_Cell_Type_Culture_Collection:http\://www.lgcstandards-atcc.org/]
+synonym: "EM-9 cell" RELATED []
 synonym: "EM9 cell" RELATED []
 relationship: develops_from BTO:0000457 ! CHO-K1 cell
 
@@ -20691,9 +20717,11 @@ relationship: develops_from BTO:0003909 ! bile duct cell line
 
 [Term]
 id: BTO:0002933
-name: CCLP1 cell
+name: CCLP-1 cell
 def: "Human cholangiocarcinoma cell line." [PMID:15026550]
+synonym: "CC-LP-1 cell" RELATED []
 synonym: "CC-LP-I cell" RELATED []
+synonym: "CCLP1 cell" RELATED []
 is_a: BTO:0002932 ! cholangiocarcinoma cell line
 
 [Term]
@@ -22343,6 +22371,8 @@ relationship: part_of BTO:0000417 ! bile duct epithelium
 [Term]
 id: BTO:0003165
 name: cervical adenocarcinoma cell
+synonym: "cervix adenocarcinoma cell" RELATED []
+synonym: "uterine cervix adenocarcinoma cell" RELATED []
 is_a: BTO:0000180 ! cervical carcinoma cell
 is_a: BTO:0000604 ! adenocarcinoma cell
 
@@ -24456,7 +24486,6 @@ name: HKE-3 cell
 def: "Clonal derivative from HCT116 colorectal carcinoma cell line, that lacks the mutant k-ras allele." [PMID:15123634]
 synonym: "HKE3 cell" RELATED []
 relationship: develops_from BTO:0001109 ! HCT-116 cell
-relationship: develops_from BTO:0004743 ! HCT-166 cell
 
 [Term]
 id: BTO:0003470
@@ -24622,9 +24651,9 @@ is_a: BTO:0000578 ! hepatoma cell line
 [Term]
 id: BTO:0003493
 name: SUIT-2 cell
-def: "Human pancreatic cancer cell line." [PMID:18717994]
+def: "Human pancreatic ductal adenocarcinoma cell line." [PMID:18717994]
 synonym: "Suit-2 cell" RELATED []
-is_a: BTO:0000794 ! pancreatic cancer cell line
+is_a: BTO:0003883 ! pancreatic ductal adenocarcinoma cell line
 
 [Term]
 id: BTO:0003494
@@ -26683,6 +26712,7 @@ name: ovum
 def: "A female gamete." [From_Merriam-Webster's_Online_Dictionary_at_www.Merriam-Webster.com:http\://www.m-w.com/cgi-bin/dictionary?book=Dictionary&va=ovum]
 synonym: "egg cell" RELATED []
 is_a: BTO:0000535 ! germ cell
+relationship: part_of BTO:0000842 ! megagametophyte
 
 [Term]
 id: BTO:0003802
@@ -27494,7 +27524,7 @@ relationship: part_of BTO:0003926 ! renal pyramid
 id: BTO:0003926
 name: renal pyramid
 def: "One of a number of pyramidal masses seen on longitudinal section of the kidney; collectively, they constitute the renal medulla, and contain part of the secreting tubules and the collecting tubules." [Biology-Online_Dictionary:http\://www.biology-online.org/dictionary/]
-synonym: "malphigian pyramid" RELATED []
+synonym: "malpighian pyramid" RELATED []
 synonym: "medullary pyramid" RELATED []
 synonym: "pyramis renalis" RELATED []
 relationship: part_of BTO:0000671 ! kidney
@@ -33811,8 +33841,9 @@ creation_date: 2010-09-29T09:27:30Z
 id: BTO:0004743
 name: HCT-166 cell
 def: "Human colon carcinoma cell line." [Ebony_Ayres:Manipulation_of_Iron_Nanoparticles_and_Their_Effects_on_Human_Colon_Carcinoma_Cells]
+comment: Made obsolete. Synonym of HCT-116 cell.
 synonym: "HCT166 cell" RELATED []
-is_a: BTO:0000797 ! colonic cancer cell line
+is_obsolete: true
 created_by: mgr
 creation_date: 2010-09-29T09:30:58Z
 
@@ -36057,6 +36088,7 @@ creation_date: 2011-02-26T06:03:12Z
 [Term]
 id: BTO:0005003
 name: villous trophoblast
+synonym: "villus trophoblast" RELATED []
 relationship: part_of BTO:0001079 ! trophoblast
 created_by: XPMUser
 creation_date: 2011-02-26T06:18:57Z
@@ -37383,6 +37415,7 @@ def: "The C2BBe1 (brush border expressing) cell line was cloned in 1988 from the
 synonym: "C2BBe1 cell" RELATED []
 synonym: "Caco-2 BBe cell" RELATED []
 synonym: "Caco-2BBe cell" RELATED []
+synonym: "Caco-2BBe1 cell" RELATED []
 synonym: "Caco2BBe cell" RELATED []
 is_a: BTO:0000195 ! CACO-2 cell
 created_by: XPMUser
@@ -37557,7 +37590,7 @@ creation_date: 2011-08-30T09:00:14Z
 [Term]
 id: BTO:0005177
 name: BCWM.1 cell
-def: "Derived from a long-term culture of CD19(+) selected bone marrow lymphoplasmacytic cells isolated from an untreated patient with WaldenstrÃ¶m's macroglobulinemia." [PMID:17761288]
+def: "Derived from a long-term culture of CD19(+) selected bone marrow lymphoplasmacytic cells isolated from an untreated patient with Waldenström's macroglobulinemia." [PMID:17761288]
 is_a: BTO:0000264 ! bone marrow cell line
 created_by: XPMUser
 creation_date: 2011-08-30T09:12:20Z
@@ -37844,7 +37877,6 @@ creation_date: 2011-09-02T11:22:16Z
 [Term]
 id: BTO:0005212
 name: cervical intraepithelial neoplasia cell
-namespace: 
 def: "Cervical intraepithelial neoplasia (CIN) is the potentially premalignant transformation and abnormal growth (dysplasia) of squamous cells on the surface of the cervix. CIN is not cancer, and is usually curable. Most cases of CIN remain stable, or are eliminated by the host's immune system without intervention. However a small percentage of cases progress to become cervical cancer, usually cervical squamous cell carcinoma (SCC), if left untreated." [Wikipedia:The_Free_Encyclopedia]
 synonym: "cervical dysplasia cell" RELATED []
 synonym: "cervical interstitial neoplasia cell" RELATED []
@@ -39486,6 +39518,8 @@ creation_date: 2012-09-04T11:41:51Z
 id: BTO:0005404
 name: labyrinthine zone
 def: "The murine placenta consists of two main fetally derived compartments: the labyrinthine zone and the junctional zone." [PMID:16367805]
+synonym: "labyrinthine placenta" RELATED []
+synonym: "placental labyrinth" RELATED []
 relationship: part_of BTO:0001078 ! placenta
 created_by: XPMUser
 creation_date: 2012-09-04T11:44:37Z
@@ -39575,7 +39609,7 @@ creation_date: 2012-09-20T11:38:47Z
 [Term]
 id: BTO:0005416
 name: MNNG/HOS cell
-def: "Human osteosarcoma cell line; derived from HOS cells by transformation with 0.01 Âµg/ml MNNG, a carcinogenic nitrosamine." [ATCC_American_Cell_Type_Culture_Collection:http\://www.lgcstandards-atcc.org/, CLS-Cell_Lines_Service:http\://www.cell-lines-service.de/, Sigma-Aldrich:http\://www.sigmaaldrich.com/]
+def: "Human osteosarcoma cell line; derived from HOS cells by transformation with 0.01 µg/ml MNNG, a carcinogenic nitrosamine." [ATCC_American_Cell_Type_Culture_Collection:http\://www.lgcstandards-atcc.org/, CLS-Cell_Lines_Service:http\://www.cell-lines-service.de/, Sigma-Aldrich:http\://www.sigmaaldrich.com/]
 synonym: "HOS (TE85) cell" RELATED []
 synonym: "HOS TE 85 cell" RELATED []
 synonym: "HOS-TE85 cell" RELATED []
@@ -41076,6 +41110,8 @@ creation_date: 2014-03-06T09:41:03Z
 [Term]
 id: BTO:0005590
 name: cervical adenocarcinoma cell line
+synonym: "cervix adenocarcinoma cell line" RELATED []
+synonym: "uterine cervix adenocarcinoma cell line" RELATED []
 is_a: BTO:0000167 ! adenocarcinoma cell line
 is_a: BTO:0001967 ! cervical cancer cell line
 created_by: Marion
@@ -42717,7 +42753,7 @@ creation_date: 2015-09-30T17:08:14Z
 [Term]
 id: BTO:0005787
 name: skeletal muscle satellite cell
-def: "Skeletal muscle satellite cells are quiescent mononucleated myogenic cells, located between the sarcolemma and basement membrane of terminally-differentiated muscle fibres." [PMID:12757751]
+def: "An elongated, spindle-shaped, cell that is located between the basal lamina and the plasmalemma of a muscle fiber. These cells are mostly quiescent, but upon activation they divide to produce cells that generate new muscle fibers." [CellOntology:https\://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl.obo]
 synonym: "skeletal muscle satellite stem cell" RELATED []
 is_a: BTO:0005300 ! muscle stem cell
 relationship: part_of BTO:0001103 ! skeletal muscle
@@ -43498,6 +43534,7 @@ creation_date: 2016-04-28T12:01:09Z
 id: BTO:0005878
 name: PA-TU-8988T cell
 def: "Human pancreatic adenocarcinoma cell line; established in 1985 from the liver metastasis of a primary pancreatic adenocarcinoma from a 64-year-old woman; sister cell line of PA-TU-8988S." [Deutsche_Sammlung_von_Mikroorganismen_und_Zellkulturen_GmbH:DSMZ]
+synonym: "PaTu-8988T cell" RELATED []
 synonym: "PaTu8988T cell" RELATED []
 is_a: BTO:0001521 ! pancreatic adenocarcinoma cell line
 created_by: Marion, contact@brenda-enzymes.org
@@ -44948,7 +44985,7 @@ id: BTO:0006035
 name: foramen magnum
 def: "The opening in the skull through which the spinal cord passes to become the medulla oblongata." [From_Merriam-Webster's_Online_Dictionary_at_www.Merriam-Webster.com:http\://www.merriam-webster.com/dictionary/foramen_magnum]
 synonym: "foramen occipitale magnum" RELATED []
-synonym: "GroÃŸes Hinterhauptloch" RELATED GE []
+synonym: "Grosses Hinterhauptloch" RELATED GE []
 synonym: "magnum" RELATED []
 relationship: part_of BTO:0001295 ! cranium
 created_by: Marion, contact@brenda-enzymes.org
@@ -45417,6 +45454,363 @@ is_a: BTO:0001079 ! trophoblast
 created_by: Marion, contact@brenda-enzymes.org
 creation_date: 2017-05-14T20:26:02Z
 
+[Term]
+id: BTO:0006085
+name: 212LN cell
+def: "Head and neck cancer cell line." [PMID:24085294]
+comment: Problematic cell line. Contaminated. T404, T406, Tu 138, Tu 158LN, Tu 159, Tu 182, Tu 212 and Tu 212LN have been shown to be identical (PubMed 21868764). See http://web.expasy.org/cellosaurus/.
+synonym: "HNSCC 212LN cell" RELATED []
+is_a: BTO:0002709 ! head and neck squamous cell carcinoma cell line
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-19T20:40:31Z
+
+[Term]
+id: BTO:0006086
+name: HS-SY-2 cell
+def: "Human synovial sarcoma cell line (HS-SY-II) from pleural effusion with lung metastasis." [PMID:1331610]
+synonym: "HS-SY-II cell" RELATED []
+synonym: "HSSY-II cell" RELATED []
+synonym: "HSSYII cell" RELATED []
+is_a: BTO:0003436 ! synovial cell line
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-19T20:52:12Z
+
+[Term]
+id: BTO:0006087
+name: caudolateral nidopallium
+def: "The avian Nidopallium caudolaterale is a multimodal area in the caudal telencephalon that is apparently not homologous to the mammalian prefrontal cortex but serves comparable functions." [BrainMaps.org:brainmaps.org]
+synonym: "nidopallium caudolaterale" RELATED []
+relationship: part_of BTO:0003389 ! nidopallium
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-21T17:38:04Z
+
+[Term]
+id: BTO:0006088
+name: KEL-FIB cell
+def: "Human skin connective tissue normal fibroblast cell line; established from a 35 years old black female." [ATCC_American_Cell_Type_Culture_Collection:http\://www.lgcstandards-atcc.org/]
+synonym: "KEL FIB cell" RELATED []
+is_a: BTO:0001619 ! skin fibroblast cell line
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-21T17:43:07Z
+
+[Term]
+id: BTO:0006089
+name: CCD-1113Sk cell
+def: "Human skin normal fibroblast cell line; established from a 39 years old black female from normal breast tissue." [ATCC_American_Cell_Type_Culture_Collection:http\://www.lgcstandards-atcc.org/]
+synonym: "CCD 1113Sk cell" RELATED []
+synonym: "CCD1113Sk cell" RELATED []
+is_a: BTO:0001619 ! skin fibroblast cell line
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-21T17:46:40Z
+
+[Term]
+id: BTO:0006090
+name: HCC-1569 cell
+def: "Human epithelial breast mammary gland carcinoma cell line; established from a 70 years old black female with TNM stage IV, grade 3, primary metaplastic carcinoma." [ATCC_American_Cell_Type_Culture_Collection:http\://www.lgcstandards-atcc.org/]
+synonym: "HCC 1569 cell" RELATED []
+synonym: "HCC1569 cell" RELATED []
+is_a: BTO:0004086 ! mammary gland tumor cell line
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-21T18:19:18Z
+
+[Term]
+id: BTO:0006091
+name: HeLa-HL3T1 cell
+def: "The HeLa derivative HL3T1 is a sensitive indicator cell line for the HIV-1 Tat transactivator protein." [NIH_AIDS_Reagent_Program:https\://www.aidsreagent.org/reagentdetail.cfm?t=cell_lines&id=122]
+synonym: "HeLa HL3T1 cell" RELATED []
+synonym: "HL3T1 cell" RELATED []
+relationship: develops_from BTO:0000567 ! HeLa cell
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-21T18:23:39Z
+
+[Term]
+id: BTO:0006092
+name: hTERT-HPNE cell
+def: "Human normal pancreas duct cell line; established from a 52 years old male." [ATCC_American_Cell_Type_Culture_Collection:http\://www.lgcstandards-atcc.org/]
+is_a: BTO:0000183 ! pancreatic cell line
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-21T18:48:44Z
+
+[Term]
+id: BTO:0006093
+name: male inflorescence
+is_a: BTO:0000628 ! inflorescence
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-21T18:54:45Z
+
+[Term]
+id: BTO:0006094
+name: female inflorescence
+is_a: BTO:0000628 ! inflorescence
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-21T18:55:10Z
+
+[Term]
+id: BTO:0006095
+name: LNCaP clone FGC
+def: "Human prostate cancer cell line; established from a 50 years old caucasian male; derived from metastatic site: left supraclavicular lymph node." [ATCC_American_Cell_Type_Culture_Collection:http\://www.lgcstandards-atcc.org/]
+relationship: develops_from BTO:0001321 ! LNCaP cell
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-22T18:41:17Z
+
+[Term]
+id: BTO:0006096
+name: culture condition:benzene-grown cell
+is_a: BTO:0001479 ! culture condition:-grown cell
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-22T18:44:06Z
+
+[Term]
+id: BTO:0006097
+name: HEKa cell
+def: "Normal human primary epidermal keratinocytes." [ATCC_American_Cell_Type_Culture_Collection:http\://www.lgcstandards-atcc.org/]
+is_a: BTO:0001413 ! primary cell
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-22T18:51:43Z
+
+[Term]
+id: BTO:0006098
+name: root meristem
+def: "The collection of cells at the root tip that generate all the tissues of a plant root." [Dictionary_Biology-Forums:http\://biology-forums.com/definitions/index.php?title=Shoot_meristem]
+is_a: BTO:0000852 ! meristem
+relationship: part_of BTO:0001243 ! shoot
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-24T16:31:58Z
+
+[Term]
+id: BTO:0006099
+name: S2-028 cell
+def: "Human pancreatic ductal adenocarcinoma cell line." [PMID:28289921]
+synonym: "SUIT2-028 cell" RELATED []
+relationship: develops_from BTO:0003493 ! SUIT-2 cell
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-24T16:35:28Z
+
+[Term]
+id: BTO:0006100
+name: plant protocorm
+def: "A tuber structure that develops from the embryos of lycopods (Lycopodiaceae) and orchids (Orchidaceae)." [Encyclopedia.com:http\://www.encyclopedia.com]
+relationship: develops_from BTO:0001233 ! plant embryo
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-24T16:56:20Z
+
+[Term]
+id: BTO:0006101
+name: insect protocorm
+def: "The part of an insect embryo posterior to the protocephalon." [From_Merriam-Webster's_Online_Dictionary_at_www.Merriam-Webster.com:http\://www.merriam-webster.com/dictionary/protocorm]
+relationship: part_of BTO:0000379 ! embryo
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-24T17:01:30Z
+
+[Term]
+id: BTO:0006102
+name: activated skeletal muscle satellite cell
+def: "A skeletal muscle cell that has become mitotically active - typically following muscle damage." [CellOntology:https\://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl.obo]
+is_a: BTO:0005787 ! skeletal muscle satellite cell
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-25T10:55:32Z
+
+[Term]
+id: BTO:0006103
+name: quiescent skeletal muscle satellite cell
+def: "A skeletal muscle satellite cell that is mitotically quiescent. These cells are wedge shaped and have a large nuclear to cytoplasmic ratio with few organelles, a small nucleus and condensed interphase chromatin. Satellite cells typically remain in this state until activated following muscle damage." [CellOntology:https\://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl.obo]
+is_a: BTO:0005787 ! skeletal muscle satellite cell
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-25T10:55:51Z
+
+[Term]
+id: BTO:0006104
+name: proliferating skeletal muscle satellite cell
+is_a: BTO:0005787 ! skeletal muscle satellite cell
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-25T10:59:24Z
+
+[Term]
+id: BTO:0006105
+name: skeletal muscle satellite stem cell
+def: "A skeletal muscle satellite cell that divides by stem cell division.  A proportion of this population undergoes symmetric stem cell division, producing two skeletal muscle satellite stem cells. The rest undergo asymmetric stem cell division - retaining their identity while budding off a daughter cell that differentiates into an adult skeletal muscle myoblast." [CellOntology:https\://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl.obo]
+is_a: BTO:0005787 ! skeletal muscle satellite cell
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-25T11:07:33Z
+
+[Term]
+id: BTO:0006106
+name: adrenal adenoma cell
+def: "A benign tumor of the adrenal cortex." [Wikipedia:The_Free_Encyclopedia]
+synonym: "adrenal cortical adenoma cell" RELATED []
+synonym: "adrenocortical adenoma cell" RELATED []
+is_a: BTO:0000178 ! adenoma cell
+is_a: BTO:0000592 ! adrenal gland cancer cell
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-25T11:15:14Z
+
+[Term]
+id: BTO:0006107
+name: endometrial luminal epithelium
+relationship: part_of BTO:0006109 ! uterine endometrial epithelium
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-25T19:36:42Z
+
+[Term]
+id: BTO:0006108
+name: endometrial glandular epithelium
+relationship: part_of BTO:0006109 ! uterine endometrial epithelium
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-25T19:38:35Z
+
+[Term]
+id: BTO:0006109
+name: uterine endometrial epithelium
+synonym: "endometrial epithelium" RELATED []
+relationship: part_of BTO:0001422 ! uterine endometrium
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-25T19:52:49Z
+
+[Term]
+id: BTO:0006110
+name: M1 macrophage
+def: "Macrophages that encourage inflammation. M1 \"killer\" macrophages are activated by LPS and IFN-gamma, and secrete high levels of IL-12 and low levels of IL-10." [Wikipedia:The_Free_Encyclopedia]
+synonym: "classically activated macrophage" RELATED []
+synonym: "inflammatory macrophage" RELATED []
+is_a: BTO:0000801 ! macrophage
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-26T10:34:57Z
+
+[Term]
+id: BTO:0006111
+name: M2 macrophage
+def: "Macrophages that decrease inflammation and encourage tissue repair. M2 is the phenotype of resident tissue macrophages, and can be further elevated by IL-4. M2 macrophages produce high levels of IL-10, TGF-beta and low levels of IL-12. Tumor-associated macrophages are mainly of the M2 phenotype, and seem to actively promote tumor growth." [Wikipedia:The_Free_Encyclopedia]
+synonym: "alternatively activated macrophage" RELATED []
+is_a: BTO:0000801 ! macrophage
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-26T10:37:24Z
+
+[Term]
+id: BTO:0006112
+name: fibro-adipogenic progenitor cell
+def: "FAPs are tissue-resident mesenchymal stromal cells (MSCs). Current literature supports a role for these cells in the homeostasis and repair of multiple tissues suggesting that FAPs may have extensive therapeutic potential in the treatment of numerous diseases." [PMID:28247350]
+synonym: "FAP cell" RELATED []
+synonym: "fibro/adipogenic progenitor cell" RELATED []
+is_a: BTO:0003298 ! mesenchymal stem cell
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-26T11:02:44Z
+
+[Term]
+id: BTO:0006113
+name: megaspore
+def: "A spore in heterosporous plants giving rise to female gametophytes and usually larger than a microspore." [From_Merriam-Webster's_Online_Dictionary_at_www.Merriam-Webster.com:http\://www.merriam-webster.com/dictionary/megaspore]
+is_a: BTO:0001171 ! spore
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-26T11:28:12Z
+
+[Term]
+id: BTO:0006114
+name: MEL-C19 cell
+def: "The C19 MEL cell line is a thymidine kinase negative subclone of the 745 murine erythroleukemia cell line." [PMID:11896618]
+synonym: "C19 MEL cell" RELATED []
+synonym: "C19-MEL cell" RELATED []
+relationship: develops_from BTO:0002885 ! MEL-745A cell
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-26T18:07:41Z
+
+[Term]
+id: BTO:0006115
+name: mesenterial filament
+def: "A thickened rim or ribbon-like extension running along the free border of a mesentery from the end of the actinopharynx downwards. They aid in the capture and digestion of food materials and may also assist in inhibiting substrate competitors." [Coral_Reef_Information_System_Glossary:https\://definedterm.com/mesenterial_filament]
+is_a: BTO:0001262 ! soft body part
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-26T18:36:41Z
+
+[Term]
+id: BTO:0006116
+name: microsclerotium
+def: "A very small sclerotium." [Wiktionary:https\://en.wiktionary.org/wiki/]
+is_a: BTO:0001810 ! sclerotium
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-26T18:54:06Z
+
+[Term]
+id: BTO:0006117
+name: middle silk gland
+def: "The silk gland contains three compartments according its morphology and function, including the anterior silk gland, middle silk gland, and posterior silk gland. The fibroins and sericins are synthesized in the posterior and middle silk gland, respectively and then stored in the lumen of the silk gland as a concentrated aqueous silk solution." [PMID:27102218]
+is_a: BTO:0001250 ! silk gland
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-26T18:56:51Z
+
+[Term]
+id: BTO:0006118
+name: MYCN2 cell
+def: "Human neuroblastoma cell line." [PMID:23440295]
+is_a: BTO:0000932 ! neuroblastoma cell line
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-28T09:27:07Z
+
+[Term]
+id: BTO:0006119
+name: villous cytotrophoblast
+synonym: "villus cytotrophoblast" RELATED []
+is_a: BTO:0000322 ! cytotrophoblast
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-28T10:33:38Z
+
+[Term]
+id: BTO:0006120
+name: villous syncytiotrophoblast
+synonym: "villus syncytiotrophoblast" RELATED []
+is_a: BTO:0001335 ! syncytiotrophoblast
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-28T10:35:04Z
+
+[Term]
+id: BTO:0006121
+name: synergid cell
+def: "Synergid cells are two specialized cells that lie adjacent to the egg cell in the female gametophyte of angiosperms and play an essential role in pollen tube guidance and function. The term synergid comes from the Greek synergos, which means working together and was reportedly coined by Eduard Strasburger, a famous 19th century botanist who was one of the first to note that these cells somehow assist fertilization of the egg." [Elucidating_the_Function_of_Synergid_Cells:https\://www.ncbi.nlm.nih.gov/pubmed/?term=27046830]
+relationship: part_of BTO:0000842 ! megagametophyte
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-28T11:03:21Z
+
+[Term]
+id: BTO:0006122
+name: TU-KATO-III cell
+def: "Tumorigenic TU-kato-III cells were derived from the gastric cancer cell line KATO-III." [PMID:17505008]
+relationship: develops_from BTO:0001092 ! KATO-III cell
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-28T11:17:35Z
+
+[Term]
+id: BTO:0006123
+name: T-98 cell
+def: "T98 and T98G are two related cell lines that were derived from a human glioblastoma multiforma tumor. T98G has almost twice as many chromosomes as T98, suggesting that it is a polyploid variant of T98." [PMID:222778]
+synonym: "T 98 cell" RELATED []
+synonym: "T98 cell" RELATED []
+is_a: BTO:0005949 ! glioblastoma multiforme cell line
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-29T20:00:45Z
+
+[Term]
+id: BTO:0006124
+name: C3ABR cell
+def: "Human lymphoblastoid cell line; established by Epstein-Barr virus transformation from an healthy individual." [PMID:11080496]
+is_a: BTO:0000773 ! lymphoblastoid cell line
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-29T20:57:25Z
+
+[Term]
+id: BTO:0006125
+name: AT1ABR cell
+def: "Human lymphoblastoid cell line; established from A-T (Ataxia telangiectasia) patients by Epstein-Barr virus immortalization." [PMID:21149446]
+is_a: BTO:0000773 ! lymphoblastoid cell line
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-29T21:01:23Z
+
+[Term]
+id: BTO:0006126
+name: AT25ABR cell
+def: "Human lymphoblastoid cell line; established from A-T (Ataxia telangiectasia) patients by Epstein-Barr virus immortalization." [PMID:21149446]
+is_a: BTO:0000773 ! lymphoblastoid cell line
+created_by: Marion, contact@brenda-enzymes.org
+creation_date: 2017-09-29T21:02:01Z
+
 [Typedef]
 id: develops_from
 name: derives from/develops from
@@ -45432,3 +45826,4 @@ name: part of
 [Typedef]
 id: related_to
 name: related to
+

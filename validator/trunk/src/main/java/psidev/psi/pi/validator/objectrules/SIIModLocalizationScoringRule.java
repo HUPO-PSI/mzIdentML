@@ -65,30 +65,32 @@ public class SIIModLocalizationScoringRule extends AObjectRule<SpectrumIdentific
 
         if (AdditionalSearchParamsObjectRule.bIsModificationLocalizationScoring) {
             for (CvParam cv: sii.getCvParam()) {
-                switch (cv.getAccession()) {
-                    case "MS:1001969":  // phosphoRS score
-                    case "MS:1001970":  // phosphoRS sequence probability
-                    case "MS:1001971":  // phosphoRS site probability
-                    case "MS:1001974":  // DeBunker:score
-                    case "MS:1001978":  // MSQuant:PTM-score
-                    case "MS:1001979":  // MaxQuant:PTM Score
-                    case "MS:1001980":  // MaxQuant:Phospho (STY) Probabilities
-                    case "MS:1001982":  // MaxQuant:P-site localization probability
-                    case "MS:1001983":  // MaxQuant:PTM Delta Score
-                    case "MS:1001985":  // Ascore
-                    case "MS:1001986":  // H-Score
-                    case "MS:1002507":  // modification rescoring:false localization rate
-                    case "MS:1002536":  // D-Score
-                    case "MS:1002537":  // MD-Score
-                    case "MS:1002550":  // peptide:phosphoRS score
-                    case "MS:1002551":  // peptide:Ascore
-                    case "MS:1002552":  // peptide:H-Score
-                    case "MS:1002553":  // peptide:D-Score
-                    case "MS:1002554":  // peptide:MD-Score
-                        if (!cv.getValue().matches(this.STR_REGEXP_MOD_LOCALIZATION)) {
-                            this.addMessageToCollection(cv, sii, messages);
-                        }
-                        break;
+                if (cv != null) {
+                    switch (cv.getAccession()) {
+                        case "MS:1001969":  // phosphoRS score
+                        case "MS:1001970":  // phosphoRS sequence probability
+                        case "MS:1001971":  // phosphoRS site probability
+                        case "MS:1001974":  // DeBunker:score
+                        case "MS:1001978":  // MSQuant:PTM-score
+                        case "MS:1001979":  // MaxQuant:PTM Score
+                        case "MS:1001980":  // MaxQuant:Phospho (STY) Probabilities
+                        case "MS:1001982":  // MaxQuant:P-site localization probability
+                        case "MS:1001983":  // MaxQuant:PTM Delta Score
+                        case "MS:1001985":  // Ascore
+                        case "MS:1001986":  // H-Score
+                        case "MS:1002507":  // modification rescoring:false localization rate
+                        case "MS:1002536":  // D-Score
+                        case "MS:1002537":  // MD-Score
+                        case "MS:1002550":  // peptide:phosphoRS score
+                        case "MS:1002551":  // peptide:Ascore
+                        case "MS:1002552":  // peptide:H-Score
+                        case "MS:1002553":  // peptide:D-Score
+                        case "MS:1002554":  // peptide:MD-Score
+                            if (!cv.getValue().matches(this.STR_REGEXP_MOD_LOCALIZATION)) {
+                                this.addMessageToCollection(cv, sii, messages);
+                            }
+                            break;
+                    }
                 }
             }
         }

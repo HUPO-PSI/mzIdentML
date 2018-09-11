@@ -72,7 +72,7 @@ public class NoEnzymeObjectRule extends AObjectRule<Enzyme> {
                 if (enzyme.getMissedCleavages() != null) {
                     messages.add(new ValidatorMessage("The attribute 'missed cleavages' at "
                         + NoEnzymeObjectRule.ENZYME_CONTEXT.getContext()
-                        + " has no sense since 'No enzyme' ('"
+                        + " makes no sense since 'No enzyme' ('"
                         + NO_ENZYME_ACC + "') has been specified.",
                         MessageLevel.ERROR, NoEnzymeObjectRule.ENZYME_CONTEXT, this));
                 }

@@ -518,10 +518,16 @@ public class MzIdentMLValidator extends Validator {
             try {
                 BufferedReader fr = new BufferedReader(new FileReader(xmlFile));
                 if (!fr.readLine().startsWith("<?xml ")) {
-                    return this.getInvalidOrEmptyFileErrorMessages(xmlFile, " is not a XML file.");
+                    return this.getInvalidOrEmptyFileErrorMessages(xmlFile, " is not a XML file (XML declaration missing).");
                 }
                 else {
-                    if (!fr.readLine().startsWith("<MzIdentML ")) {
+                    String line;
+                    do { // skip comment lines
+                        line = fr.readLine();
+                    }
+                    while (line.startsWith("<!--"));
+                    
+                    if (!line.startsWith("<MzIdentML ")) {
                         return this.getInvalidOrEmptyFileErrorMessages(xmlFile, " is not a mzIdentML file.");
                     }
                 }
@@ -624,21 +630,62 @@ public class MzIdentMLValidator extends Validator {
         for (String xpath : ValidatorCvContext.getInstance().getNotRecognisedXpath()) {
             Set<String> list = ValidatorCvContext.getInstance().getNotRecognisedTerms(xpath);
             if (list != null && !list.isEmpty()) {
-                msgText = "unanticipated terms for XPath '" + xpath + "' : " + list;
-                System.out.println(msgText);
-                if (this.gui.jCheckBoxShowUnanticipatedCVTerms.isSelected()) {
-                    valMsg = new ValidatorMessage(msgText, MessageLevel.WARN);
-                    unrecognisedTermsForXPath.add(valMsg);
-                    this.addMessages(unrecognisedTermsForXPath, MessageLevel.WARN);
+                
+                Set<String> filteredList = this.filterOutUnanticipatedCvTerms(list);
+                
+                if (filteredList.size() > 0) {
+                    msgText = "unanticipated terms for XPath '" + xpath + "' : " + filteredList;
+                    System.out.println(msgText);
+                    if (this.gui.jCheckBoxShowUnanticipatedCVTerms.isSelected()) {
+                        valMsg = new ValidatorMessage(msgText, MessageLevel.WARN);
+                        unrecognisedTermsForXPath.add(valMsg);
+                        this.addMessages(unrecognisedTermsForXPath, MessageLevel.WARN);
 
-                    List<ValidatorMessage> msgList = new ArrayList<>();
-                    msgList.add(valMsg);
-                    String ruleId = "Unanticipated CV term " + cnt++;
-                    this.msgs.put(ruleId, msgList);
-                    this.cntUnanticipatedCVTerms++;
+                        List<ValidatorMessage> msgList = new ArrayList<>();
+                        msgList.add(valMsg);
+                        String ruleId = "Unanticipated CV term " + cnt++;
+                        this.msgs.put(ruleId, msgList);
+                        this.cntUnanticipatedCVTerms++;
+                    }
                 }
             }
         }
+    }
+    
+    /**
+     * Filters out unanticipated messages, that are allowed in sepcial cases..
+     * @param list  the list of unanticipated messages
+     * @return the filtered list of unanticipated messages
+     */
+    private Set<String> filterOutUnanticipatedCvTerms(Set<String> list) {
+        Set<String> filteredList = new HashSet<>();
+        
+        if (AdditionalSearchParamsObjectRule.bIsProteoGenomicsSearch) {
+            for (String split: list) 
+                if (!split.equals("MS:1002635") &&
+                    !split.equals("MS:1002637") &&
+                    !split.equals("MS:1002638") &&
+                    !split.equals("MS:1002640") &&
+                    !split.equals("MS:1002641") &&
+                    !split.equals("MS:1002642") &&
+                    !split.equals("MS:1002643") &&
+                    !split.equals("MS:1002644")) {
+                filteredList.add(split);
+            }
+            this.LOGGER.debug("Filtered unanticipated CV terms for ProteoGenomicsSearch");
+        }
+        else if (AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch) {
+            for (String split: list) 
+                if (!split.startsWith("XLMOD:")) {
+                filteredList.add(split);
+            }
+            this.LOGGER.debug("Filtered unanticipated CV terms for CrossLinkingSearch");
+        }
+        else {
+            filteredList = list;
+        }
+        
+        return filteredList;
     }
     
     /**
@@ -806,7 +853,7 @@ public class MzIdentMLValidator extends Validator {
     }
 
     /**
-     * Applies and check all object rules.
+     * Applies and checks all object rules.
      * 
      * @throws ValidatorException 
      */
@@ -835,11 +882,13 @@ public class MzIdentMLValidator extends Validator {
         if (this.currentFileVersion == MzIdVersion._1_2) {
             this.checkElementObjectRule(MzIdentMLElement.DBSequence);
             this.checkElementObjectRule(MzIdentMLElement.PeptideEvidence);
-            //this.checkElementObjectRule(MzIdentMLElement.SequenceCollection);
-            //this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationList);
+            this.checkElementObjectRule(MzIdentMLElement.SequenceCollection);           // time consuming
+            this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationList);   // time consuming
             this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationResult);
-            //this.checkElementObjectRule(MzIdentMLElement.ProteinDetectionHypothesis);
+            this.checkElementObjectRule(MzIdentMLElement.ProteinDetectionHypothesis);   // time consuming
         }
+
+        //this.checkElementObjectRule(MzIdentMLElement.CvParam);    // currently deactivated because of NullPointerException in xxindex-library
         
         this.LOGGER.debug("Object Rule validation done in " + (System.currentTimeMillis() - startTime) + "ms.");
     }
@@ -1001,7 +1050,7 @@ public class MzIdentMLValidator extends Validator {
         if (this.gui != null) {
             this.gui.setProgress(++this.progress, "Validating " + element.getXpath() + this.STR_ELLIPSIS);
         }
-        Iterator<MzIdentMLObject>  mzMLIter = this.unmarshaller.unmarshalCollectionFromXpath(element);
+        Iterator<MzIdentMLObject> mzMLIter = this.unmarshaller.unmarshalCollectionFromXpath(element);
 
         Collection<ValidatorMessage> objectRuleResult = new ArrayList<>();
         if (!mzMLIter.hasNext()) {

@@ -63,29 +63,31 @@ public class OrganizationObjectRule extends AObjectRule<Organization> {
 
         String cvValue;
         for (CvParam cv: org.getCvParam()) {
-            cvValue = cv.getValue();
-            
-            if (cvValue != null) {
-                switch (cv.getAccession()) {
-                    case "MS:1000587":  // contact address
-                        if (cv.getValue().isEmpty()) {
-                            messages.add(this.getValidatorMsg(org, "contact address"));
-                        }
-                        break;
-                    case "MS:1000588":  // contact URL
-                        if (cv.getValue().isEmpty()) {
-                            messages.add(this.getValidatorMsg(org, "contact URL"));
-                        }
-                        break;
-                    case "MS:1000589":  // contact email
-                        if (cv.getValue().isEmpty()) {
-                            messages.add(this.getValidatorMsg(org, "contact email"));
-                        }
-                        break;
+            if (cv != null) {
+                cvValue = cv.getValue();
+
+                if (cvValue != null) {
+                    switch (cv.getAccession()) {
+                        case "MS:1000587":  // contact address
+                            if (cv.getValue().isEmpty()) {
+                                messages.add(this.getValidatorMsg(org, "contact address"));
+                            }
+                            break;
+                        case "MS:1000588":  // contact URL
+                            if (cv.getValue().isEmpty()) {
+                                messages.add(this.getValidatorMsg(org, "contact URL"));
+                            }
+                            break;
+                        case "MS:1000589":  // contact email
+                            if (cv.getValue().isEmpty()) {
+                                messages.add(this.getValidatorMsg(org, "contact email"));
+                            }
+                            break;
+                    }
                 }
-            }
-            else {
-                messages.add(this.getValidatorMsg(org, "Value is missing for CV: " + cv.getName()));
+                else {
+                    messages.add(this.getValidatorMsg(org, "Value is missing for CV: " + cv.getName()));
+                }
             }
         }
 
