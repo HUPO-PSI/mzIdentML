@@ -78,7 +78,7 @@ public class SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule extends	
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Remove the PeptideEvidenceRef element at " + SpectrumIdentificationItemNullPeptideEvidenceRefObjectRule.SII_CONTEXT.getContext());
+        ret.add("Remove the PeptideEvidenceRef element for de novo search.");
         return ret;
     }
 }

@@ -1,6 +1,6 @@
 package psidev.psi.pi.validator;
 
-//import java.util.List;
+import java.util.List;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-/*
+
 import org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder;
 import org.junit.platform.launcher.Launcher;
 import org.junit.platform.launcher.LauncherDiscoveryRequest;
@@ -17,7 +17,7 @@ import static org.junit.platform.engine.discovery.DiscoverySelectors.selectClass
 import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
 import org.junit.platform.launcher.listeners.TestExecutionSummary;
 import org.junit.platform.launcher.listeners.TestExecutionSummary.Failure;
-*/
+
 
 import psidev.psi.pi.validator.objectrules.AObjectRule;
 
@@ -84,7 +84,7 @@ public class URLEncodingTest {
 
         /*
         String response = restClient.callGET(olsAPIStr);
-        this.LOGGER.debug(response);
+        URLEncodingTest.LOGGER.debug(response);
         */
     }
 
@@ -93,7 +93,6 @@ public class URLEncodingTest {
      * @param args 
      */
     public static void main(String[] args) {
-        /*
         final LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder.request().selectors(selectClass(URLEncodingTest.class)).build();
         final Launcher launcher = LauncherFactory.create();
         final SummaryGeneratingListener listener = new SummaryGeneratingListener();
@@ -105,7 +104,6 @@ public class URLEncodingTest {
         URLEncodingTest.LOGGER.info(summary.getTestsFoundCount() + " Unit tests executed, " + summary.getTestsSucceededCount() + " of them were successful.");
         
         List<Failure> failures = summary.getFailures();
-        failures.forEach(failure -> URLEncodingTest.LOGGER.error("failure - " + failure.getException()));
-        */
+        failures.forEach(failure -> URLEncodingTest.LOGGER.error("failure - " + failure.getException().getMessage()));
     }
 }

@@ -90,7 +90,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
                         break;
                     case "MS":
                     case "PSI-MS":
-                        if (version.compareTo("4.1.13") < 0) {
+                        if (version.compareTo("4.1.16") < 0) {
                             messages.add(this.getValidatorVersionMsg(id));
                         }
                         break;
@@ -216,7 +216,7 @@ public class CvListObjectRule extends AObjectRule<CvList> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Provide the newest version for all cv element under the CvList element." + CvListObjectRule.CVLIST_CONTEXT.getContext());
+        ret.add("Provide the newest version for all CV elements under the CvList element.");
 
         return ret;
     }

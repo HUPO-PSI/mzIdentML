@@ -23,8 +23,13 @@ public class CvParamObjectRule extends AObjectRule<CvParam> {
      * Constants.
      */
     private static final Context CVPARAM_CONTEXT = new Context(MzIdentMLElement.CvParam.getXpath());
-    private static final String STR_COLON   = ":";
-    private static OBOFileReader OFR = new OBOFileReader();
+    
+    /**
+     * Members.
+     */
+    private boolean bEmptyAccession     = false;
+    private boolean bWrongCvTermName    = false;
+    private boolean bMissingCvTermValue = false;
     
     /**
      * Constructor.
@@ -42,6 +47,15 @@ public class CvParamObjectRule extends AObjectRule<CvParam> {
     }
 
     /**
+     * Resets all member variables.
+     */
+    private void resetMembers() {
+        this.bEmptyAccession    = false;
+        this.bWrongCvTermName   = false;
+        this.bMissingCvTermValue= false;
+    }
+    
+    /**
      * Checks, if the object is a CvParam.
      * 
      * @param obj   the object to check
@@ -49,7 +63,13 @@ public class CvParamObjectRule extends AObjectRule<CvParam> {
      */
     @Override
     public boolean canCheck(Object obj) {
-        return (obj instanceof CvParam);
+        boolean bRet = obj instanceof CvParam;
+        
+        if (bRet) {
+            this.resetMembers();
+        }
+        
+        return bRet;
     }
 
     /**
@@ -71,7 +91,7 @@ public class CvParamObjectRule extends AObjectRule<CvParam> {
                 messages.add(this.getEmptyAccessionMsg(cvName));
             }
             else {
-                int pos = acc.indexOf(CvParamObjectRule.STR_COLON);
+                int pos = acc.indexOf(":");
                 String ontID = acc.substring(0, pos);
                 String termID = acc.substring(pos + 1);
 
@@ -80,8 +100,8 @@ public class CvParamObjectRule extends AObjectRule<CvParam> {
                     messages.add(this.getWrongCVTermNameMsg(cvParam, ontID, termID));
                 }
 
-                // checks if the CV term has a value, when it should have one
-                if (OBOFileReader.hasCVTermAValue(ontID, termID)) {
+                // checks if the CV term has not a value, when it should have one
+                if (!OBOFileReader.hasCVTermAValue(ontID, termID)) {
                     messages.add(this.getMissingCVTermValueMsg(cvParam));
                 }
             }
@@ -96,8 +116,9 @@ public class CvParamObjectRule extends AObjectRule<CvParam> {
      * @return the ValidatorMessage
      */
     private ValidatorMessage getEmptyAccessionMsg(String cvName) {
+        this.bEmptyAccession = true;
         String strB = "The cvParam for " + cvName + " has an empty accession.";
-        
+
         return new ValidatorMessage(strB, MessageLevel.ERROR, CvParamObjectRule.CVPARAM_CONTEXT, this);        
     }
     
@@ -109,6 +130,7 @@ public class CvParamObjectRule extends AObjectRule<CvParam> {
      * @return the ValidatorMessage
      */
     private ValidatorMessage getWrongCVTermNameMsg(CvParam cvParam, String ontID, String termID) {
+        this.bWrongCvTermName = true;
         String strB = "A cvParam for " + cvParam.getAccession() + " has an invalid name: " + cvParam.getName()+ ". It should be: " + OBOFileReader.getCVTermNameFromID(ontID, termID);
         
         return new ValidatorMessage(strB, MessageLevel.ERROR, CvParamObjectRule.CVPARAM_CONTEXT, this);        
@@ -120,6 +142,7 @@ public class CvParamObjectRule extends AObjectRule<CvParam> {
      * @return the ValidatorMessage
      */
     private ValidatorMessage getMissingCVTermValueMsg(CvParam cvParam) {
+        this.bMissingCvTermValue = true;
         String strB = "A cvParam for " + cvParam.getAccession() + " has a missing value where it should have one. ";
         
         return new ValidatorMessage(strB, MessageLevel.ERROR, CvParamObjectRule.CVPARAM_CONTEXT, this);        
@@ -134,8 +157,16 @@ public class CvParamObjectRule extends AObjectRule<CvParam> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Provide the newest version for all cv element under the CvParam element." + CvParamObjectRule.CVPARAM_CONTEXT.getContext());
-
+        if (this.bEmptyAccession) {
+            ret.add("Check the CV terms for an empty accession.");
+        }
+        if (this.bWrongCvTermName) {
+            ret.add("Check the CV terms for wrong or outdated term name.");
+        }
+        if (this.bMissingCvTermValue) {
+            ret.add("Check the CV terms for missing values.");
+        }
+        
         return ret;
     }
 }

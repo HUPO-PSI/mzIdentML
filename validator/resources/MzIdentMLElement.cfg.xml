@@ -33,7 +33,7 @@ Configurations for various properties of model classes.
         <cached>false</cached>
         <clazz>uk.ac.ebi.jmzidml.model.mzidml.AbstractParam</clazz>
         <idMapped>false</idMapped>
-        <indexed>false</indexed>
+        <indexed>true</indexed>
         <refResolverClass>uk.ac.ebi.jmzidml.xml.jaxb.resolver.AbstractParamUnitCvRefResolver</refResolverClass>
     </configurations>
     <configurations>
@@ -174,9 +174,52 @@ Configurations for various properties of model classes.
         <cached>false</cached>
         <clazz>uk.ac.ebi.jmzidml.model.mzidml.CvParam</clazz>
         <idMapped>false</idMapped>
-        <indexed>false</indexed>
+        <indexed>true</indexed>
         <refResolverClass>uk.ac.ebi.jmzidml.xml.jaxb.resolver.CvParamRefResolver</refResolverClass>
         <tagName>cvParam</tagName>
+		<xpath>/MzIdentML/AnalysisSoftwareList/AnalysisSoftware/ContactRole/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisSoftwareList/SoftwareName/cvParam</xpath>
+		<xpath>/MzIdentML/Provider/ContactRole/Role/cvParam</xpath>
+		<xpath>/MzIdentML/AuditCollection/Person/cvParam</xpath>
+		<xpath>/MzIdentML/AuditCollection/Organization/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisSampleCollection/Sample/ContactRole/Role/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisSampleCollection/Sample/cvParam</xpath>
+		<xpath>/MzIdentML/SequenceCollection/DBSequence/cvParam</xpath>
+		<xpath>/MzIdentML/SequenceCollection/Peptide/Nodification/cvParam</xpath>
+		<xpath>/MzIdentML/SequenceCollection/Peptide/cvParam</xpath>
+		<xpath>/MzIdentML/SequenceCollection/PeptideEvidence/cvParam</xpath>
+		<xpath>/MzIdentML/SequenceCollection/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/SearchType/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/AdditionalSearchParams/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/ModificationParams/SearchModification/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/ModificationParams/SearchModification/SpecificityRules/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/Enzymes/Enzyme/EnzymeName/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/MassTable/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/MassTable/AmbiguousResidue/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/FragmentTolerance/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/ParentTolerance/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/Threshold/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/DatabaseFilters/Filter/FilterType/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/DatabaseFilters/Filter/Include/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/DatabaseFilters/Filter/Exclude/cvParam</xpath>
+		<xpath>/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/DatabaseTranslation/TranslationTable/cvParam</xpath>
+		<xpath>/MzIdentML/ProteinDetectionProtocol/AnalysisParams/cvParam</xpath>
+		<xpath>/MzIdentML/ProteinDetectionProtocol/Threshold/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/Inputs/SourceFile/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/Inputs/SourceFile/FileFormat/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/Inputs/SearchDatabase/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/Inputs/SearchDatabase/FileFormat/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/Inputs/SearchDatabase/DatabaseName/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/Inputs/SpectraData/FileFormat/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/Inputs/SpectraData/SpectrumIDFormat/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/FragmentationTable/Measure/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/Fragmentation/IonType/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/ProteinDetectionList/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/ProteinDetectionList/ProteinAmbiguityGroup/cvParam</xpath>
+		<xpath>/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/ProteinDetectionList/ProteinAmbiguityGroup/ProteinDetectionHypothesis/cvParam</xpath>
     </configurations>
     <configurations>
         <autoRefResolving>false</autoRefResolving>
@@ -406,7 +449,7 @@ Configurations for various properties of model classes.
         <cached>false</cached>
         <clazz>uk.ac.ebi.jmzidml.model.mzidml.Param</clazz>
         <idMapped>false</idMapped>
-        <indexed>false</indexed>
+        <indexed>true</indexed>
     </configurations>
     <configurations>
         <autoRefResolving>false</autoRefResolving>
@@ -495,6 +538,17 @@ Configurations for various properties of model classes.
     <configurations>
         <autoRefResolving>false</autoRefResolving>
         <cached>false</cached>
+        <clazz>uk.ac.ebi.jmzidml.model.mzidml.ProteinDetectionList</clazz>
+        <cvParamClass>uk.ac.ebi.jmzidml.model.mzidml.params.ProteinDetectionListCvParam</cvParamClass>
+        <idMapped>false</idMapped>
+        <indexed>true</indexed>
+        <tagName>ProteinDetectionList</tagName>
+        <userParamClass>uk.ac.ebi.jmzidml.model.mzidml.params.ProteinDetectionListUserParam</userParamClass>
+        <xpath>/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList</xpath>
+    </configurations>
+    <configurations>
+        <autoRefResolving>false</autoRefResolving>
+        <cached>false</cached>
         <clazz>uk.ac.ebi.jmzidml.model.mzidml.ProteinAmbiguityGroup</clazz>
         <cvParamClass>uk.ac.ebi.jmzidml.model.mzidml.params.ProteinAmbiguityGroupCvParam</cvParamClass>
         <idMapped>false</idMapped>
@@ -524,19 +578,6 @@ Configurations for various properties of model classes.
         <tagName>ProteinDetectionHypothesis</tagName>
         <userParamClass>uk.ac.ebi.jmzidml.model.mzidml.params.ProteinDetectionHypothesisUserParam</userParamClass>
         <xpath>/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/ProteinAmbiguityGroup/ProteinDetectionHypothesis</xpath>
-    </configurations>
-    <configurations>
-        <autoRefResolving>false</autoRefResolving>
-        <cached>false</cached>
-        <clazz>uk.ac.ebi.jmzidml.model.mzidml.ProteinDetectionList</clazz>
-        <cvParamClass>uk.ac.ebi.jmzidml.model.mzidml.params.ProteinDetectionListCvParam</cvParamClass>
-        <idMapped>false</idMapped>
-<!--         <indexed>false</indexed> -->
-<!-- changed for mzid 1.2 validation -->
-        <indexed>true</indexed>
-        <tagName>ProteinDetectionList</tagName>
-        <userParamClass>uk.ac.ebi.jmzidml.model.mzidml.params.ProteinDetectionListUserParam</userParamClass>
-        <xpath>/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList</xpath>
     </configurations>
     <configurations>
         <autoRefResolving>false</autoRefResolving>
@@ -619,7 +660,7 @@ Configurations for various properties of model classes.
         <cached>false</cached>
         <clazz>uk.ac.ebi.jmzidml.model.mzidml.SequenceCollection</clazz>
         <idMapped>false</idMapped>
-        <indexed>false</indexed>
+        <indexed>true</indexed>
         <tagName>SequenceCollection</tagName>
         <xpath>/MzIdentML/SequenceCollection</xpath>
     </configurations>

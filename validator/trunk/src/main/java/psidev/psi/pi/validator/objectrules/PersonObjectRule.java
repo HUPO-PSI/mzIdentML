@@ -115,7 +115,7 @@ public class PersonObjectRule extends AObjectRule<Person> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Provide a value for all CV terms under the Person element." + PersonObjectRule.PERSON_CONTEXT.getContext());
+        ret.add("Provide a value for all CV terms under the Person element.");
 
         return ret;
     }

@@ -108,7 +108,7 @@ public class NoEnzymeObjectRule extends AObjectRule<Enzyme> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Remove the information specified in the message at " + NoEnzymeObjectRule.ENZYME_CONTEXT.getContext());
+        ret.add("Remove the information specified in the message.");
         return ret;
     }
 }

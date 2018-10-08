@@ -79,7 +79,7 @@ public class FragmentToleranceObjectRule extends AObjectRule<SpectrumIdentificat
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Add the element 'FragmentTolerance' to the SpectrumIdentificationProtocol at " + FragmentToleranceObjectRule.SIP_CONTEXT.getContext());
+        ret.add("Add the element 'FragmentTolerance' to the SpectrumIdentificationProtocol.");
         
         return ret;
     }

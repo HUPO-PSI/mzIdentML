@@ -1,0 +1,6 @@
+<jxb:bindings version="2.0"
+	xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<jxb:bindings schemaLocation="ruleFilter_v1.4.xsd" node="/xsd:schema">
+	</jxb:bindings>
+</jxb:bindings>

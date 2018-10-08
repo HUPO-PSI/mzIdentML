@@ -100,7 +100,7 @@ public class MzIdentMLValidator extends Validator {
     private RuleFilterManager ruleFilterManager;
     private ExtendedValidatorReport extendedReport;
 
-    public MzIdVersion currentFileVersion = null;
+    public static MzIdVersion currentFileVersion = null;
 
     private int progress;
     private int cntMultipleClearedMessages;
@@ -138,10 +138,6 @@ public class MzIdentMLValidator extends Validator {
 
         final InputStream cvMappingFile = aCvMappingFile;
         final InputStream objectRuleFile = aCodedRuleFile;
-        this.setObjectRules(objectRuleFile);
-        this.setCvMappingRules(cvMappingFile);
-        this.LOGGER.info(this.getObjectRules().size() + " object rules");
-        this.LOGGER.info(this.getCvRuleManager().getCvRules().size() + " cvMapping rules");
 
         try {
             cvMappingFile.close();
@@ -151,7 +147,26 @@ public class MzIdentMLValidator extends Validator {
             e1.printStackTrace(System.err);
         }
 
+        this.setObjectAndMappingRules(cvMappingFile, objectRuleFile);
         this.resetCountersAndGUI();
+    }
+    
+    /**
+     * Sets the object and mapping rules.
+     * @param cvMappingFile
+     * @param objectRuleFile 
+     */
+    private void setObjectAndMappingRules(InputStream cvMappingFile, InputStream objectRuleFile) {
+        try {
+            this.setObjectRules(objectRuleFile);
+            this.setCvMappingRules(cvMappingFile);
+        }
+        catch (ValidatorException | CvRuleReaderException exc) {
+            exc.printStackTrace(System.err);
+        }
+        
+        this.LOGGER.info(this.getObjectRules().size() + " object rules");
+        this.LOGGER.info(this.getCvRuleManager().getCvRules().size() + " cvMapping rules");
     }
 
     /**
@@ -454,11 +469,11 @@ public class MzIdentMLValidator extends Validator {
             // flag if the version has changed
             MzIdVersion currentFileVersionTMP = this.getMzIdentMLVersion(mzIdentMLVersion);
             boolean versionChange = false;
-            if (this.currentFileVersion != null && this.currentFileVersion != currentFileVersionTMP) {
+            if (MzIdentMLValidator.currentFileVersion != null && MzIdentMLValidator.currentFileVersion != currentFileVersionTMP) {
                 versionChange = true;
             }
-            this.LOGGER.debug("MzIdentML file version set to :" + this.currentFileVersion);
-            this.currentFileVersion = currentFileVersionTMP;
+            this.LOGGER.debug("MzIdentML file version set to :" + MzIdentMLValidator.currentFileVersion);
+            MzIdentMLValidator.currentFileVersion = currentFileVersionTMP;
 
             try {
                 // in case of not having a cvRule manager, load the rules depending
@@ -702,8 +717,8 @@ public class MzIdentMLValidator extends Validator {
 
         if (this.gui != null) {
             try {
-                final InputStream objectRuleInputStream = this.gui.getRuleFileInputStream(this.currentFileVersion, this.gui.STR_OBJECT);
-                final InputStream mappingRuleInputStream = this.gui.getRuleFileInputStream(this.currentFileVersion, this.gui.STR_MAPPING);
+                final InputStream objectRuleInputStream = this.gui.getRuleFileInputStream(MzIdentMLValidator.currentFileVersion, this.gui.STR_OBJECT);
+                final InputStream mappingRuleInputStream = this.gui.getRuleFileInputStream(MzIdentMLValidator.currentFileVersion, this.gui.STR_MAPPING);
                 
                 this.setCvMappingRules(mappingRuleInputStream);
                 this.setObjectRules(objectRuleInputStream);
@@ -743,7 +758,7 @@ public class MzIdentMLValidator extends Validator {
             boolean schemaValid = false;
             
             try {
-                this.schemaUri = this.getMzIdentMLSchema(this.currentFileVersion);
+                this.schemaUri = this.getMzIdentMLSchema(MzIdentMLValidator.currentFileVersion);
                 schemaValid = this.isValidmzIdentMLXml(xmlFile, this.schemaUri);
             }
             catch (ValidatorException | SAXException e) {
@@ -798,10 +813,10 @@ public class MzIdentMLValidator extends Validator {
         switch (mzIdentMLVersion) {
             case "1.1.0":
             case "1.1":
-                return MzIdVersion._1_1;
+                return MzIdentMLValidator.MzIdVersion._1_1;
             case "1.2.0":
             case "1.2":
-                return MzIdVersion._1_2;
+                return MzIdentMLValidator.MzIdVersion._1_2;
         }
         
         return null;
@@ -858,38 +873,43 @@ public class MzIdentMLValidator extends Validator {
      * @throws ValidatorException 
      */
     private void applyObjectRules() throws ValidatorException {
+        int objectRulesChecked;
+        
         long startTime = System.currentTimeMillis();
 
         this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationProtocol); // should stand on the beginning
         
         this.checkElementObjectRule(MzIdentMLElement.CvList);
+        this.checkElementObjectRule(MzIdentMLElement.CvParam);
+        this.checkElementObjectRule(MzIdentMLElement.Param);
+        
         if (this.gui.isMIAPEValidationSelected()) {
             this.checkElementObjectRule(MzIdentMLElement.AnalysisSoftware);
             this.checkElementObjectRule(MzIdentMLElement.Provider);
         }
         this.checkElementObjectRule(MzIdentMLElement.Person);
         this.checkElementObjectRule(MzIdentMLElement.Organization);
+        this.checkElementObjectRule(MzIdentMLElement.PeptideEvidence);
         this.checkElementObjectRule(MzIdentMLElement.Peptide);
         this.checkElementObjectRule(MzIdentMLElement.SearchModification);
         if (this.gui.isMIAPEValidationSelected()) {
             this.checkElementObjectRule(MzIdentMLElement.Enzyme);
         }
-        this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationItem);
         this.checkElementObjectRule(MzIdentMLElement.ProteinDetectionList);
         this.checkElementObjectRule(MzIdentMLElement.ProteinAmbiguityGroup);
-        this.checkXLInterActionScorePairing();
+        if (AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch) {
+            this.checkXLInterActionScorePairing();
+        }
+        objectRulesChecked = this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationItem);
 
-        if (this.currentFileVersion == MzIdVersion._1_2) {
+        if (MzIdentMLValidator.currentFileVersion == MzIdentMLValidator.MzIdVersion._1_2) {
             this.checkElementObjectRule(MzIdentMLElement.DBSequence);
-            this.checkElementObjectRule(MzIdentMLElement.PeptideEvidence);
-            this.checkElementObjectRule(MzIdentMLElement.SequenceCollection);           // time consuming
-            this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationList);   // time consuming
-            this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationResult);
-            this.checkElementObjectRule(MzIdentMLElement.ProteinDetectionHypothesis);   // time consuming
+            //this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationList);
+            objectRulesChecked = this.checkElementObjectRule(MzIdentMLElement.SpectrumIdentificationResult);
+            //objectRulesChecked = this.checkElementObjectRule(MzIdentMLElement.ProteinDetectionHypothesis);
         }
 
-        //this.checkElementObjectRule(MzIdentMLElement.CvParam);    // currently deactivated because of NullPointerException in xxindex-library
-        
+        this.LOGGER.debug(objectRulesChecked + " object rules checked.");
         this.LOGGER.debug("Object Rule validation done in " + (System.currentTimeMillis() - startTime) + "ms.");
     }
 
@@ -977,14 +997,14 @@ public class MzIdentMLValidator extends Validator {
         this.checkElementCvMapping(MzIdentMLElement.SpectrumIdentificationList);    // this includes SIR and SII
         this.checkElementCvMapping(MzIdentMLElement.FragmentationTable);
         this.checkElementCvMapping(MzIdentMLElement.Measure);
-        if (this.currentFileVersion == MzIdVersion._1_2) {
+        if (MzIdentMLValidator.currentFileVersion == MzIdentMLValidator.MzIdVersion._1_2) {
             this.checkElementCvMapping(MzIdentMLElement.ProteinDetectionList);
         }
         this.checkElementCvMapping(MzIdentMLElement.ProteinAmbiguityGroup);
         // disabled because is included in the SIL
         // this.checkElementCvMapping(MzIdentMLElement.SpectrumIdentificationResult);
         
-        if (this.currentFileVersion == MzIdVersion._1_2) {
+        if (MzIdentMLValidator.currentFileVersion == MzIdentMLValidator.MzIdVersion._1_2) {
             this.checkElementCvMapping(MzIdentMLElement.ProteinDetectionHypothesis);
         }
         
@@ -1043,36 +1063,41 @@ public class MzIdentMLValidator extends Validator {
     
     /**
      * Checks an object rule for an element.
-     * @param element
+     * @param element the element to check
+     * @return the number of checked object rules
      * @throws ValidatorException 
      */
-    private void checkElementObjectRule(MzIdentMLElement element) throws ValidatorException {
+    private int checkElementObjectRule(MzIdentMLElement element) throws ValidatorException {
         if (this.gui != null) {
             this.gui.setProgress(++this.progress, "Validating " + element.getXpath() + this.STR_ELLIPSIS);
         }
-        Iterator<MzIdentMLObject> mzMLIter = this.unmarshaller.unmarshalCollectionFromXpath(element);
+        Iterator<MzIdentMLObject> mzIdentMLIter = this.unmarshaller.unmarshalCollectionFromXpath(element);
 
         Collection<ValidatorMessage> objectRuleResult = new ArrayList<>();
-        if (!mzMLIter.hasNext()) {
+        if (element.getXpath() == null) {
+            this.LOGGER.warn("XPath is null for element " + element.name());
+        }
+        else if (!mzIdentMLIter.hasNext()) {
             this.LOGGER.warn(element.getXpath() + " is not present. Maybe is because it is not indexed?");
         }
-
-        while (mzMLIter.hasNext()) {
-            try {
-                final MzIdentMLObject next = mzMLIter.next();
-                final Collection<ValidatorMessage> validationResult = this.validate(next);
-                if (validationResult != null && !validationResult.isEmpty())
-                    objectRuleResult.addAll(validationResult);
-            }
-            catch (IllegalArgumentException e) {
-                this.LOGGER.warn(e.getMessage());
-                // if exception is thrown is because there is no rule to check this mzIdentML elements, so break the loop
-                break;
+        else {
+            while (mzIdentMLIter.hasNext()) {
+                try {
+                    final MzIdentMLObject next = mzIdentMLIter.next();
+                    final Collection<ValidatorMessage> validationResult = this.validate(next);
+                    if (validationResult != null && !validationResult.isEmpty())
+                        objectRuleResult.addAll(validationResult);
+                }
+                catch (IllegalArgumentException e) {
+                    this.LOGGER.warn(e.getMessage());
+                    // if exception is thrown is because there is no rule to check this mzIdentML elements, so break the loop
+                    break;
+                }
             }
         }
 
         // Special handling: Now check the results for the cross-linking case
-        if (this.currentFileVersion == MzIdVersion._1_2) {
+        if (MzIdentMLValidator.currentFileVersion == MzIdentMLValidator.MzIdVersion._1_2) {
             if (AdditionalSearchParamsObjectRule.bIsCrossLinkingSearch) {
                 if (element.getClazz().getName().endsWith("SpectrumIdentificationResult")) {
                     objectRuleResult.addAll(XLinkSIIObjectRule.checkRulesWithHashMapContent());
@@ -1084,6 +1109,8 @@ public class MzIdentMLValidator extends Validator {
         }
         
         this.addMessages(objectRuleResult, this.msgLevel);
+        
+        return this.progress;
     }
 
     /**
@@ -1100,9 +1127,9 @@ public class MzIdentMLValidator extends Validator {
         for (ObjectRule rule : this.getObjectRules()) {
             if (rule.canCheck(objectToCheck)) {
                 bSomeObjRuleCanCheck = true;
+                
                 @SuppressWarnings("unchecked")
                 final Collection<ValidatorMessage> resultCheck = (Collection<ValidatorMessage>) rule.check(objectToCheck);
-                // update the object rule report
                 this.extendedReport.objectRuleExecuted(rule, resultCheck);
 
                 if (this.ruleFilterManager != null) {
@@ -1430,14 +1457,14 @@ public class MzIdentMLValidator extends Validator {
 
         // set the new cvMapping rules
         if (cvMappingRuleFile == null) {
-            cvMappingRuleFile = this.gui.getRuleFileInputStream(this.currentFileVersion, this.gui.STR_MAPPING);
+            cvMappingRuleFile = this.gui.getRuleFileInputStream(MzIdentMLValidator.currentFileVersion, this.gui.STR_MAPPING);
         }
         this.setCvMappingRules(cvMappingRuleFile);
         cvMappingRuleFile.close();
 
         // set the new object rules
         if (objectRuleFile == null) {
-            objectRuleFile = this.gui.getRuleFileInputStream(this.currentFileVersion, this.gui.STR_OBJECT);
+            objectRuleFile = this.gui.getRuleFileInputStream(MzIdentMLValidator.currentFileVersion, this.gui.STR_OBJECT);
         }
         this.setObjectRules(objectRuleFile);
         objectRuleFile.close();

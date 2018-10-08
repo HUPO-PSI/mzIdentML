@@ -1,7 +1,7 @@
 @echo off
 
 set OutDir=C:\Users\mayerg97\Documents\GitHub\HUPO-PSI\mzIdentML\validator\build\classes\
-set JAR_FILE=%OutDir%mzIdentMLValidator-1.4.31-SNAPSHOT.jar
+set JAR_FILE=%OutDir%mzIdentMLValidator-1.4.32-SNAPSHOT.jar
 set MANIFEST_FILE=C:\Users\mayerg97\Documents\GitHub\HUPO-PSI\mzIdentML\validator\manifest.mf
 
 cd %OutDir%

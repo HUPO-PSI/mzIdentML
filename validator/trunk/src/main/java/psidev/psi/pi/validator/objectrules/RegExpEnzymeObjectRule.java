@@ -79,7 +79,7 @@ public class RegExpEnzymeObjectRule extends AObjectRule<Enzyme> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Add the element 'SiteRegexp' to the Enzyme at " + RegExpEnzymeObjectRule.ENZYME_CONTEXT.getContext());
+        ret.add("Add the element 'SiteRegexp' to the Enzyme.");
         
         return ret;
     }

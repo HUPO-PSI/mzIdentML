@@ -3,6 +3,7 @@ package psidev.psi.pi.validator.objectrules;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import psidev.psi.pi.validator.MzIdentMLValidator;
 
 import psidev.psi.tools.ontology_manager.OntologyManager;
 import psidev.psi.tools.validator.Context;
@@ -28,13 +29,16 @@ public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetection
      */
     private static final Context PAG_CONTEXT = new Context(MzIdentMLElement.ProteinAmbiguityGroup.getXpath());
     private static final Context PDL_CONTEXT = new Context(MzIdentMLElement.ProteinDetectionList.getXpath());
-    private static final String PROTEIN_CLUSTER_IDENTIFIER_CV = "MS:1002407";
+    
+    private static final String COUNT_OF_IDENTIFIED_PROTEINS    = "MS:1002404";
+    private static final String PROTEIN_CLUSTER_IDENTIFIER_CV   = "MS:1002407";
 
     /**
      * Members.
      */
     private boolean clusterIdentifierTypeError = false;
     private boolean clusterIdentifierUseError = false;
+    public static boolean bContainsCountsOfIdentifiedProteins = false;
 
     /**
      * Constructor.
@@ -59,7 +63,7 @@ public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetection
      */
     @Override
     public boolean canCheck(Object obj) {
-            return (obj instanceof ProteinDetectionList);
+        return (obj instanceof ProteinDetectionList);
     }
 
     /**
@@ -79,7 +83,7 @@ public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetection
             for (ProteinAmbiguityGroup pag : proteinAmbiguityGroups) {
                 if (pag.getCvParam() != null) {
                     for (CvParam cvParam : pag.getCvParam()) {
-                        if (cvParam.getAccession().equals(PROTEIN_CLUSTER_IDENTIFIER_CV)) {
+                        if (cvParam.getAccession().equals(ProteinDetectionListObjectRule.PROTEIN_CLUSTER_IDENTIFIER_CV)) {
                             aClusterIdentifierFound = true;
                             break;
                         }
@@ -96,7 +100,7 @@ public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetection
                     aClusterIdentifierFound = false;
                     if (pag.getCvParam() != null) {
                         for (CvParam cvParam : pag.getCvParam()) {
-                            if (cvParam.getAccession().equals(PROTEIN_CLUSTER_IDENTIFIER_CV)) {
+                            if (cvParam.getAccession().equals(ProteinDetectionListObjectRule.PROTEIN_CLUSTER_IDENTIFIER_CV)) {
                                 aClusterIdentifierFound = true;
                                 try {
                                     Integer.valueOf(cvParam.getValue());
@@ -109,9 +113,9 @@ public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetection
                                         + ") is not a valid integer value (id="
                                         + pag.getId()
                                         + "') element at "
-                                        + PAG_CONTEXT.getContext(),
+                                        + ProteinDetectionListObjectRule.PAG_CONTEXT.getContext(),
                                         MessageLevel.ERROR,
-                                        PAG_CONTEXT, this));
+                                        ProteinDetectionListObjectRule.PAG_CONTEXT, this));
                                 }
                             }
                         } // rof
@@ -126,14 +130,23 @@ public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetection
                                 + ") has been detected in some Protein Ambiguity Group (PAG) but not in all in the PDL "
                                 + pdl.getId()
                                 + "') element at "
-                                + PDL_CONTEXT.getContext(),
+                                + ProteinDetectionListObjectRule.PDL_CONTEXT.getContext(),
                                 MessageLevel.ERROR,
-                                PAG_CONTEXT, this));
+                                ProteinDetectionListObjectRule.PAG_CONTEXT, this));
                         }
 
                         this.clusterIdentifierUseError = true;
                     }
                 } // rof
+            }
+        } // fi PAG's != null
+        
+        // Quick and dirty hack; unfortunately sometimes no cvParams are found, even if they are present
+        List<CvParam> cvParamList = pdl.getCvParam();
+        for (CvParam cvp: cvParamList) {
+            if (cvp.getAccession().equals(ProteinDetectionListObjectRule.COUNT_OF_IDENTIFIED_PROTEINS)) {
+                ProteinDetectionListObjectRule.bContainsCountsOfIdentifiedProteins = true;
+                break;
             }
         }
 
@@ -151,16 +164,17 @@ public class ProteinDetectionListObjectRule extends AObjectRule<ProteinDetection
         
         if (this.clusterIdentifierUseError) {
             ret.add("Add the appropriate CV term 'cluster identifier' ("
-                + PROTEIN_CLUSTER_IDENTIFIER_CV
-                + ") to all the Protein Ambiguity Groups at "
-                + ProteinDetectionListObjectRule.PAG_CONTEXT.getContext());
+                + ProteinDetectionListObjectRule.PROTEIN_CLUSTER_IDENTIFIER_CV
+                + ") to all the Protein Ambiguity Groups.");
         }
         
         if (this.clusterIdentifierTypeError) {
             ret.add("Introduce a valid Integer value on the CV term 'cluster identifier' ("
-                + PROTEIN_CLUSTER_IDENTIFIER_CV
-                + ") at "
-                + ProteinDetectionListObjectRule.PAG_CONTEXT.getContext());
+                + ProteinDetectionListObjectRule.PROTEIN_CLUSTER_IDENTIFIER_CV + ").");
+        }
+        
+        if (!ProteinDetectionListObjectRule.bContainsCountsOfIdentifiedProteins && MzIdentMLValidator.currentFileVersion.equals(MzIdentMLValidator.MzIdVersion._1_2)) {
+            ret.add("ProteinDetectionList must contain a CV term MS:1002404 (count of identified proteins).");
         }
         
         return ret;

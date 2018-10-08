@@ -140,7 +140,7 @@ public class PeptideLevelStatsObjectRule extends AObjectRule<SpectrumIdentificat
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Add the" + this.tripletMsg + "to each SpectrumIdentificationItem");
+        ret.add("Add the" + this.tripletMsg + "to each SpectrumIdentificationItem.");
         
         return ret;
     }

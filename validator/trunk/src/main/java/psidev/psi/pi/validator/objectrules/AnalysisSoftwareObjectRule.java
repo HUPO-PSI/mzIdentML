@@ -31,8 +31,8 @@ public class AnalysisSoftwareObjectRule extends AObjectRule<AnalysisSoftware> {
     /**
      * Members.
      */
-    private boolean versionError = false;
-    private boolean contactRoleMissingError = false;
+    private boolean bVersionError = false;
+    private boolean bContactRoleMissingError = false;
 
     /**
      * Constructor.
@@ -72,7 +72,7 @@ public class AnalysisSoftwareObjectRule extends AObjectRule<AnalysisSoftware> {
 
         // version
         if (software.getVersion() == null || software.getVersion().isEmpty()) {
-            this.versionError = true;
+            this.bVersionError = true;
             messages.add(new ValidatorMessage(
                 "There is not a version in the Analysis Software (id='" + software.getId()
                 + "') element at " + AnalysisSoftwareObjectRule.ANALYSISSW_CONTEXT.getContext(),
@@ -80,7 +80,7 @@ public class AnalysisSoftwareObjectRule extends AObjectRule<AnalysisSoftware> {
         }
         // contactRole
         if (software.getContactRole() == null) {
-            this.contactRoleMissingError = true;
+            this.bContactRoleMissingError = true;
             messages.add(new ValidatorMessage(
                 "There is not a contactRole element to refer to a software vendor in the Analysis Software (id='"
                 + software.getId() + "') element at " + AnalysisSoftwareObjectRule.ANALYSISSW_CONTEXT.getContext(), MessageLevel.ERROR,
@@ -99,12 +99,12 @@ public class AnalysisSoftwareObjectRule extends AObjectRule<AnalysisSoftware> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        if (this.versionError) {
-            ret.add("Add the attribute 'version' to the AnalysisSoftware at " + AnalysisSoftwareObjectRule.ANALYSISSW_CONTEXT.getContext());
+        if (this.bVersionError) {
+            ret.add("Add the attribute 'version' to the AnalysisSoftware.");
         }
         
-        if (this.contactRoleMissingError) {
-            ret.add("Add the contactRole element to the AnalysisSoftware at " + AnalysisSoftwareObjectRule.ANALYSISSW_CONTEXT.getContext() + " with the appropriate role type (software vendor)");
+        if (this.bContactRoleMissingError) {
+            ret.add("Add the contactRole element to the AnalysisSoftware.");
         }
 
         return ret;

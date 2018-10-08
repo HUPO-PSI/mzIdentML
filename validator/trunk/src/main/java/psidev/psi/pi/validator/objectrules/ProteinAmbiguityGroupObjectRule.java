@@ -338,23 +338,20 @@ public class ProteinAmbiguityGroupObjectRule extends AObjectRule<ProteinAmbiguit
         if (this.groupRepresentativeError) {
             ret.add("Remove the CV term 'group representative' (");
             ret.add(ProteinAmbiguityGroupObjectRule.GROUP_REPRESENTATIVE);
-            ret.add(") from all the ProteinDetectionHypothesis in the Protein Ambiguity Group excepting one, at ");
-            ret.add(ProteinAmbiguityGroupObjectRule.PAG_CONTEXT.getContext());
+            ret.add(") from all the ProteinDetectionHypothesis in the Protein Ambiguity Group excepting one.");
         }
         
         if (this.leadingProteinError) {
             ret.add("Add the CV term 'group representative' (");
             ret.add(ProteinAmbiguityGroupObjectRule.GROUP_REPRESENTATIVE);
             ret.add(") to at least one of the ProteinDetectionHypothesis labeled as 'leading protein' (");
-            ret.add(ProteinAmbiguityGroupObjectRule.LEADING_PROTEIN + ") in the Protein Ambiguity Group at ");
-            ret.add(ProteinAmbiguityGroupObjectRule.PAG_CONTEXT.getContext());
+            ret.add(ProteinAmbiguityGroupObjectRule.LEADING_PROTEIN + ") in the ProteinAmbiguityGroup.");
         }
         
         if (this.xlInteractionScoreRegExError) {
             ret.add("The value for the CV term of the cross-linking interaction score must have the format 'int_ID.a|b:POS|null:SCORE_OR_VALUE:PASS_THRESHOLD' for child of (");
             ret.add(ProteinAmbiguityGroupObjectRule.XL_INTERACTION_SCORE);
-            ret.add(")");
-            ret.add(ProteinAmbiguityGroupObjectRule.PAG_CONTEXT.getContext());
+            ret.add(".)");
         }
         
         return ret;

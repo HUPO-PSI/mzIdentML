@@ -81,7 +81,7 @@ public class SpectrumIdentificationItemPeptideEvidenceRefObjectRule extends AObj
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Add the PeptideEvidenceRef element at "+  SpectrumIdentificationItemPeptideEvidenceRefObjectRule.SII_CONTEXT.getContext());
+        ret.add("Add the PeptideEvidenceRef element for MS/MS or PMF searches.");
         
         return ret;
     }

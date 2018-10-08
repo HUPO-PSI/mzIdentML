@@ -105,13 +105,11 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
         String cvValue = cv.getValue();
         
         // check for empty CV value
-        ValidatorMessage valMsg;
         if (cvValue.isEmpty()) {
-            valMsg = new ValidatorMessage("The '" + cv.getName()
+            messages.add(new ValidatorMessage("The '" + cv.getName()
                 + "' cvParam in the Modification location='" + mod.getLocation() + "' of Peptide (id='" + pept.getId() + "') element at "
                 + XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT.getContext() + " has an empty value.",
-                MessageLevel.WARN, XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT, this);
-            messages.add(valMsg);
+                MessageLevel.WARN, XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT, this));
         }
         
         // fill data to map
@@ -213,15 +211,14 @@ public class XLinkPeptideModificationObjectRule extends AObjectRule<Peptide> {
     /**
      * Gets the tips how to fix the error.
      * 
-     * @return Ccollection of tips
+     * @return Collection of tips
      */
     @Override
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("The CV terms MS:1002509 - 'cross-link donor' and MS:1002510 - 'cross-link acceptor' must be paired with the same value in two different Peptide Modifications"
-                + XLinkPeptideModificationObjectRule.PEPTIDE_CONTEXT.getContext());
-
+        ret.add("The CV terms MS:1002509 - 'cross-link donor' and MS:1002510 - 'cross-link acceptor' must be paired with the same value in two different Peptide Modifications.");
+        
         return ret;
     }
 }

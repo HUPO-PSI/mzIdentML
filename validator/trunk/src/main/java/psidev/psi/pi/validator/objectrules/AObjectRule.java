@@ -22,12 +22,6 @@ public abstract class AObjectRule<T extends Object> extends ObjectRule<T> {
      */
     protected final Logger LOGGER = LogManager.getLogger(AObjectRule.class);
     private static final String STR_ENCODING = "UTF-8";
-    
-    /**
-     * Members.
-     */
-    protected RESTClient restClient = new RESTClient();
-    
     private final HashMap<String, String> childOf1001143 = new HashMap<String, String>() {  // PSM-level search engine specific statistic
         {
             put("MS:1001154", "SEQUEST:probability");
@@ -154,6 +148,11 @@ public abstract class AObjectRule<T extends Object> extends ObjectRule<T> {
             put("MS:1002677", "residue-pair-level global FDR");
         }
     };
+    
+    /**
+     * Members.
+     */
+    protected RESTClient restClient = new RESTClient();
     
     /**
      * Constructor.

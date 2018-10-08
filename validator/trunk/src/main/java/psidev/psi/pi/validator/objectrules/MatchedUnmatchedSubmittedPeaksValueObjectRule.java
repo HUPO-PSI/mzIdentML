@@ -130,13 +130,13 @@ public class MatchedUnmatchedSubmittedPeaksValueObjectRule extends AObjectRule<P
         List<String> ret = new ArrayList<>();
         
         if (this.matchedValueError) {
-            ret.add("Add a non empty value to the term the element 'number of matched peaks' ('" + MATCHED_PEAKS_ACC + "') in the ProteinDetectionHypotesis");
+            ret.add("Add a non-empty value to the term the element 'number of matched peaks' ('" + MATCHED_PEAKS_ACC + "') for ProteinDetectionHypothesis.");
         }
         if (this.unmatchedValueError) {
-            ret.add("Add a non empty value to the term the element 'number of unmatched peaks' ('" + UNMATCHED_PEAKS_ACC + "') in the ProteinDetectionHypotesis");
+            ret.add("Add a non-empty value to the term the element 'number of unmatched peaks' ('" + UNMATCHED_PEAKS_ACC + "') for ProteinDetectionHypothesis.");
         }
         if (this.submittedValueError) {
-            ret.add("Add a non empty value to the term the element 'number of peaks submitted' ('" + SUBMITTED_PEAKS_ACC + "') in the ProteinDetectionHypotesis");
+            ret.add("Add a non-empty value to the term the element 'number of peaks submitted' ('" + SUBMITTED_PEAKS_ACC + "') for ProteinDetectionHypothesis.");
         }
         
         return ret;

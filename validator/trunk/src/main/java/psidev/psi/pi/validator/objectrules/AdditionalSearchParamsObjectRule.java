@@ -169,7 +169,7 @@ public class AdditionalSearchParamsObjectRule extends AObjectRule<SpectrumIdenti
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("The AdditionalSearchParams element of SpectrumIdentificationProtocol must contain a CV term for the type of 'special processing' at" + AdditionalSearchParamsObjectRule.SIP_CONTEXT.getContext());
+        ret.add("The AdditionalSearchParams element of SpectrumIdentificationProtocol must contain a CV term for the type of 'special processing'.");
 
         return ret;
     }

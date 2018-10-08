@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by Salva (Centro Nacional de Biotecnología, CSIC) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="ruleFilter">
+		<xs:annotation>
+			<xs:documentation>Root of the schema</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="userConditions" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="ruleConditions" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="references" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="mandatoryElements" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name="referencedRuleKey_ID">
+			<xs:annotation>
+				<xs:documentation>Identifier of a set of rules to be referenced in the XML</xs:documentation>
+			</xs:annotation>
+			<xs:selector xpath="./references/referencedRules"/>
+			<xs:field xpath="@id"/>
+		</xs:key>
+		<xs:keyref name="ruleReference_ID" refer="referencedRuleKey_ID">
+			<xs:annotation>
+				<xs:documentation>reference to a referencedCvMappingRules</xs:documentation>
+			</xs:annotation>
+			<xs:selector xpath="./userConditions/userCondition/userOption/rulesToSkipRef"/>
+			<xs:field xpath="@ref"/>
+		</xs:keyref>
+	</xs:element>
+	<xs:element name="mandatoryElements">
+		<xs:annotation>
+			<xs:documentation>List of elements that should be present in the file.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="mandatoryElement" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="mandatoryElement">
+		<xs:complexType>
+			<xs:attribute name="element" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>This value of this attribute should be one of the values of the Enum: MzIdentMLElement in the jmzIdentML library or the MzMLElement in the jmzML library</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="references">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="referencedRules" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="referencedRules">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ruleToSkip" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="id" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ruleConditions">
+		<xs:annotation>
+			<xs:documentation>A set of ruleCondition (object rules or cvMapping rules)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ruleCondition" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ruleCondition">
+		<xs:annotation>
+			<xs:documentation>Represents a rule condition. This means that depending of the result of applying a rule, other rules should be applied or not</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ruleToSkip" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>The identifier of the rule (cvMappingRule or objectRule).</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="valid" type="xs:boolean" use="required">
+				<xs:annotation>
+					<xs:documentation>Boolean value of the condition. If the result of applying the rule referenced by the 'id' attribute is equal to this value, then the rules referenced by its children will skipped in the validation.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ruleToSkip">
+		<xs:annotation>
+			<xs:documentation>Represents a rule that should be skipped in the validation</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>The identifier of the rule (cvMappingRule or objectRule). This corresponds to the value returned by the 'getId()' method in the object rule class.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="userConditions">
+		<xs:annotation>
+			<xs:documentation>A set of userCondition</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="userCondition" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="userCondition">
+		<xs:annotation>
+			<xs:documentation>Represents a userCondition. It is composed by a set of conditions.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="userOption" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Identifier of the condition</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="userOption">
+		<xs:annotation>
+			<xs:documentation>Represents an option of the userCondition. It means that if the user select this option, the cvMappingRules and objectRules referenced by the children elements must be skiped</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ruleToSkip" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="rulesToSkipRef" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Identifier of the option</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="rulesToSkipRef">
+		<xs:complexType>
+			<xs:attribute name="ref" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Reference to a referencedRules element</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

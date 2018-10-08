@@ -2,6 +2,8 @@ package psidev.psi.pi.validator.objectrules;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import psidev.psi.tools.ontology_manager.OntologyManager;
 import psidev.psi.tools.validator.Context;
@@ -23,13 +25,12 @@ public class PeptideEvidenceObjectRule extends AObjectRule<PeptideEvidence> {
     /**
      * Constants.
      */
-    private static final Context PEV_CONTEXT = new Context(MzIdentMLElement.PeptideEvidence.getXpath());
+    private static final Context PEV_CONTEXT    = new Context(MzIdentMLElement.PeptideEvidence.getXpath());
     private final String startEndAttrMissingMsg = " must have correct start and end attributes set (since it's not a de novo search).";
     private final String startEndAttrWrongMsg   = " has wrong start and end attributes set (start must be >= 1 and end >=start, but < length of the protein sequence.";
-
-    /**
-     * Members.
-     */
+    public static HashSet<String> peptideRefSet = new HashSet<>();
+    public static HashSet<String> dbSeqRefSet   = new HashSet<>();
+    public static HashMap<String, String> peptideRef2PeptideEvidenceIDMap = new HashMap<>();
     
     /**
      * Constructors.
@@ -93,6 +94,10 @@ public class PeptideEvidenceObjectRule extends AObjectRule<PeptideEvidence> {
                 }
             }
         }
+        
+        PeptideEvidenceObjectRule.peptideRefSet.add(pev.getPeptideRef());
+        PeptideEvidenceObjectRule.dbSeqRefSet.add(pev.getDBSequenceRef());
+        PeptideEvidenceObjectRule.peptideRef2PeptideEvidenceIDMap.put(pev.getPeptideRef(), pev.getId());
 
         return messages;
     }

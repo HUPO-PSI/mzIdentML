@@ -100,7 +100,7 @@ public class SIRUniqueSpectrumIDSpectrumRefCombinationRule extends AObjectRule<S
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("The combination for each SpectrumIdentificationResult of a 'final PSM list' has to be unique at" + SIRUniqueSpectrumIDSpectrumRefCombinationRule.SIR_CONTEXT.getContext());
+        ret.add("The combination for each SpectrumIdentificationResult of a 'final PSM list' has to be unique.");
 
         return ret;
     }

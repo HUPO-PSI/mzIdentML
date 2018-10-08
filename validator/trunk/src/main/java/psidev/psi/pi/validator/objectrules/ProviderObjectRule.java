@@ -358,15 +358,15 @@ public class ProviderObjectRule extends AObjectRule<Provider> {
         List<String> ret = new ArrayList<>();
 
         if (this.contactRoleError) {
-            ret.add("Add a ContactRole element in the Provider element at " + ProviderObjectRule.PROVIDER_CONTEXT.getContext());
+            ret.add("Add a ContactRole element in the Provider element.");
         }
         
         if (this.emailError) {
-            ret.add("Add a valid contact email ('" + EMAIL_ACC + "') in any referenced element in the provider at " + ProviderObjectRule.PROVIDER_CONTEXT.getContext());
+            ret.add("Add a valid contact email ('" + EMAIL_ACC + "') in any referenced element in the provider.");
         }
         
         if (this.organizationNameError) {
-            ret.add("Add an affiliation name ('" + CONTACT_ORGANIZATION + "') in any referenced element in the provider at " + ProviderObjectRule.PROVIDER_CONTEXT.getContext());
+            ret.add("Add an affiliation name ('" + CONTACT_ORGANIZATION + "') in any referenced element in the provider.");
         }
         
         return ret;

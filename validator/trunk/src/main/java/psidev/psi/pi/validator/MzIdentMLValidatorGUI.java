@@ -93,7 +93,6 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     public final String COLOR_GREEN    = "green";
     public final String COLOR_BLACK    = "black";
     
-
     /**
      * Members.
      */
@@ -687,8 +686,8 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                     }
                     else {
                         // reset all validator fields except the ontologies
-                        validator.reset(getRuleFileInputStream(this.validator.currentFileVersion, STR_MAPPING),
-                                        getRuleFileInputStream(this.validator.currentFileVersion, STR_OBJECT));
+                        validator.reset(getRuleFileInputStream(MzIdentMLValidator.currentFileVersion, STR_MAPPING),
+                                        getRuleFileInputStream(MzIdentMLValidator.currentFileVersion, STR_OBJECT));
                     }
 
                     // this will add to the validator the rules to be skipped
@@ -737,8 +736,8 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                     jProgressBar.setString("Loading configuration files" + STR_ELLIPSIS);
 
                     InputStream isOntology;
-                    boolean remoteOntologies = jCheckBoxUseRemoteOntologies.isSelected();
-                    if (remoteOntologies) {
+                    boolean bRemoteOntologies = jCheckBoxUseRemoteOntologies.isSelected();
+                    if (bRemoteOntologies) {
                         isOntology = getOntologiesFileInputStream("ols.ontologies.file");
                         MzIdentMLValidatorGUI.LOGGER.debug("Remote ontology: " + isOntology);
                         if (isOntology != null) {
@@ -746,11 +745,11 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                             isOntology.close();
                         }
                         else {
-                            remoteOntologies = false;
+                            bRemoteOntologies = false;
                         }
                     }
 
-                    if (!remoteOntologies) {
+                    if (!bRemoteOntologies) {
                         isOntology = getOntologiesFileInputStream("local.ontologies.file");
                         MzIdentMLValidatorGUI.LOGGER.debug("Local ontology: " + isOntology);
                         if (isOntology != null) {
@@ -1059,7 +1058,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                         this.cntFlawErrors++;
                     }
                 }
-            }
+            } // flaw errors
             
             if (!messageList.contains(message)) {
                 messageList.add(message);
@@ -1200,6 +1199,22 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
                 }
                 if (!AdditionalSearchParamsObjectRule.bIsConsensusScoring) {
                     // TODO: implement
+                }
+                */
+
+                // Quick and dirty hack for ProteinDetectionList_must_rule
+                // MS:1002404 (count of identified proteins), see GitHub Issue #94
+                /*
+                if (MzIdentMLValidator.currentFileVersion == MzIdentMLValidator.MzIdVersion._1_2) {
+                    MzIdentMLValidatorGUI.LOGGER.debug("ruleID: " + ruleID);
+                    if (ProteinDetectionListObjectRule.bContainsCountsOfIdentifiedProteins) {
+                        switch (ruleID) {
+                            case "ProteinDetectionList_must_rule":
+                                report.getInvalidCvRules().remove(ruleID);
+                                bAdd = false;
+                                break;
+                        }
+                    }
                 }
                 */
 
@@ -1660,7 +1675,7 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
             jpanValidator.jTextInputFile.setText(args[0]);
         }
 
-        JFrame validatorFrame = new JFrame("mzIdentML validator GUI (mzIdentML versions 1.1.0 & 1.2.0)");
+        JFrame validatorFrame = new JFrame("mzIdentML validator GUI (mzIdentML versions 1.1.1 & 1.2.0)");
         validatorFrame.getContentPane().add(jpanValidator, BorderLayout.CENTER);
         validatorFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         validatorFrame.setResizable(false);

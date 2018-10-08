@@ -117,7 +117,7 @@ public class OrganizationObjectRule extends AObjectRule<Organization> {
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Provide a value for all CV terms under the Organization element." + OrganizationObjectRule.ORGANIZATION_CONTEXT.getContext());
+        ret.add("Provide a value for all CV terms under the Organization element.");
 
         return ret;
     }

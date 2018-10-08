@@ -104,7 +104,7 @@ public class SearchTypeObjectRule extends AObjectRule<SpectrumIdentificationProt
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("The SearchType element of SpectrumIdentificationProtocol must contain a CV term at" + SearchTypeObjectRule.ST_CONTEXT.getContext());
+        ret.add("The SearchType element of SpectrumIdentificationProtocol must contain a CV term.");
 
         return ret;
     }

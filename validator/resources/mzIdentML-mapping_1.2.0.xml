@@ -5,7 +5,7 @@
 <!-- mzIdentML 1.1.1 mapping file derived by SMDB from mzIdentML 1.1.0 mapping file -->
 <!-- mzIdentML 1.2.0 mapping file derived by SMDB from mzIdentML 1.1.1 mapping file -->
 <CvMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="http://psidev.svn.sourceforge.net/viewvc/psidev/psi/tools/cv-rule-reader/trunk/src/main/resources/CvMappingRules.xsd" modelName="mzIdentML1.1.1.xsd" modelURI="http://psi-pi.googlecode.com/svn-history/r708/trunk/schema/mzIdentML1.1.1-candidate.xsd" modelVersion="1.1.1">
+    xsi:noNamespaceSchemaLocation="http://psidev.svn.sourceforge.net/viewvc/psidev/psi/tools/cv-rule-reader/trunk/src/main/resources/CvMappingRules.xsd" modelName="mzIdentML1.2.0.xsd" modelURI="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/schema/mzIdentML1.2.0.xsd" modelVersion="1.2.0">
 
      <CvReferenceList>
         <CvReference cvName="PSI-MS" cvIdentifier="MS"/>
@@ -23,6 +23,7 @@
 			<CvTerm termAccession="MS:1000587" useTermName="false" useTerm="true" termName="contact address" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1000588" useTermName="false" useTerm="true" termName="contact URL" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1000589" useTermName="false" useTerm="true" termName="contact email" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1000590" useTermName="false" useTerm="true" termName="contact affiliation" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
             <Description>Terms describing the contact information for a Person.</Description>
 		</CvMappingRule>
 
@@ -150,7 +151,11 @@
 		</CvMappingRule>
         
 		<CvMappingRule id="SearchModification_may_rule" cvElementPath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/modificationParams/searchModification/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/AnalysisProtocolCollection/SpectrumIdentificationProtocol/modificationParams/searchModification" cvTermsCombinationLogic="OR">
+			<CvTerm termAccession="MS:1001189" useTermName="false" useTerm="true" termName="modification specificity peptide N-term" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1001190" useTermName="false" useTerm="true" termName="modification specificity peptide C-term" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1001471" useTermName="false" useTerm="false" termName="peptide modification details" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002057" useTermName="false" useTerm="true" termName="modification specificity protein N-term" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002058" useTermName="false" useTerm="true" termName="modification specificity protein C-term" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1002504" useTermName="false" useTerm="true" termName="modification index" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1002509" useTermName="false" useTerm="true" termName="cross-link donor" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1002510" useTermName="false" useTerm="true" termName="cross-link acceptor" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
@@ -268,7 +273,7 @@
         </CvMappingRule>
     	
         <CvMappingRule id="ProteinDetectionList_must_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList" cvTermsCombinationLogic="OR">
-			<CvTerm termAccession="MS:1002404" useTermName="false" useTerm="true" termName="count of identified proteins" isRepeatable="false" allowChildren="true" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1002404" useTermName="false" useTerm="true" termName="count of identified proteins" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
        	</CvMappingRule>
 
         <CvMappingRule id="ProteinDetectionList_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList" cvTermsCombinationLogic="OR">

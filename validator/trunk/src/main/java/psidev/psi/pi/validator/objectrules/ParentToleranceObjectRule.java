@@ -81,7 +81,7 @@ public class ParentToleranceObjectRule extends AObjectRule<SpectrumIdentificatio
     public Collection<String> getHowToFixTips() {
         List<String> ret = new ArrayList<>();
 
-        ret.add("Add the element 'FragmentTolerance' to the SpectrumIdentificationProtocol at " + ParentToleranceObjectRule.SIP_CONTEXT.getContext());
+        ret.add("Add the element 'FragmentTolerance' to the SpectrumIdentificationProtocol.");
         
         return ret;
     }

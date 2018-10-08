@@ -50,7 +50,7 @@ public class URIValidator {
                 String path = uri.getPath();
                 if (path != null) {
                     for (int i=path.length()-1; i >= 0; i--) {
-                        if ("?<>:*|\"".indexOf(path.charAt(i)) > URIValidator.NOT_FOUND) {
+                        if ("?<>:|\"".indexOf(path.charAt(i)) > URIValidator.NOT_FOUND) {
                             return false;
                         }
                     }
