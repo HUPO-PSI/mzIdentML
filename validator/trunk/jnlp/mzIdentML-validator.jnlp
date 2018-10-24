@@ -41,14 +41,14 @@
         <jar href="lib/object-rule-reader-2.0.10.jar"/>
         <jar href="lib/obo-2.0.jar"/>
         <jar href="lib/oboedit-1.101.jar"/>
-        <jar href="lib/ols-client-2.8.jar"/>
+        <jar href="lib/ols-client-2.11.jar"/>
         <jar href="lib/ols-core-1.19.jar"/>
         <jar href="lib/ontology-config-reader-2.0.10.jar"/>
         <jar href="lib/ontology-manager-2.0.10.jar"/>
         <jar href="lib/org.geneontology-1.101.jar"/>
         <jar href="lib/oscache-2.4.1.jar"/>
         <jar href="lib/proteomics-common-1.6.jar"/>
-        <jar href="lib/slf4j-api-1.8.0-beta.jar"/>
+        <jar href="lib/slf4j-api-1.8.0-beta2.jar"/>
         <jar href="lib/validator-2.0.10.jar"/>
         <jar href="lib/wsdl4j-1.6.3.jar"/>
         <jar href="lib/xercesImpl-2.12.0.jar"/>
