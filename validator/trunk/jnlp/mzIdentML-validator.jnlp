@@ -16,11 +16,7 @@
 	</security>
 	<resources>
 		<j2se version="1.8" max-heap-size="4096m"/>
-        <jar href="lib/mzIdentMLValidator-1.4.32-SNAPSHOT.jar" main="true"/>
-        <jar href="lib/axis-1.4.jar"/>
-        <jar href="lib/axis-jaxrpc-1.4.jar"/>
-        <jar href="lib/axis-saaj-1.4.jar"/>
-        <jar href="lib/axis-wsdl4j-1.5.1.jar"/>
+        <jar href="lib/mzIdentMLValidator-1.4.33-SNAPSHOT.jar" main="true"/>
         <jar href="lib/bbop-2.0.jar"/>
         <jar href="lib/commons-beanutils-1.9.3.jar"/>
         <jar href="lib/commons-collections-3.2.2.jar"/>
@@ -34,7 +30,7 @@
         <jar href="lib/commons-logging-1.2.jar"/>
         <jar href="lib/commons-text-1.5.jar"/>
         <jar href="lib/cpdetector_1.0.10.jar"/>
-        <jar href="lib/cv-rule-reader-2.0.7.jar"/>
+        <jar href="lib/cv-rule-reader-2.0.10.jar"/>
         <jar href="lib/fastutil-8.2.2.jar"/>
         <jar href="lib/jargs-1.0.jar"/>
         <jar href="lib/jaxb-core-2.3.0.1.jar"/>
@@ -42,18 +38,18 @@
 		<jar href="lib/log4j-1.2.17.jar"/>
         <jar href="lib/logback-classic-1.3.0-alpha4.jar"/>
         <jar href="lib/logback-core-1.3.0-alpha4.jar"/>
-        <jar href="lib/object-rule-reader-2.0.7.jar"/>
+        <jar href="lib/object-rule-reader-2.0.10.jar"/>
         <jar href="lib/obo-2.0.jar"/>
         <jar href="lib/oboedit-1.101.jar"/>
         <jar href="lib/ols-client-2.8.jar"/>
         <jar href="lib/ols-core-1.19.jar"/>
-        <jar href="lib/ontology-config-reader-2.0.7.jar"/>
-        <jar href="lib/ontology-manager-4.jar"/>
+        <jar href="lib/ontology-config-reader-2.0.10.jar"/>
+        <jar href="lib/ontology-manager-2.0.10.jar"/>
         <jar href="lib/org.geneontology-1.101.jar"/>
         <jar href="lib/oscache-2.4.1.jar"/>
         <jar href="lib/proteomics-common-1.6.jar"/>
         <jar href="lib/slf4j-api-1.8.0-beta.jar"/>
-        <jar href="lib/validator-2.0.7.jar"/>
+        <jar href="lib/validator-2.0.10.jar"/>
         <jar href="lib/wsdl4j-1.6.3.jar"/>
         <jar href="lib/xercesImpl-2.12.0.jar"/>
         <jar href="lib/xml-apis-2.0.2.jar"/>
