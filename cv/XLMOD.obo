@@ -1,11 +1,11 @@
 format-version: 1.2
-data-version: release/2018-09-11
+data-version: release/2018-10-30
 ontology: xlmod
-date: 11:09:2018 09:26
+date: 30:10:2018 11:43
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: XLMOD
-remark: version: 1.1.9
+remark: version: 1.1.10
 remark: coverage: cross-linking reagents, cross-linker related post-translational modifications, and derivatization reagents for GC-MS and LC-MS
 remark: creator: Lutz Fischer <lfischer <-at-> staffmail.ed.ac.uk>
 remark: creator: Alexander Leitner <leitner <-at-> imsb.biol.ethz.ch>
@@ -7447,6 +7447,13 @@ id: XLMOD:07123
 name: 18-Crown-6
 def: "18-Crown-6." [CAS:17455-13-9, PubChem_Compound:28557, ChemSpiderID:26563, ChemicalBookNo:CB4445218]
 is_a: XLMOD:06002 ! alkylation reagent
+
+[Term]
+id: XLMOD:07124
+name: 3-Aminopropyltriethoxysilane
+def: "3-Aminopropyltriethoxysilane." [CAS:919-30-2, PubChem_Compound:13521, ChemSpiderID:12933, ChemicalBookNo:CB8686147]
+synonym: "APTES" EXACT []
+is_a: XLMOD:06003 ! silylation reagent
 
 [Term]
 id: XLMOD:09000
