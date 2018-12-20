@@ -21,6 +21,9 @@
 			<CvTerm termAccession="MS:1000588" useTermName="false" useTerm="true" termName="contact URL" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1000589" useTermName="false" useTerm="true" termName="contact email" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1000590" useTermName="false" useTerm="true" termName="contact affiliation" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1001755" useTermName="false" useTerm="true" termName="contact phone number" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1001756" useTermName="false" useTerm="true" termName="contact fax number" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1001757" useTermName="false" useTerm="true" termName="contact toll-free phone number" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
             <Description>some text to describe this rule</Description>
 		</CvMappingRule>
 
@@ -29,6 +32,9 @@
 			<CvTerm termAccession="MS:1000587" useTermName="false" useTerm="true" termName="contact address" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1000588" useTermName="false" useTerm="true" termName="contact URL" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1000589" useTermName="false" useTerm="true" termName="contact email" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1001755" useTermName="false" useTerm="true" termName="contact phone number" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1001756" useTermName="false" useTerm="true" termName="contact fax number" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
+			<CvTerm termAccession="MS:1001757" useTermName="false" useTerm="true" termName="contact toll-free phone number" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 		</CvMappingRule>
 
         <CvMappingRule id="AnalysisSoftwareContactRole_must_rule" cvElementPath="/MzIdentML/AnalysisSoftwareList/AnalysisSoftware/contactRole/role/cvParam/@accession" requirementLevel="MUST" scopePath="/MzIdentML/AnalysisSoftwareList/AnalysisSoftware/contactRole/role" cvTermsCombinationLogic="OR">

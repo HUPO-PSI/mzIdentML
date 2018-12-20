@@ -7,13 +7,11 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-
+import static org.junit.platform.engine.discovery.DiscoverySelectors.selectClass;
 import org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder;
 import org.junit.platform.launcher.Launcher;
 import org.junit.platform.launcher.LauncherDiscoveryRequest;
 import org.junit.platform.launcher.core.LauncherFactory;
-import static org.junit.platform.engine.discovery.DiscoverySelectors.selectClass;
 import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
 import org.junit.platform.launcher.listeners.TestExecutionSummary;
 import org.junit.platform.launcher.listeners.TestExecutionSummary.Failure;
@@ -49,7 +47,7 @@ public class URLEncodingTest {
      */
     @BeforeAll
     public static void setUpClass() {
-        restClient = new RESTClient();
+        URLEncodingTest.restClient = new RESTClient();
     }
     
     /**
@@ -57,7 +55,7 @@ public class URLEncodingTest {
      */
     @AfterAll
     public static void tearDownClass() {
-        restClient = null;
+        URLEncodingTest.restClient = null;
     }
     
     /**
