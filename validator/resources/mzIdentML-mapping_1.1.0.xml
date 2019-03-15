@@ -3,7 +3,7 @@
 <!-- mzIdentML 1.0.0 mapping file created by ARJ and AB and the whole PSI-PI group -->
 <!-- mzIdentML 1.1.0 mapping file derived  by ME from mzIdentML 1.0.0 mapping file -->
 <CvMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="http://psidev.svn.sourceforge.net/viewvc/psidev/psi/tools/cv-rule-reader/trunk/src/main/resources/CvMappingRules.xsd" modelName="mzIdentML1.1.1.xsd" modelURI="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/schema/mzIdentML1.1.1.xsd" modelVersion="1.1.1">
+    xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/HUPO-PSI/psi-tools/master/xml-schemas/CvMappingRules.xsd" modelName="mzIdentML1.1.1.xsd" modelURI="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/schema/mzIdentML1.1.1.xsd" modelVersion="1.1.1">
 
      <CvReferenceList>
         <CvReference cvName="PSI-MS" cvIdentifier="MS"/>
@@ -24,7 +24,6 @@
 			<CvTerm termAccession="MS:1001755" useTermName="false" useTerm="true" termName="contact phone number" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1001756" useTermName="false" useTerm="true" termName="contact fax number" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
 			<CvTerm termAccession="MS:1001757" useTermName="false" useTerm="true" termName="contact toll-free phone number" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
-            <Description>some text to describe this rule</Description>
 		</CvMappingRule>
 
 		<CvMappingRule id="AuditCollectionOrganization_should_rule" cvElementPath="/MzIdentML/AuditCollection/organization/cvParam/@accession" requirementLevel="SHOULD" scopePath="/MzIdentML/AuditCollection/organization" cvTermsCombinationLogic="OR">

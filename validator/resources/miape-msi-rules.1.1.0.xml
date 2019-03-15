@@ -4,7 +4,7 @@
 <!-- mzIdentML 1.1.0 mapping file derived  by ME from mzIdentML 1.0.0 mapping file -->
 <!-- mzIdentML 1.1.0 MIAPE MSI mapping file derived  by SMB from mzIdentML 1.1.0 mapping file -->
 <CvMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="http://psidev.svn.sourceforge.net/viewvc/psidev/psi/tools/cv-rule-reader/trunk/src/main/resources/CvMappingRules.xsd" modelName="mzIdentML1.1.1.xsd" modelURI="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/schema/mzIdentML1.1.1.xsd" modelVersion="1.1.1">
+    xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/HUPO-PSI/psi-tools/master/xml-schemas/CvMappingRules.xsd" modelName="mzIdentML1.1.1.xsd" modelURI="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/schema/mzIdentML1.1.1.xsd" modelVersion="1.1.1">
 
     <CvReferenceList>
         <CvReference cvName="PSI-MS" cvIdentifier="MS"/>
