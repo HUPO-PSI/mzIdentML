@@ -1,7 +1,7 @@
 format-version: 1.2
 data-version: release/2019-03-15
 ontology: xlmod
-date: 15:03:2019 11:36
+date: 15:03:2019 11:43
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: XLMOD
@@ -6019,7 +6019,6 @@ property_value: spacerLength: "9.1" xsd:float
 property_value: spacerLength: "13.7" xsd:float
 property_value: spacerLength: "19.1" xsd:float
 is_a: XLMOD:00003 ! label transfer reagent
-is_a: XLMOD:00004 ! cross-linker
 relationship: has_handle XLMOD:00051 ! biotin
 relationship: has_reactive_group XLMOD:00102 ! Sulfo NHS ester
 relationship: has_reactive_group XLMOD:00126 ! phenyl azide
