@@ -1,7 +1,7 @@
 format-version: 1.2
-data-version: release/2018-10-30
+data-version: release/2019-03-15
 ontology: xlmod
-date: 30:10:2018 11:43
+date: 15:03:2019 11:36
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: XLMOD
@@ -5984,6 +5984,15 @@ is_a: XLMOD:00006 ! heterofunctional cross-linker
 relationship: has_property XLMOD:00014 ! hydrophilic
 relationship: has_reactive_group XLMOD:00101 ! NHS ester
 relationship: has_reactive_group XLMOD:00109 ! pyridinyldisulfide
+
+[Term]
+id: XLMOD:02248
+name: S-Methyl 5,5'-thiodipentanoylhydroxysuccinimide
+def: "S-Methyl 5,5'-thiodipentanoylhydroxysuccinimide cross-linker." [PMID:19551991]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+is_a: XLMOD:00005 ! homofunctional cross-linker
+relationship: has_reactive_group XLMOD:00101 ! NHS ester
+relationship: is_cleavable XLMOD:00035 ! CID cleavable
 
 [Term]
 id: XLMOD:03001
