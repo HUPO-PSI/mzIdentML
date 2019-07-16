@@ -54,9 +54,91 @@
     <exclude name="**/?*.aj"/>
   </patternset>
   
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.12" value="${jdk.home.12}/bin"/>
+  <path id="jdk.classpath.12">
+    <fileset dir="${jdk.home.12}">
+      <include name="../jdk-12.0.1!/java.base"/>
+      <include name="../jdk-12.0.1!/java.compiler"/>
+      <include name="../jdk-12.0.1!/java.datatransfer"/>
+      <include name="../jdk-12.0.1!/java.desktop"/>
+      <include name="../jdk-12.0.1!/java.instrument"/>
+      <include name="../jdk-12.0.1!/java.logging"/>
+      <include name="../jdk-12.0.1!/java.management"/>
+      <include name="../jdk-12.0.1!/java.management.rmi"/>
+      <include name="../jdk-12.0.1!/java.naming"/>
+      <include name="../jdk-12.0.1!/java.net.http"/>
+      <include name="../jdk-12.0.1!/java.prefs"/>
+      <include name="../jdk-12.0.1!/java.rmi"/>
+      <include name="../jdk-12.0.1!/java.scripting"/>
+      <include name="../jdk-12.0.1!/java.se"/>
+      <include name="../jdk-12.0.1!/java.security.jgss"/>
+      <include name="../jdk-12.0.1!/java.security.sasl"/>
+      <include name="../jdk-12.0.1!/java.smartcardio"/>
+      <include name="../jdk-12.0.1!/java.sql"/>
+      <include name="../jdk-12.0.1!/java.sql.rowset"/>
+      <include name="../jdk-12.0.1!/java.transaction.xa"/>
+      <include name="../jdk-12.0.1!/java.xml"/>
+      <include name="../jdk-12.0.1!/java.xml.crypto"/>
+      <include name="../jdk-12.0.1!/jdk.accessibility"/>
+      <include name="../jdk-12.0.1!/jdk.aot"/>
+      <include name="../jdk-12.0.1!/jdk.attach"/>
+      <include name="../jdk-12.0.1!/jdk.charsets"/>
+      <include name="../jdk-12.0.1!/jdk.compiler"/>
+      <include name="../jdk-12.0.1!/jdk.crypto.cryptoki"/>
+      <include name="../jdk-12.0.1!/jdk.crypto.ec"/>
+      <include name="../jdk-12.0.1!/jdk.crypto.mscapi"/>
+      <include name="../jdk-12.0.1!/jdk.dynalink"/>
+      <include name="../jdk-12.0.1!/jdk.editpad"/>
+      <include name="../jdk-12.0.1!/jdk.hotspot.agent"/>
+      <include name="../jdk-12.0.1!/jdk.httpserver"/>
+      <include name="../jdk-12.0.1!/jdk.internal.ed"/>
+      <include name="../jdk-12.0.1!/jdk.internal.jvmstat"/>
+      <include name="../jdk-12.0.1!/jdk.internal.le"/>
+      <include name="../jdk-12.0.1!/jdk.internal.opt"/>
+      <include name="../jdk-12.0.1!/jdk.internal.vm.ci"/>
+      <include name="../jdk-12.0.1!/jdk.internal.vm.compiler"/>
+      <include name="../jdk-12.0.1!/jdk.internal.vm.compiler.management"/>
+      <include name="../jdk-12.0.1!/jdk.jartool"/>
+      <include name="../jdk-12.0.1!/jdk.javadoc"/>
+      <include name="../jdk-12.0.1!/jdk.jcmd"/>
+      <include name="../jdk-12.0.1!/jdk.jconsole"/>
+      <include name="../jdk-12.0.1!/jdk.jdeps"/>
+      <include name="../jdk-12.0.1!/jdk.jdi"/>
+      <include name="../jdk-12.0.1!/jdk.jdwp.agent"/>
+      <include name="../jdk-12.0.1!/jdk.jfr"/>
+      <include name="../jdk-12.0.1!/jdk.jlink"/>
+      <include name="../jdk-12.0.1!/jdk.jshell"/>
+      <include name="../jdk-12.0.1!/jdk.jsobject"/>
+      <include name="../jdk-12.0.1!/jdk.jstatd"/>
+      <include name="../jdk-12.0.1!/jdk.localedata"/>
+      <include name="../jdk-12.0.1!/jdk.management"/>
+      <include name="../jdk-12.0.1!/jdk.management.agent"/>
+      <include name="../jdk-12.0.1!/jdk.management.jfr"/>
+      <include name="../jdk-12.0.1!/jdk.naming.dns"/>
+      <include name="../jdk-12.0.1!/jdk.naming.rmi"/>
+      <include name="../jdk-12.0.1!/jdk.net"/>
+      <include name="../jdk-12.0.1!/jdk.pack"/>
+      <include name="../jdk-12.0.1!/jdk.rmic"/>
+      <include name="../jdk-12.0.1!/jdk.scripting.nashorn"/>
+      <include name="../jdk-12.0.1!/jdk.scripting.nashorn.shell"/>
+      <include name="../jdk-12.0.1!/jdk.sctp"/>
+      <include name="../jdk-12.0.1!/jdk.security.auth"/>
+      <include name="../jdk-12.0.1!/jdk.security.jgss"/>
+      <include name="../jdk-12.0.1!/jdk.unsupported"/>
+      <include name="../jdk-12.0.1!/jdk.unsupported.desktop"/>
+      <include name="../jdk-12.0.1!/jdk.xml.dom"/>
+      <include name="../jdk-12.0.1!/jdk.zipfs"/>
+    </fileset>
+  </path>
+  
   <property name="project.jdk.home" value="${jdk.home.12}"/>
   <property name="project.jdk.bin" value="${jdk.bin.12}"/>
   <property name="project.jdk.classpath" value="jdk.classpath.12"/>
+  
+  
+  <!-- Project Libraries -->
   <!-- Register Custom Compiler Taskdefs -->
   <property name="javac2.home" value="${idea.home}/lib"/>
   <path id="javac2.classpath">
@@ -72,13 +154,17 @@
     <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
   </target>
   
+  <!-- Modules -->
+  
+  <import file="${basedir}/module_mzidentmlvalidator.xml"/>
+  
   <target name="init" description="Build initialization">
     <!-- Perform any build initialization in this target -->
   </target>
   
-  <target name="clean" description="cleanup all"/>
+  <target name="clean" depends="clean.module.mzidentmlvalidator" description="cleanup all"/>
   
-  <target name="build.modules" depends="init, clean" description="build all modules"/>
+  <target name="build.modules" depends="init, clean, compile.module.mzidentmlvalidator" description="build all modules"/>
   
   <target name="all" depends="build.modules" description="build all"/>
 </project>
