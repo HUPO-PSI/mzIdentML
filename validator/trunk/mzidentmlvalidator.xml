@@ -139,6 +139,346 @@
   
   
   <!-- Project Libraries -->
+  
+  <path id="library.maven:_antlr:antlr:2.7.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/antlr/antlr/2.7.7/antlr-2.7.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_aopalliance:aopalliance:1.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_ch.qos.logback:logback-classic:1.1.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/ch/qos/logback/logback-classic/1.1.6/logback-classic-1.1.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_ch.qos.logback:logback-core:1.1.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/ch/qos/logback/logback-core/1.1.6/logback-core-1.1.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.7.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-annotations/2.7.0/jackson-annotations-2.7.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.fasterxml.jackson.core:jackson-core:2.7.5.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-core/2.7.5/jackson-core-2.7.5.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.7.5.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-databind/2.7.5/jackson-databind-2.7.5.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.ice:tar:1.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/ice/tar/1.0/tar-1.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.sun.istack:istack-commons-runtime:2.16.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/istack/istack-commons-runtime/2.16/istack-commons-runtime-2.16.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.sun.xml.bind:jaxb-core:2.2.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/xml/bind/jaxb-core/2.2.7/jaxb-core-2.2.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.sun.xml.bind:jaxb-impl:2.1.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/xml/bind/jaxb-impl/2.1.3/jaxb-impl-2.1.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.sun.xml.bind:jaxb-xjc:2.2.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/sun/xml/bind/jaxb-xjc/2.2.7/jaxb-xjc-2.2.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-beanutils:commons-beanutils:1.7.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-collections:commons-collections:3.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-collections/commons-collections/3.1/commons-collections-3.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-dbcp:commons-dbcp:1.2.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-dbcp/commons-dbcp/1.2.1/commons-dbcp-1.2.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-discovery:commons-discovery:0.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-discovery/commons-discovery/0.2/commons-discovery-0.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-io:commons-io:2.4.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-io/commons-io/2.4/commons-io-2.4.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-jxpath:commons-jxpath:1.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-jxpath/commons-jxpath/1.3/commons-jxpath-1.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-lang:commons-lang:2.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-lang/commons-lang/2.3/commons-lang-2.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-logging:commons-logging:1.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-logging/commons-logging/1.2/commons-logging-1.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-pool:commons-pool:1.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-pool/commons-pool/1.2/commons-pool-1.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_hsqldb:hsqldb:1.8.0.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/hsqldb/hsqldb/1.8.0.7/hsqldb-1.8.0.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_it.unimi.dsi:fastutil:6.5.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/it/unimi/dsi/fastutil/6.5.1/fastutil-6.5.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_jakarta-regexp:jakarta-regexp:1.4.classpath">
+    <pathelement location="${path.variable.maven_repository}/jakarta-regexp/jakarta-regexp/1.4/jakarta-regexp-1.4.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.activation:activation:1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/activation/activation/1.1/activation-1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.xml.bind:jaxb-api:2.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.xml.stream:stax-api:1.0-2.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar"/>
+  </path>
+  
+  <path id="library.maven:_jcvsii:jcvsii:5.4.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/jcvsii/jcvsii/5.4.2/jcvsii-5.4.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_junit:junit:4.4.classpath">
+    <pathelement location="${path.variable.maven_repository}/junit/junit/4.4/junit-4.4.jar"/>
+  </path>
+  
+  <path id="library.maven:_log4j:log4j:1.2.13.classpath">
+    <pathelement location="${path.variable.maven_repository}/log4j/log4j/1.2.13/log4j-1.2.13.jar"/>
+  </path>
+  
+  <path id="library.maven:_lucene:lucene:1.4.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/lucene/lucene/1.4.3/lucene-1.4.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_mysql:mysql-connector-java:5.1.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_net.java.dev.jna:jna:3.2.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/net/java/dev/jna/jna/3.2.3/jna-3.2.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_net.sourceforge.collections:collections-generic:4.01.classpath">
+    <pathelement location="${path.variable.maven_repository}/net/sourceforge/collections/collections-generic/4.01/collections-generic-4.01.jar"/>
+  </path>
+  
+  <path id="library.maven:_net.sourceforge.cpdetector:cpdetector:1.0.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/net/sourceforge/cpdetector/cpdetector/1.0.7/cpdetector-1.0.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_net.sourceforge.jargs:jargs:1.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/net/sourceforge/jargs/jargs/1.0/jargs-1.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_net.sourceforge.jchardet:jchardet:1.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/net/sourceforge/jchardet/jchardet/1.0/jchardet-1.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_obo:bbop:2.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/obo/bbop/2.0/bbop-2.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_obo:obo:2.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/obo/obo/2.0/obo-2.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_ojb:db-ojb:1.0.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/ojb/db-ojb/1.0.3/db-ojb-1.0.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_opensymphony:oscache:2.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/opensymphony/oscache/2.3/oscache-2.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.antlr:antlr-runtime:3.1.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/antlr/antlr-runtime/3.1.3/antlr-runtime-3.1.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.antlr:stringtemplate:3.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/antlr/stringtemplate/3.2/stringtemplate-3.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.commons:commons-lang3:3.9.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.commons:commons-text:1.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/commons/commons-text/1.7/commons-text-1.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apiguardian:apiguardian-api:1.0.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.geneontology:oboedit:1.101.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/geneontology/oboedit/1.101/oboedit-1.101.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.geneontology:org.geneontology:1.101.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/geneontology/org.geneontology/1.101/org.geneontology-1.101.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.junit.jupiter:junit-jupiter-api:5.3.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-api/5.3.1/junit-jupiter-api-5.3.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.junit.jupiter:junit-jupiter-engine:5.3.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-engine/5.3.1/junit-jupiter-engine-5.3.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.junit.platform:junit-platform-commons:1.3.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.junit.platform:junit-platform-engine:1.3.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.junit.platform:junit-platform-launcher:1.3.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/junit/platform/junit-platform-launcher/1.3.0/junit-platform-launcher-1.3.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.opentest4j:opentest4j:1.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.slf4j:jcl-over-slf4j:1.7.19.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/slf4j/jcl-over-slf4j/1.7.19/jcl-over-slf4j-1.7.19.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.slf4j:slf4j-api:1.7.19.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/slf4j/slf4j-api/1.7.19/slf4j-api-1.7.19.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-aop:4.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-aop/4.2.5.RELEASE/spring-aop-4.2.5.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-beans:4.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-beans/4.2.5.RELEASE/spring-beans-4.2.5.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-context-support:4.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-context-support/4.2.5.RELEASE/spring-context-support-4.2.5.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-context:4.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-context/4.2.5.RELEASE/spring-context-4.2.5.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-core:4.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-core/4.2.5.RELEASE/spring-core-4.2.5.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-expression:4.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-expression/4.2.5.RELEASE/spring-expression-4.2.5.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-test:4.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-test/4.2.5.RELEASE/spring-test-4.2.5.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-web:4.2.5.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-web/4.2.5.RELEASE/spring-web-4.2.5.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.tmatesoft.sqljet:sqljet:1.0.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/tmatesoft/sqljet/sqljet/1.0.2/sqljet-1.0.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.tmatesoft.svnkit:svnkit:1.3.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/tmatesoft/svnkit/svnkit/1.3.3/svnkit-1.3.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.tmatesoft.svnkit:trilead-ssh2:build213-svnkit-1.3-patch.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/tmatesoft/svnkit/trilead-ssh2/build213-svnkit-1.3-patch/trilead-ssh2-build213-svnkit-1.3-patch.jar"/>
+  </path>
+  
+  <path id="library.maven:_p6spy:p6spy:1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/p6spy/p6spy/1.1/p6spy-1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_proteomics:proteomics-common:1.5.classpath">
+    <pathelement location="${path.variable.maven_repository}/proteomics/proteomics-common/1.5/proteomics-common-1.5.jar"/>
+  </path>
+  
+  <path id="library.maven:_psidev.psi.tools:cv-rule-reader:2.0.10.classpath">
+    <pathelement location="${path.variable.maven_repository}/psidev/psi/tools/cv-rule-reader/2.0.10/cv-rule-reader-2.0.10.jar"/>
+  </path>
+  
+  <path id="library.maven:_psidev.psi.tools:object-rule-reader:2.0.10.classpath">
+    <pathelement location="${path.variable.maven_repository}/psidev/psi/tools/object-rule-reader/2.0.10/object-rule-reader-2.0.10.jar"/>
+  </path>
+  
+  <path id="library.maven:_psidev.psi.tools:ontology-config-reader:2.0.10.classpath">
+    <pathelement location="${path.variable.maven_repository}/psidev/psi/tools/ontology-config-reader/2.0.10/ontology-config-reader-2.0.10.jar"/>
+  </path>
+  
+  <path id="library.maven:_psidev.psi.tools:ontology-manager:2.0.10.classpath">
+    <pathelement location="${path.variable.maven_repository}/psidev/psi/tools/ontology-manager/2.0.10/ontology-manager-2.0.10.jar"/>
+  </path>
+  
+  <path id="library.maven:_psidev.psi.tools:validator:2.0.10.classpath">
+    <pathelement location="${path.variable.maven_repository}/psidev/psi/tools/validator/2.0.10/validator-2.0.10.jar"/>
+  </path>
+  
+  <path id="library.maven:_psidev.psi.tools:xxindex:0.22.classpath">
+    <pathelement location="${path.variable.maven_repository}/psidev/psi/tools/xxindex/0.22/xxindex-0.22.jar"/>
+  </path>
+  
+  <path id="library.maven:_sshtools:j2ssh-common:0.2.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/sshtools/j2ssh-common/0.2.2/j2ssh-common-0.2.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_sshtools:j2ssh-core:0.2.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/sshtools/j2ssh-core/0.2.2/j2ssh-core-0.2.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_stax:stax-api:1.0.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/stax/stax-api/1.0.1/stax-api-1.0.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_stax:stax:1.2.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/stax/stax/1.2.0/stax-1.2.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_uk.ac.ebi.jmzidml:jmzidentml:1.1.9.classpath">
+    <pathelement location="${path.variable.maven_repository}/uk/ac/ebi/jmzidml/jmzidentml/1.1.9/jmzidentml-1.1.9.jar"/>
+  </path>
+  
+  <path id="library.maven:_uk.ac.ebi.ols:ols-core:1.19.classpath">
+    <pathelement location="${path.variable.maven_repository}/uk/ac/ebi/ols/ols-core/1.19/ols-core-1.19.jar"/>
+  </path>
+  
+  <path id="library.maven:_uk.ac.ebi.pride.utilities:ols-client:2.11.classpath">
+    <pathelement location="${path.variable.maven_repository}/uk/ac/ebi/pride/utilities/ols-client/2.11/ols-client-2.11.jar"/>
+  </path>
+  
+  <path id="library.maven:_xalan:xalan:2.4.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/xalan/xalan/2.4.0/xalan-2.4.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_xerces:xercesimpl:2.12.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/xerces/xercesImpl/2.12.0/xercesImpl-2.12.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_xml-apis:xml-apis:1.4.01.classpath">
+    <pathelement location="${path.variable.maven_repository}/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar"/>
+  </path>
   <!-- Register Custom Compiler Taskdefs -->
   <property name="javac2.home" value="${idea.home}/lib"/>
   <path id="javac2.classpath">
