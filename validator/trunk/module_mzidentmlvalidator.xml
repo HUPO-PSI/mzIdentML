@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_mzidentmlvalidator" default="compile.module.mzidentmlvalidator">
+  <dirname property="module.mzidentmlvalidator.basedir" file="${ant.file.module_mzidentmlvalidator}"/>
+  
+  <property name="module.jdk.home.mzidentmlvalidator" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.mzidentmlvalidator" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.mzidentmlvalidator" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.mzidentmlvalidator" value="-encoding ISO-8859-1 -source 8 -target 1.12 ${compiler.args}"/>
+  
+  <property name="mzidentmlvalidator.output.dir" value="${module.mzidentmlvalidator.basedir}/target/classes"/>
+  <property name="mzidentmlvalidator.testoutput.dir" value="${module.mzidentmlvalidator.basedir}/target/test-classes"/>
+  
+  <path id="mzidentmlvalidator.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="mzidentmlvalidator.module.production.classpath">
+    <path refid="${module.jdk.classpath.mzidentmlvalidator}"/>
+  </path>
+  
+  <path id="mzidentmlvalidator.runtime.production.module.classpath">
+    <pathelement location="${mzidentmlvalidator.output.dir}"/>
+  </path>
+  
+  <path id="mzidentmlvalidator.module.classpath">
+    <path refid="${module.jdk.classpath.mzidentmlvalidator}"/>
+    <pathelement location="${mzidentmlvalidator.output.dir}"/>
+  </path>
+  
+  <path id="mzidentmlvalidator.runtime.module.classpath">
+    <pathelement location="${mzidentmlvalidator.testoutput.dir}"/>
+    <pathelement location="${mzidentmlvalidator.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.mzidentmlvalidator">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.mzidentmlvalidator">
+    <patternset refid="excluded.from.module.mzidentmlvalidator"/>
+  </patternset>
+  
+  <path id="mzidentmlvalidator.module.sourcepath">
+    <dirset dir="${module.mzidentmlvalidator.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="mzidentmlvalidator.module.test.sourcepath">
+    <dirset dir="${module.mzidentmlvalidator.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.mzidentmlvalidator" depends="compile.module.mzidentmlvalidator.production,compile.module.mzidentmlvalidator.tests" description="Compile module mzIdentMLValidator"/>
+  
+  <target name="compile.module.mzidentmlvalidator.production" depends="register.custom.compilers" description="Compile module mzIdentMLValidator; production classes">
+    <mkdir dir="${mzidentmlvalidator.output.dir}"/>
+    <javac2 destdir="${mzidentmlvalidator.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.mzidentmlvalidator}/javac">
+      <compilerarg line="${compiler.args.mzidentmlvalidator}"/>
+      <bootclasspath refid="mzidentmlvalidator.module.bootclasspath"/>
+      <classpath refid="mzidentmlvalidator.module.production.classpath"/>
+      <src refid="mzidentmlvalidator.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.mzidentmlvalidator"/>
+    </javac2>
+    
+    <copy todir="${mzidentmlvalidator.output.dir}">
+      <fileset dir="${module.mzidentmlvalidator.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.mzidentmlvalidator.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.mzidentmlvalidator.tests" depends="register.custom.compilers,compile.module.mzidentmlvalidator.production" description="compile module mzIdentMLValidator; test classes" unless="skip.tests">
+    <mkdir dir="${mzidentmlvalidator.testoutput.dir}"/>
+    <javac2 destdir="${mzidentmlvalidator.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.mzidentmlvalidator}/javac">
+      <compilerarg line="${compiler.args.mzidentmlvalidator}"/>
+      <bootclasspath refid="mzidentmlvalidator.module.bootclasspath"/>
+      <classpath refid="mzidentmlvalidator.module.classpath"/>
+      <src refid="mzidentmlvalidator.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.mzidentmlvalidator"/>
+    </javac2>
+    
+    <copy todir="${mzidentmlvalidator.testoutput.dir}">
+      <fileset dir="${module.mzidentmlvalidator.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.mzidentmlvalidator" description="cleanup module">
+    <delete dir="${mzidentmlvalidator.output.dir}"/>
+    <delete dir="${mzidentmlvalidator.testoutput.dir}"/>
+  </target>
+</project>
