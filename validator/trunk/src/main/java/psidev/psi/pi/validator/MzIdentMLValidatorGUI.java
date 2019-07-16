@@ -1,6 +1,5 @@
 package psidev.psi.pi.validator;
 
-import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -64,13 +63,14 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
     /**
      * Constants.
      */
-    private static final Logger LOGGER = LogManager.getLogger(MzIdentMLValidatorGUI.class);
-    private static final String NEW_LINE= System.getProperty("line.separator");
+    private static final Logger LOGGER      = LogManager.getLogger(MzIdentMLValidatorGUI.class);
+    private static final String NEW_LINE    = System.getProperty("line.separator");
     private static final String STR_FILE_SEPARATOR  = System.getProperty("file.separator");
     private static final String STR_RESOURCE_FOLDER = System.getProperty("user.dir") + STR_FILE_SEPARATOR + "resources" + STR_FILE_SEPARATOR;
-    private static final String STR_ELLIPSIS = "...";
+    private static final String STR_ELLIPSIS= "...";
     private static final String DEFAULT_PROGRESS_MESSAGE    = "Select a file and press validate" + STR_ELLIPSIS;
     private static final String STR_VALIDATION_PROPERTIES   = "validation.properties";
+    private static final String STR_LAF_WINDOWS    = "Windows";
     
     private final String STR_4_INDENTATION  = "    ";
     private final String STR_FLAW_IN_RULE   = "Flaw in the rule definition: ";
@@ -1658,25 +1658,25 @@ public class MzIdentMLValidatorGUI extends javax.swing.JPanel implements RuleFil
      */
     public static void main(String[] args) {
         try {
-            if (SystemUtils.IS_OS_WINDOWS) {
-                UIManager.setLookAndFeel(new WindowsLookAndFeel());
+            if (!SystemUtils.IS_OS_WINDOWS) {
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             }
             else {
-                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());                
+                UIManager.createLookAndFeel(MzIdentMLValidatorGUI.STR_LAF_WINDOWS);                
             }
         }
         catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException exc) {
             exc.printStackTrace(System.err);
             System.out.println("No Windows LookAndFeel found.");
         }
-        MzIdentMLValidatorGUI jpanValidator = new MzIdentMLValidatorGUI();
+        MzIdentMLValidatorGUI jPanelValidator = new MzIdentMLValidatorGUI();
 
         if (args != null && args.length == 1) {
-            jpanValidator.jTextInputFile.setText(args[0]);
+            jPanelValidator.jTextInputFile.setText(args[0]);
         }
 
         JFrame validatorFrame = new JFrame("mzIdentML validator GUI (mzIdentML versions 1.1.1 & 1.2.0)");
-        validatorFrame.getContentPane().add(jpanValidator, BorderLayout.CENTER);
+        validatorFrame.getContentPane().add(jPanelValidator, BorderLayout.CENTER);
         validatorFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         validatorFrame.setResizable(false);
         validatorFrame.addWindowListener(new WindowAdapter() {

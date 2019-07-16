@@ -219,7 +219,7 @@
 
         <CvMappingRule id="FragmentationIonType_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem/fragmentation/ionType/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem/fragmentation/ionType" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1000336" useTermName="false" useTerm="true" termName="neutral loss" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1001221" useTermName="false" useTerm="false" termName="fragmentation information" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001221" useTermName="false" useTerm="false" termName="product ion attribute" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
     
         <CvMappingRule id="SpectrumIdentificationResult_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult" cvTermsCombinationLogic="OR">

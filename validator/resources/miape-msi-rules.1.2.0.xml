@@ -272,7 +272,7 @@
 
         <CvMappingRule id="FragmentationIonType_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem/fragmentation/ionType/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/spectrumIdentificationItem/fragmentation/ionType" cvTermsCombinationLogic="OR">
             <CvTerm termAccession="MS:1000336" useTermName="false" useTerm="true" termName="neutral loss" isRepeatable="true" allowChildren="false" cvIdentifierRef="MS" />
-            <CvTerm termAccession="MS:1001221" useTermName="false" useTerm="false" termName="fragmentation information" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
+            <CvTerm termAccession="MS:1001221" useTermName="false" useTerm="false" termName="product ion attribute" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
         </CvMappingRule>
     
         <CvMappingRule id="SpectrumIdentificationResult_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/SpectrumIdentificationList/spectrumIdentificationResult" cvTermsCombinationLogic="OR">
@@ -331,6 +331,7 @@
         </CvMappingRule>
         
         <CvMappingRule id="ProteinAmbiguityGroup_may_rule" cvElementPath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup/cvParam/@accession" requirementLevel="MAY" scopePath="/MzIdentML/DataCollection/AnalysisData/ProteinDetectionList/proteinAmbiguityGroup" cvTermsCombinationLogic="OR">
+            <CvTerm termAccession="MS:1001147" useTermName="false" useTerm="false" termName="protein ambiguity group result details" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1002346" useTermName="false" useTerm="false" termName="protein group-level identification attribute" isRepeatable="true" allowChildren="true" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1002470" useTermName="false" useTerm="true" termName="PeptideShaker protein group score" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />
             <CvTerm termAccession="MS:1002471" useTermName="false" useTerm="true" termName="PeptideShaker protein group confidence" isRepeatable="false" allowChildren="false" cvIdentifierRef="MS" />

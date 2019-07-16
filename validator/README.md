@@ -20,8 +20,11 @@ All mapping / object rules which are violoated are reported in coloured output e
 	
 	
 ### Download link
-The latest version of the mzIdentML validator can be downloaded [here] (https://github.com/HUPO-PSI/mzIdentML/blob/master/validator/mzIdentMLValidator_GUI_v1.4.34-SNAPSHOT.zip)
+The latest version of the mzIdentML validator works with Java 11 and 12 and can be downloaded from https://github.com/HUPO-PSI/mzIdentML/blob/master/validator/mzIdentMLValidator_GUI_v1.4.35-SNAPSHOT.zip
 
+For the Java versions 8, 9 and 10 please use the previous version from https://github.com/HUPO-PSI/mzIdentML/blob/master/validator/mzIdentMLValidator_GUI_v1.4.34-SNAPSHOT.zip
+If you use Java 8, please start the validator with:		java -Xms2048m -cp .\lib -jar mzIdentMLValidator-1.4.34-SNAPSHOT.jar
+For Java 9 and 10 you must start the validator with:	java -Xms2048m --add-modules java.xml.bind -cp .\lib -jar mzIdentMLValidator-1.4.34-SNAPSHOT.jar
 
 ### Literature
 More details about the mapping file mechanism and the validator are described in the following publications:

@@ -1,0 +1,11 @@
+module psidev.psi.pi
+{
+    requires javax.xml.bind;
+    requires java.desktop;
+    requires org.apache.log4j;
+    requires org.slf4j.Logger;
+    requires psidev.psi.tools;
+    requires uk.ac.ebi.jmzidml;
+
+    exports psidev.psi.pi;
+}
