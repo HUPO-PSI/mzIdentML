@@ -1,11 +1,11 @@
 format-version: 1.2
-data-version: release/2019-03-15
+data-version: release/2019-08-22
 ontology: xlmod
-date: 15:03:2019 11:43
+date: 22:08:2019 10:17
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: XLMOD
-remark: version: 1.1.10
+remark: version: 1.1.11
 remark: coverage: cross-linking reagents, cross-linker related post-translational modifications, and derivatization reagents for GC-MS and LC-MS
 remark: creator: Lutz Fischer <lfischer <-at-> staffmail.ed.ac.uk>
 remark: creator: Alexander Leitner <leitner <-at-> imsb.biol.ethz.ch>
@@ -715,6 +715,12 @@ def: "Thio-esterization dead-end modification resulting from a cross-linker reag
 is_a: XLMOD:00002 ! cross-linker related chemical modification
 
 [Term]
+id: XLMOD:00099
+name: formic acid cleavable
+def: "Indicates that a cross-linker is chemically cleavable by formic acid." [PSI:XL]
+is_a: XLMOD:00017 ! chemically cleavable
+
+[Term]
 id: XLMOD:00100
 name: reactive group
 def: "Part of a cross-linker that reacts with the amino-acids of the protein." [PSI:XL]
@@ -1301,6 +1307,12 @@ relationship: is_reactive_with XLMOD:00029 ! sulfhydryl reactive
 relationship: is_reactive_with XLMOD:00030 ! carboxyl reactive
 relationship: is_reactive_with XLMOD:06509 ! phenol reactive
 relationship: is_reactive_with XLMOD:06521 ! phosphate reactive
+
+[Term]
+id: XLMOD:00169
+name: sodium dithionite cleavable
+def: "Indicates that a cross-linker is chemically cleavable by sodium dithionite." [PSI:XL]
+is_a: XLMOD:00017 ! chemically cleavable
 
 [Term]
 id: XLMOD:00169
@@ -4542,8 +4554,10 @@ relationship: is_cleavable XLMOD:00035 ! CID cleavable
 [Term]
 id: XLMOD:02120
 name: BuUrBu
-def: "NHS-amino butyric acid-urea-amino butyric acid-NHS." [PMID:21157862, PMID:20704385, PMID:25261217, PMID:27428000]
+def: "NHS-amino butyric acid-urea-amino butyric acid-NHS." [CAS:1240387-33-0, PubChem_Compound:86106597, ChemSpiderID:65999926, PMID:30074391, PMID:21157862, PMID:20704385, PMID:25261217, PMID:27428000]
 synonym: "NHS-BuUrBu-NHS" EXACT []
+synonym: "Disuccinimidyl dibutyric urea" EXACT []
+synonym: "DSBU" EXACT []
 property_value: CID_Fragment: "85.053" xsd:double
 property_value: CID_Fragment: "111.032" xsd:double
 property_value: doubletDeltaMass: "25.979" xsd:double
@@ -5995,6 +6009,45 @@ relationship: has_reactive_group XLMOD:00101 ! NHS ester
 relationship: is_cleavable XLMOD:00035 ! CID cleavable
 
 [Term]
+id: XLMOD:02249
+name: Sulfo-SBP
+def: "4-(N-Sulfosuccinimidylcarboxy)benzophenone." [CAS:91990-88-4, PMID:28430416]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
+is_a: XLMOD:00006 ! heterofunctional cross-linker
+relationship: has_reactive_group XLMOD:00102 ! Sulfo NHS ester
+relationship: has_reactive_group XLMOD:00119 ! benzophenone
+
+[Term]
+id: XLMOD:02250
+name: CBSS
+def: "Carboxybenzophenonesulfosuccinimide." [PMID:31045356]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+is_a: XLMOD:00006 ! heterofunctional cross-linker
+relationship: has_reactive_group XLMOD:00102 ! Sulfo NHS ester
+relationship: has_reactive_group XLMOD:00119 ! benzophenone
+
+[Term]
+id: XLMOD:02251
+name: MC4
+def: "1,4-bis(4-((2,5-dioxopyrrolidin-1-yl)oxy)-4-oxobutyl)-1,4-diazabicyclo[2.2.2]octane-1,4-diium." [PMID:31045356, PMID:29537042]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: spacerLength: "13.0" xsd:float
+is_a: XLMOD:00005 ! homofunctional cross-linker
+relationship: has_reactive_group XLMOD:00101 ! NHS ester
+relationship: is_cleavable XLMOD:00035 ! CID cleavable
+
+[Term]
+id: XLMOD:02252
+name: PAC4
+def: "PAC4 cross-linker." [PMID:29537042]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: spacerLength: "13.0" xsd:float
+is_a: XLMOD:00005 ! homofunctional cross-linker
+relationship: has_reactive_group XLMOD:00101 ! NHS ester
+relationship: is_cleavable XLMOD:00035 ! CID cleavable
+
+[Term]
 id: XLMOD:03001
 name: CBDPS
 def: "Cyanurbiotindipropionylsuccinimide." [PMID:20622150]
@@ -6154,6 +6207,28 @@ relationship: has_handle XLMOD:00051 ! biotin
 relationship: has_reactive_group XLMOD:00118 ! tetrafluorophenyl azide
 relationship: has_reactive_group XLMOD:00121 ! methanethiosulfonate 
 relationship: is_cleavable XLMOD:00023 ! cleavable S-S bond
+
+[Term]
+id: XLMOD:03014
+name: DADPS linker
+def: "Linker containing a dialkoxydiphenylsilane group." [PMID:31430117]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: specificities: "(C,U)" xsd:string
+is_a: XLMOD:00003 ! label transfer reagent
+relationship: has_handle XLMOD:00051 ! biotin
+relationship: has_reactive_group XLMOD:00055 ! azide
+is_a: XLMOD:00099 ! formic acid cleavable
+
+[Term]
+id: XLMOD:03015
+name: AZO linker
+def: "Linker containing a azobenzene group." [PMID:31430117]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: specificities: "(C,U)" xsd:string
+is_a: XLMOD:00003 ! label transfer reagent
+relationship: has_handle XLMOD:00051 ! biotin
+relationship: has_reactive_group XLMOD:00055 ! azide
+is_a: XLMOD:00169 ! sodium dithionite cleavable
 
 [Term]
 id: XLMOD:06000
