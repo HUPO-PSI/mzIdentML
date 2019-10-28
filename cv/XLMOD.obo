@@ -1,7 +1,7 @@
 format-version: 1.2
-data-version: release/2019-08-22
+data-version: release/2019-10-28
 ontology: xlmod
-date: 22:08:2019 10:17
+date: 28:10:2019 15:37
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: XLMOD
@@ -1315,7 +1315,7 @@ def: "Indicates that a cross-linker is chemically cleavable by sodium dithionite
 is_a: XLMOD:00017 ! chemically cleavable
 
 [Term]
-id: XLMOD:00169
+id: XLMOD:00170
 name: benzoyl bromide
 def: "A benzoyl bromide (C6H5COBr) reactive group." [PMID:21557289]
 synonym: "Bz-Br" EXACT []
@@ -1324,6 +1324,27 @@ relationship: is_reactive_with XLMOD:00029 ! sulfhydryl reactive
 relationship: is_reactive_with XLMOD:00030 ! carboxyl reactive
 relationship: is_reactive_with XLMOD:06509 ! phenol reactive
 relationship: is_reactive_with XLMOD:06521 ! phosphate reactive
+
+[Term]
+id: XLMOD:00171
+name: Ortho-phthalaldehyde
+def: "A lysine-specific reactive group." [PSI:XL]
+synonym: "OPA" EXACT []
+property_value: specificities: "(K)" xsd:string
+is_a: XLMOD:00116 ! aldehyde
+
+[Term]
+id: XLMOD:00172
+name: IMAC-enrichable
+def: "Indicates a cross-linker facilitating IMAC (immobilized metal affinity chromatography) enrichment." [PSI:XL]
+is_a: XLMOD:00019 ! enrichable
+
+[Term]
+id: XLMOD:00173
+name: phosphonic acid
+def: "A phosphonic acid handle, which can be used for IMAC-enrichment." [PSI:XL]
+is_a: XLMOD:00050 ! handle
+is_a: XLMOD:00172 ! IMAC-enrichable
 
 [Term]
 id: XLMOD:01000
@@ -4747,13 +4768,14 @@ relationship: has_reactive_group XLMOD:00103 ! diazirine
 [Term]
 id: XLMOD:02136
 name: Sulfo-SDA
-def: "Sulfo-NHS-Diazirine." [PubChem_Compound:121371016]
+def: "Sulfo-NHS-Diazirine." [PubChem_Compound:121371016, PMID:28430416]
 synonym: "Sulfosuccinimidyl 4,4'-azipentanoate" EXACT []
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 property_value: spacerLength: "3.9" xsd:float
 is_a: XLMOD:00006 ! heterofunctional cross-linker
 relationship: has_reactive_group XLMOD:00102 ! Sulfo NHS ester
 relationship: has_reactive_group XLMOD:00103 ! diazirine
+relationship: is_activatable XLMOD:00149 ! photoactivatable
 
 [Term]
 id: XLMOD:02137
@@ -5709,7 +5731,7 @@ relationship: is_cleavable XLMOD:00067 ! CID cleavable C-S bond
 [Term]
 id: XLMOD:02223
 name: alkyne-A-DSBSO
-def: "Alkyne-tagged acid-cleavable disuccinimidyl-bissulfoxide." [PMID:25823605]
+def: "Alkyne-tagged acid-cleavable disuccinimidyl-bissulfoxide." [PMID:25823605, PMID:29537042]
 property_value: reactionSites: "2" xsd:nonNegativeInteger
 is_a: XLMOD:00005 ! homofunctional cross-linker
 relationship: has_handle XLMOD:00053 ! alkyne
@@ -6017,6 +6039,7 @@ property_value: specificities: "(K,S,T,Y,Protein N-term)" xsd:string
 is_a: XLMOD:00006 ! heterofunctional cross-linker
 relationship: has_reactive_group XLMOD:00102 ! Sulfo NHS ester
 relationship: has_reactive_group XLMOD:00119 ! benzophenone
+relationship: is_activatable XLMOD:00149 ! photoactivatable
 
 [Term]
 id: XLMOD:02250
@@ -6046,6 +6069,72 @@ property_value: spacerLength: "13.0" xsd:float
 is_a: XLMOD:00005 ! homofunctional cross-linker
 relationship: has_reactive_group XLMOD:00101 ! NHS ester
 relationship: is_cleavable XLMOD:00035 ! CID cleavable
+
+[Term]
+id: XLMOD:02253
+name: cliXLink
+def: "cliXLink cross-linker." [PMID:31593346]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: spacerLength: "9.2" xsd:float
+is_a: XLMOD:00005 ! homofunctional cross-linker
+relationship: has_handle XLMOD:00053 ! alkyne
+relationship: has_property XLMOD:00013 ! membrane permeable
+relationship: has_reactive_group XLMOD:00101 ! NHS ester
+relationship: is_cleavable XLMOD:00035 ! CID cleavable
+
+[Term]
+id: XLMOD:02254
+name: ARGO1
+def: "R-R aromatic glyoxal cross-linker 1." [PMID:31477730]
+property_value: hydrophilicPEGchain: "1" xsd:nonNegativeInteger
+property_value: monoIsotopicMass: "326.079" xsd:double
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: spacerLength: "29.4" xsd:float
+is_a: XLMOD:00005 ! homofunctional cross-linker
+relationship: has_reactive_group XLMOD:00142 ! phenylglyoxal
+
+[Term]
+id: XLMOD:02255
+name: ARGO2
+def: "R-R aromatic glyoxal cross-linker 2." [PMID:31477730]
+property_value: hydrophilicPEGchain: "2" xsd:nonNegativeInteger
+property_value: monoIsotopicMass: "370.105" xsd:double
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: spacerLength: "33.7" xsd:float
+is_a: XLMOD:00005 ! homofunctional cross-linker
+relationship: has_reactive_group XLMOD:00142 ! phenylglyoxal
+
+[Term]
+id: XLMOD:02256
+name: ARGO3
+def: "R-R aromatic glyoxal cross-linker 3." [PMID:31477730]
+property_value: hydrophilicPEGchain: "3" xsd:nonNegativeInteger
+property_value: monoIsotopicMass: "414.131" xsd:double
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: spacerLength: "37.7" xsd:float
+is_a: XLMOD:00005 ! homofunctional cross-linker
+relationship: has_reactive_group XLMOD:00142 ! phenylglyoxal
+
+[Term]
+id: XLMOD:02257
+name: KARGO
+def: "K-R aromatic glyoxal cross-linker." [PMID:31477730]
+property_value: monoIsotopicMass: "352.095" xsd:double
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: spacerLength: "54.1" xsd:float
+is_a: XLMOD:00006 ! heterofunctional cross-linker
+relationship: has_reactive_group XLMOD:00142 ! phenylglyoxal
+relationship: has_reactive_group XLMOD:00171 ! Ortho-phthalaldehyde
+
+[Term]
+id: XLMOD:02258
+name: PhoX
+def: "PhoX cross-linker." [PMID:31477730]
+property_value: reactionSites: "2" xsd:nonNegativeInteger
+property_value: spacerLength: "5.0-20.0" xsd:float
+is_a: XLMOD:00005 ! homofunctional cross-linker
+relationship: has_handle XLMOD:00173 ! phosphonic acid
+relationship: has_reactive_group XLMOD:00101 ! NHS ester
 
 [Term]
 id: XLMOD:03001
