@@ -1831,7 +1831,7 @@ id: XLMOD:01046
 name: ammonium amidated CBDPS-d8
 def: "Deuterium labelled ammonium amidated cyanurbiotindipropionylsuccinimide." [PMID:20622150]
 property_value: deadEndFormula: "C19 D8 H17 N8 O4 S3" xsd:string
-property_value: monoIsotopicMass: "534.17352 xsd:double
+property_value: monoIsotopicMass: "534.17352" xsd:double
 is_a: XLMOD:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: has_handle XLMOD:00051 ! biotin
 relationship: is_labelled XLMOD:00010 ! deuterium labelled
@@ -1877,7 +1877,7 @@ id: XLMOD:01050
 name: ammonium amidated CBDPSS-d8
 def: "Deuterium labelled ammonium amidated cyanurbiotindimercaptopropionylsulfosuccinimide." [PMID:20622150]
 property_value: deadEndFormula: "C19 D8 H17 N8 O4 S3" xsd:string
-property_value: monoIsotopicMass: "534.17352 xsd:double
+property_value: monoIsotopicMass: "534.17352" xsd:double
 is_a: XLMOD:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: has_handle XLMOD:00051 ! biotin
 relationship: is_labelled XLMOD:00010 ! deuterium labelled
