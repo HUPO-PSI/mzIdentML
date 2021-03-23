@@ -1,11 +1,11 @@
 format-version: 1.2
 data-version: release/2019-10-28
 ontology: xlmod
-date: 28:10:2019 15:37
-saved-by: Gerhard Mayer
+date: 23:03:2021 20:08
+saved-by: Paul Thomas
 auto-generated-by: OBO-Edit 2.3.1
 default-namespace: XLMOD
-remark: version: 1.1.11
+remark: version: 1.1.12
 remark: coverage: cross-linking reagents, cross-linker related post-translational modifications, and derivatization reagents for GC-MS and LC-MS
 remark: creator: Lutz Fischer <lfischer <-at-> staffmail.ed.ac.uk>
 remark: creator: Alexander Leitner <leitner <-at-> imsb.biol.ethz.ch>
@@ -857,7 +857,7 @@ relationship: is_reactive_with XLMOD:00037 ! non-selective
 id: XLMOD:00115
 name: glyoxal
 def: "An arginine-specific reactive group (H-CO-CO-H)." [PSI:XL]
-property_value: base specificities: "(Guanine)" xsd:string
+property_value: baseSpecificities: "(Guanine)" xsd:string
 property_value: specificities: "(R)" xsd:string
 is_a: XLMOD:00100 ! reactive group
 
@@ -1003,8 +1003,8 @@ relationship: is_reactive_with XLMOD:00028 ! primary amine reactive
 id: XLMOD:00132
 name: platinum(II)
 def: "Platinum(II) coordinates with the side chains of methionine (Met), cysteine (Cys), and histidine(His), namely, thioether, sulfhydryl, and imidazole." [PMID:21591778]
-property_value: base specificities: "(Guanine)" xsd:string
-property_value: secondary base specificities: "(Adenin, Cytosin)" xsd:string
+property_value: baseSpecificities: "(Guanine)" xsd:string
+property_value: secondaryBaseSpecificities: "(Adenine, Cytosine)" xsd:string
 property_value: specificities: "(C,H,M)" xsd:string
 is_a: XLMOD:00100 ! reactive group
 relationship: is_reactive_with XLMOD:00029 ! sulfhydryl reactive
@@ -1174,8 +1174,8 @@ id: XLMOD:00153
 name: chloroethyl
 def: "A reactive group that reacts with guanin." [PSI:XL]
 is_a: XLMOD:00100 ! reactive group
-property_value: base specificities: "(Guanine)" xsd:string
-property_value: Secondary base specificities: "(Adenin, Cytosin)" xsd:string
+property_value: baseSpecificities: "(Guanine)" xsd:string
+property_value: secondaryBaseSpecificities: "(Adenine, Cytosine)" xsd:string
 
 [Term]
 id: XLMOD:00154
@@ -1831,7 +1831,7 @@ id: XLMOD:01046
 name: ammonium amidated CBDPS-d8
 def: "Deuterium labelled ammonium amidated cyanurbiotindipropionylsuccinimide." [PMID:20622150]
 property_value: deadEndFormula: "C19 D8 H17 N8 O4 S3" xsd:string
-property_value: monoIsotopicMass: "534.17352 xsd:double
+property_value: monoIsotopicMass: "534.17352" xsd:double
 is_a: XLMOD:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: has_handle XLMOD:00051 ! biotin
 relationship: is_labelled XLMOD:00010 ! deuterium labelled
@@ -1877,7 +1877,7 @@ id: XLMOD:01050
 name: ammonium amidated CBDPSS-d8
 def: "Deuterium labelled ammonium amidated cyanurbiotindimercaptopropionylsulfosuccinimide." [PMID:20622150]
 property_value: deadEndFormula: "C19 D8 H17 N8 O4 S3" xsd:string
-property_value: monoIsotopicMass: "534.17352 xsd:double
+property_value: monoIsotopicMass: "534.17352" xsd:double
 is_a: XLMOD:00095 ! ammonium amidation cross-linker related chemical modification
 relationship: has_handle XLMOD:00051 ! biotin
 relationship: is_labelled XLMOD:00010 ! deuterium labelled
