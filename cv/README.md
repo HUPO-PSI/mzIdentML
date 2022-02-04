@@ -1,6 +1,6 @@
-# OBSOLETE OBSOLETE OBSOLETE
+# OBSOLETE OBSOLETE OBSOLETE OBSOLETE OBSOLETE
 
-# The XLMOD ontology has move to
+# The XLMOD ontology has moved to
 https://github.com/HUPO-PSI/xlmod-CV
 
 mzIdentML related CV term directory
