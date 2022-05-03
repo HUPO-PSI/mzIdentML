@@ -4,9 +4,8 @@
            xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.2 https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/schema/mzIdentML1.2.0.xsd"
            creationDate="2022-05-02T12:24:29">
     <cvList>
-        <cv fullName="PSI-MS" version="4.0.0"
-            uri="https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo" id="PSI-MS"/>
-        <cv fullName="XLMOD" uri="resource:///XLMOD.obo" id="XLMOD"/>
+        <cv fullName="PSI-MS" uri="https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo" id="PSI-MS"/>
+        <cv fullName="XLMOD" uri="https://raw.githubusercontent.com/HUPO-PSI/xlmod-CV/main/XLMOD.obo" id="XLMOD"/>
         <cv fullName="UNIMOD" uri="http://www.unimod.org/obo/unimod.obo" id="UNIMOD"/>
         <cv fullName="UNIT-ONTOLOGY"
             uri="https://raw.githubusercontent.com/bio-ontology-research-group/unit-ontology/master/unit.obo"
