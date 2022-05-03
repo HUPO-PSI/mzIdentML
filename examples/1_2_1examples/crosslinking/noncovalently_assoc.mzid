@@ -197,7 +197,7 @@ Gustav-Meyer-Allee 25
                                                 rank="1" passThreshold="true" id="SII_1_1">
                         <PeptideEvidenceRef
                                 peptideEvidence_ref="pepevid_pep_16095862607_AYALMoxTDIHWDDCcmFCcmR_protP15640_target_401_pepkey_1_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p1"/>
-                        <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
+                        <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="noncovalently associated peptides spectrum identification item"
                                  value="1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002545" name="xi:score"
                                  value="13.456698034492756"/>
@@ -208,7 +208,7 @@ Gustav-Meyer-Allee 25
                                                 rank="1" passThreshold="true" id="SII_1_2">
                         <PeptideEvidenceRef
                                 peptideEvidence_ref="pepevid_pep_16095861104_VHTECcmCcmHGDLLECcmADDR_protP02768-A_target_241_pepkey_0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p1"/>
-                        <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
+                        <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="noncovalently associated peptides spectrum identification item"
                                  value="1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002545" name="xi:score"
                                  value="13.456698034492756"/>
