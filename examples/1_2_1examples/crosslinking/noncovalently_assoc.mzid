@@ -68,9 +68,6 @@ Gustav-Meyer-Allee 25
             <Modification location="15" residues="C" monoisotopicMassDelta="57.02147">
                 <cvParam cvRef="UNIMOD" accession="UNIMOD:4" name="Carbamidomethyl"/>
             </Modification>
-            <Modification location="0" monoisotopicMassDelta="0.0">
-                <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="1"/>
-            </Modification>
         </Peptide>
         <Peptide id="16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p0">
             <PeptideSequence>VHTECCHGDLLECADDR</PeptideSequence>
@@ -82,10 +79,6 @@ Gustav-Meyer-Allee 25
             </Modification>
             <Modification location="13" residues="C" monoisotopicMassDelta="57.02147">
                 <cvParam cvRef="UNIMOD" accession="UNIMOD:4" name="Carbamidomethyl"/>
-            </Modification>
-            <Modification location="0" monoisotopicMassDelta="0.0">
-                <cvParam cvRef="PSI-MS" accession="MS:1001460" name="unknown modification"/>
-                <cvParam cvRef="PSI-MS" accession="MS:1002509" name="cross-link donor" value="1"/>
             </Modification>
         </Peptide>
         <PeptideEvidence dBSequence_ref="dbseq_P15640_target"
