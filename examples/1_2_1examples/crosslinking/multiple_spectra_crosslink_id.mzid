@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MzIdentML>
+
+    <AnalysisCollection>
+        <SpectrumIdentification spectrumIdentificationProtocol_ref="SearchProtocol_HCD"
+                                spectrumIdentificationList_ref="sil_HCD" id="SpecIdent_HCD">
+            <InputSpectra spectraData_ref="peaklist_id"></InputSpectra>
+            <SearchDatabaseRef searchDatabase_ref="database_id"></SearchDatabaseRef>
+        </SpectrumIdentification>
+        <SpectrumIdentification spectrumIdentificationProtocol_ref="SearchProtocol_ETD"
+                                spectrumIdentificationList_ref="sil_ETD" id="SpecIdent_ETD">
+            <InputSpectra spectraData_ref="peaklist_id"></InputSpectra>
+            <SearchDatabaseRef searchDatabase_ref="database_id"></SearchDatabaseRef>
+        </SpectrumIdentification>
+        <SpectrumIdentification spectrumIdentificationProtocol_ref="SearchProtocol_MS3"
+                                spectrumIdentificationList_ref="sil_MS3" id="SpecIdent_MS3">
+            <InputSpectra spectraData_ref="peaklist_id"></InputSpectra>
+            <SearchDatabaseRef searchDatabase_ref="database_id"></SearchDatabaseRef>
+        </SpectrumIdentification>
+    </AnalysisCollection>
+
+    <AnalysisProtocolCollection>
+        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS"
+                 name="multiple spectra cross-linking search"/>
+        <SpectrumIdentificationProtocol analysisSoftware_ref="fdr_prog_id"
+                                        id="SearchProtocol_HCD">
+            <!-- somewhere here come the b and y ion cv-terms -->
+            </SpectrumIdentificationProtocol>
+
+                  <SpectrumIdentificationProtocol analysisSoftware_ref="fdr_prog_id"
+            id="SearchProtocol_ETD">
+            <!-- somewhere here come the c and z ion cv-terms -->
+            </SpectrumIdentificationProtocol>
+
+            <!-- if the MS3 has different search params, e.g. mass tolerance it needs a separate
+            protocol -->
+            <SpectrumIdentificationProtocol analysisSoftware_ref="fdr_prog_id"
+                                            id="SearchProtocol_MS3"></SpectrumIdentificationProtocol>
+            <!-- somewhere here come the cv terms for MS3 -->
+        </SpectrumIdentificationProtocol>
+    </AnalysisProtocolCollection>
+
+
+
+
+    <AnalysisData>
+
+        <SpectrumIdentificationList id="sil_HCD">
+            <!--  HCD MS2 match defined basically the same as in a non-cleavable case -->
+            <SpectrumIdentificationResult spectrumID="index=1" spectraData_ref="pl1" id="SIR_1">
+                <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p1" rank="1" passThreshold="false" id="SII_0">
+                    <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1" />
+                    <!-- this flags it as part of the cross-linked identification number 1 -->
+                    <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
+                    <cvParam cvRef="PSI-MS" accession="MS:xxxxxx" name="some score" value="x"></cvParam>
+                </SpectrumIdentificationItem>
+                <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2" rank="1" passThreshold="false" id="SII_1">
+                    <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2" />
+                    <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
+                    <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"></cvParam>
+                </SpectrumIdentificationItem>
+            </SpectrumIdentificationResult>
+        </SpectrumIdentificationList>
+
+        <!-- if the ETD should be correctly identified - it needs to go into a separate list -->
+        <SpectrumIdentificationList id="sil_ETD">
+            <SpectrumIdentificationResult spectrumID="index=2" spectraData_ref="pl1" id="SIR_2">
+                <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p1" rank="1" passThreshold="false" id="SII_0">
+                    <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1" />
+                    <!-- this flags it as part of the cross-linked identification number 1 -->
+                    <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
+                    <cvParam cvRef="PSI-MS" accession="MS:xxxxxx" name="some score" value="x"></cvParam>
+                </SpectrumIdentificationItem>
+                <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2" rank="1" passThreshold="false" id="SII_1">
+                    <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2" />
+                    <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
+                    <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"></cvParam>
+                </SpectrumIdentificationItem>
+            </SpectrumIdentificationResult>
+        </SpectrumIdentificationList>
+        <!-- if the MS3 has different search params, e.g. mass tolerance they need to go into a separate list→
+
+          <SpectrumIdentificationList id="sil_MS3">
+        <!--  HCD MS3 match peptide 1 A-->
+        <SpectrumIdentificationResult spectrumID="index=3" spectraData_ref="pl1" id="SIR_3">
+            <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="50" peptide_ref="p1_s" rank="1" passThreshold="false" id="SII_2">
+                <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_a" />
+                <!-- this flags it as part of the cross-linked identification number 1 -->
+                <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
+                <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"></cvParam>
+            </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+
+        <!--  HCD MS3 match peptide 2 T-->
+        <SpectrumIdentificationResult spectrumID="index=4" spectraData_ref="pl1" id="SIR_4">
+            <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="50" peptide_ref="p2_t" rank="1" passThreshold="false" id="SII_3">
+                <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_t" />
+                <!-- this flags it as part of the cross-linked identification number 1-->
+                <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
+                <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"></cvParam>
+            </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+
+        <!--  HCD MS3 match peptide 1 T-->
+        <SpectrumIdentificationResult spectrumID="index=3" spectraData_ref="pl1" id="SIR_1">
+            <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="51" peptide_ref="p1_t" rank="1" passThreshold="false" id="SII_2">
+                <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_t" />
+                <!-- this flags it as part of the cross-linked identification 1.-->
+                <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
+                <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"></cvParam>
+            </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+
+        <!--  HCD MS3 match peptide 2 A-->
+        <SpectrumIdentificationResult spectrumID="index=4" spectraData_ref="pl1" id="SIR_1">
+            <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="49" peptide_ref="p2_s" rank="1" passThreshold="false" id="SII_3">
+                <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_a" />
+                <!-- this flags it as part of the cross-linked identification number 1 -->
+                <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
+                <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"></cvParam>
+            </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+
+    </SpectrumIdentificationList>
+</AnalysisData>
