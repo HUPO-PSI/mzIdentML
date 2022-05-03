@@ -127,22 +127,22 @@ Gustav-Meyer-Allee 25
                 <SearchModification fixedMod="true" massDelta="0.0" residues=".">
                     <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="0"/>
                 </SearchModification>
-                <SearchModification fixedMod="false" massDelta="82.04186" residues="KSTY">
+                <SearchModification fixedMod="false" massDelta="82.04186" residues="K S T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1001460" name="unknown modification"/>
                 </SearchModification>
-                <SearchModification fixedMod="false" massDelta="98.03678" residues="KSTY">
+                <SearchModification fixedMod="false" massDelta="98.03678" residues="K S T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1001460" name="unknown modification"/>
                 </SearchModification>
                 <SearchModification fixedMod="false" massDelta="15.99491" residues="M">
                     <cvParam cvRef="UNIMOD" accession="UNIMOD:35" name="Oxidation"/>
                 </SearchModification>
-                <SearchModification fixedMod="false" massDelta="68.026215" residues="KTY">
+                <SearchModification fixedMod="false" massDelta="68.026215" residues="K T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1001460" name="unknown modification"/>
                 </SearchModification>
                 <SearchModification fixedMod="false" massDelta="68.026215" residues="S">
                     <cvParam cvRef="PSI-MS" accession="MS:1001460" name="unknown modification"/>
                 </SearchModification>
-                <SearchModification fixedMod="false" massDelta="100.05243" residues="KSTY">
+                <SearchModification fixedMod="false" massDelta="100.05243" residues="K S T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1001460" name="unknown modification"/>
                 </SearchModification>
                 <SearchModification fixedMod="false" massDelta="57.021465" residues="C">
