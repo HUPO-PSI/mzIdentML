@@ -2,3 +2,5 @@
 /validator/build/
 /validator/dist/
 /validator/trunk/target/
+
+.idea
