@@ -234,7 +234,7 @@ Gustav-Meyer-Allee 25
                         <cvParam cvRef="PSI-MS" accession="MS:1001593"
                                  name="group member with undefined relationship OR ortholog protein"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002676" name="protein-pair-level global FDR"
-                                 value="10.b:null:-1.0:true"/>
+                                 value="10.b:null:0.0:true"/>
                     </ProteinDetectionHypothesis>
                     <cvParam cvRef="PSI-MS" accession="MS:1002415" name="protein group passes threshold"
                              value="true"/>
@@ -251,7 +251,7 @@ Gustav-Meyer-Allee 25
                         <cvParam cvRef="PSI-MS" accession="MS:1001593"
                                  name="group member with undefined relationship OR ortholog protein"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002676" name="protein-pair-level global FDR"
-                                 value="10.a:null:-1.0:true"/>
+                                 value="10.a:null:0.0:true"/>
                     </ProteinDetectionHypothesis>
                     <cvParam cvRef="PSI-MS" accession="MS:1002415" name="protein group passes threshold"
                              value="true"/>
