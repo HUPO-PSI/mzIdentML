@@ -57,7 +57,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:1001088" name="protein description"
                      value="ALBU_HUMAN Serum albumin active OS=Homo sapiens GN=ALB PE=1 SV=2"/>
         </DBSequence>
-        <Peptide id="16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p1">
+        <Peptide id="16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l">
             <PeptideSequence>AYALMTDIHWDDCFCR</PeptideSequence>
             <Modification location="5" residues="M" monoisotopicMassDelta="15.99491">
                 <cvParam cvRef="UNIMOD" accession="UNIMOD:35" name="Oxidation"/>
@@ -69,7 +69,7 @@ Gustav-Meyer-Allee 25
                 <cvParam cvRef="UNIMOD" accession="UNIMOD:4" name="Carbamidomethyl"/>
             </Modification>
         </Peptide>
-        <Peptide id="16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p0">
+        <Peptide id="16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l">
             <PeptideSequence>VHTECCHGDLLECADDR</PeptideSequence>
             <Modification location="5" residues="C" monoisotopicMassDelta="57.02147">
                 <cvParam cvRef="UNIMOD" accession="UNIMOD:4" name="Carbamidomethyl"/>
@@ -82,13 +82,13 @@ Gustav-Meyer-Allee 25
             </Modification>
         </Peptide>
         <PeptideEvidence dBSequence_ref="dbseq_P15640_target"
-                         peptide_ref="16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p1"
+                         peptide_ref="16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l"
                          start="401" end="416" isDecoy="false"
-                         id="pepevid_pep_16095862607_AYALMoxTDIHWDDCcmFCcmR_protP15640_target_401_pepkey_1_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p1"/>
+                         id="pepevid_pep_16095862607_AYALMoxTDIHWDDCcmFCcmR_protP15640_target_401_pepkey_1_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l"/>
         <PeptideEvidence dBSequence_ref="dbseq_P02768-A_target"
-                         peptide_ref="16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p0"
+                         peptide_ref="16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l"
                          start="241" end="257" isDecoy="false"
-                         id="pepevid_pep_16095861104_VHTECcmCcmHGDLLECcmADDR_protP02768-A_target_241_pepkey_0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p1"/>
+                         id="pepevid_pep_16095861104_VHTECcmCcmHGDLLECcmADDR_protP02768-A_target_241_pepkey_0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l"/>
     </SequenceCollection>
     <AnalysisCollection>
         <SpectrumIdentification spectrumIdentificationProtocol_ref="SearchProtocol_1_16441"
@@ -193,10 +193,10 @@ Gustav-Meyer-Allee 25
                                               id="SIR_1">
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="1392.897440641436"
                                                 calculatedMassToCharge="1392.567094980103"
-                                                peptide_ref="16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p1"
+                                                peptide_ref="16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l"
                                                 rank="1" passThreshold="true" id="SII_1_1">
                         <PeptideEvidenceRef
-                                peptideEvidence_ref="pepevid_pep_16095862607_AYALMoxTDIHWDDCcmFCcmR_protP15640_target_401_pepkey_1_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p1"/>
+                                peptideEvidence_ref="pepevid_pep_16095862607_AYALMoxTDIHWDDCcmFCcmR_protP15640_target_401_pepkey_1_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l"/>
                         <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="noncovalently associated peptides spectrum identification item"
                                  value="1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002545" name="xi:score"
@@ -204,10 +204,10 @@ Gustav-Meyer-Allee 25
                     </SpectrumIdentificationItem>
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="1392.897440641436"
                                                 calculatedMassToCharge="1392.567094980103"
-                                                peptide_ref="16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p0"
+                                                peptide_ref="16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l"
                                                 rank="1" passThreshold="true" id="SII_1_2">
                         <PeptideEvidenceRef
-                                peptideEvidence_ref="pepevid_pep_16095861104_VHTECcmCcmHGDLLECcmADDR_protP02768-A_target_241_pepkey_0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p1"/>
+                                peptideEvidence_ref="pepevid_pep_16095861104_VHTECcmCcmHGDLLECcmADDR_protP02768-A_target_241_pepkey_0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l"/>
                         <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="noncovalently associated peptides spectrum identification item"
                                  value="1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002545" name="xi:score"
@@ -221,7 +221,7 @@ Gustav-Meyer-Allee 25
                     <ProteinDetectionHypothesis dBSequence_ref="dbseq_P15640_target" passThreshold="false"
                                                 id="PAG_0_PDH_0">
                         <PeptideHypothesis
-                                peptideEvidence_ref="pepevid_pep_16095862607_AYALMoxTDIHWDDCcmFCcmR_protP15640_target_401_pepkey_1_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p1">
+                                peptideEvidence_ref="pepevid_pep_16095862607_AYALMoxTDIHWDDCcmFCcmR_protP15640_target_401_pepkey_1_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l">
                             <SpectrumIdentificationItemRef
                                     spectrumIdentificationItem_ref="SII_1_1"/>
                         </PeptideHypothesis>
@@ -238,7 +238,7 @@ Gustav-Meyer-Allee 25
                     <ProteinDetectionHypothesis dBSequence_ref="dbseq_P02768-A_target" passThreshold="false"
                                                 id="PAG_1_PDH_0">
                         <PeptideHypothesis
-                                peptideEvidence_ref="pepevid_pep_16095861104_VHTECcmCcmHGDLLECcmADDR_protP02768-A_target_241_pepkey_0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_0_0_p1">
+                                peptideEvidence_ref="pepevid_pep_16095861104_VHTECcmCcmHGDLLECcmADDR_protP02768-A_target_241_pepkey_0_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l_16095861104_VHTECcmCcmHGDLLECcmADDR_16095862607_AYALMoxTDIHWDDCcmFCcmR_l">
                             <SpectrumIdentificationItemRef
                                     spectrumIdentificationItem_ref="SII_1_2"/>
                         </PeptideHypothesis>
