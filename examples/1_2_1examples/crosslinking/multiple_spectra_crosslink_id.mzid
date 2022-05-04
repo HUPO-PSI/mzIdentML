@@ -1,125 +1,327 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MzIdentML>
+<MzIdentML id="12345" version="1.2.0" xmlns="http://psidev.info/psi/pi/mzIdentML/1.2"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.2 https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/schema/mzIdentML1.2.0.xsd"
+           creationDate="2022-05-02T12:24:29">
+
+    <cvList>
+        <cv fullName="PSI-MS" uri="https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo" id="PSI-MS"/>
+        <cv fullName="XLMOD" uri="https://raw.githubusercontent.com/HUPO-PSI/xlmod-CV/main/XLMOD.obo" id="XLMOD"/>
+        <cv fullName="UNIMOD" uri="http://www.unimod.org/obo/unimod.obo" id="UNIMOD"/>
+        <cv fullName="UNIT-ONTOLOGY"
+            uri="https://raw.githubusercontent.com/bio-ontology-research-group/unit-ontology/master/unit.obo"
+            id="UO"/>
+    </cvList>
+
+    <AnalysisSoftwareList>
+        <AnalysisSoftware id="fdr_prog_id">
+            <SoftwareName>
+                <cvParam name="software" cvRef="PSI-MS" accession="MS:1000531"/>
+            </SoftwareName>
+        </AnalysisSoftware>
+    </AnalysisSoftwareList>
+
+    <SequenceCollection>
+        <DBSequence length="14" searchDatabase_ref="database_id" accession="PA" id="protein_A"
+                    name="Protein A">
+            <Seq>MKVLVIGNGKPEPK</Seq>
+        </DBSequence>
+        <DBSequence length="25" searchDatabase_ref="database_id" accession="PB" id="protein_B"
+                    name="Protein B">
+            <Seq>DAHKSEVAHRFKDLGEENFKTIDEK</Seq>
+        </DBSequence>
+
+        <Peptide id="p1">
+            <PeptideSequence>PEPK</PeptideSequence>
+            <!-- this part doesn’t change, donor has full crosslinker modMass -->
+            <Modification location="4" monoisotopicMassDelta="158.003765">
+                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1002509" name="cross-link donor" value="1"/>
+            </Modification>
+        </Peptide>
+
+        <Peptide id="p2">
+            <PeptideSequence>TIDEK</PeptideSequence>
+            <!-- this part doesn’t change, acceptor has 0 mass -->
+            <Modification location="4" monoisotopicMassDelta="0">
+                <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="1"/>
+            </Modification>
+        </Peptide>
+
+        <!-- MS3 peptides are separately listed, as they are linear stub modified peptides -->
+        <Peptide id="p1_a">
+            <PeptideSequence>PEPK</PeptideSequence>
+            <Modification location="4" monoisotopicMassDelta="54.010565">
+<!--                <cvParam accession="UNIMOD:1881" cvRef="UNIMOD" name="Xlink:DSS0[54]"/>-->
+                <cvParam accession="MS:XXXXXX" name="UNIMOD derivative code" value="A" cvRef="PSI-MS" />
+                <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="cross-link stub"/>
+            </Modification>
+        </Peptide>
+
+        <Peptide id="p1_t">
+            <PeptideSequence>PEPK</PeptideSequence>
+            <Modification location="4" monoisotopicMassDelta="85.982635">
+<!--                <cvParam accession="UNIMOD:1882" cvRef="UNIMOD" name="Xlink:DSS0[86]"/>-->
+                <cvParam accession="MS:XXXXXX" name="UNIMOD derivative code" value="T" cvRef="PSI-MS" />
+                <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="cross-link stub"/>
+            </Modification>
+        </Peptide>
+
+        <Peptide id="p2_a">
+            <PeptideSequence>TIDEK</PeptideSequence>
+            <Modification location="4" monoisotopicMassDelta="54.010565">
+                <!--                <cvParam accession="UNIMOD:1881" cvRef="UNIMOD" name="Xlink:DSS0[54]"/>-->
+                <cvParam accession="MS:XXXXXX" name="UNIMOD derivative code" value="A" cvRef="PSI-MS" />
+                <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="cross-link stub"/>
+            </Modification>
+        </Peptide>
+
+        <Peptide id="p2_t">
+            <PeptideSequence>TIDEK</PeptideSequence>
+            <Modification location="4" monoisotopicMassDelta="85.982635">
+                <!--                <cvParam accession="UNIMOD:1882" cvRef="UNIMOD" name="Xlink:DSS0[86]"/>-->
+                <cvParam accession="MS:XXXXXX" name="UNIMOD derivative code" value="T" cvRef="PSI-MS" />
+                <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="cross-link stub"/>
+            </Modification>
+        </Peptide>
+
+
+        <PeptideEvidence id="pepevid_p1" dBSequence_ref="protein_A" peptide_ref="p1" start="10"/>
+        <PeptideEvidence id="pepevid_p2" dBSequence_ref="protein_B" peptide_ref="p2" start="241"/>
+        <PeptideEvidence id="pepevid_p1_a" dBSequence_ref="protein_A" peptide_ref="p1_a" start="10"/>
+        <PeptideEvidence id="pepevid_p1_t" dBSequence_ref="protein_A" peptide_ref="p1_t" start="10"/>
+        <PeptideEvidence id="pepevid_p2_a" dBSequence_ref="protein_B" peptide_ref="p2_a" start="241"/>
+        <PeptideEvidence id="pepevid_p2_t" dBSequence_ref="protein_B" peptide_ref="p2_t" start="241"/>
+    </SequenceCollection>
 
     <AnalysisCollection>
         <SpectrumIdentification spectrumIdentificationProtocol_ref="SearchProtocol_HCD"
                                 spectrumIdentificationList_ref="sil_HCD" id="SpecIdent_HCD">
-            <InputSpectra spectraData_ref="peaklist_id"></InputSpectra>
-            <SearchDatabaseRef searchDatabase_ref="database_id"></SearchDatabaseRef>
+            <InputSpectra spectraData_ref="peaklist_id"/>
+            <SearchDatabaseRef searchDatabase_ref="database_id"/>
         </SpectrumIdentification>
         <SpectrumIdentification spectrumIdentificationProtocol_ref="SearchProtocol_ETD"
                                 spectrumIdentificationList_ref="sil_ETD" id="SpecIdent_ETD">
-            <InputSpectra spectraData_ref="peaklist_id"></InputSpectra>
-            <SearchDatabaseRef searchDatabase_ref="database_id"></SearchDatabaseRef>
+            <InputSpectra spectraData_ref="peaklist_id"/>
+            <SearchDatabaseRef searchDatabase_ref="database_id"/>
         </SpectrumIdentification>
         <SpectrumIdentification spectrumIdentificationProtocol_ref="SearchProtocol_MS3"
                                 spectrumIdentificationList_ref="sil_MS3" id="SpecIdent_MS3">
-            <InputSpectra spectraData_ref="peaklist_id"></InputSpectra>
-            <SearchDatabaseRef searchDatabase_ref="database_id"></SearchDatabaseRef>
+            <InputSpectra spectraData_ref="peaklist_id"/>
+            <SearchDatabaseRef searchDatabase_ref="database_id"/>
         </SpectrumIdentification>
     </AnalysisCollection>
 
     <AnalysisProtocolCollection>
-        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS"
-                 name="multiple spectra cross-linking search"/>
-        <SpectrumIdentificationProtocol analysisSoftware_ref="fdr_prog_id"
-                                        id="SearchProtocol_HCD">
-            <!-- somewhere here come the b and y ion cv-terms -->
-            </SpectrumIdentificationProtocol>
 
-                  <SpectrumIdentificationProtocol analysisSoftware_ref="fdr_prog_id"
-            id="SearchProtocol_ETD">
-            <!-- somewhere here come the c and z ion cv-terms -->
-            </SpectrumIdentificationProtocol>
+        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" name="multiple spectra cross-linking search"/>
 
-            <!-- if the MS3 has different search params, e.g. mass tolerance it needs a separate
-            protocol -->
-            <SpectrumIdentificationProtocol analysisSoftware_ref="fdr_prog_id"
-                                            id="SearchProtocol_MS3"></SpectrumIdentificationProtocol>
-            <!-- somewhere here come the cv terms for MS3 -->
+        <SpectrumIdentificationProtocol analysisSoftware_ref="fdr_prog_id" id="SearchProtocol_HCD">
+            <SearchType>
+                <cvParam cvRef="PSI-MS" accession="MS:1001083" name="ms-ms search"/>
+            </SearchType>
+            <AdditionalSearchParams>
+                <cvParam cvRef="PSI-MS" accession="MS:1001211" name="parent mass type mono"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001256" name="fragment mass type mono"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1002494" name="cross-linking search"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001118" name="param: b ion"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001262" name="param: y ion"/>
+            </AdditionalSearchParams>
+            <FragmentTolerance>
+                <cvParam cvRef="PSI-MS" accession="MS:1001412" name="search tolerance plus value" value="10.0"
+                         unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001413" name="search tolerance minus value" value="10.0"
+                         unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO"/>
+            </FragmentTolerance>
+            <ParentTolerance>
+                <cvParam cvRef="PSI-MS" accession="MS:1001412" name="search tolerance plus value" value="3.0"
+                         unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001413" name="search tolerance minus value" value="3.0"
+                         unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO"/>
+            </ParentTolerance>
+            <Threshold>
+                <cvParam cvRef="PSI-MS" accession="MS:1001494" name="no threshold"/>
+            </Threshold>
+            <!-- somewhere here come the b and y ion cv-terms, 10ppm -->
+
+        </SpectrumIdentificationProtocol>
+
+        <SpectrumIdentificationProtocol analysisSoftware_ref="fdr_prog_id" id="SearchProtocol_ETD">
+            <SearchType>
+                <cvParam cvRef="PSI-MS" accession="MS:1001083" name="ms-ms search"/>
+            </SearchType>
+            <AdditionalSearchParams>
+                <cvParam cvRef="PSI-MS" accession="MS:1001211" name="parent mass type mono"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001256" name="fragment mass type mono"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1002494" name="cross-linking search"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001119" name="param: c ion"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001263" name="param: z ion"/>
+            </AdditionalSearchParams>
+            <FragmentTolerance>
+                <cvParam cvRef="PSI-MS" accession="MS:1001412" name="search tolerance plus value" value="10.0"
+                         unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001413" name="search tolerance minus value" value="10.0"
+                         unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO"/>
+            </FragmentTolerance>
+            <ParentTolerance>
+                <cvParam cvRef="PSI-MS" accession="MS:1001412" name="search tolerance plus value" value="3.0"
+                         unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001413" name="search tolerance minus value" value="3.0"
+                         unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO"/>
+            </ParentTolerance>
+            <Threshold>
+                <cvParam cvRef="PSI-MS" accession="MS:1001494" name="no threshold"/>
+            </Threshold>
+        </SpectrumIdentificationProtocol>
+
+        <!-- if the MS3 has different search params, e.g. mass tolerance it needs a separate
+        protocol -->
+        <SpectrumIdentificationProtocol analysisSoftware_ref="fdr_prog_id" id="SearchProtocol_MS3">
+            <SearchType>
+                <cvParam cvRef="PSI-MS" accession="MS:1001083" name="ms-ms search"/> <!-- new CV term for ms3 search? -->
+            </SearchType>
+            <AdditionalSearchParams>
+                <cvParam cvRef="PSI-MS" accession="MS:1001211" name="parent mass type mono"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001256" name="fragment mass type mono"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1002494" name="cross-linking search"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001118" name="param: b ion"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001262" name="param: y ion"/>
+            </AdditionalSearchParams>
+            <FragmentTolerance>
+                <cvParam cvRef="PSI-MS" accession="MS:1001412" name="search tolerance plus value" value="1.4"
+                         unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001413" name="search tolerance minus value" value="1.4"
+                         unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>
+            </FragmentTolerance>
+            <ParentTolerance>
+                <cvParam cvRef="PSI-MS" accession="MS:1001412" name="search tolerance plus value" value="10.0"
+                         unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1001413" name="search tolerance minus value" value="10.0"
+                         unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO"/>
+            </ParentTolerance>
+            <Threshold>
+                <cvParam cvRef="PSI-MS" accession="MS:1001494" name="no threshold"/>
+            </Threshold>
+            <!-- somewhere here come the cv terms for MS3 b, y, 1.4 dalton-->
         </SpectrumIdentificationProtocol>
     </AnalysisProtocolCollection>
 
+    <DataCollection>
 
+        <Inputs>
+            <SearchDatabase location="sequences.fasta" id="database_id">
+                <FileFormat>
+                    <cvParam cvRef="PSI-MS" accession="MS:1001348" name="FASTA format"/>
+                </FileFormat>
+                <DatabaseName>
+                    <userParam name="sequences"/>
+                </DatabaseName>
+            </SearchDatabase>
+            <SpectraData id="peaklist_id" location="path.mzml">
+                <FileFormat>
+                    <cvParam cvRef="PSI-MS" accession="MS:1000584" name="mzML format"/>
+                </FileFormat>
+                <SpectrumIDFormat>
+                    <cvParam cvRef="PSI-MS" accession="MS:1001530" name="mzML unique identifier"/>
+                </SpectrumIDFormat>
+            </SpectraData>
+        </Inputs>
 
+        <AnalysisData>
 
-    <AnalysisData>
+            <SpectrumIdentificationList id="sil_HCD">
+                <!--  HCD MS2 match defined basically the same as in a non-cleavable case -->
+                <SpectrumIdentificationResult spectrumID="index=1" spectraData_ref="peaklist_id" id="SIR_1">
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p1" rank="1"
+                                                passThreshold="false" id="HCD_SII_0">
+                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1"/>
+                        <!-- this flags it as part of the cross-linked identification number 1 -->
+                        <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
+                                 value="1"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:xxxxxx" name="some score" value="x"/>
+                    </SpectrumIdentificationItem>
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2" rank="1"
+                                                passThreshold="false" id="HCD_SII_1">
+                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
+                                 value="1"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"/>
+                    </SpectrumIdentificationItem>
+                </SpectrumIdentificationResult>
+            </SpectrumIdentificationList>
 
-        <SpectrumIdentificationList id="sil_HCD">
-            <!--  HCD MS2 match defined basically the same as in a non-cleavable case -->
-            <SpectrumIdentificationResult spectrumID="index=1" spectraData_ref="pl1" id="SIR_1">
-                <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p1" rank="1" passThreshold="false" id="SII_0">
-                    <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1" />
-                    <!-- this flags it as part of the cross-linked identification number 1 -->
-                    <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
-                    <cvParam cvRef="PSI-MS" accession="MS:xxxxxx" name="some score" value="x"></cvParam>
-                </SpectrumIdentificationItem>
-                <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2" rank="1" passThreshold="false" id="SII_1">
-                    <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2" />
-                    <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
-                    <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"></cvParam>
-                </SpectrumIdentificationItem>
-            </SpectrumIdentificationResult>
-        </SpectrumIdentificationList>
+            <!-- if the ETD should be correctly identified - it needs to go into a separate list -->
+            <SpectrumIdentificationList id="sil_ETD">
+                <SpectrumIdentificationResult spectrumID="index=2" spectraData_ref="peaklist_id" id="SIR_2">
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p1" rank="1"
+                                                passThreshold="false" id="ETD_SII_0">
+                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1"/>
+                        <!-- this flags it as part of the cross-linked identification number 1 -->
+                        <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
+                                 value="1"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:xxxxxx" name="some score" value="x"/>
+                    </SpectrumIdentificationItem>
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2" rank="1"
+                                                passThreshold="false" id="ETD_SII_1">
+                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
+                                 value="1"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"/>
+                    </SpectrumIdentificationItem>
+                </SpectrumIdentificationResult>
+            </SpectrumIdentificationList>
+            <!-- if the MS3 has different search params, e.g. mass tolerance they need to go into a separate list -->
 
-        <!-- if the ETD should be correctly identified - it needs to go into a separate list -->
-        <SpectrumIdentificationList id="sil_ETD">
-            <SpectrumIdentificationResult spectrumID="index=2" spectraData_ref="pl1" id="SIR_2">
-                <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p1" rank="1" passThreshold="false" id="SII_0">
-                    <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1" />
-                    <!-- this flags it as part of the cross-linked identification number 1 -->
-                    <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
-                    <cvParam cvRef="PSI-MS" accession="MS:xxxxxx" name="some score" value="x"></cvParam>
-                </SpectrumIdentificationItem>
-                <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2" rank="1" passThreshold="false" id="SII_1">
-                    <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2" />
-                    <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
-                    <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"></cvParam>
-                </SpectrumIdentificationItem>
-            </SpectrumIdentificationResult>
-        </SpectrumIdentificationList>
-        <!-- if the MS3 has different search params, e.g. mass tolerance they need to go into a separate list→
+            <SpectrumIdentificationList id="sil_MS3">
+                <!--  HCD MS3 match peptide 1 A-->
+                <SpectrumIdentificationResult spectrumID="index=3" spectraData_ref="peaklist_id" id="SIR_3">
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="50" peptide_ref="p1_a"
+                                                rank="1" passThreshold="false" id="MS3_SII_0">
+                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_a"/>
+                        <!-- this flags it as part of the cross-linked identification number 1 -->
+                        <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
+                                 value="1"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"/>
+                    </SpectrumIdentificationItem>
+                </SpectrumIdentificationResult>
 
-          <SpectrumIdentificationList id="sil_MS3">
-        <!--  HCD MS3 match peptide 1 A-->
-        <SpectrumIdentificationResult spectrumID="index=3" spectraData_ref="pl1" id="SIR_3">
-            <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="50" peptide_ref="p1_s" rank="1" passThreshold="false" id="SII_2">
-                <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_a" />
-                <!-- this flags it as part of the cross-linked identification number 1 -->
-                <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
-                <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"></cvParam>
-            </SpectrumIdentificationItem>
-        </SpectrumIdentificationResult>
+                <!--  HCD MS3 match peptide 2 T-->
+                <SpectrumIdentificationResult spectrumID="index=4" spectraData_ref="peaklist_id" id="SIR_4">
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="50" peptide_ref="p2_t"
+                                                rank="1" passThreshold="false" id="MS3_SII_1">
+                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_t"/>
+                        <!-- this flags it as part of the cross-linked identification number 1-->
+                        <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
+                                 value="1"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"/>
+                    </SpectrumIdentificationItem>
+                </SpectrumIdentificationResult>
 
-        <!--  HCD MS3 match peptide 2 T-->
-        <SpectrumIdentificationResult spectrumID="index=4" spectraData_ref="pl1" id="SIR_4">
-            <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="50" peptide_ref="p2_t" rank="1" passThreshold="false" id="SII_3">
-                <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_t" />
-                <!-- this flags it as part of the cross-linked identification number 1-->
-                <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
-                <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"></cvParam>
-            </SpectrumIdentificationItem>
-        </SpectrumIdentificationResult>
+                <!--  HCD MS3 match peptide 1 T-->
+                <SpectrumIdentificationResult spectrumID="index=3" spectraData_ref="peaklist_id" id="SIR_5">
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="51" peptide_ref="p1_t"
+                                                rank="1" passThreshold="false" id="MS3_SII_2">
+                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_t"/>
+                        <!-- this flags it as part of the cross-linked identification 1.-->
+                        <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
+                                 value="1"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"/>
+                    </SpectrumIdentificationItem>
+                </SpectrumIdentificationResult>
 
-        <!--  HCD MS3 match peptide 1 T-->
-        <SpectrumIdentificationResult spectrumID="index=3" spectraData_ref="pl1" id="SIR_1">
-            <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="51" peptide_ref="p1_t" rank="1" passThreshold="false" id="SII_2">
-                <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_t" />
-                <!-- this flags it as part of the cross-linked identification 1.-->
-                <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
-                <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"></cvParam>
-            </SpectrumIdentificationItem>
-        </SpectrumIdentificationResult>
+                <!--  HCD MS3 match peptide 2 A-->
+                <SpectrumIdentificationResult spectrumID="index=4" spectraData_ref="peaklist_id" id="SIR_6">
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="49" peptide_ref="p2_a"
+                                                rank="1" passThreshold="false" id="MS3_SII_3">
+                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_a"/>
+                        <!-- this flags it as part of the cross-linked identification number 1 -->
+                        <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
+                                 value="1"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"/>
+                    </SpectrumIdentificationItem>
+                </SpectrumIdentificationResult>
 
-        <!--  HCD MS3 match peptide 2 A-->
-        <SpectrumIdentificationResult spectrumID="index=4" spectraData_ref="pl1" id="SIR_1">
-            <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="49" peptide_ref="p2_s" rank="1" passThreshold="false" id="SII_3">
-                <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_a" />
-                <!-- this flags it as part of the cross-linked identification number 1 -->
-                <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"></cvParam>
-                <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"></cvParam>
-            </SpectrumIdentificationItem>
-        </SpectrumIdentificationResult>
-
-    </SpectrumIdentificationList>
-</AnalysisData>
+            </SpectrumIdentificationList>
+        </AnalysisData>
+    </DataCollection>
+</MzIdentML>
