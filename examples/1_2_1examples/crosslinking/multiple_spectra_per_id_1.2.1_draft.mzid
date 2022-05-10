@@ -52,7 +52,7 @@
         <Peptide id="p1_a">
             <PeptideSequence>PEPK</PeptideSequence>
             <Modification location="4" monoisotopicMassDelta="54.010565">
-<!--                <cvParam accession="UNIMOD:1881" cvRef="UNIMOD" name="Xlink:DSS0[54]"/>-->
+                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
                 <cvParam accession="MS:XXXXXX" name="UNIMOD derivative code" value="A" cvRef="PSI-MS" />
                 <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="cross-link stub"/>
             </Modification>
@@ -61,7 +61,7 @@
         <Peptide id="p1_t">
             <PeptideSequence>PEPK</PeptideSequence>
             <Modification location="4" monoisotopicMassDelta="85.982635">
-<!--                <cvParam accession="UNIMOD:1882" cvRef="UNIMOD" name="Xlink:DSS0[86]"/>-->
+                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
                 <cvParam accession="MS:XXXXXX" name="UNIMOD derivative code" value="T" cvRef="PSI-MS" />
                 <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="cross-link stub"/>
             </Modification>
@@ -70,7 +70,7 @@
         <Peptide id="p2_a">
             <PeptideSequence>TIDEK</PeptideSequence>
             <Modification location="4" monoisotopicMassDelta="54.010565">
-                <!--                <cvParam accession="UNIMOD:1881" cvRef="UNIMOD" name="Xlink:DSS0[54]"/>-->
+                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
                 <cvParam accession="MS:XXXXXX" name="UNIMOD derivative code" value="A" cvRef="PSI-MS" />
                 <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="cross-link stub"/>
             </Modification>
@@ -79,7 +79,7 @@
         <Peptide id="p2_t">
             <PeptideSequence>TIDEK</PeptideSequence>
             <Modification location="4" monoisotopicMassDelta="85.982635">
-                <!--                <cvParam accession="UNIMOD:1882" cvRef="UNIMOD" name="Xlink:DSS0[86]"/>-->
+                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
                 <cvParam accession="MS:XXXXXX" name="UNIMOD derivative code" value="T" cvRef="PSI-MS" />
                 <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="cross-link stub"/>
             </Modification>
