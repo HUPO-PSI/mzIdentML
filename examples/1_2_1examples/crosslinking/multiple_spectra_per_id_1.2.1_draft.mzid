@@ -114,9 +114,8 @@
 
     <AnalysisProtocolCollection>
 
-        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" name="multiple spectra cross-linking search"/>
-
         <SpectrumIdentificationProtocol analysisSoftware_ref="fdr_prog_id" id="SearchProtocol_HCD">
+            <!-- somewhere here come the b and y ion cv-terms, 10ppm -->
             <SearchType>
                 <cvParam cvRef="PSI-MS" accession="MS:1001083" name="ms-ms search"/>
             </SearchType>
@@ -127,6 +126,12 @@
                 <cvParam cvRef="PSI-MS" accession="MS:1001118" name="param: b ion"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1001262" name="param: y ion"/>
             </AdditionalSearchParams>
+            <ModificationParams>
+                <!-- TODO -->
+                <SearchModification fixedMod="" massDelta="" residues="">
+                    <cvParam name="" cvRef="" accession=""/>
+                </SearchModification>
+            </ModificationParams>
             <FragmentTolerance>
                 <cvParam cvRef="PSI-MS" accession="MS:1001412" name="search tolerance plus value" value="10.0"
                          unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO"/>
@@ -142,8 +147,6 @@
             <Threshold>
                 <cvParam cvRef="PSI-MS" accession="MS:1001494" name="no threshold"/>
             </Threshold>
-            <!-- somewhere here come the b and y ion cv-terms, 10ppm -->
-
         </SpectrumIdentificationProtocol>
 
         <SpectrumIdentificationProtocol analysisSoftware_ref="fdr_prog_id" id="SearchProtocol_ETD">
@@ -238,6 +241,7 @@
                         <!-- this flags it as part of the cross-linked identification number 1 -->
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
                                  value="1"/>
+                        <cvParam accession="MS:1002520" cvRef="PSI-MS" value="multi_spectra_id_1" name="peptide group ID"/>
                         <cvParam cvRef="PSI-MS" accession="MS:xxxxxx" name="some score" value="x"/>
                     </SpectrumIdentificationItem>
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2" rank="1"
@@ -245,6 +249,7 @@
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
                                  value="1"/>
+                        <cvParam accession="MS:1002520" cvRef="PSI-MS" value="multi_spectra_id_1" name="peptide group ID"/>
                         <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"/>
                     </SpectrumIdentificationItem>
                 </SpectrumIdentificationResult>
@@ -259,6 +264,7 @@
                         <!-- this flags it as part of the cross-linked identification number 1 -->
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
                                  value="1"/>
+                        <cvParam accession="MS:1002520" cvRef="PSI-MS" value="multi_spectra_id_1" name="peptide group ID"/>
                         <cvParam cvRef="PSI-MS" accession="MS:xxxxxx" name="some score" value="x"/>
                     </SpectrumIdentificationItem>
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2" rank="1"
@@ -266,6 +272,7 @@
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
                                  value="1"/>
+                        <cvParam accession="MS:1002520" cvRef="PSI-MS" value="multi_spectra_id_1" name="peptide group ID"/>
                         <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"/>
                     </SpectrumIdentificationItem>
                 </SpectrumIdentificationResult>
@@ -281,6 +288,7 @@
                         <!-- this flags it as part of the cross-linked identification number 1 -->
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
                                  value="1"/>
+                        <cvParam accession="MS:1002520" cvRef="PSI-MS" value="multi_spectra_id_1" name="peptide group ID"/>
                         <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"/>
                     </SpectrumIdentificationItem>
                 </SpectrumIdentificationResult>
@@ -293,6 +301,7 @@
                         <!-- this flags it as part of the cross-linked identification number 1-->
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
                                  value="1"/>
+                        <cvParam accession="MS:1002520" cvRef="PSI-MS" value="multi_spectra_id_1" name="peptide group ID"/>
                         <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"/>
                     </SpectrumIdentificationItem>
                 </SpectrumIdentificationResult>
@@ -305,6 +314,7 @@
                         <!-- this flags it as part of the cross-linked identification 1.-->
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
                                  value="1"/>
+                        <cvParam accession="MS:1002520" cvRef="PSI-MS" value="multi_spectra_id_1" name="peptide group ID"/>
                         <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"/>
                     </SpectrumIdentificationItem>
                 </SpectrumIdentificationResult>
@@ -317,6 +327,7 @@
                         <!-- this flags it as part of the cross-linked identification number 1 -->
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
                                  value="1"/>
+                        <cvParam accession="MS:1002520" cvRef="PSI-MS" value="multi_spectra_id_1" name="peptide group ID"/>
                         <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"/>
                     </SpectrumIdentificationItem>
                 </SpectrumIdentificationResult>
