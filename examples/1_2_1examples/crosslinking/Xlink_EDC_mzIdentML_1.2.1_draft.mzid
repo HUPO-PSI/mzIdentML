@@ -605,8 +605,8 @@
         <cvParam accession="MS:1001149" name="param: b ion-NH3" cvRef="PSI-MS" />
         <cvParam accession="MS:1001150" name="param: b ion-H2O" cvRef="PSI-MS" />
         <cvParam accession="MS:1001262" name="param: y ion" cvRef="PSI-MS" />
-        <cvParam accession="MS:1001151" name="param: y ion-NH3" cvRef="PSI-MS" />
-        <cvParam accession="MS:1001152" name="param: y ion-H2O" cvRef="PSI-MS" />
+        <cvParam accession="MS:1001151" name="param: y ion-NH3" cvRef="PSI-MS" /> <!-- deprecated? -->
+        <cvParam accession="MS:1001152" name="param: y ion-H2O" cvRef="PSI-MS" /> <!-- deprecated? -->
         <cvParam accession="MS:1002494" name="cross-linking search" cvRef="PSI-MS"/>
       </AdditionalSearchParams>
       <ModificationParams>

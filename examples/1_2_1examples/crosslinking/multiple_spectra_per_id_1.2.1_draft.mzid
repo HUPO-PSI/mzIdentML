@@ -123,8 +123,12 @@
                 <cvParam cvRef="PSI-MS" accession="MS:1001211" name="parent mass type mono"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1001256" name="fragment mass type mono"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1002494" name="cross-linking search"/>
+                <!-- are these meant to be changed to children of MS:1002307 (fragmentation ion type)  -->
                 <cvParam cvRef="PSI-MS" accession="MS:1001118" name="param: b ion"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1001262" name="param: y ion"/>
+                <!-- these are the current non-deprecated ways of encoding losses?  -->
+                <cvParam name="neutral loss" cvRef="PSI-MS" accession="MS:1000336" value="H2O"/>
+                <cvParam name="neutral loss" cvRef="PSI-MS" accession="MS:1000336" value="NH3"/>
             </AdditionalSearchParams>
             <ModificationParams>
                 <!-- TODO -->
@@ -157,8 +161,12 @@
                 <cvParam cvRef="PSI-MS" accession="MS:1001211" name="parent mass type mono"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1001256" name="fragment mass type mono"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1002494" name="cross-linking search"/>
+                <!-- are these meant to be changed to children of MS:1002307 (fragmentation ion type)  -->
                 <cvParam cvRef="PSI-MS" accession="MS:1001119" name="param: c ion"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1001263" name="param: z ion"/>
+                <!-- these are the current non-deprecated ways of encoding losses?  -->
+                <cvParam name="neutral loss" cvRef="PSI-MS" accession="MS:1000336" value="H2O"/>
+                <cvParam name="neutral loss" cvRef="PSI-MS" accession="MS:1000336" value="NH3"/>
             </AdditionalSearchParams>
             <FragmentTolerance>
                 <cvParam cvRef="PSI-MS" accession="MS:1001412" name="search tolerance plus value" value="10.0"
@@ -187,8 +195,12 @@
                 <cvParam cvRef="PSI-MS" accession="MS:1001211" name="parent mass type mono"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1001256" name="fragment mass type mono"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1002494" name="cross-linking search"/>
+                <!-- are these meant to be changed to children of MS:1002307 (fragmentation ion type)  -->
                 <cvParam cvRef="PSI-MS" accession="MS:1001118" name="param: b ion"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1001262" name="param: y ion"/>
+                <!-- these are the current non-deprecated ways of encoding losses?  -->
+                <cvParam name="neutral loss" cvRef="PSI-MS" accession="MS:1000336" value="H2O"/>
+                <cvParam name="neutral loss" cvRef="PSI-MS" accession="MS:1000336" value="NH3"/>
             </AdditionalSearchParams>
             <FragmentTolerance>
                 <cvParam cvRef="PSI-MS" accession="MS:1001412" name="search tolerance plus value" value="1.4"

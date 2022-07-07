@@ -109,8 +109,15 @@ Gustav-Meyer-Allee 25
                 <cvParam cvRef="PSI-MS" accession="MS:1001256" name="fragment mass type mono"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1002494" name="cross-linking search"/>
                 <cvParam cvRef="PSI-MS" accession="MS:XXXXXX"  name="noncovalently associated peptides search"/>
+
+                <!-- are these meant to be changed to children of MS:1002307 (fragmentation ion type)  -->
                 <cvParam cvRef="PSI-MS" accession="MS:1001118" name="param: b ion"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1001262" name="param: y ion"/>
+
+                <!-- these are the current non-deprecated ways of encoding losses?  -->
+                <cvParam name="neutral loss" cvRef="PSI-MS" accession="MS:1000336" value="H2O"/>
+                <cvParam name="neutral loss" cvRef="PSI-MS" accession="MS:1000336" value="NH3"/>
+
             </AdditionalSearchParams>
             <ModificationParams>
                 <SearchModification fixedMod="false" massDelta="82.04186" residues=".">
