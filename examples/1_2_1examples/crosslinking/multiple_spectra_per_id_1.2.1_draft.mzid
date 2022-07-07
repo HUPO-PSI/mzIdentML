@@ -35,7 +35,7 @@
             <PeptideSequence>PEPK</PeptideSequence>
             <!-- this part doesn’t change, donor has full crosslinker modMass -->
             <Modification location="4" monoisotopicMassDelta="158.003765">
-                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1002509" name="cross-link donor" value="1"/>
             </Modification>
         </Peptide>
@@ -52,7 +52,7 @@
         <Peptide id="p1_a">
             <PeptideSequence>PEPK</PeptideSequence>
             <Modification location="4" monoisotopicMassDelta="54.010565">
-                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                 <cvParam accession="MS:XXXXXX" name="UNIMOD derivative code" value="A" cvRef="PSI-MS" />
                 <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="cross-link stub"/>
             </Modification>
@@ -61,7 +61,7 @@
         <Peptide id="p1_t">
             <PeptideSequence>PEPK</PeptideSequence>
             <Modification location="4" monoisotopicMassDelta="85.982635">
-                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                 <cvParam accession="MS:XXXXXX" name="UNIMOD derivative code" value="T" cvRef="PSI-MS" />
                 <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="cross-link stub"/>
             </Modification>
@@ -70,7 +70,7 @@
         <Peptide id="p2_a">
             <PeptideSequence>TIDEK</PeptideSequence>
             <Modification location="4" monoisotopicMassDelta="54.010565">
-                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                 <cvParam accession="MS:XXXXXX" name="UNIMOD derivative code" value="A" cvRef="PSI-MS" />
                 <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="cross-link stub"/>
             </Modification>
@@ -79,7 +79,7 @@
         <Peptide id="p2_t">
             <PeptideSequence>TIDEK</PeptideSequence>
             <Modification location="4" monoisotopicMassDelta="85.982635">
-                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                 <cvParam accession="MS:XXXXXX" name="UNIMOD derivative code" value="T" cvRef="PSI-MS" />
                 <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="cross-link stub"/>
             </Modification>
@@ -133,12 +133,12 @@
             <ModificationParams>
                 <!-- TODO - check if this is right definition for DSSO here -->
                 <SearchModification fixedMod="false" massDelta="138.06808" residues="S T Y K">
-                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1002509" name="cross-link donor" value="0"/>
                 </SearchModification>
 
                 <SearchModification fixedMod="false" massDelta="0.0" residues="S T Y K">
-                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="0"/>
                 </SearchModification>
 
@@ -146,7 +146,7 @@
                     <SpecificityRules>
                         <cvParam cvRef="PSI-MS" accession="MS:1002057" name="modification specificity protein N-term"/>
                     </SpecificityRules>
-                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1002509" name="cross-link donor" value="0"/>
                 </SearchModification>
 
@@ -154,10 +154,10 @@
                     <SpecificityRules>
                         <cvParam cvRef="PSI-MS" accession="MS:1002057" name="modification specificity protein N-term"/>
                     </SpecificityRules>
-                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="0"/>
                 </SearchModification>
-                
+
             </ModificationParams>
             <FragmentTolerance>
                 <cvParam cvRef="PSI-MS" accession="MS:1001412" name="search tolerance plus value" value="10.0"
