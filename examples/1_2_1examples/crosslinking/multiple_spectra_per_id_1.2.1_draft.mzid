@@ -142,6 +142,22 @@
                     <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="0"/>
                 </SearchModification>
 
+                <SearchModification fixedMod="true" massDelta="158.00377" residues=".">
+                    <SpecificityRules>
+                        <cvParam cvRef="PSI-MS" accession="MS:1002057" name="modification specificity protein N-term"/>
+                    </SpecificityRules>
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002509" name="cross-link donor" value="0"/>
+                </SearchModification>
+
+                <SearchModification fixedMod="true" massDelta="158.00377" residues=".">
+                    <SpecificityRules>
+                        <cvParam cvRef="PSI-MS" accession="MS:1002057" name="modification specificity protein N-term"/>
+                    </SpecificityRules>
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="0"/>
+                </SearchModification>
+                
             </ModificationParams>
             <FragmentTolerance>
                 <cvParam cvRef="PSI-MS" accession="MS:1001412" name="search tolerance plus value" value="10.0"
@@ -183,6 +199,22 @@
                 </SearchModification>
 
                 <SearchModification fixedMod="false" massDelta="0.0" residues="S T Y K">
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="0"/>
+                </SearchModification>
+
+                <SearchModification fixedMod="true" massDelta="158.00377" residues=".">
+                    <SpecificityRules>
+                        <cvParam cvRef="PSI-MS" accession="MS:1002057" name="modification specificity protein N-term"/>
+                    </SpecificityRules>
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002509" name="cross-link donor" value="0"/>
+                </SearchModification>
+
+                <SearchModification fixedMod="true" massDelta="158.00377" residues=".">
+                    <SpecificityRules>
+                        <cvParam cvRef="PSI-MS" accession="MS:1002057" name="modification specificity protein N-term"/>
+                    </SpecificityRules>
                     <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="0"/>
                 </SearchModification>
@@ -230,6 +262,22 @@
                 </SearchModification>
 
                 <SearchModification fixedMod="false" massDelta="0.0" residues="S T Y K">
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="0"/>
+                </SearchModification>
+
+                <SearchModification fixedMod="true" massDelta="158.00377" residues=".">
+                    <SpecificityRules>
+                        <cvParam cvRef="PSI-MS" accession="MS:1002057" name="modification specificity protein N-term"/>
+                    </SpecificityRules>
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002509" name="cross-link donor" value="0"/>
+                </SearchModification>
+
+                <SearchModification fixedMod="true" massDelta="158.00377" residues=".">
+                    <SpecificityRules>
+                        <cvParam cvRef="PSI-MS" accession="MS:1002057" name="modification specificity protein N-term"/>
+                    </SpecificityRules>
                     <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="0"/>
                 </SearchModification>
