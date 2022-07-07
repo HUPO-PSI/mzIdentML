@@ -131,10 +131,17 @@
                 <cvParam name="neutral loss" cvRef="PSI-MS" accession="MS:1000336" value="NH3"/>
             </AdditionalSearchParams>
             <ModificationParams>
-                <!-- TODO -->
-                <SearchModification fixedMod="" massDelta="" residues="">
-                    <cvParam name="" cvRef="" accession=""/>
+                <!-- TODO - check if this is right definition for DSSO here -->
+                <SearchModification fixedMod="false" massDelta="138.06808" residues="S T Y K">
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002509" name="cross-link donor" value="0"/>
                 </SearchModification>
+
+                <SearchModification fixedMod="false" massDelta="0.0" residues="S T Y K">
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="0"/>
+                </SearchModification>
+
             </ModificationParams>
             <FragmentTolerance>
                 <cvParam cvRef="PSI-MS" accession="MS:1001412" name="search tolerance plus value" value="10.0"
@@ -168,6 +175,19 @@
                 <cvParam name="neutral loss" cvRef="PSI-MS" accession="MS:1000336" value="H2O"/>
                 <cvParam name="neutral loss" cvRef="PSI-MS" accession="MS:1000336" value="NH3"/>
             </AdditionalSearchParams>
+            <ModificationParams>
+                <!-- TODO - check if this is right definition for DSSO here -->
+                <SearchModification fixedMod="false" massDelta="138.06808" residues="S T Y K">
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002509" name="cross-link donor" value="0"/>
+                </SearchModification>
+
+                <SearchModification fixedMod="false" massDelta="0.0" residues="S T Y K">
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="0"/>
+                </SearchModification>
+
+            </ModificationParams>
             <FragmentTolerance>
                 <cvParam cvRef="PSI-MS" accession="MS:1001412" name="search tolerance plus value" value="10.0"
                          unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO"/>
@@ -202,6 +222,19 @@
                 <cvParam name="neutral loss" cvRef="PSI-MS" accession="MS:1000336" value="H2O"/>
                 <cvParam name="neutral loss" cvRef="PSI-MS" accession="MS:1000336" value="NH3"/>
             </AdditionalSearchParams>
+            <ModificationParams>
+                <!-- TODO - check if this is right definition for DSSO here -->
+                <SearchModification fixedMod="false" massDelta="138.06808" residues="S T Y K">
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002509" name="cross-link donor" value="0"/>
+                </SearchModification>
+
+                <SearchModification fixedMod="false" massDelta="0.0" residues="S T Y K">
+                    <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSS0"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="0"/>
+                </SearchModification>
+
+            </ModificationParams>
             <FragmentTolerance>
                 <cvParam cvRef="PSI-MS" accession="MS:1001412" name="search tolerance plus value" value="1.4"
                          unitAccession="UO:0000221" unitName="dalton" unitCvRef="UO"/>

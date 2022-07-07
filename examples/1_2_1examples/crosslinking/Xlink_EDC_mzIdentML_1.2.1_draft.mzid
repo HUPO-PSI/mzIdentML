@@ -617,6 +617,7 @@
           <cvParam accession="UNIMOD:35" name="Oxidation" cvRef="UNIMOD" />
         </SearchModification>
 
+        <!-- replace with more succinct definition of EDC for sake of example?        -->
         <SearchModification fixedMod="false" massDelta="-18.010565" residues="K">
           <cvParam accession="UNIMOD:2018" name="Xlink:EDC" cvRef="UNIMOD" />
           <cvParam cvRef="PSI-MS" accession="MS:1002509" name="cross-link donor" value="1" />
