@@ -381,7 +381,7 @@
                                                 rank="1" passThreshold="false" id="MS3_SII_0">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_a"/>
                         <!-- this flags it as part of the crosslinked identification 'multi_spectra_id_1' -->
-                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="multi_spectra_id_1:P" name="multiple spectra identification"/>
+                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="multi_spectra_id_1:C" name="multiple spectra identification"/>
                     </SpectrumIdentificationItem>
                 </SpectrumIdentificationResult>
 
