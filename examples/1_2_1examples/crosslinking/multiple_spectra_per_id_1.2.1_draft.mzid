@@ -333,18 +333,18 @@
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
                                  value="1"/>
-                        <!-- this flags it as part of the crosslinked identification 'multi_spectra_id_1' -->
-                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="multi_spectra_id_1:P" name="multiple spectra identification"/>
-                        <cvParam cvRef="PSI-MS" accession="MS:xxxxxx" name="some score" value="x"/>
+                        <!-- this flags it as part of the crosslinked identification '1234' -->
+                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="1234:P" name="multiple spectra identification"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="Posterior Error Probability from multiple spectra identification" value="1234:1E-08"/>
                     </SpectrumIdentificationItem>
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2" rank="1"
                                                 passThreshold="false" id="HCD_SII_1">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
                                  value="1"/>
-                        <!-- this flags it as part of the crosslinked identification 'multi_spectra_id_1' -->
-                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="multi_spectra_id_1:P" name="multiple spectra identification"/>
-                        <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"/>
+                        <!-- this flags it as part of the crosslinked identification '1234' -->
+                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="1234:P" name="multiple spectra identification"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="Posterior Error Probability from multiple spectra identification" value="1234:1E-08"/>
                     </SpectrumIdentificationItem>
                 </SpectrumIdentificationResult>
             </SpectrumIdentificationList>
@@ -357,18 +357,18 @@
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
                                  value="1"/>
-                        <!-- this flags it as part of the crosslinked identification 'multi_spectra_id_1' -->
-                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="multi_spectra_id_1:P" name="multiple spectra identification"/>
-                        <cvParam cvRef="PSI-MS" accession="MS:xxxxxx" name="some score" value="x"/>
+                        <!-- this flags it as part of the crosslinked identification '1234' -->
+                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="1234:P" name="multiple spectra identification"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="Posterior Error Probability from multiple spectra identification" value="1234:1E-08"/>
                     </SpectrumIdentificationItem>
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2" rank="1"
                                                 passThreshold="false" id="ETD_SII_1">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item"
                                  value="1"/>
-                        <!-- this flags it as part of the crosslinked identification 'multi_spectra_id_1' -->
-                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="multi_spectra_id_1:P" name="multiple spectra identification"/>
-                        <cvParam cvRef="PSI-MS" accession="MS:100xxx" name="some score" value="x"/>
+                        <!-- this flags it as part of the crosslinked identification '1234' -->
+                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="1234:P" name="multiple spectra identification"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="Posterior Error Probability from multiple spectra identification" value="1234:1E-08"/>
                     </SpectrumIdentificationItem>
                 </SpectrumIdentificationResult>
             </SpectrumIdentificationList>
@@ -380,8 +380,9 @@
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="50" peptide_ref="p1_a"
                                                 rank="1" passThreshold="false" id="MS3_SII_0">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_a"/>
-                        <!-- this flags it as part of the crosslinked identification 'multi_spectra_id_1' -->
-                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="multi_spectra_id_1:C" name="multiple spectra identification"/>
+                        <!-- this flags it as part of the crosslinked identification '1234' -->
+                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="1234:C" name="multiple spectra identification"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="Posterior Error Probability from multiple spectra identification" value="1234:1E-08"/>
                     </SpectrumIdentificationItem>
                 </SpectrumIdentificationResult>
 
@@ -390,8 +391,9 @@
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="50" peptide_ref="p2_t"
                                                 rank="1" passThreshold="false" id="MS3_SII_1">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_t"/>
-                        <!-- this flags it as part of the crosslinked identification 'multi_spectra_id_1' -->
-                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="multi_spectra_id_1:C" name="multiple spectra identification"/>
+                        <!-- this flags it as part of the crosslinked identification '1234' -->
+                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="1234:C" name="multiple spectra identification"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="Posterior Error Probability from multiple spectra identification" value="1234:1E-08"/>
                     </SpectrumIdentificationItem>
                 </SpectrumIdentificationResult>
 
@@ -400,8 +402,9 @@
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="51" peptide_ref="p1_t"
                                                 rank="1" passThreshold="false" id="MS3_SII_2">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_t"/>
-                        <!-- this flags it as part of the crosslinked identification 'multi_spectra_id_1' -->
-                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="multi_spectra_id_1:C" name="multiple spectra identification"/>
+                        <!-- this flags it as part of the crosslinked identification '1234' -->
+                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="1234:C" name="multiple spectra identification"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="Posterior Error Probability from multiple spectra identification" value="1234:1E-08"/>
                     </SpectrumIdentificationItem>
                 </SpectrumIdentificationResult>
 
@@ -410,8 +413,9 @@
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="49" peptide_ref="p2_a"
                                                 rank="1" passThreshold="false" id="MS3_SII_3">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_a"/>
-                        <!-- this flags it as part of the crosslinked identification 'multi_spectra_id_1' -->
-                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="multi_spectra_id_1:C" name="multiple spectra identification"/>
+                        <!-- this flags it as part of the crosslinked identification '1234' -->
+                        <cvParam accession="MS:XXXXXXX" cvRef="PSI-MS" value="1234:C" name="multiple spectra identification"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="Posterior Error Probability from multiple spectra identification" value="1234:1E-08"/>
                     </SpectrumIdentificationItem>
                 </SpectrumIdentificationResult>
 
