@@ -667,7 +667,8 @@
         <SearchModification fixedMod="false" massDelta="-18.010565" residues=".">
           <SpecificityRules>
             <cvParam cvRef="PSI-MS" accession="MS:1002058" name="modification specificity protein C-term"/>
-          </SpecificityRules>          <cvParam accession="UNIMOD:2018" name="Xlink:EDC" cvRef="UNIMOD" />
+          </SpecificityRules>
+          <cvParam accession="UNIMOD:2018" name="Xlink:EDC" cvRef="UNIMOD" />
           <cvParam cvRef="PSI-MS" accession="MS:1002509" name="cross-link donor" value="4" />
         </SearchModification>
         <SearchModification fixedMod="false" massDelta="0.0" residues="K">
