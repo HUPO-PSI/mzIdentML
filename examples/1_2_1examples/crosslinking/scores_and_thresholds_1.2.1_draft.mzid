@@ -195,7 +195,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="crosslinked PSM-level global FDR" value="0.06"/>
 
             <!-- peptide pair global FDR -->
-            <cvParam cvRef="PSI-MS" accession="MS:1002520" value="GAEDEEEEEDVGFEQNFEEMLESVTR" name="peptide group ID"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1002520" value="GAEDEEEEEDVGFEQNFEEMLESVTR-ISDKRAPSQGGLENEGVFEELLR" name="peptide group ID"/>
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair sequence-level global FDR" value="0.06"/>
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair passes threshold" value="false"/>
 
@@ -212,7 +212,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="crosslinked PSM-level global FDR" value="0.06"/>
 
             <!-- peptide pair global FDR -->
-            <cvParam cvRef="PSI-MS" accession="MS:1002520" value="ISDKRAPSQGGLENEGVFEELLR" name="peptide group ID"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1002520" value="GAEDEEEEEDVGFEQNFEEMLESVTR-ISDKRAPSQGGLENEGVFEELLR" name="peptide group ID"/>
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair sequence-level global FDR" value="0.06"/>
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair passes threshold" value="false"/>
 
@@ -232,7 +232,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="crosslinked PSM-level global FDR" value="0.03"/>
 
             <!-- peptide pair global FDR -->
-            <cvParam cvRef="PSI-MS" accession="MS:1002520" value="SCKDLQILQASK" name="peptide group ID"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1002520" value="SCKDLQILQASK-TAAPTVCLLVLGQADKVLEEVDWLIKR" name="peptide group ID"/>
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair sequence-level global FDR" value="0.03"/>
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair passes threshold" value="true"/>
 
@@ -248,7 +248,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="crosslinked PSM-level global FDR" value="0.03"/>
 
             <!-- peptide pair global FDR -->
-            <cvParam cvRef="PSI-MS" accession="MS:1002520" value="TAAPTVCLLVLGQADKVLEEVDWLIKR" name="peptide group ID"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1002520" value="SCKDLQILQASK-TAAPTVCLLVLGQADKVLEEVDWLIKR" name="peptide group ID"/>
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair sequence-level global FDR" value="0.03"/>
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair passes threshold" value="true"/>
 
@@ -260,7 +260,7 @@ Gustav-Meyer-Allee 25
 </SpectrumIdentificationList>
 <ProteinDetectionList id="PDL_1" >
     <ProteinAmbiguityGroup id="PAG_0">
-        <ProteinDetectionHypothesis dBSequence_ref="dbseq_ggFANCI_target" passThreshold="false" id="PAG_0_PDH_0">
+        <ProteinDetectionHypothesis dBSequence_ref="dbseq_ggFANCI_target" passThreshold="true" id="PAG_0_PDH_0">
             <PeptideHypothesis peptideEvidence_ref="pepevid_pep_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_protggFANCI_target_689_pepkey_1_16734061838_ISDKRAPSQGGLENEGVFEELLR_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_4_9_p0_16734061838_ISDKRAPSQGGLENEGVFEELLR_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_4_9_p1">
                 <SpectrumIdentificationItemRef spectrumIdentificationItem_ref="SII_1_1"/>
             </PeptideHypothesis>
@@ -294,7 +294,7 @@ Gustav-Meyer-Allee 25
         <cvParam cvRef="PSI-MS" accession="MS:1002415" name="protein group passes threshold" value="true"/>
     </ProteinAmbiguityGroup>
     <ProteinAmbiguityGroup id="PAG_1">
-        <ProteinDetectionHypothesis dBSequence_ref="dbseq_ggFANCD2_target" passThreshold="false" id="PAG_1_PDH_0">
+        <ProteinDetectionHypothesis dBSequence_ref="dbseq_ggFANCD2_target" passThreshold="true" id="PAG_1_PDH_0">
             <PeptideHypothesis peptideEvidence_ref="pepevid_pep_16734061838_ISDKRAPSQGGLENEGVFEELLR_protggFANCD2_target_33_pepkey_0_16734061838_ISDKRAPSQGGLENEGVFEELLR_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_4_9_p0_16734061838_ISDKRAPSQGGLENEGVFEELLR_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_4_9_p1">
                 <SpectrumIdentificationItemRef spectrumIdentificationItem_ref="SII_1_2"/>
             </PeptideHypothesis>
