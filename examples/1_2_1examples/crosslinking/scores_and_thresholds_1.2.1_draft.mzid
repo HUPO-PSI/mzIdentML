@@ -200,7 +200,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair passes threshold" value="false"/>
 
             <!-- residue pair ref value="22" -->
-            <cvParam  cvRef="PSI-MS" accession="MS:XXXXXXX" value="22" name="Residue pair ref"/>
+            <cvParam  cvRef="PSI-MS" accession="MS:XXXXXXX" value="11.b" name="Residue-pair ref"/>
 
         </SpectrumIdentificationItem>
         <SpectrumIdentificationItem chargeState="5" experimentalMassToCharge="1135.3259479607323" calculatedMassToCharge="1135.3254335427703" peptide_ref="16734061838_ISDKRAPSQGGLENEGVFEELLR_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_4_9_p0" rank="1" passThreshold="false" id="SII_1_2">
@@ -217,7 +217,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair passes threshold" value="false"/>
 
             <!-- residue pair ref value="22" -->
-            <cvParam  cvRef="PSI-MS" accession="MS:XXXXXXX" value="22" name="Residue pair ref"/>
+            <cvParam  cvRef="PSI-MS" accession="MS:XXXXXXX" value="11.a" name="Residue-pair ref"/>
 
         </SpectrumIdentificationItem>
         <cvParam cvRef="PSI-MS" accession="MS:1000797" name="peak list scans" value="40560"/>
@@ -237,7 +237,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair passes threshold" value="true"/>
 
             <!-- residue pair ref value="11" -->
-            <cvParam  cvRef="PSI-MS" accession="MS:XXXXXXX" value="11" name="Residue pair ref"/>
+            <cvParam  cvRef="PSI-MS" accession="MS:XXXXXXX" value="22.b" name="Residue-pair ref"/>
         </SpectrumIdentificationItem>
         <SpectrumIdentificationItem chargeState="6" experimentalMassToCharge="752.7466713415814" calculatedMassToCharge="752.41371619677" peptide_ref="16734068348_TAAPTVCcmLLVLGQADKVLEEVDWLIKR_16734057553_SCcmKDLQILQASK_18_1_p0" rank="1" passThreshold="true" id="SII_2_2">
             <PeptideEvidenceRef peptideEvidence_ref="pepevid_pep_16734068348_TAAPTVCcmLLVLGQADKVLEEVDWLIKR_protggFANCI_target_1078_pepkey_0_16734068348_TAAPTVCcmLLVLGQADKVLEEVDWLIKR_16734057553_SCcmKDLQILQASK_18_1_p0_16734068348_TAAPTVCcmLLVLGQADKVLEEVDWLIKR_16734057553_SCcmKDLQILQASK_18_1_p1"/>
@@ -253,7 +253,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair passes threshold" value="true"/>
 
             <!-- residue pair ref value="11" -->
-            <cvParam  cvRef="PSI-MS" accession="MS:XXXXXXX" value="11" name="Residue pair ref"/>
+            <cvParam  cvRef="PSI-MS" accession="MS:XXXXXXX" value="22.a" name="Residue-pair ref"/>
         </SpectrumIdentificationItem>
         <cvParam cvRef="PSI-MS" accession="MS:1000797" name="peak list scans" value="38065"/>
     </SpectrumIdentificationResult>
