@@ -143,6 +143,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:1001413" name="search tolerance minus value" value="3.0" unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO"/>
         </ParentTolerance>
         <Threshold>
+            <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="crosslinked PSM-level global FDR" value="0.06"/>
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair sequence-level global FDR" value="0.05"/>
         </Threshold>
    </SpectrumIdentificationProtocol>
