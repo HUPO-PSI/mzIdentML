@@ -102,6 +102,8 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:1001256" name="fragment mass type mono"/>
             <cvParam cvRef="PSI-MS" accession="MS:1002490" name="peptide-level scoring"/>
             <cvParam cvRef="PSI-MS" accession = "MS:1002496" name="group PSMs by sequence"/>
+            <cvParam accession="MS:1001118" name="param: b ion" cvRef="PSI-MS" />
+            <cvParam accession="MS:1001262" name="param: y ion" cvRef="PSI-MS" />
         </AdditionalSearchParams>
         <ModificationParams>
             <SearchModification fixedMod="false" massDelta="82.04186" residues=".">
