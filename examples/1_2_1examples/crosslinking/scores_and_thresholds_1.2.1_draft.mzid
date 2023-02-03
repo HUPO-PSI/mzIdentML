@@ -183,7 +183,7 @@ Gustav-Meyer-Allee 25
 <AnalysisData>
 <SpectrumIdentificationList id="SII_LIST_1_1" >
     <SpectrumIdentificationResult spectrumID="index=26630" spectraData_ref="SD_17022_recal_B210619_02_Lumos_ZC_CO_190_D2I_SDA-WT1.mgf" id="SIR_1">
-        <SpectrumIdentificationItem chargeState="5" experimentalMassToCharge="1135.3259479607323" calculatedMassToCharge="1135.3254335427703" peptide_ref="16734061838_ISDKRAPSQGGLENEGVFEELLR_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_4_9_p1" rank="1" passThreshold="true" id="SII_1_1">
+        <SpectrumIdentificationItem chargeState="5" experimentalMassToCharge="1135.3259479607323" calculatedMassToCharge="1135.3254335427703" peptide_ref="16734061838_ISDKRAPSQGGLENEGVFEELLR_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_4_9_p1" rank="1" passThreshold="false" id="SII_1_1">
             <PeptideEvidenceRef peptideEvidence_ref="pepevid_pep_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_protggFANCI_target_689_pepkey_1_16734061838_ISDKRAPSQGGLENEGVFEELLR_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_4_9_p0_16734061838_ISDKRAPSQGGLENEGVFEELLR_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_4_9_p1"/>
             <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"/>
 	        <cvParam cvRef="PSI-MS" accession="MS:1002545" name="xi:score" value="25.929927957127177"/>
@@ -200,7 +200,7 @@ Gustav-Meyer-Allee 25
             <cvParam  cvRef="PSI-MS" accession="MS:XXXXXXX" value="22" name="“Residue pair ref”"/>
 
         </SpectrumIdentificationItem>
-        <SpectrumIdentificationItem chargeState="5" experimentalMassToCharge="1135.3259479607323" calculatedMassToCharge="1135.3254335427703" peptide_ref="16734061838_ISDKRAPSQGGLENEGVFEELLR_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_4_9_p0" rank="1" passThreshold="true" id="SII_1_2">
+        <SpectrumIdentificationItem chargeState="5" experimentalMassToCharge="1135.3259479607323" calculatedMassToCharge="1135.3254335427703" peptide_ref="16734061838_ISDKRAPSQGGLENEGVFEELLR_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_4_9_p0" rank="1" passThreshold="false" id="SII_1_2">
             <PeptideEvidenceRef peptideEvidence_ref="pepevid_pep_16734061838_ISDKRAPSQGGLENEGVFEELLR_protggFANCD2_target_33_pepkey_0_16734061838_ISDKRAPSQGGLENEGVFEELLR_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_4_9_p0_16734061838_ISDKRAPSQGGLENEGVFEELLR_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_4_9_p1"/>
             <cvParam cvRef="PSI-MS" accession="MS:1002511" name="cross-link spectrum identification item" value="1"/>
 	        <cvParam cvRef="PSI-MS" accession="MS:1002545" name="xi:score" value="25.929927957127177"/>
