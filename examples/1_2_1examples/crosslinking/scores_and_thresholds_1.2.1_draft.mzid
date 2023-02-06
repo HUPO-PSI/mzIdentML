@@ -102,6 +102,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:1001256" name="fragment mass type mono"/>
             <cvParam cvRef="PSI-MS" accession="MS:1002490" name="peptide-level scoring"/>
             <cvParam cvRef="PSI-MS" accession = "MS:1002496" name="group PSMs by sequence"/>
+            <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="FDR applied separately to self crosslinks and protein heteromeric crosslinks" />
             <cvParam accession="MS:1001118" name="param: b ion" cvRef="PSI-MS" />
             <cvParam accession="MS:1001262" name="param: y ion" cvRef="PSI-MS" />
         </AdditionalSearchParams>
@@ -199,7 +200,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair sequence-level global FDR" value="0.06"/>
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair passes threshold" value="false"/>
 
-            <!-- residue pair ref value="22" -->
+            <!-- residue pair ref value="1.b" -->
             <cvParam  cvRef="PSI-MS" accession="MS:XXXXXXX" value="11.b" name="Residue-pair ref"/>
 
         </SpectrumIdentificationItem>
@@ -216,7 +217,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair sequence-level global FDR" value="0.06"/>
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair passes threshold" value="false"/>
 
-            <!-- residue pair ref value="22" -->
+            <!-- residue pair ref value="11.a" -->
             <cvParam  cvRef="PSI-MS" accession="MS:XXXXXXX" value="11.a" name="Residue-pair ref"/>
 
         </SpectrumIdentificationItem>
@@ -236,7 +237,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair sequence-level global FDR" value="0.03"/>
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair passes threshold" value="true"/>
 
-            <!-- residue pair ref value="11" -->
+            <!-- residue pair ref value="22.b" -->
             <cvParam  cvRef="PSI-MS" accession="MS:XXXXXXX" value="22.b" name="Residue-pair ref"/>
         </SpectrumIdentificationItem>
         <SpectrumIdentificationItem chargeState="6" experimentalMassToCharge="752.7466713415814" calculatedMassToCharge="752.41371619677" peptide_ref="16734068348_TAAPTVCcmLLVLGQADKVLEEVDWLIKR_16734057553_SCcmKDLQILQASK_18_1_p0" rank="1" passThreshold="true" id="SII_2_2">
@@ -252,7 +253,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair sequence-level global FDR" value="0.03"/>
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair passes threshold" value="true"/>
 
-            <!-- residue pair ref value="11" -->
+            <!-- residue pair ref value="22.a" -->
             <cvParam  cvRef="PSI-MS" accession="MS:XXXXXXX" value="22.a" name="Residue-pair ref"/>
         </SpectrumIdentificationItem>
         <cvParam cvRef="PSI-MS" accession="MS:1000797" name="peak list scans" value="38065"/>
