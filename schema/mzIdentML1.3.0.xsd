@@ -1,7 +1,7 @@
-﻿<!-- mzIdentML version 1.2.0
+﻿<!-- mzIdentML version 1.3.0
 Distributed under the Creative Commons license http://creativecommons.org/licenses/by/2.0/.
 -->
-<xsd:schema xmlns:psi-pi="http://psidev.info/psi/pi/mzIdentML/1.2" xmlns="http://psidev.info/psi/pi/mzIdentML/1.2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://psidev.info/psi/pi/mzIdentML/1.2" elementFormDefault="qualified" version="1.2.0">
+<xsd:schema xmlns:psi-pi="http://psidev.info/psi/pi/mzIdentML/1.3" xmlns="http://psidev.info/psi/pi/mzIdentML/1.3" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://psidev.info/psi/pi/mzIdentML/1.3" elementFormDefault="qualified" version="1.3.0">
 	<xsd:element name="MzIdentML" type="MzIdentMLType">
 		<xsd:unique name="PK_MZIDENTML">
 			<xsd:selector xpath="."/>
@@ -1098,6 +1098,8 @@ Modification to the C-terminus should be given as peptide length + 1.		</xsd:doc
 		<xsd:complexContent>
 			<xsd:extension base="ExternalDataType">
 				<xsd:sequence>
+					<xsd:element name="ExternalFormatDocumentation" type="xsd:anyURI" minOccurs="0"/>
+					<xsd:element name="FileFormat" type="FileFormatType"/>
 					<xsd:element name="SpectrumIDFormat" type="SpectrumIDFormatType"/>
 				</xsd:sequence>
 			</xsd:extension>
@@ -1480,7 +1482,7 @@ Material.</xsd:documentation>
 	</xsd:simpleType>
 	<xsd:simpleType name="versionRegex">
 		<xsd:restriction base="xsd:string">
-			<xsd:pattern value="(1\.2\.\d+)"/>
+			<xsd:pattern value="(1\.3\.\d+)"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<!-- FuGE stuff -->
