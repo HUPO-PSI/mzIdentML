@@ -102,7 +102,7 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:1001256" name="fragment mass type mono"/>
             <cvParam cvRef="PSI-MS" accession="MS:1002490" name="peptide-level scoring"/>
             <cvParam cvRef="PSI-MS" accession = "MS:1002496" name="group PSMs by sequence"/>
-            <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="FDR applied separately to self crosslinks and protein heteromeric crosslinks" />
+            <cvParam cvRef="PSI-MS" accession="MS:1003343" name="FDR applied separately to self crosslinks and protein heteromeric crosslinks" />
             <cvParam accession="MS:1001118" name="param: b ion" cvRef="PSI-MS" />
             <cvParam accession="MS:1001262" name="param: y ion" cvRef="PSI-MS" />
         </AdditionalSearchParams>
@@ -146,8 +146,8 @@ Gustav-Meyer-Allee 25
             <cvParam cvRef="PSI-MS" accession="MS:1001413" name="search tolerance minus value" value="3.0" unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO"/>
         </ParentTolerance>
         <Threshold>
-            <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="crosslinked PSM-level global FDR" value="0.05"/>
-            <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair sequence-level global FDR" value="0.05"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1003337" name="crosslinked PSM-level global FDR" value="0.05"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1003338" name="peptide-pair sequence-level global FDR" value="0.05"/>
         </Threshold>
    </SpectrumIdentificationProtocol>
    <ProteinDetectionProtocol analysisSoftware_ref="xiFDR_id" id="pdp1">
@@ -193,15 +193,15 @@ Gustav-Meyer-Allee 25
 	        <cvParam cvRef="PSI-MS" accession="MS:1002545" name="xi:score" value="25.929927957127177"/>
 
             <!-- crosslinked PSM level global FDR -->
-            <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="crosslinked PSM-level global FDR" value="0.06"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1003337" name="crosslinked PSM-level global FDR" value="0.06"/>
 
             <!-- peptide pair global FDR -->
             <cvParam cvRef="PSI-MS" accession="MS:1002520" value="GAEDEEEEEDVGFEQNFEEMLESVTR-ISDKRAPSQGGLENEGVFEELLR" name="peptide group ID"/>
-            <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair sequence-level global FDR" value="0.06"/>
-            <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair passes threshold" value="false"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1003338" name="peptide-pair sequence-level global FDR" value="0.06"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1003339" name="peptide-pair passes threshold" value="false"/>
 
             <!-- residue pair ref value="1.b" -->
-            <cvParam  cvRef="PSI-MS" accession="MS:XXXXXXX" value="11.b" name="Residue-pair ref"/>
+            <cvParam  cvRef="PSI-MS" accession="MS:1003344" value="11.b" name="residue-pair ref"/>
 
         </SpectrumIdentificationItem>
         <SpectrumIdentificationItem chargeState="5" experimentalMassToCharge="1135.3259479607323" calculatedMassToCharge="1135.3254335427703" peptide_ref="16734061838_ISDKRAPSQGGLENEGVFEELLR_16734063165_GAEDEEEEEDVGFEQNFEEMLESVTR_4_9_p0" rank="1" passThreshold="false" id="SII_1_2">
@@ -210,11 +210,11 @@ Gustav-Meyer-Allee 25
 	        <cvParam cvRef="PSI-MS" accession="MS:1002545" name="xi:score" value="25.929927957127177"/>
 
             <!-- crosslinked PSM level global FDR -->
-            <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="crosslinked PSM-level global FDR" value="0.06"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1003337" name="crosslinked PSM-level global FDR" value="0.06"/>
 
             <!-- peptide pair global FDR -->
             <cvParam cvRef="PSI-MS" accession="MS:1002520" value="GAEDEEEEEDVGFEQNFEEMLESVTR-ISDKRAPSQGGLENEGVFEELLR" name="peptide group ID"/>
-            <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair sequence-level global FDR" value="0.06"/>
+            <cvParam cvRef="PSI-MS" accession="MS:1003338" name="peptide-pair sequence-level global FDR" value="0.06"/>
             <cvParam cvRef="PSI-MS" accession="MS:XXXXXXX" name="peptide-pair passes threshold" value="false"/>
 
             <!-- residue pair ref value="11.a" -->
