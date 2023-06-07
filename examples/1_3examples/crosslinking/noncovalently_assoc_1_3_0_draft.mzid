@@ -107,8 +107,8 @@ Gustav-Meyer-Allee 25
             <AdditionalSearchParams>
                 <cvParam cvRef="PSI-MS" accession="MS:1001211" name="parent mass type mono"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1001256" name="fragment mass type mono"/>
-                <cvParam cvRef="PSI-MS" accession="MS:1002494" name="cross-linking search"/>
-                <cvParam cvRef="PSI-MS" accession="MS:XXXXXX"  name="noncovalently associated peptides search"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1002494" name="crosslinking search"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1003330" name="noncovalently associated peptides search"/>
 
                 <!-- are these meant to be changed to children of MS:1002307 (fragmentation ion type)  -->
                 <cvParam cvRef="PSI-MS" accession="MS:1001118" name="param: b ion"/>
@@ -122,11 +122,11 @@ Gustav-Meyer-Allee 25
             <ModificationParams>
                 <!-- todo - get rid of these unknown modifications?               -->
                 <SearchModification fixedMod="false" massDelta="82.04186" residues=".">
-                    <cvParam cvRef="PSI-MS" accession="MS:1002509" name="cross-link donor" value="0"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002509" name="crosslink donor" value="0"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1001460" name="unknown modification"/>
                 </SearchModification>
                 <SearchModification fixedMod="true" massDelta="0.0" residues=".">
-                    <cvParam cvRef="PSI-MS" accession="MS:1002510" name="cross-link acceptor" value="0"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1002510" name="crosslink acceptor" value="0"/>
                 </SearchModification>
                 <SearchModification fixedMod="false" massDelta="82.04186" residues="K S T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1001460" name="unknown modification"/>
@@ -205,7 +205,7 @@ Gustav-Meyer-Allee 25
                                                 rank="1" passThreshold="true" id="SII_1_1">
                         <PeptideEvidenceRef
                                 peptideEvidence_ref="pepevid_p1"/>
-                        <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="noncovalently associated peptides spectrum identification item"
+                        <cvParam cvRef="PSI-MS" accession="MS:1003331" name="noncovalently associated peptides spectrum identification item"
                                  value="1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002545" name="xi:score"
                                  value="13.456698034492756"/>
@@ -216,7 +216,7 @@ Gustav-Meyer-Allee 25
                                                 rank="1" passThreshold="true" id="SII_1_2">
                         <PeptideEvidenceRef
                                 peptideEvidence_ref="pepevid_p2"/>
-                        <cvParam cvRef="PSI-MS" accession="MS:XXXXXX" name="noncovalently associated peptides spectrum identification item"
+                        <cvParam cvRef="PSI-MS" accession="MS:1003331" name="noncovalently associated peptides spectrum identification item"
                                  value="1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002545" name="xi:score"
                                  value="13.456698034492756"/>
