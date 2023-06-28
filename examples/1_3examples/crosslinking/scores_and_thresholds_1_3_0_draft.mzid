@@ -6,6 +6,7 @@
     <cv fullName="UNIMOD" uri="http://www.unimod.org/obo/unimod.obo" id="UNIMOD"/>
     <cv fullName="UNIT-ONTOLOGY" uri="https://raw.githubusercontent.com/bio-ontology-research-group/unit-ontology/master/unit.obo" id="UO"/>
 </cvList>
+<cvParam cvRef="PSI-MS" accession="MS:1003385" name="mzIdentML crosslinking extension document version" value="1.0.0"/>
 <AnalysisSoftwareList >
     <AnalysisSoftware id="xi_id" name="xi">
         <SoftwareName>

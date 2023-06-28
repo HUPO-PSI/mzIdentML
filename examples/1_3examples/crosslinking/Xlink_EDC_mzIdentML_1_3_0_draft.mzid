@@ -9,6 +9,7 @@
     <cv id="UNIMOD" fullName="UNIMOD"        uri="http://www.unimod.org/obo/unimod.obo"></cv>
     <cv id="UO"     fullName="UNIT-ONTOLOGY" uri="http://bioportal.bioontology.org/ontologies/UO?p=classes&amp;conceptid=root"></cv>
   </cvList>
+  <cvParam cvRef="PSI-MS" accession="MS:1003385" name="mzIdentML crosslinking extension document version" value="1.0.0"/>
   <AnalysisSoftwareList>
     <AnalysisSoftware id="AS_mascot_server" name="Mascot Server" version="2.8.1" uri="http://www.matrixscience.com/search_form_select.html">
       <ContactRole contact_ref="ORG_MSL">
