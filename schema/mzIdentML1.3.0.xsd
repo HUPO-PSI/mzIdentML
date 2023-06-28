@@ -379,6 +379,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:extension base="IdentifiableType">
 				<xsd:sequence>
 					<xsd:element name="cvList" type="CVListType"/>
+					<xsd:element name="cvParam" type="CVParamType" minOccurs="0" maxOccurs="unbounded"/>
 					<xsd:element name="AnalysisSoftwareList" type="AnalysisSoftwareListType" minOccurs="0"/>
 					<xsd:element name="Provider" type="ProviderType" minOccurs="0">
 						<xsd:annotation>
