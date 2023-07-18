@@ -1099,8 +1099,6 @@ Modification to the C-terminus should be given as peptide length + 1.		</xsd:doc
 		<xsd:complexContent>
 			<xsd:extension base="ExternalDataType">
 				<xsd:sequence>
-					<xsd:element name="ExternalFormatDocumentation" type="xsd:anyURI" minOccurs="0"/>
-					<xsd:element name="FileFormat" type="FileFormatType"/>
 					<xsd:element name="SpectrumIDFormat" type="SpectrumIDFormatType"/>
 				</xsd:sequence>
 			</xsd:extension>
