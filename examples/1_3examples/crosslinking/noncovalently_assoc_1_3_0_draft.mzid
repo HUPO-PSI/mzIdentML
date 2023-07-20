@@ -11,7 +11,8 @@
             uri="https://raw.githubusercontent.com/bio-ontology-research-group/unit-ontology/master/unit.obo"
             id="UO"/>
     </cvList>
-    <cvParam cvRef="PSI-MS" accession="MS:1003385" name="mzIdentML crosslinking extension document version" value="1.0.0"/>
+    <cvParam cvRef="PSI-MS" accession="MS:1003385" name="mzIdentML crosslinking extension document version"
+             value="1.0.0"/>
     <AnalysisSoftwareList>
         <AnalysisSoftware id="xi_id" name="xi">
             <SoftwareName>
@@ -48,37 +49,47 @@ Gustav-Meyer-Allee 25
     <SequenceCollection>
         <DBSequence length="429" searchDatabase_ref="SDB_16441_1534" accession="P15640" id="dbseq_P15640_target"
                     name="PUR2_ECOLI Phosphoribosylamine--glycine ligase OS=Escherichia coli (strain K12) OX=83333 GN=purD PE=1 SV=2">
-            <Seq>MKVLVIGNGGREHALAWKAAQSPLVETVFVAPGNAGTALEPALQNVAIGVTDIPALLDFAQNEKIDLTIVGPEAPLVKGVVDTFRAAGLKIFGPTAGAAQLEGSKAFTKDFLARHKIPTAEYQNFTEVEPALAYLREKGAPIVIKADGLAAGKGVIVAMTLEEAEAAVHDMLAGNAFGDAGHRIVIEEFLDGEEASFIVMVDGEHVLPMATSQDHKRVGDKDTGPNTGGMGAYSPAPVVTDDVHQRTMERIIWPTVKGMAAEGNTYTGFLYAGLMIDKQGNPKVIEFNCRFGDPETQPIMLRMKSDLVELCLAACESKLDEKTSEWDERASLGVVMAAGGYPGDYRTGDVIHGLPLEEVAGGKVFHAGTKLADDEQVVTNGGRVLCVTALGHTVAEAQKRAYALMTDIHWDDCFCRKDIGWRAIEREQN</Seq>
+            <Seq>
+                MKVLVIGNGGREHALAWKAAQSPLVETVFVAPGNAGTALEPALQNVAIGVTDIPALLDFAQNEKIDLTIVGPEAPLVKGVVDTFRAAGLKIFGPTAGAAQLEGSKAFTKDFLARHKIPTAEYQNFTEVEPALAYLREKGAPIVIKADGLAAGKGVIVAMTLEEAEAAVHDMLAGNAFGDAGHRIVIEEFLDGEEASFIVMVDGEHVLPMATSQDHKRVGDKDTGPNTGGMGAYSPAPVVTDDVHQRTMERIIWPTVKGMAAEGNTYTGFLYAGLMIDKQGNPKVIEFNCRFGDPETQPIMLRMKSDLVELCLAACESKLDEKTSEWDERASLGVVMAAGGYPGDYRTGDVIHGLPLEEVAGGKVFHAGTKLADDEQVVTNGGRVLCVTALGHTVAEAQKRAYALMTDIHWDDCFCRKDIGWRAIEREQN
+            </Seq>
             <cvParam cvRef="PSI-MS" accession="MS:1001088" name="protein description"
                      value="PUR2_ECOLI Phosphoribosylamine--glycine ligase OS=Escherichia coli (strain K12) OX=83333 GN=purD PE=1 SV=2"/>
         </DBSequence>
         <DBSequence length="585" searchDatabase_ref="SDB_16441_1534" accession="P02768-A" id="dbseq_P02768-A_target"
                     name="ALBU_HUMAN Serum albumin active OS=Homo sapiens GN=ALB PE=1 SV=2">
-            <Seq>DAHKSEVAHRFKDLGEENFKALVLIAFAQYLQQCPFEDHVKLVNEVTEFAKTCVADESAENCDKSLHTLFGDKLCTVATLRETYGEMADCCAKQEPERNECFLQHKDDNPNLPRLVRPEVDVMCTAFHDNEETFLKKYLYEIARRHPYFYAPELLFFAKRYKAAFTECCQAADKAACLLPKLDELRDEGKASSAKQRLKCASLQKFGERAFKAWAVARLSQRFPKAEFAEVSKLVTDLTKVHTECCHGDLLECADDRADLAKYICENQDSISSKLKECCEKPLLEKSHCIAEVENDEMPADLPSLAADFVESKDVCKNYAEAKDVFLGMFLYEYARRHPDYSVVLLLRLAKTYETTLEKCCAAADPHECYAKVFDEFKPLVEEPQNLIKQNCELFEQLGEYKFQNALLVRYTKKVPQVSTPTLVEVSRNLGKVGSKCCKHPEAKRMPCAEDYLSVVLNQLCVLHEKTPVSDRVTKCCTESLVNRRPCFSALEVDETYVPKEFNAETFTFHADICTLSEKERQIKKQTALVELVKHKPKATKEQLKAVMDDFAAFVEKCCKADDKETCFAEEGKKLVAASQAALGL</Seq>
+            <Seq>
+                DAHKSEVAHRFKDLGEENFKALVLIAFAQYLQQCPFEDHVKLVNEVTEFAKTCVADESAENCDKSLHTLFGDKLCTVATLRETYGEMADCCAKQEPERNECFLQHKDDNPNLPRLVRPEVDVMCTAFHDNEETFLKKYLYEIARRHPYFYAPELLFFAKRYKAAFTECCQAADKAACLLPKLDELRDEGKASSAKQRLKCASLQKFGERAFKAWAVARLSQRFPKAEFAEVSKLVTDLTKVHTECCHGDLLECADDRADLAKYICENQDSISSKLKECCEKPLLEKSHCIAEVENDEMPADLPSLAADFVESKDVCKNYAEAKDVFLGMFLYEYARRHPDYSVVLLLRLAKTYETTLEKCCAAADPHECYAKVFDEFKPLVEEPQNLIKQNCELFEQLGEYKFQNALLVRYTKKVPQVSTPTLVEVSRNLGKVGSKCCKHPEAKRMPCAEDYLSVVLNQLCVLHEKTPVSDRVTKCCTESLVNRRPCFSALEVDETYVPKEFNAETFTFHADICTLSEKERQIKKQTALVELVKHKPKATKEQLKAVMDDFAAFVEKCCKADDKETCFAEEGKKLVAASQAALGL
+            </Seq>
             <cvParam cvRef="PSI-MS" accession="MS:1001088" name="protein description"
                      value="ALBU_HUMAN Serum albumin active OS=Homo sapiens GN=ALB PE=1 SV=2"/>
         </DBSequence>
         <Peptide id="p1">
             <PeptideSequence>AYALMTDIHWDDCFCR</PeptideSequence>
             <Modification location="5" residues="M" monoisotopicMassDelta="15.99491">
+                <cvParam cvRef="PSI-MS" accession="MS:1003393" name="search modification id ref" value="ox"/>
                 <cvParam cvRef="UNIMOD" accession="UNIMOD:35" name="Oxidation"/>
             </Modification>
             <Modification location="13" residues="C" monoisotopicMassDelta="57.02147">
+                <cvParam cvRef="PSI-MS" accession="MS:1003393" name="search modification id ref" value="cm"/>
                 <cvParam cvRef="UNIMOD" accession="UNIMOD:4" name="Carbamidomethyl"/>
             </Modification>
             <Modification location="15" residues="C" monoisotopicMassDelta="57.02147">
+                <cvParam cvRef="PSI-MS" accession="MS:1003393" name="search modification id ref" value="cm"/>
                 <cvParam cvRef="UNIMOD" accession="UNIMOD:4" name="Carbamidomethyl"/>
             </Modification>
         </Peptide>
         <Peptide id="p2">
             <PeptideSequence>VHTECCHGDLLECADDR</PeptideSequence>
             <Modification location="5" residues="C" monoisotopicMassDelta="57.02147">
+                <cvParam cvRef="PSI-MS" accession="MS:1003393" name="search modification id ref" value="cm"/>
                 <cvParam cvRef="UNIMOD" accession="UNIMOD:4" name="Carbamidomethyl"/>
             </Modification>
             <Modification location="6" residues="C" monoisotopicMassDelta="57.02147">
+                <cvParam cvRef="PSI-MS" accession="MS:1003393" name="search modification id ref" value="cm"/>
                 <cvParam cvRef="UNIMOD" accession="UNIMOD:4" name="Carbamidomethyl"/>
             </Modification>
             <Modification location="13" residues="C" monoisotopicMassDelta="57.02147">
+                <cvParam cvRef="PSI-MS" accession="MS:1003393" name="search modification id ref" value="cm"/>
                 <cvParam cvRef="UNIMOD" accession="UNIMOD:4" name="Carbamidomethyl"/>
             </Modification>
         </Peptide>
@@ -121,33 +132,14 @@ Gustav-Meyer-Allee 25
 
             </AdditionalSearchParams>
             <ModificationParams>
-                <!-- todo - get rid of these unknown modifications?               -->
-                <SearchModification fixedMod="false" massDelta="82.04186" residues=".">
-                    <cvParam cvRef="PSI-MS" accession="MS:1002509" name="crosslink donor" value="0"/>
-                    <cvParam cvRef="PSI-MS" accession="MS:1001460" name="unknown modification"/>
-                </SearchModification>
-                <SearchModification fixedMod="true" massDelta="0.0" residues=".">
-                    <cvParam cvRef="PSI-MS" accession="MS:1002510" name="crosslink acceptor" value="0"/>
-                </SearchModification>
-                <SearchModification fixedMod="false" massDelta="82.04186" residues="K S T Y">
-                    <cvParam cvRef="PSI-MS" accession="MS:1001460" name="unknown modification"/>
-                </SearchModification>
-                <SearchModification fixedMod="false" massDelta="98.03678" residues="K S T Y">
-                    <cvParam cvRef="PSI-MS" accession="MS:1001460" name="unknown modification"/>
-                </SearchModification>
                 <SearchModification fixedMod="false" massDelta="15.99491" residues="M">
+                    <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id"
+                             value="ox"/>
                     <cvParam cvRef="UNIMOD" accession="UNIMOD:35" name="Oxidation"/>
                 </SearchModification>
-                <SearchModification fixedMod="false" massDelta="68.026215" residues="K T Y">
-                    <cvParam cvRef="PSI-MS" accession="MS:1001460" name="unknown modification"/>
-                </SearchModification>
-                <SearchModification fixedMod="false" massDelta="68.026215" residues="S">
-                    <cvParam cvRef="PSI-MS" accession="MS:1001460" name="unknown modification"/>
-                </SearchModification>
-                <SearchModification fixedMod="false" massDelta="100.05243" residues="K S T Y">
-                    <cvParam cvRef="PSI-MS" accession="MS:1001460" name="unknown modification"/>
-                </SearchModification>
                 <SearchModification fixedMod="false" massDelta="57.021465" residues="C">
+                    <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id"
+                             value="cm"/>
                     <cvParam cvRef="UNIMOD" accession="UNIMOD:4" name="Carbamidomethyl"/>
                 </SearchModification>
             </ModificationParams>
@@ -206,7 +198,8 @@ Gustav-Meyer-Allee 25
                                                 rank="1" passThreshold="true" id="SII_1_1">
                         <PeptideEvidenceRef
                                 peptideEvidence_ref="pepevid_p1"/>
-                        <cvParam cvRef="PSI-MS" accession="MS:1003331" name="noncovalently associated peptides spectrum identification item"
+                        <cvParam cvRef="PSI-MS" accession="MS:1003331"
+                                 name="noncovalently associated peptides spectrum identification item"
                                  value="1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002545" name="xi:score"
                                  value="13.456698034492756"/>
@@ -217,7 +210,8 @@ Gustav-Meyer-Allee 25
                                                 rank="1" passThreshold="true" id="SII_1_2">
                         <PeptideEvidenceRef
                                 peptideEvidence_ref="pepevid_p2"/>
-                        <cvParam cvRef="PSI-MS" accession="MS:1003331" name="noncovalently associated peptides spectrum identification item"
+                        <cvParam cvRef="PSI-MS" accession="MS:1003331"
+                                 name="noncovalently associated peptides spectrum identification item"
                                  value="1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002545" name="xi:score"
                                  value="13.456698034492756"/>

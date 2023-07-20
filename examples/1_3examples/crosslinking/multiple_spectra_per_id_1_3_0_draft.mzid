@@ -34,44 +34,23 @@
             <Seq>DAHKSEVAHRFKDLGEENFKTIDEK</Seq>
         </DBSequence>
 
-        <Peptide id="p1_HCD">
+        <Peptide id="p1">
             <PeptideSequence>PEPK</PeptideSequence>
             <!-- this part doesn’t change, donor has full crosslinker modMass -->
             <Modification location="4" monoisotopicMassDelta="158.003765">
                 <cvParam cvRef="PSI-MS" accession="MS:1003393" name="search modification id ref"
-                         value="DSSO_crosslink_donor_HCD"/>
+                         value="DSSO_crosslink_donor"/>
                 <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1002509" name="crosslink donor" value="1"/>
             </Modification>
         </Peptide>
 
-        <Peptide id="p2_HCD">
+        <Peptide id="p2">
             <PeptideSequence>TIDEK</PeptideSequence>
             <!-- this part doesn’t change, acceptor has 0 mass -->
             <Modification location="4" monoisotopicMassDelta="0">
                 <cvParam cvRef="PSI-MS" accession="MS:1003393" name="search modification id ref"
-                         value="DSSO_crosslink_acceptor_HCD"/>
-                <cvParam cvRef="PSI-MS" accession="MS:1002510" name="crosslink acceptor" value="1"/>
-            </Modification>
-        </Peptide>
-
-        <Peptide id="p1_ETD">
-            <PeptideSequence>PEPK</PeptideSequence>
-            <!-- this part doesn’t change, donor has full crosslinker modMass -->
-            <Modification location="4" monoisotopicMassDelta="158.003765">
-                <cvParam cvRef="PSI-MS" accession="MS:1003393" name="search modification id ref"
-                         value="DSSO_crosslink_donor_ETD"/>
-                <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
-                <cvParam cvRef="PSI-MS" accession="MS:1002509" name="crosslink donor" value="1"/>
-            </Modification>
-        </Peptide>
-
-        <Peptide id="p2_ETD">
-            <PeptideSequence>TIDEK</PeptideSequence>
-            <!-- this part doesn’t change, acceptor has 0 mass -->
-            <Modification location="4" monoisotopicMassDelta="0">
-                <cvParam cvRef="PSI-MS" accession="MS:1003393" name="search modification id ref"
-                         value="DSSO_crosslink_acceptor_ETD"/>
+                         value="DSSO_crosslink_acceptor"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1002510" name="crosslink acceptor" value="1"/>
             </Modification>
         </Peptide>
@@ -114,10 +93,8 @@
         </Peptide>
 
 
-        <PeptideEvidence id="pepevid_p1_HCD" dBSequence_ref="protein_A" peptide_ref="p1_HCD" start="10"/>
-        <PeptideEvidence id="pepevid_p2_HCD" dBSequence_ref="protein_B" peptide_ref="p2_HCD" start="241"/>
-        <PeptideEvidence id="pepevid_p1_ETD" dBSequence_ref="protein_A" peptide_ref="p1_ETD" start="10"/>
-        <PeptideEvidence id="pepevid_p2_ETD" dBSequence_ref="protein_B" peptide_ref="p2_ETD" start="241"/>
+        <PeptideEvidence id="pepevid_p1" dBSequence_ref="protein_A" peptide_ref="p1" start="10"/>
+        <PeptideEvidence id="pepevid_p2" dBSequence_ref="protein_B" peptide_ref="p2" start="241"/>
         <PeptideEvidence id="pepevid_p1_a" dBSequence_ref="protein_A" peptide_ref="p1_a" start="10"/>
         <PeptideEvidence id="pepevid_p1_t" dBSequence_ref="protein_A" peptide_ref="p1_t" start="10"/>
         <PeptideEvidence id="pepevid_p2_a" dBSequence_ref="protein_B" peptide_ref="p2_a" start="241"/>
@@ -164,7 +141,7 @@
 
                 <SearchModification fixedMod="false" massDelta="175.030314" residues="K S T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id"
-                             value="DSSO_monolink_M_HCD"/>
+                             value="DSSO_monolink_M"/>
                     <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam accession="MS:1003347" name="UNIMOD derivative code"
                              value="M" cvRef="PSI-MS"/>
@@ -172,7 +149,7 @@
 
                 <SearchModification fixedMod="false" massDelta="176.01433" residues="K S T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id"
-                             value="DSSO_monolink_W_HCD"/>
+                             value="DSSO_monolink_W"/>
                     <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam accession="MS:1003347" name="UNIMOD derivative code"
                              value="W" cvRef="PSI-MS"/>
@@ -184,7 +161,7 @@
                                  name="modification specificity protein N-term"/>
                     </SpecificityRules>
                     <cvParam cvRef="PSI-MS" accession="MS:1003392"
-                             name="search modification id" value="DSSO_monolink_M_n_term_HCD"/>
+                             name="search modification id" value="DSSO_monolink_M_n_term"/>
                     <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam accession="MS:1003347" name="UNIMOD derivative code"
                              value="M" cvRef="PSI-MS"/>
@@ -192,7 +169,7 @@
 
                 <SearchModification fixedMod="false" massDelta="176.01433" residues=".">
                     <SpecificityRules>
-                        <cvParam cvRef="PSI-MS" accession="MS:1002057" name="modification specificity protein N-term_HCD"/>
+                        <cvParam cvRef="PSI-MS" accession="MS:1002057" name="modification specificity protein N-term"/>
                     </SpecificityRules>
                     <cvParam cvRef="PSI-MS" accession="MS:1003392"
                              name="search modification id" value="DSSO_monolink_W_n_term"/>
@@ -204,7 +181,7 @@
 
                 <SearchModification fixedMod="false" massDelta="158.003765" residues="K S T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id"
-                             value="DSSO_crosslink_donor_HCD"/>
+                             value="DSSO_crosslink_donor"/>
                     <cvParam accession="UNIMOD:1842" name="Xlink:DSSO" cvRef="UNIMOD"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1002509" name="crosslink donor"
                              value="3"/>
@@ -222,7 +199,7 @@
                                  name="modification specificity protein N-term"/>
                     </SpecificityRules>
                     <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id"
-                             value="DSSO_crosslink_donor_n_term_HCD"/>
+                             value="DSSO_crosslink_donor_n_term"/>
                     <cvParam accession="UNIMOD:1842" name="Xlink:DSSO" cvRef="UNIMOD"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1002510" name="crosslink donor"
                              value="3"/>
@@ -236,7 +213,7 @@
 
                 <SearchModification fixedMod="false" massDelta="0.0" residues="K S T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id"
-                             value="DSSO_crosslink_acceptor_HCD"/>
+                             value="DSSO_crosslink_acceptor"/>
                     <cvParam accession="UNIMOD:1842" name="Xlink:DSSO" cvRef="UNIMOD"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1002510" name="crosslink acceptor" value="3"/>
                     <cvParam accession="MS:1003390" name="crosslinker cleavage characteristics"
@@ -253,7 +230,7 @@
                                  name="modification specificity protein N-term"/>
                     </SpecificityRules>
                     <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id"
-                             value="DSSO_crosslink_acceptor_n_term_HCD"/>
+                             value="DSSO_crosslink_acceptor_n_term"/>
                     <cvParam accession="UNIMOD:1842" name="Xlink:DSSO" cvRef="UNIMOD"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1002510" name="crosslink acceptor"
                              value="3"/>
@@ -302,7 +279,7 @@
 
                 <SearchModification fixedMod="false" massDelta="175.030314" residues="K S T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id"
-                             value="DSSO_monolink_M_ETD"/>
+                             value="DSSO_monolink_M"/>
                     <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam accession="MS:1003347" name="UNIMOD derivative code"
                              value="M" cvRef="PSI-MS"/>
@@ -310,7 +287,7 @@
 
                 <SearchModification fixedMod="false" massDelta="176.01433" residues="K S T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id"
-                             value="DSSO_monolink_W_ETD"/>
+                             value="DSSO_monolink_W"/>
                     <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam accession="MS:1003347" name="UNIMOD derivative code"
                              value="W" cvRef="PSI-MS"/>
@@ -321,7 +298,7 @@
                         <cvParam cvRef="PSI-MS" accession="MS:1002057" name="modification specificity protein N-term"/>
                     </SpecificityRules>
                     <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id"
-                             value="DSSO_monolink_M_n_term_ETD"/>
+                             value="DSSO_monolink_M_n_term"/>
                     <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam accession="MS:1003347" name="UNIMOD derivative code"
                              value="M" cvRef="PSI-MS"/>
@@ -332,7 +309,7 @@
                         <cvParam cvRef="PSI-MS" accession="MS:1002057" name="modification specificity protein N-term"/>
                     </SpecificityRules>
                     <cvParam cvRef="PSI-MS" accession="MS:1003392"
-                             name="search modification id" value="DSSO_monolink_W_n_term_ETD"/>
+                             name="search modification id" value="DSSO_monolink_W_n_term"/>
                     <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam accession="MS:1003347" name="UNIMOD derivative code"
                              value="W" cvRef="PSI-MS"/>
@@ -341,7 +318,7 @@
 
                 <SearchModification fixedMod="false" massDelta="158.003765" residues="K S T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1003392"
-                             name="search modification id" value="DSSO_crosslink_donor_ETD"/>
+                             name="search modification id" value="DSSO_crosslink_donor"/>
                     <cvParam accession="UNIMOD:1842" name="Xlink:DSSO" cvRef="UNIMOD"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1002509" name="crosslink donor" value="3"/>
                     <cvParam accession="MS:1003390" name="crosslinker cleavage characteristics"
@@ -357,7 +334,7 @@
                         <cvParam cvRef="PSI-MS" accession="MS:1002057" name="modification specificity protein N-term"/>
                     </SpecificityRules>
                     <cvParam cvRef="PSI-MS" accession="MS:1003392"
-                             name="search modification id" value="DSSO_crosslink_donor_n_term_ETD"/>
+                             name="search modification id" value="DSSO_crosslink_donor_n_term"/>
                     <cvParam accession="UNIMOD:1842" name="Xlink:DSSO" cvRef="UNIMOD"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1002510" name="crosslink donor" value="3"/>
                     <cvParam accession="MS:1003390" name="crosslinker cleavage characteristics"
@@ -370,7 +347,7 @@
 
                 <SearchModification fixedMod="false" massDelta="0.0" residues="K S T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id"
-                             value="DSSO_crosslink_acceptor_ETD"/>
+                             value="DSSO_crosslink_acceptor"/>
                     <cvParam accession="UNIMOD:1842" name="Xlink:DSSO" cvRef="UNIMOD"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1002510" name="crosslink acceptor" value="3"/>
                     <cvParam accession="MS:1003390" name="crosslinker cleavage characteristics"
@@ -385,7 +362,8 @@
                     <SpecificityRules>
                         <cvParam cvRef="PSI-MS" accession="MS:1002057" name="modification specificity protein N-term"/>
                     </SpecificityRules>
-                    <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id" value="DSSO_crosslink_acceptor_n_term_ETD"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id"
+                             value="DSSO_crosslink_acceptor_n_term"/>
                     <cvParam accession="UNIMOD:1842" name="Xlink:DSSO" cvRef="UNIMOD"/>
                     <cvParam cvRef="PSI-MS" accession="MS:1002510" name="crosslink acceptor" value="3"/>
                     <cvParam accession="MS:1003390" name="crosslinker cleavage characteristics"
@@ -437,7 +415,7 @@
 
                 <SearchModification fixedMod="false" massDelta="175.030314" residues="K S T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1003392" name="search modification id"
-                             value="DSSO_monolink_M_MS3"/>
+                             value="DSSO_monolink_M"/>
                     <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam accession="MS:1003347" name="UNIMOD derivative code"
                              value="M" cvRef="PSI-MS"/>
@@ -445,7 +423,7 @@
 
                 <SearchModification fixedMod="false" massDelta="176.01433" residues="K S T Y">
                     <cvParam cvRef="PSI-MS" accession="MS:1003392"
-                             name="search modification id" value="DSSO_monolink_W_MS3"/>
+                             name="search modification id" value="DSSO_monolink_W"/>
                     <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam accession="MS:1003347" name="UNIMOD derivative code"
                              value="W" cvRef="PSI-MS"/>
@@ -457,7 +435,7 @@
                                  name="modification specificity protein N-term"/>
                     </SpecificityRules>
                     <cvParam cvRef="PSI-MS" accession="MS:1003392"
-                             name="search modification id" value="DSSO_monolink_M_n_term_MS3"/>
+                             name="search modification id" value="DSSO_monolink_M_n_term"/>
                     <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam accession="MS:1003347" name="UNIMOD derivative code"
                              value="M" cvRef="PSI-MS"/>
@@ -469,7 +447,7 @@
                                  name="modification specificity protein N-term"/>
                     </SpecificityRules>
                     <cvParam cvRef="PSI-MS" accession="MS:1003392"
-                             name="search modification id" value="DSSO_monolink_W_n_term_MS3"/>
+                             name="search modification id" value="DSSO_monolink_W_n_term"/>
                     <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
                     <cvParam accession="MS:1003347" name="UNIMOD derivative code"
                              value="W" cvRef="PSI-MS"/>
@@ -548,9 +526,9 @@
             <SpectrumIdentificationList id="sil_HCD">
                 <!--  HCD MS2 match defined basically the same as in a non-cleavable case -->
                 <SpectrumIdentificationResult spectrumID="index=1" spectraData_ref="peaklist_id" id="SIR_1">
-                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p1_HCD" rank="1"
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p1" rank="1"
                                                 passThreshold="false" id="HCD_SII_0">
-                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_HCD"/>
+                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="crosslink spectrum identification item"
                                  value="1"/>
                         <!-- this flags it as part of the crosslinked identification '1234' -->
@@ -560,9 +538,9 @@
                                  name="Posterior Error Probability for an identification based on multiple spectra"
                                  value="1234:1E-08"/>
                     </SpectrumIdentificationItem>
-                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2_HCD" rank="1"
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2" rank="1"
                                                 passThreshold="false" id="HCD_SII_1">
-                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_HCD"/>
+                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="crosslink spectrum identification item"
                                  value="1"/>
                         <!-- this flags it as part of the crosslinked identification '1234' -->
@@ -578,9 +556,9 @@
             <!-- if the ETD should be correctly identified - it needs to go into a separate list -->
             <SpectrumIdentificationList id="sil_ETD">
                 <SpectrumIdentificationResult spectrumID="index=2" spectraData_ref="peaklist_id" id="SIR_2">
-                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p1_ETD" rank="1"
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p1" rank="1"
                                                 passThreshold="false" id="ETD_SII_0">
-                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_ETD"/>
+                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="crosslink spectrum identification item"
                                  value="1"/>
                         <!-- this flags it as part of the crosslinked identification '1234' -->
@@ -590,9 +568,9 @@
                                  name="Posterior Error Probability for an identification based on multiple spectra"
                                  value="1234:1E-08"/>
                     </SpectrumIdentificationItem>
-                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2_ETD" rank="1"
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2" rank="1"
                                                 passThreshold="false" id="ETD_SII_1">
-                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_ETD"/>
+                        <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="crosslink spectrum identification item"
                                  value="1"/>
                         <!-- this flags it as part of the crosslinked identification '1234' -->
