@@ -614,7 +614,7 @@
                 </SpectrumIdentificationResult>
 
                 <!--  HCD MS3 match peptide 1 T-->
-                <SpectrumIdentificationResult spectrumID="index=3" spectraData_ref="peaklist_id" id="SIR_5">
+                <SpectrumIdentificationResult spectrumID="index=5" spectraData_ref="peaklist_id" id="SIR_5">
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="51" peptide_ref="p1_t"
                                                 rank="1" passThreshold="false" id="MS3_SII_2">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_t"/>
@@ -628,7 +628,7 @@
                 </SpectrumIdentificationResult>
 
                 <!--  HCD MS3 match peptide 2 A-->
-                <SpectrumIdentificationResult spectrumID="index=4" spectraData_ref="peaklist_id" id="SIR_6">
+                <SpectrumIdentificationResult spectrumID="index=6" spectraData_ref="peaklist_id" id="SIR_6">
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="49" peptide_ref="p2_a"
                                                 rank="1" passThreshold="false" id="MS3_SII_3">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_a"/>
