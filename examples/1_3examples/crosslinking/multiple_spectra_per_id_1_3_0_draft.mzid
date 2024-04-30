@@ -526,7 +526,7 @@
             <SpectrumIdentificationList id="sil_HCD">
                 <!--  HCD MS2 match defined basically the same as in a non-cleavable case -->
                 <SpectrumIdentificationResult spectrumID="index=1" spectraData_ref="peaklist_id" id="SIR_1">
-                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p1" rank="1"
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="210.093" peptide_ref="p1" rank="1"
                                                 passThreshold="false" id="HCD_SII_0">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="crosslink spectrum identification item"
@@ -538,7 +538,7 @@
                                  name="Posterior Error Probability for an identification based on multiple spectra"
                                  value="1234:1E-08"/>
                     </SpectrumIdentificationItem>
-                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2" rank="1"
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="202.443" peptide_ref="p2" rank="1"
                                                 passThreshold="false" id="HCD_SII_1">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="crosslink spectrum identification item"
@@ -556,7 +556,7 @@
             <!-- if the ETD should be correctly identified - it needs to go into a separate list -->
             <SpectrumIdentificationList id="sil_ETD">
                 <SpectrumIdentificationResult spectrumID="index=2" spectraData_ref="peaklist_id" id="SIR_2">
-                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p1" rank="1"
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="210.093" peptide_ref="p1" rank="1"
                                                 passThreshold="false" id="ETD_SII_0">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="crosslink spectrum identification item"
@@ -568,7 +568,7 @@
                                  name="Posterior Error Probability for an identification based on multiple spectra"
                                  value="1234:1E-08"/>
                     </SpectrumIdentificationItem>
-                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="100" peptide_ref="p2" rank="1"
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="202.443" peptide_ref="p2" rank="1"
                                                 passThreshold="false" id="ETD_SII_1">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="crosslink spectrum identification item"
@@ -587,7 +587,7 @@
             <SpectrumIdentificationList id="sil_MS3">
                 <!--  HCD MS3 match peptide 1 A-->
                 <SpectrumIdentificationResult spectrumID="index=3" spectraData_ref="peaklist_id" id="SIR_3">
-                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="50" peptide_ref="p1_a"
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="175.429" peptide_ref="p1_a"
                                                 rank="1" passThreshold="false" id="MS3_SII_0">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_a"/>
                         <!-- this flags it as part of the crosslinked identification '1234' -->
@@ -601,7 +601,7 @@
 
                 <!--  HCD MS3 match peptide 2 T-->
                 <SpectrumIdentificationResult spectrumID="index=4" spectraData_ref="peaklist_id" id="SIR_4">
-                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="50" peptide_ref="p2_t"
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="230.432" peptide_ref="p2_t"
                                                 rank="1" passThreshold="false" id="MS3_SII_1">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_t"/>
                         <!-- this flags it as part of the crosslinked identification '1234' -->
@@ -615,7 +615,7 @@
 
                 <!--  HCD MS3 match peptide 1 T-->
                 <SpectrumIdentificationResult spectrumID="index=5" spectraData_ref="peaklist_id" id="SIR_5">
-                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="51" peptide_ref="p1_t"
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="186.086" peptide_ref="p1_t"
                                                 rank="1" passThreshold="false" id="MS3_SII_2">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_t"/>
                         <!-- this flags it as part of the crosslinked identification '1234' -->
@@ -629,7 +629,7 @@
 
                 <!--  HCD MS3 match peptide 2 A-->
                 <SpectrumIdentificationResult spectrumID="index=6" spectraData_ref="peaklist_id" id="SIR_6">
-                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="49" peptide_ref="p2_a"
+                    <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="219.775" peptide_ref="p2_a"
                                                 rank="1" passThreshold="false" id="MS3_SII_3">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_a"/>
                         <!-- this flags it as part of the crosslinked identification '1234' -->
