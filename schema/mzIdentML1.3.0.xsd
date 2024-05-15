@@ -576,7 +576,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:annotation>
 			<xsd:documentation>The attribute referencing an identifier within the SpectraData section. </xsd:documentation>
 		</xsd:annotation>
-		<xsd:attribute name="spectraData_ref" type="xsd:string">
+		<xsd:attribute name="spectraData_ref" type="xsd:string" use="required">
 			<xsd:annotation>
 				<xsd:documentation>A reference to the SpectraData element which locates the input spectra to an external file. </xsd:documentation>
 			</xsd:annotation>
@@ -586,7 +586,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:annotation>
 			<xsd:documentation>One of the search databases used.</xsd:documentation>
 		</xsd:annotation>
-		<xsd:attribute name="searchDatabase_ref" type="xsd:string">
+		<xsd:attribute name="searchDatabase_ref" type="xsd:string" use="required">
 			<xsd:annotation>
 				<xsd:documentation>A reference to the database searched.</xsd:documentation>
 			</xsd:annotation>
