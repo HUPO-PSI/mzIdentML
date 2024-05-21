@@ -48,7 +48,7 @@
         <Peptide id="p2">
             <PeptideSequence>TIDEK</PeptideSequence>
             <!-- this part doesn’t change, acceptor has 0 mass -->
-            <Modification location="4" monoisotopicMassDelta="0">
+            <Modification location="1" monoisotopicMassDelta="0">
                 <cvParam cvRef="PSI-MS" accession="MS:1003393" name="search modification id ref"
                          value="DSSO_crosslink_acceptor"/>
                 <cvParam cvRef="PSI-MS" accession="MS:1002510" name="crosslink acceptor" value="1"/>
@@ -76,7 +76,7 @@
 
         <Peptide id="p2_a">
             <PeptideSequence>TIDEK</PeptideSequence>
-            <Modification location="4" monoisotopicMassDelta="54.010565">
+            <Modification location="1" monoisotopicMassDelta="54.010565">
                 <cvParam cvRef="PSI-MS" accession="MS:1003393" name="search modification id ref"
                          value="DSSO_crosslink_stub_a"/>
                 <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
@@ -85,7 +85,7 @@
 
         <Peptide id="p2_t">
             <PeptideSequence>TIDEK</PeptideSequence>
-            <Modification location="4" monoisotopicMassDelta="85.982635">
+            <Modification location="1" monoisotopicMassDelta="85.982635">
                 <cvParam cvRef="PSI-MS" accession="MS:1003393" name="search modification id ref"
                          value="DSSO_crosslink_stub_t"/>
                 <cvParam accession="UNIMOD:1842" cvRef="UNIMOD" name="Xlink:DSSO"/>
@@ -93,12 +93,12 @@
         </Peptide>
 
 
-        <PeptideEvidence id="pepevid_p1" dBSequence_ref="protein_A" peptide_ref="p1" start="10"/>
-        <PeptideEvidence id="pepevid_p2" dBSequence_ref="protein_B" peptide_ref="p2" start="241"/>
-        <PeptideEvidence id="pepevid_p1_a" dBSequence_ref="protein_A" peptide_ref="p1_a" start="10"/>
-        <PeptideEvidence id="pepevid_p1_t" dBSequence_ref="protein_A" peptide_ref="p1_t" start="10"/>
-        <PeptideEvidence id="pepevid_p2_a" dBSequence_ref="protein_B" peptide_ref="p2_a" start="241"/>
-        <PeptideEvidence id="pepevid_p2_t" dBSequence_ref="protein_B" peptide_ref="p2_t" start="241"/>
+        <PeptideEvidence id="pepevid_p1" dBSequence_ref="protein_A" peptide_ref="p1" start="11"/>
+        <PeptideEvidence id="pepevid_p2" dBSequence_ref="protein_B" peptide_ref="p2" start="21"/>
+        <PeptideEvidence id="pepevid_p1_a" dBSequence_ref="protein_A" peptide_ref="p1_a" start="11"/>
+        <PeptideEvidence id="pepevid_p1_t" dBSequence_ref="protein_A" peptide_ref="p1_t" start="11"/>
+        <PeptideEvidence id="pepevid_p2_a" dBSequence_ref="protein_B" peptide_ref="p2_a" start="21"/>
+        <PeptideEvidence id="pepevid_p2_t" dBSequence_ref="protein_B" peptide_ref="p2_t" start="21"/>
     </SequenceCollection>
 
     <AnalysisCollection>
@@ -527,7 +527,7 @@
                 <!--  HCD MS2 match defined basically the same as in a non-cleavable case -->
                 <SpectrumIdentificationResult spectrumID="index=1" spectraData_ref="peaklist_id" id="SIR_1">
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="210.093" peptide_ref="p1" rank="1"
-                                                passThreshold="false" id="HCD_SII_0">
+                                                passThreshold="true" id="HCD_SII_0">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="crosslink spectrum identification item"
                                  value="1"/>
@@ -539,7 +539,7 @@
                                  value="1234:1E-08"/>
                     </SpectrumIdentificationItem>
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="202.443" peptide_ref="p2" rank="1"
-                                                passThreshold="false" id="HCD_SII_1">
+                                                passThreshold="true" id="HCD_SII_1">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="crosslink spectrum identification item"
                                  value="1"/>
@@ -557,7 +557,7 @@
             <SpectrumIdentificationList id="sil_ETD">
                 <SpectrumIdentificationResult spectrumID="index=2" spectraData_ref="peaklist_id" id="SIR_2">
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="210.093" peptide_ref="p1" rank="1"
-                                                passThreshold="false" id="ETD_SII_0">
+                                                passThreshold="true" id="ETD_SII_0">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="crosslink spectrum identification item"
                                  value="1"/>
@@ -569,7 +569,7 @@
                                  value="1234:1E-08"/>
                     </SpectrumIdentificationItem>
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="202.443" peptide_ref="p2" rank="1"
-                                                passThreshold="false" id="ETD_SII_1">
+                                                passThreshold="true" id="ETD_SII_1">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2"/>
                         <cvParam cvRef="PSI-MS" accession="MS:1002511" name="crosslink spectrum identification item"
                                  value="1"/>
@@ -588,7 +588,7 @@
                 <!--  HCD MS3 match peptide 1 A-->
                 <SpectrumIdentificationResult spectrumID="index=3" spectraData_ref="peaklist_id" id="SIR_3">
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="175.429" peptide_ref="p1_a"
-                                                rank="1" passThreshold="false" id="MS3_SII_0">
+                                                rank="1" passThreshold="true" id="MS3_SII_0">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_a"/>
                         <!-- this flags it as part of the crosslinked identification '1234' -->
                         <cvParam accession="MS:1003332" cvRef="PSI-MS" value="1234:C"
@@ -602,7 +602,7 @@
                 <!--  HCD MS3 match peptide 2 T-->
                 <SpectrumIdentificationResult spectrumID="index=4" spectraData_ref="peaklist_id" id="SIR_4">
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="230.432" peptide_ref="p2_t"
-                                                rank="1" passThreshold="false" id="MS3_SII_1">
+                                                rank="1" passThreshold="true" id="MS3_SII_1">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_t"/>
                         <!-- this flags it as part of the crosslinked identification '1234' -->
                         <cvParam accession="MS:1003332" cvRef="PSI-MS" value="1234:C"
@@ -616,7 +616,7 @@
                 <!--  HCD MS3 match peptide 1 T-->
                 <SpectrumIdentificationResult spectrumID="index=5" spectraData_ref="peaklist_id" id="SIR_5">
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="186.086" peptide_ref="p1_t"
-                                                rank="1" passThreshold="false" id="MS3_SII_2">
+                                                rank="1" passThreshold="true" id="MS3_SII_2">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p1_t"/>
                         <!-- this flags it as part of the crosslinked identification '1234' -->
                         <cvParam accession="MS:1003332" cvRef="PSI-MS" value="1234:C"
@@ -630,7 +630,7 @@
                 <!--  HCD MS3 match peptide 2 A-->
                 <SpectrumIdentificationResult spectrumID="index=6" spectraData_ref="peaklist_id" id="SIR_6">
                     <SpectrumIdentificationItem chargeState="3" experimentalMassToCharge="219.775" peptide_ref="p2_a"
-                                                rank="1" passThreshold="false" id="MS3_SII_3">
+                                                rank="1" passThreshold="true" id="MS3_SII_3">
                         <PeptideEvidenceRef peptideEvidence_ref="pepevid_p2_a"/>
                         <!-- this flags it as part of the crosslinked identification '1234' -->
                         <cvParam accession="MS:1003332" cvRef="PSI-MS" value="1234:C"
