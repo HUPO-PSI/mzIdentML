@@ -1,0 +1,809 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for </title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript"><!--
+        
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <h2><a id="INDEX">Table of Contents</a></h2>
+      <div class="toc">
+         <form action="none">
+            <div><span> Group by: <select id="selectTOC" onchange="selectTOCGroupBy(this.options[this.selectedIndex].value, true, 'mzIdentML1.3.0.indexList.html', 'mzIdentML1.3.0.indexListns.html', 'mzIdentML1.3.0.indexListcomp.html');">
+                     <option value="toc_group_by_namespace">Namespace</option>
+                     <option value="toc_group_by_location" selected="selected">Location</option>
+                     <option value="toc_group_by_component_type">Component Type</option></select></span></div>
+         </form>
+         <div class="level1" id="toc_group_by_location" style="display:block">
+            <div>
+               <div class="level2">
+                  <p><input id="button_gr_mzIdentML1.3.0.xsd" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('gr_mzIdentML1.3.0.xsd');" class="control" /><span class="indexGroupTitle">mzIdentML1.3.0.xsd</span></p>
+                  <div id="gr_mzIdentML1.3.0.xsd" style="display:block">
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_gr_mzIdentML1.3.0.xsdMain_schema" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('gr_mzIdentML1.3.0.xsdMain_schema');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Main Schema</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="gr_mzIdentML1.3.0.xsdMain_schema" class="componentGroup" style="display:block">
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#mzIdentML1.3.0.xsd" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">mzIdentML1.3.0.xsd</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_gr_mzIdentML1.3.0.xsdElement" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('gr_mzIdentML1.3.0.xsdElement');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Elements</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="gr_mzIdentML1.3.0.xsdElement" class="componentGroup" style="display:block">
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisCollectionType_ProteinDetection" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisCollectionType/ProteinDetection</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisCollectionType_SpectrumIdentification" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisCollectionType/SpectrumIdentification</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisDataType_ProteinDetectionList" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisDataType/ProteinDetectionList</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisDataType_SpectrumIdentificationList" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisDataType/SpectrumIdentificationList</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisProtocolCollectionType_ProteinDetectionProtocol" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisProtocolCollectionType/ProteinDetectionProtocol</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisProtocolCollectionType_SpectrumIdentificationProtocol" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisProtocolCollectionType/SpectrumIdentificationProtocol</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisSampleCollectionType_Sample" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisSampleCollectionType/Sample</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisSoftwareListType_AnalysisSoftware" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisSoftwareListType/AnalysisSoftware</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisSoftwareType_ContactRole" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisSoftwareType/ContactRole</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisSoftwareType_Customizations" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisSoftwareType/Customizations</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisSoftwareType_SoftwareName" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisSoftwareType/SoftwareName</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AuditCollectionType_Organization" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AuditCollectionType/Organization</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AuditCollectionType_Person" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AuditCollectionType/Person</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#CVListType_cv" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">CVListType/cv</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ContactRoleType_Role" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ContactRoleType/Role</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#DBSequenceType_Seq" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">DBSequenceType/Seq</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#DataCollectionType_AnalysisData" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">DataCollectionType/AnalysisData</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#DataCollectionType_Inputs" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">DataCollectionType/Inputs</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#DatabaseFiltersType_Filter" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">DatabaseFiltersType/Filter</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#DatabaseTranslationType_TranslationTable" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">DatabaseTranslationType/TranslationTable</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#EnzymeType_EnzymeName" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">EnzymeType/EnzymeName</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#EnzymeType_SiteRegexp" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">EnzymeType/SiteRegexp</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#EnzymesType_Enzyme" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">EnzymesType/Enzyme</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ExternalDataType_ExternalFormatDocumentation" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ExternalDataType/ExternalFormatDocumentation</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ExternalDataType_FileFormat" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ExternalDataType/FileFormat</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#FileFormatType_cvParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">FileFormatType/cvParam</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#FilterType_Exclude" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">FilterType/Exclude</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#FilterType_FilterType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">FilterType/FilterType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#FilterType_Include" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">FilterType/Include</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#FragmentationTableType_Measure" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">FragmentationTableType/Measure</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#FragmentationType_IonType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">FragmentationType/IonType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#InputsType_SearchDatabase" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">InputsType/SearchDatabase</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#InputsType_SourceFile" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">InputsType/SourceFile</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#InputsType_SpectraData" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">InputsType/SpectraData</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#IonTypeType_FragmentArray" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">IonTypeType/FragmentArray</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#IonTypeType_cvParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">IonTypeType/cvParam</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#IonTypeType_userParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">IonTypeType/userParam</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MassTableType_AmbiguousResidue" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MassTableType/AmbiguousResidue</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MassTableType_Residue" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MassTableType/Residue</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MeasureType_cvParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MeasureType/cvParam</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ModificationParamsType_SearchModification" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ModificationParamsType/SearchModification</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ModificationType_cvParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ModificationType/cvParam</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentML" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentML</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentMLType_AnalysisCollection" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentMLType/AnalysisCollection</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentMLType_AnalysisProtocolCollection" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentMLType/AnalysisProtocolCollection</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentMLType_AnalysisSampleCollection" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentMLType/AnalysisSampleCollection</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentMLType_AnalysisSoftwareList" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentMLType/AnalysisSoftwareList</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentMLType_AuditCollection" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentMLType/AuditCollection</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentMLType_BibliographicReference" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentMLType/BibliographicReference</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentMLType_DataCollection" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentMLType/DataCollection</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentMLType_Provider" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentMLType/Provider</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentMLType_SequenceCollection" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentMLType/SequenceCollection</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentMLType_cvList" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentMLType/cvList</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentMLType_cvParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentMLType/cvParam</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#OrganizationType_Parent" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">OrganizationType/Parent</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ParamGroup_cvParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ParamGroup/cvParam</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ParamGroup_userParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ParamGroup/userParam</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideHypothesisType_SpectrumIdentificationItemRef" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideHypothesisType/SpectrumIdentificationItemRef</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideType_Modification" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideType/Modification</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideType_PeptideSequence" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideType/PeptideSequence</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideType_SubstitutionModification" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideType/SubstitutionModification</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PersonType_Affiliation" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PersonType/Affiliation</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinAmbiguityGroupType_ProteinDetectionHypothesis" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinAmbiguityGroupType/ProteinDetectionHypothesis</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinDetectionHypothesisType_PeptideHypothesis" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinDetectionHypothesisType/PeptideHypothesis</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinDetectionListType_ProteinAmbiguityGroup" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinDetectionListType/ProteinAmbiguityGroup</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinDetectionProtocolType_AnalysisParams" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinDetectionProtocolType/AnalysisParams</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinDetectionProtocolType_Threshold" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinDetectionProtocolType/Threshold</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinDetectionType_InputSpectrumIdentifications" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinDetectionType/InputSpectrumIdentifications</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProviderType_ContactRole" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProviderType/ContactRole</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#RoleType_cvParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">RoleType/cvParam</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SampleType_ContactRole" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SampleType/ContactRole</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SampleType_SubSample" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SampleType/SubSample</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchDatabaseType_DatabaseName" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchDatabaseType/DatabaseName</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchDatabaseType_cvParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchDatabaseType/cvParam</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchModificationType_SpecificityRules" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchModificationType/SpecificityRules</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchModificationType_cvParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchModificationType/cvParam</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SequenceCollectionType_DBSequence" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SequenceCollectionType/DBSequence</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SequenceCollectionType_Peptide" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SequenceCollectionType/Peptide</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SequenceCollectionType_PeptideEvidence" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SequenceCollectionType/PeptideEvidence</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpecificityRulesType_cvParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpecificityRulesType/cvParam</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectraDataType_SpectrumIDFormat" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectraDataType/SpectrumIDFormat</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIDFormatType_cvParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIDFormatType/cvParam</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationItemType_Fragmentation" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationItemType/Fragmentation</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationItemType_PeptideEvidenceRef" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationItemType/PeptideEvidenceRef</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationListType_FragmentationTable" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationListType/FragmentationTable</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationListType_SpectrumIdentificationResult" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationListType/SpectrumIdentificationResult</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationProtocolType_AdditionalSearchParams" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationProtocolType/AdditionalSearchParams</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationProtocolType_DatabaseFilters" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationProtocolType/DatabaseFilters</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationProtocolType_DatabaseTranslation" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationProtocolType/DatabaseTranslation</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationProtocolType_Enzymes" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationProtocolType/Enzymes</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationProtocolType_FragmentTolerance" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationProtocolType/FragmentTolerance</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationProtocolType_MassTable" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationProtocolType/MassTable</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationProtocolType_ModificationParams" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationProtocolType/ModificationParams</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationProtocolType_ParentTolerance" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationProtocolType/ParentTolerance</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationProtocolType_SearchType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationProtocolType/SearchType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationProtocolType_Threshold" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationProtocolType/Threshold</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationResultType_SpectrumIdentificationItem" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationResultType/SpectrumIdentificationItem</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationType_InputSpectra" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationType/InputSpectra</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationType_SearchDatabaseRef" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationType/SearchDatabaseRef</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ToleranceType_cvParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ToleranceType/cvParam</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#TranslationTableType_cvParam" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">TranslationTableType/cvParam</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_gr_mzIdentML1.3.0.xsdComplex_Type" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('gr_mzIdentML1.3.0.xsdComplex_Type');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Complex Types</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="gr_mzIdentML1.3.0.xsdComplex_Type" class="componentGroup" style="display:block">
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AbstractContactType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AbstractContactType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AbstractParamType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AbstractParamType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AffiliationType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AffiliationType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AmbiguousResidueType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AmbiguousResidueType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisCollectionType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisCollectionType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisDataType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisDataType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisProtocolCollectionType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisProtocolCollectionType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisSampleCollectionType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisSampleCollectionType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisSoftwareListType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisSoftwareListType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisSoftwareType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisSoftwareType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AuditCollectionType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AuditCollectionType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#BibliographicReferenceType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">BibliographicReferenceType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#CVListType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">CVListType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#CVParamType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">CVParamType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ContactRoleType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ContactRoleType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#DBSequenceType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">DBSequenceType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#DataCollectionType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">DataCollectionType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#DatabaseFiltersType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">DatabaseFiltersType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#DatabaseTranslationType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">DatabaseTranslationType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#EnzymeType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">EnzymeType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#EnzymesType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">EnzymesType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ExternalDataType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ExternalDataType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#FileFormatType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">FileFormatType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#FilterType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">FilterType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#FragmentArrayType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">FragmentArrayType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#FragmentationTableType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">FragmentationTableType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#FragmentationType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">FragmentationType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#IdentifiableType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">IdentifiableType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#InputSpectraType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">InputSpectraType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#InputSpectrumIdentificationsType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">InputSpectrumIdentificationsType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#InputsType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">InputsType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#IonTypeType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">IonTypeType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MassTableType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MassTableType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MeasureType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MeasureType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ModificationParamsType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ModificationParamsType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ModificationType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ModificationType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentMLType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentMLType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#OrganizationType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">OrganizationType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ParamListType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ParamListType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ParamType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ParamType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ParentOrganizationType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ParentOrganizationType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideEvidenceRefType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideEvidenceRefType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideEvidenceType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideEvidenceType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideHypothesisType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideHypothesisType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PersonType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PersonType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinAmbiguityGroupType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinAmbiguityGroupType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinDetectionHypothesisType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinDetectionHypothesisType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinDetectionListType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinDetectionListType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinDetectionProtocolType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinDetectionProtocolType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinDetectionType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinDetectionType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProtocolApplicationType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProtocolApplicationType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProviderType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProviderType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ResidueType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ResidueType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#RoleType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">RoleType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SampleType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SampleType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchDatabaseRefType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchDatabaseRefType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchDatabaseType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchDatabaseType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchModificationType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchModificationType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SequenceCollectionType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SequenceCollectionType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SourceFileType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SourceFileType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpecificityRulesType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpecificityRulesType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectraDataType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectraDataType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIDFormatType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIDFormatType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationItemRefType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationItemRefType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationItemType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationItemType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationListType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationListType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationProtocolType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationProtocolType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationResultType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationResultType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SubSampleType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SubSampleType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SubstitutionModificationType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SubstitutionModificationType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ToleranceType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ToleranceType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#TranslationTableType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">TranslationTableType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#UserParamType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">UserParamType</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#cvType" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">cvType</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_gr_mzIdentML1.3.0.xsdSimple_Type" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('gr_mzIdentML1.3.0.xsdSimple_Type');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Simple Types</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="gr_mzIdentML1.3.0.xsdSimple_Type" class="componentGroup" style="display:block">
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#allowed_frames" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">allowed_frames</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#chars" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">chars</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#listOfAllowedFrames" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">listOfAllowedFrames</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#listOfChars" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">listOfChars</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#listOfCharsOrAny" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">listOfCharsOrAny</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#listOfFloats" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">listOfFloats</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#listOfIntegers" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">listOfIntegers</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#sequence" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">sequence</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#versionRegex" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">versionRegex</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_gr_mzIdentML1.3.0.xsdAttribute" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('gr_mzIdentML1.3.0.xsdAttribute');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Attributes</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="gr_mzIdentML1.3.0.xsdAttribute" class="componentGroup" style="display:block">
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AbstractParamType_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AbstractParamType/@name</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AbstractParamType_unitAccession" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AbstractParamType/@unitAccession</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AbstractParamType_unitCvRef" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AbstractParamType/@unitCvRef</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AbstractParamType_unitName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AbstractParamType/@unitName</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AbstractParamType_value" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AbstractParamType/@value</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AffiliationType_organization_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AffiliationType/@organization_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AmbiguousResidueType_code" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AmbiguousResidueType/@code</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisSoftwareType_uri" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisSoftwareType/@uri</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#AnalysisSoftwareType_version" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">AnalysisSoftwareType/@version</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#BibliographicReferenceType_authors" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">BibliographicReferenceType/@authors</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#BibliographicReferenceType_doi" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">BibliographicReferenceType/@doi</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#BibliographicReferenceType_editor" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">BibliographicReferenceType/@editor</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#BibliographicReferenceType_issue" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">BibliographicReferenceType/@issue</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#BibliographicReferenceType_pages" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">BibliographicReferenceType/@pages</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#BibliographicReferenceType_publication" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">BibliographicReferenceType/@publication</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#BibliographicReferenceType_publisher" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">BibliographicReferenceType/@publisher</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#BibliographicReferenceType_title" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">BibliographicReferenceType/@title</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#BibliographicReferenceType_volume" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">BibliographicReferenceType/@volume</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#BibliographicReferenceType_year" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">BibliographicReferenceType/@year</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#CVParamType_accession" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">CVParamType/@accession</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#CVParamType_cvRef" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">CVParamType/@cvRef</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ContactRoleType_contact_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ContactRoleType/@contact_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#DBSequenceType_accession" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">DBSequenceType/@accession</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#DBSequenceType_length" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">DBSequenceType/@length</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#DBSequenceType_searchDatabase_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">DBSequenceType/@searchDatabase_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#DatabaseTranslationType_frames" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">DatabaseTranslationType/@frames</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#EnzymeType_cTermGain" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">EnzymeType/@cTermGain</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#EnzymeType_minDistance" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">EnzymeType/@minDistance</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#EnzymeType_missedCleavages" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">EnzymeType/@missedCleavages</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#EnzymeType_nTermGain" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">EnzymeType/@nTermGain</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#EnzymeType_semiSpecific" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">EnzymeType/@semiSpecific</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#EnzymesType_independent" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">EnzymesType/@independent</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ExternalDataType_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ExternalDataType/@location</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#FragmentArrayType_measure_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">FragmentArrayType/@measure_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#FragmentArrayType_values" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">FragmentArrayType/@values</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#IdentifiableType_id" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">IdentifiableType/@id</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#IdentifiableType_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">IdentifiableType/@name</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#InputSpectraType_spectraData_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">InputSpectraType/@spectraData_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#InputSpectrumIdentificationsType_spectrumIdentificationList_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">InputSpectrumIdentificationsType/@spectrumIdentificationList_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#IonTypeType_charge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">IonTypeType/@charge</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#IonTypeType_index" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">IonTypeType/@index</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MassTableType_msLevel" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MassTableType/@msLevel</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ModificationType_avgMassDelta" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ModificationType/@avgMassDelta</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ModificationType_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ModificationType/@location</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ModificationType_monoisotopicMassDelta" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ModificationType/@monoisotopicMassDelta</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ModificationType_residues" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ModificationType/@residues</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentMLType_creationDate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentMLType/@creationDate</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#MzIdentMLType_version" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">MzIdentMLType/@version</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ParentOrganizationType_organization_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ParentOrganizationType/@organization_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideEvidenceRefType_peptideEvidence_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideEvidenceRefType/@peptideEvidence_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideEvidenceType_dBSequence_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideEvidenceType/@dBSequence_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideEvidenceType_end" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideEvidenceType/@end</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideEvidenceType_frame" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideEvidenceType/@frame</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideEvidenceType_isDecoy" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideEvidenceType/@isDecoy</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideEvidenceType_peptide_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideEvidenceType/@peptide_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideEvidenceType_post" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideEvidenceType/@post</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideEvidenceType_pre" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideEvidenceType/@pre</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideEvidenceType_start" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideEvidenceType/@start</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideEvidenceType_translationTable_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideEvidenceType/@translationTable_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PeptideHypothesisType_peptideEvidence_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PeptideHypothesisType/@peptideEvidence_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PersonType_firstName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PersonType/@firstName</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PersonType_lastName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PersonType/@lastName</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#PersonType_midInitials" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">PersonType/@midInitials</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinDetectionHypothesisType_dBSequence_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinDetectionHypothesisType/@dBSequence_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinDetectionHypothesisType_passThreshold" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinDetectionHypothesisType/@passThreshold</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinDetectionProtocolType_analysisSoftware_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinDetectionProtocolType/@analysisSoftware_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinDetectionType_proteinDetectionList_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinDetectionType/@proteinDetectionList_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProteinDetectionType_proteinDetectionProtocol_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProteinDetectionType/@proteinDetectionProtocol_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProtocolApplicationType_activityDate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProtocolApplicationType/@activityDate</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ProviderType_analysisSoftware_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ProviderType/@analysisSoftware_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ResidueType_code" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ResidueType/@code</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ResidueType_mass" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ResidueType/@mass</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchDatabaseRefType_searchDatabase_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchDatabaseRefType/@searchDatabase_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchDatabaseType_numDatabaseSequences" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchDatabaseType/@numDatabaseSequences</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchDatabaseType_numResidues" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchDatabaseType/@numResidues</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchDatabaseType_releaseDate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchDatabaseType/@releaseDate</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchDatabaseType_version" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchDatabaseType/@version</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchModificationType_fixedMod" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchModificationType/@fixedMod</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchModificationType_massDelta" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchModificationType/@massDelta</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SearchModificationType_residues" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SearchModificationType/@residues</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationItemRefType_spectrumIdentificationItem_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationItemRefType/@spectrumIdentificationItem_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationItemType_calculatedMassToCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationItemType/@calculatedMassToCharge</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationItemType_calculatedPI" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationItemType/@calculatedPI</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationItemType_chargeState" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationItemType/@chargeState</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationItemType_experimentalMassToCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationItemType/@experimentalMassToCharge</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationItemType_massTable_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationItemType/@massTable_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationItemType_passThreshold" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationItemType/@passThreshold</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationItemType_peptide_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationItemType/@peptide_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationItemType_rank" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationItemType/@rank</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationItemType_sample_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationItemType/@sample_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationListType_numSequencesSearched" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationListType/@numSequencesSearched</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationProtocolType_analysisSoftware_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationProtocolType/@analysisSoftware_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationResultType_spectraData_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationResultType/@spectraData_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationResultType_spectrumID" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationResultType/@spectrumID</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationType_spectrumIdentificationList_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationType/@spectrumIdentificationList_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SpectrumIdentificationType_spectrumIdentificationProtocol_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SpectrumIdentificationType/@spectrumIdentificationProtocol_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SubSampleType_sample_ref" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SubSampleType/@sample_ref</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SubstitutionModificationType_avgMassDelta" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SubstitutionModificationType/@avgMassDelta</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SubstitutionModificationType_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SubstitutionModificationType/@location</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SubstitutionModificationType_monoisotopicMassDelta" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SubstitutionModificationType/@monoisotopicMassDelta</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SubstitutionModificationType_originalResidue" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SubstitutionModificationType/@originalResidue</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#SubstitutionModificationType_replacementResidue" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">SubstitutionModificationType/@replacementResidue</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#UserParamType_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">UserParamType/@type</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#cvType_fullName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">cvType/@fullName</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#cvType_id" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">cvType/@id</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#cvType_uri" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">cvType/@uri</a></b></div>
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#cvType_version" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">cvType/@version</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_gr_mzIdentML1.3.0.xsdElement_Group" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('gr_mzIdentML1.3.0.xsdElement_Group');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Element Groups</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="gr_mzIdentML1.3.0.xsdElement_Group" class="componentGroup" style="display:block">
+                                                <div><b><a href="mzIdentML1_3_0_xsd.html#ParamGroup" target="mainFrame" title="http://psidev.info/psi/pi/mzIdentML/1.3" onclick="updatePageTitle('Schema documentation for mzIdentML1.3.0.xsd')">ParamGroup</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div style="clear:left"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="footer">
+         <hr />
+         <div style="text-align:center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor Trial Edition.</div>
+      </div><script type="text/javascript"><!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>
