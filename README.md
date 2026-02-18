@@ -8,6 +8,9 @@ A large number of different proteomics search engines are available that produce
 ## Citing mzIdentML
 When you use mzIdentML format, please cite the following publications:
 
+**mzIdentML v1.3:**
+Combe, C. W., Kolbowski, L., Fischer, L., Koskinen, V., Klein, J., Leitner, A., Jones, A. R., Vizcaíno, J. A., & Rappsilber, J. (2024). mzIdentML 1.3.0 - Essential progress on the support of crosslinking and other identifications based on multiple spectra. Proteomics, 24(17), e2300385. https://doi.org/10.1002/pmic.202300385 (https://pubmed.ncbi.nlm.nih.gov/39001627/)
+
 **mzIdentML v1.2:**
 Vizcaino, J. A., Mayer, G., Perkins, S. R., Barsnes, H., Vaudel, M., Perez-Riverol, Y., Ternent, T., Uszkoreit, J., Eisenacher, M., Fischer, L., Rappsilber, J., Netz, E., Walzer, M., Kohlbacher, O., Leitner, A., Chalkley, R. J., Ghali, F., Martinez-Bartolome, S., Deutsch, E. W., and Jones, A. R. (2017) The mzIdentML data standard version 1.2, supporting advances in proteome informatics. Molecular & cellular proteomics, mcp.M117.068429 [pdf] (http://www.mcponline.org/content/early/2017/05/17/mcp.M117.068429.long)
 
@@ -17,7 +20,25 @@ Jones A.R., Eisenacher M., Mayer G., Kohlbacher O., Siepen J., Hubbard S.J., Sel
 
 ## Specification documents
 
-**Version 1.2.0 (April 2017) - Current version:**
+**Version 1.3.0 (June 2024) - Current version:**
+
+  Schema 
+- [XSD Version](schema/mzIdentML1.3.0.xsd)
+- [html Version](https://colin-combe.github.io/mzIdentML/schema_html/mzIdentML1.3.0.html)
+
+  Specification document
+- [HTML Version](https://colin-combe.github.io/mzIdentML/mzidentml.html)
+- [PDF Download](https://colin-combe.github.io/mzIdentML/mzidentml.pdf)
+- [DOCBOOK XML Download](https://colin-combe.github.io/mzIdentML/mzidentml.xml)
+- [DOCX Download](https://colin-combe.github.io/mzIdentML/mzidentml.docx)
+
+  Crosslinking extension
+- [HTML Version](https://colin-combe.github.io/mzIdentML/crosslinking_ext.html)
+- [PDF Download](https://colin-combe.github.io/mzIdentML/crosslinking_ext.pdf)
+- [DOCBOOK XML Download](https://colin-combe.github.io/mzIdentML/crosslinking_ext.xml)
+- [DOCX Download](https://colin-combe.github.io/mzIdentML/crosslinking_ext.docx)
+
+**Version 1.2.0 (April 2017) - Still supported:**
 
   Specification document
   > Specification document [docx](https://github.com/HUPO-PSI/mzIdentML/blob/master/specification_document-releases/specdoc1_1/mzIdentML1.1.0.doc),

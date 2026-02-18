@@ -1,0 +1,41 @@
+@import "./asciidoctor-default.css";
+
+/*.xml_highlights .content{*/
+/*    background-color: red;*/
+/*    !*white-space: pre;*!*/
+/*    font-family: "Courier New";*/
+/*    font-size: 9pt;*/
+
+/*    white-space: pre-wrap;       !* Since CSS 2.1 *!*/
+/*    white-space: -moz-pre-wrap;  !* Mozilla, since 1999 *!*/
+/*    !*white-space: -pre-wrap;      !* Opera 4-6 *!*!*/
+/*    white-space: -o-pre-wrap;    !* Opera 7 *!*/
+/*    word-wrap: break-word;       !* Internet Explorer 5.5+ *!*/
+/*}*/
+
+/*.title {*/
+/*    color: black !important;*/
+/*    font-style: italic !important;*/
+/*}*/
+
+/*.listing{*/
+/*    white-space: pre-wrap;       !* Since CSS 2.1 *!*/
+/*    white-space: -moz-pre-wrap;  !* Mozilla, since 1999 *!*/
+/*    !*white-space: -pre-wrap;      !* Opera 4-6 *!*!*/
+/*    white-space: -o-pre-wrap;    !* Opera 7 *!*/
+/*    word-wrap: break-word;       !* Internet Explorer 5.5+ *!*/
+
+/*    background-color: yellow;*/
+/*    margin: 0px;*/
+/*    padding: 0px;*/
+/*}*/
+
+/*table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}*/
+
+/*.palegreen_bg {*/
+/*    background-color: #98FB98;*/
+/*}*/
+
+pre, code {
+  font-size: 0.9em !important; /* Adjust as needed */
+}

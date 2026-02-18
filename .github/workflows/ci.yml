@@ -1,0 +1,77 @@
+name: Spec Build Workflow
+# This workflow triggers on direct pushes to master or PRs
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+  workflow_call:
+env:
+  DOC_IN: "${{ github.workspace }}/specification_document/specdoc1_3/asciidoc"
+  # referencing $DOC_IN did not want to work, maybe there is a better way
+  DOC_OUT: "${{ github.workspace }}/specification_document-releases/specdoc1_3/output"
+  DOC_FILE: 'mzidentml.adoc'
+
+jobs:
+  build-spec:
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      matrix:
+        os:
+          - ubuntu-22.04
+    steps:
+      - name: Set Build timestamp
+        run: |
+          echo "BUILD_DATE=$(date -u)" >> $GITHUB_ENV 
+      - uses: actions/checkout@v2
+      - run: sudo apt-get update -qq
+      - run: sudo apt-get install -y pandoc
+      - run: mkdir -p output
+      - run: 'docker pull asciidoctor/docker-asciidoctor:1'
+      - name: Build spec doc outputs
+        run: |
+          ./build-docs.sh -i "$DOC_IN" -o "$DOC_OUT" -c "$GITHUB_SHA" -d "$BUILD_DATE" -f "$DOC_FILE" -r
+        shell: bash
+      - name: Build crosslinking extension doc
+        run: |
+          ./build-docs.sh -i "$DOC_IN" -o "$DOC_OUT" -c "$GITHUB_SHA" -d "$BUILD_DATE" -f "crosslinking_ext.adoc" -r
+        shell: bash
+      - run: mkdir output/1_3-mzidentml-release
+      - run: cp -v -R $DOC_OUT/* output/1_3-mzidentml-release
+      - run: mkdir -p output/1_3-mzidentml-release/img
+      - run: cp -v -R $DOC_OUT/img/* output/1_3-mzidentml-release/img
+      - run: cp -R specification_document/specdoc1_3/schema_html output/1_3-mzidentml-release/
+      - name: Convert README to index.html
+        run: |
+          cp specification_document/specdoc1_3/asciidoc/asciidoctor-default.css output/1_3-mzidentml-release/
+          pandoc README.md -o output/1_3-mzidentml-release/index.html --standalone --css=asciidoctor-default.css --metadata title="mzIdentML"
+      - name: Archive document build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: output artefacts
+          path: |
+            output/1_3-mzidentml-release/*.pdf
+            output/1_3-mzidentml-release/*.html
+            output/1_3-mzidentml-release/*.docx
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output/1_3-mzidentml-release
+
+  deploy-pages:
+    needs: build-spec
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

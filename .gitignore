@@ -2,3 +2,5 @@
 /validator/build/
 /validator/dist/
 /validator/trunk/target/
+.idea/
+specification_document/specdoc1_3/asciidoc/out/

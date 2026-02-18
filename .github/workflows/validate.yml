@@ -1,0 +1,29 @@
+name: Example File Validation Workflow
+# This workflow triggers on direct pushes to master or PRs affecting changes in the specified subdirectory
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'examples/**/**'
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'examples/**/**'
+  workflow_dispatch:
+  workflow_call:
+jobs:
+  validate-examples:
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      matrix:
+        os:
+          - ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install xmllint
+        run: sudo apt-get update -qq && sudo apt-get install -y libxml2-utils
+      - name: Validate Examples
+        run: ./validate.sh
+        shell: bash
