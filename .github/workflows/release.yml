@@ -6,6 +6,6 @@ on:
 
 jobs:
   build-spec-workflow:
-    uses: colin-combe/mzIdentML/.github/workflows/ci.yml@master
+    uses: HUPO-PSI/mzIdentML/.github/workflows/ci.yml@master
   test-examples-workflow:
-    uses: colin-combe/mzIdentML/.github/workflows/validate.yml@master
+    uses: HUPO-PSI/mzIdentML/.github/workflows/validate.yml@master

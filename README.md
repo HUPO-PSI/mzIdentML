@@ -24,19 +24,19 @@ Jones A.R., Eisenacher M., Mayer G., Kohlbacher O., Siepen J., Hubbard S.J., Sel
 
   Schema 
 - [XSD Version](schema/mzIdentML1.3.0.xsd)
-- [html Version](https://colin-combe.github.io/mzIdentML/schema_html/mzIdentML1.3.0.html)
+- [html Version](https://HUPO-PSI.github.io/mzIdentML/schema_html/mzIdentML1.3.0.html)
 
   Specification document
-- [HTML Version](https://colin-combe.github.io/mzIdentML/mzidentml.html)
-- [PDF Download](https://colin-combe.github.io/mzIdentML/mzidentml.pdf)
-- [DOCBOOK XML Download](https://colin-combe.github.io/mzIdentML/mzidentml.xml)
-- [DOCX Download](https://colin-combe.github.io/mzIdentML/mzidentml.docx)
+- [HTML Version](https://HUPO-PSI.github.io/mzIdentML/mzidentml.html)
+- [PDF Download](https://HUPO-PSI.github.io/mzIdentML/mzidentml.pdf)
+- [DOCBOOK XML Download](https://HUPO-PSI.github.io/mzIdentML/mzidentml.xml)
+- [DOCX Download](https://HUPO-PSI.github.io/mzIdentML/mzidentml.docx)
 
   Crosslinking extension
-- [HTML Version](https://colin-combe.github.io/mzIdentML/crosslinking_ext.html)
-- [PDF Download](https://colin-combe.github.io/mzIdentML/crosslinking_ext.pdf)
-- [DOCBOOK XML Download](https://colin-combe.github.io/mzIdentML/crosslinking_ext.xml)
-- [DOCX Download](https://colin-combe.github.io/mzIdentML/crosslinking_ext.docx)
+- [HTML Version](https://HUPO-PSI.github.io/mzIdentML/crosslinking_ext.html)
+- [PDF Download](https://HUPO-PSI.github.io/mzIdentML/crosslinking_ext.pdf)
+- [DOCBOOK XML Download](https://HUPO-PSI.github.io/mzIdentML/crosslinking_ext.xml)
+- [DOCX Download](https://HUPO-PSI.github.io/mzIdentML/crosslinking_ext.docx)
 
 **Version 1.2.0 (April 2017) - Still supported:**
 
