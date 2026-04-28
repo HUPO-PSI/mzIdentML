@@ -3941,9 +3941,11 @@ A modification where one residue is substituted by another (amino acid change).
 |===
 |*Attribute Name* |*Data Type* |*Use* |*Definition*
 |avgMassDelta |xsd:double |optional |Atomic mass delta considering the natural distribution of isotopes in Daltons.
-This should only be reported if the original amino acid is known i.e. it is not "X" !location !xsd:int !optional !Location of the modification within the peptide - position in peptide sequence, counted from the N-terminus residue, starting at position 1. Specific modifications to the N-terminus should be given the location 0. Modification to the C-terminus should be given as peptide length + 1.
+This should only be reported if the original amino acid is known i.e. it is not "X"
+|location |xsd:int |optional |Location of the modification within the peptide - position in peptide sequence, counted from the N-terminus residue, starting at position 1. Specific modifications to the N-terminus should be given the location 0. Modification to the C-terminus should be given as peptide length + 1.
 |monoisotopicMassDelta |xsd:double |optional |Atomic mass delta when assuming only the most common isotope of elements in Daltons.
-This should only be reported if the original amino acid is known i.e. it is not "X" !originalResidue a! xsd:string with restriction
+This should only be reported if the original amino acid is known i.e. it is not "X"
+|originalResidue a| xsd:string with restriction
 [ABCDEFGHIJKLMNOPQRSTUVWXYZ?\-]\{1}
 |required |The original residue before replacement.
 |replacementResidue a| xsd:string with restriction

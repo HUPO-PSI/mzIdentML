@@ -1,4 +1,4 @@
-[[mzidentml:-exchange-format-for-peptides-and-proteins-identified-from-mass-spectra]]
+[[mzidentml-exchange-format-for-peptides-and-proteins-identified-from-mass-spectra]]
 = mzIdentML: exchange format for peptides and proteins identified from mass spectra
 :source-highlighter: pygments
 //:pygments-style: colorful
@@ -628,7 +628,6 @@ PASS_THRESHOLD holds a Boolean (true, false) value to indicate whether the modif
 [source,xml]
 ----
 <cvParam accession="MS:1002380" cvRef="PSI-MS" value="1:0.03:2|3:true" name="modification rescored by false localization rate"/>
- +
 <cvParam accession="MS:1002380" cvRef="PSI-MS" value="1:0.97:8|9:false" name="modification rescored by false localization rate"/>
 ----
 
@@ -978,7 +977,7 @@ STUVWXYZ
 |Asp-N_ambic |(?=[DE])
 |Chymotrypsin |(?<=[FYWL])(?!P)
 |CNBr |(?<=M)
-|Formic_acid |((?<=D))|((?=D))
+|Formic_acid |((?<=D))\|((?=D))
 |Lys-C |(?<=K)(?!P)
 |Lys-C/P |(?<=K)
 |PepsinA |(?<=[FL])
