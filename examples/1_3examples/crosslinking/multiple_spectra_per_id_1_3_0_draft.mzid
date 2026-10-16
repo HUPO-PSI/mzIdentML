@@ -19,7 +19,7 @@
     <AnalysisSoftwareList>
         <AnalysisSoftware id="fdr_prog_id">
             <SoftwareName>
-                <cvParam name="software" cvRef="PSI-MS" accession="MS:1000531"/>
+                <cvParam cvRef="PSI-MS" accession="MS:1002544" name="xi"/>
             </SoftwareName>
         </AnalysisSoftware>
     </AnalysisSoftwareList>
@@ -93,12 +93,12 @@
         </Peptide>
 
 
-        <PeptideEvidence id="pepevid_p1" dBSequence_ref="protein_A" peptide_ref="p1" start="11"/>
-        <PeptideEvidence id="pepevid_p2" dBSequence_ref="protein_B" peptide_ref="p2" start="21"/>
-        <PeptideEvidence id="pepevid_p1_a" dBSequence_ref="protein_A" peptide_ref="p1_a" start="11"/>
-        <PeptideEvidence id="pepevid_p1_t" dBSequence_ref="protein_A" peptide_ref="p1_t" start="11"/>
-        <PeptideEvidence id="pepevid_p2_a" dBSequence_ref="protein_B" peptide_ref="p2_a" start="21"/>
-        <PeptideEvidence id="pepevid_p2_t" dBSequence_ref="protein_B" peptide_ref="p2_t" start="21"/>
+        <PeptideEvidence id="pepevid_p1" dBSequence_ref="protein_A" peptide_ref="p1" start="11" end="14"/>
+        <PeptideEvidence id="pepevid_p2" dBSequence_ref="protein_B" peptide_ref="p2" start="21" end="25"/>
+        <PeptideEvidence id="pepevid_p1_a" dBSequence_ref="protein_A" peptide_ref="p1_a" start="11" end="14"/>
+        <PeptideEvidence id="pepevid_p1_t" dBSequence_ref="protein_A" peptide_ref="p1_t" start="11" end="14"/>
+        <PeptideEvidence id="pepevid_p2_a" dBSequence_ref="protein_B" peptide_ref="p2_a" start="21" end="25"/>
+        <PeptideEvidence id="pepevid_p2_t" dBSequence_ref="protein_B" peptide_ref="p2_t" start="21" end="25"/>
     </SequenceCollection>
 
     <AnalysisCollection>

@@ -12,16 +12,16 @@
   </cvList>
   <AnalysisSoftwareList>
     <AnalysisSoftware id="AS_database_refresh_" name="database_refresh">
-      <SoftwareName><cvParam cvRef="MS" accession="MS:1001456" name="analysis software" value="database_refresh"/></SoftwareName>
+      <SoftwareName><cvParam cvRef="MS" accession="MS:1002286" name="Trans-Proteomic Pipeline software" value="database_refresh"/></SoftwareName>
     </AnalysisSoftware>
     <AnalysisSoftware id="AS_peptideprophet_" name="peptideprophet">
-      <SoftwareName><cvParam cvRef="MS" accession="MS:1001456" name="analysis software" value="peptideprophet"/></SoftwareName>
+      <SoftwareName><cvParam cvRef="MS" accession="MS:1002287" name="PeptideProphet" value=""/></SoftwareName>
     </AnalysisSoftware>
     <AnalysisSoftware id="AS_interact_" name="interact">
-      <SoftwareName><cvParam cvRef="MS" accession="MS:1001456" name="analysis software" value="interact"/></SoftwareName>
+      <SoftwareName><cvParam cvRef="MS" accession="MS:1002286" name="Trans-Proteomic Pipeline software" value="interact"/></SoftwareName>
     </AnalysisSoftware>
     <AnalysisSoftware id="AS_SpectraST" name="SpectraST">
-      <SoftwareName><cvParam cvRef="MS" accession="MS:1001456" name="analysis software" value="SpectraST"/></SoftwareName>
+      <SoftwareName><cvParam cvRef="MS" accession="MS:1001477" name="SpectraST" value=""/></SoftwareName>
     </AnalysisSoftware>
     <AnalysisSoftware id="pwiz_2.2.2926" name="ProteoWizard MzIdentML" version="2.2.2926">
       <ContactRole contact_ref="ORG_PWIZ">
