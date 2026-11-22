@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MzIdentML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.1 ../../schema/mzIdentML1.1.0.xsd"
+ xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.1 https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/schema/mzIdentML1.1.0.xsd"
  xmlns="http://psidev.info/psi/pi/mzIdentML/1.1"
  id=""
  version="1.1.0"

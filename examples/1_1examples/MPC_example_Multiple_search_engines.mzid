@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 (http://www.altova.com) by Gerhard Mayer (MPC Bochum) -->
 <MzIdentML id="MPC_use_case_handcrafted" name="MPC_example" creationDate="2011-03-25T16:15:00" version="1.1.0" 
-	xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.1 ../../schema/mzIdentML1.1.0.xsd"
+	xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.1 https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/schema/mzIdentML1.1.0.xsd"
 	xmlns="http://psidev.info/psi/pi/mzIdentML/1.1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<!-- CAUTION: ALL experimentalMassToCharge, peptide scores, protein scores and sequence coverage and spectrumID values are only placeholders for the real values, because file is handcrafted and shows only principle structure of mzIdentML! -->
