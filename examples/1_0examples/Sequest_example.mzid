@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- created by ProCon (http://www.medizinisches-proteom-center.de/software) -->
-<mzIdentML id="SEQUEST_use_case" creationDate="2009-06-25T14:08:22" xmlns="http://psidev.info/psi/pi/mzIdentML/1.0" xmlns:pf="http://psidev.info/fuge-light/1.0" xmlns:psi-pi="http://psidev.info/psi/pi/mzIdentML/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.0 ../../schema/mzIdentML1.0.0.xsd" version="1.0.0">
+<mzIdentML id="SEQUEST_use_case" creationDate="2009-06-25T14:08:22" xmlns="http://psidev.info/psi/pi/mzIdentML/1.0" xmlns:pf="http://psidev.info/fuge-light/1.0" xmlns:psi-pi="http://psidev.info/psi/pi/mzIdentML/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.0 https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/master/schema/mzIdentML1.0.0.xsd" version="1.0.0">
 	<cvList>
 		<cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI=" http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.25.0"/>
 		<cv id="NEWT" fullName="NEWT taxonomy database" URI="http://www.ebi.ac.uk/newt/display"/>
